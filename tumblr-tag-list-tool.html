@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tumblr Tag List Tool</title>
+    <script src="main.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body class="tumblr-tag-list-tool">
+    <main>
+      <h1>Tumblr Tag List Tool</h1>
+      <p>This is a little tool to easily create tag lists you can share anywhere. Created by <a href="https://petracoding.github.io/" target="_blank">Petra</a>.</p>
+      <h2>Generate a tag list:</h2>
+      <span>Enter the username of the blog <small>(or leave empty for all of tumblr)</small>:</span>
+      <input type="text" id="url" placeholder="my-cool-blog" />
+      <span>Enter your tags <small>(separated by new line or comma)</small>:</span>
+
+      <textarea placeholder="example 1, example2"></textarea>
+
+      <label><input type="checkbox" id="useSearch" /> Use /search/ instead of /tagged/ <small>(for more but vaguer results)</small></label>
+      <label><input type="checkbox" id="addHashtags" checked /> Output "#" in front of each tag</label>
+      <label><input type="checkbox" id="eachTagInNewLine" checked /> Output each tag in a new line</label>
+
+      <div class="separator-wrap">
+        <span>Separate tags in output with:</span>
+        <input type="text" id="separator" value=" " />
+      </div>
+
+      <span><small>After clicking "Generate" just copy everything below and paste it into a pinned post or anywhere else. Done!</small></span>
+
+      <button type="submit" id="go">Generate</button>
+
+      <div id="output"></div>
+    </main>
+  </body>
+</html>

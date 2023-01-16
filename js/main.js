@@ -1,7 +1,7 @@
 import "../css/main.scss";
 
 //
-import "./folder/file";
+import "./subpages/tumblr-tag-list-tool";
 
 document.addEventListener("DOMContentLoaded", function (event) {
   //do work

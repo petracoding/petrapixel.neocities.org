@@ -1,0 +1,94 @@
+
+.tumblr-tag-list-tool {
+  button,
+  input[type="text"],
+  textarea {
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    background: rgb(233, 233, 233);
+    border: 1px solid rgb(137, 137, 137);
+    padding: 5px 15px;
+
+    @media (min-width: 1000px) {
+      font-size: 22px;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid black;
+    }
+  }
+  
+  input[type="text"] {
+  	margin-top: 10px;
+  	width: 100%;
+  }
+
+  textarea {
+  	width: 100%;
+  	margin: 10px 0;
+  	min-height: 250px;
+  }
+
+  button {
+  	margin: 20px 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      filter: brightness(0.95);
+    }
+  }
+
+  span {
+  	display: block;
+  	margin-top: 30px;
+  }
+
+  label {
+  	width: 100%;
+  	display: block;
+  	margin-top: 10px;
+  }
+
+  input[type="checkbox"] {
+    filter: saturate(0) brightness(0.9);
+  }
+
+  #output {
+  	padding: 10px;
+  	border: 2px solid lightgray;
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .tumblr-tag-list-tool {
+    input[type="text"],
+    textarea,
+    button {
+      color: rgb(190, 188, 195);
+      background: rgb(42, 42, 44);
+      border-color: rgb(42, 42, 44);
+
+      &:focus {
+        border-color: #eee;
+      }
+    }
+
+    input[type="checkbox"] {
+      filter: invert(1) saturate(0);
+    }
+
+    button {
+      &:hover,
+      &:focus {
+        filter: brightness(0.8);
+      }
+    }
+  }
+}
