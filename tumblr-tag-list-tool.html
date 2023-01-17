@@ -26,9 +26,14 @@
 
       <label><input type="checkbox" id="useSearch" /> Use /search/ instead of /tagged/ <small>(for more but vaguer results)</small></label>
       <label><input type="checkbox" id="addHashtags" checked /> Output "#" in front of each tag</label>
-      <label><input type="checkbox" id="eachTagInNewLine" checked /> Output each tag in a new line</label>
 
-      <div class="separator-wrap">
+      <label><input type="checkbox" id="groupTags" /> Group Tags <small>(Put an empty line after each group!)</small></label>
+      <div class="wrap group-tags-wrap">
+        <label><input type="checkbox" id="headings" /> Use Group Headings <small>(first line of each group)</small></label>
+      </div>
+
+      <label><input type="checkbox" id="eachTagInNewLine" checked /> Output each tag in a new line</label>
+      <div class="wrap separator-wrap">
         <span>Separate tags in output with:</span>
         <input type="text" id="separator" value=" " />
       </div>

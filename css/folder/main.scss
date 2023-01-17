@@ -1,19 +1,20 @@
+* {
+  box-sizing: border-box;
+  color: #251d35;
+}
+
 body {
   font-family: 'Mukta', sans-serif;
-  font-size: 16px;
-  line-height: 2;
+  font-size: 17px;
+  line-height: 1.8;
   display: flex;
   justify-content: center;
-  padding: 20px;
   background: #eee;
 
   @media (min-width: 1000px) {
     font-size: 22px;
+    line-height: 2;
   }
-}
-
-* {
-  color: #251d35;
 }
 
 a {
@@ -26,10 +27,11 @@ a {
 }
 
 main {
-  width: 90%;
+  width: 95%;
   max-width: 800px;
 
   @media (min-width: 1000px) {
+    width: 90%;
     padding-top: 10vh;
     padding-bottom: 10vh;
   }
@@ -48,6 +50,7 @@ ul {
 h1,
 h2 {
   margin-bottom: 0;
+  line-height: 1.5;
 }
 
 h2 {
