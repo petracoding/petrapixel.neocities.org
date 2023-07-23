@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
   font-size: 17px;
   line-height: 1.8;
   display: flex;
@@ -28,7 +28,7 @@ a {
 
 main {
   width: 95%;
-  max-width: 800px;
+  max-width: 850px;
 
   @media (min-width: 1000px) {
     width: 90%;
@@ -59,6 +59,16 @@ h2 {
 
   @media (min-width: 1000px) {
     font-size: 28px;
+  }
+}
+
+.cursor {
+  animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
 
