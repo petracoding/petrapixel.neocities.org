@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notion Widgets</title>
+    <script src="main.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body class="notion-widgets">
+    <main>
+      <h1>Notion Widgets</h1>
+      <p>Free Notion Widgets created by <a href="https://petracoding.github.io/">Petra</a>.</p>
+
+      <h1>Text Widget</h1>
+      <section id="text">
+        <div>
+          <h2>Options</h2>
+          <label><input type="radio" name="text-mode" value="light" checked="checked" /> Light Mode</label>
+          <label><input type="radio" name="text-mode" value="dark" /> Dark Mode</label>
+          <span>Your text:</span>
+          <input type="text" id="text-text" placeholder="My Text" value="My Text" />
+          <span>Text size:</span>
+          <input type="number" id="text-size" min="5" max="200" value="20" step="2" />
+          <span>Font:</span>
+          <select id="text-font">
+            <optgroup label="Sans Serif:">
+              <option value="Arial">Arial</option>
+              <option value="Verdana">Verdana</option>
+              <option value="Tahoma">Tahoma</option>
+              <option value="Trebuchet MS">Trebuchet MS</option>
+            </optgroup>
+            <optgroup label="Serif:">
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Garamond">Garamond</option>
+            </optgroup>
+            <optgroup label="Monospace:">
+              <option value="Courier New">Courier New</option>
+            </optgroup>
+            <optgroup label="Cursive/Handwritten:">
+              <option value="Brush Script MT">Brush Script MT</option>
+            </optgroup>
+          </select>
+          <label><input type="checkbox" id="text-centered" /> Center text</label>
+          <label><input type="color" id="text-color" /> Text color</label>
+          <label><input type="checkbox" id="text-bg" /> Background color</label>
+          <label><input type="color" id="text-background" /> Background color</label>
+          <span>Corner roundness:</span>
+          <input type="number" id="text-corners" min="0" max="200" step="10" value="0" />
+        </div>
+        <div>
+          <h2>Preview</h2>
+          <iframe class="preview"></iframe>
+          <h2>Code</h2>
+          <span><small>Paste this link in Notion and select "Create embed":</small></span>
+          <textarea class="output"></textarea>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
