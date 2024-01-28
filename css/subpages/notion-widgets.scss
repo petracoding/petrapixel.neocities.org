@@ -124,25 +124,50 @@
 // WIDGETS THEMSELVES:
 
 .notion-widget {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: white;
+  background-color: white !important;
 
   &.dark-mode {
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(25, 25, 25) !important;
+  }
+
+  .back-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   > * {
     width: 100%;
+
+    &.centered {
+      display: flex;
+      justify-content: center;
+
+      #text {
+        text-align: center;
+      }
+    }
   }
 
   #text {
-    &.centered {
-      text-align: center;
+    display: inline-block;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .notion-widget {
+    background-color: white !important;
+
+    &.dark-mode {
+      background-color: rgb(25, 25, 25) !important;
     }
   }
 }

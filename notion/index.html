@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Notion Widgets</title>
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,9 +25,9 @@
           <label><input type="radio" name="text-mode" value="light" checked="checked" /> Light Mode</label>
           <label><input type="radio" name="text-mode" value="dark" /> Dark Mode</label>
           <span>Your text:</span>
-          <input type="text" id="text-text" placeholder="My Text" value="My Text" />
+          <input type="text" id="text-text" placeholder="My Text" value="Heading! :)" />
           <span>Text size:</span>
-          <input type="number" id="text-size" min="5" max="200" value="20" step="2" />
+          <input type="number" id="text-size" min="5" max="200" value="45" step="2" />
           <span>Font:</span>
           <select id="text-font">
             <optgroup label="Sans Serif:">
@@ -48,12 +48,15 @@
               <option value="Brush Script MT">Brush Script MT</option>
             </optgroup>
           </select>
-          <label><input type="checkbox" id="text-centered" /> Center text</label>
-          <label><input type="color" id="text-color" /> Text color</label>
-          <label><input type="checkbox" id="text-bg" /> Background color</label>
-          <label><input type="color" id="text-background" /> Background color</label>
-          <span>Corner roundness:</span>
-          <input type="number" id="text-corners" min="0" max="200" step="10" value="0" />
+          <label><input type="checkbox" id="text-centered" checked="checked" /> Center text</label>
+          <label><input type="color" id="text-color" value="#284291" /> Text color</label>
+          <label><input type="checkbox" id="text-bg" checked="checked" /> Background color</label>
+          <div class="only-show-if-bg-color">
+            <label><input type="color" id="text-background" value="#cfdcea" /> Background color</label>
+            <label><input type="checkbox" id="text-fullWidth" checked="checked" /> Full width</label>
+            <span>Corner roundness:</span>
+            <input type="number" id="text-corners" min="0" max="200" step="10" value="20" />
+          </div>
         </div>
         <div>
           <h2>Preview</h2>
@@ -63,6 +66,8 @@
           <textarea class="output"></textarea>
         </div>
       </section>
+
+      <h1>More coming soon!</h1>
     </main>
   </body>
 </html>
