@@ -33,7 +33,7 @@
     min-height: 150px;
   }
 
-  h1 {
+  h1:not(:first-child) {
     margin-top: 10vh;
   }
 
@@ -159,6 +159,7 @@
 
   #text {
     display: inline-block;
+    letter-spacing: 0;
   }
 }
 

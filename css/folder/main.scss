@@ -1,10 +1,16 @@
+@font-face {
+  font-family: "basiic";
+  src: url(https://cinni.net/fonts/basiic.ttf);
+}
+
 * {
   box-sizing: border-box;
   color: #251d35;
 }
 
 body {
-  font-family: "Mukta", sans-serif;
+  font-family: "basiic", "Mukta", sans-serif;
+  letter-spacing: -0.03em;
   font-size: 17px;
   line-height: 1.8;
   display: flex;
