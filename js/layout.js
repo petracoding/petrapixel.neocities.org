@@ -19,17 +19,16 @@ const beforeMain = `
           <div class="asides-stats">
             <div class="asides-stat">
               <strong>Vistior Count</strong>
-              <span id="hitcount">123</span>
+              <span id="hitcount">?</span>
             </div>
           </div>
           <div class="asides-stat">
             <strong>Last Website Update</strong>
             <span id="lastupdate">2024</span>
           </div>
-          <div class="asides-stat" id="statuscafe">
+          <div class="asides-stat">
             <strong><a href="https://status.cafe/users/petra1999">Status</a></strong>
-            <div id="statuscafe-username"></div>
-            <div id="statuscafe-content"></div>
+            <span id="status">loading...</span>
           </div>
         </div>
       </aside>
@@ -89,10 +88,6 @@ export const buildLayout = () => {
   mainEl.insertAdjacentHTML("beforebegin", beforeMain);
   mainEl.insertAdjacentHTML("afterend", afterMain);
 
-  var statusCafeScript = document.createElement("script");
-  statusCafeScript.setAttribute("src", "https://status.cafe/current-status.js?name=petra1999");
-  document.body.appendChild(statusCafeScript);
-
   // Menu Toggle
   const detailsEl = document.querySelector(".aside--right details");
   if (detailsEl) {
@@ -102,14 +97,20 @@ export const buildLayout = () => {
     }
   }
 
+  // Status Cafe Status
+  // Note: I do it this way because delayed loading is not allowed on Neocities.
+  setTimeout(function () {
+    const statusText = document.querySelector("#statuscafe-content").innerHTML;
+    document.querySelector("#status").innerHTML = statusText;
+  }, 500);
+
   doActiveLinks();
-  updateAndHitCount();
 };
 
 function doActiveLinks() {
   const els = document.querySelectorAll(".aside-nav li a, main a");
   [...els].forEach((el) => {
-    const href = el.getAttribute("href");
+    const href = el.getAttribute("href").replace(".html", "");
 
     if (href == "/" || href == "/index.html") {
       if (window.location.href == "http://localhost:52330/" || window.location.href == "https://petrapixel.neocities.org/") {
@@ -121,27 +122,4 @@ function doActiveLinks() {
       }
     }
   });
-}
-
-function updateAndHitCount() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      var site_data = JSON.parse(this.responseText);
-      var num_arr = site_data.info.views.toString().split("");
-      var num_str = "";
-      for (let i = 0; i < num_arr.length; i++) {
-        num_str += num_arr[i];
-        if ((num_arr.length - 1 - i) % 3 == 0 && num_arr.length - 1 - i != 0) {
-          num_str += ",";
-        }
-        var date_str = site_data.info.last_updated;
-        var date_obj = new Date(site_data.info.last_updated);
-        document.getElementById("lastupdate").innerHTML = date_obj.getMonth() + 1 + "-" + date_obj.getDate() + "-" + date_obj.getFullYear();
-      }
-      document.getElementById("hitcount").innerHTML = num_str;
-    }
-  };
-  xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=petrapixel", true);
-  xhttp.send();
 }
