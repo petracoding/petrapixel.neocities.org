@@ -1,4 +1,4 @@
-const isLocal = false;
+const isLocal = window.location.hostname == "localhost";
 const urlBase = isLocal ? "http://localhost:52330/notion/" : "https://petracoding.github.io/notion/";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
     url += "&size=" + size;
     const fullWidth = container.querySelector("#text-fullWidth").checked;
     url += "&fullWidth=" + (fullWidth ? "1" : "0");
+    const bold = container.querySelector("#text-bold").checked;
+    url += "&bold=" + (bold ? "1" : "0");
+    const italic = container.querySelector("#text-italic").checked;
+    url += "&italic=" + (italic ? "1" : "0");
+    const underline = container.querySelector("#text-underline").checked;
+    url += "&underline=" + (underline ? "1" : "0");
     const color = container.querySelector("#text-color").value.replace("#", "");
     url += "&color=" + color;
     if (container.querySelector("#text-bg").checked) {
@@ -33,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const font = container.querySelector("#text-font").value;
     url += "&font=" + font;
     const text = container.querySelector("#text-text").value;
-    url += "&text=" + encodeURIComponent(text);
+    url += "&text=" + encodeURIComponent(text).replaceAll("%20", "§");
     container.querySelector(".output").value = url;
     container.querySelector("iframe").setAttribute("src", url);
   }
@@ -51,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const mode = findGetParameter("mode");
     const size = findGetParameter("size");
     const text = findGetParameter("text");
+    const bold = findGetParameter("bold");
+    const italic = findGetParameter("italic");
+    const underline = findGetParameter("underline");
 
     if (mode == "dark") document.body.classList.add("dark-mode");
 
@@ -64,12 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (color) textEl.style.color = "#" + color;
     if (corners) textEl.style.borderRadius = corners + "px";
     if (fullWidth == "1") textEl.style.width = "100%";
+    if (bold == "1") textEl.style.fontWeight = "bold";
+    if (italic == "1") textEl.style.fontStyle = "italic";
+    if (underline == "1") textEl.style.textDecoration = "underline";
     if (background) {
       textEl.style.backgroundColor = "#" + background;
       textEl.style.padding = "0 0.5em";
     }
 
-    textEl.innerHTML = decodeURIComponent(text);
+    textEl.innerHTML = decodeURIComponent(text.replaceAll("§", "%20"));
   }
 });
 
