@@ -1,0 +1,246 @@
+#content {
+  max-width: 90%;
+  width: 1200px;
+  display: grid;
+  grid-template:
+    "header" auto
+    "asideLeft" auto
+    "asideRight" auto
+    "main" auto
+    "footer" auto
+    / 1fr;
+
+  @media (min-width: 576px) {
+    grid-template:
+      "header header" auto
+      "asideLeft asideRight" auto
+      "main main" auto
+      "footer footer" auto
+      / 1fr 1fr;
+
+    summary {
+      display: none;
+
+      & + * {
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    grid-template:
+      "header header header" auto
+      "asideLeft main asideRight" auto
+      "footer footer footer" auto
+      / 200px auto 200px;
+  }
+}
+
+/*----------  Main  ----------*/
+
+main {
+  grid-area: main;
+  background: $mainBackgroundColor;
+  padding: 1em 0;
+
+  @media (min-width: 576px) {
+    padding: 2em;
+  }
+}
+
+/*----------  Header  ----------*/
+
+header {
+  background: $headerBackgroundColor;
+  grid-area: header;
+  text-align: center;
+  margin-bottom: 2vw;
+}
+
+.header-heading {
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+/*----------  Aside  ----------*/
+
+.aside {
+  background: $asideBackgroundColor;
+  padding: 10px 14px;
+
+  @media (min-width: 1000px) {
+    border-radius: 5px;
+  }
+}
+
+.aside--left {
+  grid-area: asideLeft;
+}
+
+.aside--right {
+  grid-area: asideRight;
+}
+
+.aside__heading {
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 3px 5px 2px;
+  line-height: 1;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.aside-stuff {
+  line-height: 1.5;
+  margin-top: 30px;
+  max-width: 200px;
+}
+
+#statuscafe-username {
+  display: none;
+}
+
+#statuscafe-content {
+  display: inline-block;
+}
+
+.asides-stat {
+  font-size: 0.85em;
+  margin-top: 5px;
+
+  strong {
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+    }
+
+    &::after {
+      content: ":";
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  #statuscafe-content {
+    display: block;
+  }
+
+  .asides-stat {
+    margin-top: 15px;
+
+    strong {
+      display: block;
+
+      &::after {
+        content: "";
+      }
+    }
+  }
+}
+
+/*----------  Navs  ----------*/
+
+.aside-nav {
+  max-width: 200px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    line-height: 1;
+
+    a {
+      display: block;
+      padding: 2px 0;
+      color: $asideLinkColor;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      cursor: help;
+
+      &:hover,
+      &:focus {
+        color: $asideLinkColorHover;
+        text-decoration: none;
+      }
+
+      &.active {
+        color: $asideLinkColorHover;
+      }
+    }
+  }
+}
+
+.aside-nav__section {
+  margin: 10px 0 20px;
+}
+
+/*----------  Footer  ----------*/
+
+footer {
+  background: $footerBackgroundColor;
+  grid-area: footer;
+  margin-top: 5vw;
+}
+
+.footer-content {
+  text-align: center;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+
+  i {
+    font-style: normal;
+    display: inline-block;
+    padding: 0 1px;
+  }
+
+  a {
+    cursor: help;
+
+    &:hover,
+    &:focus {
+      color: $linkColorHover;
+    }
+  }
+}
+
+/*----------  No JS Warning  ----------*/
+
+#no-js-warning {
+  background: red;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5px 50px;
+  text-align: center;
+  opacity: 0;
+  animation: noJsFade ease 1s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 9999999;
+
+  .-js & {
+    display: none;
+  }
+}
+
+@keyframes noJsFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

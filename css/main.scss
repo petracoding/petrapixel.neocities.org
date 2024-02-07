@@ -1,2 +1,21 @@
+$gbLightest: #dbf3cc;
+$gbLight: #88c070;
+$gbDark: #295546;
+$gbDarkest: #081820;
+
+$backgroundColor: $gbLightest;
+$mainBackgroundColor: $gbLightest;
+
+$textColor: $gbDarkest;
+$linkColor: $gbLight;
+$linkColorHover: $gbDark;
+
+$headerBackgroundColor: none;
+$footerBackgroundColor: none;
+$asideBackgroundColor: $gbLight;
+$asideLinkColor: $gbDark;
+$asideLinkColorHover: $gbLightest;
+
 @import "./mixins";
 @import "./folder/main";
+@import "./folder/layout";

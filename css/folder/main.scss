@@ -5,20 +5,20 @@
 
 * {
   box-sizing: border-box;
-  color: #251d35;
 }
 
 body {
-  font-family: "basiic", "Mukta", sans-serif;
+  font-family: "basiic", sans-serif;
   letter-spacing: -0.03em;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.8;
   display: flex;
   justify-content: center;
-  background: #f4ecec;
+  background: $backgroundColor;
+  color: $textColor;
 
-  @media (min-width: 1000px) {
-    font-size: 22px;
+  @media (min-width: 992px) {
+    font-size: 17px;
     line-height: 2;
   }
 }
@@ -28,18 +28,21 @@ a {
   &:hover,
   &:focus,
   &:visited {
-    color: #1d5999;
+    color: $textColor;
   }
 }
 
 main {
-  width: 95%;
-  max-width: 850px;
+  a {
+    &,
+    &:visited {
+      color: $linkColor;
+    }
 
-  @media (min-width: 1000px) {
-    width: 90%;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    &:hover,
+    &:focus {
+      color: $linkColorHover;
+    }
   }
 }
 
@@ -68,31 +71,8 @@ h2 {
   }
 }
 
-.cursor {
-  animation: blink 1s step-start 0s infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: rgb(12, 11, 14);
-  }
-
-  * {
-    color: rgb(190, 188, 195);
-  }
-
-  a {
-    &,
-    &:hover,
-    &:focus,
-    &:visited {
-      color: #6c89b7;
-    }
+.desktop-only {
+  @media (max-width: 575px) {
+    display: none;
   }
 }

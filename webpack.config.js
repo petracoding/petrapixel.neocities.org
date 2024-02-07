@@ -5,7 +5,7 @@ module.exports = {
   entry: "./js/main.js",
   output: {
     path: path.resolve(__dirname, "."),
-    filename: "main.js",
+    filename: "public/main.js",
   },
   module: {
     rules: [

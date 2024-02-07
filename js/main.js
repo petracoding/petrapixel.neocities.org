@@ -1,9 +1,17 @@
 import "../css/main.scss";
+import { buildLayout } from "./layout";
 
-//
-import "./subpages/tumblr-tag-list-tool";
-import "./subpages/notion-widgets";
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.classList.add("-js");
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  //do work
+  buildLayout();
+
+  // Tab Title
+  const tabTitle = document.title;
+  if (tabTitle !== "petrapixel") {
+    document.title = tabTitle + " | petrapixel";
+  }
 });
+
+// Pages
+import "./pages/recs";
