@@ -19,16 +19,16 @@ const beforeMain = `
           <div class="asides-stats">
             <div class="asides-stat">
               <strong>Vistior Count</strong>
-              <span id="hitcount">?</span>
+              <span id="hitcount">loading...</span>
             </div>
           </div>
           <div class="asides-stat">
-            <strong>Last Website Update</strong>
-            <span id="lastupdate">2024</span>
+            <strong>Last Update</strong>
+            <span id="lastupdate">loading...</span>
           </div>
           <div class="asides-stat">
-            <strong><a href="https://status.cafe/users/petra1999">Status</a></strong>
-            <span id="status">loading...</span>
+            <strong><a href="https://status.cafe/users/petra1999" target="_blank">Status</a></strong>
+            <a href="https://status.cafe/users/petra1999" target="_blank" id="status">loading...</a>
           </div>
         </div>
       </aside>
@@ -110,7 +110,7 @@ export const buildLayout = () => {
 function doActiveLinks() {
   const els = document.querySelectorAll(".aside-nav li a, main a");
   [...els].forEach((el) => {
-    const href = el.getAttribute("href").replace(".html", "");
+    const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
 
     if (href == "/" || href == "/index.html") {
       if (window.location.href == "http://localhost:52330/" || window.location.href == "https://petrapixel.neocities.org/") {

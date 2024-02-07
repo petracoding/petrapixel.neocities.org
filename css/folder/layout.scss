@@ -10,7 +10,7 @@
     "footer" auto
     / 1fr;
 
-  @media (min-width: 576px) {
+  @media (min-width: $sm) {
     grid-template:
       "header header" auto
       "asideLeft asideRight" auto
@@ -27,7 +27,7 @@
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: $lg) {
     grid-template:
       "header header header" auto
       "asideLeft main asideRight" auto
@@ -42,9 +42,26 @@ main {
   grid-area: main;
   background: $mainBackgroundColor;
   padding: 1em 0;
+  display: flex;
+  flex-direction: column;
 
-  @media (min-width: 576px) {
-    padding: 2em;
+  > section {
+    width: 100%;
+    padding: 1em 1em;
+    border: 1px $gbDark dashed;
+    margin-bottom: 1em;
+
+    &:first-child:last-child {
+      min-height: 100%;
+    }
+  }
+
+  @media (min-width: $lg) {
+    padding: 0 1em;
+
+    > section {
+      padding: 1em;
+    }
   }
 }
 
@@ -59,7 +76,7 @@ header {
 
 .header-heading {
   margin: 0;
-  padding: 0.5em 1em;
+  padding: 0.25em 1em 0em;
 }
 
 /*----------  Aside  ----------*/
@@ -67,18 +84,41 @@ header {
 .aside {
   background: $asideBackgroundColor;
   padding: 10px 14px;
-
-  @media (min-width: 1000px) {
-    border-radius: 5px;
-  }
 }
 
 .aside--left {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   grid-area: asideLeft;
 }
 
 .aside--right {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   grid-area: asideRight;
+}
+
+@media (min-width: $sm) {
+  .aside--left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .aside--right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+@media (min-width: $lg) {
+  .aside--left,
+  .aside--right {
+    border-radius: 5px;
+  }
 }
 
 .aside__heading {
@@ -110,12 +150,13 @@ header {
   font-size: 0.85em;
   margin-top: 5px;
 
+  a {
+    text-decoration: none;
+    cursor: help;
+  }
+
   strong {
     display: inline-block;
-
-    a {
-      text-decoration: none;
-    }
 
     &::after {
       content: ":";
@@ -123,7 +164,7 @@ header {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: $sm) {
   .asides-stat {
     margin-top: 15px;
 
@@ -167,6 +208,7 @@ header {
 
       &.active {
         color: $asideLinkColorHover;
+        text-decoration-style: wavy;
       }
     }
   }

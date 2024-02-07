@@ -11,15 +11,15 @@ body {
   font-family: "basiic", sans-serif;
   letter-spacing: -0.03em;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.4;
   display: flex;
   justify-content: center;
   background: $backgroundColor;
   color: $textColor;
 
-  @media (min-width: 992px) {
+  @media (min-width: $md) {
     font-size: 17px;
-    line-height: 2;
+    line-height: 1.5;
   }
 }
 
@@ -44,35 +44,89 @@ main {
       color: $linkColorHover;
     }
   }
-}
 
-p {
-  margin: 0.5em 0;
-  text-align: justify;
-}
+  p {
+    margin: 0.5em 0;
+    text-align: justify;
+  }
 
-ul {
-  margin: 0.5em 0;
-  padding-left: 1.5em;
-}
+  ul {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+  }
 
-h1,
-h2 {
-  margin-bottom: 0;
-  line-height: 1.5;
-}
+  blockquote {
+    background: rgba($gbDark, 0.1);
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 10px;
+  }
 
-h2 {
-  margin-top: 1.5em;
-  font-size: 20px;
+  code {
+    display: block;
+    margin: 1em 0;
+    background: rgba($gbDark, 0.1);
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 0.75em;
+    line-height: 1.3;
+  }
 
-  @media (min-width: 1000px) {
-    font-size: 28px;
+  center {
+    margin: 1em 0;
+    padding: 0 1em;
+
+    @media (min-width: $md) {
+      padding: 0 2em;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 2px dotted $gbDark;
+    margin: 1.5em 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 0;
+    line-height: 1.5;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+
+    @media (min-width: $lg) {
+      font-size: 32px;
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+
+    @media (min-width: $lg) {
+      font-size: 26px;
+    }
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 16px;
+
+    @media (min-width: $lg) {
+      font-size: 24px;
+    }
   }
 }
 
 .desktop-only {
-  @media (max-width: 575px) {
+  @media (max-width: $sm) {
     display: none;
   }
 }

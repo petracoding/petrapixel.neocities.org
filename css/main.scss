@@ -16,6 +16,10 @@ $asideBackgroundColor: $gbLight;
 $asideLinkColor: $gbDark;
 $asideLinkColorHover: $gbLightest;
 
+$sm: 576px;
+$md: 992px;
+$lg: 1000px;
+
 @import "./mixins";
 @import "./folder/defaults";
 @import "./folder/layout";
