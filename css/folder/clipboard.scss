@@ -43,6 +43,7 @@
       border: 1px dashed rgba($gbDark, 0.5);
       margin: 0.1em;
       line-height: 1;
+      text-transform: none;
 
       &:hover {
         border-color: $gbDark;

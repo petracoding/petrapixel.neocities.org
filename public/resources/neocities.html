@@ -11,7 +11,57 @@
     <div id="no-js-warning">Please enable JavaScript to view this website!</div>
     <div id="content">
       <main>
-        <section>This page is under construction! Please check back later.</section>
+        <section>
+          <h1>Helpful Neocities Stuff</h1>
+          <p>Please only use these snippets if you have basic JavaScript knowledge, because they require very basic customization!</p>
+          <hr />
+          <p><b>Add a text to every site title (displayed on the tabs) automatically:</b></p>
+          <pre>
+const tabTitle = document.title; 
+if (tabTitle !== "YOUR HOME TITLE") { 
+	document.title = tabTitle + " | some text"; 
+}
+</pre
+          >
+          <p>The <i>if</i> makes sure that the title of your homepage doesn't end up like "site name | site name"</p>
+          <hr />
+          <p><b>Give the class "active" to any active navigation links:</b></p>
+          <pre>
+const linkElements = document.querySelectorAll("nav a");
+[...linkElements].forEach((el) => {
+  const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
+
+  if (href == "/" || href == "/index.html") {
+    if (window.location.href == "https://YOURURL.neocities.org/") {
+      el.classList.add("active");
+    }
+  } else {
+    if (window.location.href.includes(href)) {
+      el.classList.add("active");
+    }
+  }
+});</pre
+          >
+          <p>(You will need to change the selector for your navigation links (default: "nav a") and the URL.)</p>
+          <hr />
+          <p><b>generate a table of contents automatically: </b>(<a href="/resources/bookmarks.html">example</a>)</p>
+          <pre>
+const container = document.querySelector("#toc");
+if (!container) return;
+const allHeadings = document.querySelectorAll("main h2");
+if (allHeadings.length &lt; 2) return;
+let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
+[...allHeadings].forEach((headingEl) =&gt; {
+	const title = headingEl.innerHTML;
+	const link = encodeURI(title).toLowerCase().replace("#", "");
+	headingEl.setAttribute("id", link);
+	output += `&lt;li&gt;&lt;a href="#${link}"&gt;${title}&lt;/a&gt;&lt;/li&gt;`;
+});
+container.innerHTML = output + "&lt;/ol&gt;";</pre
+          >
+          <p>In your HTML, just add this line whereever you want it to be:</p>
+          <pre>&lt;div id="toc"&gt;&lt;/div&gt;</pre>
+        </section>
       </main>
     </div>
   </body>

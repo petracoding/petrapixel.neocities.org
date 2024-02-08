@@ -88,6 +88,7 @@ export const buildLayout = () => {
 
   doActiveLinks();
   getChangelog();
+  buildTableOfContents();
 };
 
 function getChangelog() {
@@ -142,4 +143,20 @@ function doActiveLinks() {
       }
     }
   });
+}
+
+function buildTableOfContents() {
+  const container = document.querySelector("#toc");
+  if (!container) return;
+  const allHeadings = document.querySelectorAll("main h2");
+  //   if (allHeadings.length < 2) return;
+  let output = "<b>Table of Contents:</b><ol>";
+  [...allHeadings].forEach((headingEl) => {
+    const title = headingEl.innerHTML;
+    const link = encodeURI(title).toLowerCase().replace("#", "");
+    headingEl.setAttribute("id", link);
+    output += `
+	  <li><a href="#${link}">${title}</a></li>`;
+  });
+  container.innerHTML = output + "</ol>";
 }

@@ -77,6 +77,20 @@ main {
   }
 }
 
+#toc {
+  margin-top: 1em;
+
+  ol {
+    margin-top: 0;
+    padding-left: 2em;
+    list-style-type: decimal-leading-zero;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
 /*----------  Header  ----------*/
 
 header {
