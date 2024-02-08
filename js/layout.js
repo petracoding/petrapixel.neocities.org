@@ -9,6 +9,7 @@ const beforeMain = `
               <li><a href="/about/about-me.html">about</a></li>
               <li><a href="/about/changelog.html">changelog</a></li>
               <li><a href="/about/credits.html">credits</a></li>
+              <li><a href="/guestbook.html">guestbook</a></li>
               <!-- <li><a href="/about/archive.html">archive</a></li> -->
               <li><a href="/sitemap.html">sitemap</a></li>
             </ul>
@@ -64,7 +65,7 @@ const afterMain = `
         <div class="footer-content">
           © petrapixel 2024 <i>┊</i> hosted on <a href="https://neocities.org/" target="_blank">neocities</a> <i>┊</i>
           <a href="https://neocities.org/site/petrapixel" target="_blank">follow me on neocities</a
-          > <i>┊</i> <a href="https://neocities.org/site/petrapixel/stats" target="_blank">hit count</a> <i>┊</i> <span class="desktop-only"> <i>┊</i> <a href="/about/credits.html">credits</a> <i>┊</i> <a href="/sitemap.html">sitemap</a></span>
+          > <i>┊</i> <a href="https://neocities.org/site/petrapixel/stats" target="_blank">hit count</a> <span class="desktop-only"> <i>┊</i> <a href="/about/credits.html">credits</a> <i>┊</i> <a href="/sitemap.html">sitemap</a></span>
         </div>
       </footer>
   	  `;
