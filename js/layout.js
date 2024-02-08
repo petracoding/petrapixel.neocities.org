@@ -7,7 +7,6 @@ const beforeMain = `
             <ul>
               <li><a href="/">home</a></li>
               <li><a href="/about/about-me.html">about</a></li>
-              <li><a href="/about/changelog.html">changelog</a></li>
               <li><a href="/about/credits.html">credits</a></li>
               <li><a href="/guestbook.html">guestbook</a></li>
               <!-- <li><a href="/about/archive.html">archive</a></li> -->
@@ -30,6 +29,7 @@ const beforeMain = `
                 <li><a href="/creations/art.html">art</a></li>
                 <li><a href="/creations/coding.html">coding</a></li>
                 <li><a href="/creations/playlists.html">playlists</a></li>
+                <li><a href="/creations/video-edits.html">video edits</a></li>
                 <li><a href="/creations/web-weaves.html">web weaves</a></li>
                 <li><a href="/creations/writing.html">writing</a></li>
               </ul>
@@ -90,7 +90,7 @@ export const buildLayout = () => {
 };
 
 function getChangelog() {
-  fetch("./changelog.json")
+  fetch("https://petrapixel.neocities.org/changelog.json")
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);

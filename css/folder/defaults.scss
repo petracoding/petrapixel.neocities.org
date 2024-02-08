@@ -42,6 +42,7 @@ main {
     &:hover,
     &:focus {
       color: $linkColorHover;
+      text-decoration-style: wavy;
     }
   }
 
@@ -83,7 +84,7 @@ main {
 
   hr {
     border: 0;
-    border-top: 2px dotted $gbDark;
+    border-top: 2px dotted $gbLight;
     margin: 1.5em 0;
   }
 
@@ -111,7 +112,7 @@ main {
     font-size: 18px;
 
     @media (min-width: $lg) {
-      font-size: 26px;
+      font-size: 24px;
     }
   }
 
@@ -120,7 +121,7 @@ main {
     font-size: 16px;
 
     @media (min-width: $lg) {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 }
@@ -147,4 +148,10 @@ main {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:vertical {
   background-color: $gbDark;
+}
+
+@media (prefers-reduced-motion) {
+  marquee {
+    display: none;
+  }
 }

@@ -45,7 +45,10 @@ main {
   display: flex;
   flex-direction: column;
 
-  > section {
+  // hmmm... idk:
+  text-transform: lowercase;
+
+  section {
     width: 100%;
     padding: 1em 1em;
     border: 1px $gbDark dashed;
@@ -59,9 +62,16 @@ main {
   @media (min-width: $lg) {
     padding: 0 1em;
 
-    > section {
+    section {
       padding: 1em;
     }
+  }
+}
+
+.sections-two-column {
+  @media (min-width: 1400px) {
+    display: flex;
+    gap: 15px;
   }
 }
 
@@ -77,6 +87,14 @@ header {
 .header-heading {
   margin: 0;
   padding: 0.25em 1em 0em;
+}
+
+#marquee {
+  &:empty {
+    display: none;
+  }
+
+  margin-bottom: 15px;
 }
 
 /*----------  Aside  ----------*/
