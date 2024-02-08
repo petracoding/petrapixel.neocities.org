@@ -1,0 +1,7 @@
+{
+  "changelog": [
+    { "d": "2024-02-XX", "t": "TEMPLATE", "l": "/example.html" },
+    { "d": "2024-02-08", "t": "Bugfixes", "l": "" },
+    { "d": "2024-02-07", "t": "Site creation!", "l": "/" }
+  ]
+}

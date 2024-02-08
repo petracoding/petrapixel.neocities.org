@@ -130,3 +130,21 @@ main {
     display: none;
   }
 }
+
+.custom-scrollbar {
+  scrollbar-color: $gbDark rgba($gbDark, 0.25);
+  scrollbar-width: thin;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track-piece {
+  background-color: rgba($gbDark, 0.25);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:vertical {
+  background-color: $gbDark;
+}

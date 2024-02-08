@@ -142,17 +142,17 @@ header {
   max-width: 200px;
 }
 
-#statuscafe {
-  display: none;
-}
-
 .asides-stat {
   font-size: 0.85em;
-  margin-top: 5px;
+
+  &:not(:first-child) {
+    margin-top: 5px;
+  }
 
   a {
     text-decoration: none;
     cursor: help;
+    display: block;
   }
 
   strong {
@@ -164,9 +164,17 @@ header {
   }
 }
 
+#changelog {
+  max-height: 100px;
+  overflow-y: scroll;
+  margin-top: 5px;
+}
+
 @media (min-width: $sm) {
   .asides-stat {
-    margin-top: 15px;
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
 
     strong {
       display: block;
@@ -175,6 +183,11 @@ header {
         content: "";
       }
     }
+  }
+
+  #changelog {
+    max-height: 245px;
+    margin-top: 18px;
   }
 }
 

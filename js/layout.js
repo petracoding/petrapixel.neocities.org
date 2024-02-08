@@ -16,14 +16,7 @@ const beforeMain = `
         </nav>
         <div class="aside-stuff">
           <div class="aside__heading">Changelog</div>
-          <div class="asides-stat">
-            <strong>2024</strong>
-            <span id="lastupdate">loading...</span>
-          </div>
-          <div class="asides-stat">
-            <strong><a href="https://status.cafe/users/petra1999" target="_blank">Status</a></strong>
-            <a href="https://status.cafe/users/petra1999" target="_blank" id="status">loading...</a>
-          </div>
+          <div id="changelog" class="custom-scrollbar"></div>
         </div>
       </aside>
       <aside class="aside aside--right">
@@ -71,7 +64,7 @@ const afterMain = `
         <div class="footer-content">
           © petrapixel 2024 <i>┊</i> hosted on <a href="https://neocities.org/" target="_blank">neocities</a> <i>┊</i>
           <a href="https://neocities.org/site/petrapixel" target="_blank">follow me on neocities</a
-          ><span class="desktop-only"> <i>┊</i> <a href="/about/credits.html">credits</a> <i>┊</i> <a href="/sitemap.html">sitemap</a></span>
+          > <i>┊</i> <a href="https://neocities.org/site/petrapixel/stats" target="_blank">hit count</a> <i>┊</i> <span class="desktop-only"> <i>┊</i> <a href="/about/credits.html">credits</a> <i>┊</i> <a href="/sitemap.html">sitemap</a></span>
         </div>
       </footer>
   	  `;
@@ -91,15 +84,46 @@ export const buildLayout = () => {
     }
   }
 
-  // Status Cafe Status
-  // Note: I do it this way because delayed loading is not allowed on Neocities.
-  setTimeout(function () {
-    const statusText = document.querySelector("#statuscafe-content").innerHTML;
-    document.querySelector("#status").innerHTML = statusText;
-  }, 500);
-
   doActiveLinks();
+  getChangelog();
 };
+
+function getChangelog() {
+  fetch("./changelog.json")
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      // note: changelog[0] ist the template
+      let changelogHtml = "";
+      let i = 1;
+      data.changelog.forEach((c) => {
+        if (c.t !== "TEMPLATE" && i <= 10) {
+          i++;
+          if (c.l !== "") {
+            changelogHtml += `
+		  <div class="asides-stat">
+            <strong>${c.d}</strong>
+            <a href="${c.l}">${c.t}</a>
+          </div>
+		  `;
+          } else {
+            changelogHtml += `
+		  <div class="asides-stat">
+            <strong>${c.d}</strong>
+            <span>${c.t}</span>
+          </div>
+		  `;
+          }
+        }
+      });
+      document.querySelector("#changelog").innerHTML = changelogHtml;
+    })
+    .catch((error) => console.error("Unable to fetch data:", error));
+}
 
 function doActiveLinks() {
   const els = document.querySelectorAll(".aside-nav li a, main a");
