@@ -45,8 +45,10 @@ main {
   display: flex;
   flex-direction: column;
 
-  // hmmm... idk:
-  text-transform: lowercase;
+  &:not(.not-lowercase) {
+    // hmmm... idk:
+    text-transform: lowercase;
+  }
 
   section {
     width: 100%;
@@ -246,7 +248,11 @@ header {
 }
 
 .aside-nav__section {
-  margin: 10px 0 20px;
+  margin: 10px 0 0;
+
+  @media (min-width: $sm) {
+    margin-bottom: 20px;
+  }
 }
 
 /*----------  Footer  ----------*/

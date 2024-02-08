@@ -3,18 +3,19 @@ const beforeMain = `
       <aside class="aside aside--left">
         <nav class="aside-nav">
           <div class="aside-nav__section">
-            <div class="aside__heading">Menu</div>
+            <div class="aside__heading desktop-only">Menu</div>
             <ul>
               <li><a href="/">home</a></li>
               <li><a href="/about/about-me.html">about</a></li>
               <li><a href="/about/credits.html">credits</a></li>
               <li><a href="/guestbook.html">guestbook</a></li>
+              <li><a href="/about/web-rings.html">web rings</a></li>
               <!-- <li><a href="/about/archive.html">archive</a></li> -->
-              <li><a href="/sitemap.html">sitemap</a></li>
+              <li class="mobile-only"><a href="/sitemap.html">sitemap</a></li>
             </ul>
           </div>
         </nav>
-        <div class="aside-stuff">
+        <div class="aside-stuff desktop-only">
           <div class="aside__heading">Changelog</div>
           <div id="changelog" class="custom-scrollbar"></div>
         </div>

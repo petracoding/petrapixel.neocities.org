@@ -1,7 +1,7 @@
-$gbLightest: #dbf3cc;
-$gbLight: #88c070;
-$gbDark: #295546;
-$gbDarkest: #081820;
+$gbLightest: #fff6d3;
+$gbLight: #f8a48a;
+$gbDark: #97484b;
+$gbDarkest: #612e43;
 
 $backgroundColor: $gbLightest;
 $mainBackgroundColor: $gbLightest;
@@ -23,3 +23,4 @@ $lg: 1000px;
 @import "./mixins";
 @import "./folder/defaults";
 @import "./folder/layout";
+@import "./folder/clipboard";

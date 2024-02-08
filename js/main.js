@@ -15,3 +15,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Pages
 import "./pages/recs";
+import "./pages/clipboard";

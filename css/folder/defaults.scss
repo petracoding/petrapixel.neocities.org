@@ -126,9 +126,15 @@ main {
   }
 }
 
+.mobile-only {
+  @media (min-width: $sm) {
+    display: none !important;
+  }
+}
+
 .desktop-only {
   @media (max-width: $sm) {
-    display: none;
+    display: none !important;
   }
 }
 
