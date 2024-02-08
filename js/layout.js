@@ -15,15 +15,9 @@ const beforeMain = `
           </div>
         </nav>
         <div class="aside-stuff">
-          <div class="aside__heading">Stats</div>
-          <div class="asides-stats">
-            <div class="asides-stat">
-              <strong>Vistior Count</strong>
-              <span id="hitcount">loading...</span>
-            </div>
-          </div>
+          <div class="aside__heading">Changelog</div>
           <div class="asides-stat">
-            <strong>Last Update</strong>
+            <strong>2024</strong>
             <span id="lastupdate">loading...</span>
           </div>
           <div class="asides-stat">
