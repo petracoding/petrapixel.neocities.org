@@ -11,8 +11,8 @@ const beforeMain = `
               <li><a href="${localHref}/about/about-me.html">about me</a></li>
               <li><a href="${localHref}/guestbook.html">guestbook</a></li>
               <li><a href="${localHref}/about/web-rings.html">web rings</a></li>
-              <li><a href="${localHref}/about/credits.html">credits</a></li>
               <!-- <li><a href="${localHref}/about/archive.html">archive</a></li> -->
+              <li class="mobile-only"><a href="${localHref}/about/credits.html">credits</a></li>
               <li class="mobile-only"><a href="${localHref}/sitemap.html">sitemap</a></li>
             </ul>
           </div>
@@ -29,12 +29,12 @@ const beforeMain = `
             <div class="aside-nav__section">
               <div class="aside__heading">Creations</div>
               <ul>
-                <li><a href="${localHref}/creations/art.html">art</a></li>
-                <li><a href="${localHref}/creations/coding.html">coding</a></li>
-                <li><a href="${localHref}/creations/playlists.html">playlists</a></li>
-                <li><a href="${localHref}/creations/video-edits.html">video edits</a></li>
-                <li><a href="${localHref}/creations/web-weaves.html">web weaves</a></li>
-                <li><a href="${localHref}/creations/writing.html">writing</a></li>
+                <li><a href="${localHref}/creations/art.html">my art</a></li>
+                <li><a href="${localHref}/creations/coding.html">my coding</a></li>
+                <li><a href="${localHref}/creations/playlists.html">my playlists</a></li>
+                <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
+                <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
+                <li><a href="${localHref}/creations/writing.html">my writing</a></li>
               </ul>
             </div>
             <div class="aside-nav__section">

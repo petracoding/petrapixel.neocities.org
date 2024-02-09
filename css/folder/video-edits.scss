@@ -1,0 +1,149 @@
+a.video-edit {
+  position: relative;
+  display: flex;
+  margin-top: 10px;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: $textColor;
+    text-decoration: none;
+  }
+
+  .image {
+    position: relative;
+
+    img {
+      display: block;
+      filter: brightness(1.25) contrast(1.1);
+      flex-shrink: 0;
+      border-radius: 3px;
+      transition: 0.3s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: #f79595;
+      opacity: 0.15;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .image {
+      img {
+        border-radius: 10px;
+        // filter: brightness(1.4) contrast(1.2);
+      }
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    .video-edit__info {
+      span {
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+.video-edit__info {
+  line-height: 1.2;
+  margin-left: 20px;
+  z-index: 1;
+
+  // pairing
+  strong {
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+
+    // fandom
+    small {
+      font-size: 0.6em;
+      display: block;
+    }
+  }
+
+  // title
+  span {
+    transition: letter-spacing 0.3s ease;
+    font-style: italic;
+    letter-spacing: 0.5px;
+
+    &::before {
+      content: "“ ";
+    }
+
+    &::after {
+      content: "” ";
+    }
+  }
+
+  // time stamp
+  i {
+    font-style: normal;
+    background: #ffc2b0;
+    display: inline-block;
+    margin-left: 10px;
+
+    font-size: 0.8em;
+    border-radius: 5px;
+    padding: 3px 5px 1px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.video-edit--fave {
+  &::before {
+    content: "☆";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: $gbDark;
+    opacity: 0.25;
+    line-height: 1;
+    font-size: 100px;
+  }
+}
+
+@media (max-width: $sm) {
+  a.video-edit {
+    flex-direction: column;
+
+    .image img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .video-edit__info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+
+  .video-edit--fave {
+    &::before {
+      top: auto;
+      bottom: 20px;
+      font-size: 50px;
+    }
+  }
+}
