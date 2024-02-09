@@ -6,6 +6,26 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <!-- code highlight -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+	<style>
+		pre code.hljs {
+			background: none;
+			padding: 0;
+			margin: 0;
+			font-size: 0.9em;
+		}
+		.hljs-section, .hljs-title {
+			color: #94113c;
+		}
+		.hljs-attribute, .hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-name, .hljs-selector-tag {
+			color: #2b2b2b;
+		}
+	</style>
   </head>
   <body>
     <div id="no-js-warning">Please enable JavaScript to view this website!</div>
@@ -13,21 +33,86 @@
       <main>
         <section>
           <h1>Helpful Neocities Stuff</h1>
-          <p>Please only use these snippets if you have basic JavaScript knowledge, because they require very basic customization!</p>
+          <h2>External Widgets for Free Plans</h2>
+          <p>Unfortunately, if you have a free website on neocities you are not allowed to use external scripts, such as guestbooks, shoutboxes, status/mood widgets, and even hit counters.</p>
+          <p>
+            The good news is that I found a way around that: you can use iframes. Specifially, you use the script you use on a different website not hosted on neocities, in the center of an otherwise
+            blank page, and then use this URL in an iframe on your neocities page. This is what I do. <a href="https://petracoding.github.io/neocities/hitcount.html" target="_blank">Here</a> you can
+            see an example of what a page with a widget looks like.
+          </p>
+          <p>
+            For guestbooks I recommend using <a href="https://www.123guestbook.com/" target="_blank">123guestbook</a> (which is what I use for <a href="/guestbook.html">my guestbook</a> iframe)
+            because it is very customizable and looks good in an iframe.
+          </p>
+		   <hr />
+          <h2>HTML/CSS Snippets</h2>
+		  <br />
+          <p><b>Adding a color filter over an image:</b> (<a href="/about/about-me.html#face">example</a>)</p>
+		  <p>HTML:</p>
+		  <pre><code>&lt;div class=&quot;pink-image&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/div&gt;</code></pre>
+		  <p>CSS
+			<pre><code>.pink-image {
+  position: relative;
+
+  img {
+    filter: brightness(1.1) contrast(1.3); // adjust as needed
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: pink; // adjust as needed
+    opacity: 0.25; // adjust as needed
+    pointer-events: none;
+  }
+}</code></pre>
           <hr />
-          <p><b>Add a text to every site title (displayed on the tabs) automatically:</b></p>
+          <h2>JavaScript Snippets</h2>
+          <p>These are some code snippets I wrote for my own site. Please only use these snippets if you have basic JavaScript knowledge, because they require very basic customization!</p>
+          <br />
+          <p><b>Add the same header and footer on every page:</b></p>
+          <p>This is helpful so you don't have to update the code for your header/footer on every single page when you make a change.</p>
           <pre>
-const tabTitle = document.title; 
+<code>document.addEventListener("DOMContentLoaded", function () {
+  const beforeMain = `
+  	&lt;header&gt;...&lt;/header&gt;
+  	  `;
+
+  const afterMain = `
+   &lt;footer&gt;...&lt;/footer&gt;
+  	  `;
+
+  const mainEl = document.querySelector("main");
+  if (!mainEl) return;
+  mainEl.insertAdjacentHTML("beforebegin", beforeMain);
+  mainEl.insertAdjacentHTML("afterend", afterMain);
+});</code></pre>
+          <p>HTML before:</p>
+          <pre><code>&lt;main&gt;...&lt;/main&gt;</code></pre>
+          <p>HTML after:</p>
+          <pre>
+<code>&lt;header&gt;...&lt;/header&gt;
+&lt;main&gt;...&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</pre
+          ></code>
+          <hr />
+          <p><b>Add text at the end of every site title (displayed on the tab) automatically:</b></p>
+          <pre>
+<code>const tabTitle = document.title; 
 if (tabTitle !== "YOUR HOME TITLE") { 
 	document.title = tabTitle + " | some text"; 
-}
+}</code>
 </pre
           >
           <p>The <i>if</i> makes sure that the title of your homepage doesn't end up like "site name | site name"</p>
           <hr />
           <p><b>Give the class "active" to any active navigation links:</b></p>
           <pre>
-const linkElements = document.querySelectorAll("nav a");
+<code>const linkElements = document.querySelectorAll("nav a");
 [...linkElements].forEach((el) => {
   const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
 
@@ -40,15 +125,15 @@ const linkElements = document.querySelectorAll("nav a");
       el.classList.add("active");
     }
   }
-});</pre
+});</code></pre
           >
           <p>(You will need to change the selector for your navigation links (default: "nav a") and the URL.)</p>
           <hr />
           <p><b>generate a table of contents automatically: </b>(<a href="/resources/bookmarks.html">example</a>)</p>
           <pre>
-const container = document.querySelector("#toc");
+<code>const container = document.querySelector("#toc");
 if (!container) return;
-const allHeadings = document.querySelectorAll("main h2");
+const allHeadings = document.querySelectorAll("h2");
 if (allHeadings.length &lt; 2) return;
 let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
 [...allHeadings].forEach((headingEl) =&gt; {
@@ -57,10 +142,11 @@ let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
 	headingEl.setAttribute("id", link);
 	output += `&lt;li&gt;&lt;a href="#${link}"&gt;${title}&lt;/a&gt;&lt;/li&gt;`;
 });
-container.innerHTML = output + "&lt;/ol&gt;";</pre
+container.innerHTML = output + "&lt;/ol&gt;";</code></pre
           >
+          <p>Change the selector (default: "h2") to any selector that targets the headings you want to turn into the table of contents.</p>
           <p>In your HTML, just add this line whereever you want it to be:</p>
-          <pre>&lt;div id="toc"&gt;&lt;/div&gt;</pre>
+          <pre><code>&lt;div id="toc"&gt;&lt;/div&gt;</code></pre>
         </section>
       </main>
     </div>

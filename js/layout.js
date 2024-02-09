@@ -1,3 +1,5 @@
+const localHref = window.location.href.includes("http://localhost") ? "/public" : "";
+
 const beforeMain = `
   	<header><h1 class="header-heading">petra pixel</h1></header>
       <aside class="aside aside--left">
@@ -5,13 +7,13 @@ const beforeMain = `
           <div class="aside-nav__section">
             <div class="aside__heading desktop-only">Menu</div>
             <ul>
-              <li><a href="/">home</a></li>
-              <li><a href="/about/about-me.html">about</a></li>
-              <li><a href="/about/credits.html">credits</a></li>
-              <li><a href="/guestbook.html">guestbook</a></li>
-              <li><a href="/about/web-rings.html">web rings</a></li>
-              <!-- <li><a href="/about/archive.html">archive</a></li> -->
-              <li class="mobile-only"><a href="/sitemap.html">sitemap</a></li>
+              <li><a href="${localHref}/">home</a></li>
+              <li><a href="${localHref}/about/about-me.html">about me</a></li>
+              <li><a href="${localHref}/guestbook.html">guestbook</a></li>
+              <li><a href="${localHref}/about/web-rings.html">web rings</a></li>
+              <li><a href="${localHref}/about/credits.html">credits</a></li>
+              <!-- <li><a href="${localHref}/about/archive.html">archive</a></li> -->
+              <li class="mobile-only"><a href="${localHref}/sitemap.html">sitemap</a></li>
             </ul>
           </div>
         </nav>
@@ -27,33 +29,33 @@ const beforeMain = `
             <div class="aside-nav__section">
               <div class="aside__heading">Creations</div>
               <ul>
-                <li><a href="/creations/art.html">art</a></li>
-                <li><a href="/creations/coding.html">coding</a></li>
-                <li><a href="/creations/playlists.html">playlists</a></li>
-                <li><a href="/creations/video-edits.html">video edits</a></li>
-                <li><a href="/creations/web-weaves.html">web weaves</a></li>
-                <li><a href="/creations/writing.html">writing</a></li>
+                <li><a href="${localHref}/creations/art.html">art</a></li>
+                <li><a href="${localHref}/creations/coding.html">coding</a></li>
+                <li><a href="${localHref}/creations/playlists.html">playlists</a></li>
+                <li><a href="${localHref}/creations/video-edits.html">video edits</a></li>
+                <li><a href="${localHref}/creations/web-weaves.html">web weaves</a></li>
+                <li><a href="${localHref}/creations/writing.html">writing</a></li>
               </ul>
             </div>
             <div class="aside-nav__section">
               <div class="aside__heading">Recommendations</div>
               <ul>
-                <li><a href="/recs/books.html">books</a></li>
-                <li><a href="/recs/games.html">games</a></li>
-                <li><a href="/recs/movies.html">movies</a></li>
-                <li><a href="/recs/music.html">music</a></li>
-                <li><a href="/recs/tv-shows.html">tv shows</a></li>
+                <li><a href="${localHref}/recs/books.html">books</a></li>
+                <li><a href="${localHref}/recs/games.html">games</a></li>
+                <li><a href="${localHref}/recs/movies.html">movies</a></li>
+                <li><a href="${localHref}/recs/music.html">music</a></li>
+                <li><a href="${localHref}/recs/tv-shows.html">tv shows</a></li>
               </ul>
             </div>
             <div class="aside-nav__section">
               <div class="aside__heading">Resources</div>
               <ul>
-                <li><a href="/resources/bookmarks.html">bookmarks</a></li>
-                <li><a href="/resources/clipboard.html">clipboard</a></li>
-                <li><a href="/resources/neocities.html">neocities</a></li>
-                <li><a href="/resources/notion.html">notion</a></li>
-                <li><a href="/resources/templates.html">templates</a></li>
-                <li><a href="/resources/vocabulary.html">vocabulary</a></li>
+                <li><a href="${localHref}/resources/bookmarks.html">bookmarks</a></li>
+                <li><a href="${localHref}/resources/clipboard.html">clipboard</a></li>
+                <li><a href="${localHref}/resources/neocities.html">neocities</a></li>
+                <li><a href="${localHref}/resources/notion.html">notion</a></li>
+                <li><a href="${localHref}/resources/templates.html">templates</a></li>
+                <li><a href="${localHref}/resources/vocabulary.html">vocabulary</a></li>
               </ul>
             </div>
           </nav>
@@ -66,7 +68,7 @@ const afterMain = `
         <div class="footer-content">
           © petrapixel 2024 <i>┊</i> hosted on <a href="https://neocities.org/" target="_blank">neocities</a> <i>┊</i>
           <a href="https://neocities.org/site/petrapixel" target="_blank">follow me on neocities</a
-          > <i>┊</i> <a href="https://neocities.org/site/petrapixel/stats" target="_blank">hit count</a> <span class="desktop-only"> <i>┊</i> <a href="/about/credits.html">credits</a> <i>┊</i> <a href="/sitemap.html">sitemap</a></span>
+          > <i>┊</i> <a href="https://neocities.org/site/petrapixel/stats" target="_blank">hit count</a> <span class="desktop-only"> <i>┊</i> <a href="${localHref}/about/credits.html">credits</a> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a></span>
         </div>
       </footer>
   	  `;
