@@ -1,7 +1,33 @@
-const localHref = window.location.href.includes("http://localhost") ? "/public" : "";
+export function buildLayout() {
+  const mainEl = document.querySelector("main:not(.no-layout)");
+  if (mainEl) {
+    const localHref = window.location.href.includes("http://localhost") ? "/public" : "";
+    const scriptEl = document.querySelector('head script[src*="main.js"]');
+    const nesting = scriptEl ? (scriptEl.getAttribute("src") == "main.js" ? "./" : "../") : "../";
 
-const beforeMain = `
-  	<header><h1 class="header-heading">petra pixel</h1></header>
+    mainEl.insertAdjacentHTML("beforebegin", getBeforeMain(localHref, nesting));
+    mainEl.insertAdjacentHTML("afterend", getAfterMain(localHref));
+
+    // Menu Toggle
+    const detailsEl = document.querySelector(".aside--right details");
+    if (detailsEl) {
+      let mql = window.matchMedia("(min-width: 576px)");
+      if (mql.matches) {
+        detailsEl.open = true;
+      }
+    }
+
+    doActiveLinks();
+    getChangelog();
+    prepareScrollToTop();
+  }
+
+  buildTableOfContents();
+}
+
+function getBeforeMain(localHref, nesting) {
+  return `
+  	<header><h1 class="header-heading">♡ petra pixel ♡</h1></header>
       <aside class="aside aside--left">
         <nav class="aside-nav">
           <div class="aside-nav__section">
@@ -10,17 +36,28 @@ const beforeMain = `
               <li><a href="${localHref}/">home</a></li>
               <li><a href="${localHref}/about/about-me.html">about me</a></li>
               <li><a href="${localHref}/guestbook.html">guestbook</a></li>
-              <li><a href="${localHref}/about/web-rings.html">web rings</a></li>
               <!-- <li><a href="${localHref}/about/archive.html">archive</a></li> -->
               <li class="mobile-only"><a href="${localHref}/about/credits.html">credits</a></li>
               <li class="mobile-only"><a href="${localHref}/sitemap.html">sitemap</a></li>
             </ul>
           </div>
         </nav>
-        <div class="aside-stuff desktop-only">
+		<div class="aside-stuff desktop-only">
           <div class="aside__heading">Changelog</div>
-          <div id="changelog" class="custom-scrollbar"></div>
+          <div id="changelog" class="custom-scrollbar">
+		  </div>
         </div>
+		<div class="aside-stuff desktop-only">
+          <div class="aside__heading">Stats</div>
+          <div>
+			<center>hit count:</center>
+			<iframe id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html" ></iframe>
+			<center>listening to:</center>
+			<iframe id="iframe-lastfm" src="https://petracoding.github.io/neocities/lastfm.html" ></iframe>
+			<center>my status:</center>
+			<iframe id="iframe-status" src="https://petracoding.github.io/neocities/status.html" ></iframe>
+		  </div>
+	    </div>
       </aside>
       <aside class="aside aside--right">
         <details>
@@ -40,58 +77,60 @@ const beforeMain = `
             <div class="aside-nav__section">
               <div class="aside__heading">Recommendations</div>
               <ul>
-                <li><a href="${localHref}/recs/books.html">books</a></li>
-                <li><a href="${localHref}/recs/games.html">games</a></li>
-                <li><a href="${localHref}/recs/movies.html">movies</a></li>
-                <li><a href="${localHref}/recs/music.html">music</a></li>
-                <li><a href="${localHref}/recs/tv-shows.html">tv shows</a></li>
+			  	<li><a href="${localHref}/recs/tv-shows.html">tv shows</a></li>
+			  	<li><a href="${localHref}/recs/movies.html">movies</a></li>
+			  	<li><a href="${localHref}/recs/books.html">books</a></li>
+			  	<li><a href="${localHref}/recs/games.html">games</a></li>
+			  	<li><a href="${localHref}/recs/music.html">music</a></li>
+                <li><a href="${localHref}/recs/software.html">software</a></li>
               </ul>
             </div>
+			<!-- 
+			<div class="aside-nav__section">
+              <div class="aside__heading">Shrines</div>
+              <ul>
+                <li><a href="${localHref}/shrines/hannibal.html">hannibal<img src="${nesting}img/link.png" /></a></li>
+              </ul>
+            </div>
+			-->
             <div class="aside-nav__section">
               <div class="aside__heading">Resources</div>
               <ul>
                 <li><a href="${localHref}/resources/bookmarks.html">bookmarks</a></li>
                 <li><a href="${localHref}/resources/clipboard.html">clipboard</a></li>
-                <li><a href="${localHref}/resources/neocities.html">neocities</a></li>
                 <li><a href="${localHref}/resources/notion.html">notion</a></li>
                 <li><a href="${localHref}/resources/templates.html">templates</a></li>
                 <li><a href="${localHref}/resources/vocabulary.html">vocabulary</a></li>
+				<li><a href="${localHref}/coding/neocities.html">neocities</a></li>
               </ul>
             </div>
+			<!--
+			<div class="aside-nav__section">
+              <div class="aside__heading">Coding Help</div>
+              <ul>
+                <li><a href="${localHref}/coding/advanced-coding.html">advanced tutorial<img src="${nesting}img/link.png" /></a></li>
+                <li><a href="${localHref}/coding/webpack-tutorial.html">webpack tutorial<img src="${nesting}img/link.png" /></a></li>
+              </ul>
+            </div>
+			-->
           </nav>
         </details>
       </aside>
+	  <div id="back-to-top-link"><a href="#">scroll to top</a></div>
   	  `;
+}
 
-const afterMain = `
+function getAfterMain(localHref) {
+  return `
    <footer>
         <div class="footer-content">
           © petrapixel 2024 <i>┊</i> hosted on <a href="https://neocities.org/" target="_blank">neocities</a> <i>┊</i>
           <a href="https://neocities.org/site/petrapixel" target="_blank">follow me on neocities</a
-          > <i>┊</i> <a href="https://neocities.org/site/petrapixel/stats" target="_blank">hit count</a> <span class="desktop-only"> <i>┊</i> <a href="${localHref}/about/credits.html">credits</a> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a></span>
+          > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/about/credits.html">credits</a> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a></span>
         </div>
       </footer>
   	  `;
-
-export const buildLayout = () => {
-  const mainEl = document.querySelector("main:not(.no-layout)");
-  if (!mainEl) return;
-  mainEl.insertAdjacentHTML("beforebegin", beforeMain);
-  mainEl.insertAdjacentHTML("afterend", afterMain);
-
-  // Menu Toggle
-  const detailsEl = document.querySelector(".aside--right details");
-  if (detailsEl) {
-    let mql = window.matchMedia("(min-width: 576px)");
-    if (mql.matches) {
-      detailsEl.open = true;
-    }
-  }
-
-  doActiveLinks();
-  getChangelog();
-  buildTableOfContents();
-};
+}
 
 function getChangelog() {
   fetch("https://petrapixel.neocities.org/changelog.json")
@@ -147,6 +186,18 @@ function doActiveLinks() {
   });
 }
 
+function prepareScrollToTop() {
+  const el = document.querySelector("#back-to-top-link");
+  if (!el) return;
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      el.classList.add("show");
+    } else {
+      el.classList.remove("show");
+    }
+  });
+}
+
 function buildTableOfContents() {
   const container = document.querySelector("#toc");
   if (!container) return;
@@ -155,7 +206,15 @@ function buildTableOfContents() {
   let output = "<b>Table of Contents:</b><ol>";
   [...allHeadings].forEach((headingEl) => {
     const title = headingEl.innerHTML;
-    const link = encodeURI(title).toLowerCase().replace("#", "");
+    const link =
+      headingEl.getAttribute("id") ||
+      encodeURI(
+        title
+          .replaceAll(" ", "-")
+          .replaceAll(":", "")
+          .replaceAll("#", "")
+          .replaceAll(/<[^>]*>?/gm, "")
+      ).toLowerCase();
     headingEl.setAttribute("id", link);
     output += `
 	  <li><a href="#${link}">${title}</a></li>`;

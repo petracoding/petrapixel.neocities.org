@@ -1,3 +1,161 @@
+main {
+  a {
+    &,
+    &:visited {
+      color: $linkColor;
+    }
+
+    &:hover,
+    &:focus {
+      color: $linkColorHover;
+      text-decoration-style: wavy;
+    }
+  }
+
+  p {
+    margin: 0.5em 0;
+    text-align: justify;
+  }
+
+  strong {
+    font-family: $font2, $font, sans-serif;
+    font-size: 0.8em;
+  }
+
+  ol,
+  ul {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+
+    li {
+      margin-bottom: 0.2em;
+      line-height: 1.3;
+    }
+
+    &.list-with-more-spacing {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+
+  blockquote {
+    background: rgba($gbDark, 0.1);
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 10px;
+  }
+
+  pre,
+  code {
+    display: block;
+    margin: 1em 0;
+    background: rgba($gbDark, 0.1);
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 0.75em;
+    line-height: 1.3;
+    text-transform: none;
+
+    code {
+      border-radius: 0;
+    }
+  }
+
+  .code-title {
+    text-align: right;
+    font-family: $font2, $font, sans-serif;
+    font-size: 0.7em;
+    margin-top: 1em;
+    margin-left: 1em;
+
+    & + pre,
+    & + code {
+      margin-top: 0;
+    }
+  }
+
+  center {
+    margin: 1em 0;
+    padding: 0 1em;
+
+    @media (min-width: $md) {
+      padding: 0 2em;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 2px dotted $gbLight;
+    margin: 1.5em 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 0;
+    line-height: 1.5;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+
+    @media (min-width: $lg) {
+      font-size: 32px;
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+
+    @media (min-width: $lg) {
+      font-size: 24px;
+    }
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 16px;
+
+    @media (min-width: $lg) {
+      font-size: 22px;
+    }
+  }
+
+  details {
+    summary {
+      background: $gbLight;
+      display: inline-block;
+      position: relative;
+      padding: 0 0.5em;
+      cursor: pointer;
+
+      &::before {
+        content: "⮯";
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+    }
+
+    &[open] {
+      summary::before {
+        content: "⮭";
+      }
+    }
+  }
+
+  abbr {
+    cursor: help;
+  }
+}
+
 /*=============================================
 =            TOC            =
 =============================================*/
@@ -195,16 +353,34 @@
   }
 }
 
-// Lightbox:
+/*=============================================
+=            TWO COLUMNS            =
+=============================================*/
+
+// Two columns:
+
+.two-columns {
+  @media (min-width: $sm) {
+    display: flex;
+
+    > * {
+      flex: 1 1 0;
+
+      &:not(ul):not(ol):first-child {
+        margin-right: 1em;
+      }
+
+      &:not(ul):not(ol):last-child {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+/*=============================================
+=            MISC.            =
+=============================================*/
 
 .fslightbox-toolbar-button[title="Enter fullscreen"] {
   display: none;
-}
-
-.art-faq {
-  strong {
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: $gbDark;
-  }
 }

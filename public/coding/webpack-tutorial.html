@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>webpack tutorial</title>
+    <script src="../main.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <!-- code highlight -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <style>
+      pre code.hljs {
+        background: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.9em;
+      }
+      .hljs-section,
+      .hljs-title {
+        color: #94113c;
+      }
+      .hljs-attribute,
+      .hljs-doctag,
+      .hljs-keyword,
+      .hljs-meta .hljs-keyword,
+      .hljs-name,
+      .hljs-selector-tag {
+        color: #2b2b2b;
+      }
+    </style>
+  </head>
+  <body class="full-page-tutorial">
+    <div id="no-js-warning">Please enable JavaScript to view this website!</div>
+    <a href="/" class="back-link">⮪ home</a>
+    <main class="no-layout">
+      <section>
+        <h1>Webpack Tutorial</h1>
+        <hr />
+        <strong>What is webpack?</strong>
+        <p></p>
+        <strong>Why you should use webpack:</strong>
+        <ul>
+          <li>SCSS</li>
+        </ul>
+        <strong>What you need:</strong>
+        <ul>
+          <li>VSCode</li>
+        </ul>
+        <hr />
+        <div>
+          <b>Table of Contents:</b>
+          <ol>
+            <li>
+              <a href="#prep">Preparation</a>
+            </li>
+            <li>
+              <a href="#install">Installation</a>
+            </li>
+            <li>
+              <a href="#setup">Basic/JS Setup</a>
+            </li>
+            <li>
+              <a href="#css">CSS/SCSS Setup</a>
+            </li>
+            <li>
+              <a href="#files">File/Image Setup</a>
+            </li>
+            <li>
+              <a href="#use">Usage</a>
+            </li>
+            <li><a href="#end">Conclusion &amp; Tips</a></li>
+            <li><a href="#cheatsheet">Cheatsheet</a></li>
+          </ol>
+        </div>
+        <hr />
+      </section>
+      <section>
+        <h2 id="prep"><small>Step 1:</small> Preparation</h2>
+
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil exercitationem explicabo tenetur voluptatibus libero, illo quaerat aliquid suscipit placeat dicta magnam error minima, tempora
+          labore consectetur, aut totam autem quibusdam?
+        </p>
+        <div class="code-title">blabla.js</div>
+        <pre><code>.pink-image {
+  position: relative;
+
+  img {
+    filter: brightness(1.1) contrast(1.3); // adjust as needed
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: pink; // adjust as needed
+    opacity: 0.25; // adjust as needed
+    pointer-events: none;
+  }
+}</code></pre>
+      </section>
+      <section>
+        <h2 id="install"><small>Step 2:</small> Installation</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil exercitationem explicabo tenetur voluptatibus libero, illo quaerat aliquid suscipit placeat dicta magnam error minima, tempora
+          labore consectetur, aut totam autem quibusdam?
+        </p>
+      </section>
+      <section>
+        <h2 id="setup"><small>Step 3:</small> Basic/JS Setup</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil exercitationem explicabo tenetur voluptatibus libero, illo quaerat aliquid suscipit placeat dicta magnam error minima, tempora
+          labore consectetur, aut totam autem quibusdam?
+        </p>
+      </section>
+      <section>
+        <h2 id="css"><small>Step 4:</small> CSS/SCSS Setup</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil exercitationem explicabo tenetur voluptatibus libero, illo quaerat aliquid suscipit placeat dicta magnam error minima, tempora
+          labore consectetur, aut totam autem quibusdam?
+        </p>
+      </section>
+      <section>
+        <h2 id="files"><small>Step 5:</small> File/Image Setup</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil exercitationem explicabo tenetur voluptatibus libero, illo quaerat aliquid suscipit placeat dicta magnam error minima, tempora
+          labore consectetur, aut totam autem quibusdam?
+        </p>
+      </section>
+      <section>
+        <h2 id="use"><small>Step 6:</small> Usage</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil exercitationem explicabo tenetur voluptatibus libero, illo quaerat aliquid suscipit placeat dicta magnam error minima, tempora
+          labore consectetur, aut totam autem quibusdam?
+        </p>
+      </section>
+      <section>
+        <h2 id="faq">FAQ</h2>
+        <p><strong>I'm making changes but nothing works!</strong><br />Blabla</p>
+      </section>
+      <section>
+        <h2 id="end">Conclusion & Tips</h2>
+        <p>Use StackOverflow if you need help.</p>
+        <p>Composer</p>
+      </section>
+      <section>
+        <hr />
+        <h2 id="cheatsheet">Cheatsheet</h2>
+        <div class="webpack-cheatsheet">
+          <h3 id="cheatsheet-commands">Commands</h3>
+          <div class="two-columns">
+            <div>
+              <div class="cheatsheet__inline">
+                <pre><code>npm -v</code></pre>
+                <span>shows your npm version.</span>
+              </div>
+              <div class="cheatsheet__inline">
+                <pre><code>npm install</code></pre>
+                <span>installs packages.</span>
+              </div>
+            </div>
+            <div>
+              <div class="cheatsheet__inline">
+                <pre><code>npm run watch</code></pre>
+                <span>starts the watcher <br /><small>(if you have configured the command in your package.json)</small></span>
+              </div>
+              <div class="cheatsheet__inline">
+                <pre><code>npm run build</code></pre>
+                <span>builds the files <br /><small>(if you have configured the command in your package.json)</small></span>
+              </div>
+            </div>
+          </div>
+          <h3 id="cheatsheet-js">JavaScript</h3>
+          <div class="two-columns">
+            <div>
+              <div class="cheatsheet__inline">
+                <span>Import SCSS/CSS:</span>
+                <pre><code>import "./myStyles.scss";</code></pre>
+              </div>
+
+              <div class="cheatsheet__inline">
+                <span>Import a JS file:</span>
+                <pre><code>import "./myFolder/myFile";</code></pre>
+              </div>
+
+              <div class="cheatsheet__inline">
+                <span>Import functions from a JS file:</span>
+                <pre><code>import { doSomething } from "./myFolder/myFile";</code></pre>
+              </div>
+            </div>
+            <div>
+              <div class="cheatsheet__inline">
+                <span>Exporting a function:</span>
+                <pre><code>export function doSomething(para1, para2) {
+  ...
+};</code></pre>
+                <span>or</span>
+                <pre><code>export const doSomething = (para1, para2) => {
+  ...
+};</code></pre>
+              </div>
+            </div>
+          </div>
+          <h3 id="cheatsheet-css">CSS/SCSS</h3>
+          <div class="two-columns">
+            <div>
+              <div class="cheatsheet__inline">
+                <span>Importing a CSS file:</span>
+                <pre><code>@import "./myFolder/myFile";</code></pre>
+              </div>
+              <div class="cheatsheet__inline">
+                <span>SCSS Variables:</span>
+                <pre><code class="language-css">$variable1: 123px;
+$variable2: "example";
+$variable3: #fff;
+
+width: $variable1;
+
+@media (min-width: $variable1) {
+  ...
+}</code></pre>
+              </div>
+              <div class="cheatsheet__inline">
+                <span>SCSS <a href="https://sass-lang.com/documentation/at-rules/mixin/" target="_blank">Mixins</a>:</span>
+                <pre><code class="language-css">@mixin exampleMixin($width: 50px) {
+  width: $width;
+  color: red;
+}
+
+.example {
+  @include exampleMixin(100px);
+}</code></pre>
+              </div>
+            </div>
+            <div>
+              <div class="cheatsheet__inline">
+                <span>SCSS nesting: <br /><small>("&" refers to the current selector, in this example "h1")</small> </span>
+                <pre><code>h1 {
+  font-weight: bold;
+  b {
+    color: red;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+  & + h2 {
+    margin-top: 0;
+  }
+}
+</code></pre>
+                <span>becomes:</span>
+                <pre><code>h1 {
+  font-weight: bold;
+}
+h1 b {
+  color: red;
+}
+h1:hover {
+  text-decoration: underline;
+}
+h1 + h2 {
+  margin-top: 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <h3 id="cheatsheet-config">Example Configuration</h3>
+          <div class="two-columns">
+            <div>
+              <div class="code-title">webpack.config.js</div>
+              <pre><code class="language-js">const path = require("path");
+
+module.exports = {
+  mode: "development",
+  entry: "./js/main.js",
+  output: {
+    path: path.resolve(__dirname, "."),
+    filename: "public/main.js",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      //   {
+      //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
+      //     type: "asset/resource",
+      //   },
+    ],
+  },
+};
+			  </code></pre>
+            </div>
+            <div>
+              <div class="code-title">package.json</div>
+              <pre><code class="language-js">{
+  "name": "yourprojectname",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.2.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.47.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack"
+  }
+}
+			  </code></pre>
+              <p>Don't forget to run <strong style="font-family: monospace">npm install</strong> whenever you update your dependencies in this file!</p>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </section>
+    </main>
+  </body>
+</html>

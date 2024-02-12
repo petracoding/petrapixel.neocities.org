@@ -1,6 +1,9 @@
 {
   "changelog": [
     { "d": "2024-02-XX", "t": "TEMPLATE", "l": "/example.html" },
+    { "d": "2024-02-12", "t": "More Content, Design update", "l": "" },
+    { "d": "2024-02-10", "t": "More Content", "l": "" },
+    { "d": "2024-02-09", "t": "More Content", "l": "" },
     { "d": "2024-02-08", "t": "Bugfixes", "l": "" },
     { "d": "2024-02-07", "t": "Site creation!", "l": "/" }
   ]

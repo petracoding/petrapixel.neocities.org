@@ -1,0 +1,78 @@
+body.full-page-tutorial {
+  position: relative;
+  display: block;
+  padding: 2vh 2vw;
+
+  section {
+    &:not(:first-child) {
+      margin-top: 5em;
+    }
+  }
+
+  .back-link {
+    display: block;
+    margin-bottom: 1em;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $gbLight;
+    }
+  }
+
+  h2 {
+    small {
+      font-family: $font2, $font, sans-serif;
+      font-size: 0.6em;
+      letter-spacing: 0;
+      filter: brightness(1.9);
+    }
+  }
+
+  @media (min-width: $lg) {
+    padding: 10vh 10vw;
+
+    .back-link {
+      padding: 0.5em;
+      position: fixed;
+      top: 0.5em;
+      left: 0.5em;
+    }
+  }
+}
+
+// CHEATSHEET
+
+main .webpack-cheatsheet {
+  margin-top: 2em;
+  line-height: 1;
+
+  .two-columns {
+    background: rgba($gbDark, 0.05);
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+  .cheatsheet__inline {
+    margin-bottom: 1em;
+
+    pre {
+      display: inline-block;
+      margin: 0.6em 0;
+      padding: 0.4em 0.8em;
+
+      code.hljs {
+        font-size: 1em;
+      }
+    }
+
+    > span {
+      display: block;
+
+      small {
+        opacity: 0.7;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

@@ -19,6 +19,7 @@ $asideLinkColorHover: $gbLightest;
 $sm: 576px;
 $md: 992px;
 $lg: 1000px;
+$xl: 1200px;
 
 @import "./mixins";
 @import "./folder/defaults";
@@ -28,3 +29,7 @@ $lg: 1000px;
 @import "./folder/clipboard";
 @import "./folder/bookmarks";
 @import "./folder/video-edits";
+@import "./folder/playlists";
+@import "./folder/writing";
+
+@import "./folder/full-page-tutorial";
