@@ -5,8 +5,7 @@
 # ver 20210211
 # -----------------------------------------------------------------
 
-# ignore all files starting with . or ~
-.*
+# ignore all files starting with  ~
 ~*
 
 # ignore node/grunt dependency directories
