@@ -30,7 +30,7 @@ export function buildLayout() {
 
 function getBeforeMain(localHref, nesting) {
   return `
-  	<header><h1 class="header-heading">♡ petra pixel ♡</h1></header>
+  	<header><h1 class="header-heading"><a href="${localHref}/">♡ petra pixel ♡</a></h1></header>
       <aside class="aside aside--left">
         <nav class="aside-nav">
           <div class="aside-nav__section">
@@ -72,7 +72,7 @@ function getBeforeMain(localHref, nesting) {
               <ul>
                 <li><a href="${localHref}/creations/art.html">my art</a></li>
                 <li><a href="${localHref}/creations/coding.html">my coding</a></li>
-                <li><a href="${localHref}/creations/playlists.html">my playlists</a></li>
+                <li><a href="${localHref}/creations/playlists.html">my playlists</a> <small class="aside__new" style="right: 47px;">new!</small></li>
                 <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
                 <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
                 <li><a href="${localHref}/creations/writing.html">my writing</a></li>
@@ -81,12 +81,12 @@ function getBeforeMain(localHref, nesting) {
             <div class="aside-nav__section">
               <div class="aside__heading">Recommendations</div>
               <ul>
+			  <li><a href="${localHref}/recs/music.html">music</a></li>
 			  	<li><a href="${localHref}/recs/tv-shows.html">tv shows</a></li>
 			  	<li><a href="${localHref}/recs/movies.html">movies</a></li>
 			  	<li><a href="${localHref}/recs/books.html">books</a></li>
 			  	<li><a href="${localHref}/recs/games.html">games</a></li>
-			  	<li><a href="${localHref}/recs/music.html">music</a></li>
-                <li><a href="${localHref}/recs/software.html">software</a></li>
+                <!-- <li><a href="${localHref}/recs/software.html">software</a></li> -->
               </ul>
             </div>
 			<!-- 
@@ -102,21 +102,21 @@ function getBeforeMain(localHref, nesting) {
               <ul>
                 <li><a href="${localHref}/resources/bookmarks.html">bookmarks</a></li>
                 <li><a href="${localHref}/resources/clipboard.html">clipboard</a></li>
+				<!--
                 <li><a href="${localHref}/resources/notion.html">notion</a></li>
                 <li><a href="${localHref}/resources/templates.html">templates</a></li>
                 <li><a href="${localHref}/resources/vocabulary.html">vocabulary</a></li>
-				<li><a href="${localHref}/coding/neocities.html">neocities</a></li>
+				-->
               </ul>
             </div>
-			<!--
 			<div class="aside-nav__section">
               <div class="aside__heading">Coding Help</div>
               <ul>
+				<li><a href="${localHref}/coding/neocities.html">neocities</a></li>
                 <li><a href="${localHref}/coding/advanced-coding.html">advanced tutorial<img src="${nesting}img/link.png" /></a></li>
                 <li><a href="${localHref}/coding/webpack-tutorial.html">webpack tutorial<img src="${nesting}img/link.png" /></a></li>
               </ul>
             </div>
-			-->
           </nav>
         </details>
       </aside>

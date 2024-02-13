@@ -120,6 +120,10 @@ header {
 .header-heading {
   margin: 0;
   padding: 0.25em 1em 0em;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 #marquee {
@@ -271,6 +275,7 @@ header {
 
   li {
     line-height: 1;
+    position: relative;
 
     a {
       display: block;
@@ -307,6 +312,23 @@ header {
       }
     }
   }
+}
+
+.aside__new {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  text-transform: uppercase;
+  font-family: $font2, $font, sans-serif;
+  font-size: 9px;
+  pointer-events: none;
+  line-height: 1;
+  border: 2px solid currentColor;
+  margin-left: 0.5em;
+  padding: 1px 2px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 .aside-nav__section {

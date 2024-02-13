@@ -1,5 +1,6 @@
 .playlists-heading,
-.playlists-heading + p {
+.playlists-heading + p,
+.playlists-subheading {
   margin-left: 5px;
 }
 
@@ -126,6 +127,10 @@
   color: $gbDarkest;
 }
 
+.playlist__fandom {
+  line-height: 1.1;
+}
+
 .playlist__info {
   font-size: 0.9em;
   color: $gbDark;
@@ -224,8 +229,8 @@
   transform: none;
   transition: 0.2s ease;
   cursor: pointer;
-  padding-bottom: 3px;
   z-index: 9999;
+  //   padding-bottom: 3px;
 
   &:hover,
   &:focus {

@@ -57,6 +57,36 @@
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
+          <h2>Automatic Deployment</h2>
+          <p>
+            Using <a href="https://github.com/marketplace/actions/deploy-to-neocities" target="_blank">this amazing GitHub Action</a> you can automatically deploy your changes to Neocities without
+            manually uploading any files. It only updates the files that were actually changed, don't worry about your feed. Prerequisite for this is that you have a GitHub repository for your
+            project.
+          </p>
+          <strong>How to do it:</strong>
+          <ul>
+            <li>Make sure all the files in your project that should be uploaded to Neocities are in a folder called <i>public</i>.</li>
+            <li>
+              Create the following file in the root of your project (<i>NOT</i> in the <i>public</i> folder): <code>.github/workflows/neocities.yml</code> Make sure you spell it correctly! Don't
+              forget the "." at the start of the first folder name.
+            </li>
+            <li>Insert the code shown <a href="https://github.com/marketplace/actions/deploy-to-neocities#usage" target="_blank">here</a> into your file.</li>
+            <li>If your branch is called 'main' instead of 'master' make sure to change that on line 7.</li>
+            <li>Comment out (= add a # at the start of the line) lines 21 to 28. You don't need them.</li>
+            <li>If you want to you can set <i>cleanup</i> to <i>true</i>. This means that files that are still uploaded to Neocities but not in your project anymore are deleted from Neocities.</li>
+            <li>
+              Open your repository on GitHub, go to its "Settings", then "Secrets and Variables" -> "Actions". Add a secret with the name
+              <span style="text-transform: none">NEOCITIES_API_TOKEN</span> . The value is your API Key from Neocities (Can be found in your Site Settings on Neocities under "<span
+                style="text-transform: none"
+                >API</span
+              >").
+            </li>
+          </ul>
+          <p>Done! Now whenever you push to your master/main branch, the changed/added files will automatically be uploaded to your Neocities site.</p>
+          <hr />
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
           <h2>HTML/CSS Snippets</h2>
           <br />
           <!-- ----------------------------------------------------------------------------------------------------- -->
