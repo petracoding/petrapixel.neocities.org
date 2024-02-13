@@ -34,7 +34,8 @@
     </style>
   </head>
   <body class="full-page-tutorial">
-    <div id="no-js-warning">Please enable JavaScript to view this website!</div>
+    <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
+    <div class="wip-banner">Work in progress! Please come back later!</div>
     <a href="/" class="back-link">⮪ home</a>
     <main class="no-layout">
       <section>
@@ -71,10 +72,14 @@
               <a href="#checklist">Checklist</a>
             </li>
             <li><a href="#cheatsheet">Cheatsheet</a></li>
+            <li><a href="#comments">Comment Section</a></li>
           </ol>
         </div>
         <hr />
       </section>
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+      <!-- ----------------------------------------------------------------------------------------------------- -->
       <section>
         <h2 id="codequality">Code Quality</h2>
         <p>
@@ -82,11 +87,37 @@
           enim odit numquam magnam! Neque, saepe inventore?
         </p>
       </section>
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+      <!-- ----------------------------------------------------------------------------------------------------- -->
       <section>
         <hr />
         <h2 id="cheatsheet">Cheatsheet</h2>
 
         <hr />
+      </section>
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+      <section>
+        <h2 id="comments">Comment Section</h2>
+        <p>Got questions? Need help? Want to thank me? Use the comment box below. No registration necessary!</p>
+        <blockquote><div id="disqus_thread"></div></blockquote>
+        <script>
+          var disqus_config = function () {
+            this.page.url = "https://petrapixel.neocities.org/coding/advanced-coding.html";
+            this.page.identifier = "advanced-coding";
+          };
+          (function () {
+            // DON'T EDIT BELOW THIS LINE
+            var d = document,
+              s = d.createElement("script");
+            s.src = "https://petrapixel.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </section>
     </main>
   </body>

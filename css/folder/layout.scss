@@ -352,7 +352,7 @@ footer {
   border: 0;
 }
 
-/*----------  No JS Warning  ----------*/
+/*----------  Others  ----------*/
 
 #no-js-warning {
   background: red;
@@ -382,4 +382,22 @@ footer {
   100% {
     opacity: 1;
   }
+}
+
+.sparkle {
+  height: 1em;
+  transform: scale(1.3);
+  margin: 0 0.5em;
+}
+
+.wip-banner {
+  background: $gbLight;
+  color: $gbDarkest;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 50px;
+  text-align: center;
+  z-index: 999;
 }

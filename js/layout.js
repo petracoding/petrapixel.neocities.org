@@ -1,7 +1,10 @@
+const isLocalhost = window.location.href.includes("http://localhost");
+const noCache = "?nocache=" + new Date().getTime();
+
 export function buildLayout() {
   const mainEl = document.querySelector("main:not(.no-layout)");
   if (mainEl) {
-    const localHref = window.location.href.includes("http://localhost") ? "/public" : "";
+    const localHref = isLocalhost ? "/public" : "";
     const scriptEl = document.querySelector('head script[src*="main.js"]');
     const nesting = scriptEl ? (scriptEl.getAttribute("src") == "main.js" ? "./" : "../") : "../";
 
@@ -36,6 +39,7 @@ function getBeforeMain(localHref, nesting) {
               <li><a href="${localHref}/">home</a></li>
               <li><a href="${localHref}/about/about-me.html">about me</a></li>
               <li><a href="${localHref}/guestbook.html">guestbook</a></li>
+              <li><a href="${localHref}/about/blinkies.html">blinkies</a></li>
               <!-- <li><a href="${localHref}/about/archive.html">archive</a></li> -->
               <li class="mobile-only"><a href="${localHref}/about/credits.html">credits</a></li>
               <li class="mobile-only"><a href="${localHref}/sitemap.html">sitemap</a></li>
@@ -51,11 +55,11 @@ function getBeforeMain(localHref, nesting) {
           <div class="aside__heading">Stats</div>
           <div>
 			<center>hit count:</center>
-			<iframe id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html" ></iframe>
+			<iframe id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html${noCache}" ></iframe>
 			<center>listening to:</center>
-			<iframe id="iframe-lastfm" src="https://petracoding.github.io/neocities/lastfm.html" ></iframe>
+			<iframe id="iframe-lastfm" src="https://petracoding.github.io/neocities/lastfm.html${noCache}" ></iframe>
 			<center>my status:</center>
-			<iframe id="iframe-status" src="https://petracoding.github.io/neocities/status.html" ></iframe>
+			<iframe id="iframe-status" src="https://petracoding.github.io/neocities/status.html${noCache}" ></iframe>
 		  </div>
 	    </div>
       </aside>
@@ -133,7 +137,8 @@ function getAfterMain(localHref) {
 }
 
 function getChangelog() {
-  fetch("https://petrapixel.neocities.org/changelog.json")
+  const changelogFile = isLocalhost ? "http://localhost:52330/public/changelog.json" : "https://petrapixel.neocities.org/changelog.json";
+  fetch(changelogFile + noCache)
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);

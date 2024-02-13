@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Pages
-import "./pages/recs";
 import "./pages/clipboard";
 import "./pages/playlists";
 import "./pages/writing";

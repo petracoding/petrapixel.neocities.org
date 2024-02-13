@@ -8,11 +8,78 @@
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
-    <div id="no-js-warning">Please enable JavaScript to view this website!</div>
+    <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
     <div id="content">
       <main>
-        <section>This page is under construction! Please check back later.</section>
+        <section>
+          <h1>Game Recs</h1>
+          This page is under construction! Please check back later.
+        </section>
+        <section style="display: none">
+          <h1>Game Recs</h1>
+          <p>Here are some games I've enjoyed and would definitely recommend!</p>
+          <p>You can also seem them on <a href="https://www.backloggd.com/u/Petra1999/games/user-rating/" target="_blank">my backloggd profile</a>!</p>
+          <strong>Filter:</strong>
+          <div class="rec-filters">
+            <div class="rec-filters__group">
+              <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
+                <button class="rec-filters__button is-checked" data-filter="">any platform</button>
+                <button class="rec-filters__button" data-filter=".pc">pc</button>
+                <button class="rec-filters__button" data-filter=".switch">switch</button>
+                <button class="rec-filters__button" data-filter=".web">web</button>
+                <button class="rec-filters__button" data-filter=".other">other</button>
+              </div>
+            </div>
+            <div class="rec-filters__group">
+              <div class="rec-filters__buttons js-radio-button-group" data-filter-group="size">
+                <button class="rec-filters__button is-checked" data-filter="">any type</button>
+                <button class="rec-filters__button" data-filter=".singleplayer">singleplayer</button>
+                <button class="rec-filters__button" data-filter=".multiplayer">multiplayer</button>
+              </div>
+            </div>
+            <div class="rec-filters__group">
+              <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
+                <button class="rec-filters__button is-checked" data-filter="">any rating</button>
+                <button class="rec-filters__button" data-filter=".r1">★★★★</button>
+                <button class="rec-filters__button" data-filter=".r2">★★★★<small>½</small></button>
+                <button class="rec-filters__button" data-filter=".r3">★★★★★</button>
+              </div>
+            </div>
+          </div>
+          <div class="isotope-items">
+            <div class="item classic 1800 children"></div>
+          </div>
+        </section>
       </main>
     </div>
+    <!-- Isotope: -->
+    <script src="../assets/jquery.js"></script>
+    <script src="../assets/isotope.js"></script>
+    <script>
+      var $isotope = $(".isotope-items").isotope({
+        itemSelector: ".item",
+      });
+      var isotopeFilters = {};
+
+      $("button").click(function () {
+        var $buttonGroup = $(this).parents(".rec-filters__buttons");
+        var filterGroup = $buttonGroup.attr("data-filter-group");
+        isotopeFilters[filterGroup] = $(this).attr("data-filter");
+        var filterValue = concatValues(isotopeFilters);
+        $isotope.isotope({ filter: filterValue });
+
+        // active state
+        $buttonGroup.find(".is-checked").removeClass("is-checked");
+        $(this).addClass("is-checked");
+      });
+
+      function concatValues(obj) {
+        var value = "";
+        for (var prop in obj) {
+          value += obj[prop];
+        }
+        return value;
+      }
+    </script>
   </body>
 </html>

@@ -1,18 +1,96 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>tv show recs</title>
+    <title>tv recs</title>
     <script src="../main.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
-    <div id="no-js-warning">Please enable JavaScript to view this website!</div>
+    <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
     <div id="content">
       <main>
-        <section>This page is under construction! Please check back later.</section>
+        <section>
+          <h1>TV Recs</h1>
+          This page is under construction! Please check back later.
+        </section>
+        <section style="display: none">
+          <h1>TV Recs</h1>
+          <p>Here are some tv shows I've enjoyed and would definitely recommend!</p>
+          <strong>Filter:</strong>
+          <div class="rec-filters">
+            <div class="rec-filters__group">
+              <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
+                <button class="rec-filters__button is-checked" data-filter="">any genre</button>
+                <button class="rec-filters__button" data-filter=".action">action</button>
+                <button class="rec-filters__button" data-filter=".adventure">adventure</button>
+                <button class="rec-filters__button" data-filter=".animated">animated</button>
+                <button class="rec-filters__button" data-filter=".comedy">comedy</button>
+                <button class="rec-filters__button" data-filter=".drama">drama</button>
+                <button class="rec-filters__button" data-filter=".family">family</button>
+                <button class="rec-filters__button" data-filter=".horror">horror</button>
+                <button class="rec-filters__button" data-filter=".queer">queer</button>
+                <button class="rec-filters__button" data-filter=".romance">romance</button>
+                <button class="rec-filters__button" data-filter=".scifi">sci-fi</button>
+                <button class="rec-filters__button" data-filter=".thriller">thriller</button>
+              </div>
+            </div>
+            <div class="rec-filters__group">
+              <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
+                <button class="rec-filters__button is-checked" data-filter="">any decade</button>
+                <button class="rec-filters__button" data-filter=".1900">1900-49</button>
+                <button class="rec-filters__button" data-filter=".1950">1950-79</button>
+                <button class="rec-filters__button" data-filter=".80">80s</button>
+                <button class="rec-filters__button" data-filter=".90">90s</button>
+                <button class="rec-filters__button" data-filter=".00">2000s</button>
+                <button class="rec-filters__button" data-filter=".10">2010s</button>
+                <button class="rec-filters__button" data-filter=".20">2020s</button>
+              </div>
+            </div>
+            <div class="rec-filters__group">
+              <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
+                <button class="rec-filters__button is-checked" data-filter="">any rating</button>
+                <button class="rec-filters__button" data-filter=".r1">★★★★</button>
+                <button class="rec-filters__button" data-filter=".r2">★★★★<small>½</small></button>
+                <button class="rec-filters__button" data-filter=".r3">★★★★★</button>
+              </div>
+            </div>
+          </div>
+          <div class="isotope-items">
+            <div class="item classic 1800 children"></div>
+          </div>
+        </section>
       </main>
     </div>
+    <!-- Isotope: -->
+    <script src="../assets/jquery.js"></script>
+    <script src="../assets/isotope.js"></script>
+    <script>
+      var $isotope = $(".isotope-items").isotope({
+        itemSelector: ".item",
+      });
+      var isotopeFilters = {};
+
+      $("button").click(function () {
+        var $buttonGroup = $(this).parents(".rec-filters__buttons");
+        var filterGroup = $buttonGroup.attr("data-filter-group");
+        isotopeFilters[filterGroup] = $(this).attr("data-filter");
+        var filterValue = concatValues(isotopeFilters);
+        $isotope.isotope({ filter: filterValue });
+
+        // active state
+        $buttonGroup.find(".is-checked").removeClass("is-checked");
+        $(this).addClass("is-checked");
+      });
+
+      function concatValues(obj) {
+        var value = "";
+        for (var prop in obj) {
+          value += obj[prop];
+        }
+        return value;
+      }
+    </script>
   </body>
 </html>
