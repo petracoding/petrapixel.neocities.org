@@ -20,6 +20,7 @@ main {
   strong {
     font-family: $font2, $font, sans-serif;
     font-size: 0.8em;
+    color: darken($textColor, 5%);
   }
 
   ol,
@@ -42,7 +43,7 @@ main {
   }
 
   blockquote {
-    background: rgba($gbDark, 0.1);
+    background: rgba($pink, 0.1);
     padding: 1em;
     margin: 1em 0;
     border-radius: 10px;
@@ -135,7 +136,7 @@ main {
       display: inline-block;
       position: relative;
       padding: 0 0.5em;
-      cursor: pointer;
+      cursor: $cursorPointer;
 
       &::before {
         content: "⮯";
@@ -152,7 +153,7 @@ main {
   }
 
   abbr {
-    cursor: help;
+    cursor: $cursorHelp;
   }
 }
 
@@ -227,8 +228,8 @@ main {
         right: 0;
         bottom: 0;
         top: 0;
-        background: #f79595;
-        opacity: 0.4;
+        background: #c891bd;
+        opacity: 0.3;
         pointer-events: none;
       }
     }

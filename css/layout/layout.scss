@@ -71,7 +71,6 @@
 
 main:not(.no-layout) {
   grid-area: main;
-  background: $mainBackgroundColor;
   padding: 1em 0;
   display: flex;
   flex-direction: column;
@@ -86,6 +85,7 @@ main:not(.no-layout) {
     padding: 1em 1em;
     border: 1px $gbDark dashed;
     margin-bottom: 1em;
+    background: $mainBackgroundColor;
 
     &:first-child:last-child {
       min-height: 100%;
@@ -122,16 +122,25 @@ header {
   padding: 0.25em 1em 0em;
 
   a {
+    display: inline-block;
     text-decoration: none;
+    text-shadow: 3px 3px 1px white;
+    transition: transform 0.2s ease;
+    transform: none;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+    }
   }
 }
 
 #marquee {
+  margin-bottom: 15px;
+
   &:empty {
     display: none;
   }
-
-  margin-bottom: 15px;
 }
 
 /*----------  Aside  ----------*/
@@ -139,6 +148,7 @@ header {
 .aside {
   background: $asideBackgroundColor;
   padding: 10px 14px;
+  color: $asideTextColor;
 }
 
 .aside--left {
@@ -178,7 +188,7 @@ header {
 
 .aside__heading {
   display: block;
-  border: 1px solid black;
+  border: 1px dashed currentColor;
   border-radius: 5px;
   font-size: 0.7em;
   text-transform: uppercase;
@@ -206,7 +216,7 @@ header {
 
   a {
     text-decoration: none;
-    cursor: help;
+    cursor: $cursorHelp;
     display: block;
   }
 
@@ -219,11 +229,22 @@ header {
   }
 }
 
-#changelog {
+.changelog {
   max-height: 70px;
   overflow-y: scroll;
   margin-top: 5px;
-  font-size: 0.8em;
+  font-size: 0.9em;
+
+  ul {
+    margin: 0;
+    font-size: 0.9em;
+    padding-left: 15px;
+  }
+
+  &,
+  a {
+    color: $asideTextColor;
+  }
 }
 
 @media (min-width: $sm) {
@@ -241,7 +262,7 @@ header {
     }
   }
 
-  #changelog {
+  .changelog {
     margin-top: 18px;
   }
 }
@@ -283,15 +304,9 @@ header {
       color: $asideLinkColor;
       text-decoration: underline;
       text-decoration-style: dashed;
-      cursor: help;
+      cursor: $cursorHelp;
       font-family: $font2, $font, sans-serif;
       font-size: 14px;
-
-      img {
-        display: inline-block;
-        margin-left: 5px;
-        margin-bottom: 2px;
-      }
 
       &:hover,
       &:focus {
@@ -310,6 +325,14 @@ header {
         color: $asideLinkColorHover;
         text-decoration-style: wavy;
       }
+
+      // external link
+      img {
+        display: inline-block;
+        margin-left: 5px;
+        margin-bottom: 2px;
+        opacity: 0.8;
+      }
     }
   }
 }
@@ -317,18 +340,12 @@ header {
 .aside__new {
   position: absolute;
   right: 0;
-  top: 3px;
+  top: 5px;
   text-transform: uppercase;
   font-family: $font2, $font, sans-serif;
   font-size: 9px;
   pointer-events: none;
   line-height: 1;
-  border: 2px solid currentColor;
-  margin-left: 0.5em;
-  padding: 1px 2px;
-  letter-spacing: 1px;
-  font-weight: bold;
-  border-radius: 4px;
 }
 
 .aside-nav__section {
@@ -342,15 +359,18 @@ header {
 /*----------  Footer  ----------*/
 
 footer {
+  display: flex;
+  justify-content: center;
   background: $footerBackgroundColor;
   grid-area: footer;
-  margin-top: 5vw;
+  margin-top: 3vw;
 }
 
 .footer-content {
   text-align: center;
   padding: 0.5em 1em;
   font-size: 0.8em;
+  background: rgba(white, 0.5);
 
   i {
     font-style: normal;
@@ -359,10 +379,11 @@ footer {
   }
 
   a {
-    cursor: help;
+    cursor: $cursorHelp;
 
     &:hover,
     &:focus {
+      cursor: $cursorHelp;
       color: $linkColorHover;
     }
   }
@@ -414,7 +435,7 @@ footer {
 
 .wip-banner {
   background: $gbLight;
-  color: $gbDarkest;
+  color: $textColor;
   position: fixed;
   top: 0;
   left: 0;

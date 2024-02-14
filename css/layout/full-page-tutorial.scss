@@ -3,6 +3,13 @@ body.full-page-tutorial {
   display: block;
   padding: 2vh 2vw;
 
+  // generated bg from https://10015.io/tools/css-background-pattern-generator
+  background: radial-gradient(farthest-side at -33.33% 50%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%) 0 calc(312px / 2),
+    radial-gradient(farthest-side at 50% 133.33%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%) calc(312px / 2) 0,
+    radial-gradient(farthest-side at 133.33% 50%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%),
+    radial-gradient(farthest-side at 50% -33.33%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%), #ffffff;
+  background-size: calc(312px / 4.667) 312px, 312px calc(312px / 4.667);
+
   section {
     &:not(:first-child) {
       margin-top: 5em;

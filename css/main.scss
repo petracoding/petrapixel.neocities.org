@@ -1,36 +1,60 @@
-$gbLightest: #fff6d3;
-$gbLight: #f8a48a;
-$gbDark: #97484b;
-$gbDarkest: #612e43;
+// $gbLightest: #fff6d3;
+// $gbLight: #f8a48a;
+// $gbDark: #97484b;
+// $gbDarkest: #612e43;
+
+$green: #9adbba;
+$purple: #c58cca;
+$pink: #db9ac3;
+$yellow: #ffecf8;
+
+$green2: #a0db9a;
+$dark: #86677b;
+
+$gbLightest: $yellow;
+$gbLight: $green;
+$gbDark: $purple;
+$gbDarkest: $pink;
 
 $backgroundColor: $gbLightest;
-$mainBackgroundColor: $gbLightest;
+$mainBackgroundColor: $yellow;
 
-$textColor: $gbDarkest;
-$linkColor: $gbDark;
+$textColor: darken($gbDarkest, 30%);
+$linkColor: darken($gbDark, 10%);
 $linkColorHover: $gbLight;
 
 $headerBackgroundColor: none;
 $footerBackgroundColor: none;
-$asideBackgroundColor: $gbLight;
-$asideLinkColor: $gbDark;
-$asideLinkColorHover: $gbLightest;
+
+$asideBackgroundColor: $purple;
+$asideTextColor: $yellow;
+$asideLinkColor: $yellow;
+$asideLinkColorHover: $green;
+
+$cursorDefault: url("../assets/cursors/cursor1.png") 1 1, auto;
+$cursorPointer: url("../assets/cursors/cursor1b.png") 1 1, auto;
+$cursorHelp: url("../assets/cursors/cursor1b.png") 1 1, auto;
 
 $sm: 576px;
 $md: 992px;
 $lg: 1000px;
 $xl: 1200px;
 
+$font: "basiic";
+$font2: "Share Tech Mono";
+
 @import "./mixins";
-@import "./folder/defaults";
-@import "./folder/layout";
-@import "./folder/content";
 
-@import "./folder/clipboard";
-@import "./folder/bookmarks";
-@import "./folder/video-edits";
-@import "./folder/playlists";
-@import "./folder/writing";
-@import "./folder/recs";
+@import "./layout/defaults";
+@import "./layout/layout";
+@import "./layout/content";
 
-@import "./folder/full-page-tutorial";
+@import "./pages/home";
+@import "./pages/clipboard";
+@import "./pages/bookmarks";
+@import "./pages/video-edits";
+@import "./pages/playlists";
+@import "./pages/writing";
+@import "./pages/recs";
+
+@import "./layout/full-page-tutorial";

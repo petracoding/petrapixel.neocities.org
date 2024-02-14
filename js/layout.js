@@ -38,7 +38,7 @@ function getBeforeMain(localHref, nesting) {
             <ul>
               <li><a href="${localHref}/">home</a></li>
               <li><a href="${localHref}/about/about-me.html">about me</a></li>
-              <li><a href="${localHref}/guestbook.html">guestbook</a></li>
+              <li><a href="${localHref}/about/guestbook.html">guestbook</a></li>
               <li><a href="${localHref}/about/blinkies.html">blinkies</a></li>
               <!-- <li><a href="${localHref}/about/archive.html">archive</a></li> -->
               <li class="mobile-only"><a href="${localHref}/about/credits.html">credits</a></li>
@@ -48,18 +48,28 @@ function getBeforeMain(localHref, nesting) {
         </nav>
 		<div class="aside-stuff desktop-only">
           <div class="aside__heading">Changelog</div>
-          <div id="changelog" class="custom-scrollbar">
+          <div id="changelog" class="changelog custom-scrollbar">
+		  </div>
+        </div>
+		<div class="aside-stuff desktop-only">
+          <div class="aside__heading">Coming Soon</div>
+          <div class="changelog custom-scrollbar">
+			  <ul>
+			 	<li>meow page (my cats)</li> 
+			 	<li>rawr page (dino facts)</li> 
+			 	<li>shrines/quote pages</li> 
+			  </ul>
 		  </div>
         </div>
 		<div class="aside-stuff desktop-only">
           <div class="aside__heading">Stats</div>
           <div>
 			<center>hit count:</center>
-			<iframe id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html${noCache}" ></iframe>
+			<iframe allowtransparency="true" id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html${noCache}" ></iframe>
 			<center>listening to:</center>
-			<iframe id="iframe-lastfm" src="https://petracoding.github.io/neocities/lastfm.html${noCache}" ></iframe>
+			<iframe allowtransparency="true" id="iframe-lastfm" src="https://petracoding.github.io/neocities/lastfm.html${noCache}" ></iframe>
 			<center>my status:</center>
-			<iframe id="iframe-status" src="https://petracoding.github.io/neocities/status.html${noCache}" ></iframe>
+			<iframe allowtransparency="true" id="iframe-status" src="https://petracoding.github.io/neocities/status.html${noCache}" ></iframe>
 		  </div>
 	    </div>
       </aside>
@@ -72,7 +82,7 @@ function getBeforeMain(localHref, nesting) {
               <ul>
                 <li><a href="${localHref}/creations/art.html">my art</a></li>
                 <li><a href="${localHref}/creations/coding.html">my coding</a></li>
-                <li><a href="${localHref}/creations/playlists.html">my playlists</a> <small class="aside__new" style="right: 47px;">new!</small></li>
+                <li><a href="${localHref}/creations/playlists.html">my playlists</a> <small class="aside__new" style="right: 50px;"><img src="${nesting}img/new.gif" /></small></li>
                 <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
                 <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
                 <li><a href="${localHref}/creations/writing.html">my writing</a></li>
@@ -128,8 +138,8 @@ function getAfterMain(localHref) {
   return `
    <footer>
         <div class="footer-content">
-          © petrapixel 2024 <i>┊</i> hosted on <a href="https://neocities.org/" target="_blank">neocities</a> <i>┊</i>
-          <a href="https://neocities.org/site/petrapixel" target="_blank">follow me on neocities</a
+          © petrapixel 2024 <i>┊</i>
+          <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a
           > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/about/credits.html">credits</a> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a></span>
         </div>
       </footer>

@@ -1,0 +1,90 @@
+.blinkies-marquee {
+  margin-bottom: 10px;
+
+  > div {
+    display: inline-block;
+    position: relative;
+    filter: contrast(1.3);
+    margin-right: 10px;
+
+    img {
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $pink;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+}
+
+.blinkies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  section & {
+    justify-content: space-around;
+  }
+
+  > div {
+    position: relative;
+    filter: contrast(1.25);
+
+    img {
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $pink;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+  }
+}
+
+.cool-sites {
+  img {
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.07);
+    }
+  }
+}
+
+.link-back {
+  display: flex;
+  align-items: start;
+  margin-top: 10px;
+
+  > a {
+    flex: 0 0 1;
+  }
+
+  textarea {
+    height: 3em;
+    background: $mainBackgroundColor;
+    border: 1px $purple dotted;
+    margin-left: 5px;
+    font-family: $font2;
+    flex-grow: 1;
+    font-size: 10px;
+    background: white;
+    color: black;
+  }
+}

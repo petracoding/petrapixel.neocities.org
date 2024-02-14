@@ -55,8 +55,8 @@
       right: 0;
       bottom: 0;
       top: 0;
-      background: #f79595;
-      opacity: 0.15;
+      background: #c891bd;
+      opacity: 0.2;
       pointer-events: none;
       transition: opacity 0.3s ease;
     }
@@ -228,7 +228,7 @@
   font-size: 1em;
   transform: none;
   transition: 0.2s ease;
-  cursor: pointer;
+  cursor: $cursorPointer;
   z-index: 9999;
   //   padding-bottom: 3px;
 
