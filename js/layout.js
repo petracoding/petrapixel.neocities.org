@@ -55,9 +55,12 @@ function getBeforeMain(localHref, nesting) {
           <div class="aside__heading">Coming Soon</div>
           <div class="changelog custom-scrollbar">
 			  <ul>
+			 	<li>recommendations</li> 
 			 	<li>meow page (my cats)</li> 
 			 	<li>rawr page (dino facts)</li> 
 			 	<li>shrines/quote pages</li> 
+			 	<li>vocabulary page</li> 
+			 	<li>accessability</li> 
 			  </ul>
 		  </div>
         </div>
@@ -65,11 +68,11 @@ function getBeforeMain(localHref, nesting) {
           <div class="aside__heading">Stats</div>
           <div>
 			<center>hit count:</center>
-			<iframe allowtransparency="true" id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html${noCache}" ></iframe>
+			<iframe allowtransparency="true" tabindex="-1" id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html${noCache}" ></iframe>
 			<center>listening to:</center>
 			<iframe allowtransparency="true" id="iframe-lastfm" src="https://petracoding.github.io/neocities/lastfm.html${noCache}" ></iframe>
 			<center>my status:</center>
-			<iframe allowtransparency="true" id="iframe-status" src="https://petracoding.github.io/neocities/status.html${noCache}" ></iframe>
+			<iframe allowtransparency="true" tabindex="-1" id="iframe-status" src="https://petracoding.github.io/neocities/status.html${noCache}" ></iframe>
 		  </div>
 	    </div>
       </aside>
@@ -130,7 +133,7 @@ function getBeforeMain(localHref, nesting) {
           </nav>
         </details>
       </aside>
-	  <div id="back-to-top-link"><a href="#">scroll to top</a></div>
+	  <div id="back-to-top-link" aria-hidden="true"><a href="#">scroll to top</a></div>
   	  `;
 }
 
@@ -166,7 +169,7 @@ function getChangelog() {
             changelogHtml += `
 		  <div class="asides-stat">
             <strong>${c.d}</strong>
-            <a href="${c.l}">${c.t}</a>
+            <a href="${c.l}" tabindex="-1">${c.t}</a>
           </div>
 		  `;
           } else {

@@ -1,0 +1,38 @@
+{
+  "movies": [
+    {
+      "title": "Swiss Army Man",
+      "year": "2000",
+      "genres": "Test, Test, Test, Test",
+      "rating": "1",
+      "link": "https://letterboxd.com/film/swiss-army-man/",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+    },
+    {
+      "title": "Swiss Army Man 2",
+      "year": "1982",
+      "genres": "Test, Test, Test, Test",
+      "rating": "2",
+      "link": "https://letterboxd.com/film/swiss-army-man/",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+    },
+    {
+      "title": "Swiss Army Man",
+      "year": "1920",
+      "genres": "Test, Test, Test, Test",
+      "rating": "1",
+      "link": "https://letterboxd.com/film/swiss-army-man/",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+    }
+  ],
+  "tv": [
+    {
+      "title": "Swiss Army Man",
+      "year": "1920",
+      "genres": "Test, Test, Test, Test",
+      "rating": "1",
+      "link": "https://letterboxd.com/film/swiss-army-man/",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+    }
+  ]
+}

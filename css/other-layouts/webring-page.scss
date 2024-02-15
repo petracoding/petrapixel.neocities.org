@@ -1,0 +1,84 @@
+$contentWidth: 710px;
+
+body.webring-page {
+  position: relative;
+  display: block;
+  padding: 2vh 2vw;
+  display: flex;
+  justify-content: center;
+  cursor: auto;
+  color: rgb(51, 51, 51);
+
+  // generated bg from https://10015.io/tools/css-background-pattern-generator
+
+  a {
+    &,
+    &:hover,
+    &:focus,
+    &:visited {
+      cursor: pointer;
+    }
+  }
+
+  main {
+    width: 100%;
+    max-width: $contentWidth;
+    background: white;
+    padding: 3em 0;
+    border-radius: 20px;
+  }
+
+  section {
+    &:not(:first-child) {
+      margin-top: 3em;
+    }
+  }
+
+  textarea {
+    display: block;
+    height: 3em;
+    background: $mainBackgroundColor;
+    border: 1px $purple dotted;
+    font-family: $font2;
+    width: 100%;
+    font-size: 11px;
+    background: white;
+    color: black;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @media (min-width: $lg) {
+    padding: 10vh 10vw;
+
+    section:not(:last-child),
+    section:last-child > *:not(.webring-page__form) {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+  }
+}
+
+.webring-page__members {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px dashed currentColor;
+    padding: 0.5em 1em;
+  }
+}
+
+.webring-page__form {
+  display: flex;
+  justify-content: center;
+
+  iframe {
+    width: 100%;
+    max-width: $contentWidth;
+    height: 500px;
+  }
+}

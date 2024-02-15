@@ -7,9 +7,9 @@ $green: #9adbba;
 $purple: #c58cca;
 $pink: #db9ac3;
 $yellow: #ffecf8;
+$dark: #86677b;
 
 $green2: #a0db9a;
-$dark: #86677b;
 
 $gbLightest: $yellow;
 $gbLight: $green;
@@ -31,9 +31,9 @@ $asideTextColor: $yellow;
 $asideLinkColor: $yellow;
 $asideLinkColorHover: $green;
 
-$cursorDefault: url("../assets/cursors/cursor1.png") 1 1, auto;
-$cursorPointer: url("../assets/cursors/cursor1b.png") 1 1, auto;
-$cursorHelp: url("../assets/cursors/cursor1b.png") 1 1, auto;
+$cursorDefault: url("../assets/cursors/cursor1.png") 7 5, auto;
+$cursorPointer: url("../assets/cursors/cursor1b.png") 7 5, auto;
+$cursorHelp: url("../assets/cursors/cursor1b.png") 7 5, auto;
 
 $sm: 576px;
 $md: 992px;
@@ -49,12 +49,14 @@ $font2: "Share Tech Mono";
 @import "./layout/layout";
 @import "./layout/content";
 
-@import "./pages/home";
-@import "./pages/clipboard";
+@import "./pages/about-me";
 @import "./pages/bookmarks";
-@import "./pages/video-edits";
+@import "./pages/clipboard";
+@import "./pages/home";
 @import "./pages/playlists";
-@import "./pages/writing";
 @import "./pages/recs";
+@import "./pages/video-edits";
+@import "./pages/writing";
 
-@import "./layout/full-page-tutorial";
+@import "./other-layouts/full-page-tutorial";
+@import "./other-layouts/webring-page";

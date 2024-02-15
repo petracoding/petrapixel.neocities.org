@@ -86,5 +86,9 @@
     font-size: 10px;
     background: white;
     color: black;
+
+    &:focus {
+      outline: none;
+    }
   }
 }

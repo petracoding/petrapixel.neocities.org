@@ -1,0 +1,45 @@
+.favorites-boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.favorites-boxes__box {
+  flex: 0 0 100%;
+  margin-top: 20px;
+  border: 1px dashed $pink;
+  border-radius: 10px;
+  padding: 10px;
+
+  ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .custom-scrollbar {
+    padding-right: 1em;
+    max-height: 12em;
+    overflow-y: scroll;
+    scrollbar-color: darken($purple, 10%) $pink;
+
+    > strong {
+      font-size: 1.1em;
+    }
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track-piece {
+    background-color: $pink;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:vertical {
+    background-color: darken($purple, 10%);
+  }
+
+  @media (min-width: $lg) {
+    flex: 0 0 calc(50% - 10px);
+
+    &:nth-child(odd) {
+      margin-right: 20px;
+    }
+  }
+}

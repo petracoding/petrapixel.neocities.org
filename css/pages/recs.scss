@@ -1,5 +1,10 @@
 /* ---- filters ---- */
 
+.rec-filters-title {
+  display: block;
+  margin-top: 3em;
+}
+
 .rec-filters {
   display: flex;
   flex-direction: column;
@@ -21,10 +26,10 @@
 .rec-filters__button {
   display: inline-block;
   padding: 0.1em 0.5em;
-  background: rgba($gbLight, 0.5);
+  background: rgba($green, 0.5);
   border: none;
   border-radius: 7px;
-  color: $gbDarkest;
+  color: $dark;
   cursor: $cursorPointer;
   border-radius: 5px;
   margin-left: 0;
@@ -39,11 +44,11 @@
 
   &:hover,
   &:active {
-    background: $gbLight;
+    background: $green2;
   }
 
   &.is-checked {
-    background: $gbLight;
+    background: $green;
   }
 
   &:first-child {
@@ -66,10 +71,79 @@
 
 /* ---- items ---- */
 
-.isotope-items > .item {
-  width: 70px;
-  height: 70px;
+.isotope-items > .rec {
+  width: 25%;
+  height: 280px;
   margin: 5px;
   float: left;
-  background: pink;
+}
+
+/* ---- Rec ---- */
+
+.rec {
+  position: relative;
+  line-height: 1.5;
+
+  &:hover,
+  &:focus {
+    .rec__info {
+      opacity: 1;
+    }
+  }
+}
+
+.rec__image {
+  height: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.rec__info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid $pink;
+  background: rgba($mainBackgroundColor, 0.75);
+  padding: 1em;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  p {
+    text-align: left;
+    margin: 0.25em 0;
+  }
+}
+
+.rec__title {
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
+.rec__desc {
+  margin-top: 0.5em;
+}
+
+.rec__rating {
+  color: $dark;
+  font-size: 1em;
+  text-shadow: 0 0 4px $yellow;
+}
+
+.rec__link {
+  margin-top: 10px;
+
+  &::before {
+    content: "➜ ";
+  }
+  a {
+  }
 }

@@ -5,6 +5,8 @@
 # ver 20210211
 # -----------------------------------------------------------------
 
+/public/webrings
+
 # ignore all files starting with  ~
 ~*
 

@@ -9,8 +9,10 @@
   </head>
   <body>
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
+    <a href="#main" id="skip-to-content-link">Skip to content</a>
+    <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
     <div id="content">
-      <main>
+      <main id="main">
         <section>
           <h1>Book Recs</h1>
           This page is under construction! Please check back later.
@@ -61,40 +63,16 @@
               </div>
             </div>
           </div>
-          <div class="isotope-items">
-            <div class="item classic 1800 children"></div>
-          </div>
+          <div class="isotope-items"></div>
         </section>
       </main>
     </div>
     <!-- Isotope: -->
     <script src="../assets/jquery.js"></script>
     <script src="../assets/isotope.js"></script>
+    <script src="recs.js"></script>
     <script>
-      var $isotope = $(".isotope-items").isotope({
-        itemSelector: ".item",
-      });
-      var isotopeFilters = {};
-
-      $("button").click(function () {
-        var $buttonGroup = $(this).parents(".rec-filters__buttons");
-        var filterGroup = $buttonGroup.attr("data-filter-group");
-        isotopeFilters[filterGroup] = $(this).attr("data-filter");
-        var filterValue = concatValues(isotopeFilters);
-        $isotope.isotope({ filter: filterValue });
-
-        // active state
-        $buttonGroup.find(".is-checked").removeClass("is-checked");
-        $(this).addClass("is-checked");
-      });
-
-      function concatValues(obj) {
-        var value = "";
-        for (var prop in obj) {
-          value += obj[prop];
-        }
-        return value;
-      }
+      loadData("movies");
     </script>
   </body>
 </html>
