@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const allLinks = document.querySelectorAll("main a[href]:not([target])");
   [...allLinks].forEach((linkEl) => {
     const href = linkEl.getAttribute("href");
-    const isLocal = href.includes("localhost:") || href.includes("petrapixel") || Array.from(href)[0] == "/";
+    const isLocal = href.includes("localhost:") || href.includes("petrapixel") || Array.from(href)[0] == "/" || Array.from(href)[0] == "#";
     if (!isLocal) linkEl.setAttribute("target", "_blank");
   });
 

@@ -85,7 +85,7 @@ function getBeforeMain(localHref, nesting) {
               <ul>
                 <li><a href="${localHref}/creations/art.html">my art</a></li>
                 <li><a href="${localHref}/creations/coding.html">my coding</a></li>
-                <li><a href="${localHref}/creations/playlists.html">my playlists</a> <small class="aside__new" style="right: 50px;"><img src="${nesting}img/new.gif" /></small></li>
+                <li><a href="${localHref}/creations/playlists.html">my playlists</a> <small class="aside__new"><img src="${nesting}img/new.gif" /></small></li>
                 <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
                 <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
                 <li><a href="${localHref}/creations/writing.html">my writing</a></li>

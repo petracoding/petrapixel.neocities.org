@@ -31,9 +31,9 @@ $asideTextColor: $yellow;
 $asideLinkColor: $yellow;
 $asideLinkColorHover: $green;
 
-$cursorDefault: url("https://petrapixel.neocities.org/assets/cursors/cursor1.png") 7 5, auto;
-$cursorPointer: url("https://petrapixel.neocities.org/assets/cursors/cursor1b.png") 7 5, auto;
-$cursorHelp: url("https://petrapixel.neocities.org/assets/cursors/cursor1b.png") 7 5, auto;
+$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5, auto;
+$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
+$cursorHelp: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
 
 $sm: 576px;
 $md: 992px;
@@ -57,6 +57,7 @@ $font2: "Share Tech Mono";
 @import "./pages/recs";
 @import "./pages/video-edits";
 @import "./pages/writing";
+@import "./pages/not-found";
 
 @import "./other-layouts/full-page-tutorial";
 @import "./other-layouts/webring-page";

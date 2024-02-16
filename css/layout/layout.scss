@@ -1,40 +1,12 @@
 #content {
-  max-width: 90%;
+  max-width: 100%;
   width: $xl;
   display: grid;
   grid-template:
-    "header" auto
-    "asideLeft" auto
-    "asideRight" auto
-    "main" auto
-    "footer" auto
-    / 1fr;
-
-  @media (min-width: $sm) {
-    grid-template:
-      "header header" auto
-      "asideLeft asideRight" auto
-      "main main" auto
-      "footer footer" auto
-      / 1fr 1fr;
-
-    aside summary {
-      display: none;
-
-      & + * {
-        display: block;
-      }
-    }
-  }
-
-  @media (min-width: $lg) {
-    max-width: 100%;
-    grid-template:
-      "header header header" auto
-      "asideLeft main asideRight" auto
-      "footer footer footer" auto
-      / 200px auto 200px;
-  }
+    "header header header" auto
+    "asideLeft main asideRight" auto
+    "footer footer footer" auto
+    / 200px auto 200px;
 }
 
 #back-to-top-link {
@@ -149,34 +121,24 @@ header {
   background: $asideBackgroundColor;
   padding: 10px 14px;
   color: $asideTextColor;
+
+  summary {
+    display: none;
+
+    & + * {
+      display: block;
+    }
+  }
 }
 
 .aside--left {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 10px;
   grid-area: asideLeft;
 }
 
 .aside--right {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 10px;
   grid-area: asideRight;
-}
-
-@media (min-width: $sm) {
-  .aside--left {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  .aside--right {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
 }
 
 @media (min-width: $lg) {
@@ -234,7 +196,8 @@ header {
 .changelog {
   max-height: 70px;
   overflow-y: scroll;
-  margin-top: 5px;
+  overflow-x: clip;
+  margin-top: 18px;
   font-size: 0.9em;
 
   ul {
@@ -262,10 +225,6 @@ header {
         content: "";
       }
     }
-  }
-
-  .changelog {
-    margin-top: 18px;
   }
 }
 
@@ -301,7 +260,7 @@ header {
     position: relative;
 
     a {
-      display: block;
+      display: inline-block;
       padding: 3px 0;
       color: $asideLinkColor;
       text-decoration: underline;
@@ -309,6 +268,16 @@ header {
       cursor: $cursorHelp;
       font-family: $font2, $font, sans-serif;
       font-size: 14px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+      }
 
       &:hover,
       &:focus {
@@ -336,14 +305,14 @@ header {
 }
 
 .aside__new {
-  position: absolute;
-  right: 0;
-  top: 5px;
+  display: inline-block;
+  transform: translateY(-1px);
   text-transform: uppercase;
   font-family: $font2, $font, sans-serif;
   font-size: 9px;
   pointer-events: none;
   line-height: 1;
+  margin-left: 5px;
 }
 
 .aside-nav__section {
@@ -460,4 +429,103 @@ footer {
   padding: 15px 50px;
   text-align: center;
   z-index: 999;
+}
+
+/**
+ *
+ * TABLET
+ *
+ */
+
+@media (max-width: $md) {
+  #content {
+    grid-template:
+      "header header header" auto
+      "asideLeft main asideRight" auto
+      "footer footer footer" auto
+      / 120px auto 120px;
+  }
+
+  .aside {
+    padding: 10px 5px;
+  }
+
+  .aside-stuff {
+    margin-top: 15px;
+  }
+
+  .aside__heading {
+    letter-spacing: 0;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 0.65em;
+  }
+
+  .changelog {
+    margin-top: 5px;
+  }
+}
+
+/**
+ *
+ * MOBILE
+ *
+ */
+
+@media (max-width: $sm) {
+  body {
+    margin: 5px;
+  }
+
+  #content {
+    width: calc(100% - 10px);
+    grid-template:
+      "header" auto
+      "asideLeft" auto
+      "asideRight" auto
+      "main" auto
+      "footer" auto
+      / 1fr;
+  }
+
+  main:not(.no-layout) section {
+    padding: 0.5em;
+  }
+
+  .aside {
+    summary {
+      display: initial;
+
+      & + * {
+        display: initial;
+      }
+    }
+  }
+
+  .aside--left {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .aside--right {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .header-heading {
+    font-size: 20px;
+  }
+
+  #skip-to-content-link,
+  #skip-to-content-link2 {
+    font-size: 1rem;
+  }
+
+  #skip-to-content-link2 {
+    left: 9em;
+  }
 }

@@ -1,5 +1,5 @@
 .blinkies-marquee {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 
   > div {
     display: inline-block;
@@ -29,9 +29,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 15px;
 
   section & {
     justify-content: space-around;
+    margin-bottom: 0;
   }
 
   > div {
@@ -54,6 +56,14 @@
       pointer-events: none;
     }
   }
+
+  @media (max-width: $sm) {
+    justify-content: start;
+
+    > div {
+      padding: 5px;
+    }
+  }
 }
 
 .cool-sites {
@@ -68,27 +78,33 @@
 }
 
 .link-back {
-  display: flex;
-  align-items: start;
   margin-top: 10px;
-
-  > a {
-    flex: 0 0 1;
-  }
 
   textarea {
     height: 3em;
     background: $mainBackgroundColor;
     border: 1px $purple dotted;
-    margin-left: 5px;
     font-family: $font2;
-    flex-grow: 1;
     font-size: 10px;
     background: white;
     color: black;
 
     &:focus {
       outline: none;
+    }
+  }
+
+  @media (min-width: $sm) {
+    display: flex;
+    align-items: start;
+
+    > a {
+      flex: 0 0 1;
+    }
+
+    textarea {
+      margin-left: 5px;
+      flex-grow: 1;
     }
   }
 }

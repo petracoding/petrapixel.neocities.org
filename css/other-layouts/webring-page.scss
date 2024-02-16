@@ -28,26 +28,20 @@ body.webring-page {
     border-radius: 20px;
   }
 
+  strong {
+    color: rgb(22, 22, 22);
+  }
+
   section {
     &:not(:first-child) {
       margin-top: 3em;
     }
   }
 
-  textarea {
-    display: block;
-    height: 3em;
-    background: $mainBackgroundColor;
-    border: 1px $purple dotted;
-    font-family: $font2;
-    width: 100%;
-    font-size: 11px;
-    background: white;
-    color: black;
-
-    &:focus {
-      outline: none;
-    }
+  section:not(:last-child),
+  section:last-child > *:not(.webring-page__form) {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   @media (min-width: $lg) {
@@ -70,6 +64,24 @@ body.webring-page {
     border: 1px dashed currentColor;
     padding: 0.5em 1em;
   }
+
+  @media (max-width: $md) {
+    th {
+      display: none;
+    }
+
+    td {
+      display: block;
+
+      &:first-child {
+        font-weight: bold;
+      }
+
+      &:last-child {
+        border-bottom: 3px dotted;
+      }
+    }
+  }
 }
 
 .webring-page__form {
@@ -80,5 +92,36 @@ body.webring-page {
     width: 100%;
     max-width: $contentWidth;
     height: 500px;
+  }
+}
+
+.webring-page__code {
+  textarea {
+    display: block;
+    height: 4em;
+    background: $mainBackgroundColor;
+    border: 1px $purple dotted;
+    font-family: $font2;
+    width: 100%;
+    font-size: 11px;
+    background: white;
+    color: black;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @media (min-width: $lg) {
+    display: flex;
+    align-items: stretch;
+
+    iframe {
+      flex: 0 0 1;
+    }
+
+    textarea {
+      height: auto;
+    }
   }
 }

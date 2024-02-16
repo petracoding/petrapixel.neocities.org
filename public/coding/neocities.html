@@ -5,6 +5,8 @@
     <script src="../main.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <!-- code highlight -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
@@ -203,7 +205,7 @@ if (tabTitle !== "YOUR HOME TITLE") {
             <summary>Show/Hide</summary>
             <p>In your HTML, add this line whereever you want it to be:</p>
             <pre><code>&lt;div id="toc"&gt;&lt;/div&gt;</code></pre>
-            <p>The code:</p>
+            <p>The JavaScript:</p>
             <pre>
 <code>const container = document.querySelector("#toc");
 if (!container) return;
@@ -225,7 +227,7 @@ let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
 });
 container.innerHTML = output + "&lt;/ol&gt;";</code></pre>
             <p>Change the selector (default: "h2") to any selector that targets the headings you want to turn into the table of contents.</p>
-            <p>You can override the automatically generated ID by simply setting a custom one in the HTML.</p>
+            <p>You can override the automatically generated ID of a heading by simply setting a custom one in the HTML.</p>
 
             <hr />
           </details>
