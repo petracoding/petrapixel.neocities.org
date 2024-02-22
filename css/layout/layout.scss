@@ -34,7 +34,7 @@
 
     &:hover,
     &:focus {
-      color: $gbLight;
+      color: $green;
     }
   }
 }
@@ -55,7 +55,7 @@ main:not(.no-layout) {
   section {
     width: 100%;
     padding: 1em 1em;
-    border: 1px $gbDark dashed;
+    border: 1px $purple dashed;
     margin-bottom: 1em;
     background: $mainBackgroundColor;
 
@@ -90,8 +90,10 @@ header {
 }
 
 .header-heading {
+  font-family: $font3;
   margin: 0;
   padding: 0.25em 1em 0em;
+  font-size: 30px;
 
   a {
     display: inline-block;
@@ -154,24 +156,103 @@ header {
   color: $dark;
   border: 1px dashed currentColor;
   border-radius: 5px;
-  font-size: 0.7em;
+  font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding: 3px 5px 2px;
   line-height: 1;
   margin-bottom: 5px;
   font-weight: bold;
   margin-left: -1px;
   margin-right: -1px;
+
+  &.aside__heading--menu {
+    background: #27ff27;
+  }
+
+  &.aside__heading--changelog {
+    background: #fff727;
+  }
+
+  &.aside__heading--comingsoon {
+    background: #27a9ff;
+    color: white;
+  }
+
+  &.aside__heading--stats {
+    background: #4f27ff;
+    color: white;
+  }
+
+  &.aside__heading--creations {
+    background: #ffa927;
+    color: white;
+  }
+
+  &.aside__heading--recs {
+    background: #ff5927;
+
+    color: white;
+  }
+
+  &.aside__heading--resources {
+    background: #ff274b;
+    color: white;
+  }
+
+  &.aside__heading--coding {
+    background: #ff27ff;
+    color: white;
+  }
 }
 
 .aside-stuff {
   line-height: 1.5;
-  margin-top: 30px;
   max-width: 200px;
+
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  center {
+    font-family: $font2;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-top: 1em;
+  }
 }
 
-.asides-stat {
+.aside-stuff__widget {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 0.9em;
+
+  a {
+    text-decoration: none;
+    color: $asideTextColor;
+  }
+}
+
+.aside-stuff__guestbook {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.aside__lucky-btn {
+  display: flex;
+  justify-content: center;
+}
+
+/*----------  Changelog  ----------*/
+
+.changelog__entry {
   font-size: 0.85em;
 
   &:not(:first-child) {
@@ -194,16 +275,19 @@ header {
 }
 
 .changelog {
-  max-height: 70px;
+  max-height: 110px;
   overflow-y: scroll;
   overflow-x: clip;
   margin-top: 18px;
   font-size: 0.9em;
+  border: 1px dashed;
+  padding: 0.5em 1em;
 
   ul {
     margin: 0;
     font-size: 0.9em;
-    padding-left: 15px;
+    line-height: 1.2;
+    padding-left: 10px;
   }
 
   &,
@@ -213,7 +297,7 @@ header {
 }
 
 @media (min-width: $sm) {
-  .asides-stat {
+  .changelog__entry {
     &:not(:first-child) {
       margin-top: 15px;
     }
@@ -226,22 +310,6 @@ header {
       }
     }
   }
-}
-
-#iframe-stats,
-#iframe-status,
-#iframe-lastfm {
-  width: 100%;
-  height: 2em;
-  border: none;
-}
-
-#iframe-status {
-  height: 3.7em;
-}
-
-#iframe-lastfm {
-  height: 3.5em;
 }
 
 /*----------  Navs  ----------*/
@@ -258,30 +326,24 @@ header {
   li {
     line-height: 1;
     position: relative;
+    border-bottom: 1px dashed rgba(white, 0.95);
 
     a {
-      display: inline-block;
-      padding: 3px 0;
+      display: block;
+      padding: 4px 4px;
       color: $asideLinkColor;
-      text-decoration: underline;
-      text-decoration-style: dashed;
+      text-decoration: none;
+      //   text-decoration: underline;
+      //   text-decoration-style: dashed;
       cursor: $cursorHelp;
       font-family: $font2, $font, sans-serif;
       font-size: 14px;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
-      }
+      border-radius: 3px;
 
       &:hover,
       &:focus {
         color: $asideLinkColorHover;
+        background-color: rgba(black, 0.2);
 
         &:not(.active) {
           text-decoration: none;
@@ -290,17 +352,37 @@ header {
 
       &.active {
         color: $asideLinkColorHover;
+        background-color: rgba(black, 0.2);
         text-decoration-style: wavy;
       }
 
+      // bullets
+      img:not([src*="link.png"]) {
+        display: inline-block;
+        margin-right: 6px;
+        animation: floatingHeart 1s ease infinite;
+      }
+
       // external link
-      img {
+      img[src*="link.png"] {
         display: inline-block;
         margin-left: 5px;
         margin-bottom: 2px;
         opacity: 0.8;
       }
     }
+  }
+}
+
+@keyframes floatingHeart {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-1px);
+  }
+  100% {
+    transform: translatey(0px);
   }
 }
 
@@ -331,6 +413,7 @@ footer {
   background: $footerBackgroundColor;
   grid-area: footer;
   margin-top: 3vw;
+  margin-bottom: 2em;
 }
 
 .footer-content {
@@ -405,9 +488,13 @@ footer {
   font-size: 1.25rem;
   background-color: darken($purple, 10%);
   color: white;
-  transform: translateY(-2rem);
+  transform: translateY(-3rem);
   transition: transform 0.1s ease-in;
   z-index: 999999;
+
+  @media (max-width: $md) {
+    font-size: 1rem;
+  }
 
   &:focus,
   &:focus-within {
@@ -420,7 +507,7 @@ footer {
 }
 
 .wip-banner {
-  background: $gbLight;
+  background: $green;
   color: $textColor;
   position: fixed;
   top: 0;
@@ -450,7 +537,7 @@ footer {
     padding: 10px 5px;
   }
 
-  .aside-stuff {
+  .aside-stuff:not(:first-child) {
     margin-top: 15px;
   }
 
@@ -527,5 +614,17 @@ footer {
 
   #skip-to-content-link2 {
     left: 9em;
+  }
+}
+
+#clap-for-me {
+  text-align: center;
+  display: block;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
   }
 }

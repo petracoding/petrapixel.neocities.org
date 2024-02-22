@@ -1,27 +1,44 @@
-// $gbLightest: #fff6d3;
-// $gbLight: #f8a48a;
-// $gbDark: #97484b;
-// $gbDarkest: #612e43;
+// Fonts
+
+// see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
+$font: "MS gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック", "MS Gothic", "Noto Sans CJK JP", TakaoPGothic,
+  sans-serif;
+$font2: "Share Tech Mono"; // strong, menu links
+$font3: "basiic"; // headings
+
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@font-face {
+  font-family: $font3;
+  src: url(https://cinni.net/fonts/basiic.ttf);
+}
+
+// Variables
+
+$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5, auto;
+$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
+$cursorHelp: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
+
+$xs: 350px;
+$sm: 576px;
+$md: 992px;
+$lg: 1000px;
+$xl: 1200px;
+
+// Colors
 
 $green: #9adbba;
 $purple: #c58cca;
 $pink: #db9ac3;
 $yellow: #ffecf8;
 $dark: #86677b;
-
 $green2: #a0db9a;
 
-$gbLightest: $yellow;
-$gbLight: $green;
-$gbDark: $purple;
-$gbDarkest: $pink;
-
-$backgroundColor: $gbLightest;
+$backgroundColor: $yellow;
 $mainBackgroundColor: $yellow;
 
-$textColor: darken($gbDarkest, 30%);
-$linkColor: darken($gbDark, 10%);
-$linkColorHover: $gbLight;
+$textColor: darken($pink, 30%);
+$linkColor: darken($purple, 10%);
+$linkColorHover: $green;
 
 $headerBackgroundColor: none;
 $footerBackgroundColor: none;
@@ -31,17 +48,7 @@ $asideTextColor: $yellow;
 $asideLinkColor: $yellow;
 $asideLinkColorHover: $green;
 
-$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5, auto;
-$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
-$cursorHelp: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
-
-$sm: 576px;
-$md: 992px;
-$lg: 1000px;
-$xl: 1200px;
-
-$font: "basiic";
-$font2: "Share Tech Mono";
+// Imports
 
 @import "./mixins";
 
@@ -51,12 +58,14 @@ $font2: "Share Tech Mono";
 
 @import "./pages/about-me";
 @import "./pages/bookmarks";
+@import "./pages/blog";
 @import "./pages/clipboard";
 @import "./pages/home";
 @import "./pages/playlists";
 @import "./pages/recs";
 @import "./pages/video-edits";
 @import "./pages/writing";
+@import "./pages/notion";
 @import "./pages/not-found";
 
 @import "./other-layouts/full-page-tutorial";

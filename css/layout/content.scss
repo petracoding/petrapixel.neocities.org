@@ -42,6 +42,10 @@ main {
     }
   }
 
+  ol {
+    padding-left: 2em;
+  }
+
   blockquote {
     background: rgba($pink, 0.1);
     padding: 1em;
@@ -53,7 +57,7 @@ main {
   code {
     display: block;
     margin: 1em 0;
-    background: rgba($gbDark, 0.1);
+    background: rgba($purple, 0.1);
     padding: 1em;
     border-radius: 10px;
     font-size: 0.75em;
@@ -89,7 +93,7 @@ main {
 
   hr {
     border: 0;
-    border-top: 2px dotted $gbLight;
+    border-top: 2px dotted $green;
     margin: 1.5em 0;
   }
 
@@ -98,6 +102,7 @@ main {
   h3 {
     margin-bottom: 0;
     line-height: 1.5;
+    font-family: $font3;
 
     &:first-child {
       margin-top: 0;
@@ -132,11 +137,12 @@ main {
 
   details {
     summary {
-      background: $gbLight;
+      background: $green;
       display: inline-block;
       position: relative;
       padding: 0 0.5em;
       cursor: $cursorPointer;
+      user-select: none;
 
       &::before {
         content: "⮯";
@@ -173,6 +179,8 @@ img[src*="inline/"]:not([class]) {
 
   ol {
     margin-top: 0;
+    margin-left: 5px;
+    margin-top: 5px;
     padding-left: 2em;
     list-style-type: decimal-leading-zero;
 
@@ -256,8 +264,8 @@ img[src*="inline/"]:not([class]) {
     bottom: 0;
     padding: 0.75em 0.1em 0.3em;
     text-align: center;
-    background: rgba($gbLightest, 0.6);
-    background: linear-gradient(0deg, rgba($gbLightest, 0.8) 0%, rgba($gbLightest, 0.8) 10%, rgba($gbLightest, 0.3) 80%, rgba($gbLightest, 0) 100%);
+    background: rgba($yellow, 0.6);
+    background: linear-gradient(0deg, rgba($yellow, 0.8) 0%, rgba($yellow, 0.8) 10%, rgba($yellow, 0.3) 80%, rgba($yellow, 0) 100%);
     opacity: 0;
     transition: opacity 0.2s ease;
     z-index: 1;
@@ -344,8 +352,8 @@ img[src*="inline/"]:not([class]) {
     bottom: 5px;
     padding: 0.5em 0.1em 0.3em;
     text-align: center;
-    background: rgba($gbLightest, 0.5);
-    background: linear-gradient(0deg, rgba($gbLightest, 0.8) 0%, rgba($gbLightest, 0.8) 10%, rgba($gbLightest, 0.3) 80%, rgba($gbLightest, 0) 100%);
+    background: rgba($yellow, 0.5);
+    background: linear-gradient(0deg, rgba($yellow, 0.8) 0%, rgba($yellow, 0.8) 10%, rgba($yellow, 0.3) 80%, rgba($yellow, 0) 100%);
     opacity: 0;
     transition: opacity 0.2s ease;
     z-index: 1;

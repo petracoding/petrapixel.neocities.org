@@ -6,6 +6,8 @@
 # -----------------------------------------------------------------
 
 /public/webrings
+/public/blog/wip
+/public/blog/_template.html
 
 # ignore all files starting with  ~
 ~*

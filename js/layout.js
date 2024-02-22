@@ -11,8 +11,13 @@ export function buildLayout() {
     mainEl.insertAdjacentHTML("beforebegin", getBeforeMain(localHref, nesting));
     mainEl.insertAdjacentHTML("afterend", getAfterMain(localHref));
 
+    // Widgets
+    initLastFmWidget();
+    initHitcountWidget();
+    initStatusCafeWidget();
+
     // Menu Toggle
-    const detailsEl = document.querySelector(".aside--right details");
+    const detailsEl = document.querySelector(".aside--left details");
     if (detailsEl) {
       let mql = window.matchMedia("(min-width: 576px)");
       if (mql.matches) {
@@ -20,118 +25,160 @@ export function buildLayout() {
       }
     }
 
+    initLuckyBtn();
     doActiveLinks();
     getChangelog();
     prepareScrollToTop();
+    buildTableOfContents();
   }
+}
 
-  buildTableOfContents();
+function initLuckyBtn() {
+  const btn = document.querySelector("#lucky-btn");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const file = isLocalhost ? `http://localhost:52330/public/blog/blog.json` : `https://petrapixel.neocities.org/blog/blog.json`;
+    fetch(`${file}${noCache}`)
+      .then(function (response) {
+        switch (response.status) {
+          case 200:
+            return response.json();
+          case 404:
+            throw response;
+        }
+      })
+      .then(function (data) {
+        const articlesJson = data["blog"];
+        const randomArticle = articlesJson[Math.floor(Math.random() * articlesJson.length)];
+        const randomArticleUrl = "/blog/" + randomArticle["fileName"] + ".html";
+        window.location.href = (isLocalhost ? "/public" : "") + randomArticleUrl;
+      })
+      .catch(function (response) {
+        console.error("Loading Blog Json: " + response.statusText);
+      });
+  });
 }
 
 function getBeforeMain(localHref, nesting) {
   return `
-  	<header><h1 class="header-heading"><a href="${localHref}/">♡ petra pixel ♡</a></h1></header>
+  	<header><div class="header-heading"><a href="${localHref}/">♡ petra pixel ♡</a></div></header>
       <aside class="aside aside--left">
-        <nav class="aside-nav">
-          <div class="aside-nav__section">
-            <div class="aside__heading desktop-only">Menu</div>
-            <ul>
-              <li><a href="${localHref}/">home</a></li>
-              <li><a href="${localHref}/about/about-me.html">about me</a></li>
-              <li><a href="${localHref}/about/guestbook.html">guestbook</a></li>
-              <li><a href="${localHref}/about/blinkies.html">blinkies</a></li>
-              <!-- <li><a href="${localHref}/about/archive.html">archive</a></li> -->
-              <li class="mobile-only"><a href="${localHref}/about/credits.html">credits</a></li>
-              <li class="mobile-only"><a href="${localHref}/sitemap.html">sitemap</a></li>
-            </ul>
-          </div>
-        </nav>
-		<div class="aside-stuff desktop-only">
-          <div class="aside__heading">Changelog</div>
-          <div id="changelog" class="changelog custom-scrollbar">
-		  </div>
-        </div>
-		<div class="aside-stuff desktop-only">
-          <div class="aside__heading">Coming Soon</div>
-          <div class="changelog custom-scrollbar">
-			  <ul>
-			 	<li>recommendations</li> 
-			 	<li>meow page (my cats)</li> 
-			 	<li>rawr page (dino facts)</li> 
-			 	<li>shrines/quote pages</li> 
-			 	<li>vocabulary page</li> 
-			 	<li>accessability</li> 
-			  </ul>
-		  </div>
-        </div>
-		<div class="aside-stuff desktop-only">
-          <div class="aside__heading">Stats</div>
-          <div>
-			<center>hit count:</center>
-			<iframe allowtransparency="true" tabindex="-1" id="iframe-stats" src="https://petracoding.github.io/neocities/stats.html${noCache}" ></iframe>
-			<center>listening to:</center>
-			<iframe allowtransparency="true" id="iframe-lastfm" src="https://petracoding.github.io/neocities/lastfm.html${noCache}" ></iframe>
-			<center>my status:</center>
-			<iframe allowtransparency="true" tabindex="-1" id="iframe-status" src="https://petracoding.github.io/neocities/status.html${noCache}" ></iframe>
-		  </div>
-	    </div>
+	  <details>
+          <summary>Open Navigation</summary>
+	      <nav class="aside-nav">
+	          <div class="aside-nav__section">
+	            <div class="aside__heading aside__heading--menu desktop-only">Menu</div>
+	            <ul>
+	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" />home</a></li>
+	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" />about me</a></li>
+	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" />blog <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
+	              <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" />guestbook</a></li>
+	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" />blinkies</a></li>
+	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" />archive</a></li> -->
+	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" />credits</a></li>
+	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" />sitemap</a></li>
+	            </ul>
+	          </div>
+			  <div class="aside-nav__section">
+	              <div class="aside__heading aside__heading--creations">Creations</div>
+	              <ul>
+	                <li><a href="${localHref}/creations/art.html"><img width="9" src="${nesting}img/layout/heart.png" />my art</a></li>
+	                <li><a href="${localHref}/creations/coding.html"><img width="9" src="${nesting}img/layout/heart.png" />my coding</a></li>
+	                <li><a href="${localHref}/creations/playlists.html"><img width="9" src="${nesting}img/layout/heart.png" />my playlists</a> </li>
+	                <li><a href="${localHref}/creations/video-edits.html"><img width="9" src="${nesting}img/layout/heart.png" />my video edits</a></li>
+	                <!-- <li><a href="${localHref}/creations/web-weaves.html"><img width="9" src="${nesting}img/layout/heart.png" />my web weaves</a></li> -->
+	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" />my writing</a></li>
+	              </ul>
+	            </div>
+	            <div class="aside-nav__section">
+	              <div class="aside__heading aside__heading--recs">Recommendations</div>
+	              <ul>
+				  <li><a href="${localHref}/recs/music.html"><img width="9" src="${nesting}img/layout/heart.png" />music</a></li>
+				  	<li><a href="${localHref}/recs/tv-shows.html"><img width="9" src="${nesting}img/layout/heart.png" />tv shows <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
+				  	<li><a href="${localHref}/recs/movies.html"><img width="9" src="${nesting}img/layout/heart.png" />movies <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
+				  	<li><a href="${localHref}/recs/books.html"><img width="9" src="${nesting}img/layout/heart.png" />books <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
+				  	<li><a href="${localHref}/recs/games.html"><img width="9" src="${nesting}img/layout/heart.png" />games <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
+	                <!-- <li><a href="${localHref}/recs/software.html"><img width="9" src="${nesting}img/layout/heart.png" />software</a></li> -->
+	              </ul>
+	            </div>
+				<!-- 
+				<div class="aside-nav__section">
+	              <div class="aside__heading aside__heading--shrines">Shrines</div>
+	              <ul>
+	                <li><a href="${localHref}/shrines/hannibal.html"><img width="9" src="${nesting}img/layout/heart.png" />hannibal<img src="${nesting}img/link.png" /></a></li>
+	              </ul>
+	            </div>
+				-->
+	            <div class="aside-nav__section">
+	              <div class="aside__heading aside__heading--resources">Resources</div>
+	              <ul>
+	                <li><a href="${localHref}/resources/bookmarks.html"><img width="9" src="${nesting}img/layout/heart.png" />bookmarks</a></li>
+	                <li><a href="${localHref}/resources/clipboard.html"><img width="9" src="${nesting}img/layout/heart.png" />clipboard</a></li>
+	                <li><a href="${localHref}/resources/notion.html"><img width="9" src="${nesting}img/layout/heart.png" />notion</a></li>
+					<!--
+	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" />templates</a></li>
+	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" />vocabulary</a></li>
+					-->
+	              </ul>
+	            </div>
+				<div class="aside-nav__section">
+	              <div class="aside__heading aside__heading--coding">Coding Help</div>
+	              <ul>
+					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" />neocities</a></li>
+	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" />advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" />webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+	              </ul>
+	            </div>
+	        </nav>
+        </details>
       </aside>
       <aside class="aside aside--right">
-        <details>
-          <summary>Open Navigation</summary>
-          <nav class="aside-nav">
-            <div class="aside-nav__section">
-              <div class="aside__heading">Creations</div>
-              <ul>
-                <li><a href="${localHref}/creations/art.html">my art</a></li>
-                <li><a href="${localHref}/creations/coding.html">my coding</a></li>
-                <li><a href="${localHref}/creations/playlists.html">my playlists</a> <small class="aside__new"><img src="${nesting}img/new.gif" /></small></li>
-                <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
-                <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
-                <li><a href="${localHref}/creations/writing.html">my writing</a></li>
-              </ul>
-            </div>
-            <div class="aside-nav__section">
-              <div class="aside__heading">Recommendations</div>
-              <ul>
-			  <li><a href="${localHref}/recs/music.html">music</a></li>
-			  	<li><a href="${localHref}/recs/tv-shows.html">tv shows</a></li>
-			  	<li><a href="${localHref}/recs/movies.html">movies</a></li>
-			  	<li><a href="${localHref}/recs/books.html">books</a></li>
-			  	<li><a href="${localHref}/recs/games.html">games</a></li>
-                <!-- <li><a href="${localHref}/recs/software.html">software</a></li> -->
-              </ul>
-            </div>
-			<!-- 
-			<div class="aside-nav__section">
-              <div class="aside__heading">Shrines</div>
-              <ul>
-                <li><a href="${localHref}/shrines/hannibal.html">hannibal<img src="${nesting}img/link.png" /></a></li>
-              </ul>
-            </div>
-			-->
-            <div class="aside-nav__section">
-              <div class="aside__heading">Resources</div>
-              <ul>
-                <li><a href="${localHref}/resources/bookmarks.html">bookmarks</a></li>
-                <li><a href="${localHref}/resources/clipboard.html">clipboard</a></li>
-				<!--
-                <li><a href="${localHref}/resources/notion.html">notion</a></li>
-                <li><a href="${localHref}/resources/templates.html">templates</a></li>
-                <li><a href="${localHref}/resources/vocabulary.html">vocabulary</a></li>
+        <div class="aside-nav__section">
+			<div class="aside-stuff desktop-only">
+	          <div class="aside__heading aside__heading--changelog">Changelog</div>
+	          <div id="changelog" class="changelog custom-scrollbar">
+			  </div>
+	        </div>
+			<div class="aside-stuff desktop-only">
+	          <div class="aside__heading aside__heading--comingsoon">Coming Soon</div>
+	          <div class="changelog custom-scrollbar">
+				  <ul>
+				  	<li>vocabulary page</li> 
+				 	<li>meow page (my cats)</li> 
+				 	<li>rawr page (dino facts)</li> 
+				 	<li>shrines/quote pages</li> 
+				  </ul>
+			  </div>
+	        </div>
+			<div class="aside-stuff desktop-only">
+	          <div class="aside__heading aside__heading--stats">Stats</div>
+	          <div>
+				<center>hit count:</center>
+				<div class="aside-stuff__widget" id="hitcount"></div>
+				<center>listening to:</center>
+				<div class="aside-stuff__widget" id="lastfm-widget">
+			        <div>
+			          <a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">loading...</a>
+			        </div>
+			      </div>
+				<center>my status:</center>
+				<div class="aside-stuff__widget" id="statuscafe">
+			        <div id="statuscafe-username" style="display: none"></div>
+			        <div id="statuscafe-content"></div>
+			      </div>
+			  </div>
+		    </div>
+			<div class="aside-stuff desktop-only">
+	          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" /></a>
+				<a class="aside__flag-counter" href="/about/flag-counter.html"
+	            ><img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
+				<!-- comment in once there are more articles
+				<div class="aside__lucky-btn"><button type="button" id="lucky-btn" title="Go to a random blog article">I'm feeling lucky.</button></div>
 				-->
-              </ul>
-            </div>
-			<div class="aside-nav__section">
-              <div class="aside__heading">Coding Help</div>
-              <ul>
-				<li><a href="${localHref}/coding/neocities.html">neocities</a></li>
-                <li><a href="${localHref}/coding/advanced-coding.html">advanced tutorial<img src="${nesting}img/link.png" /></a></li>
-                <li><a href="${localHref}/coding/webpack-tutorial.html">webpack tutorial<img src="${nesting}img/link.png" /></a></li>
-              </ul>
-            </div>
-          </nav>
-        </details>
+				<a class="aside-stuff__guestbook" href="${localHref}/about/guestbook.html"><img src="${nesting}img/layout/kirby-guestbook.png" style="image-rendering:pixelated;" alt="sign my guestbook" /></a>
+				
+			</div>
+		</div>
       </aside>
 	  <div id="back-to-top-link" aria-hidden="true"><a href="#">scroll to top</a></div>
   	  `;
@@ -143,10 +190,60 @@ function getAfterMain(localHref) {
         <div class="footer-content">
           © petrapixel 2024 <i>┊</i>
           <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a
-          > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/about/credits.html">credits</a> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a></span>
+          > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/about/credits.html">credits</a> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
         </div>
       </footer>
   	  `;
+}
+
+function initLastFmWidget() {
+  let user = "Petra1999";
+  let url = "https://lastfm-last-played.biancarosa.com.br/" + user + "/latest-song";
+  let song = document.querySelector("#song");
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      song.innerHTML = json["track"]["name"] + " – " + json["track"]["artist"]["#text"];
+    });
+}
+
+function initHitcountWidget() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var site_data = JSON.parse(this.responseText);
+      var num_arr = site_data.info.views.toString().split("");
+      var num_str = "";
+      let i;
+      for (i = 0; i < num_arr.length; i++) {
+        num_str += num_arr[i];
+        if ((num_arr.length - 1 - i) % 3 == 0 && num_arr.length - 1 - i != 0) {
+          num_str += ",";
+        }
+        // var date_str = site_data.info.last_updated;
+        // var date_obj = new Date(site_data.info.last_updated);
+        //   document.getElementById("lastupdate").innerHTML = date_obj.getMonth() + 1 + "-" + date_obj.getDate() + "-" + date_obj.getFullYear();
+      }
+      document.getElementById("hitcount").innerHTML = num_str;
+    }
+  };
+  xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=petrapixel", true);
+  xhttp.send();
+}
+
+function initStatusCafeWidget() {
+  fetch("https://status.cafe/users/petra1999/status.json")
+    .then((r) => r.json())
+    .then((r) => {
+      if (!r.content.length) {
+        document.getElementById("statuscafe-content").innerHTML = "No status yet.";
+        return;
+      }
+      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/petra1999" target="_blank">' + r.author + "</a> " + r.face + " " + r.timeAgo;
+      document.getElementById("statuscafe-content").innerHTML = r.content;
+    });
 }
 
 function getChangelog() {
@@ -167,14 +264,14 @@ function getChangelog() {
           i++;
           if (c.l !== "") {
             changelogHtml += `
-		  <div class="asides-stat">
+		  <div class="changelog__entry">
             <strong>${c.d}</strong>
             <a href="${c.l}" tabindex="-1">${c.t}</a>
           </div>
 		  `;
           } else {
             changelogHtml += `
-		  <div class="asides-stat">
+		  <div class="changelog__entry">
             <strong>${c.d}</strong>
             <span>${c.t}</span>
           </div>
@@ -220,7 +317,7 @@ function buildTableOfContents() {
   const container = document.querySelector("#toc");
   if (!container) return;
   const allHeadings = document.querySelectorAll("main h2");
-  //   if (allHeadings.length < 2) return;
+  if (allHeadings.length < 2) return;
   let output = "<b>Table of Contents:</b><ol>";
   [...allHeadings].forEach((headingEl) => {
     const title = headingEl.innerHTML;

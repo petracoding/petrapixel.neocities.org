@@ -2,8 +2,8 @@ $w: 0.625rem;
 $h: 15rem;
 $p: 1.75 * $w;
 $line-w: 1px;
-$c-worst: $gbLight;
-$c-best: $gbDarkest;
+$c-worst: $green;
+$c-best: $pink;
 $sh: 0 0 $w 0 rgba(#000, 0.1);
 
 .writing-chart {
@@ -32,15 +32,15 @@ $sh: 0 0 $w 0 rgba(#000, 0.1);
     height: calc(var(--fy) * #{$h});
     border-radius: $w;
     box-shadow: $sh;
-    background: rgba($gbDark, 0.5);
+    background: rgba($purple, 0.5);
 
     &.under {
-      background: rgba($gbLight, 0.5);
+      background: rgba($green, 0.5);
     }
 
     &.over {
       --s: -1;
-      background: $gbDark;
+      background: $purple;
     }
 
     &::after {
@@ -74,7 +74,7 @@ $sh: 0 0 $w 0 rgba(#000, 0.1);
   position: absolute;
   width: calc(100% - 4em);
   height: 5px;
-  border-top: 2px dotted $gbLight;
+  border-top: 2px dotted $green;
   bottom: calc(var(--fy) * #{$h});
   border-radius: $w;
   z-index: 1;
@@ -105,7 +105,7 @@ $sh: 0 0 $w 0 rgba(#000, 0.1);
   }
 
   li {
-    color: $gbDark;
+    color: $purple;
     margin-bottom: 1.5em;
   }
 }

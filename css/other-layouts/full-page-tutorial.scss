@@ -23,7 +23,7 @@ body.full-page-tutorial {
 
     &:hover,
     &:focus {
-      color: $gbLight;
+      color: $green;
     }
   }
 
@@ -55,7 +55,7 @@ main .webpack-cheatsheet {
   line-height: 1;
 
   .two-columns {
-    background: rgba($gbDark, 0.05);
+    background: rgba($purple, 0.05);
     padding: 1em;
     border-radius: 10px;
   }

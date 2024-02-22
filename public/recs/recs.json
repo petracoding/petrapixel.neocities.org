@@ -2,37 +2,412 @@
   "movies": [
     {
       "title": "Swiss Army Man",
-      "year": "2000",
-      "genres": "Test, Test, Test, Test",
-      "rating": "1",
+      "year": "2016",
+      "genres": "Drama, Comedy, Adventure, Romance, Queer",
+      "rating": "3",
       "link": "https://letterboxd.com/film/swiss-army-man/",
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+      "image": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
     },
     {
-      "title": "Swiss Army Man 2",
-      "year": "1982",
-      "genres": "Test, Test, Test, Test",
+      "title": "Little Miss Sunshine",
+      "year": "2006",
+      "genres": "Drama, Comedy",
       "rating": "2",
-      "link": "https://letterboxd.com/film/swiss-army-man/",
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+      "link": "https://letterboxd.com/film/little-miss-sunshine/",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/h6/xm/om/q7/dOeM4R55TsAFBXCPNIDDMiJkePr-0-500-0-750-crop.jpg?v=09383296c6"
     },
     {
-      "title": "Swiss Army Man",
-      "year": "1920",
-      "genres": "Test, Test, Test, Test",
+      "title": "The Avengers",
+      "year": "2012",
+      "genres": "Action, Adventure, Sci-Fi",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/the-avengers-2012",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/10/u6/42/pa/cezWGskPY5x7GaglTTRN4Fugfb8-0-500-0-750-crop.jpg?v=9ec74891d9"
+    },
+    {
+      "title": "Spirit: Stallion of the Cimarron",
+      "year": "2002",
+      "genres": "Animation, Adventure, Western, Drama",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/spirit-stallion-of-the-cimarron/",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/9i/k2/m5/ro/nhrcR2KtVjXxJNSrPvcxVSyEf4c-0-500-0-750-crop.jpg?v=785e1166d4"
+    },
+    {
+      "title": "The Stag",
+      "year": "2013",
+      "genres": "Comedy",
       "rating": "1",
-      "link": "https://letterboxd.com/film/swiss-army-man/",
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+      "link": "https://letterboxd.com/film/the-stag/",
+      "image": "https://a.ltrbxd.com/resized/film-poster/1/5/3/1/8/4/153184-the-stag-0-500-0-750-crop.jpg?v=c55ea0101c"
+    },
+    {
+      "title": "The Hunger Games",
+      "year": "2012",
+      "genres": "Fantasy, Adventure, Sci-Fi",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/the-hunger-games/",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/x3/tw/wu/z4/vAkjFEm76Lu5hSevquxPgQ91OtI-0-500-0-750-crop.jpg?v=f4bfaf16df"
+    },
+    {
+      "title": "Knives Out",
+      "year": "2019",
+      "genres": "Mystery, Comedy, Crime",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/knives-out-2019/",
+      "image": "https://a.ltrbxd.com/resized/film-poster/4/7/5/3/7/0/475370-knives-out-0-500-0-750-crop.jpg?v=7da76d742c"
+    },
+    {
+      "title": "Jurassic Park",
+      "year": "1993",
+      "genres": "Sci-Fi, Adventure",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/jurassic-park/",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/1g/zz/ez/d8/yyCKYaW908ZbpexpnBJ3p8o87HA-0-500-0-750-crop.jpg?v=19a50874d0"
+    },
+    {
+      "title": "Zodiac",
+      "year": "2007",
+      "genres": "Drama, Crime, Thriller, Mystery",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/zodiac/",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/58/tf/z6/gw/qKQIjErYaN149hZRP5Vgf8RoC7S-0-500-0-750-crop.jpg?v=72ee5db942"
+    },
+    {
+      "title": "The Princess Bride",
+      "year": "1987",
+      "genres": "Adventure, Fantasy, Comedy",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/the-princess-bride/",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/hk/2u/bd/9p/gpxjoE0yvRwIhFEJgNArtKtaN7S-0-500-0-750-crop.jpg?v=544eada136"
+    },
+    {
+      "title": "Crazy, Stupid, Love.",
+      "year": "2011",
+      "genres": "Comedy, Romance",
+      "rating": "2",
+      "link": "https://letterboxd.com/film/crazy-stupid-love/",
+      "image": "https://a.ltrbxd.com/resized/film-poster/1/5/0/5/1/15051-crazy-stupid-love--0-500-0-750-crop.jpg?v=262be4c415"
+    },
+    {
+      "title": "Jennifer's Body",
+      "year": "2009",
+      "genres": "Comedy, Horror, Queer",
+      "rating": "2",
+      "link": "https://letterboxd.com/film/jennifers-body/",
+      "image": "https://a.ltrbxd.com/resized/film-poster/3/9/3/0/5/39305-jennifer-s-body-0-500-0-750-crop.jpg?v=af7fb6bd86"
+    },
+    {
+      "title": "EXAMPLE",
+      "year": "2000",
+      "genres": "GENRES",
+      "rating": "1",
+      "link": "LINK",
+      "image": "IMAGE"
     }
   ],
-  "tv": [
+  "tv-shows": [
     {
-      "title": "Swiss Army Man",
-      "year": "1920",
-      "genres": "Test, Test, Test, Test",
+      "title": "Doctor Who",
+      "ongoing": true,
+      "year": "2005",
+      "genres": "Sci-Fi, Adventure",
+      "rating": "2",
+      "link": "https://thetvdb.com/series/doctor-who-2005",
+      "image": "https://artworks.thetvdb.com/banners/posters/78804-52.jpg"
+    },
+    {
+      "title": "Our Flag Means Death",
+      "ongoing": false,
+      "year": "2022",
+      "genres": "Comedy, Romance, Queer",
+      "rating": "3",
+      "link": "https://thetvdb.com/series/our-flag-means-death",
+      "image": "https://artworks.thetvdb.com/banners/v4/series/390093/posters/621c5845419fd.jpg"
+    },
+    {
+      "title": "Good Omens",
+      "ongoing": true,
+      "year": "2019",
+      "genres": "Comedy, Fantasy, Queer",
       "rating": "1",
-      "link": "https://letterboxd.com/film/swiss-army-man/",
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0"
+      "link": "https://thetvdb.com/series/good-omens",
+      "image": "https://artworks.thetvdb.com/banners/posters/5c65fa5e7fa62.jpg"
+    },
+    {
+      "title": "What We Do In The Shadows",
+      "ongoing": true,
+      "year": "2019",
+      "genres": "Comedy, Fantasy, Horror, Queer",
+      "rating": "2",
+      "link": "https://thetvdb.com/series/what-we-do-in-the-shadows",
+      "image": "https://artworks.thetvdb.com/banners/posters/5c9c50f57f0b2.jpg"
+    },
+    {
+      "title": "Hannibal",
+      "ongoing": false,
+      "year": "2013",
+      "genres": "Crime, Horror, Drama, Mystery, Thriller, Queer",
+      "rating": "2",
+      "link": "https://thetvdb.com/series/hannibal",
+      "image": "https://artworks.thetvdb.com/banners/posters/259063-9.jpg"
+    },
+    {
+      "title": "Star Trek",
+      "ongoing": false,
+      "year": "1966",
+      "genres": "Sci-Fi, Adventure, Action",
+      "rating": "1",
+      "link": "https://thetvdb.com/series/star-trek",
+      "image": "https://artworks.thetvdb.com/banners/posters/77526-3.jpg"
+    },
+    {
+      "title": "Supernatural",
+      "ongoing": false,
+      "year": "2005",
+      "genres": "Drama, Fantasy, Horror",
+      "rating": "2",
+      "link": "https://thetvdb.com/series/supernatural",
+      "image": "https://artworks.thetvdb.com/banners/posters/78901-35.jpg"
+    },
+    {
+      "title": "Sherlock",
+      "ongoing": false,
+      "year": "2010",
+      "genres": "Crime, Drama, Mystery",
+      "rating": "3",
+      "link": "https://thetvdb.com/series/sherlock",
+      "image": "https://artworks.thetvdb.com/banners/posters/176941-17.jpg"
+    },
+    {
+      "title": "Stranger Things",
+      "ongoing": true,
+      "year": "2016",
+      "genres": "Sci-Fi, Drama, Adventure, Horror",
+      "rating": "2",
+      "link": "https://thetvdb.com/series/stranger-things",
+      "image": "https://artworks.thetvdb.com/banners/posters/5d1df8d5be8c8.jpg"
+    },
+    {
+      "title": "Avatar: The Last Airbender",
+      "ongoing": false,
+      "year": "2005",
+      "genres": "Animation, Comedy, Drama, Adventure, Action",
+      "rating": "3",
+      "link": "https://thetvdb.com/series/avatar-the-last-airbender",
+      "image": "https://artworks.thetvdb.com/banners/posters/74852-2.jpg"
+    },
+    {
+      "title": "Scrubs",
+      "ongoing": false,
+      "year": "2001",
+      "genres": "Comedy, Drama",
+      "rating": "2",
+      "link": "https://thetvdb.com/series/scrubs",
+      "image": "https://artworks.thetvdb.com/banners/posters/76156-6.jpg"
+    }
+  ],
+  "books": [
+    {
+      "title": "EXAMPLE",
+      "year": "1920",
+      "genres": "Test",
+      "ageRange": "adult",
+      "rating": "1",
+      "link": "LINK",
+      "image": "IMAGE"
+    },
+    {
+      "title": "Twenty Thousand Leagues Under the Sea",
+      "year": "1869",
+      "genres": "Sci-Fi, Adventure, Classics",
+      "ageRange": "adult",
+      "rating": "1",
+      "link": "https://www.goodreads.com/book/show/33507.Twenty_Thousand_Leagues_Under_the_Sea?ac=1&from_search=true&qid=xx8dalqMlQ&rank=1",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1494979127i/33507.jpg"
+    },
+    {
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "year": "2011",
+      "genres": "Sci-Fi, Adventure",
+      "ageRange": "adult",
+      "rating": "3",
+      "link": "https://www.goodreads.com/book/show/18007564-the-martian",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1413706054i/18007564.jpg"
+    },
+    {
+      "title": "Watership Down",
+      "author": "Richard Adams",
+      "year": "1972",
+      "genres": "Classics, Fantasy",
+      "ageRange": "ya",
+      "rating": "1",
+      "link": "https://www.goodreads.com/book/show/76620.Watership_Down",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1405136931i/76620.jpg"
+    },
+    {
+      "title": "Harry Potter",
+      "author": "J.K. Rowling",
+      "year": "1997",
+      "genres": "Fantasy",
+      "ageRange": "ya",
+      "rating": "3",
+      "link": "https://www.goodreads.com/book/show/3.Harry_Potter_and_the_Sorcerer_s_Stone",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1474154022i/3.jpg"
+    },
+    {
+      "title": "The Curious Incident of the Dog in the Night-Time",
+      "author": "Mark Haddon",
+      "year": "2003",
+      "genres": "Mystery",
+      "ageRange": "ya",
+      "rating": "2",
+      "link": "https://www.goodreads.com/book/show/3437.The_Curious_Incident_of_the_Dog_in_the_Night_Time",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1385361819i/3437.jpg"
+    },
+    {
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "year": "2011",
+      "genres": "Nonfiction",
+      "ageRange": "adult",
+      "rating": "3",
+      "link": "https://www.goodreads.com/book/show/23692271-sapiens",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1703329310i/23692271.jpg"
+    },
+    {
+      "title": "Flowers in the Attic",
+      "author": "V.C. Andrews",
+      "year": "1979",
+      "genres": "Horror",
+      "ageRange": "adult",
+      "rating": "2",
+      "link": "https://www.goodreads.com/book/show/43448.Flowers_in_the_Attic",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327880853l/43448.jpg"
+    },
+    {
+      "title": "Sex at Dawn",
+      "author": "Christopher Ryan, Cacilda Jethá",
+      "year": "2010",
+      "genres": "Nonfiction",
+      "ageRange": "adult",
+      "rating": "2",
+      "link": "https://www.goodreads.com/book/show/9522254-sex-at-dawn",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1307389873i/9522254.jpg"
+    }
+  ],
+  "games": [
+    {
+      "title": "Portal 2",
+      "platform": "pc, switch, other",
+      "gameType": "singleplayer, multiplayer",
+      "rating": "3",
+      "link": "https://www.backloggd.com/games/portal-2/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.jpg"
+    },
+    {
+      "title": "Legend of Zelda: Breath of the Wild",
+      "platform": "switch",
+      "gameType": "singleplayer",
+      "rating": "3",
+      "link": "https://www.backloggd.com/games/the-legend-of-zelda-breath-of-the-wild/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.jpg"
+    },
+    {
+      "title": "Minecraft",
+      "platform": "pc",
+      "gameType": "singleplayer, multiplayer",
+      "rating": "3",
+      "link": "https://www.backloggd.com/games/minecraft/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg"
+    },
+    {
+      "title": "Mario Kart 8 Deluxe",
+      "platform": "switch",
+      "gameType": "singleplayer, multiplayer",
+      "rating": "3",
+      "link": "https://www.backloggd.com/games/mario-kart-8-deluxe/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co213p.jpg"
+    },
+    {
+      "title": "Animal Crossing: New Horizons",
+      "platform": "switch",
+      "gameType": "singleplayer, multiplayer",
+      "rating": "1",
+      "link": "https://www.backloggd.com/games/animal-crossing-new-horizons/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wls.jpg"
+    },
+    {
+      "title": "Papers, Please",
+      "platform": "pc",
+      "gameType": "singleplayer",
+      "rating": "2",
+      "link": "https://www.backloggd.com/games/papers-please/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1vep.jpg"
+    },
+    {
+      "title": "Overcooked!",
+      "platform": "pc, other",
+      "gameType": "multiplayer",
+      "rating": "2",
+      "link": "https://www.backloggd.com/games/overcooked/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co262g.jpg"
+    },
+    {
+      "title": "Super Mario Odyssey",
+      "platform": "switch",
+      "gameType": "singleplayer",
+      "rating": "3",
+      "link": "https://www.backloggd.com/games/super-mario-odyssey/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1mxf.jpg"
+    },
+    {
+      "title": "Keep Talking and Nobody Explodes",
+      "platform": "pc, switch",
+      "gameType": "multiplayer",
+      "rating": "3",
+      "link": "https://www.backloggd.com/games/keep-talking-and-nobody-explodes/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/aykvlxlmax2rcvljwkqn.jpg"
+    },
+    {
+      "title": "The Wiki Game",
+      "platform": "browser",
+      "gameType": "multiplayer",
+      "rating": "2",
+      "link": "https://www.backloggd.com/games/the-wiki-game/",
+      "image": "../img/etc/thewikigame.png"
+    },
+    {
+      "title": "Stardew Valley",
+      "platform": "pc, switch",
+      "gameType": "singleplayer, multiplayer",
+      "rating": "1",
+      "link": "https://www.backloggd.com/games/stardew-valley/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/xrpmydnu9rpxvxfjkiu7.jpg"
+    },
+    {
+      "title": "Battleblock Theater",
+      "platform": "pc, other",
+      "gameType": "multiplayer",
+      "rating": "2",
+      "link": "https://www.backloggd.com/games/battleblock-theater/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ify.jpg"
+    },
+    {
+      "title": "GeoGuessr",
+      "platform": "browser",
+      "gameType": "singleplayer, multiplayer",
+      "rating": "1",
+      "link": "https://www.backloggd.com/games/geoguessr/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7ebv.jpg"
+    },
+    {
+      "title": "EXAMPLE",
+      "platform": "switch",
+      "gameType": "singleplayer",
+      "rating": "1",
+      "link": "LINK",
+      "image": "IMAGE"
     }
   ]
 }

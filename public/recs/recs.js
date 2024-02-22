@@ -19,20 +19,52 @@ function loadData(typeStr) {
 function fillData(data, typeStr) {
   let output = "";
   [...data].forEach((d) => {
-    if (typeStr == "movies") {
-      output += `
-	  <div class="rec ${getRatingClass(d.rating)} ${turnToDecade(d.year)} ${turnToClasses(d.genres)}">
-              <div class="rec__image"><img src="${d.poster}" /></div>
+    const propertiesForClasses = [d.genres, d.platform, d.ageRange, d.gameType, d.ongoing ? "ongoing" : "ended"].join(",");
+    const titleClass = d.title.length > 20 ? " rec__title--long" : "";
+
+    let linklabel = "link";
+    switch (typeStr) {
+      case "movies":
+        linklabel = "letterboxd";
+        break;
+      case "tv-shows":
+        linklabel = "TVDB";
+        break;
+      case "books":
+        linklabel = "goodreads";
+        break;
+      case "games":
+        linklabel = "backloggd";
+        break;
+    }
+
+    const html =
+      `
+	  <div class="rec ${getRatingClass(d.rating)} ${turnToDecade(d.year)} ${turnToClasses(propertiesForClasses)}">
+	  	<div class="rec__inner">
+              <div class="rec__image"><img src="${d.image}" /></div>
               <div class="rec__info">
-                <div class="rec__title">${d.title}</div>
+                <div class="rec__title ${titleClass}">${d.title}</div>
+				` +
+      (d.author ? `<p class="rec__author">${d.author}</p>` : "") +
+      (typeStr == "tv-shows" ? `<p class="rec__author">(${d.ongoing ? "ongoing" : "ended"})</p>` : "") +
+      `
                 <div class="rec__desc">
-                  <p><strong>Rating:</strong> ${getRatingStr(d.rating)}</p>
-                  <p><strong>Year:</strong> ${d.year}</p>
-                  <p><strong>Genres:</strong> ${d.genres}</p>
+                  <p><strong>My rating:</strong> <span class="rec__stars">${getRatingStr(d.rating)}</span></p>
+                  ` +
+      (d.year ? `<p><strong>${typeStr == "tv-shows" ? "Start " : ""}Year:</strong> ${d.year}</p>` : "") +
+      (d.ageRange ? `<p><strong>Age Range:</strong> ${d.ageRange}</p>` : "") +
+      (typeStr == "games" ? `<p><strong>Platform:</strong> ${d.platform}</p><p><strong>Type:</strong> ${d.gameType}</p>` : `<p><strong>Genres:</strong> ${d.genres}</p>`) +
+      `
+                  
                 </div>
-                <div class="rec__link"><a href="${d.link}">letterboxd</a></div>
+                <div class="rec__link"><a href="${d.link}" target="_blank">${linklabel}</a></div>
               </div>
-            </div>`;
+            </div>
+		</div>`;
+
+    if (d.title.toLowerCase() !== "example") {
+      output += html;
     }
   });
   document.querySelector(".isotope-items").innerHTML = output;
@@ -48,23 +80,26 @@ function getRatingClass(ratingValue) {
 
 function getRatingStr(ratingValue) {
   if (ratingValue == 1) return "★★★★";
-  if (ratingValue == 2) return "★★★<small>½</small>";
-  if (ratingValue == 3) return "★★★★";
+  if (ratingValue == 2) return "★★★★<small>½</small>";
+  if (ratingValue == 3) return "★★★★★";
   return "";
 }
 
 function turnToDecade(str) {
+  if (!str) return "";
   const year = parseInt(str);
   if (year > 1980) {
-    const decade = Math.ceil(year / 10) * 10;
+    const decade = Math.floor(year / 10) * 10;
     return ("" + decade).replace("19", "") + "s";
   }
 
   if (year >= 1950) return "1950-79";
-  return "1900-49";
+  if (year >= 1900) return "1900-49";
+  return "1800s";
 }
 
 function turnToClasses(str) {
+  if (!str) return "";
   return str.toLowerCase().replaceAll(" ", "").replaceAll(",", " ");
 }
 
@@ -73,16 +108,27 @@ function turnToClasses(str) {
 function initIsotope() {
   if (!document.querySelector(".rec-filters")) return;
 
-  var $isotope = $(".isotope-items").isotope({
+  const options = {
     itemSelector: ".rec",
+    percentPosition: true,
+    layoutMode: "fitRows",
+    masonry: {
+      // use element for option
+      columnWidth: ".rec",
+    },
+  };
+
+  let $isotope = $(".isotope-items").isotope(options);
+  $isotope.imagesLoaded().progress(function () {
+    $isotope.isotope(options);
   });
-  var isotopeFilters = {};
+  let isotopeFilters = {};
 
   $("button").click(function () {
-    var $buttonGroup = $(this).parents(".rec-filters__buttons");
-    var filterGroup = $buttonGroup.attr("data-filter-group");
+    let $buttonGroup = $(this).parents(".rec-filters__buttons");
+    let filterGroup = $buttonGroup.attr("data-filter-group");
     isotopeFilters[filterGroup] = $(this).attr("data-filter");
-    var filterValue = concatValues(isotopeFilters);
+    let filterValue = concatValues(isotopeFilters);
     $isotope.isotope({ filter: filterValue });
 
     // active state
@@ -91,8 +137,8 @@ function initIsotope() {
   });
 
   function concatValues(obj) {
-    var value = "";
-    for (var prop in obj) {
+    let value = "";
+    for (let prop in obj) {
       value += obj[prop];
     }
     return value;

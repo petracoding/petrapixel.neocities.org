@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>tv recs</title>
+    <title>tv recs | petrapixel</title>
+    <meta name="description" content="Here's my Neocities page for tv show recommendations! All my favorite tv shows in one page!" />
     <script src="../main.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="../favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
@@ -17,22 +18,17 @@
       <main id="main">
         <section>
           <h1>TV Recs</h1>
-          This page is under construction! Please check back later.
-        </section>
-        <section style="display: none">
-          <h1>TV Recs</h1>
           <p>Here are some tv shows I've enjoyed and would definitely recommend!</p>
-          <strong>Filter:</strong>
+          <strong class="rec-filters-title">Filter:</strong>
           <div class="rec-filters">
             <div class="rec-filters__group">
               <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
                 <button class="rec-filters__button is-checked" data-filter="">any genre</button>
                 <button class="rec-filters__button" data-filter=".action">action</button>
                 <button class="rec-filters__button" data-filter=".adventure">adventure</button>
-                <button class="rec-filters__button" data-filter=".animated">animated</button>
+                <button class="rec-filters__button" data-filter=".animation">animation</button>
                 <button class="rec-filters__button" data-filter=".comedy">comedy</button>
                 <button class="rec-filters__button" data-filter=".drama">drama</button>
-                <button class="rec-filters__button" data-filter=".family">family</button>
                 <button class="rec-filters__button" data-filter=".horror">horror</button>
                 <button class="rec-filters__button" data-filter=".queer">queer</button>
                 <button class="rec-filters__button" data-filter=".romance">romance</button>
@@ -42,14 +38,13 @@
             </div>
             <div class="rec-filters__group">
               <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
-                <button class="rec-filters__button is-checked" data-filter="">any decade</button>
-                <button class="rec-filters__button" data-filter=".1900">1900-49</button>
-                <button class="rec-filters__button" data-filter=".1950">1950-79</button>
-                <button class="rec-filters__button" data-filter=".80">80s</button>
-                <button class="rec-filters__button" data-filter=".90">90s</button>
-                <button class="rec-filters__button" data-filter=".00">2000s</button>
-                <button class="rec-filters__button" data-filter=".10">2010s</button>
-                <button class="rec-filters__button" data-filter=".20">2020s</button>
+                <button class="rec-filters__button is-checked" data-filter="">any start year</button>
+                <button class="rec-filters__button" data-filter=".1950-79">1950-79</button>
+                <!-- <button class="rec-filters__button" data-filter=".80s">80s</button>
+                <button class="rec-filters__button" data-filter=".90s">90s</button> -->
+                <button class="rec-filters__button" data-filter=".2000s">2000s</button>
+                <button class="rec-filters__button" data-filter=".2010s">2010s</button>
+                <button class="rec-filters__button" data-filter=".2020s">2020s</button>
               </div>
             </div>
             <div class="rec-filters__group">
@@ -60,17 +55,25 @@
                 <button class="rec-filters__button" data-filter=".r3">★★★★★</button>
               </div>
             </div>
+            <div class="rec-filters__group">
+              <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
+                <button class="rec-filters__button is-checked" data-filter="">any status</button>
+                <button class="rec-filters__button" data-filter=".ongoing">ongoing</button>
+                <button class="rec-filters__button" data-filter=".ended">ended</button>
+              </div>
+            </div>
           </div>
-          <div class="isotope-items"></div>
+          <div class="isotope-items isotope-items--tv"></div>
         </section>
       </main>
     </div>
     <!-- Isotope: -->
-    <script src="../assets/jquery.js"></script>
-    <script src="../assets/isotope.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="recs.js"></script>
     <script>
-      loadData("movies");
+      loadData("tv-shows");
     </script>
   </body>
 </html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>neocities</title>
+    <title>neocities | petrapixel</title>
+    <meta name="description" content="Quick and helpful coding tips and code snippets for Neocities. Easy enough for beginners!" />
     <script src="../main.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../favicon.ico" rel="icon" type="image/x-icon" />
 
-    <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <!-- code highlight -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -44,53 +45,8 @@
         <section>
           <h1>Helpful Neocities Stuff</h1>
           <div id="toc"></div>
-          <hr />
-          <h2>External Widgets for Free Plans</h2>
-          <p>
-            Unfortunately, if you have a free website on neocities you are not allowed to use external scripts, such as guestbooks, shoutboxes, status/mood widgets, and even hit counters.
-            <img src="../img/inline/sad.gif" />
-          </p>
-          <p>
-            The good news is that I found a way around that: you can use iframes. Specifially, you use the script you want to use on a different website not hosted on neocities, in the center of an
-            otherwise blank page with <i>background: transparent;</i> and then use this URL in an iframe on your neocities page. This is what I do.
-            <a href="https://petracoding.github.io/neocities/stats.html" target="_blank">Here</a> you can see an example of what a page with a widget looks like (you can see it in use in my sidebar on
-            the left!).
-          </p>
-          <p>
-            For guestbooks I recommend using <a href="https://www.123guestbook.com/" target="_blank">123guestbook</a> (which is what I use for <a href="/guestbook.html">my guestbook</a> iframe)
-            because it is very customizable and looks good in an iframe. For a chatbox you can use <a href="https://www.cbox.ws/" target="_blank">cbox</a>, because it works via an iframe.
-          </p>
-          <hr />
-          <!-- ----------------------------------------------------------------------------------------------------- -->
-          <!-- ----------------------------------------------------------------------------------------------------- -->
-          <!-- ----------------------------------------------------------------------------------------------------- -->
-          <h2>Automatic Deployment</h2>
-          <p>
-            Using <a href="https://github.com/marketplace/actions/deploy-to-neocities" target="_blank">this amazing GitHub Action</a> you can automatically deploy your changes to Neocities without
-            manually uploading any files. <img src="../img/inline/excited.gif" /> It only updates the files that were actually changed, don't worry about your feed. Prerequisite for this is that you
-            have a GitHub repository for your project.
-          </p>
-          <strong>How to do it:</strong>
-          <ul>
-            <li>Make sure all the files in your project that should be uploaded to Neocities are in a folder called <i>public</i>.</li>
-            <li>
-              Create the following file in the root of your project (<i>NOT</i> in the <i>public</i> folder): <code>.github/workflows/neocities.yml</code> Make sure you spell it correctly! Don't
-              forget the "." at the start of the first folder name.
-            </li>
-            <li>Insert the code shown <a href="https://github.com/marketplace/actions/deploy-to-neocities#usage" target="_blank">here</a> into your file.</li>
-            <li>If your branch is called 'main' instead of 'master' make sure to change that on line 7.</li>
-            <li>Comment out (= add a # at the start of the line) lines 21 to 28. You don't need them.</li>
-            <li>If you want to you can set <i>cleanup</i> to <i>true</i>. This means that files that are still uploaded to Neocities but not in your project anymore are deleted from Neocities.</li>
-            <li>
-              Open your repository on GitHub, go to its "Settings", then "Secrets and Variables" -> "Actions". Add a secret with the name
-              <span style="text-transform: none">NEOCITIES_API_TOKEN</span> . The value is your API Key from Neocities (Can be found in your Site Settings on Neocities under "<span
-                style="text-transform: none"
-                >API</span
-              >").
-            </li>
-          </ul>
-          <p>Done! Now whenever you push to your master/main branch, the changed/added files will automatically be uploaded to your Neocities site.</p>
-          <hr />
+        </section>
+        <section>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -102,7 +58,7 @@
             <summary>Show/Hide</summary>
             <p>HTML:</p>
             <pre><code>&lt;div class=&quot;pink-image&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/div&gt;</code></pre>
-            <p>CSS</p>
+            <p>CSS:</p>
             <pre><code>.pink-image {
   position: relative;
 
@@ -123,7 +79,8 @@
   }
 }</code></pre>
           </details>
-          <hr />
+        </section>
+        <section>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -232,6 +189,12 @@ container.innerHTML = output + "&lt;/ol&gt;";</code></pre>
             <hr />
           </details>
           <!-- ----------------------------------------------------------------------------------------------------- -->
+        </section>
+        <section>
+          <h2>Blog Posts</h2>
+          <div class="blog-read-more">
+            <div class="blog-read-more__articles" id="blog" data-filter="neocities" data-limit=""></div>
+          </div>
         </section>
       </main>
     </div>

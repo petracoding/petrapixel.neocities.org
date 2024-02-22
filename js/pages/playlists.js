@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+import { doOnEscPress } from "../helpers";
+
+export function initPlaylists() {
   const iframeEl = document.querySelector("#spotifyIFrame");
   if (!iframeEl) return;
 
@@ -8,21 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
     iframeEl.setAttribute("src", "");
   });
 
-  document.onkeydown = function (evt) {
-    evt = evt || window.event;
-    var isEscape = false;
-    if ("key" in evt) {
-      isEscape = evt.key === "Escape" || evt.key === "Esc";
-    } else {
-      isEscape = evt.keyCode === 27;
-    }
-    if (isEscape) {
-      iframeEl.closest(".spotify-iframe-container").setAttribute("aria-hidden", "true");
-      iframeEl.setAttribute("src", "");
-    }
-  };
+  doOnEscPress(() => {
+    iframeEl.closest(".spotify-iframe-container").setAttribute("aria-hidden", "true");
+    iframeEl.setAttribute("src", "");
+  });
 
   const playlistEls = document.querySelectorAll(".playlists .playlist");
+  let aEl;
   [...playlistEls].forEach((playlistEl) => {
     aEl = playlistEl.querySelector(".playlist__infos a");
     aEl.addEventListener("click", (e) => {
@@ -38,4 +32,4 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   });
-});
+}

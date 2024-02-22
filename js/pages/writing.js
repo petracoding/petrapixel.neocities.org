@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+export function initWritingChart() {
   const chartEl = document.querySelector(".writing-chart");
   if (!chartEl) return;
 
@@ -28,4 +28,4 @@ document.addEventListener("DOMContentLoaded", function () {
       bar.setAttribute("data-title", title + " (" + kRounded + "k)");
     }
   });
-});
+}

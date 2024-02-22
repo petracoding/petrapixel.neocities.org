@@ -1,15 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-@font-face {
-  font-family: $font;
-  src: url(https://cinni.net/fonts/basiic.ttf);
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: $font, sans-serif;
+  font-family: $font;
   letter-spacing: -0.03em;
   font-size: 15px;
   line-height: 1.4;
@@ -30,6 +24,10 @@ a {
     color: $textColor;
     cursor: $cursorPointer;
   }
+
+  &[data-fslightbox] {
+    cursor: zoom-in;
+  }
 }
 
 button {
@@ -37,11 +35,12 @@ button {
   letter-spacing: -0.03em;
   font-size: 15px;
   line-height: 1.4;
+  cursor: $cursorPointer;
 }
 
 ::selection {
-  color: $gbDark;
-  background: rgba($gbLight, 0.5);
+  color: $purple;
+  background: rgba($green, 0.5);
 }
 
 .mobile-only {
@@ -77,5 +76,13 @@ button {
 @media (prefers-reduced-motion) {
   marquee {
     display: none;
+  }
+}
+
+.full-width-image {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }

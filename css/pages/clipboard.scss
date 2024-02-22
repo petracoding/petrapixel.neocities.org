@@ -40,21 +40,21 @@
       font-style: normal;
       cursor: copy;
       font-size: 1.2em;
-      border: 1px dashed rgba($gbDark, 0.5);
+      border: 1px dashed rgba($purple, 0.5);
       margin: 0.1em;
       line-height: 1;
       text-transform: none;
 
       &:hover {
-        border-color: $gbDark;
-        background: rgba($gbLight, 0.7);
+        border-color: $purple;
+        background: rgba($green, 0.7);
       }
 
       &:active,
       &:focus {
         cursor: grabbing;
         border-style: solid;
-        border-color: $gbDarkest;
+        border-color: $pink;
       }
     }
   }

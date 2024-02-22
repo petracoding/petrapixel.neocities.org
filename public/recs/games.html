@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>game recs</title>
+    <title>game recs | petrapixel</title>
+    <meta name="description" content="Here's my Neocities page for game recommendations! All my favorite games in one page!" />
     <script src="../main.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="../favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
@@ -17,20 +18,16 @@
       <main id="main">
         <section>
           <h1>Game Recs</h1>
-          This page is under construction! Please check back later.
-        </section>
-        <section style="display: none">
-          <h1>Game Recs</h1>
           <p>Here are some games I've enjoyed and would definitely recommend!</p>
           <p>You can also seem them on <a href="https://www.backloggd.com/u/Petra1999/games/user-rating/" target="_blank">my backloggd profile</a>!</p>
-          <strong>Filter:</strong>
+          <strong class="rec-filters-title">Filter:</strong>
           <div class="rec-filters">
             <div class="rec-filters__group">
               <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
                 <button class="rec-filters__button is-checked" data-filter="">any platform</button>
                 <button class="rec-filters__button" data-filter=".pc">pc</button>
                 <button class="rec-filters__button" data-filter=".switch">switch</button>
-                <button class="rec-filters__button" data-filter=".web">web</button>
+                <button class="rec-filters__button" data-filter=".browser">browser</button>
                 <button class="rec-filters__button" data-filter=".other">other</button>
               </div>
             </div>
@@ -50,16 +47,17 @@
               </div>
             </div>
           </div>
-          <div class="isotope-items"></div>
+          <div class="isotope-items isotope-items--games"></div>
         </section>
       </main>
     </div>
     <!-- Isotope: -->
-    <script src="../assets/jquery.js"></script>
-    <script src="../assets/isotope.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="recs.js"></script>
     <script>
-      loadData("movies");
+      loadData("games");
     </script>
   </body>
 </html>

@@ -1,16 +1,20 @@
 import "../css/main.scss";
 import { buildLayout } from "./layout";
+import { initClipboard } from "./pages/clipboard";
+import { initPlaylists } from "./pages/playlists";
+import { initWritingChart } from "./pages/writing";
+import { initBlog } from "./pages/blog";
 
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("-js");
+  console.log("%c Hello! :)", "font-size: 20pt");
+  console.log("%c Feel free to look around my site, but please do not copy large sections of code!", "font-size: 14pt");
 
   buildLayout();
-
-  // Tab Title
-  const tabTitle = document.title;
-  if (tabTitle !== "petrapixel") {
-    document.title = tabTitle + " | petrapixel";
-  }
+  initClipboard();
+  initPlaylists();
+  initWritingChart();
+  initBlog();
 
   // External Links
   const allLinks = document.querySelectorAll("main a[href]:not([target])");
@@ -26,8 +30,3 @@ document.addEventListener("DOMContentLoaded", function () {
     inlineImg.setAttribute("aria-hidden", "true");
   });
 });
-
-// Pages
-import "./pages/clipboard";
-import "./pages/playlists";
-import "./pages/writing";
