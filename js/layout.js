@@ -71,7 +71,7 @@ function getBeforeMain(localHref, nesting) {
 	            <ul>
 	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" />home</a></li>
 	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" />about me</a></li>
-	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" />blog <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
+	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" />blog <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
 	              <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" />guestbook</a></li>
 	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" />blinkies</a></li>
 	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" />archive</a></li> -->
@@ -94,21 +94,20 @@ function getBeforeMain(localHref, nesting) {
 	              <div class="aside__heading aside__heading--recs">Recommendations</div>
 	              <ul>
 				  <li><a href="${localHref}/recs/music.html"><img width="9" src="${nesting}img/layout/heart.png" />music</a></li>
-				  	<li><a href="${localHref}/recs/tv-shows.html"><img width="9" src="${nesting}img/layout/heart.png" />tv shows <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
-				  	<li><a href="${localHref}/recs/movies.html"><img width="9" src="${nesting}img/layout/heart.png" />movies <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
-				  	<li><a href="${localHref}/recs/books.html"><img width="9" src="${nesting}img/layout/heart.png" />books <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
-				  	<li><a href="${localHref}/recs/games.html"><img width="9" src="${nesting}img/layout/heart.png" />games <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></a></li>
+				  	<li><a href="${localHref}/recs/tv-shows.html"><img width="9" src="${nesting}img/layout/heart.png" />tv shows <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+				  	<li><a href="${localHref}/recs/movies.html"><img width="9" src="${nesting}img/layout/heart.png" />movies <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+				  	<li><a href="${localHref}/recs/books.html"><img width="9" src="${nesting}img/layout/heart.png" />books <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+				  	<li><a href="${localHref}/recs/games.html"><img width="9" src="${nesting}img/layout/heart.png" />games <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
 	                <!-- <li><a href="${localHref}/recs/software.html"><img width="9" src="${nesting}img/layout/heart.png" />software</a></li> -->
 	              </ul>
 	            </div>
-				<!-- 
 				<div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--shrines">Shrines</div>
 	              <ul>
-	                <li><a href="${localHref}/shrines/hannibal.html"><img width="9" src="${nesting}img/layout/heart.png" />hannibal<img src="${nesting}img/link.png" /></a></li>
+	                <li><a href="${localHref}/shrines/german-nostalgia.html"><img width="9" src="${nesting}img/layout/heart.png" />german nostalgia <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+	                <!-- <li><a href="${localHref}/shrines/german.html"><img width="9" src="${nesting}img/layout/heart.png" />hannibal<img src="${nesting}img/link.png" /></a></li> -->
 	              </ul>
 	            </div>
-				-->
 	            <div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--resources">Resources</div>
 	              <ul>

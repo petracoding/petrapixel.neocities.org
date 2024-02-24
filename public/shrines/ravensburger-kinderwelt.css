@@ -1,0 +1,174 @@
+:root {
+  --red: #a80d09;
+  --lightBrown: #997133;
+  --darkBrown: #4e2602;
+  --green: #54c037;
+  --blue: #0b3d92;
+}
+
+body {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(12, 71, 145, 0.31) 100px, rgba(12, 71, 145, 0.31) 200px);
+  background-color: #ccedd2;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+}
+
+.ravensburger-kinderwelt {
+  background: rgba(255, 255, 255, 0.8);
+  width: 1000px;
+  max-width: 100%;
+  padding: 1em 3em;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.5;
+}
+
+hr {
+  border: 0;
+  border-top: 2px dotted var(--lightBrown);
+  margin: 3em 0;
+}
+
+summary,
+a,
+a:visited {
+  cursor: pointer;
+  color: var(--blue);
+}
+
+details[open] summary,
+a:hover,
+a:focus {
+  color: var(--green);
+}
+
+details > div {
+  padding: 1em;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 1.5em 0 0.25em;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Media */
+
+.screenshots {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.screenshots .image {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: calc(25% - 10px);
+}
+
+.screenshots--large .image {
+  width: calc(50% - 10px);
+}
+
+.screenshots--small .image {
+  width: calc(16.6666% - 10px);
+}
+
+.video {
+  width: 100%;
+}
+
+.video iframe {
+  max-width: 100%;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image span {
+  margin-top: 3px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+a.image {
+  color: black;
+  text-decoration: none;
+}
+
+[data-fslightbox] {
+  cursor: zoom-in;
+}
+
+/* Mobile */
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .ravensburger-kinderwelt {
+    padding: 1em 1em;
+  }
+
+  .screenshots--large .image,
+  .screenshots--small .image,
+  .screenshots .image {
+    width: 50%;
+    width: calc(50% - 10px);
+  }
+
+  hr {
+    margin: 2em 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .screenshots--large .image,
+  .screenshots .image {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .screenshots--small .image {
+    width: 50%;
+    width: calc(50% - 5px);
+    margin-right: 5px;
+  }
+
+  hr {
+    margin: 1em 0;
+  }
+}

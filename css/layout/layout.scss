@@ -191,17 +191,21 @@ header {
 
   &.aside__heading--recs {
     background: #ff5927;
-
     color: white;
   }
 
-  &.aside__heading--resources {
+  &.aside__heading--shrines {
     background: #ff274b;
     color: white;
   }
 
-  &.aside__heading--coding {
+  &.aside__heading--resources {
     background: #ff27ff;
+    color: white;
+  }
+
+  &.aside__heading--coding {
+    background: #9727ff;
     color: white;
   }
 }
