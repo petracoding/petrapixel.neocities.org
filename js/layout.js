@@ -6,7 +6,7 @@ export function buildLayout() {
   if (mainEl) {
     const localHref = isLocalhost ? "/public" : "";
     const scriptEl = document.querySelector('head script[src*="main.js"]');
-    const nesting = scriptEl ? (scriptEl.getAttribute("src") == "main.js" ? "./" : "../") : "../";
+    const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("main.js") ? "./" : "../") : "../";
 
     mainEl.insertAdjacentHTML("beforebegin", getBeforeMain(localHref, nesting));
     mainEl.insertAdjacentHTML("afterend", getAfterMain(localHref));
@@ -61,7 +61,7 @@ function initLuckyBtn() {
 
 function getBeforeMain(localHref, nesting) {
   return `
-  	<header><div class="header-heading"><a href="${localHref}/">♡ petra pixel ♡</a></div></header>
+  	<header><div class="header-heading"><a href="${localHref}/"><img src="${nesting}img/layout/petrapixel.png" aria-label="petrapixel" height="100" width="300" /></a></div></header>
       <aside class="aside aside--left">
 	  <details>
           <summary>Open Navigation</summary>
@@ -71,6 +71,7 @@ function getBeforeMain(localHref, nesting) {
 	            <ul>
 	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" />home</a></li>
 	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" />about me</a></li>
+	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" />about the site <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
 	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" />blog <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
 	              <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" />guestbook</a></li>
 	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" />blinkies</a></li>
@@ -124,6 +125,7 @@ function getBeforeMain(localHref, nesting) {
 	              <div class="aside__heading aside__heading--coding">Coding Help</div>
 	              <ul>
 					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" />neocities</a></li>
+	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" />cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
 	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" />advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
 	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" />webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
 	              </ul>
@@ -143,8 +145,8 @@ function getBeforeMain(localHref, nesting) {
 	          <div class="changelog custom-scrollbar">
 				  <ul>
 				  	<li>vocabulary page</li> 
-				 	<li>meow page (my cats)</li> 
-				 	<li>rawr page (dino facts)</li> 
+				 	<li>my cats</li> 
+				 	<li>dino shrine</li> 
 				 	<li>shrines/quote pages</li> 
 				  </ul>
 			  </div>
@@ -168,19 +170,21 @@ function getBeforeMain(localHref, nesting) {
 			  </div>
 		    </div>
 			<div class="aside-stuff desktop-only">
-	          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" /></a>
-				<a class="aside__flag-counter" href="/about/flag-counter.html"
+				<div class="aside-stuff__center">
+	          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/></a>
+				<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
 	            ><img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
 				<!-- comment in once there are more articles
 				<div class="aside__lucky-btn"><button type="button" id="lucky-btn" title="Go to a random blog article">I'm feeling lucky.</button></div>
 				-->
-				<a class="aside-stuff__guestbook" href="${localHref}/about/guestbook.html"><img src="${nesting}img/layout/kirby-guestbook.png" style="image-rendering:pixelated;" alt="sign my guestbook" /></a>
-				
+				<a class="aside-stuff__guestbook"  aria-hidden="true" href="${localHref}/about/guestbook.html"><img src="${nesting}img/layout/kirby-guestbook.png" style="image-rendering:pixelated;" alt="sign my guestbook" /></a>
+				</div>
 			</div>
 		</div>
       </aside>
-	  <div id="back-to-top-link" aria-hidden="true"><a href="#">scroll to top</a></div>
-  	  `;
+	  <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
+	  <!-- This is here so that it counts mobile views too! -->
+	  <img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" aria-hidden="true" tabindex="-1" style="width: 1px;height: 1px;opacity: 0;" />	  `;
 }
 
 function getAfterMain(localHref) {

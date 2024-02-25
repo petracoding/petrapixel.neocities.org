@@ -53,10 +53,14 @@ main {
     border-radius: 10px;
   }
 
-  pre,
-  code {
+  pre {
+    margin: 1em 0 1.5em;
+  }
+
+  pre code:not(.hljs),
+  pre code.hljs {
     display: block;
-    margin: 1em 0;
+
     background: rgba($purple, 0.1);
     padding: 1em;
     border-radius: 10px;
@@ -67,6 +71,12 @@ main {
     code {
       border-radius: 0;
     }
+  }
+
+  code {
+    text-transform: none;
+    background: rgba($purple, 0.1);
+    padding: 0.5em;
   }
 
   .code-title {
@@ -167,6 +177,17 @@ main {
 img[src*="inline/"]:not([class]) {
   height: 1em;
   margin: 0 0.25em;
+}
+
+// content warnings
+.cw {
+  color: $red;
+  font-size: 0.9em;
+
+  strong {
+    font-size: 0.9em;
+    color: $red;
+  }
 }
 
 /*=============================================
