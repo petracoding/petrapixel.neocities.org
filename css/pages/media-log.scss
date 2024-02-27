@@ -1,0 +1,24 @@
+.media-log__item {
+  width: 100%;
+  display: block;
+}
+
+// .media-log__entry {
+//     font-family: sans-serif;
+// }
+
+h2.media-log__item {
+  margin-top: 1.5em;
+}
+
+h3.media-log__item {
+  margin-top: 0.5em;
+}
+
+.media-log__entry-title {
+  font-weight: bold;
+}
+
+.media-log__entry-info {
+  font-style: italic;
+}

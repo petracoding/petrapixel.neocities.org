@@ -110,6 +110,11 @@ header {
   img {
     height: 100px;
     display: flex;
+
+    @media (max-width: $sm) {
+      max-width: 60vw;
+      height: auto;
+    }
   }
 }
 

@@ -72,7 +72,9 @@ function getBeforeMain(localHref, nesting) {
 	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" />home</a></li>
 	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" />about me</a></li>
 	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" />about the site <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" />blog <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" />cats :3  <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" />blog</a></li>
+				  <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" />media log  <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
 	              <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" />guestbook</a></li>
 	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" />blinkies</a></li>
 	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" />archive</a></li> -->
@@ -95,10 +97,10 @@ function getBeforeMain(localHref, nesting) {
 	              <div class="aside__heading aside__heading--recs">Recommendations</div>
 	              <ul>
 				  <li><a href="${localHref}/recs/music.html"><img width="9" src="${nesting}img/layout/heart.png" />music</a></li>
-				  	<li><a href="${localHref}/recs/tv-shows.html"><img width="9" src="${nesting}img/layout/heart.png" />tv shows <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-				  	<li><a href="${localHref}/recs/movies.html"><img width="9" src="${nesting}img/layout/heart.png" />movies <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-				  	<li><a href="${localHref}/recs/books.html"><img width="9" src="${nesting}img/layout/heart.png" />books <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-				  	<li><a href="${localHref}/recs/games.html"><img width="9" src="${nesting}img/layout/heart.png" />games <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+				  	<li><a href="${localHref}/recs/tv-shows.html"><img width="9" src="${nesting}img/layout/heart.png" />tv shows</a></li>
+				  	<li><a href="${localHref}/recs/movies.html"><img width="9" src="${nesting}img/layout/heart.png" />movies</a></li>
+				  	<li><a href="${localHref}/recs/books.html"><img width="9" src="${nesting}img/layout/heart.png" />books</a></li>
+				  	<li><a href="${localHref}/recs/games.html"><img width="9" src="${nesting}img/layout/heart.png" />games</a></li>
 	                <!-- <li><a href="${localHref}/recs/software.html"><img width="9" src="${nesting}img/layout/heart.png" />software</a></li> -->
 	              </ul>
 	            </div>
@@ -133,25 +135,24 @@ function getBeforeMain(localHref, nesting) {
 	        </nav>
         </details>
       </aside>
-      <aside class="aside aside--right">
+      <aside class="aside aside--right desktop-only">
         <div class="aside-nav__section">
-			<div class="aside-stuff desktop-only">
+			<div class="aside-stuff">
 	          <div class="aside__heading aside__heading--changelog">Changelog</div>
 	          <div id="changelog" class="changelog custom-scrollbar">
 			  </div>
 	        </div>
-			<div class="aside-stuff desktop-only">
+			<div class="aside-stuff">
 	          <div class="aside__heading aside__heading--comingsoon">Coming Soon</div>
 	          <div class="changelog custom-scrollbar">
 				  <ul>
 				  	<li>vocabulary page</li> 
-				 	<li>my cats</li> 
 				 	<li>dino shrine</li> 
 				 	<li>shrines/quote pages</li> 
 				  </ul>
 			  </div>
 	        </div>
-			<div class="aside-stuff desktop-only">
+			<div class="aside-stuff">
 	          <div class="aside__heading aside__heading--stats">Stats</div>
 	          <div>
 				<center>hit count:</center>
@@ -169,7 +170,7 @@ function getBeforeMain(localHref, nesting) {
 			      </div>
 			  </div>
 		    </div>
-			<div class="aside-stuff desktop-only">
+			<div class="aside-stuff">
 				<div class="aside-stuff__center">
 	          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/></a>
 				<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
@@ -332,6 +333,7 @@ function buildTableOfContents() {
           .replaceAll(":", "")
           .replaceAll("#", "")
           .replaceAll(/<[^>]*>?/gm, "")
+          .replace(/-$/, "")
       ).toLowerCase();
     headingEl.setAttribute("id", link);
     output += `

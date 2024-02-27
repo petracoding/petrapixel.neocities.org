@@ -1,6 +1,8 @@
 {
   "changelog": [
     { "d": "2024-02-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-02-27", "t": "Cats page added!", "l": "/about/cats.html" },
+    { "d": "2024-02-26", "t": "Media log added!", "l": "/about/media-log.html" },
     { "d": "2024-02-25", "t": "'About the site' page added, and a new logo!", "l": "/about/about-the-site.html" },
     { "d": "2024-02-23", "t": "Added my first shrine!", "l": "/shrines/german-nostalgia.html" },
     { "d": "2024-02-21", "t": "Another huge update, and blog added!", "l": "/blog.html" },
