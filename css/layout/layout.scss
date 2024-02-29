@@ -55,7 +55,8 @@ main:not(.no-layout) {
   section {
     width: 100%;
     padding: 1em 1em;
-    border: 1px $purple dashed;
+    border: 2px $purple dashed;
+    border-radius: 10px;
     margin-bottom: 1em;
     background: $mainBackgroundColor;
 
@@ -155,7 +156,7 @@ header {
 @media (min-width: $lg) {
   .aside--left,
   .aside--right {
-    border-radius: 5px;
+    border-radius: 25px;
   }
 }
 
@@ -168,7 +169,7 @@ header {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 3px 5px 2px;
+  padding: 4px 5px 2px;
   line-height: 1;
   margin-bottom: 5px;
   font-weight: bold;
@@ -351,7 +352,8 @@ header {
 
     a {
       display: block;
-      padding: 4px 4px;
+      padding: 5px 5px;
+      padding-right: 0;
       color: $asideLinkColor;
       text-decoration: none;
       //   text-decoration: underline;
@@ -365,8 +367,10 @@ header {
       &:focus {
         color: $asideLinkColorHover;
         background-color: rgba(black, 0.2);
+        text-decoration: underline;
+        // text-decoration-style: wavy;
 
-        &:not(.active) {
+        &.active {
           text-decoration: none;
         }
       }
@@ -374,7 +378,6 @@ header {
       &.active {
         color: $asideLinkColorHover;
         background-color: rgba(black, 0.2);
-        text-decoration-style: wavy;
       }
 
       // bullets

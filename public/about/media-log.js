@@ -39,19 +39,24 @@ function buildLines(markup, year) {
   let entriesOutput = "";
   const entries = markup.querySelectorAll("li");
   [...entries].forEach((entry) => {
-    const markup = entry.innerHTML.replaceAll('<span class="gend-link"></span>', "");
+    const markup = entry.innerHTML.replaceAll('<span class="gend-link"></span>', "").replaceAll(" ♡", "");
     const strongEl = entry.querySelector("strong");
 
     const types = getTypes(markup);
-    const info = entry.querySelector("em") ? entry.querySelector("em").innerHTML : null;
-    let title = strongEl ? strongEl.innerHTML : getTitle(markup, info).replace(info, "");
-    title = title.trim().replace("↺", "").replace("ﾐ", "").replace("♪", "").replace(/,$/, "").trim();
+    const info = entry.querySelector("em") ? entry.querySelector("em").innerHTML : getInfo(markup);
+    let title = strongEl ? strongEl.innerHTML : getTitle(markup, info);
+    title = title.replace(info, "").trim().replace("(↺)", "").replace("↺", "").replace("ﾐ", "").replace("♪", "").replace(/,$/, "").trim();
     const re = markup.includes("↺");
     const bolded = strongEl ? true : false;
 
     entriesOutput += buildLine(types, title, info, re, bolded, year);
   });
   return entriesOutput;
+}
+
+function getInfo(markup) {
+  if (markup.includes("(") && markup.includes(")")) return markup.substring(markup.indexOf("("), markup.indexOf(")") + 1);
+  return null;
 }
 
 function getTitle(markup, hasInfo) {

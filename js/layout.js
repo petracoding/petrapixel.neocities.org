@@ -127,9 +127,11 @@ function getBeforeMain(localHref, nesting) {
 	              <div class="aside__heading aside__heading--coding">Coding Help</div>
 	              <ul>
 					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" />neocities</a></li>
+						<!--
 	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" />cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
 	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" />advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
 	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" />webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+					-->
 	              </ul>
 	            </div>
 	        </nav>
@@ -173,8 +175,12 @@ function getBeforeMain(localHref, nesting) {
 			<div class="aside-stuff">
 				<div class="aside-stuff__center">
 	          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/></a>
-				<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
-	            ><img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
+				${
+          isLocalhost
+            ? ""
+            : `<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
+	            ><img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>`
+        }
 				<!-- comment in once there are more articles
 				<div class="aside__lucky-btn"><button type="button" id="lucky-btn" title="Go to a random blog article">I'm feeling lucky.</button></div>
 				-->
@@ -185,7 +191,12 @@ function getBeforeMain(localHref, nesting) {
       </aside>
 	  <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
 	  <!-- This is here so that it counts mobile views too! -->
-	  <img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" aria-hidden="true" tabindex="-1" style="width: 1px;height: 1px;opacity: 0;" />	  `;
+	  ${
+      isLocalhost
+        ? ``
+        : `<img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" aria-hidden="true" tabindex="-1" style="width: 1px;height: 1px;opacity: 0;" />`
+    }
+	  	  `;
 }
 
 function getAfterMain(localHref) {

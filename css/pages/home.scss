@@ -42,6 +42,12 @@
 
     img {
       display: block;
+      transition: transform 0.2s ease;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.07);
+      }
     }
 
     &::after {
