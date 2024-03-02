@@ -204,6 +204,15 @@
       "rating": "2",
       "link": "https://thetvdb.com/series/scrubs",
       "image": "https://artworks.thetvdb.com/banners/posters/76156-6.jpg"
+    },
+    {
+      "title": "Succession",
+      "ongoing": false,
+      "year": "2018",
+      "genres": "Drama",
+      "rating": "2",
+      "link": "https://thetvdb.com/series/succession",
+      "image": "https://artworks.thetvdb.com/banners/series/338186/posters/62089567.jpg"
     }
   ],
   "books": [

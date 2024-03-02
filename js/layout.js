@@ -119,8 +119,9 @@ function getBeforeMain(localHref, nesting) {
 	                <li><a href="${localHref}/resources/notion.html"><img width="9" src="${nesting}img/layout/heart.png" />notion</a></li>
 					<!--
 	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" />templates</a></li>
-	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" />vocabulary</a></li>
-					-->
+						-->
+	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" />vocabulary <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+				
 	              </ul>
 	            </div>
 				<div class="aside-nav__section">
@@ -148,7 +149,6 @@ function getBeforeMain(localHref, nesting) {
 	          <div class="aside__heading aside__heading--comingsoon">Coming Soon</div>
 	          <div class="changelog custom-scrollbar">
 				  <ul>
-				  	<li>vocabulary page</li> 
 				 	<li>dino shrine</li> 
 				 	<li>shrines/quote pages</li> 
 				  </ul>
