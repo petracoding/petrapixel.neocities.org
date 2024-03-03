@@ -69,69 +69,69 @@ function getBeforeMain(localHref, nesting) {
 	          <div class="aside-nav__section">
 	            <div class="aside__heading aside__heading--menu desktop-only">Menu</div>
 	            <ul>
-	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" />home</a></li>
-	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" />about me</a></li>
-	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" />about the site <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" />cats :3  <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" />blog</a></li>
-				  <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" />media log  <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-	              <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" />guestbook</a></li>
-	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" />blinkies</a></li>
-	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" />archive</a></li> -->
-	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" />credits</a></li>
-	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" />sitemap</a></li>
+	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>home</a></li>
+	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about me</a></li>
+	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about the site </a></li>
+				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cats :3  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
+	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blog</a></li>
+				  <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>media log  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
+	              <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>guestbook</a></li>
+	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blinkies</a></li>
+	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>archive</a></li> -->
+	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>credits</a></li>
+	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>sitemap</a></li>
 	            </ul>
 	          </div>
 			  <div class="aside-nav__section">
-	              <div class="aside__heading aside__heading--creations">Creations</div>
+	              <div class="aside__heading aside__heading--creations">My Creations</div>
 	              <ul>
-	                <li><a href="${localHref}/creations/art.html"><img width="9" src="${nesting}img/layout/heart.png" />my art</a></li>
-	                <li><a href="${localHref}/creations/coding.html"><img width="9" src="${nesting}img/layout/heart.png" />my coding</a></li>
-	                <li><a href="${localHref}/creations/playlists.html"><img width="9" src="${nesting}img/layout/heart.png" />my playlists</a> </li>
-	                <li><a href="${localHref}/creations/video-edits.html"><img width="9" src="${nesting}img/layout/heart.png" />my video edits</a></li>
-	                <!-- <li><a href="${localHref}/creations/web-weaves.html"><img width="9" src="${nesting}img/layout/heart.png" />my web weaves</a></li> -->
-	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" />my writing</a></li>
+	                <li><a href="${localHref}/creations/art.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my art</a></li>
+	                <li><a href="${localHref}/creations/coding.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my coding</a></li>
+	                <li><a href="${localHref}/creations/playlists.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my playlists</a> </li>
+	                <li><a href="${localHref}/creations/video-edits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my video edits</a></li>
+	                <!-- <li><a href="${localHref}/creations/web-weaves.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my web weaves</a></li> -->
+	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my writing</a></li>
 	              </ul>
 	            </div>
 	            <div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--recs">Recommendations</div>
 	              <ul>
-				  <li><a href="${localHref}/recs/music.html"><img width="9" src="${nesting}img/layout/heart.png" />music</a></li>
-				  	<li><a href="${localHref}/recs/tv-shows.html"><img width="9" src="${nesting}img/layout/heart.png" />tv shows</a></li>
-				  	<li><a href="${localHref}/recs/movies.html"><img width="9" src="${nesting}img/layout/heart.png" />movies</a></li>
-				  	<li><a href="${localHref}/recs/books.html"><img width="9" src="${nesting}img/layout/heart.png" />books</a></li>
-				  	<li><a href="${localHref}/recs/games.html"><img width="9" src="${nesting}img/layout/heart.png" />games</a></li>
-	                <!-- <li><a href="${localHref}/recs/software.html"><img width="9" src="${nesting}img/layout/heart.png" />software</a></li> -->
+				  <li><a href="${localHref}/recs/music.html" aria-label="music recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>music</a></li>
+				  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>tv shows</a></li>
+				  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>movies</a></li>
+				  	<li><a href="${localHref}/recs/books.html" aria-label="book recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>books</a></li>
+				  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>games</a></li>
+	                <!-- <li><a href="${localHref}/recs/software.html" aria-label="software recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>software</a></li> -->
 	              </ul>
 	            </div>
 				<div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--shrines">Shrines</div>
 	              <ul>
-	                <li><a href="${localHref}/shrines/german-nostalgia.html"><img width="9" src="${nesting}img/layout/heart.png" />german nostalgia <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
-	                <!-- <li><a href="${localHref}/shrines/german.html"><img width="9" src="${nesting}img/layout/heart.png" />hannibal<img src="${nesting}img/link.png" /></a></li> -->
+	                <li><a href="${localHref}/shrines/german-nostalgia.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>german nostalgia </a></li>
+	                <!-- <li><a href="${localHref}/shrines/german.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>hannibal<img src="${nesting}img/link.png" /></a></li> -->
 	              </ul>
 	            </div>
 	            <div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--resources">Resources</div>
 	              <ul>
-	                <li><a href="${localHref}/resources/bookmarks.html"><img width="9" src="${nesting}img/layout/heart.png" />bookmarks</a></li>
-	                <li><a href="${localHref}/resources/clipboard.html"><img width="9" src="${nesting}img/layout/heart.png" />clipboard</a></li>
-	                <li><a href="${localHref}/resources/notion.html"><img width="9" src="${nesting}img/layout/heart.png" />notion</a></li>
+	                <li><a href="${localHref}/resources/bookmarks.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>bookmarks</a></li>
+	                <li><a href="${localHref}/resources/clipboard.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>clipboard</a></li>
+	                <li><a href="${localHref}/resources/notion.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>notion</a></li>
 					<!--
-	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" />templates</a></li>
+	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>templates</a></li>
 						-->
-	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" />vocabulary <small class="aside__new"><img src="${nesting}img/layout/new.gif" /></small></a></li>
+	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>vocabulary <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
 				
 	              </ul>
 	            </div>
 				<div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--coding">Coding Help</div>
 	              <ul>
-					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" />neocities</a></li>
+					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>neocities</a></li>
 						<!--
-	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" />cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
-	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" />advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
-	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" />webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
+	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
 					-->
 	              </ul>
 	            </div>
@@ -149,8 +149,10 @@ function getBeforeMain(localHref, nesting) {
 	          <div class="aside__heading aside__heading--comingsoon">Coming Soon</div>
 	          <div class="changelog custom-scrollbar">
 				  <ul>
-				 	<li>dino shrine</li> 
-				 	<li>shrines/quote pages</li> 
+				 	<li>blog post about polyamory</li> 
+				 	<li>dinosaur shrine</li> 
+				 	<li>more shrines</li> 
+				 	<li>advanced coding tutorials</li> 
 				  </ul>
 			  </div>
 	        </div>

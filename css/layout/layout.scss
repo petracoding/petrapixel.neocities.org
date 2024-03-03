@@ -11,16 +11,18 @@
 
 #back-to-top-link {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: 10px;
+  bottom: 20px;
+  left: 20px;
   opacity: 0;
+  line-height: 1;
   transform: translateY(20px);
   transition: 0.5s ease;
   pointer-events: none;
   z-index: 9999;
-  background: $backgroundColor;
-  border-radius: 15px;
+
+  @media (max-width: $sm) {
+    display: none;
+  }
 
   &.show {
     opacity: 1;
@@ -29,12 +31,21 @@
   }
 
   a {
+    padding: 7px 8px;
+    background: $backgroundColor;
+    border-radius: 10px;
+    border: 1px solid $pink;
     display: inline-block;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease;
+    color: $linkColor;
 
     &:hover,
     &:focus {
-      color: $green;
+      color: white;
+      border-color: white;
+      background: $pink;
     }
   }
 }
@@ -42,10 +53,13 @@
 /*----------  Main  ----------*/
 
 main:not(.no-layout) {
+  background: $mainBackgroundColor;
   grid-area: main;
   padding: 1em 0;
   display: flex;
   flex-direction: column;
+  border-top: $mainBorder;
+  border-bottom: $mainBorder;
 
   &:not(.not-lowercase) {
     // hmmm... idk:
@@ -55,18 +69,20 @@ main:not(.no-layout) {
   section {
     width: 100%;
     padding: 1em 1em;
-    border: 2px $purple dashed;
+    border: 2px $purple dotted;
     border-radius: 10px;
     margin-bottom: 1em;
     background: $mainBackgroundColor;
+  }
 
-    &:first-child:last-child {
-      min-height: 100%;
-    }
+  > section:first-child:last-child {
+    min-height: 100%;
+    border: none;
+    padding: 0.5em;
   }
 
   @media (min-width: $lg) {
-    padding: 0 1em;
+    padding: 1em 1em;
 
     section {
       padding: 1em;
@@ -92,7 +108,7 @@ header {
 
 .header-heading {
   margin: 0;
-  padding: 0.25em 1em 0em;
+  padding: 0.75em 1em 0em;
   font-size: 30px;
 
   a {
@@ -144,19 +160,30 @@ header {
 }
 
 .aside--left {
-  border-radius: 10px;
+  border: $mainBorder;
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   grid-area: asideLeft;
 }
 
 .aside--right {
-  border-radius: 10px;
+  border: $mainBorder;
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   grid-area: asideRight;
 }
 
 @media (min-width: $lg) {
-  .aside--left,
+  .aside--left {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
   .aside--right {
-    border-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
   }
 }
 
@@ -165,11 +192,13 @@ header {
   background: $yellow;
   color: $dark;
   border: 1px dashed currentColor;
-  border-radius: 5px;
+  //   border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 4px 5px 2px;
+  padding: 8px 10px 6px;
   line-height: 1;
   margin-bottom: 5px;
   font-weight: bold;
@@ -177,7 +206,13 @@ header {
   margin-right: -1px;
 
   &.aside__heading--menu {
-    background: #27ff27;
+    background: #4bf34b;
+
+    // & ~ ul {
+    //   img[src*="heart.png"] {
+    //     filter: saturate(2) contrast(0.5) hue-rotate(50deg);
+    //   }
+    // }
   }
 
   &.aside__heading--changelog {
@@ -283,7 +318,7 @@ header {
 
   a {
     text-decoration: none;
-    cursor: $cursorHelp;
+    cursor: $cursorPointer;
     display: block;
   }
 
@@ -358,9 +393,9 @@ header {
       text-decoration: none;
       //   text-decoration: underline;
       //   text-decoration-style: dashed;
-      cursor: $cursorHelp;
+      cursor: $cursorPointer;
       font-family: $font2, $font, sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       border-radius: 3px;
 
       &:hover,
@@ -444,7 +479,9 @@ footer {
   text-align: center;
   padding: 0.5em 1em;
   font-size: 0.8em;
-  background: rgba(white, 0.5);
+  background: white;
+  border-radius: 10px;
+  border: 1px solid $pink;
 
   i {
     font-style: normal;
@@ -453,11 +490,11 @@ footer {
   }
 
   a {
-    cursor: $cursorHelp;
+    cursor: $cursorPointer;
 
     &:hover,
     &:focus {
-      cursor: $cursorHelp;
+      cursor: $cursorPointer;
       color: $linkColorHover;
     }
   }

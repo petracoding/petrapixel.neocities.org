@@ -1,8 +1,7 @@
 // Fonts
 
 // see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
-$font: "MS gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック", "MS Gothic", "Noto Sans CJK JP", TakaoPGothic,
-  consolas, sans-serif;
+$font: "MS gothic", consolas, sans-serif;
 $font2: "Share Tech Mono"; // strong, menu links
 $font3: "basiic"; // headings
 
@@ -14,9 +13,8 @@ $font3: "basiic"; // headings
 
 // Variables
 
-$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5, auto;
-$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
-$cursorHelp: url("https://petrapixel.neocities.org/assets/img/cursor1b.png") 7 5, auto;
+$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor2.gif") 1 1, auto;
+$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor2b.gif") 1 1, pointer;
 
 $xs: 350px;
 $sm: 576px;
@@ -36,8 +34,9 @@ $red: rgb(145, 19, 51);
 
 $backgroundColor: $yellow;
 $mainBackgroundColor: $yellow;
+$mainBorder: 2px solid darken($purple, 10%);
 
-$textColor: darken($pink, 30%);
+$textColor: darken($pink, 40%);
 $linkColor: darken($purple, 10%);
 $linkColorHover: $green;
 
