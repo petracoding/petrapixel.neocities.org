@@ -227,6 +227,7 @@
     },
     {
       "title": "Twenty Thousand Leagues Under the Sea",
+      "author": "Jules Verne",
       "year": "1869",
       "genres": "Sci-Fi, Adventure, Classics",
       "ageRange": "adult",
@@ -417,6 +418,15 @@
       "rating": "1",
       "link": "LINK",
       "image": "IMAGE"
+    }
+  ],
+  "ships": [
+    {
+      "title": "egobang",
+      "who": "danny & arin",
+      "fandom": "game grumps",
+      "tags": "rpf, not-canon, favorite",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiqSbLsn38V0VmUU0IyC3RcEx5X_60Igi7qg&usqp=CAU"
     }
   ]
 }

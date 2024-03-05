@@ -19,10 +19,10 @@ function loadData(typeStr) {
 function fillData(data, typeStr) {
   let output = "";
   [...data].forEach((d) => {
-    const propertiesForClasses = [d.genres, d.platform, d.ageRange, d.gameType, d.ongoing ? "ongoing" : "ended"].join(",");
+    const propertiesForClasses = [d.tags, d.genres, d.platform, d.ageRange, d.gameType, d.ongoing ? "ongoing" : "ended"].join(",");
     const titleClass = d.title.length > 20 ? " rec__title--long" : "";
 
-    let linklabel = "link";
+    let linklabel = false;
     switch (typeStr) {
       case "movies":
         linklabel = "letterboxd";
@@ -38,27 +38,37 @@ function fillData(data, typeStr) {
         break;
     }
 
-    const html =
-      `
+    const authorStr = d.author ? `<p class="rec__author">${d.author}</p>` : "";
+    const tvShowStatusStr = typeStr == "tv-shows" ? `<p class="rec__author">(${d.ongoing ? "ongoing" : "ended"})</p>` : "";
+    const ratingStr = d.rating ? `<p><strong>My rating:</strong> <span class="rec__stars">${getRatingStr(d.rating)}</span></p>` : "";
+    const yearStr = d.year ? `<p><strong>${typeStr == "tv-shows" ? "Start " : ""}Year:</strong> ${d.year}</p>` : "";
+    const ageRangeStr = d.ageRange ? `<p><strong>Age Range:</strong> ${d.ageRange}</p>` : "";
+    const gameInfoStr = typeStr == "games" ? `<p><strong>Platform:</strong> ${d.platform}</p><p><strong>Type:</strong> ${d.gameType}</p>` : "";
+    const linkStr = linklabel ? `<div class="rec__link"><a href="${d.link}" target="_blank">${linklabel}</a></div>` : "";
+    const genresStr = d.genres ? `<p><strong>Genres:</strong> ${d.genres}</p>` : "";
+    const fandomStr = typeStr == "ships" ? `<p class="rec__author">${d.fandom}</p>` : "";
+    const shipStr = typeStr == "ships" ? `${d.who}` : "";
+    const tagsStr = d.tags ? `<p><strong>Tags:</strong> ${d.tags.replaceAll("-", " ")}</p>` : "";
+
+    const html = `
 	  <div class="rec ${getRatingClass(d.rating)} ${turnToDecade(d.year)} ${turnToClasses(propertiesForClasses)}">
 	  	<div class="rec__inner">
               <div class="rec__image"><img src="${d.image}" /></div>
               <div class="rec__info">
                 <div class="rec__title ${titleClass}">${d.title}</div>
-				` +
-      (d.author ? `<p class="rec__author">${d.author}</p>` : "") +
-      (typeStr == "tv-shows" ? `<p class="rec__author">(${d.ongoing ? "ongoing" : "ended"})</p>` : "") +
-      `
-                <div class="rec__desc">
-                  <p><strong>My rating:</strong> <span class="rec__stars">${getRatingStr(d.rating)}</span></p>
-                  ` +
-      (d.year ? `<p><strong>${typeStr == "tv-shows" ? "Start " : ""}Year:</strong> ${d.year}</p>` : "") +
-      (d.ageRange ? `<p><strong>Age Range:</strong> ${d.ageRange}</p>` : "") +
-      (typeStr == "games" ? `<p><strong>Platform:</strong> ${d.platform}</p><p><strong>Type:</strong> ${d.gameType}</p>` : `<p><strong>Genres:</strong> ${d.genres}</p>`) +
-      `
-                  
-                </div>
-                <div class="rec__link"><a href="${d.link}" target="_blank">${linklabel}</a></div>
+				${authorStr}
+				${tvShowStatusStr}
+				${fandomStr}
+				<div class="rec__desc">
+					${ratingStr}
+					${yearStr}
+					${ageRangeStr}
+					${gameInfoStr}
+					${genresStr}
+					${shipStr}
+					${tagsStr}
+				</div>
+				${linkStr}
               </div>
             </div>
 		</div>`;

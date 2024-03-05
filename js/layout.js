@@ -75,7 +75,7 @@ function getBeforeMain(localHref, nesting) {
 				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cats :3  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
 	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blog</a></li>
 				  <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>media log  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
-	              <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>guestbook</a></li>
+	              <!-- <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>guestbook</a></li> -->
 	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blinkies</a></li>
 	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>archive</a></li> -->
 	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>credits</a></li>
