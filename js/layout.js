@@ -72,12 +72,13 @@ function getBeforeMain(localHref, nesting) {
 	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>home</a></li>
 	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about me</a></li>
 	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about the site </a></li>
-				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cats :3  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
-	              <li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blog</a></li>
+	               <!--<li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blog</a></li>-->
 				  <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>media log  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
-	              <!-- <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>guestbook</a></li> -->
-	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blinkies</a></li>
+	              <!-- <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>guestbook</a></li>
+	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blinkies</a></li> -->
+				  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>shrines</a></li>
 	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>archive</a></li> -->
+				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cats :3  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
 	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>credits</a></li>
 	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>sitemap</a></li>
 	            </ul>
@@ -104,13 +105,14 @@ function getBeforeMain(localHref, nesting) {
 	                <!-- <li><a href="${localHref}/recs/software.html" aria-label="software recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>software</a></li> -->
 	              </ul>
 	            </div>
+				<!--
 				<div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--shrines">Shrines</div>
 	              <ul>
 	                <li><a href="${localHref}/shrines/german-nostalgia.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>german nostalgia </a></li>
-	                <!-- <li><a href="${localHref}/shrines/german.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>hannibal<img src="${nesting}img/link.png" /></a></li> -->
 	              </ul>
 	            </div>
+				-->
 	            <div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--resources">Resources</div>
 	              <ul>
@@ -150,9 +152,11 @@ function getBeforeMain(localHref, nesting) {
 	          <div class="changelog custom-scrollbar">
 				  <ul>
 				 	<li>blog post about polyamory</li> 
+					<li>theme switcher</li>
 				 	<li>dinosaur shrine</li> 
 				 	<li>more shrines</li> 
 				 	<li>advanced coding tutorials</li> 
+					<li>self-made blinkies/buttons/stamps</li>
 				  </ul>
 			  </div>
 	        </div>
@@ -170,7 +174,7 @@ function getBeforeMain(localHref, nesting) {
 				<center>my status:</center>
 				<div class="aside-stuff__widget" id="statuscafe">
 			        <div id="statuscafe-username" style="display: none"></div>
-			        <div id="statuscafe-content"></div>
+			        <a href="https://status.cafe/users/petra1999" target="_blank" id="statuscafe-content"></a>
 			      </div>
 			  </div>
 		    </div>

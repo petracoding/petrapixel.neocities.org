@@ -94,6 +94,12 @@ main:not(.no-layout) {
   @media (min-width: $xl) {
     display: flex;
     gap: 15px;
+
+    &.sections-two-column--neighbors {
+      section:last-child {
+        flex: 0 0 70%;
+      }
+    }
   }
 }
 
