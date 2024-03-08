@@ -1,11 +1,13 @@
-.not-found-page {
-  #content {
-    background: white;
-    width: 300px;
-    padding: 1em;
-    margin-top: 3em;
-    border: 2px solid black;
-  }
+body.not-found-page {
+  align-items: flex-start;
+}
+
+.not-found-page-content {
+  background: white;
+  width: 300px;
+  padding: 1em;
+  margin-top: 3em;
+  border: 2px solid black;
 
   img[src*="inline/"]:not([class]) {
     height: 31px;

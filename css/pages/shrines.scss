@@ -10,14 +10,23 @@
     border: 2px solid $purple;
     border-radius: 10px;
     padding: 0.5em;
+    overflow: hidden;
 
     &:not(:hover) {
       text-decoration: none;
     }
 
+    &:hover,
+    &:focus {
+      img {
+        transform: scale(1.07);
+      }
+    }
+
     img {
       width: 100%;
       height: auto;
+      transition: transform 0.2s ease;
     }
 
     div {

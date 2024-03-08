@@ -8,6 +8,7 @@
 /public/webrings
 /public/*/wip
 /public/blog/_template.html
+/public/coding/image-vomit-script.html
 
 # ignore all files starting with  ~
 ~*
