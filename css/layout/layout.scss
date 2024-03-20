@@ -477,7 +477,7 @@ footer {
   justify-content: center;
   background: $footerBackgroundColor;
   grid-area: footer;
-  margin-top: 3vw;
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -486,7 +486,7 @@ footer {
   padding: 0.5em 1em;
   font-size: 0.8em;
   background: white;
-  border-radius: 10px;
+  border-radius: 3px;
   border: 1px solid $pink;
 
   i {

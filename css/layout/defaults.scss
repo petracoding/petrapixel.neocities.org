@@ -12,11 +12,12 @@ body {
   justify-content: center;
   background: $backgroundColor;
   background-image: url("https://petrapixel.neocities.org/assets/img/bg.png");
+  //   background-image: url("https://i.imgur.com/20FsF7G.png");
   background-repeat: repeat;
   color: $textColor;
   cursor: $cursorDefault;
   margin: 0;
-  border: 10px solid lighten($pink, 20%);
+  padding: 5px;
 }
 
 a {

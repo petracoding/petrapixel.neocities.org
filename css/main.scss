@@ -32,7 +32,7 @@ $dark: #86677b;
 $green2: #a0db9a;
 $red: rgb(145, 19, 51);
 
-$backgroundColor: $yellow;
+$backgroundColor: darken($yellow, 3%);
 $mainBackgroundColor: $yellow;
 $mainBorder: 2px solid darken($purple, 10%);
 
