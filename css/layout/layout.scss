@@ -313,6 +313,18 @@ header {
   justify-content: center;
 }
 
+.aside-stuff__follow {
+  margin-top: 1em;
+  display: block;
+  line-height: 1;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+  }
+}
+
 /*----------  Changelog  ----------*/
 
 .changelog__entry {

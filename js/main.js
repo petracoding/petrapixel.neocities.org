@@ -7,8 +7,8 @@ import { initBlog } from "./pages/blog";
 
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("-js");
-  console.log("%c Hello! :)", "font-size: 20pt");
-  console.log("%c Feel free to look around my site, but please do not copy large sections of code!", "font-size: 14pt");
+  console.log("%c Hiii! :)", "font-size: 20pt");
+  console.log("%c Feel free to inspect my code, but please do not copy large sections without asking!", "font-size: 14pt");
 
   buildLayout();
   initClipboard();

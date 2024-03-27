@@ -91,7 +91,8 @@ function getBeforeMain(localHref, nesting) {
 	                <li><a href="${localHref}/creations/playlists.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my playlists</a> </li>
 	                <li><a href="${localHref}/creations/video-edits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my video edits</a></li>
 	                <!-- <li><a href="${localHref}/creations/web-weaves.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my web weaves</a></li> -->
-	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my writing</a></li>
+	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my writing</a></li>   
+					<li><a href="${localHref}/creations/picmix.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my picmix <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
 	              </ul>
 	            </div>
 	            <div class="aside-nav__section">
@@ -191,6 +192,10 @@ function getBeforeMain(localHref, nesting) {
 				<div class="aside__lucky-btn"><button type="button" id="lucky-btn" title="Go to a random blog article">I'm feeling lucky.</button></div>
 				-->
 				<a class="aside-stuff__guestbook"  aria-hidden="true" href="${localHref}/about/guestbook.html"><img src="${nesting}img/layout/kirby-guestbook.png" style="image-rendering:pixelated;" alt="sign my guestbook" /></a>
+
+				<div class="aside-stuff__widget" >
+				<a class="aside-stuff__follow" href="https://neocities.org/site/petrapixel" target="_blank">follow me<br>on neocities!</a>
+				</div>
 				</div>
 			</div>
 		</div>

@@ -1,14 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-  [...document.querySelectorAll("[data-image-vomit]")].forEach((el) => initImageVomit(el));
-});
-
-/*
-	Todo:
-	- on window resize OR use %?
-	- min padding
-*/
+/**
+ * IMAGE VOMIT SCRIPT
+ * by petra
+ * https://petrapixel.neocities.org/
+ *
+ * - don't distribute without credit.
+ * - don't claim as your own.
+ * - don't judge how messy the code is >.<
+ */
 
 const usedPositions = []; // [x1, x2, y1, y2]
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("%c Image Vomit Script by petra (petrapixel.neocities.org) loaded", "font-size: 14pt; color: purple");
+  [...document.querySelectorAll("[data-image-vomit]")].forEach((el) => initImageVomit(el));
+});
 
 function initImageVomit(el) {
   const containerRect = el.getBoundingClientRect();
@@ -31,11 +36,16 @@ function initImageVomit(el) {
 }
 
 function positionImage(imageEl, containerWidth, containerHeight, allowedOverlap) {
-  const rect = imageEl.getBoundingClientRect();
-  const randomPosition = getRandomPosition(containerWidth, containerHeight, rect.width, rect.height, allowedOverlap);
-  imageEl.style.left = randomPosition[0] + "px";
-  imageEl.style.top = randomPosition[1] + "px";
-  usedPositions.push([Math.floor(randomPosition[0]), Math.floor(randomPosition[0] + rect.width), Math.floor(randomPosition[1]), Math.floor(randomPosition[1] + rect.height)]);
+  const imageRect = imageEl.getBoundingClientRect();
+  const randomPosition = getRandomPosition(containerWidth, containerHeight, imageRect.width, imageRect.height, allowedOverlap);
+  const leftPx = randomPosition[0];
+  const leftPercent = (leftPx / containerWidth) * 100;
+  const topPx = randomPosition[1];
+  const topPercent = (topPx / containerHeight) * 100;
+  imageEl.style.left = leftPercent + "%";
+  imageEl.style.top = topPercent + "%";
+  imageEl.setAttribute("data-hint", "The 'left' and 'top' positioning of this element were automatically added by petrapixel's 'Image Vomit Script'.");
+  usedPositions.push([Math.floor(leftPx), Math.floor(leftPx + imageRect.width), Math.floor(topPx), Math.floor(topPx + imageRect.height)]);
 }
 
 function getRandomPosition(containerWidth, containerHeight, imageWidth, imageHeight, allowedOverlap) {
@@ -51,7 +61,6 @@ function getRandomPosition(containerWidth, containerHeight, imageWidth, imageHei
     randomX = Math.floor(Math.random() * (maxX - min + 1) + min);
     randomY = Math.floor(Math.random() * (maxY - min + 1) + min);
     positionIsTaken = isPositionTaken(randomX, randomX + imageWidth, randomY, randomY + imageHeight, allowedOverlap);
-
     attempts++;
   } while (positionIsTaken && attempts < 100);
 

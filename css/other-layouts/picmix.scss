@@ -1,0 +1,38 @@
+.picmix-page {
+  width: 99vw;
+}
+
+.picmix-back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 2em;
+}
+
+.picmix {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: $lg) {
+    padding: 3em;
+  }
+}
+
+.picmix a {
+  margin: 10px;
+  max-width: 400px;
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.picmix a img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
