@@ -9,6 +9,33 @@
     / 200px auto 200px;
 }
 
+#theme-toggler {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  @media (max-width: $sm) {
+    display: none;
+  }
+
+  button {
+    display: flex;
+    align-content: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 2px 5px;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+
+  img {
+    display: block;
+    margin-right: 0.5em;
+  }
+}
+
 #back-to-top-link {
   position: fixed;
   bottom: 20px;
@@ -32,14 +59,14 @@
 
   a {
     padding: 7px 8px;
-    background: $backgroundColor;
+    background: var(--backgroundColor);
     border-radius: 10px;
     border: 1px solid $pink;
     display: inline-block;
     text-decoration: none;
     font-weight: bold;
     transition: 0.2s ease;
-    color: $linkColor;
+    color: var(--linkColor);
 
     &:hover,
     &:focus {
@@ -53,7 +80,7 @@
 /*----------  Main  ----------*/
 
 main:not(.no-layout) {
-  background: $mainBackgroundColor;
+  background: var(--mainBackgroundColor);
   grid-area: main;
   padding: 1em 0;
   display: flex;
@@ -72,7 +99,7 @@ main:not(.no-layout) {
     border: 2px $purple dotted;
     border-radius: 10px;
     margin-bottom: 1em;
-    background: $mainBackgroundColor;
+    background: var(--mainBackgroundColor);
   }
 
   > section:first-child:last-child {
@@ -152,12 +179,15 @@ header {
 /*----------  Aside  ----------*/
 
 .aside {
-  background: $asideBackgroundColor;
+  background: var(--asideBackgroundColor);
   padding: 10px 14px;
   color: $asideTextColor;
 
   summary {
     display: none;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
 
     & + * {
       display: block;
@@ -497,7 +527,7 @@ footer {
   text-align: center;
   padding: 0.5em 1em;
   font-size: 0.8em;
-  background: white;
+  background: var(--backgroundColor);
   border-radius: 3px;
   border: 1px solid $pink;
 
@@ -513,7 +543,7 @@ footer {
     &:hover,
     &:focus {
       cursor: $cursorPointer;
-      color: $linkColorHover;
+      color: var(--linkColorHover);
     }
   }
 }
@@ -587,7 +617,7 @@ footer {
 
 .wip-banner {
   background: $green;
-  color: $textColor;
+  color: var(--textColor);
   position: fixed;
   top: 0;
   left: 0;
@@ -621,10 +651,7 @@ footer {
   }
 
   .aside__heading {
-    letter-spacing: 0;
-    padding-left: 2px;
-    padding-right: 2px;
-    font-size: 0.65em;
+    font-size: 0.7em;
   }
 
   .changelog {
@@ -660,7 +687,7 @@ footer {
 
   .aside {
     summary {
-      display: initial;
+      display: block;
 
       & + * {
         display: initial;

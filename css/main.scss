@@ -1,7 +1,6 @@
 // Fonts
 
-// see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
-$font: "MS gothic", consolas, sans-serif;
+$font: "MS gothic", consolas, sans-serif; // see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
 $font2: "Share Tech Mono"; // strong, menu links
 $font3: "basiic"; // headings
 
@@ -22,34 +21,9 @@ $md: 992px;
 $lg: 1000px;
 $xl: 1200px;
 
-// Colors
+// -------------------------------------------
 
-$green: #9adbba;
-$purple: #c58cca;
-$pink: #db9ac3;
-$yellow: #ffecf8;
-$dark: #86677b;
-$green2: #a0db9a;
-$red: rgb(145, 19, 51);
-
-$backgroundColor: darken($yellow, 3%);
-$mainBackgroundColor: $yellow;
-$mainBorder: 2px solid darken($purple, 10%);
-
-$textColor: darken($pink, 40%);
-$linkColor: darken($purple, 10%);
-$linkColorHover: $green;
-
-$headerBackgroundColor: none;
-$footerBackgroundColor: none;
-
-$asideBackgroundColor: $purple;
-$asideTextColor: $yellow;
-$asideLinkColor: $yellow;
-$asideLinkColorHover: $green;
-
-// Imports
-
+@import "./colors";
 @import "./mixins";
 
 @import "./layout/defaults";
@@ -74,3 +48,5 @@ $asideLinkColorHover: $green;
 @import "./other-layouts/full-page-tutorial";
 @import "./other-layouts/webring-page";
 @import "./other-layouts/picmix";
+
+@import "./layout/dark-mode";

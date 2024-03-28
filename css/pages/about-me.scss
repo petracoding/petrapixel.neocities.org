@@ -9,14 +9,14 @@
   border: 1px dashed $pink;
   border-radius: 10px;
   padding: 10px;
-  //   background: $backgroundColor;
+  //   background: var(--backgroundColor);
 
   a {
     &:hover,
     &:focus,
     &:visited,
     &:active {
-      color: $textColor;
+      color: var(--textColor);
     }
   }
 

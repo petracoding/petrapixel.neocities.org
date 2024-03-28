@@ -11,7 +11,7 @@
     font-size: 0.85em;
     font-weight: bold;
     margin-top: 2em;
-    color: $textColor;
+    color: var(--textColor);
   }
 
   li {
@@ -25,7 +25,7 @@
 
       &:hover,
       &:focus {
-        color: $linkColorHover;
+        color: var(--linkColorHover);
         text-decoration: underline;
         text-decoration-style: wavy;
       }

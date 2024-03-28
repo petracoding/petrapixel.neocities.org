@@ -1,66 +1,15 @@
 const isLocalhost = window.location.href.includes("http://localhost");
-const noCache = "?nocache=" + new Date().getTime();
+const localHref = isLocalhost ? "/public" : "";
+const scriptEl = document.querySelector('head script[src*="main.js"]');
+const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("main.js") ? "./" : "../") : "../";
 
-export function buildLayout() {
-  const mainEl = document.querySelector("main:not(.no-layout)");
-  if (mainEl) {
-    const localHref = isLocalhost ? "/public" : "";
-    const scriptEl = document.querySelector('head script[src*="main.js"]');
-    const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("main.js") ? "./" : "../") : "../";
-
-    mainEl.insertAdjacentHTML("beforebegin", getBeforeMain(localHref, nesting));
-    mainEl.insertAdjacentHTML("afterend", getAfterMain(localHref));
-
-    // Widgets
-    initLastFmWidget();
-    initHitcountWidget();
-    initStatusCafeWidget();
-
-    // Menu Toggle
-    const detailsEl = document.querySelector(".aside--left details");
-    if (detailsEl) {
-      let mql = window.matchMedia("(min-width: 576px)");
-      if (mql.matches) {
-        detailsEl.open = true;
-      }
-    }
-
-    initLuckyBtn();
-    doActiveLinks();
-    getChangelog();
-    prepareScrollToTop();
-    buildTableOfContents();
-  }
-}
-
-function initLuckyBtn() {
-  const btn = document.querySelector("#lucky-btn");
-  if (!btn) return;
-  btn.addEventListener("click", () => {
-    const file = isLocalhost ? `http://localhost:52330/public/blog/blog.json` : `https://petrapixel.neocities.org/blog/blog.json`;
-    fetch(`${file}${noCache}`)
-      .then(function (response) {
-        switch (response.status) {
-          case 200:
-            return response.json();
-          case 404:
-            throw response;
-        }
-      })
-      .then(function (data) {
-        const articlesJson = data["blog"];
-        const randomArticle = articlesJson[Math.floor(Math.random() * articlesJson.length)];
-        const randomArticleUrl = "/blog/" + randomArticle["fileName"] + ".html";
-        window.location.href = (isLocalhost ? "/public" : "") + randomArticleUrl;
-      })
-      .catch(function (response) {
-        console.error("Loading Blog Json: " + response.statusText);
-      });
-  });
-}
-
-function getBeforeMain(localHref, nesting) {
+export function getBeforeMain() {
   return `
+  
+	  <div id="theme-toggler" aria-hidden="true"><button type="button">
+	  	<img src="${nesting}img/layout/moon.gif" width="17" style="image-rendering:pixelated;" />
+		<span>toggle theme</span>
+	  </button></div>
   	<header><div class="header-heading"><a href="${localHref}/"><img src="${nesting}img/layout/petrapixel.png" aria-label="petrapixel" height="100" width="300" /></a></div></header>
       <aside class="aside aside--left">
 	  <details>
@@ -73,14 +22,15 @@ function getBeforeMain(localHref, nesting) {
 	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about me</a></li>
 	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about the site </a></li>
 	               <!--<li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blog</a></li>-->
-				  <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>media log  <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
+				
 	              <!-- <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>guestbook</a></li>
 	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blinkies</a></li> -->
-				  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>shrines</a></li>
+			
 	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>archive</a></li> -->
 				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cats :3 </small></a></li>
 	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>credits</a></li>
 	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>sitemap</a></li>
+				  	  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>shrines</a></li>
 	            </ul>
 	          </div>
 			  <div class="aside-nav__section">
@@ -92,12 +42,13 @@ function getBeforeMain(localHref, nesting) {
 	                <li><a href="${localHref}/creations/video-edits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my video edits</a></li>
 	                <!-- <li><a href="${localHref}/creations/web-weaves.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my web weaves</a></li> -->
 	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my writing</a></li>   
-					<li><a href="${localHref}/creations/picmix.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my picmix <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
+					<li><a href="${localHref}/creations/picmix.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my picmixes <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
 	              </ul>
 	            </div>
 	            <div class="aside-nav__section">
-	              <div class="aside__heading aside__heading--recs">Recommendations</div>
+	              <div class="aside__heading aside__heading--recs">Media Recs</div>
 	              <ul>
+				    <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>media log</a></li>
 				  <li><a href="${localHref}/recs/music.html" aria-label="music recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>music</a></li>
 				  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>tv shows</a></li>
 				  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>movies</a></li>
@@ -210,7 +161,7 @@ function getBeforeMain(localHref, nesting) {
 	  	  `;
 }
 
-function getAfterMain(localHref) {
+export function getAfterMain() {
   return `
    <footer>
         <div class="footer-content">
@@ -220,146 +171,4 @@ function getAfterMain(localHref) {
         </div>
       </footer>
   	  `;
-}
-
-function initLastFmWidget() {
-  let user = "Petra1999";
-  let url = "https://lastfm-last-played.biancarosa.com.br/" + user + "/latest-song";
-  let song = document.querySelector("#song");
-  fetch(url)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      song.innerHTML = json["track"]["name"] + " – " + json["track"]["artist"]["#text"];
-    });
-}
-
-function initHitcountWidget() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      var site_data = JSON.parse(this.responseText);
-      var num_arr = site_data.info.views.toString().split("");
-      var num_str = "";
-      let i;
-      for (i = 0; i < num_arr.length; i++) {
-        num_str += num_arr[i];
-        if ((num_arr.length - 1 - i) % 3 == 0 && num_arr.length - 1 - i != 0) {
-          num_str += ",";
-        }
-        // var date_str = site_data.info.last_updated;
-        // var date_obj = new Date(site_data.info.last_updated);
-        //   document.getElementById("lastupdate").innerHTML = date_obj.getMonth() + 1 + "-" + date_obj.getDate() + "-" + date_obj.getFullYear();
-      }
-      document.getElementById("hitcount").innerHTML = num_str;
-    }
-  };
-  xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=petrapixel", true);
-  xhttp.send();
-}
-
-function initStatusCafeWidget() {
-  fetch("https://status.cafe/users/petra1999/status.json")
-    .then((r) => r.json())
-    .then((r) => {
-      if (!r.content.length) {
-        document.getElementById("statuscafe-content").innerHTML = "No status yet.";
-        return;
-      }
-      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/petra1999" target="_blank">' + r.author + "</a> " + r.face + " " + r.timeAgo;
-      document.getElementById("statuscafe-content").innerHTML = r.content;
-    });
-}
-
-function getChangelog() {
-  const changelogFile = isLocalhost ? "http://localhost:52330/public/changelog.json" : "https://petrapixel.neocities.org/changelog.json";
-  fetch(changelogFile + noCache)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      return res.json();
-    })
-    .then((data) => {
-      // note: changelog[0] ist the template
-      let changelogHtml = "";
-      let i = 1;
-      data.changelog.forEach((c) => {
-        if (c.t !== "TEMPLATE" && i <= 10) {
-          i++;
-          if (c.l !== "") {
-            changelogHtml += `
-		  <div class="changelog__entry">
-            <strong>${c.d}</strong>
-            <a href="${c.l}" tabindex="-1">${c.t}</a>
-          </div>
-		  `;
-          } else {
-            changelogHtml += `
-		  <div class="changelog__entry">
-            <strong>${c.d}</strong>
-            <span>${c.t}</span>
-          </div>
-		  `;
-          }
-        }
-      });
-      document.querySelector("#changelog").innerHTML = changelogHtml;
-    })
-    .catch((error) => console.error("Unable to fetch data:", error));
-}
-
-function doActiveLinks() {
-  const els = document.querySelectorAll(".aside-nav li a, main a");
-  [...els].forEach((el) => {
-    const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
-
-    if (href == "/" || href == "/index.html") {
-      if (window.location.href == "http://localhost:52330/" || window.location.href == "https://petrapixel.neocities.org/") {
-        el.classList.add("active");
-      }
-    } else {
-      if (window.location.href.includes(href)) {
-        el.classList.add("active");
-      }
-    }
-  });
-}
-
-function prepareScrollToTop() {
-  const el = document.querySelector("#back-to-top-link");
-  if (!el) return;
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      el.classList.add("show");
-    } else {
-      el.classList.remove("show");
-    }
-  });
-}
-
-function buildTableOfContents() {
-  const container = document.querySelector("#toc");
-  if (!container) return;
-  const allHeadings = document.querySelectorAll("main h2");
-  if (allHeadings.length < 2) return;
-  let output = "<b>Table of Contents:</b><ol>";
-  [...allHeadings].forEach((headingEl) => {
-    const title = headingEl.innerHTML;
-    const link =
-      headingEl.getAttribute("id") ||
-      encodeURI(
-        title
-          .replaceAll(" ", "-")
-          .replaceAll(":", "")
-          .replaceAll("#", "")
-          .replaceAll(/<[^>]*>?/gm, "")
-          .replace(/-$/, "")
-      ).toLowerCase();
-    headingEl.setAttribute("id", link);
-    output += `
-	  <li><a href="#${link}">${title}</a></li>`;
-  });
-  container.innerHTML = output + "</ol>";
 }

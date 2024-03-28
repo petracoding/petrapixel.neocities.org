@@ -28,7 +28,7 @@
     &:hover,
     &:focus,
     &:active {
-      color: $textColor;
+      color: var(--textColor);
     }
 
     &::before {

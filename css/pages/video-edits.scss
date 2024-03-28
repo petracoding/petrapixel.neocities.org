@@ -8,7 +8,7 @@ a.video-edit {
   &:focus,
   &:active,
   &:visited {
-    color: $textColor;
+    color: var(--textColor);
     text-decoration: none;
   }
 

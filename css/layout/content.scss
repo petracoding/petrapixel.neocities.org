@@ -4,12 +4,12 @@ main {
   a {
     &,
     &:visited {
-      color: $linkColor;
+      color: var(--linkColor);
     }
 
     &:hover,
     &:focus {
-      color: $linkColorHover;
+      color: var(--linkColorHover);
       text-decoration-style: wavy;
     }
   }
@@ -226,7 +226,7 @@ img[src*="inline/"]:not([class]) {
   a:focus,
   a:active,
   &:visited {
-    color: $textColor;
+    color: var(--textColor);
     cursor: zoom-in;
   }
 
@@ -337,7 +337,7 @@ img[src*="inline/"]:not([class]) {
   a:focus,
   a:active,
   &:visited {
-    color: $textColor;
+    color: var(--textColor);
     cursor: zoom-in;
   }
 

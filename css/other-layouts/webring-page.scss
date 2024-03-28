@@ -99,7 +99,7 @@ body.webring-page {
   textarea {
     display: block;
     height: 4em;
-    background: $mainBackgroundColor;
+    background: var(--mainBackgroundColor);
     border: 1px $purple dotted;
     font-family: $font2;
     width: 100%;

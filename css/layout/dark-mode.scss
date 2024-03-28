@@ -1,0 +1,127 @@
+@mixin darkMode2 {
+  background-image: none;
+
+  ::selection {
+    color: $purple;
+    background: darken($dark, 10%);
+  }
+
+  main {
+    strong {
+      color: lighten($pink, 10%);
+    }
+
+    pre code:not(.hljs),
+    pre code.hljs {
+      background: darken($yellow, 10%);
+    }
+  }
+
+  #theme-toggler {
+    button {
+      background: darken($dark, 20%);
+      color: white;
+      border-color: darken($dark, 25%);
+
+      &:hover,
+      &:focus {
+        background: darken($dark, 23%);
+      }
+    }
+  }
+
+  .link-back textarea {
+    background: rgba(43, 43, 43, 0.5);
+    color: white;
+  }
+
+  .aside__heading {
+    &.aside__heading--menu {
+      background: #006700;
+      color: white;
+    }
+
+    &.aside__heading--changelog {
+      background: #afa900;
+      color: white;
+    }
+
+    &.aside__heading--comingsoon {
+      background: #004370;
+      color: white;
+    }
+
+    &.aside__heading--stats {
+      background: #120061;
+      color: white;
+    }
+
+    &.aside__heading--creations {
+      background: #a06000;
+      color: white;
+    }
+
+    &.aside__heading--recs {
+      background: #a52600;
+      color: white;
+    }
+
+    &.aside__heading--shrines {
+      background: #980019;
+      color: white;
+    }
+
+    &.aside__heading--resources {
+      background: #8b008b;
+      color: white;
+    }
+
+    &.aside__heading--coding {
+      background: #350066;
+      color: white;
+    }
+  }
+
+  .cat__quick-facts {
+    background: darken($dark, 10%);
+  }
+
+  .video-edit__info i {
+    background: darken($dark, 10%);
+  }
+
+  .writing-comments li {
+    color: $pink;
+  }
+
+  .bookmarks-section li a {
+    color: white;
+  }
+
+  main details summary {
+    background: darken($green, 30%);
+  }
+
+  .rec-filters__button {
+    background: rgba($yellow, 0.6);
+
+    &:hover,
+    &:active {
+      background: $green2;
+    }
+
+    &.is-checked {
+      background: $green;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.dark-mode):not(.light-mode) {
+    @include darkMode2;
+  }
+}
+
+.dark-mode {
+  @include darkMode2;
+}

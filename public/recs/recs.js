@@ -134,7 +134,7 @@ function initIsotope() {
   });
   let isotopeFilters = {};
 
-  $("button").click(function () {
+  $(".rec-filters button").click(function () {
     let $buttonGroup = $(this).parents(".rec-filters__buttons");
     let filterGroup = $buttonGroup.attr("data-filter-group");
     isotopeFilters[filterGroup] = $(this).attr("data-filter");
