@@ -1,6 +1,24 @@
+const scriptEl = document.querySelector('head script[src*="main.js"]');
+const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("main.js") ? "./" : "../") : "../";
+
 export function loadDarkModeCookie() {
   const themeItem = localStorage.getItem("theme");
   if (themeItem) document.body.classList.add(themeItem);
+}
+
+export function addThemeSwitcher() {
+  loadDarkModeCookie();
+  document.body.insertAdjacentHTML("afterbegin", themeSwitcherHTML());
+  initDarkMode();
+}
+
+export function themeSwitcherHTML() {
+  return `<div id="theme-toggler" aria-hidden="true">
+    <button type="button">
+      <img src="${nesting}img/layout/moon.gif" width="17" style="image-rendering:pixelated;" />
+      <span>toggle theme</span>
+    </button>
+  </div>`;
 }
 
 export function initDarkMode() {

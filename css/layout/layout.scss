@@ -13,6 +13,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
+  z-index: 999999;
 
   @media (max-width: $sm) {
     display: none;
@@ -21,9 +22,16 @@
   button {
     display: flex;
     align-content: center;
-    border: 1px solid gray;
+    border: 1px solid #c3afbc;
+    background: #c3afbc;
+    background-image: linear-gradient(to top, #b38ba7 16%, #cdaac1 79%);
     border-radius: 10px;
     padding: 2px 5px;
+
+    &:hover,
+    &:focus {
+      filter: brightness(0.85);
+    }
   }
 
   span {
@@ -79,7 +87,7 @@
 
 /*----------  Main  ----------*/
 
-main:not(.no-layout) {
+body.load-layout main {
   background: var(--mainBackgroundColor);
   grid-area: main;
   padding: 1em 0;
@@ -617,7 +625,7 @@ footer {
 
 .wip-banner {
   background: $green;
-  color: var(--textColor);
+  color: $textColor;
   position: fixed;
   top: 0;
   left: 0;
@@ -625,6 +633,12 @@ footer {
   padding: 15px 50px;
   text-align: center;
   z-index: 999;
+  opacity: 0.6;
+  font-weight: bold;
+
+  @media (max-width: $sm) {
+    padding: 5px 40px;
+  }
 }
 
 /**
@@ -681,7 +695,7 @@ footer {
       / 1fr;
   }
 
-  main:not(.no-layout) section {
+  body.load-layout main section {
     padding: 0.5em;
   }
 

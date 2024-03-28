@@ -1,6 +1,7 @@
 {
   "changelog": [
     { "d": "2024-04-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-03-28", "t": "Minimalism shrine added!", "l": "/shrines/minimalism.html" },
     { "d": "2024-03-28", "t": "Dark mode added!", "l": "/about/about-the-site.html" },
     { "d": "2024-03-27", "t": "Picmix page added!", "l": "/creations/picmix.html" },
     { "d": "2024-03-05", "t": "New shrine overview", "l": "/shrines/index.html" },

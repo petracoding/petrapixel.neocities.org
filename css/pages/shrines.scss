@@ -1,5 +1,15 @@
 .shrines {
-  display: flex;
+  @media (min-width: $sm) {
+    display: flex;
+  }
+}
+
+.shrine {
+  margin: 0.5em;
+
+  @media (min-width: $lg) {
+    margin: 1em;
+  }
 
   a {
     flex: 0 0 50%;

@@ -3,7 +3,7 @@ import { loadDarkModeCookie, initDarkMode } from "./dark-mode";
 import { initLuckyBtn, getChangelog, initLastFmWidget, initHitcountWidget, initStatusCafeWidget } from "./sidebar";
 
 export function buildLayout() {
-  const mainEl = document.querySelector("main:not(.no-layout)");
+  const mainEl = document.querySelector("main");
   if (!mainEl) return;
 
   loadDarkModeCookie();

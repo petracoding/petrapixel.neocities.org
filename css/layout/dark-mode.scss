@@ -1,5 +1,6 @@
 @mixin darkMode2 {
-  background-image: none;
+  //   background-image: url("http://localhost:52330/public/assets/img/bg-dark.png");
+  background-image: url("https://petrapixel.neocities.org/assets/img/bg-dark.png");
 
   ::selection {
     color: $purple;
@@ -13,20 +14,16 @@
 
     pre code:not(.hljs),
     pre code.hljs {
-      background: darken($yellow, 10%);
+      background: #aa899e;
     }
   }
 
   #theme-toggler {
     button {
-      background: darken($dark, 20%);
+      background: darken($dark, 23%);
+      background-image: linear-gradient(to top, #44343e 16%, #5f4957 79%);
       color: white;
       border-color: darken($dark, 25%);
-
-      &:hover,
-      &:focus {
-        background: darken($dark, 23%);
-      }
     }
   }
 
@@ -99,7 +96,7 @@
   }
 
   main details summary {
-    background: darken($green, 30%);
+    background: #25724b;
   }
 
   .rec-filters__button {
@@ -112,6 +109,25 @@
 
     &.is-checked {
       background: $green;
+    }
+  }
+
+  &.full-page-tutorial {
+    // generated bg from https://10015.io/tools/css-background-pattern-generator
+    background: radial-gradient(farthest-side at -33.33% 50%, #0000 52%, rgb(82, 39, 65) 54% 57%, #0000 59%) 0 calc(312px / 2),
+      radial-gradient(farthest-side at 50% 133.33%, #0000 52%, rgb(82, 39, 65) 54% 57%, #0000 59%) calc(312px / 2) 0,
+      radial-gradient(farthest-side at 133.33% 50%, #0000 52%, rgb(82, 39, 65) 54% 57%, #0000 59%), radial-gradient(farthest-side at 50% -33.33%, #0000 52%, rgb(82, 39, 65) 54% 57%, #0000 59%),
+      #000000;
+    background-size: calc(312px / 4.667) 312px, 312px calc(312px / 4.667);
+
+    main {
+      background: rgba(45, 45, 45, 0.95);
+    }
+
+    .learn {
+      strong {
+        color: white;
+      }
     }
   }
 }

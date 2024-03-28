@@ -1,3 +1,5 @@
+import { themeSwitcherHTML } from "./dark-mode";
+
 const isLocalhost = window.location.href.includes("http://localhost");
 const localHref = isLocalhost ? "/public" : "";
 const scriptEl = document.querySelector('head script[src*="main.js"]');
@@ -5,11 +7,7 @@ const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("main.js") ?
 
 export function getBeforeMain() {
   return `
-  
-	  <div id="theme-toggler" aria-hidden="true"><button type="button">
-	  	<img src="${nesting}img/layout/moon.gif" width="17" style="image-rendering:pixelated;" />
-		<span>toggle theme</span>
-	  </button></div>
+	 ${themeSwitcherHTML()}
   	<header><div class="header-heading"><a href="${localHref}/"><img src="${nesting}img/layout/petrapixel.png" aria-label="petrapixel" height="100" width="300" /></a></div></header>
       <aside class="aside aside--left">
 	  <details>
@@ -30,7 +28,7 @@ export function getBeforeMain() {
 				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cats :3 </small></a></li>
 	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>credits</a></li>
 	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>sitemap</a></li>
-				  	  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>shrines</a></li>
+				  	  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>shrines <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
 	            </ul>
 	          </div>
 			  <div class="aside-nav__section">
@@ -103,8 +101,7 @@ export function getBeforeMain() {
 	          <div class="aside__heading aside__heading--comingsoon">Coming Soon</div>
 	          <div class="changelog custom-scrollbar">
 				  <ul>
-				 	<li>blog post about polyamory</li> 
-					<li>theme switcher</li>
+				 	<li>blog post about polyamory</li>
 				 	<li>dinosaur shrine</li> 
 				 	<li>more shrines</li> 
 				 	<li>advanced coding tutorials</li> 

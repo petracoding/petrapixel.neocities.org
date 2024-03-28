@@ -37,7 +37,6 @@
     &:visited,
     &:focus,
     &:active {
-      color: darken($textColor, 5%);
       text-decoration: none;
     }
   }

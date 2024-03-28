@@ -12,7 +12,7 @@
     <meta name="description" content="What to do if you want to use external widgets with a free Neocities account." />
     <!-- -------------------------------- -->
   </head>
-  <body>
+  <body class="load-layout">
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
     <a href="#main" id="skip-to-content-link">Skip to content</a>
     <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
@@ -39,9 +39,8 @@
               </p>
               <p>
                 The good news is that I found a way around that: you can use iframes. Specifially, you use the script you want to use on a different website not hosted on neocities, in the center of
-                an otherwise blank page with <i>background: transparent;</i> and then use this URL in an iframe on your neocities page. This is what I do.
-                <a href="https://petracoding.github.io/neocities/stats.html" target="_blank">Here</a> you can see an example of what a page with a widget looks like (you can see it in use in my
-                sidebar on the left!).
+                an otherwise blank page with <i>background: transparent;</i> and then use this URL in an iframe on your neocities page.
+                <a href="https://petracoding.github.io/neocities/stats.html" target="_blank">Here</a> you can see an example of what an otherwise blank page with a widget may look like.
               </p>
               <p>
                 For guestbooks I recommend using <a href="https://www.123guestbook.com/" target="_blank">123guestbook</a> (which is what I use for <a href="/guestbook.html">my guestbook</a> iframe)
@@ -52,7 +51,7 @@
         </section>
         <section>
           <div class="blog-read-more">
-            <div class="blog-read-more__title">Related Blog Posts:</div>
+            <div class="blog-read-more__title">Related Pages:</div>
             <!-- Change filter ! -->
             <div class="blog-read-more__articles" id="blog" data-filter="neocities" data-limit="2"></div>
           </div>
