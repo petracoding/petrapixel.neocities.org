@@ -432,3 +432,11 @@ img[src*="inline/"]:not([class]) {
     padding: 0;
   }
 }
+
+.vertical-scroll-box {
+  border: 1px solid rgba($pink, 0.5);
+  padding: 0.5em;
+  border-radius: 5px;
+  max-height: 177px;
+  overflow-y: auto;
+}
