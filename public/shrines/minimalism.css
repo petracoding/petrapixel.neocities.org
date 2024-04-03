@@ -29,14 +29,20 @@ p {
   text-align: justify;
 }
 
+.declutter-list {
+  padding-left: 1.5em;
+}
+
 .declutter-list--first {
   counter-reset: declutterListCounter;
 }
 
 .declutter-list li {
+  padding-left: 1.5em;
+  position: relative;
   list-style: none;
   counter-increment: declutterListCounter;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.5em;
 }
 
 .declutter-list small {
@@ -44,6 +50,9 @@ p {
 }
 
 .declutter-list li::before {
+  position: absolute;
+  top: 0.25em;
+  left: 0;
   font-size: 0.8em;
   font-style: italic;
   margin-right: 0.5em;

@@ -79,11 +79,12 @@ export function getBeforeMain() {
 				<div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--coding">Coding Help</div>
 	              <ul>
-					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>neocities</a></li>
+					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>snippets & tips</a></li>
 						<!--
 	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
 	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
 	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+					devlog
 					-->
 	              </ul>
 	            </div>
@@ -112,7 +113,7 @@ export function getBeforeMain() {
 			<div class="aside-stuff">
 	          <div class="aside__heading aside__heading--stats">Stats</div>
 	          <div>
-				<center>hit count:</center>
+				<center>site visitors:</center>
 				<div class="aside-stuff__widget" id="hitcount"></div>
 				<center>listening to:</center>
 				<div class="aside-stuff__widget" id="lastfm-widget">

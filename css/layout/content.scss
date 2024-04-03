@@ -422,3 +422,13 @@ img[src*="inline/"]:not([class]) {
 .fslightbox-toolbar-button[title="Enter fullscreen"] {
   display: none;
 }
+
+#ncring {
+  // neocreatives webring widget
+  display: inline-block;
+
+  center {
+    margin: 0;
+    padding: 0;
+  }
+}

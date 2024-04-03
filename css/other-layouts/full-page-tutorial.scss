@@ -6,14 +6,14 @@ body.full-page-tutorial {
   //   font-family: monospace;
 
   // generated bg from https://10015.io/tools/css-background-pattern-generator
-  background: radial-gradient(farthest-side at -33.33% 50%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%) 0 calc(312px / 2),
-    radial-gradient(farthest-side at 50% 133.33%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%) calc(312px / 2) 0,
-    radial-gradient(farthest-side at 133.33% 50%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%),
-    radial-gradient(farthest-side at 50% -33.33%, #0000 52%, rgba(255, 237, 248, 0.64) 54% 57%, #0000 59%), #ffffff;
+  background: radial-gradient(farthest-side at -33.33% 50%, #0000 52%, rgba(243, 205, 228, 0.6) 54% 57%, #0000 59%) 0 calc(312px / 2),
+    radial-gradient(farthest-side at 50% 133.33%, #0000 52%, rgba(243, 205, 228, 0.6) 54% 57%, #0000 59%) calc(312px / 2) 0,
+    radial-gradient(farthest-side at 133.33% 50%, #0000 52%, rgba(243, 205, 228, 0.6) 54% 57%, #0000 59%),
+    radial-gradient(farthest-side at 50% -33.33%, #0000 52%, rgba(243, 205, 228, 0.6) 54% 57%, #0000 59%), #ffffff;
   background-size: calc(312px / 4.667) 312px, 312px calc(312px / 4.667);
 
   main {
-    background: rgba(white, 0.8);
+    background: rgba(white, 0.82);
     padding: 2em 3em;
     max-width: 1000px;
   }
@@ -25,8 +25,14 @@ body.full-page-tutorial {
 
   section {
     &:not(:first-child) {
+      padding-bottom: 5em;
       margin-top: 5em;
+      border-bottom: 2px dotted $green;
     }
+  }
+
+  small {
+    font-size: 0.8em;
   }
 
   .back-link {
@@ -70,23 +76,64 @@ body.full-page-tutorial {
   }
 
   .learn {
-    background: rgba($pink, 0.2);
+    background: rgba($pink, 0.25);
     padding: 1.5em;
     padding-top: 1.2em;
     border-radius: 0.75em;
     display: inline-block;
-    min-width: 40%;
+    min-width: 32%;
     margin-top: 0.5em;
 
-    p {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    > strong {
+      display: block;
+      letter-spacing: 0;
+
+      &:not(:first-child) {
+        margin-top: 1.5em;
+      }
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.5em;
+      margin-bottom: 0.5em;
+
       &::before {
         content: "➜";
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: sans-serif;
+        font-weight: bold;
         display: inline-block;
         margin-right: 0.5em;
       }
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+
+    &.learn--checklist li::before {
+      content: "✓";
+    }
+  }
+
+  .learns {
+    display: flex;
+    flex-wrap: wrap;
+
+    .learn {
+      margin-top: 1em;
+
+      &:not(:last-child) {
+        margin-right: 1em;
       }
     }
   }
