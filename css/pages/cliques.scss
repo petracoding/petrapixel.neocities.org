@@ -1,0 +1,26 @@
+body.load-layout main {
+  section.clique-section {
+    margin-bottom: 2.5em;
+  }
+
+  h2 {
+    font-size: 20px;
+
+    @media (min-width: $lg) {
+      font-size: 28px;
+    }
+  }
+}
+
+.clique-code {
+  text-transform: none;
+
+  > p {
+    margin-top: 1.5em;
+  }
+
+  .code-textarea {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+}

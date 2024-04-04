@@ -1,5 +1,5 @@
 $green: #9adbba;
-$purple: #c58cca;
+$purple: #a55f80; // #c58cca
 $pink: #db9ac3;
 $yellow: #ffecf8;
 $dark: #86677b;
@@ -13,7 +13,7 @@ $mainBackgroundColor: $yellow;
 $mainBorder: 2px solid darken($purple, 10%);
 
 $textColor: darken($pink, 40%);
-$linkColor: darken($purple, 10%);
+$linkColor: darken($purple, 15%);
 $linkColorHover: $green;
 
 $headerBackgroundColor: none;
@@ -44,10 +44,10 @@ body {
 @mixin darkMode1 {
   $textColor: lighten($pink, 40%);
   $backgroundColor: darken($dark, 15%);
-  $mainBackgroundColor: $dark;
-  $linkColor: lighten($pink, 5%);
+  $mainBackgroundColor: darken($dark, 5%);
+  $linkColor: lighten($pink, 10%);
   $linkColorHover: $green;
-  $asideBackgroundColor: darken($dark, 5%);
+  $asideBackgroundColor: darken($dark, 15%);
   //
   --textColor: #{$textColor};
   --backgroundColor: #{$backgroundColor};

@@ -42,6 +42,7 @@ function initInlineImages() {
   const allInlineImages = document.querySelectorAll('img[src*="inline/"]:not([class])');
   [...allInlineImages].forEach((inlineImg) => {
     inlineImg.setAttribute("aria-hidden", "true");
+    inlineImg.setAttribute("alt", "");
   });
 }
 

@@ -95,17 +95,17 @@ export function getChangelog() {
           i++;
           if (c.l !== "") {
             changelogHtml += `
-		  <div class="changelog__entry">
+		  <li class="changelog__entry">
             <strong>${c.d}</strong>
             <a href="${c.l}" tabindex="-1">${c.t}</a>
-          </div>
+          </li>
 		  `;
           } else {
             changelogHtml += `
-		  <div class="changelog__entry">
+		  <li class="changelog__entry">
             <strong>${c.d}</strong>
             <span>${c.t}</span>
-          </div>
+          </li>
 		  `;
           }
         }

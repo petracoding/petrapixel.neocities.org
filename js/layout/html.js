@@ -14,76 +14,68 @@ export function getBeforeMain() {
           <summary>Open Navigation</summary>
 	      <nav class="aside-nav">
 	          <div class="aside-nav__section">
-	            <div class="aside__heading aside__heading--menu desktop-only">Menu</div>
-	            <ul>
-	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>home</a></li>
-	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about me</a></li>
-	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>about the site </a></li>
-	               <!--<li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blog</a></li>-->
+	            <div class="aside__heading aside__heading--menu desktop-only" aria-hidden="true">Menu</div>
+	            <ul aria-label="Menu">
+	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>home</a></li>
+	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>about me</a></li>
+	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>about the site </a></li>
+	               <!--<li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>blog</a></li>-->
 				
-	              <!-- <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>guestbook</a></li>
-	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>blinkies</a></li> -->
+	              <!-- <li><a href="${localHref}/about/guestbook.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>guestbook</a></li>
+	              <li><a href="${localHref}/about/blinkies.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>blinkies</a></li> -->
 			
-	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>archive</a></li> -->
-				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cats :3 </small></a></li>
-	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>credits</a></li>
-	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>sitemap</a></li>
-				  	  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>shrines <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
+	              <!-- <li><a href="${localHref}/about/archive.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>archive</a></li> -->
+				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>cats :3 </small></a></li>
+	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>credits</a></li>
+	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>sitemap</a></li>
+				  	  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>shrines <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 	            </ul>
 	          </div>
 			  <div class="aside-nav__section">
-	              <div class="aside__heading aside__heading--creations">My Creations</div>
-	              <ul>
-	                <li><a href="${localHref}/creations/art.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my art</a></li>
-	                <li><a href="${localHref}/creations/coding.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my coding</a></li>
-	                <li><a href="${localHref}/creations/playlists.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my playlists</a> </li>
-	                <li><a href="${localHref}/creations/video-edits.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my video edits</a></li>
-	                <!-- <li><a href="${localHref}/creations/web-weaves.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my web weaves</a></li> -->
-	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my writing</a></li>   
-					<li><a href="${localHref}/creations/picmix.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>my picmixes <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
+	              <div class="aside__heading aside__heading--creations" aria-hidden="true">My Creations</div>
+	              <ul aria-label="My Creations">
+	                <li><a href="${localHref}/creations/art.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my art</a></li>
+	                <li><a href="${localHref}/creations/coding.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my coding</a></li>
+	                <li><a href="${localHref}/creations/playlists.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my playlists</a> </li>
+	                <li><a href="${localHref}/creations/video-edits.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my video edits</a></li>
+	                <!-- <li><a href="${localHref}/creations/web-weaves.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my web weaves</a></li> -->
+	                <li><a href="${localHref}/creations/writing.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my writing</a></li>   
+					<li><a href="${localHref}/creations/picmix.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my picmixes <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 	              </ul>
 	            </div>
 	            <div class="aside-nav__section">
-	              <div class="aside__heading aside__heading--recs">Media Recs</div>
-	              <ul>
-				    <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>media log</a></li>
-				  <li><a href="${localHref}/recs/music.html" aria-label="music recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>music</a></li>
-				  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>tv shows</a></li>
-				  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>movies</a></li>
-				  	<li><a href="${localHref}/recs/books.html" aria-label="book recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>books</a></li>
-				  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>games</a></li>
-	                <!-- <li><a href="${localHref}/recs/software.html" aria-label="software recommendations"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>software</a></li> -->
+	              <div class="aside__heading aside__heading--recs" aria-hidden="true">Media Recs</div>
+	              <ul aria-label="Media Recs">
+				    <li><a href="${localHref}/about/media-log.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>media log</a></li>
+				  <li><a href="${localHref}/recs/music.html" aria-label="music recommendations"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>music</a></li>
+				  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>tv shows</a></li>
+				  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>movies</a></li>
+				  	<li><a href="${localHref}/recs/books.html" aria-label="book recommendations"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>books</a></li>
+				  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>games</a></li>
+	                <!-- <li><a href="${localHref}/recs/software.html" aria-label="software recommendations"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>software</a></li> -->
 	              </ul>
 	            </div>
-				<!--
-				<div class="aside-nav__section">
-	              <div class="aside__heading aside__heading--shrines">Shrines</div>
-	              <ul>
-	                <li><a href="${localHref}/shrines/german-nostalgia.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>german nostalgia </a></li>
-	              </ul>
-	            </div>
-				-->
 	            <div class="aside-nav__section">
-	              <div class="aside__heading aside__heading--resources">Resources</div>
-	              <ul>
-	                <li><a href="${localHref}/resources/bookmarks.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>bookmarks</a></li>
-	                <li><a href="${localHref}/resources/clipboard.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>clipboard</a></li>
-	                <li><a href="${localHref}/resources/notion.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>notion</a></li>
+	              <div class="aside__heading aside__heading--resources" aria-hidden="true">Resources</div>
+	              <ul aria-label="Resources">
+	                <li><a href="${localHref}/resources/bookmarks.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>bookmarks</a></li>
+	                <li><a href="${localHref}/resources/clipboard.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>clipboard</a></li>
+	                <li><a href="${localHref}/resources/notion.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>notion</a></li>
 					<!--
-	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>templates</a></li>
+	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>templates</a></li>
 						-->
-	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>vocabulary <small class="aside__new"><img src="${nesting}img/layout/new.gif" aria-hidden="true"/></small></a></li>
+	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>vocabulary <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 				
 	              </ul>
 	            </div>
 				<div class="aside-nav__section">
-	              <div class="aside__heading aside__heading--coding">Coding Help</div>
-	              <ul>
-					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>snippets & tips</a></li>
+	              <div class="aside__heading aside__heading--coding" aria-hidden="true">Coding Help</div>
+	              <ul aria-label="Coding Help">
+					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>snippets & tips</a></li>
 						<!--
-	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
-	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
-	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" aria-hidden="true"/>webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
+	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
+	                <li><a href="${localHref}/coding/webpack-tutorial.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>webpack tutorial<img src="${nesting}img/layout/link.png" /></a></li>
 					devlog
 					-->
 	              </ul>
@@ -94,14 +86,14 @@ export function getBeforeMain() {
       <aside class="aside aside--right desktop-only">
         <div class="aside-nav__section">
 			<div class="aside-stuff">
-	          <div class="aside__heading aside__heading--changelog">Changelog</div>
-	          <div id="changelog" class="changelog custom-scrollbar">
-			  </div>
+	          <div class="aside__heading aside__heading--changelog" aria-hidden="true">Changelog</div>
+	          <ul id="changelog" class="changelog custom-scrollbar" aria-label="Changelog">
+			  </ul>
 	        </div>
 			<div class="aside-stuff">
-	          <div class="aside__heading aside__heading--comingsoon">Coming Soon</div>
+	          <div class="aside__heading aside__heading--comingsoon" aria-hidden="true">Coming Soon</div>
 	          <div class="changelog custom-scrollbar">
-				  <ul>
+				  <ul aria-label="Coming Soon">
 				 	<li>blog post about polyamory</li>
 				 	<li>dinosaur shrine</li> 
 				 	<li>more shrines</li> 

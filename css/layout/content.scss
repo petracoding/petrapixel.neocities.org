@@ -16,7 +16,7 @@ main {
 
   p {
     margin: 0.5em 0;
-    text-align: justify;
+    // text-align: justify;
   }
 
   strong {
@@ -421,22 +421,4 @@ img[src*="inline/"]:not([class]) {
 
 .fslightbox-toolbar-button[title="Enter fullscreen"] {
   display: none;
-}
-
-#ncring {
-  // neocreatives webring widget
-  display: inline-block;
-
-  center {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-.vertical-scroll-box {
-  border: 1px solid rgba($pink, 0.5);
-  padding: 0.5em;
-  border-radius: 5px;
-  max-height: 177px;
-  overflow-y: auto;
 }

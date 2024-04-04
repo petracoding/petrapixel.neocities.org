@@ -1,4 +1,4 @@
-:ribbon: code for [petrapixel.neocities.org](https://petrapixel.neocities.org/)
+:ribbon: code for [petrapixel.neocities.org](https://petrapixel.neocities.org/) | clap for me: [:clap:](http://clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel) | sign the guestbook: [:black_nib:](https://petrapixelneocities.123guestbook.com/)
 
 ---
 
@@ -10,6 +10,8 @@
 
 ---
 
-clap for me: [:clap:](http://clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel)
+**Don't know where to start browsing?** Check out these:
 
-sign the guestbook: [:black_nib:](https://petrapixelneocities.123guestbook.com/)
+- [index.html](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/index.html): homepage
+- [main.scss](https://github.com/petracoding/petrapixel.neocities.org/blob/master/css/main.scss): css
+- [main.js](https://github.com/petracoding/petrapixel.neocities.org/blob/master/js/main.js): javascript

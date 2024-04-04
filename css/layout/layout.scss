@@ -132,7 +132,7 @@ body.load-layout main {
 
     &.sections-two-column--neighbors {
       section:last-child {
-        flex: 0 0 53%;
+        flex: 0 0 41%;
       }
     }
   }
@@ -395,6 +395,7 @@ header {
   font-size: 0.9em;
   border: 1px dashed;
   padding: 0.5em 1em;
+  list-style: none;
 
   ul {
     margin: 0;
@@ -607,7 +608,7 @@ footer {
   color: white;
   transform: translateY(-3rem);
   transition: transform 0.1s ease-in;
-  z-index: 999999;
+  z-index: 99999999999;
 
   @media (max-width: $md) {
     font-size: 1rem;

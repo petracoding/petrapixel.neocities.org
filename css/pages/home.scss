@@ -40,7 +40,8 @@
     position: relative;
     filter: contrast(1.25);
 
-    img {
+    img,
+    canvas {
       display: block;
       transition: transform 0.2s ease;
 
@@ -60,6 +61,8 @@
       background: $pink;
       opacity: 0.25;
       pointer-events: none;
+      z-index: 1;
+      pointer-events: none;
     }
   }
 
@@ -73,6 +76,13 @@
 }
 
 .cool-sites {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 3px;
+  }
+
   img {
     transition: transform 0.2s ease;
 
@@ -86,31 +96,56 @@
 .link-back {
   margin-top: 10px;
 
-  textarea {
-    height: 3em;
-    background: var(--mainBackgroundColor);
-    border: 1px $purple dotted;
-    font-family: $font2;
-    font-size: 10px;
-    background: white;
-    color: black;
-
-    &:focus {
-      outline: none;
-    }
+  > a {
+    display: block;
   }
 
-  @media (min-width: $sm) {
+  @media (min-width: 700px) {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
 
     > a {
-      flex: 0 0 1;
+      flex: 0 0 auto;
     }
 
     textarea {
       margin-left: 5px;
       flex-grow: 1;
+      max-height: 5em;
     }
   }
 }
+
+.code-textarea {
+  height: 3em;
+  background: var(--mainBackgroundColor);
+  border: 1px $purple dotted;
+  font-family: $font2;
+  font-size: 10px;
+  background: white;
+  color: black;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#ncring {
+  // neocreatives webring widget
+  display: inline-block;
+
+  center {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.vertical-scroll-box {
+  border: 1px solid rgba($pink, 0.5);
+  padding: 0.5em;
+  border-radius: 5px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+// Freeze Frame (https://bechnokid.neocities.org/resources/tut_freezeframe)

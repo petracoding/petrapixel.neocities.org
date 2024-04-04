@@ -19,6 +19,15 @@ body {
   cursor: $cursorDefault;
   margin: 0;
   padding: 5px;
+
+  &.readable-mode {
+    line-height: 1.5;
+
+    * {
+      font-family: sans-serif !important;
+      letter-spacing: 0 !important;
+    }
+  }
 }
 
 a {
