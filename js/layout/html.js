@@ -28,7 +28,7 @@ export function getBeforeMain() {
 				  <li><a href="${localHref}/about/cats.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>cats :3 </small></a></li>
 	              <li class="mobile-only"><a href="${localHref}/about/credits.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>credits</a></li>
 	              <li class="mobile-only"><a href="${localHref}/sitemap.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>sitemap</a></li>
-				  	  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>shrines <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+				  	  <li><a href="${localHref}/shrines/index.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>shrines </a></li>
 	            </ul>
 	          </div>
 			  <div class="aside-nav__section">
@@ -64,13 +64,14 @@ export function getBeforeMain() {
 					<!--
 	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>templates</a></li>
 						-->
-	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>vocabulary <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+	                <li><a href="${localHref}/resources/vocabulary.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>vocabulary </a></li>
 				
 	              </ul>
 	            </div>
 				<div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--coding" aria-hidden="true">Coding Help</div>
 	              <ul aria-label="Coding Help">
+					<li><a href="${localHref}/coding/my-setup.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my setup <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>snippets & tips</a></li>
 						<!--
 	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
@@ -127,7 +128,7 @@ export function getBeforeMain() {
           isLocalhost
             ? ""
             : `<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
-	            ><img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>`
+	            ><img alt="Flag Counter" src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" border="0"/></a>`
         }
 				<!-- comment in once there are more articles
 				<div class="aside__lucky-btn"><button type="button" id="lucky-btn" title="Go to a random blog article">I'm feeling lucky.</button></div>
@@ -146,7 +147,7 @@ export function getBeforeMain() {
 	  ${
       isLocalhost
         ? ``
-        : `<img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" aria-hidden="true" tabindex="-1" style="width: 1px;height: 1px;opacity: 0;" />`
+        : `<img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" aria-hidden="true" alt="" tabindex="-1" style="width: 1px;height: 1px;opacity: 0;" />`
     }
 	  	  `;
 }

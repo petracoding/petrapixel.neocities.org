@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-body {
+body.load-layout,
+body.reduced-layout {
   min-height: 100vh;
   font-family: $font;
   letter-spacing: -0.05em;
@@ -28,33 +29,33 @@ body {
       letter-spacing: 0 !important;
     }
   }
-}
 
-a {
-  &,
-  &:hover,
-  &:focus,
-  &:visited {
-    color: var(--textColor);
+  a {
+    &,
+    &:hover,
+    &:focus,
+    &:visited {
+      color: var(--textColor);
+      cursor: $cursorPointer;
+    }
+
+    &[data-fslightbox] {
+      cursor: zoom-in;
+    }
+  }
+
+  button {
+    font-family: $font, sans-serif;
+    letter-spacing: -0.03em;
+    font-size: 15px;
+    line-height: 1.4;
     cursor: $cursorPointer;
   }
 
-  &[data-fslightbox] {
-    cursor: zoom-in;
+  ::selection {
+    color: $purple;
+    background: rgba($green, 0.5);
   }
-}
-
-button {
-  font-family: $font, sans-serif;
-  letter-spacing: -0.03em;
-  font-size: 15px;
-  line-height: 1.4;
-  cursor: $cursorPointer;
-}
-
-::selection {
-  color: $purple;
-  background: rgba($green, 0.5);
 }
 
 .mobile-only {

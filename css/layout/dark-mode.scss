@@ -1,6 +1,8 @@
 @mixin darkMode2 {
-  //   background-image: url("http://localhost:52330/public/assets/img/bg-dark.png");
-  background-image: url("https://petrapixel.neocities.org/assets/img/bg-dark.png");
+  &.load-layout {
+    //   background-image: url("http://localhost:52330/public/assets/img/bg-dark.png");
+    background-image: url("https://petrapixel.neocities.org/assets/img/bg-dark.png");
+  }
 
   ::selection {
     color: $purple;

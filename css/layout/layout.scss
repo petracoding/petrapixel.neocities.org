@@ -1,4 +1,5 @@
-#content {
+.load-layout #content,
+.reduced-layout #content {
   max-width: 100%;
   width: $xl;
   display: grid;
@@ -140,7 +141,7 @@ body.load-layout main {
 
 /*----------  Header  ----------*/
 
-header {
+body.load-layout header {
   background: $headerBackgroundColor;
   grid-area: header;
   text-align: center;
@@ -315,7 +316,7 @@ header {
   }
 }
 
-.aside-stuff__widget {
+body.load-layout .aside-stuff__widget {
   margin-bottom: 1em;
   text-align: center;
   font-size: 0.9em;
@@ -386,8 +387,8 @@ header {
     }
   }
 }
-
-.changelog {
+body.reduced-layout .changelog,
+body.load-layout .changelog {
   max-height: 110px;
   overflow-y: scroll;
   overflow-x: clip;
@@ -427,8 +428,8 @@ header {
 }
 
 /*----------  Navs  ----------*/
-
-.aside-nav {
+body.reduced-layout .aside-nav,
+body.load-layout .aside-nav {
   max-width: 200px;
 
   ul {
@@ -523,7 +524,7 @@ header {
 
 /*----------  Footer  ----------*/
 
-footer {
+body.load-layout footer {
   display: flex;
   justify-content: center;
   background: $footerBackgroundColor;
@@ -649,7 +650,8 @@ footer {
  */
 
 @media (max-width: $md) {
-  #content {
+  .load-layout #content,
+  .reduced-layout #content {
     grid-template:
       "header header header" auto
       "asideLeft main asideRight" auto
@@ -685,7 +687,8 @@ footer {
     margin: 5px;
   }
 
-  #content {
+  .load-layout #content,
+  .reduced-layout #content {
     width: calc(100% - 10px);
     grid-template:
       "header" auto

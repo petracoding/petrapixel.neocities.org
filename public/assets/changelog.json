@@ -1,6 +1,7 @@
 {
   "changelog": [
     { "d": "2024-04-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-04-05", "t": "New page: My coding setup", "l": "/coding/my-setup.html" },
     { "d": "2024-04-04", "t": "Accessibility improvements", "l": "" },
     { "d": "2024-03-28", "t": "Minimalism shrine added!", "l": "/shrines/minimalism.html" },
     { "d": "2024-03-28", "t": "Dark mode added!", "l": "/about/about-the-site.html" },
