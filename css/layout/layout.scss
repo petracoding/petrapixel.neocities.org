@@ -1,5 +1,4 @@
-.load-layout #content,
-.reduced-layout #content {
+#content {
   max-width: 100%;
   width: $xl;
   display: grid;
@@ -88,7 +87,7 @@
 
 /*----------  Main  ----------*/
 
-body.load-layout main {
+main {
   background: var(--mainBackgroundColor);
   grid-area: main;
   padding: 1em 0;
@@ -141,7 +140,7 @@ body.load-layout main {
 
 /*----------  Header  ----------*/
 
-body.load-layout header {
+header {
   background: $headerBackgroundColor;
   grid-area: header;
   text-align: center;
@@ -316,14 +315,19 @@ body.load-layout header {
   }
 }
 
-body.load-layout .aside-stuff__widget {
+.aside-stuff__widget {
   margin-bottom: 1em;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.8em;
 
   a {
-    text-decoration: none;
-    color: $asideTextColor;
+    &,
+    &:visited,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $asideTextColor;
+    }
   }
 }
 
@@ -374,9 +378,15 @@ body.load-layout .aside-stuff__widget {
   }
 
   a {
-    text-decoration: none;
-    cursor: $cursorPointer;
-    display: block;
+    &,
+    &:visited,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: $cursorPointer;
+      display: block;
+      color: $asideTextColor;
+    }
   }
 
   strong {
@@ -387,8 +397,7 @@ body.load-layout .aside-stuff__widget {
     }
   }
 }
-body.reduced-layout .changelog,
-body.load-layout .changelog {
+.changelog {
   max-height: 110px;
   overflow-y: scroll;
   overflow-x: clip;
@@ -428,8 +437,7 @@ body.load-layout .changelog {
 }
 
 /*----------  Navs  ----------*/
-body.reduced-layout .aside-nav,
-body.load-layout .aside-nav {
+.aside-nav {
   max-width: 200px;
 
   ul {
@@ -524,7 +532,7 @@ body.load-layout .aside-nav {
 
 /*----------  Footer  ----------*/
 
-body.load-layout footer {
+footer {
   display: flex;
   justify-content: center;
   background: $footerBackgroundColor;
@@ -625,24 +633,6 @@ body.load-layout footer {
   left: 10em;
 }
 
-.wip-banner {
-  background: $green;
-  color: $textColor;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 15px 50px;
-  text-align: center;
-  z-index: 999;
-  opacity: 0.6;
-  font-weight: bold;
-
-  @media (max-width: $sm) {
-    padding: 5px 40px;
-  }
-}
-
 /**
  *
  * TABLET
@@ -650,8 +640,8 @@ body.load-layout footer {
  */
 
 @media (max-width: $md) {
-  .load-layout #content,
-  .reduced-layout #content {
+  #content,
+  #content {
     grid-template:
       "header header header" auto
       "asideLeft main asideRight" auto
@@ -687,8 +677,8 @@ body.load-layout footer {
     margin: 5px;
   }
 
-  .load-layout #content,
-  .reduced-layout #content {
+  #content,
+  #content {
     width: calc(100% - 10px);
     grid-template:
       "header" auto
@@ -699,7 +689,7 @@ body.load-layout footer {
       / 1fr;
   }
 
-  body.load-layout main section {
+  main section {
     padding: 0.5em;
   }
 

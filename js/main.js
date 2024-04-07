@@ -1,12 +1,10 @@
 import "../css/main.scss";
 import { buildLayout } from "./layout/layout";
-import { addThemeSwitcher, loadDarkModeCookie } from "./layout/dark-mode";
+import { addThemeSwitcherToPage, loadTheme } from "./layout/dark-mode";
 import { initClipboard } from "./pages/clipboard";
 import { initPlaylists } from "./pages/playlists";
 import { initWritingChart } from "./pages/writing";
 import { initBlog } from "./pages/blog";
-
-// return;
 
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("-js");
@@ -16,13 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Layout:
   if (document.querySelector("body.load-layout")) {
     buildLayout();
-  }
-
-  // Dark Mode:
-  if (document.querySelector("body.load-theme-switcher")) {
-    addThemeSwitcher();
+  } else if (document.querySelector("body.load-theme-switcher")) {
+    addThemeSwitcherToPage();
   } else {
-    loadDarkModeCookie();
+    loadTheme();
   }
 
   // Specific Pages:

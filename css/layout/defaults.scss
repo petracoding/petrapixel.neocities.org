@@ -2,8 +2,7 @@
   box-sizing: border-box;
 }
 
-body.load-layout,
-body.reduced-layout {
+body {
   min-height: 100vh;
   font-family: $font;
   letter-spacing: -0.05em;

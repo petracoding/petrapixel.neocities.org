@@ -1,18 +1,18 @@
 .picmix-page {
   width: 99vw;
-}
-
-.picmix-back {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 2em;
-  z-index: 99;
+  background: none;
+  border: none;
+  display: block;
+  padding: 0;
+  grid-area: initial;
 }
 
 .picmix {
   display: flex;
   flex-wrap: wrap;
+  border: none;
+  background: none;
+  margin: 0;
 
   @media (min-width: $lg) {
     padding: 3em;
@@ -36,4 +36,12 @@
   width: 100%;
   height: auto;
   transition: transform 0.2s ease;
+}
+
+.picmix-back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 2em;
+  z-index: 99;
 }

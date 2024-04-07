@@ -1,18 +1,18 @@
 import { getBeforeMain, getAfterMain } from "./html";
-import { loadDarkModeCookie, initDarkMode } from "./dark-mode";
+import { loadTheme, initThemeSwitcher } from "./dark-mode";
 import { initLuckyBtn, getChangelog, initLastFmWidget, initHitcountWidget, initStatusCafeWidget } from "./sidebar";
 
 export function buildLayout() {
   const mainEl = document.querySelector("main");
   if (!mainEl) return;
 
-  loadDarkModeCookie();
+  loadTheme(); // we're doing this as soon as possible
 
   mainEl.insertAdjacentHTML("beforebegin", getBeforeMain());
   mainEl.insertAdjacentHTML("afterend", getAfterMain());
 
   initMenu();
-  initDarkMode();
+  initThemeSwitcher();
   doActiveLinks();
   prepareScrollToTop();
   buildTableOfContents();

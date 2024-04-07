@@ -1,9 +1,15 @@
 .bookmarks-section {
-  margin-top: 1em;
-  margin-bottom: 1em;
-
   &:last-child {
     margin-bottom: 0;
+  }
+
+  main & ~ hr {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  & + & h3 {
+    margin-top: 1em;
   }
 
   p {

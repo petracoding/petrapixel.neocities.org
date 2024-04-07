@@ -1,0 +1,348 @@
+@import "../variables";
+@import "../mixins";
+
+body {
+  --text-color: black;
+  --link-color: rgb(50, 50, 188);
+  --link-hover-color: rgb(109, 0, 83);
+  --accent-color: rgb(50, 50, 188);
+  --overlay: rgba(0, 1, 58, 0.2);
+
+  color: var(--text-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 2vh 2vw;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: monospace;
+
+  // generated bg from https://10015.io/tools/css-background-pattern-generator
+  background: radial-gradient(farthest-side at -33.33% 50%, #0000 52%, rgba(57, 57, 246, 0.3) 54% 57%, #0000 59%) 0 calc(312px / 2),
+    radial-gradient(farthest-side at 50% 133.33%, #0000 52%, rgba(57, 57, 246, 0.3) 54% 57%, #0000 59%) calc(312px / 2) 0,
+    radial-gradient(farthest-side at 133.33% 50%, #0000 52%, rgba(57, 57, 246, 0.3) 54% 57%, #0000 59%),
+    radial-gradient(farthest-side at 50% -33.33%, #0000 52%, rgba(57, 57, 246, 0.3) 54% 57%, #0000 59%), #ffffff;
+  background-size: calc(312px / 4.667) 312px, 312px calc(312px / 4.667);
+}
+
+a {
+  &,
+  &:visited {
+    color: var(--link-color);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--link-hover-color);
+  }
+}
+
+main {
+  background: rgba(white, 0.93);
+  padding: 2em 3em;
+  max-width: 1000px;
+}
+
+#theme-toggler {
+  left: auto;
+  right: 10px;
+}
+
+section {
+  &:not(:first-child) {
+    padding-bottom: 5em;
+    margin-top: 5em;
+    border-bottom: 2px dotted var(--text-color);
+  }
+}
+
+small {
+  font-size: 0.8em;
+}
+
+.back-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-bottom: 1em;
+  text-decoration: none;
+  font-size: 1.5em;
+  line-height: 1;
+  z-index: 99999;
+  padding: 0.5em;
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+  }
+
+  @media (max-width: $md) {
+    font-size: 1em;
+  }
+}
+
+hr {
+  margin: 3em 0;
+  border: none;
+  border-bottom: 2px dotted var(--text-color);
+}
+
+h2 {
+  small {
+    display: block;
+    font-family: $font2, monospace;
+    font-size: 0.6em;
+    letter-spacing: 0;
+    opacity: 0.7;
+  }
+
+  a[href*="#"] {
+    display: inline-block;
+    margin-right: 0.5em;
+    font-size: 0.85em;
+  }
+}
+
+.learn {
+  background: var(--overlay);
+  padding: 1.5em;
+  padding-top: 1.2em;
+  border-radius: 0.75em;
+  display: inline-block;
+  min-width: 32%;
+  margin-top: 0.5em;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  > strong {
+    display: block;
+    letter-spacing: 0;
+
+    &:not(:first-child) {
+      margin-top: 1.5em;
+    }
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+
+    &::before {
+      content: "➜";
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: sans-serif;
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.learn--checklist li::before {
+    content: "✓";
+  }
+}
+
+.learns {
+  display: flex;
+  flex-wrap: wrap;
+
+  .learn {
+    margin-top: 1em;
+
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  body {
+    padding: 10vh 10vw;
+  }
+
+  .back-link {
+    position: fixed;
+  }
+}
+
+@media (max-width: $sm) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  main {
+    padding: 1em 1em;
+  }
+
+  #disqus_thread {
+    margin: 0 -10px;
+  }
+
+  h2 {
+    a[href*="#"] {
+      display: none;
+    }
+  }
+}
+
+#theme-toggler {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 9999;
+
+  img {
+    display: none;
+  }
+
+  @media (max-width: $md) {
+    display: none;
+  }
+}
+
+/*
+	CHEATSHEET
+*/
+
+.two-columns {
+  border: 2px dotted rgba(var(--accent-color), 0.5);
+  padding: 1.5em;
+  border-radius: 10px;
+
+  @media (min-width: $sm) {
+    display: flex;
+
+    > * {
+      flex: 1 1 0;
+
+      &:not(ul):not(ol):first-child {
+        margin-right: 1em;
+      }
+
+      &:not(ul):not(ol):last-child {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.cheatsheet {
+  margin-top: 2em;
+  line-height: 1;
+
+  .cheatsheet__inline {
+    margin-bottom: 1em;
+
+    > span {
+      display: block;
+
+      small {
+        opacity: 0.8;
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.code-title {
+  text-align: right;
+  font-family: $font2, monospace;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-top: 1em;
+  margin-left: 1em;
+
+  & + pre,
+  & + code {
+    margin-top: 0;
+  }
+}
+
+/*
+	CODE 
+*/
+
+pre code.hljs {
+  background: var(--overlay);
+  border-radius: 0.75em;
+  padding: 1.5em;
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.1;
+}
+
+.hljs-section,
+.hljs-title {
+  color: #94113c;
+}
+
+.hljs-attribute,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-name,
+.hljs-selector-tag {
+  color: #2b2b2b;
+}
+
+/*
+	DARK MODE
+*/
+
+@mixin tutorialsDarkMode {
+  --text-color: #ececec;
+  --overlay: rgba(214, 234, 243, 0.2);
+  --link-color: rgb(135, 218, 246);
+  --link-hover-color: rgb(255, 162, 177);
+  --accent-color: rgb(135, 218, 246);
+
+  // generated bg from https://10015.io/tools/css-background-pattern-generator
+  background: radial-gradient(farthest-side at -33.33% 50%, #0000 52%, rgba(135, 218, 246, 0.4) 54% 57%, #0000 59%) 0 calc(312px / 2),
+    radial-gradient(farthest-side at 50% 133.33%, #0000 52%, rgba(135, 218, 246, 0.4) 54% 57%, #0000 59%) calc(312px / 2) 0,
+    radial-gradient(farthest-side at 133.33% 50%, #0000 52%, rgba(135, 218, 246, 0.4) 54% 57%, #0000 59%),
+    radial-gradient(farthest-side at 50% -33.33%, #0000 52%, rgba(135, 218, 246, 0.4) 54% 57%, #0000 59%), #000000;
+  background-size: calc(312px / 4.667) 312px, 312px calc(312px / 4.667);
+
+  main {
+    background: rgba(45, 45, 45, 0.97);
+  }
+
+  .learn {
+    strong {
+      color: white;
+    }
+  }
+
+  pre code.hljs {
+    background: rgba(239, 243, 255, 0.5);
+  }
+
+  #theme-toggler {
+    filter: brightness(0.7);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.dark-mode):not(.light-mode) {
+    @include tutorialsDarkMode;
+  }
+}
+
+body.dark-mode {
+  @include tutorialsDarkMode;
+}

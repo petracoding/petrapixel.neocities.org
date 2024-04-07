@@ -14,7 +14,6 @@
   },
   "scripts": {
     "watch": "webpack --watch",
-    "build": "webpack",
-    "watch1": "webpack --config webpack-template1.config.js --watch"
+    "build": "webpack"
   }
 }

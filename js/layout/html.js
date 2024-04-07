@@ -3,7 +3,7 @@ import { themeSwitcherHTML } from "./dark-mode";
 const isLocalhost = window.location.href.includes("http://localhost");
 const localHref = isLocalhost ? "/public" : "";
 const scriptEl = document.querySelector('head script[src*="main.js"]');
-const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("main.js") ? "./" : "../") : "../";
+const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("assets/js/main.js") ? "./" : "../") : "../";
 
 export function getBeforeMain() {
   return `
@@ -61,6 +61,7 @@ export function getBeforeMain() {
 	                <li><a href="${localHref}/resources/bookmarks.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>bookmarks</a></li>
 	                <li><a href="${localHref}/resources/clipboard.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>clipboard</a></li>
 	                <li><a href="${localHref}/resources/notion.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>notion</a></li>
+	                <li><a href="${localHref}/resources/google-spreadsheets-excel.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>spreadsheets <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 					<!--
 	                <li><a href="${localHref}/resources/templates.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>templates</a></li>
 						-->
@@ -86,41 +87,7 @@ export function getBeforeMain() {
       </aside>
       <aside class="aside aside--right desktop-only">
         <div class="aside-nav__section">
-			<div class="aside-stuff">
-	          <div class="aside__heading aside__heading--changelog" aria-hidden="true">Changelog</div>
-	          <ul id="changelog" class="changelog custom-scrollbar" aria-label="Changelog">
-			  </ul>
-	        </div>
-			<div class="aside-stuff">
-	          <div class="aside__heading aside__heading--comingsoon" aria-hidden="true">Coming Soon</div>
-	          <div class="changelog custom-scrollbar">
-				  <ul aria-label="Coming Soon">
-				 	<li>blog post about polyamory</li>
-				 	<li>dinosaur shrine</li> 
-				 	<li>more shrines</li> 
-				 	<li>advanced coding tutorials</li> 
-					<li>self-made blinkies/buttons/stamps</li>
-				  </ul>
-			  </div>
-	        </div>
-			<div class="aside-stuff">
-	          <div class="aside__heading aside__heading--stats">Stats</div>
-	          <div>
-				<center>site visitors:</center>
-				<div class="aside-stuff__widget" id="hitcount"></div>
-				<center>listening to:</center>
-				<div class="aside-stuff__widget" id="lastfm-widget">
-			        <div>
-			          <a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">loading...</a>
-			        </div>
-			      </div>
-				<center>my status:</center>
-				<div class="aside-stuff__widget" id="statuscafe">
-			        <div id="statuscafe-username" style="display: none"></div>
-			        <a href="https://status.cafe/users/petra1999" target="_blank" id="statuscafe-content"></a>
-			      </div>
-			  </div>
-		    </div>
+			
 			<div class="aside-stuff">
 				<div class="aside-stuff__center">
 	          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/></a>
@@ -140,6 +107,62 @@ export function getBeforeMain() {
 				</div>
 				</div>
 			</div>
+			<div class="aside-stuff">
+	          <div class="aside__heading aside__heading--changelog" aria-hidden="true">Changelog</div>
+	          <ul id="changelog" class="changelog custom-scrollbar" aria-label="Changelog">
+			  </ul>
+	        </div>
+			<!--
+			<div class="aside-stuff">
+	          <div class="aside__heading aside__heading--comingsoon" aria-hidden="true">Coming Soon</div>
+	          <div class="changelog custom-scrollbar">
+				  <ul aria-label="Coming Soon">
+				 	<li>loading screen</li>
+				 	<li>blog post about polyamory</li>
+				 	<li>dinosaur shrine</li> 
+				 	<li>more shrines</li> 
+				 	<li>advanced coding tutorials</li> 
+					<li>self-made blinkies/buttons/stamps</li>
+				  </ul>
+			  </div>
+	        </div>
+			-->
+			<div class="aside-stuff">
+	          <div class="aside__heading aside__heading--stats">Stats</div>
+	          <div>
+				<center>site visitors:</center>
+				<div  class="aside-stuff__widget"><a href="https://neocities.org/site/petrapixel/stats" target="_blank" id="hitcount"></a></div>
+				<center>my time:</center>
+				<div class="aside-stuff__widget">
+			        <div>
+			          <iframe src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs12/fcffecf8/tct/pct/ts1/ta1" frameborder="0" width="139" height="16" allowtransparency="true"></iframe>
+			        </div>
+			    </div>
+				<center>listening to:</center>
+				<div class="aside-stuff__widget" id="lastfm-widget">
+			        <div>
+			          <a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">loading...</a>
+			        </div>
+			    </div>
+				<center>watching:</center>
+				<div class="aside-stuff__widget">
+			        <div>
+			          <a href="https://app.tvtime.com/user/33116783" target="_blank">3 body problem, des, doctor who (rewatch)</a>
+			        </div>
+			    </div>
+				<center>reading:</center>
+				<div class="aside-stuff__widget">
+			        <div>
+			          <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">the house in the cerulean sea (t.j. klune)</a>
+			        </div>
+			    </div>
+				<center>my status:</center>
+				<div class="aside-stuff__widget" id="statuscafe">
+			        <div id="statuscafe-username" style="display: none"></div>
+			        <a href="https://status.cafe/users/petra1999" target="_blank" id="statuscafe-content"></a>
+			      </div>
+			  </div>
+		    </div>
 		</div>
       </aside>
 	  <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>

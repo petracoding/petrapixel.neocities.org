@@ -1,0 +1,22 @@
+// Fonts
+
+$font: "MS gothic", consolas, sans-serif; // see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
+$font2: "Share Tech Mono"; // strong, menu links
+$font3: "basiic"; // headings
+
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@font-face {
+  font-family: $font3;
+  src: url(https://cinni.net/fonts/basiic.ttf);
+}
+
+// Variables
+
+$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor2.gif") 1 1, auto;
+$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5, pointer;
+
+$xs: 350px;
+$sm: 576px;
+$md: 992px;
+$lg: 1000px;
+$xl: 1200px;

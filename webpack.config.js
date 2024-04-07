@@ -2,10 +2,14 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: "./js/main.js",
+  entry: {
+    main: "./js/main.js",
+    tutorials: "./js/tutorials/main.js",
+    template1: "./js/templates/template1.js",
+  },
   output: {
     path: path.resolve(__dirname, "."),
-    filename: "public/main.js",
+    filename: "public/assets/js/[name].js",
   },
   module: {
     rules: [
