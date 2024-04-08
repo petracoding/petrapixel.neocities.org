@@ -123,7 +123,7 @@ main {
 
   h1 {
     font-size: 24px;
-    letter-spacing: 1px;
+    // letter-spacing: 1px;
 
     @media (min-width: $lg) {
       font-size: 32px;
@@ -152,7 +152,8 @@ main {
       background: $green;
       display: inline-block;
       position: relative;
-      padding: 0 0.5em;
+      border-radius: 5px;
+      padding: 0.1em 0.5em;
       cursor: $cursorPointer;
       user-select: none;
 
@@ -160,6 +161,10 @@ main {
         content: "⮯";
         display: inline-block;
         margin-right: 0.5em;
+      }
+
+      &:hover {
+        filter: brightness(0.9);
       }
     }
 

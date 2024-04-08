@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>neocities | petrapixel</title>
-    <meta name="description" content="Quick and helpful coding tips and code snippets for Neocities. Easy enough for beginners!" />
+    <title>neocities help | petrapixel</title>
+    <meta name="description" content="Neocities and coding help for beginners and intermediate coders." />
     <script src="../assets/js/main.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
@@ -42,168 +42,23 @@
     <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
     <div id="content">
       <main id="main">
-        <section>
-          <h1>Helpful Neocities Stuff</h1>
-          <div id="toc"></div>
-        </section>
+        <h1>Helpful Neocities Stuff</h1>
+        <div id="toc"></div>
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <h2 style="margin-bottom: 0.5em">JavaScript snippets</h2>
-        <section>
-          <h3>Same header/footer on every page</h3>
-          <p>You can load your header/footer via javascript. This is helpful so you don't have to update the code for your header/footer on every single page when you make a change.</p>
-          <details>
-            <summary>Show/Hide</summary>
-            <p>Create a javascript file (for example layout.js) that you load on every page. in the file, do something like this:</p>
-            <pre>
-<code>document.addEventListener("DOMContentLoaded", function () {
-  const beforeMain = `
-  	&lt;header&gt;...&lt;/header&gt;
-  	  `;
-
-  const afterMain = `
-   &lt;footer&gt;...&lt;/footer&gt;
-  	  `;
-
-  const mainEl = document.querySelector("main");
-  if (!mainEl) return;
-  mainEl.insertAdjacentHTML("beforebegin", beforeMain);
-  mainEl.insertAdjacentHTML("afterend", afterMain);
-});</code></pre>
-            <p><b>Result:</b></p>
-            <p>HTML before:</p>
-            <pre><code>&lt;main&gt;...&lt;/main&gt;</code></pre>
-            <p>HTML after:</p>
-            <pre>
-<code>&lt;header&gt;...&lt;/header&gt;
-&lt;main&gt;...&lt;/main&gt;
-&lt;footer&gt;...&lt;/footer&gt;</code></pre>
-          </details>
-        </section>
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <section>
-          <h3>automatic tab title suffix</h3>
-          <p>for example, changing "about me" in the browser tab to "about me | your site name"</p>
-          <details>
-            <summary>Show/Hide</summary>
-            <pre>
-<code>const tabTitle = document.title; 
-if (tabTitle !== "YOUR HOME TITLE") { 
-	document.title = tabTitle + " | some text"; 
-}</code>
-</pre>
-            <p>The <i>if</i> makes sure that the title of your homepage doesn't end up like "site name | site name"</p>
-          </details>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h3>Highlight active links</h3>
-          <p>You can give the class "active" to any active navigation links automatically</p>
-          <details>
-            <summary>Show/Hide</summary>
-            <pre>
-<code>const linkElements = document.querySelectorAll("nav a");
-[...linkElements].forEach((el) => {
-  const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
-
-  if (href == "/" || href == "/index.html") {
-    if (window.location.href == "https://YOURURL.neocities.org/") {
-      el.classList.add("active");
-    }
-  } else {
-    if (window.location.href.includes(href)) {
-      el.classList.add("active");
-    }
-  }
-});</code></pre>
-            <p>(You will need to change the selector for your navigation links (default: "nav a") and the URL.)</p>
-            <hr />
-          </details>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h3>automatic table of contents</h3>
-          <p>(example on <a href="/resources/bookmarks.html">this page</a>)</p>
-          <details>
-            <summary>Show/Hide</summary>
-            <p>In your HTML, add this line whereever you want it to be:</p>
-            <pre><code>&lt;div id="toc"&gt;&lt;/div&gt;</code></pre>
-            <p>The JavaScript:</p>
-            <pre>
-<code>const container = document.querySelector("#toc");
-if (!container) return;
-const allHeadings = document.querySelectorAll("h2");
-if (allHeadings.length &lt; 2) return;
-let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
-[...allHeadings].forEach((headingEl) =&gt; {
-	const title = headingEl.innerHTML;
-	const link =
-	      headingEl.getAttribute("id") ||
-	      encodeURI(
-	        title
-	          .replaceAll(" ", "-")
-	          .replaceAll("#", "")
-	          .replaceAll(/<[^>]*>?/gm, "")
-	      ).toLowerCase();
-	headingEl.setAttribute("id", link);
-	output += `&lt;li&gt;&lt;a href="#${link}"&gt;${title}&lt;/a&gt;&lt;/li&gt;`;
-});
-container.innerHTML = output + "&lt;/ol&gt;";</code></pre>
-            <p>Change the selector (default: "h2") to any selector that targets the headings you want to turn into the table of contents.</p>
-            <p>You can override the automatically generated ID of a heading by simply setting a custom one in the HTML.</p>
-          </details>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <h2 style="margin-bottom: 0.5em">HTML/CSS Snippets</h2>
-        <section>
-          <h3>color filter over image</h3>
-          <p>(examples see <a href="/about/about-me.html#face">here</a>)</p>
-          <details>
-            <summary>Show/Hide</summary>
-            <p>HTML:</p>
-            <pre><code>&lt;div class=&quot;pink-image&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/div&gt;</code></pre>
-            <p>CSS:</p>
-            <pre><code>.pink-image {
-  position: relative;
-
-  img {
-    filter: brightness(1.1) contrast(1.3);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background: pink;
-    opacity: 0.25; 
-    pointer-events: none;
-  }
-}</code></pre>
-            <p>You can adjust the filters, the background color and the opacity of the background color.</p>
-          </details>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <h2 style="margin-bottom: 0.5em">Advanced Tips</h2>
-        <section>
+          <!-- <h2 style="margin-bottom: 0.5em">Advanced Neocities Tips</h2> -->
           <div class="blog-read-more">
             <div class="blog-read-more__articles" id="blog" data-filter="neocities" data-limit=""></div>
           </div>
         </section>
-
-        <section>
+        <!-- <section>
           <p>
             I'm currently working on a full tutorial on "advanced coding": so basically anything that you can learn to evolve from a beginner to an intermediate coder. Check back later if you're
             interested!
           </p>
-        </section>
+        </section> -->
       </main>
     </div>
   </body>

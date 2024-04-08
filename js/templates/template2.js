@@ -1,5 +1,5 @@
-import "../../css/templates/template1.scss";
-import { isPreview, getPreviewOptions } from "./preview";
+import "../../css/templates/template2.scss";
+import { isPreview } from "./preview";
 
 // START
 
@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // DELETE FROM HERE --------------
   if (isPreview()) {
     document.querySelector("nav a").classList.add("active");
-    const previewOptions = getPreviewOptions();
-    console.log(previewOptions);
     return;
   }
   // TO HERE -----------------------
@@ -25,6 +23,24 @@ function loadLayout() {
   if (!mainEl) return;
   mainEl.insertAdjacentHTML("beforebegin", headerHTML());
   mainEl.insertAdjacentHTML("afterend", footerHTML());
+
+  // Init Submenu:
+
+  const subMenus = document.querySelectorAll("nav details");
+  subMenus.forEach(function (details) {
+    details.addEventListener("mouseover", function () {
+      this.setAttribute("open", "true");
+    });
+    details.addEventListener("focus", function () {
+      this.setAttribute("open", "true");
+    });
+    details.addEventListener("mouseout", function () {
+      this.removeAttribute("open");
+    });
+    details.addEventListener("blur", function () {
+      this.removeAttribute("open");
+    });
+  });
 }
 
 function headerHTML() {
@@ -70,7 +86,6 @@ function headerHTML() {
     </li>
   </ul>
 </nav>
-<p>Blah blah.</p>
 </aside>
 	  `;
 }

@@ -30,6 +30,10 @@
     }
   }
 
+  iframe[src*="cbox"] {
+    filter: brightness(0.47) saturate(2.1) contrast(1.5);
+  }
+
   .code-textarea {
     background: rgba(43, 43, 43, 0.5);
     color: white;
@@ -52,6 +56,11 @@
     }
 
     &.aside__heading--stats {
+      background: #2e563a;
+      color: white;
+    }
+
+    &.aside__heading--chatbox {
       background: #120061;
       color: white;
     }
@@ -98,7 +107,8 @@
     color: white;
   }
 
-  main details summary {
+  main details summary,
+  .blog-article__read {
     background: #25724b;
   }
 

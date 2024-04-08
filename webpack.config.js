@@ -6,6 +6,7 @@ module.exports = {
     main: "./js/main.js",
     tutorials: "./js/tutorials/main.js",
     template1: "./js/templates/template1.js",
+    template2: "./js/templates/template2.js",
   },
   output: {
     path: path.resolve(__dirname, "."),

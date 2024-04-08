@@ -57,12 +57,13 @@ function initMenu() {
 }
 
 function doActiveLinks() {
-  const els = document.querySelectorAll(".aside-nav li a, main a");
+  const els = document.querySelectorAll(".aside-nav li a");
   [...els].forEach((el) => {
     const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
+    const pathname = window.location.pathname.replace("/public", "");
 
     if (href == "/" || href == "/index.html") {
-      if (window.location.href == "http://localhost:52330/" || window.location.href == "https://petrapixel.neocities.org/") {
+      if (pathname == "/") {
         el.classList.add("active");
       }
     } else {

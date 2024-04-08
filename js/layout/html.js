@@ -72,8 +72,9 @@ export function getBeforeMain() {
 				<div class="aside-nav__section">
 	              <div class="aside__heading aside__heading--coding" aria-hidden="true">Coding Help</div>
 	              <ul aria-label="Coding Help">
-					<li><a href="${localHref}/coding/my-setup.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my setup <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
-					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>snippets & tips</a></li>
+					<li><a href="${localHref}/coding/my-setup.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>my coding setup <small class="aside__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+					<li><a href="${localHref}/coding/snippets.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>snippets & tips</a></li>
+					<li><a href="${localHref}/coding/neocities.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>neocities help</a></li>
 						<!--
 	                <li><a href="${localHref}/coding/cheatsheet.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>cheatsheet<img src="${nesting}img/layout/link.png" /></a></li>
 	                <li><a href="${localHref}/coding/advanced-coding.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>advanced tutorial<img src="${nesting}img/layout/link.png" /></a></li>
@@ -90,21 +91,25 @@ export function getBeforeMain() {
 			
 			<div class="aside-stuff">
 				<div class="aside-stuff__center">
-	          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/></a>
-				${
-          isLocalhost
-            ? ""
-            : `<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
-	            ><img alt="Flag Counter" src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" border="0"/></a>`
-        }
+	          	<a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/></a>
+				
+				<!--
+				<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
+	            ><img alt="Flag Counter" src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" border="0"/></a>
+				-->
+				
 				<!-- comment in once there are more articles
 				<div class="aside__lucky-btn"><button type="button" id="lucky-btn" title="Go to a random blog article">I'm feeling lucky.</button></div>
 				-->
-				<a class="aside-stuff__guestbook"  aria-hidden="true" href="${localHref}/about/guestbook.html"><img src="${nesting}img/layout/kirby-guestbook.png" style="image-rendering:pixelated;" alt="sign my guestbook" /></a>
+				<a class="aside-stuff__guestbook" aria-hidden="true" href="${localHref}/about/guestbook.html"><img src="${nesting}img/layout/kirby1.png" alt="sign my guestbook" /></a>
+				<a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"><img src="${nesting}img/layout/kirby2.png" alt="follow me on neocities" /></a>
 
-				<div class="aside-stuff__widget" >
-				<a class="aside-stuff__follow" href="https://neocities.org/site/petrapixel" target="_blank">follow me<br>on neocities!</a>
-				</div>
+				<!--
+					<div class="aside-stuff__widget" >
+					<a class="aside-stuff__follow" href="https://neocities.org/site/petrapixel" target="_blank">follow me<br>on neocities!</a>
+					</div>
+				-->
+
 				</div>
 			</div>
 			<div class="aside-stuff">
@@ -161,6 +166,10 @@ export function getBeforeMain() {
 			        <div id="statuscafe-username" style="display: none"></div>
 			        <a href="https://status.cafe/users/petra1999" target="_blank" id="statuscafe-content"></a>
 			      </div>
+			  </div>
+			  <div class="aside-stuff">
+			  	<div class="aside__heading aside__heading--chatbox">Chatbox</div>
+			  	<iframe src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk" width="100%" height="150" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
 			  </div>
 		    </div>
 		</div>

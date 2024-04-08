@@ -1,14 +1,15 @@
+/public/templates
+/public/webrings
+/public/*/wip
+/public/blog/_template.html
+/public/coding/image-vomit-script.html
+
 # -----------------------------------------------------------------
 # .gitignore
 # Bare Minimum Git
 # https://salferrarello.com/starter-gitignore-file/
 # ver 20210211
 # -----------------------------------------------------------------
-
-/public/webrings
-/public/*/wip
-/public/blog/_template.html
-/public/coding/image-vomit-script.html
 
 # ignore all files starting with  ~
 ~*

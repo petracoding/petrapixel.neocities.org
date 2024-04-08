@@ -17,7 +17,7 @@
     <a href="#main" id="skip-to-content-link">Skip to content</a>
     <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
     <div id="content">
-      <main id="main">
+      <main id="main" class="not-lowercase">
         <section>
           <!-- ------------------------------------------------------------------------------------------------------------ -->
           <!-- ------------------------------------------------------------------------------------------------------------ -->
@@ -27,19 +27,19 @@
             <h1 class="blog-article__title">External Widgets for Neocities Free Accounts</h1>
             <div class="blog-article__description">What to do if you want to use external widgets with a free Neocities account.</div>
             <!-- <div class="blog-article__image"><img src="../img/linkback.gif" alt="alt text!!" /></div> -->
-            <div id="toc"></div>
             <div class="blog-article__content">
               <!-- ------------------------------------------------------------------------------------------------------------ -->
               <!-- ------------------------------------------------------------------------------------------------------------ -->
               <!-- ------------------------------------------------------------------------------------------------------------ -->
               <!-- <h2>Heading</h2> -->
               <p>
-                Unfortunately, if you have a free website on neocities you are not allowed to use external scripts, such as guestbooks, shoutboxes, status/mood widgets, and even hit counters.
+                Unfortunately, if you have a free website on neocities created after ~2022 you are not allowed to use external scripts, such as guestbooks, shoutboxes, status/mood widgets, and even
+                hit counters.
                 <img aria-hidden="true" src="../img/inline/sad.gif" />
               </p>
               <p>
-                The good news is that I found a way around that: you can use iframes. Specifially, you use the script you want to use on a different website not hosted on neocities, in the center of
-                an otherwise blank page with <i>background: transparent;</i> and then use this URL in an iframe on your neocities page.
+                The good news is that I found a way around that: you can use iframes. Specifially, you use the script you want to use on a different website not hosted on Neocities (instead hosted on
+                e.g. github pages), in the center of an otherwise blank page with <i>background: transparent;</i> and then use this URL in an iframe on your neocities page.
                 <a href="https://petracoding.github.io/neocities/stats.html" target="_blank">Here</a> you can see an example of what an otherwise blank page with a widget may look like.
               </p>
               <p>
@@ -49,9 +49,12 @@
             </div>
           </article>
         </section>
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+        <div class="blog-read-more__title">Related Pages:</div>
         <section>
           <div class="blog-read-more">
-            <div class="blog-read-more__title">Related Pages:</div>
             <!-- Change filter ! -->
             <div class="blog-read-more__articles" id="blog" data-filter="neocities" data-limit="2"></div>
           </div>

@@ -89,6 +89,9 @@ function loadArticle(fileName) {
 function addArticleToDOM(blogEl, doc, articleTags, file) {
   const articleTitle = doc.querySelector(".blog-article__title").innerHTML;
   const articleDescription = doc.querySelector(".blog-article__description").innerHTML;
+  const articlePreview = doc.querySelector(".blog-article__content").textContent.trim();
+  const previewLength = 200;
+  const articlePreviewTrimmed = articlePreview.length > previewLength ? articlePreview.substring(0, previewLength - 3) + "..." : articlePreview;
   const articleDate = doc.querySelector("article").getAttribute("data-date");
 
   // Image
@@ -122,12 +125,13 @@ function addArticleToDOM(blogEl, doc, articleTags, file) {
 	  <article class="blog-article">
 	  ${imageHtml}
 	  <${titleTag} class="blog-article__title"><a href="${file}">${articleTitle}</a></${titleTag}>
-		  <div class="blog-article__info">
+		  <!-- <div class="blog-article__info">
 			  <div class="blog-article__date">${articleDate}</div>
 			  ${articleTagsHtml}
-		  </div>
-		  <div class="blog-article__description">${articleDescription}</div>
-		  <a href="${file}">Read...</a>
+		  </div> 
+		  <div class="blog-article__description"><small>${articleDescription}</small></div> -->
+		  <div class="blog-article__description">${articlePreviewTrimmed}</div>
+		  <a href="${file}" class="blog-article__read" aria-label="Read '${articleTitle}'">Read...</a>
 	  </article>
   	`;
 
