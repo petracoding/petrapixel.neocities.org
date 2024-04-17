@@ -3,13 +3,20 @@
   flex-wrap: wrap;
 }
 
+.about-me-facts {
+  img:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease;
+  }
+}
+
 .favorites-boxes__box {
   flex: 0 0 100%;
   margin-top: 20px;
   border: 1px dashed $pink;
   border-radius: 10px;
   padding: 10px;
-  //   background: var(--backgroundColor);
+  background: var(--backgroundColor);
 
   a {
     &:hover,
@@ -51,5 +58,27 @@
     &:nth-child(odd) {
       margin-right: 20px;
     }
+  }
+}
+
+// NEW:
+.about-me-page {
+  #content {
+    grid-template: "sidebar main" auto / 200px auto;
+  }
+
+  aside {
+    grid-area: sidebar;
+    margin-top: 200px;
+  }
+
+  section {
+    &:not(.visible) {
+      display: none;
+    }
+  }
+
+  nav a.active {
+    font-weight: bold;
   }
 }

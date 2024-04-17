@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>list idea generator | petrapixel</title>
+    <meta name="description" content="This site generates some list ideas that you could write!" />
+    <script src="../assets/js/main.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../favicon.ico" rel="icon" type="image/x-icon" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J64TL8KVTJ");
+    </script>
+  </head>
+  <body class="load-layout">
+    <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
+    <a href="#main" id="skip-to-content-link">Skip to content</a>
+    <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
+    <div id="content" tabindex="-1">
+      <main id="main">
+        <section>
+          <h1>List Idea Generator</h1>
+          <p>
+            I love writing lists, and I think you should try it too! If you click on the "Generate" button below it will spit out one idea for a list you could write. Feel free to click as many times
+            as you want.
+          </p>
+          <p>There are currently <span class="random-generator__number">?</span> different ideas.</p>
+          <p>
+            I highly recommend the small-ish web community <a href="https://listography.com/" target="_blank">listography</a> to keep your lists. It's my favorite website on the whole Internet. I have
+            over 400 lists over there...
+          </p>
+          <p>You could also make a page on your website for each of these ideas!</p>
+          <div class="random-generator" data-generator="list-idea">
+            <button class="random-generator__button">Generate</button>
+            <div class="random-generator__label" style="display: none">You should write a list of...</div>
+            <div class="random-generator__output"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

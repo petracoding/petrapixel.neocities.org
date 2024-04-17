@@ -15,8 +15,7 @@ main {
   }
 
   p {
-    margin: 0.5em 0;
-    // text-align: justify;
+    margin: 1em 0;
   }
 
   strong {
@@ -212,9 +211,9 @@ img[src*="inline/"]:not([class]) {
     padding-left: 2em;
     list-style-type: decimal-leading-zero;
 
-    a {
-      text-decoration: none;
-    }
+    // a {
+    //   text-decoration: none;
+    // }
   }
 }
 
@@ -292,8 +291,8 @@ img[src*="inline/"]:not([class]) {
     bottom: 0;
     padding: 0.75em 0.1em 0.3em;
     text-align: center;
-    background: rgba($yellow, 0.6);
-    background: linear-gradient(0deg, rgba($yellow, 0.8) 0%, rgba($yellow, 0.8) 10%, rgba($yellow, 0.3) 80%, rgba($yellow, 0) 100%);
+    background: rgba($light, 0.6);
+    background: linear-gradient(0deg, rgba($light, 0.8) 0%, rgba($light, 0.8) 10%, rgba($light, 0.3) 80%, rgba($light, 0) 100%);
     opacity: 0;
     transition: opacity 0.2s ease;
     z-index: 1;
@@ -348,8 +347,11 @@ img[src*="inline/"]:not([class]) {
 
   .image {
     position: relative;
-    padding: 5px;
     width: 50%;
+    overflow: hidden;
+    border: 1px dotted;
+    border-radius: 5px;
+    padding: 5px;
 
     &:hover,
     &:focus {
@@ -359,6 +361,7 @@ img[src*="inline/"]:not([class]) {
 
       img {
         border-radius: 1px;
+        transform: scale(1.1);
       }
     }
   }
@@ -368,7 +371,7 @@ img[src*="inline/"]:not([class]) {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    transition: border-radius 0.2s ease;
+    transition: 0.2s ease;
     min-height: 100%;
     object-fit: cover;
   }
@@ -380,8 +383,8 @@ img[src*="inline/"]:not([class]) {
     bottom: 5px;
     padding: 0.5em 0.1em 0.3em;
     text-align: center;
-    background: rgba($yellow, 0.5);
-    background: linear-gradient(0deg, rgba($yellow, 0.8) 0%, rgba($yellow, 0.8) 10%, rgba($yellow, 0.3) 80%, rgba($yellow, 0) 100%);
+    background: rgba($light, 0.5);
+    background: linear-gradient(0deg, rgba($light, 0.8) 0%, rgba($light, 0.8) 10%, rgba($light, 0.3) 80%, rgba($light, 0) 100%);
     opacity: 0;
     transition: opacity 0.2s ease;
     z-index: 1;
@@ -403,6 +406,10 @@ img[src*="inline/"]:not([class]) {
 // Two columns:
 
 .two-columns {
+  > *:last-child {
+    margin-top: 1em;
+  }
+
   @media (min-width: $sm) {
     display: flex;
 
@@ -417,6 +424,10 @@ img[src*="inline/"]:not([class]) {
         margin-left: 1em;
       }
     }
+
+    > *:last-child {
+      margin-top: 0;
+    }
   }
 }
 
@@ -426,4 +437,10 @@ img[src*="inline/"]:not([class]) {
 
 .fslightbox-toolbar-button[title="Enter fullscreen"] {
   display: none;
+}
+
+#guestbook {
+  width: 100%;
+  min-height: 500px;
+  border: 0;
 }

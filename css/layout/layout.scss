@@ -176,22 +176,15 @@ header {
   }
 }
 
-#marquee {
-  margin-bottom: 15px;
-
-  &:empty {
-    display: none;
-  }
-}
-
 /*----------  Aside  ----------*/
 
 .aside {
+  position: relative;
   background: var(--asideBackgroundColor);
   padding: 10px 14px;
-  color: $asideTextColor;
+  color: var(--asideTextColor);
 
-  summary {
+  > details > summary {
     display: none;
     font-weight: bold;
     font-size: 1.3em;
@@ -233,7 +226,7 @@ header {
 
 .aside__heading {
   display: block;
-  background: $yellow;
+  background: $light;
   color: $dark;
   border: 1px dashed currentColor;
   //   border-radius: 10px;
@@ -332,7 +325,7 @@ header {
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $asideTextColor;
+      color: var(--asideTextColor);
     }
   }
 }
@@ -400,7 +393,7 @@ iframe[src*="cbox"] {
       text-decoration: none;
       cursor: $cursorPointer;
       display: block;
-      color: $asideTextColor;
+      color: var(--asideTextColor);
     }
   }
 
@@ -431,7 +424,7 @@ iframe[src*="cbox"] {
 
   &,
   a {
-    color: $asideTextColor;
+    color: var(--asideTextColor);
   }
 }
 
@@ -470,18 +463,19 @@ iframe[src*="cbox"] {
       display: block;
       padding: 5px 5px;
       padding-right: 0;
-      color: $asideLinkColor;
+      color: asideTextColor;
       text-decoration: none;
       //   text-decoration: underline;
       //   text-decoration-style: dashed;
       cursor: $cursorPointer;
       font-family: $font2, $font, sans-serif;
+      letter-spacing: -0.04em;
       font-size: 15px;
       border-radius: 3px;
 
       &:hover,
       &:focus {
-        color: $asideLinkColorHover;
+        color: asideTextColor;
         background-color: rgba(black, 0.2);
         text-decoration: underline;
         // text-decoration-style: wavy;
@@ -492,7 +486,7 @@ iframe[src*="cbox"] {
       }
 
       &.active {
-        color: $asideLinkColorHover;
+        color: asideTextColor;
         background-color: rgba(black, 0.2);
       }
 
@@ -543,6 +537,10 @@ iframe[src*="cbox"] {
   @media (min-width: $sm) {
     margin-bottom: 20px;
   }
+}
+
+.aside-dreamland {
+  margin-top: 2em;
 }
 
 /*----------  Footer  ----------*/
@@ -716,7 +714,7 @@ footer {
   }
 
   .aside {
-    summary {
+    > details > summary {
       display: block;
 
       & + * {

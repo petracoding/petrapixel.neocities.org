@@ -3,7 +3,8 @@
 @import "./mixins";
 
 @import "./layout/defaults";
-@import "./layout/layout";
+@import "./layout/layout2"; // !
+@import "./layout/sidebars"; // !
 @import "./layout/content";
 
 @import "./pages/about-me";
@@ -20,6 +21,7 @@
 @import "./pages/shrines";
 @import "./pages/media-log";
 @import "./pages/cliques";
+@import "./pages/random-generator";
 @import "./pages/not-found";
 
 @import "./other-layouts/webring-page";

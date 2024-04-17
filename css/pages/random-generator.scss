@@ -1,0 +1,31 @@
+.random-generator {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.random-generator__number {
+  font-weight: bold;
+}
+
+.random-generator__button {
+  font-size: 1.5em;
+  padding: 0.1em 0.5em;
+}
+
+.random-generator__label {
+  margin-top: 2em;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.random-generator__output {
+  font-size: 2em;
+  text-align: center;
+  padding: 0 1em;
+
+  @media (max-width: $md) {
+    font-size: 1.5em;
+  }
+}

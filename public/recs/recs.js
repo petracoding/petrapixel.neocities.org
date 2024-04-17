@@ -28,7 +28,7 @@ function fillData(data, typeStr) {
         linklabel = "letterboxd";
         break;
       case "tv-shows":
-        linklabel = "TVDB";
+        linklabel = "Serializd";
         break;
       case "books":
         linklabel = "goodreads";

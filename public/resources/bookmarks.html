@@ -7,8 +7,25 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link href="../favicon.ico" rel="icon" type="image/x-icon" />
+    <style>
+      .star::after {
+        content: " ★";
+        font-size: 0.8em;
+        vertical-align: text-top;
+      }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J64TL8KVTJ");
+    </script>
   </head>
   <body class="load-layout">
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
@@ -18,7 +35,8 @@
       <main id="main">
         <section>
           <h1>Bookmarks</h1>
-          <p>These are sites I recommend and personally use often!</p>
+          <p>These are sites I recommend and personally use often! Not included are sites that everyone knows or that easily show up on Google, like w3schools.</p>
+          <p aria-hidden="true">Those marked with a star ★ are particularly amazing!</p>
           <div id="toc"></div>
           <hr />
           <h2>Tools</h2>
@@ -29,113 +47,205 @@
             <h3>Text</h3>
             <ul>
               <li><a href="/resources/clipboard.html">My Clipboard</a></li>
-              <li><a href="https://www.helperset.com/tools/remove-duplicates-from-list" target="_blank" rel="nofollow">list: remove duplicates </a></li>
-              <li><a href="https://www.browserling.com/tools/common-elements" target="_blank" rel="nofollow">list: intersect / find common elements </a></li>
-              <li><a href="https://smallseotools.com/de/uppercase-to-lowercase/" target="_blank" rel="nofollow">to lowercase </a></li>
-              <li><a href="https://www.shorturl.at/" target="_blank" rel="nofollow">url shortener </a></li>
+              <li><a href="https://www.helperset.com/tools/remove-duplicates-from-list" target="_blank">list: remove duplicates </a></li>
+              <li><a href="https://www.browserling.com/tools/common-elements" target="_blank">list: intersect / find common elements </a></li>
+              <li><a href="https://smallseotools.com/de/uppercase-to-lowercase/" target="_blank">to lowercase </a></li>
+              <li><a href="https://www.shorturl.at/" target="_blank">url shortener </a></li>
             </ul>
             <p>Text Generators:</p>
             <ul>
               <li><a href="https://metatags.io/font-generator" target="_blank">Font Generator</a></li>
-              <li><a href="https://lingojam.com/BoldTextGenerator" target="_blank">Bold Text Generator</a></li>
+              <li class="star"><a href="https://lingojam.com/BoldTextGenerator" target="_blank">Bold Text Generator</a></li>
               <li><a href="https://lingojam.com/TinyTextGenerator" target="_blank">Tiny Text Generator</a></li>
               <li><a href="https://www.piliapp.com/cool-text/strikethrough-text/" target="_blank">Strikethrough Text Generator</a></li>
             </ul>
           </div>
-          <hr />
+          <!-- <hr /> -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Images</h3>
             <ul>
-              <li><a href="https://www.remove.bg/upload" target="_blank" rel="nofollow">remove background </a></li>
-              <li><a href="http://fotoforensics.com/" target="_blank" rel="nofollow">check if image is photoshopped </a></li>
-              <li><a href="https://html-color-codes.info/colors-from-image/" target="_blank" rel="nofollow">get color from image </a></li>
-              <li><a href="https://ezgif.com/crop" target="_blank" rel="nofollow">gif - crop </a></li>
-              <li><a href="https://ezgif.com/split" target="_blank" rel="nofollow">gif - split into frames </a></li>
-              <li><a href="https://picrew.me/" target="_blank" rel="nofollow">picrew pfp generators </a></li>
-              <li><a href="https://www.imgonline.com.ua/eng/make-seamless-texture.php" target="_blank" rel="nofollow">seamless pattern from image </a></li>
-              <li><a href="https://cloudconvert.com/webp-to-png" target="_blank" rel="nofollow">webp to png </a></li>
-              <li><a href="https://imagy.app/square-crop/" target="_blank" rel="nofollow">square crop </a></li>
+              <li class="star"><a href="https://www.remove.bg/upload" target="_blank">remove background </a></li>
+              <li><a href="http://fotoforensics.com/" target="_blank">check if image is photoshopped </a></li>
+              <li><a href="https://html-color-codes.info/colors-from-image/" target="_blank">get color from image </a></li>
+              <li><a href="https://ezgif.com/crop" target="_blank">gif - crop </a></li>
+              <li class="star"><a href="https://ezgif.com/split" target="_blank">gif - split into frames </a></li>
+              <li><a href="https://picrew.me/" target="_blank">picrew pfp generators </a></li>
+              <li class="star"><a href="https://www.imgonline.com.ua/eng/make-seamless-texture.php" target="_blank">seamless pattern from image </a></li>
+              <li><a href="https://cloudconvert.com/webp-to-png" target="_blank">webp to png </a></li>
+              <li><a href="https://imagy.app/square-crop/" target="_blank">square crop </a></li>
+              <li class="star"><a href="https://www.iloveimg.com/compress-image" target="_blank">Compress images and gifs</a></li>
+              <li><a href="https://ezgif.com/optimize" target="_blank">Compress gif</a></li>
             </ul>
             <p>Editors:</p>
             <ul>
-              <li><a href="https://www.canva.com/projects" target="_blank" rel="nofollow">canva </a></li>
-              <li><a href="https://www.photopea.com/" target="_blank" rel="nofollow">photopea editor </a></li>
+              <li class="star"><a href="https://www.canva.com/projects" target="_blank">canva </a></li>
+              <li><a href="https://www.photopea.com/" target="_blank">photopea editor </a></li>
             </ul>
             <p>Diagrams:</p>
             <ul>
-              <li><a href="https://sankeymatic.com/" target="_blank" rel="nofollow">sankeymatic diagram builder </a></li>
-              <li><a href="https://app.diagrams.net/" target="_blank" rel="nofollow">draw.io </a></li>
+              <li><a href="https://sankeymatic.com/" target="_blank">sankeymatic diagram builder </a></li>
+              <li><a href="https://app.diagrams.net/" target="_blank">draw.io </a></li>
             </ul>
           </div>
-          <hr />
+          <!-- <hr /> -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Audio</h3>
             <ul>
-              <li><a href="https://mynoise.net/NoiseMachines/whiteNoiseGenerator.php" target="_blank" rel="nofollow">brown noise </a></li>
+              <li><a href="https://mynoise.net/NoiseMachines/whiteNoiseGenerator.php" target="_blank">White noise generator</a></li>
             </ul>
             <p>Spotify:</p>
             <ul>
-              <li><a href="http://organizeyourmusic.playlistmachinery.com/#" target="_blank" rel="nofollow">spotify organizer </a></li>
-              <li><a href="https://www.statsforspotify.com/" target="_blank" rel="nofollow">spotify stats </a></li>
-              <li><a href="https://huangdarren1106.github.io/" target="_blank" rel="nofollow">spotify pie chart </a></li>
+              <li><a href="http://organizeyourmusic.playlistmachinery.com/#" target="_blank">spotify organizer </a></li>
+              <li><a href="https://www.statsforspotify.com/" target="_blank">spotify stats </a></li>
+              <li><a href="https://huangdarren1106.github.io/" target="_blank">spotify pie chart </a></li>
             </ul>
           </div>
-          <hr />
+          <!-- <hr /> -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Files</h3>
             <ul>
-              <li><a href="https://www.ilovepdf.com/de/pdf-bearbeiten" target="_blank" rel="nofollow">edit pdf </a></li>
-              <li><a href="https://www.ilovepdf.com/jpg_to_pdf" target="_blank" rel="nofollow">image to pdf </a></li>
-              <li><a href="https://www.ilovepdf.com/de/pdf_zusammenf%C3%BCgen" target="_blank" rel="nofollow">merge pdf </a></li>
-              <li><a href="https://online2pdf.com/remove-pdf-password#" target="_blank" rel="nofollow">remove pdf password </a></li>
+              <li><a href="https://www.ilovepdf.com/de/pdf-bearbeiten" target="_blank">edit pdf </a></li>
+              <li><a href="https://www.ilovepdf.com/jpg_to_pdf" target="_blank">image to pdf </a></li>
+              <li><a href="https://www.ilovepdf.com/de/pdf_zusammenf%C3%BCgen" target="_blank">merge pdf </a></li>
+              <li><a href="https://online2pdf.com/remove-pdf-password#" target="_blank">remove pdf password </a></li>
             </ul>
           </div>
-          <hr />
+          <!-- <hr /> -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Words</h3>
             <ul>
-              <li><a href="https://ozdic.com/" target="_blank" rel="nofollow">collocation dictionary </a></li>
-              <li><a href="https://www.thesaurus.com/browse/test" target="_blank" rel="nofollow">synonyms </a></li>
-              <li><a href="https://www.vocabulary.com/lists/" target="_blank" rel="nofollow">learn english vocabulary </a></li>
+              <li><a href="https://ozdic.com/" target="_blank">collocation dictionary </a></li>
+              <li><a href="https://www.thesaurus.com/browse/test" target="_blank">synonyms </a></li>
+              <li><a href="https://www.vocabulary.com/lists/" target="_blank">learn english vocabulary </a></li>
               <li><a href="/resources/vocabulary.html">my english vocabulary </a></li>
+              <li><a href="https://randomwordgenerator.com/noun.php" target="_blank">Random Word Generator 1</a></li>
+              <li><a href="https://wordcounter.net/random-word-generator" target="_blank">Random Word Generator 2</a></li>
             </ul>
           </div>
-          <hr />
+          <!-- <hr /> -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Misc.</h3>
             <ul>
-              <li><a href="http://www.refreshthis.com/refreshthis.php" target="_blank" rel="nofollow">auto refresher </a></li>
-              <li><a href="https://html-color-codes.info/old/colorpicker.html" target="_blank" rel="nofollow">color picker </a></li>
-              <li><a href="https://pomofocus.io/" target="_blank" rel="nofollow">pomodoro timer </a></li>
+              <li><a href="http://www.refreshthis.com/refreshthis.php" target="_blank">auto refresher </a></li>
+              <li><a href="https://html-color-codes.info/old/colorpicker.html" target="_blank">color picker </a></li>
+              <li><a href="https://pomofocus.io/" target="_blank">pomodoro timer </a></li>
+              <li class="star"><a href="https://www.futureme.org/" target="_blank">Write emails to your future self!</a></li>
             </ul>
           </div>
           <hr />
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
-          <h2>Resources</h2>
+          <h2>Fun & Games</h2>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
-            <h3>Royalty Free Images</h3>
+            <h3>Cool Websites/Communities</h3>
             <ul>
-              <li><a href="https://freephotos.cc/" target="_blank" rel="nofollow">freephotos.cc</a></li>
-              <li><a href="https://pixabay.com/" target="_blank" rel="nofollow">pixabay.com</a></li>
-              <li><a href="https://stocksnap.io/" target="_blank" rel="nofollow">stocksnap.io</a></li>
-              <li><a href="https://unsplash.com/" target="_blank" rel="nofollow">unsplash.com</a></li>
-              <li><a href="https://www.pexels.com/" target="_blank" rel="nofollow">pexels.com</a></li>
+              <li class="star"><a href="https://listography.com/" target="_blank">Listography</a>: a small-ish community of list lovers</li>
+              <li class="star"><a href="https://en.picmix.com/" target="_blank">PicMix</a>: create glittery gif collages (similar to Blingee)</li>
+              <li class="star"><a href="https://dragcave.net/" target="_blank">Dragon Cave</a>: collect dragon eggs and hatch them</li>
+              <li><a href="https://app.landing.space/" target="_blank">Landing Space</a>: create collages, moodboards, etc</li>
+              <li><a href="https://urstyle.com/" target="_blank">URstyle</a>: create fashion collages (similar to Polyvore)</li>
+              <li><a href="https://status.cafe/" target="_blank">Status Cafe</a>: what twitter was supposed to be</li>
+              <li><a href="https://spacehey.com/" target="_blank">SpaceHey</a>: basically mySpace</li>
+              <!-- <li><a href="LINK" target="_blank">TITLE</a>: DESC</li>
+              <li><a href="LINK" target="_blank">TITLE</a>: DESC</li>
+              <li><a href="LINK" target="_blank">TITLE</a>: DESC</li>
+              <li><a href="LINK" target="_blank">TITLE</a>: DESC</li>
+              <li><a href="LINK" target="_blank">TITLE</a>: DESC</li>
+              <li><a href="LINK" target="_blank">TITLE</a>: DESC</li>
+              <li><a href="LINK" target="_blank">TITLE</a>: DESC</li> -->
             </ul>
           </div>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
-            <h3>Writing</h3>
+            <h3>Weird Stuff</h3>
+            <i>(Some of these might contain flashing images and trippy visuals!)</i>
             <ul>
-              <li><a href="https://randomwordgenerator.com/noun.php" target="_blank" rel="nofollow">randomwordgenerator.com/noun.php</a></li>
-              <li><a href="https://wordcounter.net/random-word-generator" target="_blank" rel="nofollow">wordcounter.net/random-word-generator</a></li>
+              <li><a href="https://theuselessweb.com/" target="_blank">The Useless Web</a>: takes you to a random useless website</li>
+              <li><a href="https://mrdoob.com/lab/javascript/webgl/clouds/" target="_blank">Clouds</a>: fly through the sky</li>
+              <li><a href="http://www.kevs3d.co.uk/dev/warpfield/" target="_blank">Warp Starfield</a>: fly through space</li>
+              <li class="star"><a href="https://everynoise.com/engenremap.html" target="_blank">Every Noise at Once</a>: listen to samples of all music genres</li>
+              <li><a href="https://hackertyper.net/" target="_blank">Hacktyper</a>: type like a hacker</li>
+              <li class="star"><a href="http://www.therestartpage.com/#" target="_blank">The Restart Page</a>: simulate nostalgic pc restars</li>
+              <li><a href="https://remoji.com/" target="_blank">Remoji</a>: move your cursor, see what happens</li>
+              <li><a href="http://www.windows93.net/" target="_blank">Windows93</a>: you'll see</li>
+              <li aria-hidden="true"><a href="https://libraryofbabel.info/" target="_blank">Library of Babel</a>: kpimaa,acnnbighrxsadh,cfqvofvuhnhkzy</li>
+              <li><a href="https://thisissand.com/" target="_blank">ThisIsSand</a>: draw with sand</li>
+              <li><a href="https://29a.ch/sandbox/2011/neonflames/#" target="_blank">Neonflames</a>: draw the universe</li>
+              <li><a href="https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=High" target="_blank">Fluid</a>: draw with fluid</li>
+              <li><a href="http://weavesilk.com/" target="_blank">Weave Silk</a>: draw cool art</li>
+              <li><a href="https://leekspin.ytmnd.com/" target="_blank">Leek Spin</a>: leek spin</li>
+            </ul>
+          </div>
+          <div class="bookmarks-section">
+            <h3>Singleplayer Games</h3>
+            <ul>
+              <li><a href="http://agar.io/" target="_blank">agar.io</a> / <a href="http://slither.io/" target="_blank">slither.io</a>: swallow circles/snakes</li>
+              <li><a href="https://cardgames.io/" target="_blank">cardgames.io</a>: play cardgames, mahjong, etc.</li>
+              <li><a href="https://connectionsgame.org/" target="_blank">connections</a>: form groups of 4 words</li>
+              <li class="star"><a href="https://www.geoguessr.com/maps" target="_blank">geoguessr</a>: guess where you are in google street view</li>
+              <li><a href="https://lastguess.net/" target="_blank">lastguess</a>: guess your top last.fm songs by their lyrics</li>
+              <li><a href="https://lichess.org/" target="_blank">lichess.org</a>: chess</li>
+              <li><a href="https://quickdraw.withgoogle.com/#" target="_blank">quick, draw!</a>: google guesses your art</li>
+              <li class="star"><a href="https://www.geoguessr.com/seterra/en" target="_blank">seterra</a>: guess geography</li>
+              <li><a href="https://tetr.io/" target="_blank">tetr.io</a>: tetris alone, online, etc.</li>
+              <li class="star"><a href="https://tetris.com/play-tetris/" target="_blank">tetris</a>: the original tetris</li>
+              <li><a href="https://www.visitoregon.com/the-oregon-trail-game-online/" target="_blank">the oregon trail</a>: emulation of the classic game</li>
+              <li><a href="https://zty.pe/" target="_blank">ztype</a>: shoot by typing</li>
+            </ul>
+          </div>
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <div class="bookmarks-section">
+            <h3>Singleplayer and/or Party Games</h3>
+            <ul>
+              <li><a href="https://www.airconsole.com/" target="_blank">air console</a>: games with your phone</li>
+              <li><a href="http://de.akinator.com/" target="_blank">akinator</a>: ai guesses your character</li>
+              <li class="star"><a href="https://binb.co/" target="_blank">binb</a>: guess songs</li>
+              <li><a href="http://www.googlefeud.com/" target="_blank">google feud</a>: guess google searches</li>
+              <li><a href="https://www.linerider.com/" target="_blank">line rider</a>: draw a sleighride course</li>
+              <li><a href="http://www.higherlowergame.com/" target="_blank">the higher lower game</a>: what has more google searches?</li>
+              <li><a href="https://damn.dog/#239" target="_blank">wikihow images</a>: guess the wikihow article</li>
+            </ul>
+          </div>
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <div class="bookmarks-section">
+            <h3>Multiplayer Games</h3>
+            <ul>
+              <li class="star"><a href="https://connections.swellgarfo.com/" target="_blank">connections </a>: create your own connections game to share with friends</li>
+              <li class="star"><a href="https://garticphone.com/" target="_blank">gartic phone</a>: the telephone game</li>
+              <li><a href="https://lichess.org/" target="_blank">lichess.org</a>: chess</li>
+              <li><a href="https://pretendyoure.xyz/zy/" target="_blank">pretend you're xyzzy</a>: cards against humanity</li>
+              <li class="star"><a href="http://skribbl.io/" target="_blank">skribbl.io</a>: draw and guess</li>
+              <li><a href="https://tetrio.io/#" target="_blank">tetrio.io</a>: tetris against one another</li>
+              <li class="star"><a href="https://www.thewikigame.com/admin" target="_blank">the wiki game</a>: be the first to get to a specific wikipedia article</li>
+            </ul>
+          </div>
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <hr />
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <h2>Downloads</h2>
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <div class="bookmarks-section">
+            <ul>
+              <li class="star"><a href="http://www.gutenberg.org/wiki/Main_Page" target="_blank">Project Gutenberg</a>: free (legal!) e-books</li>
+              <li><a href="https://www.opensubtitles.org/en/search/subs" target="_blank">opensubtitles</a>: download subtitles for tv/film</li>
+              <li><a href="https://www.reddit.com/r/Piracy/wiki/megathread/" target="_blank">r/Piracy</a>: megathread for piracy</li>
+            </ul>
+            <p>Royalty Free Images:</p>
+            <ul>
+              <li><a href="https://freephotos.cc/" target="_blank">freephotos.cc</a></li>
+              <li><a href="https://pixabay.com/" target="_blank">pixabay.com</a></li>
+              <li><a href="https://stocksnap.io/" target="_blank">stocksnap.io</a></li>
+              <li><a href="https://unsplash.com/" target="_blank">unsplash.com</a></li>
+              <li><a href="https://www.pexels.com/" target="_blank">pexels.com</a></li>
             </ul>
           </div>
           <hr />
@@ -146,68 +256,68 @@
           <div class="bookmarks-section">
             <h3>No-Code Homepage Builders</h3>
             <ul>
-              <li><a href="https://carrd.co/" target="_blank" rel="nofollow">carrd.co</a></li>
-              <li><a href="https://mmm.page/" target="_blank" rel="nofollow">mmm.page</a></li>
-              <li><a href="https://spacehey.com/" target="_blank" rel="nofollow">spacehey.com</a></li>
-              <li><a href="https://straw.page/" target="_blank" rel="nofollow">straw.page</a></li>
+              <li class="star"><a href="https://carrd.co/" target="_blank">carrd.co</a></li>
+              <li><a href="https://mmm.page/" target="_blank">mmm.page</a></li>
+              <li><a href="https://spacehey.com/" target="_blank">spacehey.com</a></li>
+              <li><a href="https://straw.page/" target="_blank">straw.page</a></li>
             </ul>
           </div>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Questions & Guestbooks</h3>
             <ul>
-              <li><a href="https://curiouscat.live/" target="_blank" rel="nofollow">curiouscat.live</a></li>
-              <li><a href="https://retrospring.net/" target="_blank" rel="nofollow">retrospring.net</a></li>
-              <li><a href="https://www.123guestbook.com/" target="_blank" rel="nofollow">123guestbook.com</a></li>
-              <li><a href="https://www.smartgb.com/" target="_blank" rel="nofollow">smartgb.com</a></li>
-              <li><a href="https://www.yourworldoftext.com/" target="_blank" rel="nofollow">yourworldoftext.com</a></li>
+              <li><a href="https://curiouscat.live/" target="_blank">curiouscat.live</a></li>
+              <li><a href="https://retrospring.net/" target="_blank">retrospring.net</a></li>
+              <li><a href="https://www.123guestbook.com/" target="_blank">123guestbook.com</a></li>
+              <li><a href="https://www.smartgb.com/" target="_blank">smartgb.com</a></li>
+              <li><a href="https://www.yourworldoftext.com/" target="_blank">yourworldoftext.com</a></li>
             </ul>
           </div>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Text & Markup Hosting</h3>
             <ul>
-              <li><a href="https://pastebin.com/" target="_blank" rel="nofollow">pastebin.com</a></li>
-              <li><a href="https://rentry.co/" target="_blank" rel="nofollow">rentry.co</a></li>
-              <li><a href="https://sntry.cc/" target="_blank" rel="nofollow">sntry.cc</a></li>
-              <li><a href="https://txto.eu.org/" target="_blank" rel="nofollow">txto.eu.org</a></li>
+              <li><a href="https://pastebin.com/" target="_blank">pastebin.com</a></li>
+              <li><a href="https://rentry.co/" target="_blank">rentry.co</a></li>
+              <li><a href="https://sntry.cc/" target="_blank">sntry.cc</a></li>
+              <li><a href="https://txto.eu.org/" target="_blank">txto.eu.org</a></li>
             </ul>
           </div>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Misc.</h3>
             <ul>
-              <li><a href="https://linktr.ee/" target="_blank" rel="nofollow">linktr.ee</a></li>
-              <li><a href="https://listography.com/" target="_blank" rel="nofollow">listography.com</a></li>
-              <li><a href="https://neocities.org/" target="_blank" rel="nofollow">neocities.org</a></li>
-              <li><a href="https://status.cafe/" target="_blank" rel="nofollow">status.cafe</a></li>
-              <li><a href="https://www.imood.com/" target="_blank" rel="nofollow">imood.com</a></li>
+              <li><a href="https://linktr.ee/" target="_blank">linktr.ee</a></li>
+              <li><a href="https://neocities.org/" target="_blank">neocities.org</a></li>
+              <li><a href="https://status.cafe/" target="_blank">status.cafe</a></li>
+              <li><a href="https://www.imood.com/" target="_blank">imood.com</a></li>
             </ul>
           </div>
           <hr />
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
-          <h2>Web Development</h2>
+          <h2>Coding</h2>
           <div class="bookmarks-section">
-            <!-- <h3>Web Development</h3> -->
             <ul>
-              <li><a href="https://autoprefixer.github.io/" target="_blank" rel="nofollow">autoprefixer</a> ⇢ auto css prefixes</li>
-              <li><a href="https://realfavicongenerator.net/" target="_blank" rel="nofollow">favicon generator</a> ⇢ generate favicon</li>
-              <li><a href="https://screenfly.org/" target="_blank" rel="nofollow">screenfly</a> ⇢ test on different sizes</li>
-              <li><a href="https://transfonter.org/" target="_blank" rel="nofollow">transfonter</a> ⇢ generate @font-face</li>
-              <li><a href="https://salferrarello.com/starter-gitignore-file/" target="_blank" rel="nofollow">starter gitignore file</a></li>
+              <li><a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a>: auto css prefixes</li>
+              <li><a href="https://realfavicongenerator.net/" target="_blank">Favicon Generator</a>: generate favicon</li>
+              <li><a href="https://www.favicon.cc/" target="_blank">Favicon.cc</a>: free favicons</li>
+              <li><a href="https://screenfly.org/" target="_blank">Screenfly</a>: test on different sizes</li>
+              <li><a href="https://transfonter.org/" target="_blank">Transfonter</a>: generate @font-face</li>
+              <li><a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a>: test the speed of your website</li>
+              <li><a href="https://salferrarello.com/starter-gitignore-file/" target="_blank">Starter Gitignore File</a>: to paste into your .gitignore</li>
             </ul>
           </div>
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <div class="bookmarks-section">
             <h3>Accessibility</h3>
             <ul>
-              <li><a href="https://pinkvampyr.leprd.space/accessiblenet/resources.php" target="_blank" rel="nofollow">Resources from the Accessible Net Directory</a></li>
-              <li><a href="https://wave.webaim.org/" target="_blank" rel="nofollow">Accessibility Evaluation Tool</a></li>
-              <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="nofollow">Contrast Checker</a></li>
-              <li><a href="https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/" target="_blank" rel="nofollow">Firefox Addon for Accessibility Testing</a></li>
-              <li><a href="https://addons.mozilla.org/en-US/firefox/addon/aria-devtools/" target="_blank" rel="nofollow">Firefox Addon for ARIA Testing</a></li>
+              <li><a href="https://pinkvampyr.leprd.space/accessiblenet/resources.php" target="_blank">Accessible Net Directory</a>: many resources</li>
+              <li class="star"><a href="https://wave.webaim.org/" target="_blank">WAVE</a>: accessibility evaluation tool</li>
+              <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank">Contrast Checker</a>: test color contrast</li>
+              <li><a href="https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/" target="_blank">Axe DevTools</a>: firefox addon for accessibility testing</li>
+              <li><a href="https://addons.mozilla.org/en-US/firefox/addon/aria-devtools/" target="_blank">Aria DevTools</a>: firefox addon for ARIA testing</li>
             </ul>
           </div>
         </section>

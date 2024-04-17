@@ -1,0 +1,291 @@
+import { themeSwitcherHTML } from "./dark-mode";
+
+const isLocalhost = window.location.href.includes("http://localhost");
+const localHref = isLocalhost ? "/public" : "";
+const scriptEl = document.querySelector('head script[src*="main.js"]');
+const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("assets/js/main.js") ? "./" : "../") : "../";
+
+export function getBeforeMain() {
+  return `
+	 ${themeSwitcherHTML()}
+<header><div class="header-heading"><a href="${localHref}/"><img src="${nesting}img/layout/petrapixel.png" aria-label="petrapixel" height="100" width="300" /></a></div></header>
+<aside class="aside aside--left">
+<details>
+  	<summary id="mobile-nav-toggle">Open Navigation</summary>
+  	<nav class="aside-nav">
+		<div class="aside-nav__heading" aria-hidden="true">Menu</div>
+        <ul aria-label="Menu">
+            <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>home</a></li>
+			<li>
+			  	<details id="menu-aboutsite">
+			 		<summary>the site <small>(4)</small></summary>
+					<ul>
+						<li><a href="${localHref}/about/about-the-site.html">about the site</a></li>
+						<li><a href="${localHref}/about/guestbook.html">guestbook</a></li>
+						<li><a href="${localHref}/about/credits.html">credits</a></li>
+            			<li><a href="${localHref}/sitemap.html">sitemap</a></li>
+					</ul>
+				</details>
+			</li>
+            <li>
+			  	<details id="menu-aboutme">
+			 		<summary>about me <small>(3)</small></summary>
+					<ul>
+						<li><a href="${localHref}/about/about-me.html">about me</a></li>
+		    			<li><a href="${localHref}/about/cats.html">my cats</small></a></li>
+						<li><a href="${localHref}/about/media-log.html">media log</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+			  	<details id="menu-mycreations">
+			 		<summary>my creations <small>(6)</small></summary>
+					<ul>
+						<li><a href="${localHref}/creations/art.html">my art</a></li>
+		                <li><a href="${localHref}/creations/coding.html">my coding</a></li>
+		                <li><a href="${localHref}/creations/playlists.html">my playlists</a> </li>
+		                <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
+		                <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
+		                <li><a href="${localHref}/creations/writing.html">my writing</a></li>   
+						<li><a href="${localHref}/creations/picmix.html">my picmixes</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+			  	<details id="menu-mediarecs">
+			 		<summary>media recs <small>(5)</small></summary>
+					<ul>
+						<li><a href="${localHref}/recs/music.html" aria-label="music recommendations">music</a></li>
+					  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations">tv shows</a></li>
+					  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations">movies</a></li>
+					  	<li><a href="${localHref}/recs/books.html" aria-label="book recommendations">books</a></li>
+					  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations">games</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+			  	<details id="menu-resources">
+			 		<summary>resources <small>(6)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+					<ul>
+						<li><a href="${localHref}/resources/bookmarks.html">bookmarks<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+		                <li><a href="${localHref}/resources/software-recs.html">software recs<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+		                <li><a href="${localHref}/resources/clipboard.html">clipboard</a></li>
+		                <li><a href="${localHref}/resources/notion.html">notion</a></li>
+		                <li><a href="${localHref}/resources/google-spreadsheets-excel.html">spreadsheets</a></li>
+		                <li><a href="${localHref}/resources/vocabulary.html">vocabulary</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+			  	<details id="menu-codinghelp">
+			 		<summary>coding help <small>(3)</small></summary>
+					<ul>
+						<li><a href="${localHref}/coding/my-setup.html">my coding setup</a></li>
+						<li><a href="${localHref}/coding/snippets.html">snippets & tips</a></li>
+						<li><a href="${localHref}/coding/neocities.html">neocities help</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+			  	<details id="menu-more">
+			 		<summary>more <small>(4)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+					<ul>
+						<li><a href="${localHref}/shrines/index.html">shrines</a></li>
+						<li><a href="${localHref}/about/blinkies.html">blinkies</a></li> 
+						<li><a href="${localHref}/fun/list-idea-generator.html">list idea generator <img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></a></li>
+						<li><a href="${localHref}/fun/bored-button.html">are you bored? <img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></a></li>
+					</ul>
+				</details>
+			</li>
+        </ul>
+    </nav>
+
+	<img src="${nesting}img/layout/divider1.gif" alt="" aria-hidden="true"/>
+
+	<div class="aside-dreamland desktop-only">
+	
+		<!-- ----------------- CHANGELOG ----------------- -->
+		<div class="aside-stuff aside-changelog">
+          <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="${nesting}img/layout/icon-code.png" alt="" aria-hidden="true"/></div>
+          <ul id="changelog" class="changelog custom-scrollbar" aria-label="Changelog">
+		  </ul>
+        </div>
+		
+
+		<!-- ----------------- LINK BACK ----------------- -->
+		<div class="aside-stuff aside-link-back">
+          <div class="aside-stuff__heading">Link back!<img src="${nesting}img/layout/icon-copy.png" alt="" aria-hidden="true"/></div>
+          <p>Hotlinking is a-okay!<br><small>You can change the .webp to .gif if you want, but the image will be 1KB bigger.</small></p>
+            <a href="https://petrapixel.neocities.org/" target="_blank"  tabindex="-1"
+              ><img src="https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/img/linkback.webp?raw=true" alt="petrapixel"
+            /></a>
+            <textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/img/linkback.webp?raw=true" alt="petrapixel"></a></textarea
+            >
+        </div>
+		
+		<img src="${nesting}img/layout/divider1.gif" alt="" aria-hidden="true" style="margin-top: 2em;"/>
+		
+		<!-- ----------------- BLINKIES ----------------- -->
+		<a href="${localHref}/about/blinkies.html" class="aside-stuff aside-blinkies" data-nesting="${nesting}" aria-hidden="true">
+			<div class="marquee aside-blinkies__buttons"><div></div></div>
+			<!-- <div class="marquee aside-blinkies__stamps"><div></div></div> -->
+			<div class="marquee aside-blinkies__blinkies"><div></div></div>
+		</a>
+
+		<!-- ----------------- COMING SOON ----------------- -->
+		<!--
+		<div class="aside-stuff aside-changelog">
+          <div class="aside__heading aside__heading--comingsoon" aria-hidden="true">Coming Soon</div>
+          <div class="changelog custom-scrollbar">
+			  <ul aria-label="Coming Soon">
+			 	<li>loading screen</li>
+			 	<li>blog post about polyamory</li>
+			 	<li>dinosaur shrine</li> 
+			 	<li>more shrines</li> 
+			 	<li>advanced coding tutorials</li> 
+				<li>self-made blinkies/buttons/stamps</li>
+			  </ul>
+		  </div>
+        </div>
+		-->
+    </div>
+</details>
+
+</aside>
+  <aside class="aside aside--right desktop-only">
+  
+		
+	<!-- ----------------- CLAP, KIRBY ----------------- -->
+	<div class="aside-stuff aside-clap-kirby">
+		<a class="aside-stuff__guestbook" aria-hidden="true" href="${localHref}/about/guestbook.html">
+			<img width="145" height="56" src="${nesting}img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
+			<img width="145" height="56" src="${nesting}img/layout/kirby1.png" alt="sign my guestbook"  class="only-show-in-dark-mode" />
+		</a>
+		<a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
+			<img width="145" height="56" src="${nesting}img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode"  />
+			<img width="145" height="56" src="${nesting}img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode"  />
+		</a>
+		<a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">
+			<img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/>
+			<small>click to clap for me!</small>
+		</a>
+	</div>
+
+	
+	<img src="${nesting}img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated;"/>
+
+	<!-- ----------------- STATS / STATUS ----------------- -->
+	<div class="aside-stuff aside-stats">
+		<!--
+		<div class="aside-stats__stat">
+			<div class="aside-stuff__heading"><span>visitors</span><img src="${nesting}img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
+			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel/stats" target="_blank" id="hitcount"></a></div>
+		</div>
+		<div class="aside-stats__stat">
+			<div class="aside-stuff__heading"><span>followers</span><img src="${nesting}img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
+			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel" target="_blank">54</a></div>
+		</div>
+		-->
+		<div class="aside-stats__stat">
+			<div class="aside-stuff__heading"><span>my time</span><img src="${nesting}img/layout/icon-clock.png" alt="" aria-hidden="true"/></div>
+			<div class="aside-stats__stat-content">
+		        <div style="text-align: center">
+				  <iframe src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1" frameborder="0" width="150" height="17" allowtransparency="true"></iframe>
+		        </div>
+		    </div>
+		</div>
+		<div class="aside-stats__stat">
+			<div class="aside-stuff__heading"><span>my status</span><img src="${nesting}img/layout/icon-happy.png" alt="" aria-hidden="true"/></div>
+			<div class="aside-stats__stat-content" id="statuscafe">
+		        <div id="statuscafe-username"></div>
+		        <div id="statuscafe-content"></div>
+		    </div>
+		</div>
+	</div>
+	
+	<img src="${nesting}img/layout/divider3.gif" alt="" aria-hidden="true" style="margin-top: -2px;"/>
+
+	<!-- ----------------- CURRENTLY ----------------- -->
+	<div class="aside-stuff aside-currently">
+		<div class="aside-stuff__heading">Currently</div>
+		<ul>
+		  	<li aria-label="listening to:">
+				<img src="${nesting}img/layout/icon-music.png" alt="" title="listening to:" aria-hidden="true"/>
+				<a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">nothing...</a>
+			</li>
+			<li aria-label="watching:">
+				<img src="${nesting}img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true"/>
+				<a href="https://app.tvtime.com/user/33116783" target="_blank">House MD, Doctor Who</a>
+			</li>
+			<li aria-label="reading:">
+				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
+				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">The House in the Cerulean Sea</a>
+			</li>
+				<li aria-label="playing:">
+				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
+				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Stardew Valley</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<!-- ----------------- NEIGHBORS ----------------- -->
+	<div class="aside-stuff aside-mutuals" data-nesting="${nesting}" aria-hidden="true">
+		<div class="aside-stuff__heading"><a href="${localHref}/about/neighbors.html">Neighbors<img src="${nesting}img/layout/icon-building.png" alt="" aria-hidden="true"/></a></div>
+		<a href="#afterneighbours" class="skiplink" aria-hidden="true">Skip neighbours</a>
+        <div id="beforeneighbours"></div>
+		<div class="marquee aside-mutuals__buttons"><div></div></div>
+        <div id="afterneighbours"></div>
+        <a href="#beforeneighbours" class="skiplink" aria-hidden="true">Skip to before neighbours</a>
+	</div>
+
+
+
+	<!-- ----------------- CHATBOX ----------------- -->
+	<div class="aside-stuff aside-chatbox">
+		<div class="aside-stuff__heading" aria-hidden="true">Chatbox<img src="${nesting}img/layout/icon-chat.png" alt="" aria-hidden="true"/></div>
+		<a href="#afterchatbox" class="skiplink" aria-hidden="true">Skip chatbox iFrame</a>
+        <div id="beforechatbox"></div>
+		<iframe src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk" width="100%" height="200" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" aria-label="Chatbox"></iframe>	
+        <div id="afterchatbox"></div>
+        <a href="#beforechatbox" class="skiplink" aria-hidden="true">Skip to before chatbox iFrame</a>
+	</div>
+
+	  <!-- ----------------- FLAG COUNTER ----------------- -->
+	  <!--
+		<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter.html"
+        ><img alt="Flag Counter" src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" border="0"/></a>
+	  -->
+    </div>
+</aside>
+
+
+	<!-- ----------------- BACK TO TOP ----------------- -->
+  	<div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
+  
+  <!-- ----------------- FLAG COUNTER ----------------- -->
+  <!-- This is here so that it counts mobile views too! -->
+  ${
+    isLocalhost
+      ? ``
+      : `<img src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" aria-hidden="true" alt="" tabindex="-1" style="width: 1px;height: 1px;opacity: 0;" />`
+  }
+  	  `;
+}
+
+// --------------------------------------------------------------------------
+// --------------------------------- FOOTER ---------------------------------
+// --------------------------------------------------------------------------
+
+export function getAfterMain() {
+  return `
+   <footer>
+        <div class="footer-content">
+          created by petrapixel 2024 - <span style="font-size: 1.3em">∞</span> <i>┊</i>
+          <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a
+          > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
+        </div>
+      </footer>
+  	  `;
+}

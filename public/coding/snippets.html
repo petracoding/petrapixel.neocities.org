@@ -35,6 +35,17 @@
         color: #2b2b2b;
       }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J64TL8KVTJ");
+    </script>
   </head>
   <body class="load-layout">
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
@@ -42,8 +53,10 @@
     <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
     <div id="content">
       <main id="main">
-        <h1>Code Snippets</h1>
-        <div id="toc"></div>
+        <section>
+          <h1>Code Snippets</h1>
+          <div id="toc"></div>
+        </section>
 
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -82,7 +95,7 @@
         </section>
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <section>
-          <h3>automatic tab title suffix</h3>
+          <h3>Automatic Tab Title Suffix</h3>
           <p>for example, changing "about me" in the browser tab to "about me | your site name"</p>
           <details>
             <summary>Show/Hide</summary>
@@ -122,7 +135,7 @@ if (tabTitle !== "YOUR HOME TITLE") {
         </section>
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <section>
-          <h3>automatic table of contents</h3>
+          <h3>Automatic Table of Contents</h3>
           <p>(example on <a href="/resources/bookmarks.html">this page</a>)</p>
           <details>
             <summary>Show/Hide</summary>
@@ -143,7 +156,9 @@ let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
 	        title
 	          .replaceAll(" ", "-")
 	          .replaceAll("#", "")
+          	  .replaceAll("&amp;", "")
 	          .replaceAll(/<[^>]*>?/gm, "")
+          	  .replaceAll("--", "-")
 	      ).toLowerCase();
 	headingEl.setAttribute("id", link);
 	output += `&lt;li&gt;&lt;a href="#${link}"&gt;${title}&lt;/a&gt;&lt;/li&gt;`;
@@ -158,7 +173,7 @@ container.innerHTML = output + "&lt;/ol&gt;";</code></pre>
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <h2 style="margin-bottom: 0.5em">HTML/CSS Snippets</h2>
         <section>
-          <h3>color filter over image</h3>
+          <h3>Color Filter over Image</h3>
           <p>(examples see <a href="/about/about-me.html#face">here</a>)</p>
           <details>
             <summary>Show/Hide</summary>

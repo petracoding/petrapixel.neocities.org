@@ -7,8 +7,18 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link href="../favicon.ico" rel="icon" type="image/x-icon" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J64TL8KVTJ");
+    </script>
   </head>
   <body class="load-layout">
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
@@ -17,12 +27,13 @@
     <div id="content">
       <main id="main">
         <section>
-          <h1>Guestbook</h1>
+          <h1>Guestbook <img aria-hidden="true" src="../img/inline/stars.gif" /></h1>
           <p>Please sign my guestbook! You do <b>not</b> need to enter your email address!</p>
-          <iframe id="guestbook" src="https://petrapixelneocities.123guestbook.com/" style="height: 710px"></iframe>
+          <iframe title="Guestbook" id="guestbook" src="https://petrapixelneocities.123guestbook.com/" style="height: 710px"></iframe>
           <hr />
           <h2>Chatbox</h2>
           <iframe
+            title="Chatbox"
             src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk"
             width="100%"
             height="200"

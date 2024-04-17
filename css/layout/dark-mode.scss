@@ -1,8 +1,20 @@
 @mixin darkMode2 {
+  /*
+  	BASICS
+   */
+
   & {
     // = body
     //   background-image: url("http://localhost:52330/public/assets/img/bg-dark.png");
     background-image: url("https://petrapixel.neocities.org/assets/img/bg-dark.png");
+  }
+
+  .only-show-in-light-mode {
+    display: none;
+  }
+
+  .only-show-in-dark-mode {
+    display: initial;
   }
 
   ::selection {
@@ -30,65 +42,17 @@
     }
   }
 
-  iframe[src*="cbox"] {
-    filter: brightness(0.47) saturate(2.1) contrast(1.5);
+  /*
+  	COLORS
+   */
+
+  .aside-nav__heading {
+    background: #d98d00;
   }
 
   .code-textarea {
     background: rgba(43, 43, 43, 0.5);
     color: white;
-  }
-
-  .aside__heading {
-    &.aside__heading--menu {
-      background: #006700;
-      color: white;
-    }
-
-    &.aside__heading--changelog {
-      background: #afa900;
-      color: white;
-    }
-
-    &.aside__heading--comingsoon {
-      background: #004370;
-      color: white;
-    }
-
-    &.aside__heading--stats {
-      background: #2e563a;
-      color: white;
-    }
-
-    &.aside__heading--chatbox {
-      background: #120061;
-      color: white;
-    }
-
-    &.aside__heading--creations {
-      background: #a06000;
-      color: white;
-    }
-
-    &.aside__heading--recs {
-      background: #a52600;
-      color: white;
-    }
-
-    &.aside__heading--shrines {
-      background: #980019;
-      color: white;
-    }
-
-    &.aside__heading--resources {
-      background: #8b008b;
-      color: white;
-    }
-
-    &.aside__heading--coding {
-      background: #350066;
-      color: white;
-    }
   }
 
   .cat__quick-facts {
@@ -113,24 +77,53 @@
   }
 
   .rec-filters__button {
-    background: rgba($yellow, 0.6);
+    background: rgba($light, 0.6);
 
     &:hover,
     &:active {
-      background: $green2;
+      background: $greenActive;
     }
 
     &.is-checked {
       background: $green;
     }
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  body:not(.dark-mode):not(.light-mode) {
-    @include darkMode2;
+  /*
+  	FILTER
+   */
+
+  .hello-its-me-facts img,
+  .about-me-facts img {
+    filter: brightness(0.7) contrast(1.3);
+  }
+
+  .blinkies > div::after {
+    filter: brightness(0.55);
+  }
+
+  #clap-for-me img {
+    filter: brightness(0.9);
+  }
+
+  .aside-stats__stat-content iframe {
+    filter: brightness(10);
+  }
+
+  .aside-chatbox {
+    iframe[src*="cbox"] {
+      filter: brightness(0.47) saturate(2.1) contrast(1.5);
+    }
   }
 }
+
+// ---------------------------------------------------------------------
+
+// @media (prefers-color-scheme: dark) {
+//   body:not(.dark-mode):not(.light-mode) {
+//     @include darkMode2;
+//   }
+// }
 
 body.dark-mode {
   @include darkMode2;

@@ -79,7 +79,7 @@
     bottom: 15px;
     right: 15px;
     background: $purple;
-    color: $yellow;
+    color: $light;
     border-radius: 50%;
     padding: 10px;
     padding-right: 11px;
@@ -88,7 +88,8 @@
     width: 35px;
     box-sizing: border-box;
     text-align: center;
-    line-height: 1;
+    line-height: 0.7;
+    font-size: 21px;
     opacity: 0;
     transform: translateY(20px);
     transition: 0.3s ease-out;
@@ -191,7 +192,7 @@
   justify-content: center;
   transition: 0.5s ease;
   z-index: 999;
-  background: rgba($yellow, 0.2);
+  background: rgba($light, 0.2);
 
   iframe {
     height: 490px;

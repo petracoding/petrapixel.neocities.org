@@ -1,6 +1,6 @@
-import { getBeforeMain, getAfterMain } from "./html";
+import { getBeforeMain, getAfterMain } from "./html2";
 import { loadTheme, initThemeSwitcher } from "./dark-mode";
-import { initLuckyBtn, getChangelog, initLastFmWidget, initHitcountWidget, initStatusCafeWidget } from "./sidebar";
+import { initSidebar } from "./sidebar";
 
 export function buildLayout() {
   const mainEl = document.querySelector("main");
@@ -11,20 +11,14 @@ export function buildLayout() {
   mainEl.insertAdjacentHTML("beforebegin", getBeforeMain());
   mainEl.insertAdjacentHTML("afterend", getAfterMain());
 
-  initMenu();
   initThemeSwitcher();
-  doActiveLinks();
   prepareScrollToTop();
   buildTableOfContents();
   initInlineImages();
   initExternalLinks();
+  initSidebar();
 
-  // Sidebar
-  initLuckyBtn();
-  getChangelog();
-  initLastFmWidget();
-  initHitcountWidget();
-  initStatusCafeWidget();
+  document.body.classList.add("-layout-loaded");
 }
 
 // -------------------
@@ -43,34 +37,6 @@ function initInlineImages() {
   [...allInlineImages].forEach((inlineImg) => {
     inlineImg.setAttribute("aria-hidden", "true");
     inlineImg.setAttribute("alt", "");
-  });
-}
-
-function initMenu() {
-  const detailsEl = document.querySelector(".aside--left details");
-  if (detailsEl) {
-    let mql = window.matchMedia("(min-width: 576px)");
-    if (mql.matches) {
-      detailsEl.open = true;
-    }
-  }
-}
-
-function doActiveLinks() {
-  const els = document.querySelectorAll(".aside-nav li a");
-  [...els].forEach((el) => {
-    const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
-    const pathname = window.location.pathname.replace("/public", "");
-
-    if (href == "/" || href == "/index.html") {
-      if (pathname == "/") {
-        el.classList.add("active");
-      }
-    } else {
-      if (window.location.href.includes(href)) {
-        el.classList.add("active");
-      }
-    }
   });
 }
 
@@ -101,8 +67,10 @@ function buildTableOfContents() {
           .replaceAll(" ", "-")
           .replaceAll(":", "")
           .replaceAll("#", "")
+          .replaceAll("&amp;", "")
           .replaceAll(/<[^>]*>?/gm, "")
           .replace(/-$/, "")
+          .replaceAll("--", "-")
       ).toLowerCase();
     headingEl.setAttribute("id", link);
     output += `

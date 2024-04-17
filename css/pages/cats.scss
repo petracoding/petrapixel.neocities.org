@@ -21,13 +21,16 @@
 .cat__quick-facts {
   flex: 0 0 50%;
   padding: 1em 1.5em;
-  background: $pink;
+  background: rgba($pink, 0.5);
   border-radius: 20px;
-  color: $yellow;
-  font-weight: bold;
+
+  strong {
+    font-weight: bold;
+  }
 
   p {
     text-align: left;
+    margin: 0.5em 0;
   }
 }
 

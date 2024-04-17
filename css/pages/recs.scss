@@ -44,7 +44,8 @@
   margin-left: 0;
   margin-right: 1px;
   margin-bottom: 5px;
-  //   background-image: linear-gradient(to bottom, rgba($yellow, 0), rgba($pink, 0.1));
+  font-size: 13px;
+  //   background-image: linear-gradient(to bottom, rgba($light, 0), rgba($pink, 0.1));
 
   small {
     font-size: 0.8em;
@@ -53,7 +54,7 @@
 
   &:hover,
   &:active {
-    background: $green2;
+    background: $greenActive;
   }
 
   &.is-checked {
@@ -180,7 +181,7 @@
 .rec__rating {
   color: $dark;
   font-size: 1em;
-  text-shadow: 0 0 4px $yellow;
+  text-shadow: 0 0 4px $light;
 }
 
 .rec__link {

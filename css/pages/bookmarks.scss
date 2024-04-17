@@ -1,40 +1,27 @@
 .bookmarks-section {
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  main & ~ hr {
-    margin-top: 3em;
-    margin-bottom: 3em;
-  }
-
-  & + & h3 {
-    margin-top: 1em;
+  a {
+    font-weight: bold;
+    text-transform: capitalize;
   }
 
   p {
-    font-family: $font2, $font, sans-serif;
-    font-size: 0.85em;
     font-weight: bold;
     margin-top: 2em;
-    color: var(--textColor);
+  }
+
+  h3 {
+    margin-top: 2em !important;
+
+    h2 + & {
+      margin-top: 0.5em !important;
+    }
   }
 
   li {
-    font-size: 1.1em;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.3em;
+  }
 
-    a {
-      color: darken($pink, 30%);
-      text-decoration-style: dotted;
-      text-decoration-color: rgba($textColor, 0.5);
-
-      &:hover,
-      &:focus {
-        color: var(--linkColorHover);
-        text-decoration: underline;
-        text-decoration-style: wavy;
-      }
-    }
+  ~ hr {
+    margin: 2.5em 0;
   }
 }

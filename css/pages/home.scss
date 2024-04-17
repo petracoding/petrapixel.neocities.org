@@ -28,6 +28,7 @@
 .blinkies {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 15px;
 
@@ -70,17 +71,36 @@
     justify-content: start;
 
     > div {
-      padding: 5px;
+      margin: 5px;
     }
   }
 }
 
 .cool-sites {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
 
   > * {
-    margin: 3px;
+    margin: 2px;
+  }
+
+  &.cool-sites--webrings {
+    justify-content: center;
+
+    > * {
+      margin: 9px;
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 
   img {
@@ -142,10 +162,163 @@
 
 .vertical-scroll-box {
   border: 1px solid rgba($pink, 0.5);
-  padding: 0.5em;
+  padding: 1em;
   border-radius: 5px;
-  max-height: 133px;
+  max-height: 224px;
   overflow-y: auto;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+.welcome-to-the-site {
+  display: flex;
+}
+
+.welcome-to-the-site__buttons {
+  margin-top: 2em;
+  justify-content: space-between;
+}
+
+.ascii-cat {
+  display: flex;
+  //   flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  padding: 2em;
+  padding-right: 1.5em;
+  font-size: 18px;
+
+  pre {
+    margin: 0;
+  }
+}
+
+.hello-its-me {
+  display: flex;
+}
+
+.hello-its-me-image {
+  position: relative;
+
+  img {
+    width: 100px;
+    image-rendering: pixelated;
+    filter: brightness(1.1) contrast(1.3);
+
+    &:hover {
+      image-rendering: auto;
+    }
+  }
+}
+
+.hello-its-me-content {
+  padding-left: 1.5em;
+
+  p:nth-child(2) {
+    padding-left: 0.5em;
+  }
+
+  p:nth-child(4) {
+    padding-left: 0.75em;
+  }
+
+  p:nth-child(5) {
+    padding-left: 1em;
+  }
+
+  p:last-child {
+    padding-left: 0.5em;
+
+    &::before {
+      content: "←  ";
+      font-family: sans-serif;
+    }
+  }
+}
+
+.hello-its-me-facts {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+
+  img {
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.1s ease;
+    }
+  }
+
+  @media (max-width: $md) {
+    display: none;
+  }
+}
+
+.music-player {
+  margin-top: 2em;
+  font-family: monospace;
+  font-size: 14px;
+  text-align: center;
+
+  audio {
+    max-width: 182px;
+  }
+}
+
+.clique-memberships {
+  font-size: 0.8em;
 }
 
 // Freeze Frame (https://bechnokid.neocities.org/resources/tut_freezeframe)
+
+// MOBILE
+
+@media (max-width: $sm) {
+  .welcome-to-the-site {
+    display: block;
+  }
+
+  .welcome-to-the-site__buttons {
+    margin-top: 0;
+    justify-content: flex-start !important;
+  }
+
+  .hello-its-me {
+    flex-direction: column-reverse;
+  }
+
+  .hello-its-me-content {
+    padding-left: 0;
+
+    p:nth-child(2) {
+      padding-left: 0;
+    }
+
+    p:nth-child(4) {
+      padding-left: 0;
+    }
+
+    p:nth-child(5) {
+      padding-left: 0;
+    }
+
+    p:last-child {
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        content: ":";
+      }
+    }
+  }
+}

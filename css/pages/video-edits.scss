@@ -76,7 +76,8 @@ a.video-edit {
 
     // fandom
     small {
-      font-size: 0.6em;
+      font-size: 0.7em;
+      margin-top: 2px;
       display: block;
     }
   }
@@ -102,10 +103,9 @@ a.video-edit {
     background: #ffc2b0;
     display: inline-block;
     margin-left: 10px;
-
     font-size: 0.8em;
     border-radius: 5px;
-    padding: 3px 5px 1px;
+    padding: 2px 5px 2px;
     letter-spacing: 0.5px;
   }
 }

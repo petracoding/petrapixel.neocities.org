@@ -1,6 +1,7 @@
 {
   "changelog": [
     { "d": "2024-04-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-04-17", "t": "New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!", "l": "/about/about-the-site.html" },
     { "d": "2024-04-07", "t": "New FavIcon!", "l": "/about/credits.html" },
     { "d": "2024-04-06", "t": "New page: Spreadsheet templates", "l": "/resources/google-spreadsheets-excel.html" },
     { "d": "2024-04-05", "t": "New page: My coding setup", "l": "/coding/my-setup.html" },
