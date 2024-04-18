@@ -444,3 +444,35 @@ img[src*="inline/"]:not([class]) {
   min-height: 500px;
   border: 0;
 }
+
+.website-carbon {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  text-align: center;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  b {
+    font-size: 1.5em;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  #wcb.carbonbadge {
+    --b1: var(--textColor);
+    --b2: var(--asideBackgroundColor);
+  }
+
+  #wcb #wcb_g {
+    background: none;
+  }
+
+  #wcb_2:empty {
+    margin-bottom: 0;
+  }
+}

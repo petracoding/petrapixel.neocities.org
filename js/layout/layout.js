@@ -67,6 +67,7 @@ function buildTableOfContents() {
           .replaceAll(" ", "-")
           .replaceAll(":", "")
           .replaceAll("#", "")
+          .replaceAll(".", "")
           .replaceAll("&amp;", "")
           .replaceAll(/<[^>]*>?/gm, "")
           .replace(/-$/, "")

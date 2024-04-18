@@ -9,18 +9,21 @@ function initNavigation() {
   const currentSection = window.location.hash.substring(1); // get from url
   if (currentSection) {
     document.querySelector("section.visible").classList.remove("visible");
-    document.querySelector("nav a.active").classList.remove("active");
+    document.querySelector("nav .active").classList.remove("active");
     document.querySelector("#" + currentSection).classList.add("visible");
-    document.querySelector("nav a[href*='" + currentSection + "']").classList.add("active");
+    document
+      .querySelector("nav a[href*='" + currentSection + "']")
+      .closest("li")
+      .classList.add("active");
   }
 
   [...navigationLinks].forEach((navigationLink) => {
     navigationLink.addEventListener("click", () => {
       [...navigationLinks].forEach((el) => {
         if (el.getAttribute("href") == navigationLink.getAttribute("href")) {
-          el.classList.add("active");
+          el.closest("li").classList.add("active");
         } else {
-          el.classList.remove("active");
+          el.closest("li").classList.remove("active");
         }
       });
       [...sections].forEach((section) => {

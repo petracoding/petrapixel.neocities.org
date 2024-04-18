@@ -34,6 +34,7 @@ export function getBeforeMain() {
 						<li><a href="${localHref}/about/about-me.html">about me</a></li>
 		    			<li><a href="${localHref}/about/cats.html">my cats</small></a></li>
 						<li><a href="${localHref}/about/media-log.html">media log</a></li>
+						<li><a href="${localHref}/about/social-media.html">social media</a></li>
 					</ul>
 				</details>
 			</li>
@@ -188,10 +189,21 @@ export function getBeforeMain() {
 		</div>
 		-->
 		<div class="aside-stats__stat">
+			<div class="aside-stuff__heading"><span>visitors</span><img src="${nesting}img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
+			<div class="aside-stats__stat-content">
+				<center>
+					<a href='https://www.free-website-hit-counter.com'>
+						<img src='https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18' border='0' alt='Free Website Hit Counter' />
+					</a>
+				</center>
+				<small style="font-size: 0.75em; letter-spacing: -0.4px;">(might not be entirely accurate)</small>
+			</div>
+		</div>
+		<div class="aside-stats__stat">
 			<div class="aside-stuff__heading"><span>my time</span><img src="${nesting}img/layout/icon-clock.png" alt="" aria-hidden="true"/></div>
 			<div class="aside-stats__stat-content">
 		        <div style="text-align: center">
-				  <iframe src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1" frameborder="0" width="150" height="17" allowtransparency="true"></iframe>
+				  <iframe title="my time and date" src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1" frameborder="0" width="150" height="17" allowtransparency="true"></iframe>
 		        </div>
 		    </div>
 		</div>

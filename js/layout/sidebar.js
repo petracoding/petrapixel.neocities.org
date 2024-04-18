@@ -7,7 +7,7 @@ export function initSidebar() {
   initLuckyBtn();
   getChangelog();
   initLastFmWidget();
-  initHitcountWidget();
+  //   initHitcountWidget();
   initStatusCafeWidget();
   initBlinkies();
   initMutuals();

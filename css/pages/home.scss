@@ -89,7 +89,7 @@
     justify-content: center;
 
     > * {
-      margin: 9px;
+      margin: 10px;
       display: flex;
       align-items: center;
 
@@ -276,7 +276,24 @@
   font-size: 0.8em;
 }
 
-// Freeze Frame (https://bechnokid.neocities.org/resources/tut_freezeframe)
+#women-web {
+  line-height: 1;
+
+  img {
+    height: 47px;
+    width: auto;
+  }
+
+  br {
+    display: none;
+  }
+
+  center {
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: -0.5em !important;
+  }
+}
 
 // MOBILE
 
