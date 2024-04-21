@@ -1,4 +1,4 @@
-import { getBeforeMain, getAfterMain } from "./html2";
+import { getBeforeMain, getAfterMain } from "./html";
 import { loadTheme, initThemeSwitcher } from "./dark-mode";
 import { initSidebar } from "./sidebar";
 

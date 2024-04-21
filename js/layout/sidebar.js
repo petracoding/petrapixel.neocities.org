@@ -140,6 +140,7 @@ function initStatusCafeWidget() {
 
 function getChangelog() {
   const changelogFile = isLocalhost ? "http://localhost:52330/public/assets/changelog.json" : "https://petrapixel.neocities.org/assets/changelog.json";
+  const MAX_LOGS = 100;
   fetch(changelogFile + noCache)
     .then((res) => {
       if (!res.ok) {
@@ -152,7 +153,7 @@ function getChangelog() {
       let changelogHtml = "";
       let i = 1;
       data.changelog.forEach((c) => {
-        if (c.t !== "TEMPLATE" && i <= 10) {
+        if (c.t !== "TEMPLATE" && i <= MAX_LOGS) {
           i++;
           if (c.l !== "") {
             changelogHtml += `

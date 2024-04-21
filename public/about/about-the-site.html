@@ -48,12 +48,81 @@
             the web fun again!
           </p>
           <p>You can follow me on neocities <a href="https://neocities.org/site/petrapixel" target="_blank">here</a>. <img aria-hidden="true" src="../img/inline/happy.gif" /></p>
-          <div class="website-carbon">
+          <!-- <div class="website-carbon">
             <p>
               <a href="https://www.websitecarbon.com/website/petrapixel-neocities-org/" target="_blank"><b>A+</b><br />My site is cleaner than 99 % of all web pages globally.</a>
             </p>
             <div id="wcb" class="carbonbadge wcb-d"></div>
             <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+          </div> -->
+          <div class="website-carbon">
+            <p>
+              <a href="https://www.websitecarbon.com/website/petrapixel-neocities-org/" target="_blank"><b>A+</b><br />My site is cleaner than 99 % of all web pages globally.</a>
+            </p>
+            <div id="wcb" class="carbonbadge wcb-d">
+              <style>
+                #wcb.carbonbadge {
+                  --b1: #0e11a8;
+                  --b2: #00ffbc;
+                  font-size: 15px;
+                  text-align: center;
+                  color: var(--b1);
+                  line-height: 1.15;
+                }
+                #wcb.carbonbadge sub {
+                  vertical-align: middle;
+                  position: relative;
+                  top: 0.3em;
+                  font-size: 0.7em;
+                }
+                #wcb #wcb_2,
+                #wcb #wcb_a,
+                #wcb #wcb_g {
+                  display: inline-flex;
+                  justify-content: center;
+                  align-items: center;
+                  text-align: center;
+                  font-size: 1em;
+                  line-height: 1.15;
+                  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                  text-decoration: none;
+                  margin: 0.2em 0;
+                }
+                #wcb #wcb_a,
+                #wcb #wcb_g {
+                  padding: 0.3em 0.5em;
+                  border: 0.13em solid var(--b2);
+                }
+                #wcb #wcb_g {
+                  border-radius: 0.3em 0 0 0.3em;
+                  background: #fff;
+                  border-right: 0;
+                  min-width: 8.2em;
+                }
+                #wcb #wcb_a {
+                  border-radius: 0 0.3em 0.3em 0;
+                  border-left: 0;
+                  background: var(--b1);
+                  color: #fff;
+                  font-weight: 700;
+                  border-color: var(--b1);
+                }
+                #wcb.wcb-d #wcb_a {
+                  color: var(--b1);
+                  background: var(--b2);
+                  border-color: var(--b2);
+                }
+                #wcb.wcb-d #wcb_2 {
+                  color: #fff;
+                }
+              </style>
+              <div id="wcb_p">
+                <span id="wcb_g">0.01g of CO<sub>2</sub>/view</span
+                ><a id="wcb_a" target="_blank" rel="noopener" href="https://www.websitecarbon.com/website/petrapixel-neocities-org/">Website Carbon</a>
+              </div>
+              <span id="wcb_2">&nbsp;</span>
+            </div>
+            <!-- <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer=""></script> -->
           </div>
         </section>
 
@@ -83,8 +152,8 @@
             <li>Moving/flashing elements are reduced to a minimum, and completely hidden for users with the browser preference "reduce motion"</li>
             <li>Readable text (fonts, font sizes, color contrast)</li>
             <li>Dark mode</li>
+            <li>Reduced resources on page-load (to make the site more accessible to those with limited a Internet connection)</li>
           </ul>
-          <p>In the future I will try to reduce the resources loaded on every page to make the site more accessible to those with limited a Internet connection.</p>
           <p>If you have trouble navigating and using the site, whether you are disabled or not, please feel free to contact me about it!</p>
           <!-- <h2>Manifesto <img aria-hidden="true" src="../img/inline/star.gif" /></h2>
 		  <p>sdf</p> -->

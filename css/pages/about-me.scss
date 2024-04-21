@@ -306,6 +306,10 @@
   &::before {
     content: "Petra.exe";
   }
+
+  .two-columns ul {
+    margin-top: 0;
+  }
 }
 
 .about-me-page-facts {
@@ -426,7 +430,7 @@
       right: 11%;
 
       &::before {
-        padding-left: 75px;
+        padding-left: 65px;
       }
     }
 
@@ -458,6 +462,22 @@
 
   .about-me-page-info {
     z-index: 1;
+    top: 6%;
+  }
+
+  .about-me-page-core {
+    bottom: 1%;
+    left: 8%;
+
+    .custom-scrollbar {
+      max-height: 100px;
+      padding-right: 1em;
+      overflow-y: scroll;
+
+      ul {
+        margin-top: 0;
+      }
+    }
   }
 
   .about-me-page-hobbies {
@@ -490,7 +510,7 @@
   }
 
   .about-me-page-sns-coding {
-    top: 59%;
+    top: 61%;
     left: 21%;
   }
 

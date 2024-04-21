@@ -5,6 +5,7 @@
   display: block;
   padding: 0;
   grid-area: initial;
+  margin-top: 0 !important;
 }
 
 .picmix {
@@ -17,6 +18,13 @@
 
   @media (min-width: $lg) {
     padding: 3em;
+    max-width: 1340px;
+  }
+
+  h2 {
+    width: 100%;
+    margin: 10px;
+    margin-top: 2em;
   }
 }
 
