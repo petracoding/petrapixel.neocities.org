@@ -1,6 +1,7 @@
 {
   "changelog": [
     { "d": "2024-04-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-04-26", "t": "New coding help page: 'Common mistakes'!", "l": "/coding/common-mistakes.html" },
     { "d": "2024-04-21", "t": "Social media page added", "l": "/about/social-media.html" },
     { "d": "2024-04-19", "t": "New about-me page!", "l": "/about/about-me.html" },
     { "d": "2024-04-17", "t": "New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!", "l": "/about/about-the-site.html" },

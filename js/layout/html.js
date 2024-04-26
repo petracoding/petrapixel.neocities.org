@@ -79,10 +79,11 @@ export function getBeforeMain() {
 			</li>
 			<li>
 			  	<details id="menu-codinghelp">
-			 		<summary>coding help <small>(3)</small></summary>
+			 		<summary>coding help <small>(4)</small></summary>
 					<ul>
 						<li><a href="${localHref}/coding/my-setup.html">my coding setup</a></li>
 						<li><a href="${localHref}/coding/snippets.html">snippets & tips</a></li>
+						<li><a href="${localHref}/coding/common-mistakes.html">common mistakes</a></li>
 						<li><a href="${localHref}/coding/neocities.html">neocities help</a></li>
 					</ul>
 				</details>
