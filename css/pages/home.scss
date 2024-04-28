@@ -278,6 +278,16 @@
 
 #dsring {
   max-width: 135px;
+
+  center {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .webring-prev,
+  .webring-next {
+    font-size: 2em;
+  }
 }
 
 #women-web {
