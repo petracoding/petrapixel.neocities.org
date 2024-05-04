@@ -29,12 +29,12 @@ export function getBeforeMain() {
 			</li>
             <li>
 			  	<details id="menu-aboutme">
-			 		<summary>about me <small>(4)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+			 		<summary>about me <small>(4)</small></summary>
 					<ul>
 						<li><a href="${localHref}/about/about-me.html">about me</a></li>
 		    			<li><a href="${localHref}/about/cats.html">my cats</small></a></li>
 						<li><a href="${localHref}/about/media-log.html">media log</a></li>
-						<li><a href="${localHref}/about/social-media.html">social media<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/about/social-media.html">social media</a></li>
 					</ul>
 				</details>
 			</li>
@@ -66,10 +66,10 @@ export function getBeforeMain() {
 			</li>
 			<li>
 			  	<details id="menu-resources">
-			 		<summary>resources <small>(6)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+			 		<summary>resources <small>(6)</small></summary>
 					<ul>
 						<li><a href="${localHref}/resources/bookmarks.html">bookmarks</a></li>
-		                <li><a href="${localHref}/resources/software-recs.html">software recs<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+		                <li><a href="${localHref}/resources/software-recs.html">software recs</a></li>
 		                <li><a href="${localHref}/resources/clipboard.html">clipboard</a></li>
 		                <li><a href="${localHref}/resources/notion.html">notion</a></li>
 		                <li><a href="${localHref}/resources/google-spreadsheets-excel.html">spreadsheets</a></li>
@@ -79,23 +79,26 @@ export function getBeforeMain() {
 			</li>
 			<li>
 			  	<details id="menu-codinghelp">
-			 		<summary>coding help <small>(4)</small></summary>
+			 		<summary>coding help <small>(7)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
 					<ul>
-						<li><a href="${localHref}/coding/my-setup.html">my coding setup</a></li>
-						<li><a href="${localHref}/coding/snippets.html">snippets & tips</a></li>
+						<li><a href="${localHref}/coding/need-help.html">need help?<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/coding/common-questions.html">common questions<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 						<li><a href="${localHref}/coding/common-mistakes.html">common mistakes</a></li>
+						<li><a href="${localHref}/coding/layout-base-code.html">layout base code<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/coding/snippets.html">snippets & tips</a></li>
 						<li><a href="${localHref}/coding/neocities.html">neocities help</a></li>
+						<li><a href="${localHref}/coding/my-setup.html">my coding setup</a></li>
 					</ul>
 				</details>
 			</li>
 			<li>
 			  	<details id="menu-more">
-			 		<summary>more <small>(4)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+			 		<summary>more <small>(4)</small></summary>
 					<ul>
 						<li><a href="${localHref}/shrines/index.html">shrines</a></li>
 						<li><a href="${localHref}/about/blinkies.html">blinkies</a></li> 
-						<li><a href="${localHref}/fun/list-idea-generator.html">list idea generator <img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></a></li>
-						<li><a href="${localHref}/fun/bored-button.html">are you bored? <img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></a></li>
+						<li><a href="${localHref}/fun/list-idea-generator.html">list idea generator</a></li>
+						<li><a href="${localHref}/fun/bored-button.html">are you bored?</a></li>
 					</ul>
 				</details>
 			</li>
@@ -197,7 +200,7 @@ export function getBeforeMain() {
 						<img src='https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18' border='0' alt='Free Website Hit Counter' />
 					</a>
 				</center>
-				<small style="font-size: 0.75em; letter-spacing: -0.4px;">(might not be entirely accurate)</small>
+				<small style="font-size: 0.75em; letter-spacing: -0.4px;text-align:center;display: block;">(might not be entirely accurate)</small>
 			</div>
 		</div>
 		<div class="aside-stats__stat">

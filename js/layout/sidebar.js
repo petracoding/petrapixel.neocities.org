@@ -37,10 +37,10 @@ function initMenu() {
 }
 
 function doActiveLinks() {
+  const pathname = window.location.pathname.replace("/public", "");
   const els = document.querySelectorAll(".aside-nav li a");
   [...els].forEach((el) => {
     const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
-    const pathname = window.location.pathname.replace("/public", "");
 
     if (href == "/" || href == "/index.html") {
       if (pathname == "/") {
@@ -60,6 +60,14 @@ function doActiveLinks() {
       }
     }
   });
+
+  // Special pages
+  const codingHelpMenu = document.querySelector(".aside-nav details#menu-codinghelp");
+  if (!codingHelpMenu) return;
+  if (pathname.includes("neocities-external-widgets") || pathname.includes("neocities-automatic-deployment")) {
+    codingHelpMenu.setAttribute("open", "open");
+    codingHelpMenu.classList.add("active");
+  }
 }
 
 function initLuckyBtn() {

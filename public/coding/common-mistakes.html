@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>common coding mistakes | petrapixel</title>
-    <meta name="description" content="Common mistakes that beginner coders make, and how to fix them. Neocities." />
+    <meta name="description" content="Common mistakes that beginner coders make, and how to fix them. Using jQuery, tables, float, iFrame layouts and ignoring accessibility. Neocities." />
     <script src="../assets/js/main.js?nocache=index1"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
@@ -15,42 +15,6 @@
     <script>
       hljs.highlightAll();
     </script>
-    <style>
-      pre code.hljs {
-        background: none;
-        padding: 0;
-        margin: 0;
-        font-size: 0.9em;
-      }
-      .hljs-section,
-      .hljs-title {
-        color: #94113c;
-      }
-      .hljs-attribute,
-      .hljs-doctag,
-      .hljs-keyword,
-      .hljs-meta .hljs-keyword,
-      .hljs-name,
-      .hljs-selector-tag {
-        color: #2b2b2b;
-      }
-
-      main hr {
-        margin: 3em 0;
-      }
-
-      .learn {
-        border-left: 1px solid;
-        padding-left: 1em;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        margin-top: 2.5em;
-      }
-
-      .learn strong {
-        font-size: 1.1em;
-      }
-    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
@@ -63,7 +27,7 @@
       gtag("config", "G-J64TL8KVTJ");
     </script>
   </head>
-  <body class="load-layout">
+  <body class="load-layout coding-page">
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
     <a href="#main" id="skip-to-content-link">Skip to content</a>
     <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
@@ -89,18 +53,14 @@
             Personally, the last reason I had for using jQuery was it's <code>ready</code> function, which waits for the DOM to load. I didn't know for a long time that this is just as possible and
             simple without jQuery. This is all you need - no jQuery necessary:
           </p>
-          <pre><code>
-document.addEventListener("DOMContentLoaded", () => {
+          <pre><code>document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed");
-});
-		  </code></pre>
+});</code></pre>
           <p>Another thing you might be using jQuery for is a simple for-each loop over an array of elements. Here is the pure Javascript version of that:</p>
-          <pre><code>
-  const myElements = document.querySelectorAll(".element");
-  [...myElements].forEach((el) => {
-	console.log(el);
-  });
-		  </code></pre>
+          <pre><code>const myElements = document.querySelectorAll(".element");
+[...myElements].forEach((el) => {
+  console.log(el);
+});</code></pre>
           <p>By the way, if you're using a layout, plugin or widget which requires jQuery...: that is a good sign that either it's outdated, or the creator doesn't know what they're doing.</p>
           <div class="learn">
             <strong>Outlinks:</strong>
@@ -122,11 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
             Just don't do this to yourself. This is what web developers did decades ago; we don't have to torture ourselves like this anymore. It's difficult to do, and not very accessible since the
             elements are not semantic. (This means that screen readers (and search engines) don't know what's what.)
           </p>
-          <p><strong>How to fix it:</strong></p>
-          <p>I would use CSS's grid rules. They are generally a better and much easier solution for modern layouts than tables and floats, and are very simple to make responsive.</p>
-          <p>Here's what it could look like: (This example uses <a href="#semantic-elements">semantic elements</a> to make the site more accessible.)</p>
-          <pre><code>
-.container {
+          <p>I would use CSS's grid rules. <a href="/coding/common-questions.html#grid">I have a tutorial on that here.</a></p>
+          <p>Here's what it would look like:</p>
+          <pre><code>.container {
   display: grid;
   grid-template:
     "header header"
@@ -134,16 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "footer footer";
   grid-gap: 10px;
 }
+
 header { grid-area: header; }
 aside { grid-area: sidebar; }
 main { grid-area: main; }
 footer { grid-area: footer; }
-		  </code></pre>
-          <p>(Make sure not to use quotation marks (") when using the <code>grid-area</code> rule. It won't work.)</p>
-          <p>
-            Here is a working example of a grid layout: (Inspect with the Dev Tools or
-            <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_grid-template3" target="_blank">go here</a> for a similar code.)
-          </p>
+			</code></pre>
           <div id="gridexample">
             <div class="item1">Header</div>
             <div class="item2">Sidebar</div>
@@ -177,14 +131,6 @@ footer { grid-area: footer; }
               grid-area: footer;
             }
           </style>
-          <div class="learn">
-            <strong>Outlinks:</strong>
-            <ul>
-              <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">A Complete Guide to CSS Grid</a></li>
-              <li><a href="https://www.w3schools.com/cssref/pr_grid-template.php" target="_blank">grid-template on W3Schools</a></li>
-              <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">HTML Semantic elements</a></li>
-            </ul>
-          </div>
 
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->

@@ -26,10 +26,12 @@
     strong {
       color: lighten($pink, 10%);
     }
+  }
 
+  &.coding-page main {
     pre code:not(.hljs),
     pre code.hljs {
-      background: #aa899e;
+      filter: invert(1) hue-rotate(210deg);
     }
   }
 

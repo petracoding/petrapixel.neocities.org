@@ -11,30 +11,11 @@
 
     <!-- code highlight -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>
       hljs.highlightAll();
     </script>
-    <style>
-      pre code.hljs {
-        background: none;
-        padding: 0;
-        margin: 0;
-        font-size: 0.9em;
-      }
-      .hljs-section,
-      .hljs-title {
-        color: #94113c;
-      }
-      .hljs-attribute,
-      .hljs-doctag,
-      .hljs-keyword,
-      .hljs-meta .hljs-keyword,
-      .hljs-name,
-      .hljs-selector-tag {
-        color: #2b2b2b;
-      }
-    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
@@ -47,7 +28,7 @@
       gtag("config", "G-J64TL8KVTJ");
     </script>
   </head>
-  <body class="load-layout">
+  <body class="load-layout coding-page">
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
     <a href="#main" id="skip-to-content-link">Skip to content</a>
     <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
@@ -61,37 +42,11 @@
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
-        <h2 style="margin-bottom: 0.5em">JavaScript snippets</h2>
+        <h2 style="margin-bottom: 0.5em" id="js">JavaScript snippets</h2>
         <section>
           <h3>Same header/footer on every page</h3>
           <p>You can load your header/footer via javascript. This is helpful so you don't have to update the code for your header/footer on every single page when you make a change.</p>
-          <details>
-            <summary>Show/Hide</summary>
-            <p>Create a javascript file (for example layout.js) that you load on every page. in the file, do something like this:</p>
-            <pre>
-<code>document.addEventListener("DOMContentLoaded", function () {
-  const beforeMain = `
-  	&lt;header&gt;...&lt;/header&gt;
-  	  `;
-
-  const afterMain = `
-   &lt;footer&gt;...&lt;/footer&gt;
-  	  `;
-
-  const mainEl = document.querySelector("main");
-  if (!mainEl) return;
-  mainEl.insertAdjacentHTML("beforebegin", beforeMain);
-  mainEl.insertAdjacentHTML("afterend", afterMain);
-});</code></pre>
-            <p><b>Result:</b></p>
-            <p>HTML before:</p>
-            <pre><code>&lt;main&gt;...&lt;/main&gt;</code></pre>
-            <p>HTML after:</p>
-            <pre>
-<code>&lt;header&gt;...&lt;/header&gt;
-&lt;main&gt;...&lt;/main&gt;
-&lt;footer&gt;...&lt;/footer&gt;</code></pre>
-          </details>
+          <a href="/coding/common-questions.html#layout" class="blog-article__read">Read...</a>
         </section>
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <section>
@@ -99,12 +54,12 @@
           <p>for example, changing "about me" in the browser tab to "about me | your site name"</p>
           <details>
             <summary>Show/Hide</summary>
-            <pre>
-<code>const tabTitle = document.title; 
+            <pre><code>
+const tabTitle = document.title; 
 if (tabTitle !== "YOUR HOME TITLE") { 
 	document.title = tabTitle + " | some text"; 
-}</code>
-</pre>
+}
+</code></pre>
             <p>The <i>if</i> makes sure that the title of your homepage doesn't end up like "site name | site name"</p>
           </details>
         </section>
@@ -114,8 +69,8 @@ if (tabTitle !== "YOUR HOME TITLE") {
           <p>You can give the class "active" to any active navigation links automatically</p>
           <details>
             <summary>Show/Hide</summary>
-            <pre>
-<code>const linkElements = document.querySelectorAll("nav a");
+            <pre><code>
+const linkElements = document.querySelectorAll("nav a");
 [...linkElements].forEach((el) => {
   const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
 
@@ -128,7 +83,8 @@ if (tabTitle !== "YOUR HOME TITLE") {
       el.classList.add("active");
     }
   }
-});</code></pre>
+});
+</code></pre>
             <p>(You will need to change the selector for your navigation links (default: "nav a").)</p>
             <hr />
           </details>
@@ -140,10 +96,12 @@ if (tabTitle !== "YOUR HOME TITLE") {
           <details>
             <summary>Show/Hide</summary>
             <p>In your HTML, add this line whereever you want it to be:</p>
-            <pre><code>&lt;div id="toc"&gt;&lt;/div&gt;</code></pre>
+            <pre><code>
+&lt;div id="toc"&gt;&lt;/div&gt;
+</code></pre>
             <p>The JavaScript:</p>
-            <pre>
-<code>const container = document.querySelector("#toc");
+            <pre><code>
+const container = document.querySelector("#toc");
 if (!container) return;
 const allHeadings = document.querySelectorAll("h2");
 if (allHeadings.length &lt; 2) return;
@@ -163,7 +121,8 @@ let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
 	headingEl.setAttribute("id", link);
 	output += `&lt;li&gt;&lt;a href="#${link}"&gt;${title}&lt;/a&gt;&lt;/li&gt;`;
 });
-container.innerHTML = output + "&lt;/ol&gt;";</code></pre>
+container.innerHTML = output + "&lt;/ol&gt;";
+</code></pre>
             <p>Change the selector (default: "h2") to any selector that targets the headings you want to turn into the table of contents.</p>
             <p>You can override the automatically generated ID of a heading by simply setting a custom one in the HTML.</p>
           </details>
@@ -171,16 +130,19 @@ container.innerHTML = output + "&lt;/ol&gt;";</code></pre>
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
-        <h2 style="margin-bottom: 0.5em">HTML/CSS Snippets</h2>
+        <h2 style="margin-bottom: 0.5em" id="htmlcss">HTML/CSS Snippets</h2>
         <section>
           <h3>Color Filter over Image</h3>
           <p>(examples see <a href="/about/blinkies.html">here</a>)</p>
           <details>
             <summary>Show/Hide</summary>
             <p>HTML:</p>
-            <pre><code>&lt;div class=&quot;pink-image&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/div&gt;</code></pre>
+            <pre><code>
+&lt;div class=&quot;pink-image&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/div&gt;
+</code></pre>
             <p>CSS:</p>
-            <pre><code>.pink-image {
+            <pre><code>
+.pink-image {
   position: relative;
 
   img {
@@ -198,7 +160,8 @@ container.innerHTML = output + "&lt;/ol&gt;";</code></pre>
     opacity: 0.25; 
     pointer-events: none;
   }
-}</code></pre>
+}
+</code></pre>
             <p>You can adjust the filters, the background color and the opacity of the background color.</p>
           </details>
         </section>

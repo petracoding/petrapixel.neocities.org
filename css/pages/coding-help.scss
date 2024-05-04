@@ -1,0 +1,49 @@
+.coding-page main {
+  hr {
+    margin: 3em 0;
+  }
+
+  .cw {
+    font-weight: bold;
+  }
+
+  p > code,
+  li > code {
+    background: rgba(0, 0, 0, 0.075);
+    padding: 2px 5px;
+    border-radius: 6px;
+  }
+
+  // Code Highlighter
+  pre code.hljs {
+    padding: 1em;
+    margin: 0;
+    font-size: 0.9em;
+  }
+
+  .hljs-section,
+  .hljs-title {
+    color: #94113c;
+  }
+
+  .hljs-attribute,
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-meta .hljs-keyword,
+  .hljs-name,
+  .hljs-selector-tag {
+    color: #373737;
+  }
+}
+
+.learn {
+  border-left: 1px solid;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 2.5em;
+
+  strong {
+    font-size: 1.1em;
+  }
+}

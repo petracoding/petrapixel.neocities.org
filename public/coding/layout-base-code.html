@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>layout base code | petrapixel</title>
+    <meta name="description" content="Neocities base code for layouts so that you don't have to update every single file for every change. For beginners!" />
+    <script src="../assets/js/main.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../favicon-code.ico" rel="icon" type="image/x-icon" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J64TL8KVTJ");
+    </script>
+
+    <!-- code highlight -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+      document.addEventListener("DOMContentLoaded", () => {
+        const inputEl = document.querySelector("#explanation-toggle");
+        inputEl.checked = true;
+        inputEl.addEventListener("change", () => {
+          change(event.currentTarget.checked);
+        });
+      });
+
+      function change(isChecked) {
+        if (!isChecked) {
+          document.querySelector("#hide-explanation").style.display = "block";
+          document.querySelector("#show-explanation").style.display = "none";
+        } else {
+          document.querySelector("#hide-explanation").style.display = "none";
+          document.querySelector("#show-explanation").style.display = "block";
+        }
+      }
+    </script>
+    <style>
+      #show-explanation,
+      #hide-explanation {
+        max-height: 204px;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body class="load-layout coding-page">
+    <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
+    <a href="#main" id="skip-to-content-link">Skip to content</a>
+    <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
+    <div id="content">
+      <main id="main">
+        <section>
+          <h1>Layout Base Code</h1>
+          <p>
+            Tired of <a href="/coding/common-questions.html#layout">having to update all of you HTML files every time you update your layout</a>? Here's a solution. We'll be using JavaScript to load a
+            header and footer on every page. We'll also take care of active links and relative paths.
+          </p>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <hr />
+
+          <h2>What it does</h2>
+          <p>Your header and footer HTML will be in a single JavaScript file, so you'll only need to update it once.</p>
+          <p>HTML in your .html file:</p>
+          <pre><code>&lt;body&gt;
+  &lt;main&gt;
+    your page here...
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+          <p>HTML rendered in the browser (the script automatically adds the header and footer):</p>
+          <pre><code>&lt;body&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main&gt;
+    your page here...
+  &lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+          <p>You can see the code in action <a href="/coding/base-code-example/index.html" target="_blank">here</a>.</p>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <hr />
+
+          <h2>Tutorial</h2>
+          <p><strong>Step 1: The JS code</strong></p>
+
+          <p>Create a javascript file (e.g. <code>layout.js</code>) in the root of your project, and insert the following code:</p>
+
+          <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" checked="true" /> Show explanatory comments</label>
+
+          <pre id="hide-explanation" style="display: none">
+<code>document.addEventListener("DOMContentLoaded", function () {
+  if (document.body.classList.contains("no-layout")) return;
+  document.body.insertAdjacentHTML("afterbegin", headerEl);
+  document.body.insertAdjacentHTML("beforeend", footerEl);
+  initActiveLinks();
+});
+
+function initActiveLinks() {
+  const pathname = window.location.pathname;
+  [...document.querySelectorAll("a")].forEach((el) =&gt; {
+    const elHref = el.getAttribute("href").replace(".html", "").replace("/public", "");
+
+    if (pathname == "/") {
+      if (elHref == "/" || elHref == "/index.html") el.classList.add("active");
+    } else {
+      if (window.location.href.includes(elHref)) el.classList.add("active");
+    }
+  });
+}
+
+function getNestingString() {
+  const currentUrl = window.location.href.replace("http://", "").replace("https://", "").replace("/public/", "/");
+  const numberOfSlahes = currentUrl.split("/").length - 1;
+  if (numberOfSlahes == 1) return ".";
+  if (numberOfSlahes == 2) return "..";
+  return ".." + "/..".repeat(numberOfSlahes - 2);
+}
+
+const nesting = getNestingString();
+
+const headerEl = `
+	&lt;header&gt;Header...&lt;/header&gt;
+`;
+
+const footerEl = `
+	&lt;footer&gt;Footer...&lt;/footer&gt;
+`;</code></pre>
+          <!-- ---------------------------------------------- -->
+          <!-- ---------------------------------------------- -->
+          <pre id="show-explanation">
+<code>// initLayout() is called once the DOM (the HTML content of your website) has been loaded.
+document.addEventListener("DOMContentLoaded", function () {
+  // The layout will be loaded on all pages that do NOT have the "no-layout" class in the &lt;body&gt; element.
+  if (document.body.classList.contains("no-layout")) return;
+
+  // Inserting your header and footer:
+  document.body.insertAdjacentHTML("afterbegin", headerEl);
+  document.body.insertAdjacentHTML("beforeend", footerEl);
+
+  // Other initializations:
+  initActiveLinks();
+
+  // your code here...
+});
+
+/* ********************************* */
+
+/**
+ *  F U N C T I O N S
+ */
+
+function initActiveLinks() {
+  // This function adds the class "active" to any link that links to the current page.
+  // This is helpful for styling the active menu item.
+
+  const pathname = window.location.pathname;
+  [...document.querySelectorAll("a")].forEach((el) =&gt; {
+    const elHref = el.getAttribute("href").replace(".html", "").replace("/public", "");
+
+    if (pathname == "/") {
+      // homepage
+      if (elHref == "/" || elHref == "/index.html") el.classList.add("active");
+    } else {
+      // other pages
+      if (window.location.href.includes(elHref)) el.classList.add("active");
+    }
+  });
+}
+
+function getNestingString() {
+  // This function prepares the "nesting" variable for your header and footer (see below).
+  // Only change this function if you know what you're doing.
+  const currentUrl = window.location.href.replace("http://", "").replace("https://", "").replace("/public/", "/");
+  const numberOfSlahes = currentUrl.split("/").length - 1;
+  if (numberOfSlahes == 1) return ".";
+  if (numberOfSlahes == 2) return "..";
+  return ".." + "/..".repeat(numberOfSlahes - 2);
+}
+
+/* ********************************* */
+
+/**
+ *  H T M L
+ */
+
+const nesting = getNestingString();
+
+/**
+  Use ${nesting} to output a . or .. or ../.. etc according to the current page's folder depth.
+  Example:
+    &lt;img src="${nesting}/images/example.jpg" /&gt;
+  will output
+  	 &lt;img src="./images/example.jpg" /&gt; on a page that isn't in any folder.
+    &lt;img src="../images/example.jpg" /&gt; on a page that is in a folder.
+    &lt;img src="../../images/example.jpg" /&gt; on a page that is in a sub-folder.
+    etc.
+ */
+
+// Insert your header HTML inside these ``. You can use HTML as usual. 
+// You don't need to use the &lt;header&gt; element, but I recommend it.
+const headerEl = `
+	&lt;header&gt;Header...&lt;/header&gt;
+`;
+
+// Insert your footer HTML inside these ``. You can use HTML as usual. 
+// You don't need to use the &lt;footer&gt; element, but I recommend it.
+const footerEl = `
+	&lt;footer&gt;Footer...&lt;/footer&gt;
+`;</code></pre>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <br />
+          <br />
+          <p><strong>Step 2: Load the JS</strong></p>
+          <p>Load that javascript file on every page.</p>
+          <details>
+            <summary>Show me how</summary>
+
+            <ul>
+              <li>For your index file, or any other page that is not in a folder: <code>&lt;script src="layout.js"&gt;&lt;/script&gt;</code></li>
+              <li>For any file that is in a folder: <code>&lt;script src="../layout.js"&gt;&lt;/script&gt;</code></li>
+              <li>For files that are in a subfolder use <code>../../layout.js</code> , and so on. (add another ../ for every subfolder)</li>
+            </ul>
+            <p>This line should be inserted into the head of your HTML file (before before &lt;/head&gt;). Alternatively, you can also put it right before &lt;/body&gt;. It really doesn't matter.</p>
+          </details>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <br />
+          <br />
+          <p><strong>Step 3: Paste your header/footer into the JavaScript file.</strong></p>
+          <p>Paste your header and footer inbetween the ticks (``) of the variables headerEl and footerEl.</p>
+          <p>Use <code>${nesting}</code> to output a . or .. or ../.. etc according to the current page's folder depth. This is helpful when you want to use relative paths to images.</p>
+          <p>Example:</p>
+          <pre><code>const headerEl = `&lt;img src="${nesting}/images/example.jpg" /&gt;`;</code></pre>
+          <p>... will output:</p>
+          <ul>
+            <li><code>&lt;img src="./images/example.jpg" /&gt;</code> on a page that isn't in any folder</li>
+            <li><code>&lt;img src="../images/example.jpg" /&gt;</code> on a page that is in a folder</li>
+            <li><code>&lt;img src="../../images/example.jpg" /&gt;</code> on a page that is in a sub-folder.</li>
+            <li>etc.</li>
+          </ul>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <br />
+          <br />
+          <p><strong>Step 4: Prepare your pages.</strong></p>
+          <p>
+            Remove your header and footer from the html files of your pages - They will be added via JavaScript. Make sure all page content is in a wrapper, I suggest using
+            <code>&lt;main&gt;</code> or <code>&lt;div&gt;</code>:
+          </p>
+          <pre><code>&lt;body&gt;
+  &lt;main&gt;
+    your page here...
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <br />
+          <p><strong>Step 5: Style</strong></p>
+          <p>Now, style your layout with CSS like you would normally do.</p>
+          <p>
+            My code adds the class "active" to any links that are linked to the current page. This makes it easy to style active menu links. Just make a CSS rule that checks for the "active" class,
+            <br />e.g. <code>.active { font-weight:bold; }</code>
+          </p>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <br />
+          <br />
+          <p><strong>Done!</strong></p>
+          <p>If you have page on which your layout should not be loaded, give the <code>&lt;body&gt;</code> element the "no-layout" class.</p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
