@@ -1,4 +1,4 @@
-:ribbon: code for [petrapixel.neocities.org](https://petrapixel.neocities.org/) | clap for me: [:clap:](http://clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel) | sign the guestbook: [:black_nib:](https://petrapixelneocities.123guestbook.com/)
+:ribbon: code for [petrapixel.neocities.org](https://petrapixel.neocities.org/) | clap for me: [:clap:](http://clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel) | sign the guestbook: [:black_nib:](http://users3.smartgb.com/g/g.php?a=s&i=g36-36055-1e)
 
 ---
 
