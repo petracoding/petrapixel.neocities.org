@@ -94,7 +94,7 @@ body {
 }
 
 .custom-scrollbar {
-  scrollbar-color: $light $pink;
+  scrollbar-color: $pink $light;
   scrollbar-width: thin;
 }
 
@@ -104,11 +104,11 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track-piece {
-  background-color: $pink;
+  background-color: $light;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:vertical {
-  background-color: $light;
+  background-color: $pink;
 }
 
 .marquee {

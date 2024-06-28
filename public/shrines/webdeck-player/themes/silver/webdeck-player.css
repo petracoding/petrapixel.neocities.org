@@ -1,0 +1,341 @@
+/* Font import */
+@font-face {font-family: Silkscreen; src: url(./fonts/slkscr.ttf);}
+@font-face {font-family: LED Dot-Matrix; src: url(./fonts/LED-Dot-Matrix.ttf);}
+@font-face {
+    font-family: Eurostile; 
+    src: url(./fonts/EurostileExtendedBlack.ttf);
+    font-weight: 900;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 600px;
+    height: 250px;
+    font-family: Silkscreen, monospace;
+    color: white;
+    background: linear-gradient(180deg, rgb(239, 241, 244) 0%, rgb(234, 236, 239) 20%, rgba(189,194,200,1) 95%, rgb(219, 222, 227) 100%);
+}
+
+select{
+    margin-right: 1px;
+}
+
+button{
+    padding: 2px;
+    margin-right: 1px;
+    font-family: Silkscreen, monospace;
+
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+button:active{
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.toggle-button[state='off'] > p::before{
+    content: url(./images/green-light-off.gif);
+    margin-right: 3px;
+}
+
+.toggle-button[state='on'] > p::before{
+    content: url(./images/green-light-on.gif);
+    margin-right: 3px;
+}
+
+
+select{
+    font-family: Silkscreen, monospace;
+
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+select:active{
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+
+
+
+/* Blink class */
+.blink {
+    animation: blinker 2s step-start infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* Columns section */
+.columns{
+    display: flex;
+}
+
+.columns > div:first-child{
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.columns > div:last-child{
+    flex-grow: 1;
+}
+
+
+
+/* -- Sliders -- */
+input[type="range"] {
+    appearance: none;
+    background: none;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+    
+    height: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track /* For Chrome */ {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(238,238,238,1) 2%, rgba(221,221,221,1) 50%, rgb(105, 105, 105) 98%, rgba(255,255,255,1) 100%);
+    height: 100%;
+    border-radius: 10px;
+}
+
+input[type="range"]::-moz-range-track /* For Firefox */ {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(238,238,238,1) 2%, rgba(221,221,221,1) 50%, rgb(105, 105, 105) 98%, rgba(255,255,255,1) 100%);
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb /* For Chrome */ {
+    appearance: none;
+    position: relative;
+    top: -4px;
+
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+
+    height: 0.8rem;
+    width: 1.8rem;
+}
+
+input[type="range"]::-webkit-slider-thumb:active /* For Chrome */ {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+
+
+input[type="range"]::-moz-range-thumb /* For Firefox */ {
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+
+    height: 0.7rem;
+    width: 1.8rem;
+}
+
+input[type="range"]::-moz-range-thumb:active /* For Firefox */ {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(189,194,200,1) 95%, rgba(227,227,227,1) 100%);
+    border: groove 2px white;
+    
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+
+
+/* ---- Web Deck Player ---- */
+#web-deck-player{
+    padding: 0 5px;
+}
+
+
+/* Player title bar */
+#player-title-bar{
+    display: flex;
+    color: gray;
+    font-family: Eurostile, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 10pt;
+    padding: 2px 0;
+}
+
+#player-title-bar:before,
+#player-title-bar:after{
+    content: "";
+    flex: 1;
+    margin: auto 1em;
+    height: 2px;
+    border-top: ridge silver 2px;
+    border-bottom: ridge silver 2px;
+}
+
+/* Player body */
+#player-body{
+    margin: 2px;
+    padding: 5px;
+    border: groove 2px silver;
+    border-radius: 5px;
+}
+
+/* Player main section */
+#player-main-section{
+    margin-bottom: 5px;
+}
+
+
+/* Player display */
+#player-display{
+    width: 250px;
+    height: 140px;
+    background: black;
+    border: solid 1px dimgray;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px -1px 0px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+/* Player info */
+#info-screen{
+    background: radial-gradient(circle, rgb(89, 187, 248) 0%, rgb(56, 136, 248) 70%);
+    color: #0a3765;
+    border: solid 1px dimgray;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px -1px 0px 0px rgba(0, 0, 0, 0.75);
+    margin-bottom: 5px;
+    padding: 2px;
+    font-family: "LED Dot-Matrix", monospace;
+    font-size: medium;
+}
+
+#songLabel{
+    background: #0a3765;
+    border-radius: 3px;
+    color: #3888f8;
+}
+
+#statusLabel{
+    margin: 2px 0;
+    border-top: 1.5px dotted #0a3765;
+    line-height: 0.9em;
+}
+
+.player-row{
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#volumeButton{
+    height: 25px;
+    width: 25px;
+}
+
+#volumeButton img{
+    height: 100%;
+}
+
+#volumeBar{
+    width: 120px;
+}
+
+#themeSelector{
+    height: 25px;
+    max-width: 150px;
+    text-overflow: ellipsis;
+}
+
+#videoButton{
+    height: 25px;
+}
+
+#playerLogo{
+    text-align: center;
+    height: fit-content;
+}
+
+#playerLogo > img{
+    margin-top: 5px;
+    max-height: 50px;
+}
+
+/* Player control panel */
+#player-control-panel{
+    font-size: 0;
+}
+
+#seekBar{
+    width: 99%;
+    margin-bottom: 12px;
+}
+
+.playing-controls{
+    margin-bottom: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    width: fit-content;
+    background: none;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
+.playing-controls[rounded]{
+    border-radius: 20px;
+}
+
+.playing-controls[float-right]{
+    float: right;
+}
+
+.playing-controls button{
+    height: 30px;
+    min-width: 50px;
+}
+
+.playing-controls button img{
+    height: 100%;
+}
+
+
+#infoButton{
+    border-radius: 20px;
+    height: 30px;
+    min-width: 30px;
+    font-size: large;
+}
+
+#playlistSelector{
+    height: 30px;
+    max-width: 175px;
+    text-overflow: ellipsis;
+}

@@ -44,23 +44,23 @@ export function getBeforeMain() {
 					<ul>
 						<li><a href="${localHref}/creations/art.html">my art</a></li>
 		                <li><a href="${localHref}/creations/coding.html">my coding</a></li>
-		                <li><a href="${localHref}/creations/playlists.html">my playlists</a> </li>
+		                <li><a href="${localHref}/creations/playlists.html">my playlists<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a> </li>
 		                <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
 		                <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
 		                <li><a href="${localHref}/creations/writing.html">my writing</a></li>   
-						<li><a href="${localHref}/creations/picmix.html">my picmixes</a></li>
+						<li><a href="${localHref}/creations/picmix.html">my picmixes<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 					</ul>
 				</details>
 			</li>
 			<li>
 			  	<details id="menu-mediarecs">
-			 		<summary>media recs <small>(5)</small></summary>
+			 		<summary>media recs <small>(5)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
 					<ul>
 						<li><a href="${localHref}/recs/music.html" aria-label="music recommendations">music</a></li>
-					  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations">tv shows</a></li>
+					  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations">tv shows<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 					  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations">movies</a></li>
 					  	<li><a href="${localHref}/recs/books.html" aria-label="book recommendations">books</a></li>
-					  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations">games</a></li>
+					  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations">games<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></small></li>
 					</ul>
 				</details>
 			</li>
@@ -79,15 +79,17 @@ export function getBeforeMain() {
 			</li>
 			<li>
 			  	<details id="menu-codinghelp">
-			 		<summary>coding help <small>(7)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+			 		<summary>coding help <small>(7)</small></summary>
 					<ul>
-						<li><a href="${localHref}/coding/need-help.html">need help?<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
-						<li><a href="${localHref}/coding/common-questions.html">common questions<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/coding/need-help.html">need help?</a></li>
+						<li><a href="${localHref}/coding/common-questions.html">common questions</a></li>
 						<li><a href="${localHref}/coding/common-mistakes.html">common mistakes</a></li>
-						<li><a href="${localHref}/coding/layout-base-code.html">layout base code<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/coding/layout-base-code.html">layout base code</a></li>
+						<!-- <li><a href="${localHref}/coding/checklist.html">checklist</a></li> -->
 						<li><a href="${localHref}/coding/snippets.html">snippets & tips</a></li>
 						<li><a href="${localHref}/coding/neocities.html">neocities help</a></li>
 						<li><a href="${localHref}/coding/my-setup.html">my coding setup</a></li>
+						<!-- <li><a href="${localHref}/coding/layout-generator.html">layout generator</a></li> -->
 					</ul>
 				</details>
 			</li>
@@ -228,7 +230,7 @@ export function getBeforeMain() {
 		<ul>
 		  	<li aria-label="listening to:">
 				<img src="${nesting}img/layout/icon-music.png" alt="" title="listening to:" aria-hidden="true"/>
-				<a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">nothing...</a>
+				<a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">various</a>
 			</li>
 			<li aria-label="watching:">
 				<img src="${nesting}img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true"/>
@@ -236,11 +238,11 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="reading:">
 				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
-				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Cannibalism: A Perfectly Natural History</a>
+				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Warrior Cats ↺</a>
 			</li>
 				<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
-				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Stardew Valley</a>
+				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Skyrim ↺</a>
 			</li>
 		</ul>
 	</div>

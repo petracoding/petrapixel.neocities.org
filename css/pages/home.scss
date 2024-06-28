@@ -89,7 +89,7 @@
     justify-content: center;
 
     > * {
-      margin: 10px;
+      margin: 5px 10px !important;
       display: flex;
       align-items: center;
 
@@ -277,7 +277,7 @@
 }
 
 #dsring {
-  max-width: 135px;
+  padding: 0 !important;
 
   center {
     padding: 0 !important;
@@ -286,13 +286,17 @@
 
   .webring-prev,
   .webring-next {
-    font-size: 2em;
+    font-size: 1.5em;
+
+    a {
+      color: #333;
+      text-decoration: navajowhite;
+    }
   }
 }
 
 #women-web {
   line-height: 1;
-  max-width: 100px;
 
   img {
     height: 47px;

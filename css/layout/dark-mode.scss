@@ -44,6 +44,11 @@
     }
   }
 
+  .not-found-page-content main {
+    background: black;
+    border-color: rgba(255, 255, 255, 0.466);
+  }
+
   /*
   	COLORS
    */
@@ -120,6 +125,10 @@
     iframe[src*="cbox"] {
       filter: brightness(0.47) saturate(2.1) contrast(1.5);
     }
+  }
+
+  .checklist input {
+    filter: invert(1) brightness(3);
   }
 }
 

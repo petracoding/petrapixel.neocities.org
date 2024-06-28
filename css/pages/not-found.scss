@@ -2,10 +2,10 @@ body.not-found-page {
   align-items: flex-start;
 }
 
-.not-found-page-content {
+.not-found-page-content main {
   background: white;
   width: 300px;
-  padding: 1em;
+  padding: 2em;
   margin-top: 3em;
   border: 2px solid black;
 
@@ -13,5 +13,9 @@ body.not-found-page {
     height: 31px;
     image-rendering: pixelated;
     margin-bottom: -4px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }

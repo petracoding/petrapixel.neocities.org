@@ -27,7 +27,7 @@
     {
       "title": "Spirit: Stallion of the Cimarron",
       "year": "2002",
-      "genres": "Animation, Adventure, Western, Drama",
+      "genres": "Animation, Adventure, Western, Drama, Family",
       "rating": "3",
       "link": "https://letterboxd.com/film/spirit-stallion-of-the-cimarron/",
       "image": "https://a.ltrbxd.com/resized/sm/upload/9i/k2/m5/ro/nhrcR2KtVjXxJNSrPvcxVSyEf4c-0-500-0-750-crop.jpg?v=785e1166d4"
@@ -75,7 +75,7 @@
     {
       "title": "The Princess Bride",
       "year": "1987",
-      "genres": "Adventure, Fantasy, Comedy",
+      "genres": "Adventure, Fantasy, Comedy, Family",
       "rating": "3",
       "link": "https://letterboxd.com/film/the-princess-bride/",
       "image": "https://a.ltrbxd.com/resized/sm/upload/hk/2u/bd/9p/gpxjoE0yvRwIhFEJgNArtKtaN7S-0-500-0-750-crop.jpg?v=544eada136"
@@ -213,6 +213,16 @@
       "rating": "2",
       "link": "https://www.serializd.com/show/Succession-76331",
       "image": "https://artworks.thetvdb.com/banners/series/338186/posters/62089567.jpg"
+    },
+
+    {
+      "title": "House MD",
+      "ongoing": false,
+      "year": "2004",
+      "genres": "Drama, Comedy",
+      "rating": "2",
+      "link": "https://www.serializd.com/show/House-1408",
+      "image": "https://artworks.thetvdb.com/banners/series/73255/posters/230801.jpg"
     }
   ],
   "books": [
@@ -325,7 +335,7 @@
     },
     {
       "title": "Minecraft",
-      "platform": "pc",
+      "platform": "pc, switch, mobile, other",
       "gameType": "singleplayer, multiplayer",
       "rating": "3",
       "link": "https://www.backloggd.com/games/minecraft/",
@@ -389,7 +399,7 @@
     },
     {
       "title": "Stardew Valley",
-      "platform": "pc, switch",
+      "platform": "pc, switch, mobile",
       "gameType": "singleplayer, multiplayer",
       "rating": "2",
       "link": "https://www.backloggd.com/games/stardew-valley/",
@@ -410,6 +420,14 @@
       "rating": "1",
       "link": "https://www.backloggd.com/games/geoguessr/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7ebv.jpg"
+    },
+    {
+      "title": "Neko Atsume",
+      "platform": "mobile",
+      "gameType": "singleplayer",
+      "rating": "2",
+      "link": "https://www.backloggd.com/games/neko-atsume-kitty-collector/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1o8i.webp"
     },
     {
       "title": "EXAMPLE",

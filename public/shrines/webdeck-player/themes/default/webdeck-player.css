@@ -1,0 +1,317 @@
+/* Font import */
+@font-face {font-family: Silkscreen; src: url(./fonts/slkscr.ttf);}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 600px;
+    height: 250px;
+    font-family: Silkscreen, monospace;
+    color: white;
+    background: linear-gradient(to right, #212133 0%, #343353 50%, #212133 100%);
+}
+
+select{
+    margin-right: 1px;
+}
+
+button{
+    padding: 2px;
+    margin-right: 1px;
+    font-family: Silkscreen, monospace;
+
+    background: linear-gradient(to bottom, #ECE0B8 0%, #c5b580 100%);
+    border: outset 2px #ECE0B8;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+button:active{
+    background: linear-gradient(to top, #ECE0B8 0%, #c5b580 100%);
+    border: inset 2px #ECE0B8;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+.toggle-button[state='off'] > p::before{
+    content: url(./images/green-light-off.gif);
+    margin-right: 3px;
+}
+
+.toggle-button[state='on'] > p::before{
+    content: url(./images/green-light-on.gif);
+    margin-right: 3px;
+}
+
+
+select{
+    font-family: Silkscreen, monospace;
+
+    background:  linear-gradient(to bottom, #ECE0B8 0%, #c5b580 100%);
+    border: outset 2px #ECE0B8;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+select:active{
+    background: linear-gradient(to top, #ECE0B8 0%, #c5b580 100%);
+    border: inset 2px #ECE0B8;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+
+
+
+/* Blink class */
+.blink {
+    animation: blinker 2s step-start infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* Columns section */
+.columns{
+    display: flex;
+}
+
+.columns > div:first-child{
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.columns > div:last-child{
+    flex-grow: 1;
+}
+
+
+
+/* -- Sliders -- */
+input[type="range"] {
+    appearance: none;
+    background: none;
+    border: inset 2px #403f67;
+}
+
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track /* For Chrome */ {
+    background-color: #201e3a;
+    height: 100%;
+}
+
+input[type="range"]::-moz-range-track /* For Firefox */ {
+    background-color: #201e3a;
+    height: 100%;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb /* For Chrome */ {
+    appearance: none;
+
+    background: url(./images/slider.gif), linear-gradient(to bottom, #ECE0B8 0%, #c5b580 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: outset 2px #ECE0B8;
+    
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+
+    height: 1rem;
+    width: 2.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb:active /* For Chrome */ {
+    background: url(./images/slider.gif), linear-gradient(to top, #ECE0B8 0%, #c5b580 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: inset 2px #ECE0B8;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+
+
+input[type="range"]::-moz-range-thumb /* For Firefox */ {
+    background: url(./images/slider.gif), linear-gradient(to bottom, #ECE0B8 0%, #c5b580 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: outset 2px #ECE0B8;
+    
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+
+    height: 1rem;
+    width: 2.5rem;
+}
+
+input[type="range"]::-moz-range-thumb:active /* For Firefox */ {
+    background: url(./images/slider.gif), linear-gradient(to top, #ECE0B8 0%, #c5b580 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: inset 2px #ECE0B8;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+
+
+/* ---- Web Deck Player ---- */
+#web-deck-player{
+    padding: 0 5px;
+}
+
+
+/* Player title bar */
+#player-title-bar{
+    display: flex;
+}
+
+#player-title-bar:before,
+#player-title-bar:after{
+    content: "";
+    flex: 1;
+    margin: auto 1em;
+    height: 2px;
+    border-top: ridge #ECE0B8 2px;
+    border-bottom: ridge #ECE0B8 2px;
+}
+
+/* Player body */
+#player-body{
+    padding: 5px;
+    border: groove 3px #403f67;
+}
+
+/* Player main section */
+#player-main-section{
+    margin-bottom: 5px;
+}
+
+
+/* Player display */
+#player-display{
+    width: 250px;
+    height: 140px;
+    background: black;
+    border: inset 2px #403f67;
+}
+
+
+/* Player info */
+#info-screen{
+    background: black;
+    color: limegreen;
+    border: inset 2px #403f67;
+    margin-bottom: 5px;
+}
+
+#songLabel{
+    text-shadow: 0 0 10px #49ff18, 0 0 20px #49FF18, 2px 2px 2px rgba(206,89,55,0);
+}
+
+#statusLabel{
+    text-shadow: 0 0 10px #49ff18, 0 0 20px #49FF18, 2px 2px 2px rgba(206,89,55,0);
+}
+
+.player-row{
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#volumeButton{
+    height: 25px;
+    width: 25px;
+}
+
+#volumeButton img{
+    height: 100%;
+}
+
+#volumeBar{
+    width: 120px;
+}
+
+#themeSelector{
+    height: 25px;
+    max-width: 150px;
+    text-overflow: ellipsis;
+}
+
+#videoButton{
+    height: 25px;
+}
+
+#playerLogo{
+    text-align: center;
+    height: fit-content;
+}
+
+#playerLogo > img{
+    margin-top: 5px;
+    max-height: 50px;
+}
+
+/* Player control panel */
+#player-control-panel{
+    font-size: 0;
+}
+
+#seekBar{
+    width: 99%;
+    margin-bottom: 5px;
+}
+
+.playing-controls{
+    margin-bottom: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    width: fit-content;
+    background: #201e3a;
+    border: inset 2px #403f67;
+    vertical-align: middle;
+}
+
+.playing-controls[rounded]{
+    border-radius: 20px;
+}
+
+.playing-controls[float-right]{
+    float: right;
+}
+
+.playing-controls button{
+    height: 30px;
+    min-width: 50px;
+}
+
+.playing-controls button img{
+    height: 100%;
+}
+
+
+#infoButton{
+    border-radius: 20px;
+    height: 30px;
+    min-width: 30px;
+    font-size: large;
+}
+
+#playlistSelector{
+    height: 30px;
+    max-width: 175px;
+    text-overflow: ellipsis;
+}

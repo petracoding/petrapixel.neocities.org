@@ -1,9 +1,13 @@
-/public/templates
-/public/about-me
-/public/webrings
 /public/*/wip
+/public/templates
+/public/webrings
 /public/blog/_template.html
 /public/coding/image-vomit-script.html
+/public/coding/cheatsheet.html
+/public/coding/advanced-coding.html
+/public/coding/checklist.html
+/public/coding/layout-generator.html
+/public/shrines/nostalgia.html
 
 # -----------------------------------------------------------------
 # .gitignore

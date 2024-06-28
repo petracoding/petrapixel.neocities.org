@@ -1,0 +1,340 @@
+/* Font import */
+@font-face {font-family: Silkscreen; src: url(./fonts/slkscr.ttf);}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 600px;
+    height: 250px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    background: black;
+}
+
+select{
+    margin-right: 1px;
+}
+
+button{
+    padding: 2px;
+    margin-right: 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: lowercase;
+    font-weight: bold;
+    color: white;
+
+    background: #202020;
+    border: outset 2px #a42c2c;
+    border-radius: 2px;
+}
+
+button:active{
+    background: #000000;
+    border: outset 2px #6e1c1c;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+.toggle-button[state='off'] > p::before{
+    content: url(./images/green-light-off.gif);
+    margin-right: 3px;
+}
+
+.toggle-button[state='on'] > p::before{
+    content: url(./images/green-light-on.gif);
+    margin-right: 3px;
+}
+
+
+select{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: lowercase;
+    font-weight: bold;
+    color: white;
+    padding: 0 2px;
+
+    background: #202020;
+    border: outset 2px #a42c2c;
+    border-radius: 2px;
+}
+
+select option{
+    background: black;
+}
+
+select:active{
+    background: #000000;
+    border: outset 2px #6e1c1c;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+
+
+
+/* Blink class */
+.blink {
+    animation: blinker 2s step-start infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* Columns section */
+.columns{
+    display: flex;
+}
+
+.columns > div:first-child{
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.columns > div:last-child{
+    flex-grow: 1;
+}
+
+
+
+/* -- Sliders -- */
+input[type="range"] {
+    appearance: none;
+    background: none;
+    border: inset 2px #2c2c2c;
+
+    height: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track /* For Chrome */ {
+    background-color: rgb(30, 30, 30);
+    height: 100%;
+}
+
+input[type="range"]::-moz-range-track /* For Firefox */ {
+    background-color: rgb(30, 30, 30);
+    height: 100%;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb /* For Chrome */ {
+    appearance: none;
+
+    background: url(./images/slider.gif), linear-gradient(to bottom, #4c4c4c 0%, #2c2c2c 100%);;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: outset 2px #2c2c2c;
+    
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+
+    height: 20pt;
+    width: 12pt;
+    position: relative;
+    top: -10px;
+}
+
+input[type="range"]::-webkit-slider-thumb:active /* For Chrome */ {
+    background: url(./images/slider.gif), linear-gradient(to top, #4c4c4c 0%, #2c2c2c 100%);;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: inset 2px #2c2c2c;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+
+
+input[type="range"]::-moz-range-thumb /* For Firefox */ {
+    background: url(./images/slider.gif), linear-gradient(to bottom, #4c4c4c 0%, #2c2c2c 100%);;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: outset 2px #2c2c2c;
+    
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+
+    height: 1.5rem;
+    width: 0.8rem;
+}
+
+input[type="range"]::-moz-range-thumb:active /* For Firefox */ {
+    background: url(./images/slider.gif), linear-gradient(to top, #4c4c4c 0%, #2c2c2c 100%);;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: inset 2px #2c2c2c;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+
+
+/* ---- Web Deck Player ---- */
+#web-deck-player{
+    padding: 0 5px;
+}
+
+
+/* Player title bar */
+#player-title-bar{
+    display: flex;
+    margin-bottom: 2px;
+    color: #a42c2c;
+    text-transform: lowercase;
+    font-weight: bold;
+}
+
+#player-title-bar:before,
+#player-title-bar:after{
+    content: "";
+    flex: 1;
+    margin: auto 1em;
+    height: 2px;
+    border-top: ridge #a42c2c 2px;
+    border-bottom: ridge #a42c2c 2px;
+}
+
+/* Player body */
+#player-body{
+    padding: 5px;
+    border: groove 2px #282828;
+    background: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Player main section */
+#player-main-section{
+    margin-bottom: 5px;
+}
+
+
+/* Player display */
+#player-display{
+    width: 250px;
+    height: 140px;
+    background: black;
+    border: inset 2px #282828;
+}
+
+
+/* Player info */
+#info-screen{
+    background: black;
+    font-family: Silkscreen, monospace;
+    color: white;
+    border: inset 2px #282828;
+    margin-bottom: 5px;
+}
+
+#songLabel{
+    text-shadow: 0 0 10px #c84040, 0 0 20px #fc6b6b, 2px 2px 2px rgba(206,89,55,0);
+}
+
+#statusLabel{
+    text-shadow: 0 0 10px #c84040, 0 0 20px #fc6b6b, 2px 2px 2px rgba(206,89,55,0);
+}
+
+.player-row{
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#volumeButton{
+    height: 25px;
+    width: 25px;
+}
+
+#volumeButton img{
+    height: 100%;
+}
+
+#volumeBar{
+    width: 120px;
+}
+
+#themeSelector{
+    height: 25px;
+    max-width: 150px;
+    text-overflow: ellipsis;
+}
+
+#videoButton{
+    height: 25px;
+}
+
+#playerLogo{
+    text-align: center;
+    height: fit-content;
+}
+
+#playerLogo > img{
+    margin-top: 5px;
+    max-height: 50px;
+}
+
+/* Player control panel */
+#player-control-panel{
+    font-size: 0;
+}
+
+#seekBar{
+    width: 99%;
+    margin-bottom: 12px;
+}
+
+.playing-controls{
+    margin-bottom: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    width: fit-content;
+    background: black;
+    vertical-align: middle;
+}
+
+.playing-controls[rounded]{
+    border-radius: 20px;
+}
+
+.playing-controls[float-right]{
+    float: right;
+}
+
+.playing-controls button{
+    height: 30px;
+    min-width: 50px;
+}
+
+.playing-controls button img{
+    height: 100%;
+}
+
+
+#infoButton{
+    border-radius: 20px;
+    height: 30px;
+    min-width: 30px;
+    font-size: large;
+}
+
+#playlistSelector{
+    height: 30px;
+    max-width: 175px;
+    text-overflow: ellipsis;
+}

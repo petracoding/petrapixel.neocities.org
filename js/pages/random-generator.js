@@ -99,6 +99,10 @@ const boredButton = [
   "rewatch a movie you've forgotten",
   "learn to say Hello in many different languages",
   "watch colorized footage on YouTube",
+  "learn the basics of a language you've never thought about learning",
+  "learn how to read/write runes",
+  "draw your houseplants",
+  "scan in all physical documents you have",
 ];
 
 const listIdeas = [
@@ -193,4 +197,16 @@ const listIdeas = [
   "your recurring nightmares",
   "your spotify wrapped results",
   "your unpopular opinions",
+  "movies you want to watch in the cinema this year",
+  "ways you can connect to your inner child",
+  "your favorite videos of your favorite youtube channel",
+  "first times (e.g. first movie seen in the cinema, first time on a plane, ...)",
+  "wishlist (of things)",
+  "wishlist (of experiences)",
+  "artists you want to see live someday",
+  "great female characters in media",
+  "great queer characters in media",
+  "great POC characters in media",
+  "great neurodivergent characters in media",
+  "great disabled characters in media",
 ];

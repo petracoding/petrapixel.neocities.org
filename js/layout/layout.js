@@ -55,9 +55,11 @@ function prepareScrollToTop() {
 function buildTableOfContents() {
   const container = document.querySelector("#toc");
   if (!container) return;
-  const allHeadings = document.querySelectorAll("main h2");
+  const twoLevels = container.getAttribute("data-two-levels");
+  const allHeadings = document.querySelectorAll(twoLevels ? "main h2, main h3" : "main h2");
   if (allHeadings.length < 2) return;
   let output = "<b>Table of Contents:</b><ol>";
+  let isFirst = true;
   [...allHeadings].forEach((headingEl) => {
     const title = headingEl.innerHTML;
     const link =
@@ -74,8 +76,17 @@ function buildTableOfContents() {
           .replaceAll("--", "-")
       ).toLowerCase();
     headingEl.setAttribute("id", link);
-    output += `
+    const isH2 = headingEl.tagName == "H2";
+    if (twoLevels && isH2) {
+      if (!isFirst) output += `</ol></li>`;
+      output += `
+	  <li><a href="#${link}">${title}</a>
+	  <ol>`;
+    } else {
+      output += `
 	  <li><a href="#${link}">${title}</a></li>`;
+    }
+    isFirst = false;
   });
   container.innerHTML = output + "</ol>";
 }

@@ -212,9 +212,9 @@ img[src*="inline/"]:not([class]) {
     padding-left: 2em;
     list-style-type: decimal-leading-zero;
 
-    // a {
-    //   text-decoration: none;
-    // }
+    ol {
+      margin-left: 3px;
+    }
   }
 }
 

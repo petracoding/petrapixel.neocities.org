@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" lang="en" />
+    <meta name="author" content="Chris" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>silent suburbia</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link id="player-theme" rel="stylesheet" href="./themes/default/webdeck-player.css" />
+  </head>
+
+  <body>
+    <div id="content">
+      <div id="web-deck-player">
+        <div id="player-title-bar">WEBDECK PLAYER</div>
+
+        <div id="player-body">
+          <div id="player-main-section">
+            <div class="columns">
+              <div id="player-display">
+                <div id="youtube-player"></div>
+              </div>
+
+              <div id="player-info">
+                <div id="info-screen">
+                  <p id="songLabel"><b>Loading...</b></p>
+                  <div id="statusLabel"><br /></div>
+                </div>
+
+                <div class="player-row">
+                  <div id="player-volume">
+                    <button id="volumeButton" title="Mute / Unmute"></button>
+                    <input type="range" id="volumeBar" title="Volume" min="0" max="100" value="50" />
+                  </div>
+
+                  <select id="themeSelector" title="Select Theme" style="display: none">
+                    <!-- themes are injected with javascript -->
+                  </select>
+                </div>
+
+                <div class="player-row">
+                  <button id="videoButton" class="toggle-button" state="on" title="Toggle Video" style="display: none"><p>Video</p></button>
+
+                  <div id="playerLogo"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="player-control-panel">
+            <input type="range" id="seekBar" title="Seek" value="0" />
+            <br />
+
+            <div class="playing-controls">
+              <button id="prevButton" title="Previous Track"></button>
+              <button id="playButton" title="Play / Pause"></button>
+              <button id="stopButton" title="Stop" style="display: none"></button>
+              <button id="nextButton" title="Next Track"></button>
+            </div>
+
+            <div class="playing-controls">
+              <button id="shuffleButton" class="toggle-button" state="off" title="Toggle Shuffle"><p>Shuffle</p></button>
+            </div>
+
+            <div class="playing-controls" float-right style="display: none">
+              <select id="playlistSelector" title="Select Playlist">
+                <!-- playlists are injected with javascript -->
+              </select>
+            </div>
+
+            <div class="playing-controls" rounded float-right>
+              <button id="infoButton" title="Info"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="./script.js"></script>
+    </div>
+  </body>
+</html>

@@ -47,3 +47,32 @@
     font-size: 1.1em;
   }
 }
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 3em;
+
+  code {
+    background: pink;
+  }
+
+  li {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 0.75em;
+    }
+  }
+
+  input {
+    cursor: $cursorPointer;
+    transform: scale(1.2);
+    margin-right: 0.75em;
+    filter: hue-rotate(100deg);
+
+    &:checked + * {
+      opacity: 0.5;
+    }
+  }
+}

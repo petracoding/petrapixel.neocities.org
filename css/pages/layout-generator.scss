@@ -1,0 +1,54 @@
+body.layout-generator {
+  padding: 0;
+}
+
+.layout-generator-settings {
+  background: white;
+  width: 100%;
+  padding: 0 2em;
+}
+
+.layout-generator-settings__section {
+  margin-bottom: 1em;
+
+  > strong {
+    display: block;
+    font-size: 1.4em;
+    margin-top: 1.5em;
+  }
+
+  > label,
+  > p {
+    display: inline-block;
+    margin: 0.5em 0;
+
+    span {
+      margin-right: 1em;
+    }
+  }
+
+  input[type="color"] {
+    max-height: 2em;
+    max-width: 3em;
+  }
+}
+
+.layout-generator-settings__columns {
+  display: flex;
+
+  > div > .layout-generator-settings__section:first-child {
+    > strong {
+      margin-top: 0;
+    }
+  }
+}
+
+.layout-generator-settings__submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+
+  button {
+    font-size: 2em;
+  }
+}
