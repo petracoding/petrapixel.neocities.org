@@ -60,7 +60,7 @@
       right: 0;
       bottom: 0;
       background: $pink;
-      opacity: 0.25;
+      opacity: 0.2;
       pointer-events: none;
       z-index: 1;
       pointer-events: none;
@@ -72,6 +72,18 @@
 
     > div {
       margin: 5px;
+    }
+  }
+}
+
+.blinkies.blinkies--userboxes {
+  > div {
+    // padding: 1px;
+    // width: 235px;
+    filter: contrast(1.1);
+
+    &::after {
+      opacity: 0;
     }
   }
 }
