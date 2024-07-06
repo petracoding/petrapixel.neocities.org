@@ -1,6 +1,7 @@
 {
   "changelog": [
     { "d": "2024-07-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-07-06", "t": "Spring cleaning in July.", "l": "" },
     { "d": "2024-06-28", "t": "A few small updates.", "l": "" },
     { "d": "2024-05-04", "t": "New coding help pages! 'Common questions' and 'Need help?'", "l": "/coding/common-questions.html" },
     { "d": "2024-04-26", "t": "New coding help page: 'Common mistakes'!", "l": "/coding/common-mistakes.html" },

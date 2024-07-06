@@ -1,11 +1,15 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.6;
   display: flex;
   justify-content: center;
   background: #ffefdf;
   color: #232020;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #content {

@@ -80,6 +80,8 @@
   > div {
     // padding: 1px;
     // width: 235px;
+    margin-right: 0.4em;
+    margin-bottom: 0.4em;
     filter: contrast(1.1);
 
     &::after {
@@ -95,6 +97,10 @@
 
   > * {
     margin: 2px;
+  }
+
+  &.cool-sites--more-spacing > * {
+    margin: 7px;
   }
 
   &.cool-sites--webrings {

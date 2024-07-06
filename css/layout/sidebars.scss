@@ -416,6 +416,16 @@
   }
 }
 
+#afterneighbours {
+  font-size: 0.7em;
+  text-align: center;
+
+  a:hover,
+  a:focus {
+    text-decoration-style: wavy;
+  }
+}
+
 /*----------  Chatbox  ----------*/
 
 .aside-chatbox {
@@ -649,6 +659,26 @@
 
   .changelog {
     margin-top: 5px;
+  }
+
+  .aside-nav__new {
+    display: none;
+  }
+
+  .aside-nav li summary small:not(.aside-nav__new) {
+    display: none;
+  }
+
+  .aside-nav ul ul li a {
+    padding-left: 1em;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .aside-stats__stat {
+    display: none;
   }
 }
 

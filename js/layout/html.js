@@ -18,10 +18,11 @@ export function getBeforeMain() {
             <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>home</a></li>
 			<li>
 			  	<details id="menu-aboutsite">
-			 		<summary>the site <small>(4)</small></summary>
+			 		<summary>the site <small>(5)</small></summary>
 					<ul>
 						<li><a href="${localHref}/about/about-the-site.html">about the site</a></li>
 						<li><a href="${localHref}/about/guestbook.html">guestbook</a></li>
+						<li><a href="${localHref}/about/neighbors.html">neighbors</a></li>
 						<li><a href="${localHref}/about/credits.html">credits</a></li>
             			<li><a href="${localHref}/sitemap.html">sitemap</a></li>
 					</ul>
@@ -98,7 +99,7 @@ export function getBeforeMain() {
 			 		<summary>more <small>(4)</small></summary>
 					<ul>
 						<li><a href="${localHref}/shrines/index.html">shrines</a></li>
-						<li><a href="${localHref}/about/blinkies.html">blinkies</a></li> 
+						<li><a href="${localHref}/about/blinkies.html">blinkies & more</a></li> 
 						<li><a href="${localHref}/fun/list-idea-generator.html">list idea generator</a></li>
 						<li><a href="${localHref}/fun/bored-button.html">are you bored?</a></li>
 					</ul>
@@ -202,7 +203,7 @@ export function getBeforeMain() {
 						<img src='https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18' border='0' alt='Free Website Hit Counter' />
 					</a>
 				</center>
-				<small style="font-size: 0.75em; letter-spacing: -0.4px;text-align:center;display: block;">(might not be entirely accurate)</small>
+				<small style="font-size: 0.7em; letter-spacing: -0.4px;text-align:center;display: block;">(might not be entirely accurate)</small>
 			</div>
 		</div>
 		<div class="aside-stats__stat">
@@ -254,7 +255,7 @@ export function getBeforeMain() {
 		<a href="#afterneighbours" class="skiplink" aria-hidden="true">Skip neighbours</a>
         <div id="beforeneighbours"></div>
 		<div class="marquee aside-mutuals__buttons"><div></div></div>
-        <div id="afterneighbours"></div>
+        <div id="afterneighbours">Click <a href="/about/neighbors.html">here</a> to view them all.</div>
         <a href="#beforeneighbours" class="skiplink" aria-hidden="true">Skip to before neighbours</a>
 	</div>
 
