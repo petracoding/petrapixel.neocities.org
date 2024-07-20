@@ -118,6 +118,7 @@
     {
       "title": "Our Flag Means Death",
       "ongoing": false,
+      "seasons": 2,
       "year": "2022",
       "genres": "Comedy, Romance, Queer",
       "rating": "3",
@@ -127,6 +128,7 @@
     {
       "title": "Good Omens",
       "ongoing": true,
+      "seasons": 2,
       "year": "2019",
       "genres": "Comedy, Fantasy, Queer",
       "rating": "1",
@@ -136,6 +138,7 @@
     {
       "title": "What We Do In The Shadows",
       "ongoing": true,
+      "seasons": 5,
       "year": "2019",
       "genres": "Comedy, Fantasy, Horror, Queer",
       "rating": "2",
@@ -145,6 +148,7 @@
     {
       "title": "Hannibal",
       "ongoing": false,
+      "seasons": 3,
       "year": "2013",
       "genres": "Crime, Horror, Drama, Mystery, Thriller, Queer",
       "rating": "2",
@@ -154,6 +158,7 @@
     {
       "title": "Star Trek",
       "ongoing": false,
+      "seasons": 3,
       "year": "1966",
       "genres": "Sci-Fi, Adventure, Action",
       "rating": "1",
@@ -163,6 +168,7 @@
     {
       "title": "Supernatural",
       "ongoing": false,
+      "seasons": 15,
       "year": "2005",
       "genres": "Drama, Fantasy, Horror",
       "rating": "2",
@@ -172,6 +178,7 @@
     {
       "title": "Sherlock",
       "ongoing": false,
+      "seasons": 4,
       "year": "2010",
       "genres": "Crime, Drama, Mystery",
       "rating": "3",
@@ -181,6 +188,7 @@
     {
       "title": "Stranger Things",
       "ongoing": true,
+      "seasons": 5,
       "year": "2016",
       "genres": "Sci-Fi, Drama, Adventure, Horror",
       "rating": "2",
@@ -190,6 +198,7 @@
     {
       "title": "Avatar: The Last Airbender",
       "ongoing": false,
+      "seasons": 3,
       "year": "2005",
       "genres": "Animation, Comedy, Drama, Adventure, Action",
       "rating": "3",
@@ -199,6 +208,7 @@
     {
       "title": "Scrubs",
       "ongoing": false,
+      "seasons": 9,
       "year": "2001",
       "genres": "Comedy, Drama",
       "rating": "2",
@@ -208,21 +218,44 @@
     {
       "title": "Succession",
       "ongoing": false,
+      "seasons": 4,
       "year": "2018",
       "genres": "Drama",
       "rating": "2",
       "link": "https://www.serializd.com/show/Succession-76331",
       "image": "https://artworks.thetvdb.com/banners/series/338186/posters/62089567.jpg"
     },
-
     {
       "title": "House MD",
       "ongoing": false,
+      "seasons": 8,
       "year": "2004",
       "genres": "Drama, Comedy",
-      "rating": "2",
+      "rating": "1",
       "link": "https://www.serializd.com/show/House-1408",
       "image": "https://artworks.thetvdb.com/banners/series/73255/posters/230801.jpg"
+    },
+    {
+      "title": "Fleabag",
+      "ongoing": false,
+      "seasons": 2,
+      "year": "2016",
+      "genres": "Comedy, Drama",
+      "rating": "2",
+      "link": "https://www.serializd.com/show/Fleabag-67070",
+      "image": "https://artworks.thetvdb.com/banners/series/314614/posters/601feb0c8a666.jpg"
+    },
+    {
+      "title": "Crashing",
+      "ongoing": false,
+      "seasons": 1,
+      "year": "2016",
+      "genres": "Comedy",
+      "rating": "1",
+      "link": "https://www.serializd.com/show/Crashing-65251",
+      "image": "https://artworks.thetvdb.com/banners/posters/305177-2.jpg",
+      "why": "This is only really short but very fun! Also, there are some awesome queer characters!",
+      "ifYouLike": "cringe comedy, gay ships"
     }
   ],
   "books": [
@@ -274,6 +307,16 @@
       "rating": "3",
       "link": "https://www.goodreads.com/book/show/3.Harry_Potter_and_the_Sorcerer_s_Stone",
       "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1474154022i/3.jpg"
+    },
+    {
+      "title": "Warriors",
+      "author": "Erin Hunter",
+      "year": "2003",
+      "genres": "Fantasy, Xenofiction",
+      "ageRange": "ya",
+      "rating": "3",
+      "link": "https://www.goodreads.com/book/show/111332.Into_the_Wild",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327994729i/111332.jpg"
     },
     {
       "title": "The Curious Incident of the Dog in the Night-Time",

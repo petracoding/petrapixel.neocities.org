@@ -209,12 +209,14 @@ function initBlinkies() {
       if (!wrapper) return;
       const nesting = wrapper.getAttribute("data-nesting");
       wrapper.querySelector(".aside-blinkies__buttons div").innerHTML = doc.querySelector("#buttons-to-load").innerHTML.replaceAll("../", nesting);
-      //   wrapper.querySelector(".aside-blinkies__stamps div").innerHTML = doc.querySelector("#stamps-to-load").innerHTML.replaceAll("../", nesting);
+      wrapper.querySelector(".aside-blinkies__stamps div").innerHTML = doc.querySelector("#stamps-to-load").innerHTML.replaceAll("../", nesting);
       wrapper.querySelector(".aside-blinkies__blinkies div").innerHTML = doc.querySelector("#blinkies-to-load").innerHTML.replaceAll("../", nesting);
+      wrapper.querySelector(".aside-blinkies__userboxes div").innerHTML = doc.querySelector("#userboxes-to-load").innerHTML.replaceAll("../", nesting);
 
       initMarquee(".aside-blinkies__buttons", 0.5);
-      //   initMarquee(".aside-blinkies__stamps", 0.4);
+      initMarquee(".aside-blinkies__stamps", 0.4);
       initMarquee(".aside-blinkies__blinkies", 0.5);
+      initMarquee(".aside-blinkies__userboxes", 0.6);
     })
     .catch(function (response) {
       console.error("Problem with loading blinkies: " + response.statusText);

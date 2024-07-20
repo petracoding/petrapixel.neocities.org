@@ -1,6 +1,9 @@
 {
   "changelog": [
     { "d": "2024-07-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-07-20", "t": "Added some playlists and tv show recs!", "l": "/creations/playlists.html" },
+    { "d": "2024-07-17", "t": "Updated my age :)", "l": "" },
+    { "d": "2024-07-07", "t": "Improved the look of my software recs and bookmarks pages", "l": "/resources/software-recs.html" },
     { "d": "2024-07-06", "t": "Spring cleaning in July.", "l": "" },
     { "d": "2024-06-28", "t": "A few small updates.", "l": "" },
     { "d": "2024-05-04", "t": "New coding help pages! 'Common questions' and 'Need help?'", "l": "/coding/common-questions.html" },

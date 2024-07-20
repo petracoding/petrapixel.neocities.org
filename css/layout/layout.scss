@@ -169,7 +169,8 @@ header {
 
 footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: $footerBackgroundColor;
   grid-area: footer;
   margin-top: 2em;
@@ -198,6 +199,11 @@ footer {
       cursor: $cursorPointer;
       color: var(--linkColorHover);
     }
+  }
+
+  &.mobile-only {
+    background: none;
+    border: none;
   }
 }
 

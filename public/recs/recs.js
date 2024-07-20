@@ -39,7 +39,8 @@ function fillData(data, typeStr) {
     }
 
     const authorStr = d.author ? `<p class="rec__author">${d.author}</p>` : "";
-    const tvShowStatusStr = typeStr == "tv-shows" ? `<p class="rec__author">(${d.ongoing ? "ongoing" : "ended"})</p>` : "";
+    const seasonStr = typeStr == "tv-shows" ? (d.seasons ? d.seasons + (d.seasons == 1 ? " season, " : " seasons, ") : "") : "";
+    const tvShowStatusStr = typeStr == "tv-shows" ? `<p class="rec__author">(${seasonStr}${d.ongoing ? "ongoing" : "ended"})</p>` : "";
     const ratingStr = d.rating ? `<p><strong>My rating:</strong> <span class="rec__stars">${getRatingStr(d.rating)}</span></p>` : "";
     const yearStr = d.year ? `<p><strong>${typeStr == "tv-shows" ? "Start " : ""}Year:</strong> ${d.year}</p>` : "";
     const ageRangeStr = d.ageRange ? `<p><strong>Age Range:</strong> ${d.ageRange}</p>` : "";
@@ -49,6 +50,8 @@ function fillData(data, typeStr) {
     const fandomStr = typeStr == "ships" ? `<p class="rec__author">${d.fandom}</p>` : "";
     const shipStr = typeStr == "ships" ? `${d.who}` : "";
     const tagsStr = d.tags ? `<p><strong>Tags:</strong> ${d.tags.replaceAll("-", " ")}</p>` : "";
+    const ifYouLikeStr = d.ifYouLike ? ` You will like this if you enjoy: ${d.ifYouLike}, …` : ``;
+    const whyStr = d.why ? `<button class='rec__why' onClick='alert("${d.why}${ifYouLikeStr}");'>Let me convince you!</button>` : "";
 
     const html = `
 	  <div class="rec ${getRatingClass(d.rating)} ${turnToDecade(d.year)} ${turnToClasses(propertiesForClasses)}">
@@ -69,6 +72,7 @@ function fillData(data, typeStr) {
 					${tagsStr}
 				</div>
 				${linkStr}
+				${whyStr}
               </div>
             </div>
 		</div>`;

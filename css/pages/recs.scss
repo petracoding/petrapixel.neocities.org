@@ -142,6 +142,7 @@
   border: 5px solid $pink;
   background: rgba($mainBackgroundColor, 0.9);
   padding: 1em;
+  font-size: 0.9em;
   opacity: 0;
   transition: opacity 0.2s ease;
 
@@ -190,4 +191,10 @@
   &::before {
     content: "➜ ";
   }
+}
+
+.rec__why {
+  margin-top: 10px;
+  line-height: 1;
+  font-size: 0.9em;
 }

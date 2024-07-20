@@ -394,6 +394,10 @@
   }
 }
 
+.aside-blinkies__userboxes {
+  margin-top: 9px;
+}
+
 /*----------  Neighbors  ----------*/
 
 .aside-mutuals {
@@ -423,6 +427,44 @@
   a:hover,
   a:focus {
     text-decoration-style: wavy;
+  }
+}
+
+/*----------  Poll  ----------*/
+
+.aside-poll {
+  border: 1px dashed;
+  padding: 1em;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+
+  .aside-stuff__heading {
+    top: -14px;
+    padding: 0.2em 0.5em;
+    right: -4px;
+  }
+
+  form > div {
+    background-color: transparent !important;
+    color: inherit !important;
+    font-size: 0.9em !important;
+    width: 100% !important;
+    font-family: inherit !important;
+    padding: 0 !important;
+
+    strong {
+      display: block;
+      line-height: 1.2;
+      margin-bottom: 0.5em;
+    }
+
+    [align="center"] {
+      margin-top: 0.5em;
+    }
+
+    > div:last-child {
+      display: none;
+    }
   }
 }
 

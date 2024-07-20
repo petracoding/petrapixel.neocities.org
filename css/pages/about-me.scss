@@ -179,7 +179,7 @@
   position: relative;
   margin-top: 50px;
   border: 2px solid $pink;
-  padding: 20px;
+  padding: 17px;
   background: var(--mainBackgroundColor);
   max-width: 730px;
   min-width: 130px;
@@ -436,7 +436,7 @@
       right: 11%;
 
       &::before {
-        padding-left: 65px;
+        padding-left: 25px;
       }
     }
 
@@ -447,7 +447,7 @@
 
     &[aria-label="Likes"] {
       right: 4%;
-      top: 29%;
+      top: 29.5%;
     }
 
     &[aria-label="Favorites"] {
@@ -600,5 +600,9 @@
     .image {
       width: 80vw;
     }
+  }
+
+  .about-me-page-fav .custom-scrollbar {
+    max-height: none;
   }
 }

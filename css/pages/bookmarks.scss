@@ -25,3 +25,60 @@
     margin: 2.5em 0;
   }
 }
+
+.bookmarks {
+  margin: 1em 0 2em;
+}
+
+.bookmark {
+  display: flex;
+  padding: 0.5em 0;
+  border-bottom: 1px dotted $pink;
+
+  &:first-child {
+    border-top: 1px dotted $pink;
+  }
+
+  &:nth-child(odd) {
+    background: rgba($pink, 0.075);
+  }
+
+  &.bookmark--star {
+    .bookmark__title::after {
+      content: " ★";
+      font-size: 0.8em;
+      vertical-align: text-top;
+    }
+  }
+}
+
+.bookmark__title {
+  font-weight: bold;
+  width: 20vw;
+  padding: 0 0.25em;
+}
+
+.bookmark__description {
+  flex: 1 0 0;
+  font-size: 0.95em;
+  padding: 0 0.25em;
+}
+
+@media (max-width: $md) {
+  .bookmark {
+    display: block;
+  }
+
+  .bookmark__title {
+    width: auto;
+    padding: 0;
+
+    // &::after {
+    //     content: ": ";
+    // }
+  }
+
+  .bookmark__description {
+    padding: 0;
+  }
+}

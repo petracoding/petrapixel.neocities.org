@@ -49,7 +49,7 @@ export function getBeforeMain() {
 		                <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
 		                <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
 		                <li><a href="${localHref}/creations/writing.html">my writing</a></li>   
-						<li><a href="${localHref}/creations/picmix.html">my picmixes<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/creations/picmix.html">my picmixes</a></li>
 					</ul>
 				</details>
 			</li>
@@ -61,7 +61,7 @@ export function getBeforeMain() {
 					  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations">tv shows<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 					  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations">movies</a></li>
 					  	<li><a href="${localHref}/recs/books.html" aria-label="book recommendations">books</a></li>
-					  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations">games<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></small></li>
+					  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations">games</a></small></li>
 					</ul>
 				</details>
 			</li>
@@ -133,12 +133,20 @@ export function getBeforeMain() {
         </div>
 		
 		<img src="${nesting}img/layout/divider1.gif" alt="" aria-hidden="true" style="margin-top: 2em;"/>
+
+			
+		<!-- ----------------- POLL ----------------- -->
+		<div class="aside-stuff aside-poll" aria-hidden="true">
+			<div class="aside-stuff__heading" aria-hidden="true">Poll<img src="${nesting}img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
+			<form method="post" action="https://poll.pollcode.com/52695294"><div style="background-color:#B24C66;padding:2px;width:154px;font-family:Palatino Linotype;font-size:small;color:#FFFFFF;"><div style="padding:2px 0px 4px 2px;"><strong>how often do you listen to music while falling asleep?</strong></div><input type="radio" name="answer" value="1" id="answer526952941" style="float:left;" /><label for="answer526952941" style="float:left;width:129px;">almost always</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="2" id="answer526952942" style="float:left;" /><label for="answer526952942" style="float:left;width:129px;">often</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="3" id="answer526952943" style="float:left;" /><label for="answer526952943" style="float:left;width:129px;">sometimes</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="4" id="answer526952944" style="float:left;" /><label for="answer526952944" style="float:left;width:129px;">rarely</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="5" id="answer526952945" style="float:left;" /><label for="answer526952945" style="float:left;width:129px;">never!</label><div style="clear:both;height:2px;"></div><div align="center" style="padding:3px;"><input type="submit" value=" Vote ">&nbsp;<input type="submit" name="view" value=" View "></div><div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div></div></form>
+		</div>
 		
 		<!-- ----------------- BLINKIES ----------------- -->
 		<a href="${localHref}/about/blinkies.html" class="aside-stuff aside-blinkies" data-nesting="${nesting}" aria-hidden="true">
 			<div class="marquee aside-blinkies__buttons"><div></div></div>
-			<!-- <div class="marquee aside-blinkies__stamps"><div></div></div> -->
+			<div class="marquee aside-blinkies__stamps"><div></div></div>
 			<div class="marquee aside-blinkies__blinkies"><div></div></div>
+			<div class="marquee aside-blinkies__userboxes"><div></div></div>
 		</a>
 
 		<!-- ----------------- COMING SOON ----------------- -->
@@ -235,7 +243,7 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="watching:">
 				<img src="${nesting}img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true"/>
-				<a href="https://app.tvtime.com/user/33116783" target="_blank">House MD, Game Grumps</a>
+				<a href="https://app.tvtime.com/user/33116783" target="_blank">Ripley, Game Grumps</a>
 			</li>
 			<li aria-label="reading:">
 				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
@@ -243,7 +251,7 @@ export function getBeforeMain() {
 			</li>
 				<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
-				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Skyrim ↺</a>
+				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume ↺, Skyrim ↺</a>
 			</li>
 		</ul>
 	</div>
@@ -258,6 +266,7 @@ export function getBeforeMain() {
         <div id="afterneighbours">Click <a href="/about/neighbors.html">here</a> to view them all.</div>
         <a href="#beforeneighbours" class="skiplink" aria-hidden="true">Skip to before neighbours</a>
 	</div>
+
 
 
 
@@ -305,6 +314,19 @@ export function getAfterMain() {
           <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a
           > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
         </div>
+		<div class="footer-content mobile-only">
+			<a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">
+				<img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"/>
+				<small>click to clap for me!</small>
+			</a>
+			<br />
+			<center>
+				<small>Visitors:</small>
+				<a href='https://www.free-website-hit-counter.com'>
+					<img src='https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18' border='0' alt='Free Website Hit Counter' />
+				</a>
+			</center>
+		</div>
       </footer>
   	  `;
 }
