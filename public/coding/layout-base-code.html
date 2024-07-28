@@ -63,6 +63,7 @@
             Tired of <a href="/coding/common-questions.html#layout">having to update all of you HTML files every time you update your layout</a>? Here's a solution. We'll be using JavaScript to load a
             header and footer on every page. We'll also take care of active links and relative paths.
           </p>
+          <p><small>Keep in mind that users who have deactivated JavaScript in their browser will not be able to navigate your site.</small></p>
 
           <!-- ----------------------------------------------------------------------------------------------------- -->
           <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -100,7 +101,8 @@
           <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" checked="true" /> Show explanatory comments</label>
 
           <pre id="hide-explanation" style="display: none">
-<code>document.addEventListener("DOMContentLoaded", function () {
+<code>
+document.addEventListener("DOMContentLoaded", function () {
   if (document.body.classList.contains("no-layout")) return;
   document.body.insertAdjacentHTML("afterbegin", headerEl);
   document.body.insertAdjacentHTML("beforeend", footerEl);

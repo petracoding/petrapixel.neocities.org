@@ -58,7 +58,7 @@ export function getBeforeMain() {
 			 		<summary>media recs <small>(5)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
 					<ul>
 						<li><a href="${localHref}/recs/music.html" aria-label="music recommendations">music</a></li>
-					  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations">tv shows<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+					  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations">tv shows</a></li>
 					  	<li><a href="${localHref}/recs/movies.html" aria-label="movie recommendations">movies</a></li>
 					  	<li><a href="${localHref}/recs/books.html" aria-label="book recommendations">books</a></li>
 					  	<li><a href="${localHref}/recs/games.html" aria-label="game recommendations">games</a></small></li>
@@ -144,9 +144,9 @@ export function getBeforeMain() {
 		<!-- ----------------- BLINKIES ----------------- -->
 		<a href="${localHref}/about/blinkies.html" class="aside-stuff aside-blinkies" data-nesting="${nesting}" aria-hidden="true">
 			<div class="marquee aside-blinkies__buttons"><div></div></div>
-			<div class="marquee aside-blinkies__stamps"><div></div></div>
+			<div class="marquee aside-blinkies__stamps" style="display:none;"><div></div></div>
 			<div class="marquee aside-blinkies__blinkies"><div></div></div>
-			<div class="marquee aside-blinkies__userboxes"><div></div></div>
+			<div class="marquee aside-blinkies__userboxes" style="display:none;"><div></div></div>
 		</a>
 
 		<!-- ----------------- COMING SOON ----------------- -->
@@ -243,7 +243,7 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="watching:">
 				<img src="${nesting}img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true"/>
-				<a href="https://app.tvtime.com/user/33116783" target="_blank">Ripley, Game Grumps</a>
+				<a href="https://app.tvtime.com/user/33116783" target="_blank">Bridgerton, Ripley</a>
 			</li>
 			<li aria-label="reading:">
 				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
@@ -251,7 +251,7 @@ export function getBeforeMain() {
 			</li>
 				<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
-				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume ↺, Skyrim ↺</a>
+				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">-</a>
 			</li>
 		</ul>
 	</div>
@@ -275,7 +275,7 @@ export function getBeforeMain() {
 		<div class="aside-stuff__heading" aria-hidden="true">Chatbox<img src="${nesting}img/layout/icon-chat.png" alt="" aria-hidden="true"/></div>
 		<a href="#afterchatbox" class="skiplink" aria-hidden="true">Skip chatbox iFrame</a>
         <div id="beforechatbox"></div>
-		<iframe src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk" width="100%" height="200" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" aria-label="Chatbox"></iframe>	
+		<iframe src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk" width="100%" height="300" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" aria-label="Chatbox"></iframe>	
         <div id="afterchatbox"></div>
         <a href="#beforechatbox" class="skiplink" aria-hidden="true">Skip to before chatbox iFrame</a>
 	</div>
