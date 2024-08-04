@@ -125,10 +125,10 @@ export function getBeforeMain() {
           <div class="aside-stuff__heading">Link back!<img src="${nesting}img/layout/icon-copy.png" alt="" aria-hidden="true"/></div>
           <p>Hotlinking is a-okay!<br><small>You can change the .webp to .gif if you want, but the image will be 1KB bigger.</small></p>
             <a href="https://petrapixel.neocities.org/" target="_blank"  tabindex="-1"
-              ><img src="https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/img/linkback.webp?raw=true" alt="petrapixel"
+              ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@master/public/img/linkback.webp" alt="petrapixel" width="88" height="31"
             /></a>
             <textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/img/linkback.webp?raw=true" alt="petrapixel"></a></textarea
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@master/public/img/linkback.webp" alt="petrapixel"></a></textarea
             >
         </div>
 		
@@ -138,7 +138,15 @@ export function getBeforeMain() {
 		<!-- ----------------- POLL ----------------- -->
 		<div class="aside-stuff aside-poll" aria-hidden="true">
 			<div class="aside-stuff__heading" aria-hidden="true">Poll<img src="${nesting}img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
-			<form method="post" action="https://poll.pollcode.com/52695294"><div style="background-color:#B24C66;padding:2px;width:154px;font-family:Palatino Linotype;font-size:small;color:#FFFFFF;"><div style="padding:2px 0px 4px 2px;"><strong>how often do you listen to music while falling asleep?</strong></div><input type="radio" name="answer" value="1" id="answer526952941" style="float:left;" /><label for="answer526952941" style="float:left;width:129px;">almost always</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="2" id="answer526952942" style="float:left;" /><label for="answer526952942" style="float:left;width:129px;">often</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="3" id="answer526952943" style="float:left;" /><label for="answer526952943" style="float:left;width:129px;">sometimes</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="4" id="answer526952944" style="float:left;" /><label for="answer526952944" style="float:left;width:129px;">rarely</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="5" id="answer526952945" style="float:left;" /><label for="answer526952945" style="float:left;width:129px;">never!</label><div style="clear:both;height:2px;"></div><div align="center" style="padding:3px;"><input type="submit" value=" Vote ">&nbsp;<input type="submit" name="view" value=" View "></div><div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div></div></form>
+			<form method="post" action="https://poll.pollcode.com/52695294"><div style="background-color:#B24C66;padding:2px;width:154px;font-family:Palatino Linotype;font-size:small;color:#FFFFFF;"><div style="padding:2px 0px 4px 2px;"><strong>how often do you listen to music while falling asleep? <small>(Poll created: July 20th)</small></strong></div><input type="radio" name="answer" value="1" id="answer526952941" style="float:left;" /><label for="answer526952941" style="float:left;width:129px;">almost always</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="2" id="answer526952942" style="float:left;" /><label for="answer526952942" style="float:left;width:129px;">often</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="3" id="answer526952943" style="float:left;" /><label for="answer526952943" style="float:left;width:129px;">sometimes</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="4" id="answer526952944" style="float:left;" /><label for="answer526952944" style="float:left;width:129px;">rarely</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="5" id="answer526952945" style="float:left;" /><label for="answer526952945" style="float:left;width:129px;">never!</label><div style="clear:both;height:2px;"></div><div align="center" style="padding:3px;"><input type="submit" value=" Vote ">&nbsp;<input type="submit" name="view" value=" View "></div><div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div></div></form>
+		</div>
+
+		<!-- ----------------- IMAGE OF THE MOMENT ----------------- -->
+		<div class="aside-stuff aside-poll">
+			<div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="${nesting}img/layout/icon-hearts.png" alt="" aria-hidden="true"/></div>
+			<a href="https://www.tumblr.com/petrapng/757874138276839424/pictures-of-wolverine-where-his-hair-makes-him?source=share" target="_blank" class="image-of-the-moment">
+				<img src="https://64.media.tumblr.com/d47ef96a9b7767a6ee39927200af1a62/4edd630e3d6f13cd-fe/s640x960/f863f86d9d82052db24d57c9661dcdbd752af283.jpg" alt="Wolverine" title="wolverine <3<3 he has kitty ears" />
+			</a>
 		</div>
 		
 		<!-- ----------------- BLINKIES ----------------- -->
@@ -207,9 +215,13 @@ export function getBeforeMain() {
 			<div class="aside-stuff__heading"><span>visitors</span><img src="${nesting}img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
 			<div class="aside-stats__stat-content">
 				<center>
-					<a href='https://www.free-website-hit-counter.com'>
+					${
+            isLocalhost
+              ? "only shown in live"
+              : `<a href='https://www.free-website-hit-counter.com'>
 						<img src='https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18' border='0' alt='Free Website Hit Counter' />
-					</a>
+					</a>`
+          }
 				</center>
 				<small style="font-size: 0.7em; letter-spacing: -0.4px;text-align:center;display: block;">(might not be entirely accurate)</small>
 			</div>
@@ -243,15 +255,19 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="watching:">
 				<img src="${nesting}img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true"/>
-				<a href="https://app.tvtime.com/user/33116783" target="_blank">Bridgerton, Ripley</a>
+				<a href="https://app.tvtime.com/user/33116783" target="_blank">X-Men movies</a>
 			</li>
 			<li aria-label="reading:">
 				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
 				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Warrior Cats ↺</a>
 			</li>
-				<li aria-label="playing:">
+			<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
-				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">-</a>
+				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">ACNH</a>
+			</li>
+			<li aria-label="obsessed with:">
+				<img src="${nesting}img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true"/>
+				<span>Wolverine ♡</span>
 			</li>
 		</ul>
 	</div>
@@ -322,9 +338,14 @@ export function getAfterMain() {
 			<br />
 			<center>
 				<small>Visitors:</small>
+				${
+          isLocalhost
+            ? "only shown live"
+            : `
 				<a href='https://www.free-website-hit-counter.com'>
 					<img src='https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18' border='0' alt='Free Website Hit Counter' />
-				</a>
+				</a>`
+        }
 			</center>
 		</div>
       </footer>

@@ -34,17 +34,85 @@
     <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
     <div id="content">
       <main id="main">
-        <h1>Helpful Neocities Stuff</h1>
-        <div id="toc"></div>
+        <section><h1>Helpful Neocities Stuff</h1></section>
+        <!-- <div id="toc"></div> -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <section>
-          <!-- <h2 style="margin-bottom: 0.5em">Advanced Neocities Tips</h2> -->
+          <article class="blog-article" data-date="2024-19-02" data-tags="neocities, coding">
+            <h3 class="blog-article__title">External Widgets for Neocities Free Accounts</h3>
+            <div class="blog-article__description">What to do if you want to use external widgets with a free Neocities account.</div>
+            <!-- <div class="blog-article__image"><img src="../img/linkback.gif" alt="alt text!!" /></div> -->
+            <div class="blog-article__content">
+              <!-- ------------------------------------------------------------------------------------------------------------ -->
+              <!-- ------------------------------------------------------------------------------------------------------------ -->
+              <!-- ------------------------------------------------------------------------------------------------------------ -->
+              <!-- <h2>Heading</h2> -->
+              <p>
+                Unfortunately, if you have a free website on neocities created after ~2022 you are not allowed to use external scripts, such as guestbooks, shoutboxes, status/mood widgets, and even
+                hit counters.
+                <img aria-hidden="true" src="../img/inline/sad.gif" alt="" />
+              </p>
+              <p>
+                The good news is that I found a way around that: you can use iframes. Specifially, you use the script you want to use on a different website not hosted on Neocities (instead hosted on
+                e.g. github pages), in the center of an otherwise blank page with <i>background: transparent;</i> and then use this URL in an iframe on your neocities page.
+                <a href="https://petracoding.github.io/neocities/stats.html" target="_blank">Here</a> you can see an example of what an otherwise blank page with a widget may look like.
+              </p>
+              <p>
+                For guestbooks I recommend using <a href="https://www.smartgb.com/" target="_blank">smartgb</a> (which is what I use for <a href="/guestbook.html">my guestbook</a> iframe) because it
+                is very customizable and looks good in an iframe. For a chatbox you can use <a href="https://www.cbox.ws/" target="_blank">cbox</a>, because it works via an iframe.
+              </p>
+            </div>
+          </article>
+        </section>
+        <section>
+          <article class="blog-article" data-date="2024-20-02" data-tags="neocities, coding">
+            <h3 class="blog-article__title">How to upload changes to Neocities automatically</h3>
+            <div class="blog-article__description">Automatically upload your changed files to Neocities via a GitHub Deployment Action.</div>
+            <!-- <div class="blog-article__image"><img src="../img/linkback.gif" alt="alt text!!" /></div> -->
+            <div class="blog-article__content">
+              <!-- ------------------------------------------------------------------------------------------------------------ -->
+              <!-- ------------------------------------------------------------------------------------------------------------ -->
+              <!-- ------------------------------------------------------------------------------------------------------------ -->
+              <!-- <h2>Heading</h2> -->
+              <p>
+                Using <a href="https://github.com/marketplace/actions/deploy-to-neocities" target="_blank">an amazing GitHub Action</a> you can automatically deploy your changes to Neocities without
+                manually uploading any files. <img aria-hidden="true" src="../img/inline/excited.gif" alt="" /> It only updates the files that were actually changed, don't worry about your feed.
+                Prerequisite for this is that you have a GitHub repository for your project!
+              </p>
+              <h4>How to do it:</h4>
+              <ol class="list-with-more-spacing">
+                <li>Make sure all the files in your project that should be uploaded to Neocities are in a folder called <i>public</i>.</li>
+                <li>
+                  Create the following file in the root of your project (<i>NOT</i> in the <i>public</i> folder):<br /><code>.github/workflows/neocities.yml</code> <br />Make sure you spell it
+                  correctly! Don't forget the "." at the start of the first folder name.
+                </li>
+                <li>Insert the code shown <a href="https://github.com/marketplace/actions/deploy-to-neocities#usage" target="_blank">here</a> into your file.</li>
+                <li>If your branch is called 'main' instead of 'master' make sure to change that on line 7.</li>
+                <li>Comment out (= add a # at the start of the lines) or delete lines 21 to 28. You don't need them.</li>
+                <li>
+                  If you want to you can set <i>cleanup</i> to <i>true</i>. This means that files that are still in your Neocities but not in your project anymore are deleted from Neocities. (I
+                  recommend this, otherwise you will eventually run out of space in your Neocities account.)
+                </li>
+                <li>Get your API Key for your Neocities account. (It can be found in your Site Settings on Neocities under "<span style="text-transform: none">API</span>").</li>
+                <li>
+                  Open your repository on GitHub, go to its "Settings", then "Secrets and Variables" -&gt; "Actions". Add a secret with the name
+                  <span style="text-transform: none">NEOCITIES_API_TOKEN</span> and set your Neocities API Key as the value.
+                </li>
+              </ol>
+              <p>Done! Now whenever you push to your master/main branch, the changed/added files will automatically be uploaded to your Neocities site.</p>
+            </div>
+          </article>
+        </section>
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- <section>
           <div class="blog-read-more">
             <div class="blog-read-more__articles" id="blog" data-filter="neocities" data-limit=""></div>
           </div>
-        </section>
+        </section> -->
         <!-- <section>
           <p>
             I'm currently working on a full tutorial on "advanced coding": so basically anything that you can learn to evolve from a beginner to an intermediate coder. Check back later if you're

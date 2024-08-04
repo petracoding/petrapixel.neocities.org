@@ -328,6 +328,7 @@
 
 #statuscafe-username {
   font-size: 0.8em;
+  min-height: 1em;
   margin-bottom: 0.5em;
 
   a {
@@ -339,6 +340,7 @@
 
 #statuscafe-content {
   font-size: 0.9em;
+  min-height: 3em;
 }
 
 /*----------  Currently  ----------*/
@@ -353,7 +355,7 @@
   padding-bottom: 0.5em;
 
   .aside-stuff__heading {
-    top: -5px;
+    top: -7px;
   }
 
   ul {
@@ -456,6 +458,13 @@
       display: block;
       line-height: 1.2;
       margin-bottom: 0.5em;
+
+      small {
+        font-weight: normal;
+        font-size: 0.7em;
+        letter-spacing: -0.7px;
+        opacity: 0.75;
+      }
     }
 
     [align="center"] {
@@ -464,6 +473,49 @@
 
     > div:last-child {
       display: none;
+    }
+  }
+}
+
+/*----------  Image of the moment  ----------*/
+
+.image-of-the-moment {
+  position: relative;
+  display: block;
+
+  img {
+    width: 100%;
+    height: auto;
+    filter: brightness(1.1) contrast(1.1);
+    transition: filter 0.3s ease, border-radius 0.5s ease, transform 0.5s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #c891bd;
+    opacity: 0.1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    img {
+      border-radius: 15px;
+      filter: none;
+      transform: rotate(5deg);
+
+      @media (prefers-reduced-motion) {
+        transform: none;
+      }
+    }
+
+    &::after {
+      opacity: 0;
     }
   }
 }

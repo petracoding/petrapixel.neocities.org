@@ -1,5 +1,5 @@
 export function initAboutMePage() {
-  initNavigation();
+  if (document.querySelector(".about-me-page")) initNavigation();
 }
 
 function initNavigation() {

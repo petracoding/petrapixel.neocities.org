@@ -1,7 +1,7 @@
 $light: #ffecf8;
-$pink: #df90b2;
-$purple: #c26f84;
-$dark: #835c66;
+$pink: #df90a4;
+$purple: #d47b83;
+$dark: #9c595e;
 $green: #9adb9b;
 $greenActive: #a8db9a;
 $red: #ab061d;
@@ -11,11 +11,11 @@ $yellow: #ffba39;
 
 $backgroundColor: darken($light, 2%);
 $mainBackgroundColor: $light;
-$mainBorder: 2px solid darken($purple, 10%);
+$mainBorder: 2px solid #c06c6c;
 
-$textColor: darken($pink, 40%);
-$linkColor: darken($purple, 15%);
-$linkColorHover: $green;
+$textColor: darken($pink, 35%);
+$linkColor: darken($purple, 10%);
+$linkColorHover: rgb(240, 178, 7);
 
 $headerBackgroundColor: none;
 $footerBackgroundColor: none;
@@ -42,13 +42,13 @@ body {
 // Dark Mode:
 
 @mixin darkMode1 {
-  $textColor: lighten($pink, 40%);
+  $textColor: #fcdee2;
   $backgroundColor: darken($dark, 19%);
-  $mainBackgroundColor: darken($dark, 15%);
+  $mainBackgroundColor: #3c252b;
   $linkColor: lighten($pink, 10%);
   $linkColorHover: $green;
-  $asideBackgroundColor: darken($dark, 13%);
-  $asideTextColor: white;
+  $asideBackgroundColor: #492a32;
+  $asideTextColor: #e6e6e6;
   //
   --textColor: #{$textColor};
   --backgroundColor: #{$backgroundColor};

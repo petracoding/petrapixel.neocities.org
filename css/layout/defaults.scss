@@ -138,6 +138,25 @@ body {
   }
 }
 
+.tippy-box.tippy-box.tippy-box {
+  background-color: var(--mainBackgroundColor);
+  color: var(--asideTextColor);
+  box-shadow: 0px 2px 4px 0px rgba(92, 29, 50, 0.2);
+
+  &[data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: var(--mainBackgroundColor);
+  }
+  &[data-placement^="bottom"] > .tippy-arrow::before {
+    border-bottom-color: var(--mainBackgroundColor);
+  }
+  &[data-placement^="left"] > .tippy-arrow::before {
+    border-left-color: var(--mainBackgroundColor);
+  }
+  &[data-placement^="right"] > .tippy-arrow::before {
+    border-right-color: var(--mainBackgroundColor);
+  }
+}
+
 @media (prefers-reduced-motion) {
   marquee,
   .marquee,

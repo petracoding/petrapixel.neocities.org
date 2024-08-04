@@ -223,17 +223,21 @@
       "genres": "Drama",
       "rating": "2",
       "link": "https://www.serializd.com/show/Succession-76331",
-      "image": "https://artworks.thetvdb.com/banners/series/338186/posters/62089567.jpg"
+      "image": "https://artworks.thetvdb.com/banners/series/338186/posters/62089567.jpg",
+      "why": "This will have you on the edge of your seat. Don't just watch the first episode though: You will hate the characters and not want to continue. But you will grow to LOVE to hate these characters!",
+      "ifYouLike": "contemporary drama, complicated family relationships and cringefail dudes"
     },
     {
       "title": "House MD",
       "ongoing": false,
       "seasons": 8,
       "year": "2004",
-      "genres": "Drama, Comedy",
+      "genres": "Medical, Drama, Comedy",
       "rating": "1",
       "link": "https://www.serializd.com/show/House-1408",
-      "image": "https://artworks.thetvdb.com/banners/series/73255/posters/230801.jpg"
+      "image": "https://artworks.thetvdb.com/banners/series/73255/posters/230801.jpg",
+      "why": "House's relationship with both Cuddy (his female boss) and Wilson (his male coworker) is insanity-inducing in the best way.",
+      "ifYouLike": "medical shows, middle-aged characters and comedy-dramas"
     },
     {
       "title": "Fleabag",
@@ -243,7 +247,9 @@
       "genres": "Comedy, Drama",
       "rating": "2",
       "link": "https://www.serializd.com/show/Fleabag-67070",
-      "image": "https://artworks.thetvdb.com/banners/series/314614/posters/601feb0c8a666.jpg"
+      "image": "https://artworks.thetvdb.com/banners/series/314614/posters/601feb0c8a666.jpg",
+      "why": "Fleabag is the quintessential female experience. This show is very short so you have no excuse not to watch it. There is a hot priest in it too!",
+      "ifYouLike": "cringe comedy, hot priests and Andrew Scott"
     },
     {
       "title": "Crashing",
@@ -254,8 +260,8 @@
       "rating": "1",
       "link": "https://www.serializd.com/show/Crashing-65251",
       "image": "https://artworks.thetvdb.com/banners/posters/305177-2.jpg",
-      "why": "This is only really short but very fun! Also, there are some awesome queer characters!",
-      "ifYouLike": "cringe comedy, gay ships"
+      "why": "This is only 2 hours long but very fun! Also, there are some awesome queer characters!",
+      "ifYouLike": "cringe comedy and gay ships"
     }
   ],
   "books": [

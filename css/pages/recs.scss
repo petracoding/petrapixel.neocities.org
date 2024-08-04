@@ -141,14 +141,15 @@
   flex-direction: column;
   border: 5px solid $pink;
   background: rgba($mainBackgroundColor, 0.9);
-  padding: 1em;
+  padding: 1em 0.9em;
   font-size: 0.9em;
   opacity: 0;
   transition: opacity 0.2s ease;
 
   p {
     text-align: left;
-    margin: 0.25em 0;
+    margin: 0.4em 0;
+    line-height: 1.2;
   }
 
   @media (max-width: $xl) {
@@ -168,10 +169,6 @@
 
 .rec__author {
   line-height: 1;
-}
-
-.rec__desc {
-  margin-top: 0.5em;
 }
 
 .rec__stars {

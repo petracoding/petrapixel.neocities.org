@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function loadLayout() {
   const mainEl = document.querySelector("main");
   if (!mainEl) return;
-  mainEl.insertAdjacentHTML("beforebegin", headerHTML());
-  mainEl.insertAdjacentHTML("afterend", footerHTML());
+  //   mainEl.insertAdjacentHTML("beforebegin", headerHTML());
+  //   mainEl.insertAdjacentHTML("afterend", footerHTML());
 }
 
 function headerHTML() {
@@ -81,7 +81,7 @@ function footerHTML() {
   // You can use it to refer to images etc.
   // example: <img src="${nesting}img/logo.png"> might output <img src="../img/logo.png">
 
-  return `<footer>Footer Text. <a href="#">Link.</a></footer>`;
+  return `<footer>Footer Text. <a href="#">Link.</a> Template generated with <a href="https://petrapixel.neocities.org/">Petrapixel</a>'s <a href="https://petrapixel.neocities.org/coding/layout-generator.html">layout generator</a>.</footer>`;
 }
 
 function getNesting() {

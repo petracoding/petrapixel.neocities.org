@@ -5,13 +5,6 @@ $mobileBreakpoint: $mainWidth;
 	CHANGE COLORS HERE:
 */
 :root {
-  --background-color: rgb(243, 240, 240);
-  --content-background-color: white;
-  --text-color: black;
-  --link-color: red;
-  --link-color-hover: var(--text-color);
-  --selection-color: rgba(0, 0, 0, 0.2);
-
   // navigation
   --nav-link-color: var(--link-color);
   --nav-link-color-hover: var(--link-color-hover);
@@ -26,18 +19,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background-color);
+  background: gray;
   min-height: 100vh;
   font-size: 15px;
   margin: 0;
   padding: 0;
-  color: var(--text-color);
+  color: purple;
   font-family: sans-serif;
   line-height: 1;
 }
 
 ::selection {
-  background: var(--selection-color);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 a {
@@ -45,12 +38,12 @@ a {
 
   &,
   &:visited {
-    color: var(--link-color);
+    color: red;
   }
 
   &:hover,
   &:focus {
-    color: var(--link-color-hover);
+    color: pink;
     text-decoration: none;
   }
 }
@@ -61,7 +54,7 @@ a {
 
 #layout {
   display: grid;
-  max-width: $mainWidth;
+  max-width: 800px;
   border: 1px solid;
   grid-template:
     "header header" auto
@@ -83,13 +76,13 @@ header {
   font-size: 1.2em;
   border-bottom: 1px solid;
   padding: 15px;
-  background: var(--content-background-color);
+  background: yellow;
 }
 
 aside {
   grid-area: aside;
   border-right: 1px solid;
-  background: var(--content-background-color);
+  background: pink;
 
   .sidebar-right & {
     border-right: none;
@@ -182,26 +175,6 @@ footer {
     &:focus {
       color: var(--nav-link-color-hover);
     }
-  }
-}
-
-#skip-to-content-link {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  padding: 0.375rem 0.75rem;
-  line-height: 1;
-  font-size: 1.25rem;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transform: translateY(-3rem);
-  transition: transform 0.1s ease-in;
-  z-index: 99999999999;
-
-  &:focus,
-  &:focus-within {
-    transform: translateY(0);
   }
 }
 
@@ -314,12 +287,62 @@ main {
   }
 }
 
+.image {
+  height: auto;
+  max-width: 100%;
+}
+
+.full-width-image {
+  width: 100%;
+}
+
+.two-images {
+  display: flex;
+
+  .image {
+    width: 50%;
+    padding: 5px;
+  }
+}
+
+.three-images {
+  display: flex;
+
+  .image {
+    width: 33.3%;
+    padding: 5px;
+  }
+}
+
+/* 
+	MISC
+*/
+#skip-to-content-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  line-height: 1;
+  font-size: 1.25rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transform: translateY(-3rem);
+  transition: transform 0.1s ease-in;
+  z-index: 99999999999;
+
+  &:focus,
+  &:focus-within {
+    transform: translateY(0);
+  }
+}
+
 /*
 	--------------------------------------------------------
 */
 
 /*
-  MOBILE 
+	MOBILE 
 */
 
 @media (max-width: $mobileBreakpoint) {

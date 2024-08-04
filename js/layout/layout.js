@@ -55,6 +55,7 @@ function prepareScrollToTop() {
 function buildTableOfContents() {
   const container = document.querySelector("#toc");
   if (!container) return;
+  if (container.getAttribute("data-leave-alone")) return;
   const twoLevels = container.getAttribute("data-two-levels");
   const allHeadings = document.querySelectorAll(twoLevels ? "main h2, main h3" : "main h2");
   if (allHeadings.length < 2) return;

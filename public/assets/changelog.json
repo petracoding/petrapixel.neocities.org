@@ -1,6 +1,7 @@
 {
   "changelog": [
     { "d": "2024-07-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-08-04", "t": "Image of the moment added to sidebar! Also some small content changes.", "l": "" },
     { "d": "2024-07-20", "t": "Added some playlists and tv show recs!", "l": "/creations/playlists.html" },
     { "d": "2024-07-17", "t": "Updated my age :)", "l": "" },
     { "d": "2024-07-07", "t": "Improved the look of my software recs and bookmarks pages", "l": "/resources/software-recs.html" },

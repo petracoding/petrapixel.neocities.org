@@ -337,11 +337,11 @@ pre code.hljs {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body:not(.dark-mode):not(.light-mode) {
-    @include tutorialsDarkMode;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   body:not(.dark-mode):not(.light-mode) {
+//     @include tutorialsDarkMode;
+//   }
+// }
 
 body.dark-mode {
   @include tutorialsDarkMode;

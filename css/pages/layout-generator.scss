@@ -1,11 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
 body.layout-generator {
+  display: block;
   padding: 0;
+  margin: 0;
+
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+#preview {
+  // SAME AS BODY IN LAYOUT
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  line-height: 1;
 }
 
 .layout-generator-settings {
-  background: white;
-  width: 100%;
-  padding: 0 2em;
+  font-family: sans-serif;
+  background: #ffecf8;
+  color: #592038;
+  border-bottom: 5px solid #592038;
+  padding: 1em;
+  padding-bottom: 0;
+
+  a {
+    &,
+    &:visited {
+      color: #c26f84;
+    }
+
+    &:hover,
+    &:focus {
+      color: #ffba39;
+      text-decoration: underline;
+    }
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  h1,
+  strong,
+  button[type="submit"] {
+    font-family: "Share Tech Mono", sans-serif;
+  }
 }
 
 .layout-generator-settings__section {
@@ -17,38 +71,198 @@ body.layout-generator {
     margin-top: 1.5em;
   }
 
-  > label,
-  > p {
-    display: inline-block;
-    margin: 0.5em 0;
-
-    span {
-      margin-right: 1em;
-    }
+  select,
+  label {
+    cursor: pointer;
   }
 
   input[type="color"] {
     max-height: 2em;
-    max-width: 3em;
+    max-width: 2.5em;
+    margin-top: -2px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  //   [data-dependency] {
+  //     display: none;
+  //     pointer-events: none;
+  //     opacity: 0.5;
+  //   }
+}
+
+.layout-generator-setting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.3em 0;
+
+  &.layout-generator-setting--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  > span {
+    margin-right: 1em;
+
+    &::after {
+      content: ":";
+    }
+  }
+
+  input[type="checkbox"] + span::after {
+    content: "";
   }
 }
 
 .layout-generator-settings__columns {
   display: flex;
+  flex-wrap: wrap;
 
-  > div > .layout-generator-settings__section:first-child {
-    > strong {
-      margin-top: 0;
+  > div {
+    padding: 1em;
+    flex: 1 1 0;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    > .layout-generator-settings__section:first-child {
+      > strong {
+        margin-top: 0;
+      }
     }
   }
 }
 
 .layout-generator-settings__submit {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5em;
+  margin-top: 3em;
 
   button {
     font-size: 2em;
+    cursor: pointer;
+  }
+
+  p {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.layout-generator-codes {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: sans-serif;
+  background: #ffecf8;
+  color: #592038;
+  border-bottom: 5px solid #592038;
+  padding: 1em;
+  padding-bottom: 0;
+  overflow-y: auto;
+  z-index: 1;
+
+  &.layout-generator-codes--no-js {
+    .layout-generator-codes__js {
+      display: none;
+    }
+
+    code,
+    code.hljs {
+      height: 20em;
+      max-height: 35vh;
+    }
+  }
+
+  a {
+    &,
+    &:visited {
+      color: #c26f84;
+    }
+
+    &:hover,
+    &:focus {
+      color: #ffba39;
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    font-family: "Share Tech Mono", sans-serif;
+    display: block;
+    font-size: 1.4em;
+    margin-top: 1.5em;
+    margin-bottom: 0.1em;
+
+    small {
+      font-size: 0.7em;
+    }
+  }
+
+  pre {
+    margin-bottom: 0;
+  }
+
+  code,
+  code.hljs {
+    display: block;
+    height: 20em;
+    max-height: 16vh;
+    background: white;
+    overflow-y: scroll;
+    font-size: 12px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    overflow-x: hidden;
+    margin-bottom: 0.5em;
+  }
+
+  &[aria-hidden] {
+    display: none;
+  }
+}
+
+.layout-generator-codes__close {
+  position: fixed;
+  top: 0.5em;
+  right: 1em;
+  font-weight: bold;
+
+  button {
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+}
+
+.layout-generator-codes {
+  padding-bottom: 3em;
+}
+
+@media (max-width: 1000px) {
+  .layout-generator-settings__columns {
+    display: block;
+
+    > div {
+      padding: 0;
+    }
+  }
+
+  .layout-generator-codes {
+    code,
+    code.hljs {
+      height: 10em;
+      max-height: none;
+    }
   }
 }

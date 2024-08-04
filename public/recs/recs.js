@@ -50,8 +50,9 @@ function fillData(data, typeStr) {
     const fandomStr = typeStr == "ships" ? `<p class="rec__author">${d.fandom}</p>` : "";
     const shipStr = typeStr == "ships" ? `${d.who}` : "";
     const tagsStr = d.tags ? `<p><strong>Tags:</strong> ${d.tags.replaceAll("-", " ")}</p>` : "";
-    const ifYouLikeStr = d.ifYouLike ? ` You will like this if you enjoy: ${d.ifYouLike}, …` : ``;
-    const whyStr = d.why ? `<button class='rec__why' onClick='alert("${d.why}${ifYouLikeStr}");'>Let me convince you!</button>` : "";
+    const ifYouLikeStr = d.ifYouLike ? `  ‍ ‍ ‍‍ ‍ You will like this if you enjoy ${d.ifYouLike}!` : ``;
+    const popupStr = d.why ? d.why.replaceAll("'", "´") + ifYouLikeStr.replaceAll("'", "´") : "";
+    const whyStr = d.why ? `<button class='rec__why' onClick='alert("${popupStr}");'>Let me convince you!</button>` : "";
 
     const html = `
 	  <div class="rec ${getRatingClass(d.rating)} ${turnToDecade(d.year)} ${turnToClasses(propertiesForClasses)}">

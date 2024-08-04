@@ -7,11 +7,16 @@ function getCurrentTheme() {
   if (themeFromStorage) return themeFromStorage;
 
   // otherwise, use browser preference
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  /*
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
     return "dark-mode";
-  } else {
-    return "light-mode";
-  }
+   } else {
+      return "light-mode";
+ }
+ */
+
+  // ... actually fuck that, default is light mode
+  return "light-mode";
 }
 
 export function loadTheme(theme) {

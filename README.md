@@ -12,6 +12,6 @@
 
 **Don't know where to start browsing?** Check out these:
 
-- [index.html](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/index.html): homepage
-- [main.scss](https://github.com/petracoding/petrapixel.neocities.org/blob/master/css/main.scss): css
-- [main.js](https://github.com/petracoding/petrapixel.neocities.org/blob/master/js/main.js): javascript
+- [public/index.html](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/index.html): homepage
+- [css/main.scss](https://github.com/petracoding/petrapixel.neocities.org/blob/master/css/main.scss): css
+- [js/main.js](https://github.com/petracoding/petrapixel.neocities.org/blob/master/js/main.js): javascript
