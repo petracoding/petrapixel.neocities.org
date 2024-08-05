@@ -2,14 +2,6 @@ main {
   section.clique-section {
     margin-bottom: 2.5em;
   }
-
-  h2 {
-    font-size: 20px;
-
-    @media (min-width: $lg) {
-      font-size: 28px;
-    }
-  }
 }
 
 .clique-code {

@@ -5,53 +5,18 @@
 body {
   min-height: 100vh;
   font-family: $font;
-  //   letter-spacing: -0.05em;
-  //   font-size: 15px;
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: -0.01em;
-  line-height: 1.5;
+  line-height: 1.25;
   display: flex;
   justify-content: center;
   background: var(--backgroundColor);
   background-image: url("https://petrapixel.neocities.org/assets/img/bg.png");
-  //   background-image: url("http://localhost:52330/public/assets/img/bg.png");
   background-repeat: repeat;
   color: var(--textColor);
   cursor: $cursorDefault;
   margin: 0;
   padding: 5px;
-
-  //   &::after {
-  //     content: "";
-  //     position: fixed;
-  //     top: 0;
-  //     left: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     background: var(--backgroundColor);
-  //     animation: fadeOut 1s ease;
-  //     animation-fill-mode: forwards;
-  //     pointer-events: none;
-  //     z-index: 9999999;
-  //   }
-
-  //   @keyframes fadeOut {
-  //     0% {
-  //       opacity: 1;
-  //     }
-  //     100% {
-  //       opacity: 0;
-  //     }
-  //   }
-
-  &.readable-mode {
-    line-height: 1.5;
-
-    * {
-      font-family: sans-serif !important;
-      letter-spacing: 0 !important;
-    }
-  }
 
   a {
     &,

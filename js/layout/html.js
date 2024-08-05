@@ -259,7 +259,7 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="reading:">
 				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
-				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Warrior Cats ↺</a>
+				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Warrior Cats <span style="font-family:sans-serif;font-size:0.9em">↺</span></a>
 			</li>
 			<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
@@ -267,7 +267,7 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="obsessed with:">
 				<img src="${nesting}img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true"/>
-				<span>Wolverine ♡</span>
+				<span>Wolverine <span style="font-family:sans-serif;font-size:0.9em">♡</span></span>
 			</li>
 		</ul>
 	</div>

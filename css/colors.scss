@@ -43,7 +43,7 @@ body {
 
 @mixin darkMode1 {
   $textColor: #fcdee2;
-  $backgroundColor: darken($dark, 19%);
+  $backgroundColor: black;
   $mainBackgroundColor: #3c252b;
   $linkColor: lighten($pink, 10%);
   $linkColorHover: $green;

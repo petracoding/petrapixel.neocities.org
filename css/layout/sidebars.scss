@@ -340,7 +340,7 @@
 
 #statuscafe-content {
   font-size: 0.9em;
-  min-height: 3em;
+  min-height: 2.5em;
 }
 
 /*----------  Currently  ----------*/
@@ -351,7 +351,7 @@
   font-size: 0.9em;
   border: 1px dashed;
   padding: 1em;
-  padding-top: 1.5em;
+  padding-top: 1.2em;
   padding-bottom: 0.5em;
 
   .aside-stuff__heading {
@@ -365,7 +365,7 @@
   }
 
   li {
-    margin-bottom: 1em;
+    margin-bottom: 10px;
   }
 
   a {
@@ -405,7 +405,7 @@
 .aside-mutuals {
   border: 1px dashed;
   padding: 1em;
-  padding-top: 1.5em;
+  padding-top: 1.2em;
   padding-bottom: 0.5em;
 
   .marquee > * > * {
@@ -437,7 +437,7 @@
 .aside-poll {
   border: 1px dashed;
   padding: 1em;
-  padding-top: 1.5em;
+  padding-top: 1.2em;
   padding-bottom: 0.5em;
 
   .aside-stuff__heading {
@@ -453,6 +453,7 @@
     width: 100% !important;
     font-family: inherit !important;
     padding: 0 !important;
+    line-height: 1 !important;
 
     strong {
       display: block;
@@ -465,6 +466,11 @@
         letter-spacing: -0.7px;
         opacity: 0.75;
       }
+    }
+
+    input[type="radio"] {
+      margin-top: 2px;
+      margin-right: 5px;
     }
 
     [align="center"] {
@@ -602,6 +608,7 @@
         font-weight: normal;
         font-style: normal;
         vertical-align: middle;
+        letter-spacing: 0;
 
         &:not(.aside-nav__new) {
           opacity: 0.7;
@@ -612,14 +619,14 @@
     a,
     summary {
       position: relative;
-      padding: 5px 5px;
+      padding: 3px 5px 5px;
       padding-right: 0;
       color: asideTextColor;
       text-decoration: none;
       cursor: $cursorPointer;
       font-family: $font2, $font, sans-serif;
       letter-spacing: -0.04em;
-      font-size: 16px;
+      font-size: 19px;
       border-radius: 3px;
 
       &:hover,
@@ -662,7 +669,7 @@
     li {
       a {
         padding-left: 2em;
-        font-size: 14px;
+        font-size: 18px;
 
         &::before {
           content: "—";
@@ -676,7 +683,7 @@
   }
 
   ul li:not(:last-child) ul {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
   }
 }
 

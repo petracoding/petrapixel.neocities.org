@@ -1,13 +1,23 @@
 // Fonts
 
-$font: monospace, sans-serif;
-// $font: "MS gothic", consolas, sans-serif; // see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
-$font2: "Share Tech Mono"; // strong, menu links
-$font3: "basiic"; // headings
+$font: "rainyhearts", monospace, sans-serif, "MS gothic"; // "MS gothic" see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
+$font2: "rainyhearts", monospace, sans-serif, "Share Tech Mono"; // strong, menu links
+$font3: "basiic", "rainyhearts", monospace, sans-serif;
 
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 @font-face {
-  font-family: $font3;
+  font-family: "rainyhearts";
+  src: url("../assets/fonts/rainyhearts.woff2") format("woff2"), url("../assets/fonts/rainyhearts.woff") format("woff"), url("../assets/fonts/rainyhearts.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+*/
+
+@font-face {
+  font-family: "basiic";
   src: url(https://cinni.net/fonts/basiic.ttf);
 }
 

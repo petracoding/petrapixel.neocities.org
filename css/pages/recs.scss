@@ -25,8 +25,8 @@
   &[data-filter=".r1"],
   &[data-filter=".r2"],
   &[data-filter=".r3"] {
-    font-family: $font3;
-    font-size: 1.1em;
+    font-family: sans-serif;
+    font-size: 14px;
   }
 }
 
@@ -44,8 +44,6 @@
   margin-left: 0;
   margin-right: 1px;
   margin-bottom: 5px;
-  font-size: 13px;
-  //   background-image: linear-gradient(to bottom, rgba($light, 0), rgba($pink, 0.1));
 
   small {
     font-size: 0.8em;
@@ -167,13 +165,19 @@
   }
 }
 
+.rec__desc {
+  strong {
+    font-family: $font3;
+  }
+}
+
 .rec__author {
   line-height: 1;
 }
 
 .rec__stars {
-  font-family: $font3;
-  font-size: 1.1em;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
 .rec__rating {
