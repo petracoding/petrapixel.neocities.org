@@ -41,6 +41,12 @@ main {
         }
       }
     }
+
+    &.list-with-less-spacing {
+      li {
+        margin-bottom: 0;
+      }
+    }
   }
 
   ol {

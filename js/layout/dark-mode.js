@@ -57,7 +57,7 @@ export function initThemeSwitcher() {
 export function themeSwitcherHTML() {
   return `<div id="theme-toggler" aria-hidden="true">
     <button type="button">
-      <img src="${nesting}img/layout/moon.gif" width="17" style="image-rendering:pixelated;" alt="" />
+      <img src="${nesting}img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated;" alt="" />
       <span>toggle theme</span>
     </button>
   </div>`;

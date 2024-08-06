@@ -12,6 +12,7 @@ body {
   justify-content: center;
   background: var(--backgroundColor);
   background-image: url("https://petrapixel.neocities.org/assets/img/bg.png");
+  background-image: url("https://64.media.tumblr.com/415b1f82c5be1a003c42c1027a8fcced/8b1ad74d907c42b9-3a/s500x750/1ccfb4bc62420cf0f4c79c4beab3536e8568cbb7.pnj");
   background-repeat: repeat;
   color: var(--textColor);
   cursor: $cursorDefault;
@@ -34,8 +35,7 @@ body {
 
   button {
     font-family: $font, sans-serif;
-    letter-spacing: -0.03em;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.4;
     cursor: $cursorPointer;
   }
@@ -103,10 +103,12 @@ body {
   }
 }
 
+// Tooltips
 .tippy-box.tippy-box.tippy-box {
   background-color: var(--mainBackgroundColor);
   color: var(--asideTextColor);
   box-shadow: 0px 2px 4px 0px rgba(92, 29, 50, 0.2);
+  font-size: 1em;
 
   &[data-placement^="top"] > .tippy-arrow::before {
     border-top-color: var(--mainBackgroundColor);

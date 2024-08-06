@@ -90,47 +90,6 @@
   }
 }
 
-.cool-sites {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
-  > * {
-    margin: 2px;
-  }
-
-  &.cool-sites--more-spacing > * {
-    margin: 7px;
-  }
-
-  &.cool-sites--webrings {
-    justify-content: center;
-
-    > * {
-      margin: 5px 10px !important;
-      display: flex;
-      align-items: center;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  img {
-    transition: transform 0.2s ease;
-
-    &:hover,
-    &:focus {
-      transform: scale(1.07);
-    }
-  }
-}
-
 .link-back {
   margin-top: 10px;
 
@@ -178,18 +137,6 @@
   }
 }
 
-.vertical-scroll-box {
-  border: 1px solid rgba($pink, 0.5);
-  padding: 1em;
-  border-radius: 5px;
-  max-height: 224px;
-  overflow-y: auto;
-
-  > *:first-child {
-    margin-top: 0;
-  }
-}
-
 .welcome-to-the-site {
   display: flex;
 }
@@ -219,9 +166,12 @@
 
 .hello-its-me-image {
   position: relative;
+  display: flex;
+  align-items: center;
 
   img {
     width: 100px;
+    height: auto;
     image-rendering: pixelated;
     filter: brightness(1.1) contrast(1.3);
 
@@ -259,6 +209,7 @@
 .hello-its-me-facts {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: 2em;
 
   img {
@@ -290,9 +241,88 @@
   }
 }
 
-.clique-memberships {
+// neighborhood
+
+.neighborhood {
+  h2 {
+    margin-bottom: 0.5em;
+  }
+}
+
+.neighborhood__scroll-box {
+  border: 3px dotted rgba($pink, 0.5);
+  padding: 1em;
+  border-radius: 15px;
+  max-height: 224px;
+  overflow-y: auto;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  strong {
+    font-size: 1em;
+  }
+}
+
+.neighborhood__cliques {
   position: relative;
   font-size: 0.8em;
+
+  p {
+    margin: 0.75em 0;
+  }
+}
+
+.cool-sites {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 2px;
+  }
+
+  &.cool-sites--more-spacing > * {
+    margin: 7px;
+  }
+
+  &.cool-sites--webrings {
+    justify-content: center;
+
+    > * {
+      margin: 5px 10px !important;
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  img {
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.07);
+    }
+  }
+}
+
+.neighborhood__fanlistings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 4px;
+  }
 }
 
 #dsring {

@@ -17,7 +17,7 @@ export function getBeforeMain() {
 	            <div class="aside__heading aside__heading--menu desktop-only" aria-hidden="true">Menu</div>
 	            <ul aria-label="Menu">
 	              <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>home</a></li>
-	              <li><a href="${localHref}/about/about-me.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>about me</a></li>
+	              <li><a href="${localHref}/about-me/about.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>about me</a></li>
 	              <li><a href="${localHref}/about/about-the-site.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>about the site </a></li>
 	               <!--<li><a href="${localHref}/blog.html"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>blog</a></li>-->
 				

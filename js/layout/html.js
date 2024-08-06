@@ -18,16 +18,18 @@ export function getBeforeMain() {
             <li><a href="${localHref}/"><img width="9" src="${nesting}img/layout/heart.png" alt="" aria-hidden="true"/>home</a></li>
 			<li>
 			  	<details id="menu-aboutsite">
-			 		<summary>the site <small>(5)</small></summary>
+			 		<summary>about <small>(5)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
 					<ul>
+						<li><a href="${localHref}/about-me/about.html">about me ➚ <small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 						<li><a href="${localHref}/about/about-the-site.html">about the site</a></li>
 						<li><a href="${localHref}/about/guestbook.html">guestbook</a></li>
-						<li><a href="${localHref}/about/neighbors.html">neighbors</a></li>
+						<!-- <li><a href="${localHref}/about/neighbors.html">neighbors</a></li> -->
 						<li><a href="${localHref}/about/credits.html">credits</a></li>
             			<li><a href="${localHref}/sitemap.html">sitemap</a></li>
 					</ul>
 				</details>
 			</li>
+			<!--
             <li>
 			  	<details id="menu-aboutme">
 			 		<summary>about me <small>(4)</small></summary>
@@ -39,13 +41,14 @@ export function getBeforeMain() {
 					</ul>
 				</details>
 			</li>
+			-->
 			<li>
 			  	<details id="menu-mycreations">
 			 		<summary>my creations <small>(6)</small></summary>
 					<ul>
 						<li><a href="${localHref}/creations/art.html">my art</a></li>
 		                <li><a href="${localHref}/creations/coding.html">my coding</a></li>
-		                <li><a href="${localHref}/creations/playlists.html">my playlists<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a> </li>
+		                <li><a href="${localHref}/creations/playlists.html">my playlists</a> </li>
 		                <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
 		                <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
 		                <li><a href="${localHref}/creations/writing.html">my writing</a></li>   
@@ -55,7 +58,7 @@ export function getBeforeMain() {
 			</li>
 			<li>
 			  	<details id="menu-mediarecs">
-			 		<summary>media recs <small>(5)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+			 		<summary>media recs <small>(5)</small></summary>
 					<ul>
 						<li><a href="${localHref}/recs/music.html" aria-label="music recommendations">music</a></li>
 					  	<li><a href="${localHref}/recs/tv-shows.html" aria-label="tv show recommendations">tv shows</a></li>
@@ -115,7 +118,135 @@ export function getBeforeMain() {
 		<!-- ----------------- CHANGELOG ----------------- -->
 		<div class="aside-stuff aside-changelog">
           <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="${nesting}img/layout/icon-code.png" alt="" aria-hidden="true"/></div>
-          <ul id="changelog" class="changelog custom-scrollbar" aria-label="Changelog">
+          <ul class="changelog custom-scrollbar" aria-label="Changelog">
+			  <li class="changelog__entry">
+	            <strong>2024-08-06</strong>
+	            <a href="/about-me/about.html" tabindex="-1">New main font and background and about-me page!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-08-04</strong>
+	            <span>Image of the moment added to sidebar! Also some small content changes.</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-07-20</strong>
+	            <a href="/creations/playlists.html" tabindex="-1">Added some playlists and tv show recs!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-07-17</strong>
+	            <span>Updated my age :)</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-07-07</strong>
+	            <a href="/resources/software-recs.html" tabindex="-1">Improved the look of my software recs and bookmarks pages</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-07-06</strong>
+	            <span>Spring cleaning in July.</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-06-28</strong>
+	            <span>A few small updates.</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-05-04</strong>
+	            <a href="/coding/common-questions.html" tabindex="-1">New coding help pages! 'Common questions' and 'Need help?'</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-26</strong>
+	            <a href="/coding/common-mistakes.html" tabindex="-1">New coding help page: 'Common mistakes'!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-21</strong>
+	            <a href="/about/social-media.html" tabindex="-1">Social media page added</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-19</strong>
+	            <a href="/about-me/about.html" tabindex="-1">New about-me page!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-17</strong>
+	            <a href="/about/about-the-site.html" tabindex="-1">New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-07</strong>
+	            <a href="/about/credits.html" tabindex="-1">New FavIcon!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-06</strong>
+	            <a href="/resources/google-spreadsheets-excel.html" tabindex="-1">New page: Spreadsheet templates</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-05</strong>
+	            <a href="/coding/my-setup.html" tabindex="-1">New page: My coding setup</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-04-04</strong>
+	            <span>Accessibility improvements</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-03-28</strong>
+	            <a href="/shrines/minimalism.html" tabindex="-1">Minimalism shrine added!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-03-28</strong>
+	            <a href="/about/about-the-site.html" tabindex="-1">Dark mode added!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-03-27</strong>
+	            <a href="/creations/picmix.html" tabindex="-1">Picmix page added!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-03-05</strong>
+	            <a href="/shrines/index.html" tabindex="-1">New shrine overview</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-03-02</strong>
+	            <a href="/resources/vocabulary.html" tabindex="-1">Vocabulary page added!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-27</strong>
+	            <a href="/about/cats.html" tabindex="-1">Cats page added!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-26</strong>
+	            <a href="/about/media-log.html" tabindex="-1">Media log added!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-25</strong>
+	            <a href="/about/about-the-site.html" tabindex="-1">'About the site' page added, and a new logo!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-23</strong>
+	            <a href="/shrines/german-nostalgia.html" tabindex="-1">Added my first shrine!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-21</strong>
+	            <a href="/blog.html" tabindex="-1">Another huge update, and blog added!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-15</strong>
+	            <span>Huge Update!</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-12</strong>
+	            <span>More Content, Design update</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-10</strong>
+	            <span>Even more content</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-09</strong>
+	            <span>More Content</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-08</strong>
+	            <span>Bugfixes</span>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-02-07</strong>
+	            <a href="/" tabindex="-1">Site creation!</a>
+	          </li>
 		  </ul>
         </div>
 		
@@ -123,7 +254,7 @@ export function getBeforeMain() {
 		<!-- ----------------- LINK BACK ----------------- -->
 		<div class="aside-stuff aside-link-back">
           <div class="aside-stuff__heading">Link back!<img src="${nesting}img/layout/icon-copy.png" alt="" aria-hidden="true"/></div>
-          <p>Hotlinking is a-okay!<br><small>You can change the .webp to .gif if you want, but the image will be 1KB bigger.</small></p>
+          <p>Hotlinking is a-okay!<br><small style="line-height: 1;display: block;">You can change the .webp to .gif if you want, but the image will be 1KB bigger.</small></p>
             <a href="https://petrapixel.neocities.org/" target="_blank"  tabindex="-1"
               ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@master/public/img/linkback.webp" alt="petrapixel" width="88" height="31"
             /></a>

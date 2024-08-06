@@ -1,6 +1,7 @@
 {
   "changelog": [
     { "d": "2024-07-XX", "t": "TEMPLATE", "l": "" },
+    { "d": "2024-08-05", "t": "New main font and background and about-me page!", "l": "/about-me/about.html" },
     { "d": "2024-08-04", "t": "Image of the moment added to sidebar! Also some small content changes.", "l": "" },
     { "d": "2024-07-20", "t": "Added some playlists and tv show recs!", "l": "/creations/playlists.html" },
     { "d": "2024-07-17", "t": "Updated my age :)", "l": "" },
@@ -10,7 +11,7 @@
     { "d": "2024-05-04", "t": "New coding help pages! 'Common questions' and 'Need help?'", "l": "/coding/common-questions.html" },
     { "d": "2024-04-26", "t": "New coding help page: 'Common mistakes'!", "l": "/coding/common-mistakes.html" },
     { "d": "2024-04-21", "t": "Social media page added", "l": "/about/social-media.html" },
-    { "d": "2024-04-19", "t": "New about-me page!", "l": "/about/about-me.html" },
+    { "d": "2024-04-19", "t": "New about-me page!", "l": "/about-me/about.html" },
     { "d": "2024-04-17", "t": "New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!", "l": "/about/about-the-site.html" },
     { "d": "2024-04-07", "t": "New FavIcon!", "l": "/about/credits.html" },
     { "d": "2024-04-06", "t": "New page: Spreadsheet templates", "l": "/resources/google-spreadsheets-excel.html" },

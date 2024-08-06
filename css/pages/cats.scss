@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   grid-gap: 20px;
-  padding: 1em 0 0.25em;
+  padding: 0 0 0.25em;
 
   details {
     margin-top: 1em;
@@ -56,10 +56,11 @@
 }
 
 .cat__image {
-  flex: 0 0 50%;
+  flex: 0 1 50%;
   position: relative;
 
   img {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 15px;
@@ -103,8 +104,10 @@
 .cat__description {
   text-align: justify;
   line-height: 1.5;
+  font-size: 19px;
 
   @media (max-width: $sm) {
+    font-size: 1em;
     margin-top: 10px;
     padding: 0;
   }

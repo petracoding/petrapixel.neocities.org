@@ -1,0 +1,608 @@
+.favorites-boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-me-facts {
+  img:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease;
+  }
+}
+
+.favorites-boxes__box {
+  flex: 0 0 100%;
+  margin-top: 20px;
+  border: 1px dashed $pink;
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--backgroundColor);
+
+  a {
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active {
+      color: var(--textColor);
+    }
+  }
+
+  ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .custom-scrollbar {
+    padding-right: 1em;
+    max-height: 12em;
+    overflow-y: scroll;
+    scrollbar-color: darken($purple, 10%) $pink;
+
+    > strong {
+      font-size: 1.1em;
+    }
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track-piece {
+    background-color: $pink;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:vertical {
+    background-color: darken($purple, 10%);
+  }
+
+  @media (min-width: $lg) {
+    flex: 0 0 calc(50% - 10px);
+
+    &:nth-child(odd) {
+      margin-right: 20px;
+    }
+  }
+}
+
+// -----------------------------------------------------------------
+// -----------------------------------------------------------------
+// -----------------------------------------------------------------
+
+// NEW:
+
+.about-me-page {
+  #content {
+    margin: 5vh 0 0;
+    grid-template: "sidebar main" auto / 150px auto;
+  }
+
+  #theme-toggler {
+    left: auto;
+    right: 7px;
+  }
+
+  main {
+    position: relative;
+    border: none;
+    margin-top: 0 !important;
+    max-height: 90vh;
+    background: none;
+    overflow-y: auto;
+    margin-right: 20px;
+
+    section {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+  }
+
+  aside {
+    grid-area: sidebar;
+    display: flex;
+    align-items: center;
+    max-height: 90vh;
+    padding-left: 1em;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      strong {
+        display: inline-block;
+        font-size: 1.3em;
+        background: $pink;
+        margin-bottom: 0.5em;
+        padding: 0 0.3em;
+        border-radius: 10px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+      }
+
+      a {
+        display: block;
+        padding: 0.2em 0;
+        font-size: 1.3em;
+        // transform-origin: left center;
+        transition: 0.3s ease;
+        text-decoration: none;
+
+        &:not(.active) {
+          &:hover {
+            transform: scale(1.15);
+            text-decoration: underline;
+            text-decoration-style: wavy;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    &:not(.visible) {
+      display: none;
+    }
+  }
+
+  nav li.active {
+    &::after {
+      content: " ←";
+      margin-left: 0.5em;
+      font-size: 1.5em;
+    }
+
+    a {
+      font-weight: bold;
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      cursor: $cursorDefault;
+    }
+  }
+}
+
+.about-me-page-back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 2em;
+  z-index: 99;
+
+  &:hover,
+  &:focus {
+    color: $green;
+    text-decoration-style: wavy;
+  }
+}
+
+.about-me-page-window {
+  position: relative;
+  margin-top: 50px;
+  border: 2px solid $pink;
+  padding: 17px;
+  background: var(--mainBackgroundColor);
+  max-width: 730px;
+  min-width: 130px;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  &::before {
+    content: attr(aria-label) ".txt";
+    position: absolute;
+    bottom: 100%;
+    left: -2px;
+    right: -2px;
+    background: $pink;
+    height: 30px;
+    color: $mainBackgroundColor;
+    font-size: 1.1em;
+    padding-left: 20px;
+    border: 2px solid $pink;
+    border-bottom: 0;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    padding-bottom: 1px;
+  }
+
+  &::after {
+    content: "";
+    width: 59px;
+    height: 15px;
+    background-image: url("https://i.imgur.com/A2Q3NsS.png");
+    position: absolute;
+    bottom: calc(100% + 9px);
+    right: 8px;
+  }
+}
+
+.about-me-page-pics {
+  width: 230px;
+
+  > * {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-color: $light $pink;
+    scrollbar-width: thin;
+  }
+
+  &::before {
+    content: attr(aria-label) ".png";
+  }
+
+  .image {
+    display: flex;
+    width: 190px;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    img {
+      display: block;
+      width: inherit;
+      height: auto;
+      filter: brightness(1.1) contrast(1.3);
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: #c891bd;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus {
+      span {
+        opacity: 1;
+      }
+
+      img {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+    }
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    padding: 0.5em 0.1em;
+    text-align: center;
+    background: var(--mainBackgroundColor);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+
+.about-me-page-pics::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.about-me-page-pics::-webkit-scrollbar-track-piece {
+  background-color: $pink;
+}
+
+.about-me-page-pics::-webkit-scrollbar-thumb:vertical {
+  background-color: $light;
+}
+
+.about-me-page-info {
+  &::before {
+    content: "Petra.exe";
+  }
+
+  .two-columns ul {
+    margin-top: 0;
+  }
+}
+
+.about-me-page-facts {
+  img:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease;
+  }
+}
+
+.about-me-page-likes {
+  p {
+    padding-right: 2em;
+  }
+}
+
+.about-me-page-likes__img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: auto !important;
+}
+
+.about-me-page-favorites {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-me-page-fav {
+  position: relative !important;
+  margin-right: 1em;
+  //   padding: 16px;
+
+  &[aria-label="YouTubers"]::before {
+    content: attr(aria-label) ".mp4";
+  }
+
+  &[aria-label="Shows"]::before {
+    content: attr(aria-label) ".mkv";
+  }
+
+  &[aria-label="Movies"]::before {
+    content: attr(aria-label) ".mov";
+  }
+
+  &[aria-label="Musicians"]::before {
+    content: attr(aria-label) ".mp3";
+  }
+
+  &[aria-label="Games"]::before {
+    content: attr(aria-label) ".exe";
+  }
+
+  &[aria-label="Books"]::before {
+    content: attr(aria-label) ".epub";
+  }
+
+  a {
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active {
+      color: var(--textColor);
+    }
+  }
+
+  ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .custom-scrollbar {
+    max-height: 7em;
+    padding-right: 1.5em;
+    overflow-y: scroll;
+
+    > strong {
+      display: none;
+      font-size: 1.1em;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2em;
+    }
+  }
+}
+
+/**
+ *
+ * POSITIONING
+ *
+ */
+
+@media (max-height: 700px) {
+  .about-me-page #content {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: $xl) {
+  .about-me-page {
+    main {
+      align-self: center;
+      height: 625px;
+      max-height: 95vh;
+    }
+  }
+
+  .about-me-page-window {
+    position: absolute;
+  }
+
+  .about-me-page-pics {
+    &[aria-label="Me"] {
+      bottom: 0;
+      right: 11%;
+
+      &::before {
+        padding-left: 25px;
+      }
+    }
+
+    &[aria-label="Hobbies"] {
+      left: 0;
+      bottom: 0;
+    }
+
+    &[aria-label="Likes"] {
+      right: 4%;
+      top: 29.5%;
+    }
+
+    &[aria-label="Favorites"] {
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .about-me-page-facts {
+    max-width: 130px;
+    right: 0;
+    top: 0;
+
+    &::before {
+      content: "";
+    }
+  }
+
+  .about-me-page-info {
+    z-index: 1;
+    top: 6%;
+  }
+
+  .about-me-page-core {
+    bottom: 1%;
+    left: 8%;
+
+    .custom-scrollbar {
+      max-height: 100px;
+      padding-right: 1em;
+      overflow-y: scroll;
+
+      ul {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .about-me-page-hobbies {
+    left: 2%;
+    top: 9%;
+  }
+
+  .about-me-page-likes {
+    right: 0;
+    max-width: 585px;
+
+    &[aria-label="Likes"] {
+      top: 0;
+    }
+
+    &[aria-label="Dislikes"] {
+      max-width: 665px;
+      bottom: 0;
+    }
+  }
+
+  .about-me-page-sns {
+    top: 14%;
+    left: 9%;
+  }
+
+  .about-me-page-sns-games {
+    top: 31%;
+    right: 36%;
+  }
+
+  .about-me-page-sns-coding {
+    top: 61%;
+    left: 21%;
+  }
+
+  .about-me-page-trackers {
+    bottom: 8%;
+    right: 10%;
+  }
+}
+
+/**
+ *
+ * MOBILE
+ *
+ */
+
+@media (max-width: $sm) {
+  .about-me-page-back {
+    position: absolute;
+  }
+
+  .about-me-page {
+    #content {
+      margin-top: 50px;
+      grid-template:
+        "sidebar" auto
+        "main" auto
+        / 1fr;
+    }
+
+    aside {
+      max-height: none;
+      padding-left: 0;
+
+      nav {
+        width: 100%;
+      }
+
+      ul {
+        display: flex;
+        justify-content: center;
+
+        a {
+          font-size: 1.1em;
+        }
+
+        li {
+          margin-right: 1em;
+
+          &::after {
+            display: none !important;
+          }
+        }
+
+        li:first-child {
+          display: none;
+        }
+
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    main {
+      max-height: none;
+      margin-right: 0;
+    }
+  }
+
+  .about-me-page-window {
+    padding: 10px;
+
+    &::before {
+      padding-left: 10px;
+    }
+  }
+
+  .about-me-page-pics {
+    width: 100%;
+
+    .image {
+      width: 80vw;
+    }
+  }
+
+  .about-me-page-fav .custom-scrollbar {
+    max-height: none;
+  }
+}

@@ -5,9 +5,7 @@ export function initSidebar() {
   initMenu();
   doActiveLinks();
   initLuckyBtn();
-  getChangelog();
   initLastFmWidget();
-  //   initHitcountWidget();
   initStatusCafeWidget();
   initBlinkies();
   initMutuals();
@@ -109,30 +107,6 @@ function initLastFmWidget() {
     });
 }
 
-function initHitcountWidget() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      var site_data = JSON.parse(this.responseText);
-      var num_arr = site_data.info.views.toString().split("");
-      var num_str = "";
-      let i;
-      for (i = 0; i < num_arr.length; i++) {
-        num_str += num_arr[i];
-        if ((num_arr.length - 1 - i) % 3 == 0 && num_arr.length - 1 - i != 0) {
-          num_str += ",";
-        }
-        // var date_str = site_data.info.last_updated;
-        // var date_obj = new Date(site_data.info.last_updated);
-        //   document.getElementById("lastupdate").innerHTML = date_obj.getMonth() + 1 + "-" + date_obj.getDate() + "-" + date_obj.getFullYear();
-      }
-      document.getElementById("hitcount").innerHTML = num_str;
-    }
-  };
-  xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=petrapixel", true);
-  xhttp.send();
-}
-
 function initStatusCafeWidget() {
   fetch("https://status.cafe/users/petra1999/status.json")
     .then((r) => r.json())
@@ -144,45 +118,6 @@ function initStatusCafeWidget() {
       document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/petra1999" target="_blank">' + r.author + "</a> " + r.face + " " + r.timeAgo;
       document.getElementById("statuscafe-content").innerHTML = r.content;
     });
-}
-
-function getChangelog() {
-  const changelogFile = isLocalhost ? "http://localhost:52330/public/assets/changelog.json" : "https://petrapixel.neocities.org/assets/changelog.json";
-  const MAX_LOGS = 100;
-  fetch(changelogFile + noCache)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      return res.json();
-    })
-    .then((data) => {
-      // note: changelog[0] ist the template
-      let changelogHtml = "";
-      let i = 1;
-      data.changelog.forEach((c) => {
-        if (c.t !== "TEMPLATE" && i <= MAX_LOGS) {
-          i++;
-          if (c.l !== "") {
-            changelogHtml += `
-		  <li class="changelog__entry">
-            <strong>${c.d}</strong>
-            <a href="${c.l}" tabindex="-1">${c.t}</a>
-          </li>
-		  `;
-          } else {
-            changelogHtml += `
-		  <li class="changelog__entry">
-            <strong>${c.d}</strong>
-            <span>${c.t}</span>
-          </li>
-		  `;
-          }
-        }
-      });
-      document.querySelector("#changelog").innerHTML = changelogHtml;
-    })
-    .catch((error) => console.error("Unable to fetch data:", error));
 }
 
 function initBlinkies() {
