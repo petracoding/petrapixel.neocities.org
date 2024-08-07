@@ -4,11 +4,10 @@ const noCache = "?nocache=" + new Date().getTime();
 export function initSidebar() {
   initMenu();
   doActiveLinks();
-  initLuckyBtn();
   initLastFmWidget();
   initStatusCafeWidget();
-  initBlinkies();
   initMutuals();
+  initBlinkies();
 }
 
 function initMenu() {
@@ -68,32 +67,6 @@ function doActiveLinks() {
   }
 }
 
-function initLuckyBtn() {
-  const btn = document.querySelector("#lucky-btn");
-  if (!btn) return;
-  btn.addEventListener("click", () => {
-    const file = isLocalhost ? `http://localhost:52330/public/blog/blog.json` : `https://petrapixel.neocities.org/blog/blog.json`;
-    fetch(`${file}${noCache}`)
-      .then(function (response) {
-        switch (response.status) {
-          case 200:
-            return response.json();
-          case 404:
-            throw response;
-        }
-      })
-      .then(function (data) {
-        const articlesJson = data["blog"];
-        const randomArticle = articlesJson[Math.floor(Math.random() * articlesJson.length)];
-        const randomArticleUrl = "/blog/" + randomArticle["fileName"] + ".html";
-        window.location.href = (isLocalhost ? "/public" : "") + randomArticleUrl;
-      })
-      .catch(function (response) {
-        console.error("Loading Blog Json: " + response.statusText);
-      });
-  });
-}
-
 function initLastFmWidget() {
   let user = "Petra1999";
   let url = "https://lastfm-last-played.biancarosa.com.br/" + user + "/latest-song";
@@ -144,9 +117,9 @@ function initBlinkies() {
       if (!wrapper) return;
       const nesting = wrapper.getAttribute("data-nesting");
       wrapper.querySelector(".aside-blinkies__buttons div").innerHTML = doc.querySelector("#buttons-to-load").innerHTML.replaceAll("../", nesting);
-      wrapper.querySelector(".aside-blinkies__stamps div").innerHTML = doc.querySelector("#stamps-to-load").innerHTML.replaceAll("../", nesting);
+      //   wrapper.querySelector(".aside-blinkies__stamps div").innerHTML = doc.querySelector("#stamps-to-load").innerHTML.replaceAll("../", nesting);
       wrapper.querySelector(".aside-blinkies__blinkies div").innerHTML = doc.querySelector("#blinkies-to-load").innerHTML.replaceAll("../", nesting);
-      wrapper.querySelector(".aside-blinkies__userboxes div").innerHTML = doc.querySelector("#userboxes-to-load").innerHTML.replaceAll("../", nesting);
+      //   wrapper.querySelector(".aside-blinkies__userboxes div").innerHTML = doc.querySelector("#userboxes-to-load").innerHTML.replaceAll("../", nesting);
 
       initMarquee(".aside-blinkies__buttons", 0.5);
       initMarquee(".aside-blinkies__stamps", 0.4);

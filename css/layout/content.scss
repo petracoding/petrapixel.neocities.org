@@ -68,7 +68,7 @@ main {
   pre code:not(.hljs),
   pre code.hljs {
     display: block;
-
+    font-weight: normal;
     background: rgba($purple, 0.1);
     padding: 1em;
     border-radius: 10px;
@@ -83,8 +83,8 @@ main {
 
   code {
     text-transform: none;
-    // background: rgba($purple, 0.1);
-    // padding: 0.5em;
+    font-size: 13px;
+    font-weight: bold;
   }
 
   .code-title {
@@ -451,7 +451,7 @@ img[src*="inline/"]:not([class]) {
 
 #guestbook {
   width: 100%;
-  min-height: 500px;
+  min-height: 610px;
   border: 0;
 }
 

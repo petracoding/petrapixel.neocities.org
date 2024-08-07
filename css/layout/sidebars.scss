@@ -455,23 +455,34 @@
     font-family: inherit !important;
     padding: 0 !important;
     line-height: 1 !important;
+    margin-left: -5px;
+    margin-right: -5px;
 
-    strong {
-      display: block;
-      line-height: 1.2;
-      margin-bottom: 0.5em;
+    // Questoin
+    > div {
+      padding: 2px 5px 4px 5px !important;
 
-      small {
-        font-weight: normal;
-        font-size: 0.7em;
-        letter-spacing: -0.7px;
-        opacity: 0.75;
+      strong {
+        display: block;
+        line-height: 1.2;
+        margin-bottom: 0.5em;
+
+        small {
+          font-weight: normal;
+          font-size: 0.7em;
+          letter-spacing: -0.7px;
+          opacity: 0.75;
+        }
       }
     }
 
     input[type="radio"] {
       margin-top: 2px;
       margin-right: 5px;
+
+      & + label {
+        max-width: calc(100% - 25px);
+      }
     }
 
     [align="center"] {

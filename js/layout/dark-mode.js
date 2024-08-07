@@ -9,11 +9,11 @@ function getCurrentTheme() {
   // otherwise, use browser preference
   /*
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    return "dark-mode";
-   } else {
-      return "light-mode";
- }
- */
+	    return "dark-mode";
+	   } else {
+	      return "light-mode";
+	 }
+	 */
 
   // ... actually fuck that, default is light mode
   return "light-mode";
@@ -65,6 +65,6 @@ export function themeSwitcherHTML() {
 
 // for non-standard-layout pages
 export function addThemeSwitcherToPage() {
-  document.body.insertAdjacentHTML("afterbegin", themeSwitcherHTML());
+  document.body.insertAdjacentHTML("beforeend", themeSwitcherHTML());
   initThemeSwitcher();
 }

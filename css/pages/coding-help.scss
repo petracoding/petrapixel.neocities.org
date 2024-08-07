@@ -41,8 +41,7 @@
   border-left: 1px solid;
   padding-left: 1em;
   padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 2.5em;
+  margin-top: 2em;
 
   strong {
     font-size: 1.1em;
@@ -52,10 +51,17 @@
 .checklist {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 3em;
+  margin-bottom: 2.5em;
+  margin-top: 1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   code {
-    background: pink;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0;
   }
 
   li {

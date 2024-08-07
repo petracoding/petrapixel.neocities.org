@@ -1,13 +1,10 @@
 import "../css/main.scss";
 import { buildLayout } from "./layout/layout";
-import { buildAboutMeLayout } from "./layout/about-me-layout";
 import { addThemeSwitcherToPage, loadTheme } from "./layout/dark-mode";
 import { initClipboard } from "./pages/clipboard";
 import { initPlaylists } from "./pages/playlists";
 import { initWritingChart } from "./pages/writing";
-import { initBlog } from "./pages/blog";
 import { initRandomGenerator } from "./pages/random-generator";
-import { initAboutMePage } from "./pages/about-me";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 
@@ -21,8 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Layout:
   if (document.querySelector("body.load-layout")) {
     buildLayout();
-  } else if (document.querySelector("body.load-about-me-layout")) {
-    buildAboutMeLayout();
   } else if (document.querySelector("body.load-theme-switcher")) {
     addThemeSwitcherToPage();
   }
@@ -35,9 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initClipboard();
   initPlaylists();
   initWritingChart();
-  initBlog();
   initRandomGenerator();
-  initAboutMePage();
 
   // Misc.
   initTooltips();

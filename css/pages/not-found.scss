@@ -4,10 +4,12 @@ body.not-found-page {
 
 .not-found-page-content main {
   background: white;
-  width: 300px;
+  width: 320px;
   padding: 2em;
   margin-top: 3em;
-  border: 2px solid black;
+  border: 2px solid currentColor;
+  border-radius: 20px;
+  font-size: 1.3em;
 
   img[src*="inline/"]:not([class]) {
     height: 31px;

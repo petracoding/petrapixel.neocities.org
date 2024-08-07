@@ -1,6 +1,5 @@
 .bookmarks-section {
   a {
-    font-weight: bold;
     text-transform: capitalize;
   }
 
@@ -53,29 +52,31 @@
 }
 
 .bookmark__title {
-  font-weight: bold;
-  width: 21vw;
+  //   font-weight: bold;
+  font-size: 1.1em;
   padding: 0 0.25em;
+  flex: 1 0 0;
 }
 
 .bookmark__description {
   flex: 1 0 0;
-  //   font-size: 0.95em;
   padding: 0 0.25em;
+
+  &:empty {
+    display: none;
+  }
 }
 
 @media (max-width: $md) {
   .bookmark {
     display: block;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
 
   .bookmark__title {
     width: auto;
     padding: 0;
-
-    // &::after {
-    //     content: ": ";
-    // }
   }
 
   .bookmark__description {

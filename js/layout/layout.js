@@ -14,31 +14,12 @@ export function buildLayout() {
   initThemeSwitcher();
   prepareScrollToTop();
   buildTableOfContents();
-  initInlineImages();
-  initExternalLinks();
   initSidebar();
 
   document.body.classList.add("-layout-loaded");
 }
 
 // -------------------
-
-function initExternalLinks() {
-  const allLinks = document.querySelectorAll("main a[href]:not([target])");
-  [...allLinks].forEach((linkEl) => {
-    const href = linkEl.getAttribute("href");
-    const isLocal = href.includes("localhost:") || href.includes("petrapixel") || Array.from(href)[0] == "/" || Array.from(href)[0] == "#";
-    if (!isLocal) linkEl.setAttribute("target", "_blank");
-  });
-}
-
-function initInlineImages() {
-  const allInlineImages = document.querySelectorAll('img[src*="inline/"]:not([class])');
-  [...allInlineImages].forEach((inlineImg) => {
-    inlineImg.setAttribute("aria-hidden", "true");
-    inlineImg.setAttribute("alt", "");
-  });
-}
 
 function prepareScrollToTop() {
   const el = document.querySelector("#back-to-top-link");

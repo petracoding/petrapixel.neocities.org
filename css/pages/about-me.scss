@@ -129,6 +129,14 @@
           width: 100%;
           height: auto;
           transition: transform 0.3s ease;
+
+          @media (max-height: 650px) {
+            width: 75%;
+          }
+
+          @media (max-height: 500px) {
+            width: 50%;
+          }
         }
 
         div {
@@ -170,6 +178,80 @@
     color: $green;
     text-decoration-style: wavy;
   }
+}
+
+.about-me-page__images {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  display: flex;
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  z-index: 1;
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 40%;
+    overflow: hidden;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.3);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: #c891bd;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 850px) {
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow: initial;
+    margin-top: 40px;
+
+    .image {
+      width: calc(20% - 8px);
+    }
+  }
+}
+
+.about-me-page__images-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 70px;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0px 0px 5px white;
 }
 
 .about-me-page__facts {
@@ -236,7 +318,8 @@
 }
 
 .media-log h2 {
-  animation: none;
+  // otherwise not visible
+  animation: none !important;
 }
 
 /**

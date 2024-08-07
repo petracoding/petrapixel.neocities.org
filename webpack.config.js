@@ -4,10 +4,7 @@ module.exports = {
   mode: "production",
   entry: {
     main: "./js/main.js",
-    // tutorials: "./js/tutorials/main.js",
-    // templateGenerator: "./js/layout-generator/main.js",
-    // template1: "./js/templates/template1.js",
-    // template2: "./js/templates/template2.js",
+    // layoutGenerator: "./js/layout-generator/main.js",
   },
   output: {
     path: path.resolve(__dirname, "public/assets"),
