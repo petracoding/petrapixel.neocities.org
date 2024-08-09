@@ -6,7 +6,7 @@ $font3: "basiic", "rainyhearts", monospace, sans-serif;
 
 @font-face {
   font-family: "rainyhearts";
-  src: url("../assets/fonts/rainyhearts.woff2") format("woff2"), url("../assets/fonts/rainyhearts.woff") format("woff"), url("../assets/fonts/rainyhearts.ttf") format("truetype");
+  src: url("./fonts/rainyhearts.woff2") format("woff2"), url("./fonts/rainyhearts.woff") format("woff"), url("./fonts/rainyhearts.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;

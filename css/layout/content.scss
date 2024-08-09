@@ -24,6 +24,12 @@ main {
     color: darken($textColor, 5%);
   }
 
+  .image {
+    img {
+      max-width: 100%;
+    }
+  }
+
   ol,
   ul {
     margin: 0.25em 0;

@@ -2,6 +2,7 @@ import { themeSwitcherHTML } from "./dark-mode";
 
 const isLocalhost = window.location.href.includes("http://localhost");
 const localHref = isLocalhost ? "/public" : "";
+const dotHtml = isLocalhost ? ".html" : "";
 const scriptEl = document.querySelector('head script[src*="main.js"]');
 const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("assets/js/main.js") ? "./" : "../") : "../";
 
@@ -20,12 +21,12 @@ export function getBeforeMain() {
 			  	<details id="menu-aboutsite">
 			 		<summary>about <small>(5)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
 					<ul>
-						<li><a href="${localHref}/about-me/about.html">about me ➚ <small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
-						<li><a href="${localHref}/about/about-the-site.html">about the site</a></li>
-						<li><a href="${localHref}/about/guestbook.html">guestbook</a></li>
-						<!-- <li><a href="${localHref}/about/neighbors.html">neighbors</a></li> -->
-						<li><a href="${localHref}/about/credits.html">credits</a></li>
-            			<li><a href="${localHref}/sitemap.html">sitemap</a></li>
+						<li><a href="${localHref}/about-me/about${dotHtml}">about me ➚ <small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/about/about-the-site${dotHtml}">about the site</a></li>
+						<li><a href="${localHref}/about/guestbook${dotHtml}">guestbook</a></li>
+						<!-- <li><a href="${localHref}/about/neighbors${dotHtml}">neighbors</a></li> -->
+						<li><a href="${localHref}/about/credits${dotHtml}">credits</a></li>
+            			<li><a href="${localHref}/sitemap${dotHtml}">sitemap</a></li>
 					</ul>
 				</details>
 			</li>
@@ -34,10 +35,10 @@ export function getBeforeMain() {
 			  	<details id="menu-aboutme">
 			 		<summary>about me <small>(4)</small></summary>
 					<ul>
-						<li><a href="${localHref}/about/about-me.html">about me</a></li>
-		    			<li><a href="${localHref}/about/cats.html">my cats</small></a></li>
-						<li><a href="${localHref}/about/media-log.html">media log</a></li>
-						<li><a href="${localHref}/about/social-media.html">social media</a></li>
+						<li><a href="${localHref}/about/about-me${dotHtml}">about me</a></li>
+		    			<li><a href="${localHref}/about/cats${dotHtml}">my cats</small></a></li>
+						<li><a href="${localHref}/about/media-log${dotHtml}">media log</a></li>
+						<li><a href="${localHref}/about/social-media${dotHtml}">social media</a></li>
 					</ul>
 				</details>
 			</li>
@@ -46,13 +47,13 @@ export function getBeforeMain() {
 			  	<details id="menu-mycreations">
 			 		<summary>my creations <small>(6)</small></summary>
 					<ul>
-						<li><a href="${localHref}/creations/art.html">my art</a></li>
-		                <li><a href="${localHref}/creations/coding.html">my coding</a></li>
-		                <li><a href="${localHref}/creations/playlists.html">my playlists</a> </li>
-		                <li><a href="${localHref}/creations/video-edits.html">my video edits</a></li>
-		                <!-- <li><a href="${localHref}/creations/web-weaves.html">my web weaves</a></li> -->
-		                <li><a href="${localHref}/creations/writing.html">my writing</a></li>   
-						<li><a href="${localHref}/creations/picmix.html">my picmixes</a></li>
+						<li><a href="${localHref}/creations/art${dotHtml}">my art</a></li>
+		                <li><a href="${localHref}/creations/coding${dotHtml}">my coding</a></li>
+		                <li><a href="${localHref}/creations/playlists${dotHtml}">my playlists</a> </li>
+		                <li><a href="${localHref}/creations/video-edits${dotHtml}">my video edits</a></li>
+		                <!-- <li><a href="${localHref}/creations/web-weaves${dotHtml}">my web weaves</a></li> -->
+		                <li><a href="${localHref}/creations/writing${dotHtml}">my writing</a></li>   
+						<li><a href="${localHref}/creations/picmix${dotHtml}">my picmixes</a></li>
 					</ul>
 				</details>
 			</li>
@@ -72,29 +73,30 @@ export function getBeforeMain() {
 			  	<details id="menu-resources">
 			 		<summary>resources <small>(6)</small></summary>
 					<ul>
-						<li><a href="${localHref}/resources/bookmarks.html">bookmarks</a></li>
-		                <li><a href="${localHref}/resources/software-recs.html">software recs</a></li>
-		                <li><a href="${localHref}/resources/clipboard.html">clipboard</a></li>
-		                <li><a href="${localHref}/resources/notion.html">notion</a></li>
-		                <li><a href="${localHref}/resources/google-spreadsheets-excel.html">spreadsheets</a></li>
-		                <li><a href="${localHref}/resources/vocabulary.html">vocabulary</a></li>
+						<li><a href="${localHref}/resources/bookmarks${dotHtml}">bookmarks</a></li>
+		                <li><a href="${localHref}/resources/software-recs${dotHtml}">software recs</a></li>
+		                <li><a href="${localHref}/resources/clipboard${dotHtml}">clipboard</a></li>
+		                <li><a href="${localHref}/resources/notion${dotHtml}">notion</a></li>
+		                <li><a href="${localHref}/resources/google-spreadsheets-excel${dotHtml}">spreadsheets</a></li>
+		                <li><a href="${localHref}/resources/vocabulary${dotHtml}">vocabulary</a></li>
 					</ul>
 				</details>
 			</li>
 			<li>
 			  	<details id="menu-codinghelp">
-			 		<summary>coding help <small>(7)</small></summary>
+			 		<summary>coding help <small>(8)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
 					<ul>
-						<li><a href="${localHref}/coding/need-help.html">need help?</a></li>
-						<li><a href="${localHref}/coding/common-questions.html">common questions</a></li>
-						<li><a href="${localHref}/coding/common-mistakes.html">common mistakes</a></li>
-						<li><a href="${localHref}/coding/layout-base-code.html">layout base code</a></li>
-						<!-- <li><a href="${localHref}/coding/checklist.html">checklist</a></li> -->
-						<li><a href="${localHref}/coding/snippets.html">snippets & tips</a></li>
-						<li><a href="${localHref}/coding/neocities.html">neocities help</a></li>
-						<li><a href="${localHref}/coding/my-setup.html">my coding setup</a></li>
-						<!-- <li><a href="${localHref}/coding/webpack-tutorial.html">webpack tutorial</a></li> -->
-						<!-- <li><a href="${localHref}/coding/layout-generator.html">layout generator</a></li> -->
+						<li><a href="${localHref}/coding/need-help${dotHtml}">need help?</a></li>
+						<li><a href="${localHref}/coding/common-questions${dotHtml}">common questions</a></li>
+						<li><a href="${localHref}/coding/common-mistakes${dotHtml}">common mistakes</a></li>
+						<li><a href="${localHref}/coding/layout-base-code${dotHtml}">layout base code</a></li>
+						<li><a href="${localHref}/coding/snippets${dotHtml}">snippets & tips</a></li>
+						<li><a href="${localHref}/coding/checklist${dotHtml}">self-study checklist<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/coding/neocities${dotHtml}">neocities help</a></li>
+						<li><a href="${localHref}/coding/my-setup${dotHtml}">my coding setup</a></li>
+						<!-- <li><a href="${localHref}/coding/git-tutorial${dotHtml}">git tutorial<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
+						<!-- <li><a href="${localHref}/coding/webpack-tutorial${dotHtml}">webpack tutorial<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
+						<!-- <li><a href="${localHref}/coding/layout-generator${dotHtml}">layout generator<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
 					</ul>
 				</details>
 			</li>
@@ -102,10 +104,10 @@ export function getBeforeMain() {
 			  	<details id="menu-more">
 			 		<summary>more <small>(4)</small></summary>
 					<ul>
-						<li><a href="${localHref}/shrines/index.html">shrines</a></li>
-						<li><a href="${localHref}/about/blinkies.html">blinkies & more</a></li> 
-						<li><a href="${localHref}/fun/list-idea-generator.html">list idea generator</a></li>
-						<li><a href="${localHref}/fun/bored-button.html">are you bored?</a></li>
+						<li><a href="${localHref}/shrines/index${dotHtml}">shrines</a></li>
+						<li><a href="${localHref}/about/blinkies${dotHtml}">blinkies & more</a></li> 
+						<li><a href="${localHref}/fun/list-idea-generator${dotHtml}">list idea generator</a></li>
+						<li><a href="${localHref}/fun/bored-button${dotHtml}">are you bored?</a></li>
 					</ul>
 				</details>
 			</li>
@@ -120,9 +122,21 @@ export function getBeforeMain() {
 		<div class="aside-stuff aside-changelog">
           <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="${nesting}img/layout/icon-code.png" alt="" aria-hidden="true"/></div>
           <ul class="changelog custom-scrollbar" aria-label="Changelog">
+			  <!-- <li class="changelog__entry">
+	            <strong>2024-08-12</strong>
+	            <a href="/rss.xml" tabindex="-1">I have an RSS feed now!</a>
+	          </li> -->
+			  <li class="changelog__entry">
+	            <strong>2024-08-09</strong>
+	            <a href="/coding/checklist" tabindex="-1">New page: Self-Study Coding Checklist!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-08-07</strong>
+	            <span>New link-back button! If you're not hotlinking please update it!</span>
+	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-08-06</strong>
-	            <a href="/about-me/about.html" tabindex="-1">New main font and background and about-me page!</a>
+	            <a href="/about-me/about" tabindex="-1">New main font and background and about-me page!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-08-04</strong>
@@ -130,7 +144,7 @@ export function getBeforeMain() {
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-07-20</strong>
-	            <a href="/creations/playlists.html" tabindex="-1">Added some playlists and tv show recs!</a>
+	            <a href="/creations/playlists" tabindex="-1">Added some playlists and tv show recs!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-07-17</strong>
@@ -138,7 +152,7 @@ export function getBeforeMain() {
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-07-07</strong>
-	            <a href="/resources/software-recs.html" tabindex="-1">Improved the look of my software recs and bookmarks pages</a>
+	            <a href="/resources/software-recs" tabindex="-1">Improved the look of my software recs and bookmarks pages</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-07-06</strong>
@@ -150,35 +164,35 @@ export function getBeforeMain() {
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-05-04</strong>
-	            <a href="/coding/common-questions.html" tabindex="-1">New coding help pages! 'Common questions' and 'Need help?'</a>
+	            <a href="/coding/common-questions" tabindex="-1">New coding help pages! 'Common questions' and 'Need help?'</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-26</strong>
-	            <a href="/coding/common-mistakes.html" tabindex="-1">New coding help page: 'Common mistakes'!</a>
+	            <a href="/coding/common-mistakes" tabindex="-1">New coding help page: 'Common mistakes'!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-21</strong>
-	            <a href="/about/social-media.html" tabindex="-1">Social media page added</a>
+	            <a href="/about/social-media" tabindex="-1">Social media page added</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-19</strong>
-	            <a href="/about-me/about.html" tabindex="-1">New about-me page!</a>
+	            <a href="/about-me/about" tabindex="-1">New about-me page!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-17</strong>
-	            <a href="/about/about-the-site.html" tabindex="-1">New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!</a>
+	            <a href="/about/about-the-site" tabindex="-1">New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-07</strong>
-	            <a href="/about/credits.html" tabindex="-1">New FavIcon!</a>
+	            <a href="/about/credits" tabindex="-1">New FavIcon!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-06</strong>
-	            <a href="/resources/google-spreadsheets-excel.html" tabindex="-1">New page: Spreadsheet templates</a>
+	            <a href="/resources/google-spreadsheets-excel" tabindex="-1">New page: Spreadsheet templates</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-05</strong>
-	            <a href="/coding/my-setup.html" tabindex="-1">New page: My coding setup</a>
+	            <a href="/coding/my-setup" tabindex="-1">New page: My coding setup</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-04-04</strong>
@@ -186,43 +200,43 @@ export function getBeforeMain() {
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-03-28</strong>
-	            <a href="/shrines/minimalism.html" tabindex="-1">Minimalism shrine added!</a>
+	            <a href="/shrines/minimalism" tabindex="-1">Minimalism shrine added!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-03-28</strong>
-	            <a href="/about/about-the-site.html" tabindex="-1">Dark mode added!</a>
+	            <a href="/about/about-the-site" tabindex="-1">Dark mode added!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-03-27</strong>
-	            <a href="/creations/picmix.html" tabindex="-1">Picmix page added!</a>
+	            <a href="/creations/picmix" tabindex="-1">Picmix page added!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-03-05</strong>
-	            <a href="/shrines/index.html" tabindex="-1">New shrine overview</a>
+	            <a href="/shrines/index" tabindex="-1">New shrine overview</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-03-02</strong>
-	            <a href="/resources/vocabulary.html" tabindex="-1">Vocabulary page added!</a>
+	            <a href="/resources/vocabulary" tabindex="-1">Vocabulary page added!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-02-27</strong>
-	            <a href="/about/cats.html" tabindex="-1">Cats page added!</a>
+	            <a href="/about/cats" tabindex="-1">Cats page added!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-02-26</strong>
-	            <a href="/about/media-log.html" tabindex="-1">Media log added!</a>
+	            <a href="/about/media-log" tabindex="-1">Media log added!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-02-25</strong>
-	            <a href="/about/about-the-site.html" tabindex="-1">'About the site' page added, and a new logo!</a>
+	            <a href="/about/about-the-site" tabindex="-1">'About the site' page added, and a new logo!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-02-23</strong>
-	            <a href="/shrines/german-nostalgia.html" tabindex="-1">Added my first shrine!</a>
+	            <a href="/shrines/german-nostalgia" tabindex="-1">Added my first shrine!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-02-21</strong>
-	            <a href="/blog.html" tabindex="-1">Another huge update, and blog added!</a>
+	            <a href="/blog" tabindex="-1">Another huge update, and blog added!</a>
 	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-02-15</strong>
@@ -255,12 +269,14 @@ export function getBeforeMain() {
 		<!-- ----------------- LINK BACK ----------------- -->
 		<div class="aside-stuff aside-link-back">
           <div class="aside-stuff__heading">Link back!<img src="${nesting}img/layout/icon-copy.png" alt="" aria-hidden="true"/></div>
-          <p>Hotlinking is a-okay!<br><small style="line-height: 1;display: block;">You can change the .webp to .gif if you want, but the image will be 1KB bigger.</small></p>
+          <p>Hotlinking is a-okay!
+				<!-- <br><small style="line-height: 1;display: block;">You can change the .webp to .gif if you want.</small> -->
+		  </p>
             <a href="https://petrapixel.neocities.org/" target="_blank"  tabindex="-1"
-              ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@master/public/img/linkback.webp" alt="petrapixel" width="88" height="31"
+              ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.webp" alt="petrapixel" width="88" height="31"
             /></a>
             <textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@master/public/img/linkback.webp" alt="petrapixel"></a></textarea
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a></textarea
             >
         </div>
 		
@@ -315,7 +331,7 @@ export function getBeforeMain() {
 		
 	<!-- ----------------- CLAP, KIRBY ----------------- -->
 	<div class="aside-stuff aside-clap-kirby">
-		<a class="aside-stuff__guestbook" aria-hidden="true" href="${localHref}/about/guestbook.html">
+		<a class="aside-stuff__guestbook" aria-hidden="true" href="${localHref}/about/guestbook${dotHtml}">
 			<img width="145" height="56" src="${nesting}img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
 			<img width="145" height="56" src="${nesting}img/layout/kirby1.png" alt="sign my guestbook"  class="only-show-in-dark-mode" />
 		</a>
@@ -408,11 +424,11 @@ export function getBeforeMain() {
 
 	<!-- ----------------- NEIGHBORS ----------------- -->
 	<div class="aside-stuff aside-mutuals" data-nesting="${nesting}" aria-hidden="true">
-		<div class="aside-stuff__heading"><a href="${localHref}/about/neighbors.html">Neighbors<img src="${nesting}img/layout/icon-building.png" alt="" aria-hidden="true"/></a></div>
+		<div class="aside-stuff__heading"><a href="${localHref}/about/neighbors${dotHtml}">Neighbors<img src="${nesting}img/layout/icon-building.png" alt="" aria-hidden="true"/></a></div>
 		<a href="#afterneighbours" class="skiplink" aria-hidden="true">Skip neighbours</a>
         <div id="beforeneighbours"></div>
 		<div class="marquee aside-mutuals__buttons"><div></div></div>
-        <div id="afterneighbours">Click <a href="/about/neighbors.html">here</a> to view them all.</div>
+        <div id="afterneighbours">Click <a href="/about/neighbors${dotHtml}">here</a> to view them all.</div>
         <a href="#beforeneighbours" class="skiplink" aria-hidden="true">Skip to before neighbours</a>
 	</div>
 
@@ -459,9 +475,10 @@ export function getAfterMain() {
   return `
    <footer>
         <div class="footer-content">
+			<a class="footer-rss" href="${localHref}/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="${nesting}img/layout/rss.png" alt="RSS" /></a>  <i>┊</i> 
           created by petrapixel 2024 - <span style="font-size: 1.3em">∞</span> <i>┊</i>
           <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a
-          > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/sitemap.html">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
+          > <span class="desktop-only"> <i>┊</i> <a href="${localHref}/sitemap${dotHtml}">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
         </div>
 		<div class="footer-content mobile-only">
 			<a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">
