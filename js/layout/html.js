@@ -49,7 +49,7 @@ export function getBeforeMain() {
 					<ul>
 						<li><a href="${localHref}/creations/art${dotHtml}">my art</a></li>
 		                <li><a href="${localHref}/creations/coding${dotHtml}">my coding</a></li>
-		                <li><a href="${localHref}/creations/playlists${dotHtml}">my playlists</a> </li>
+		                <li><a href="${localHref}/creations/playlists${dotHtml}">my playlists<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a> </li>
 		                <li><a href="${localHref}/creations/video-edits${dotHtml}">my video edits</a></li>
 		                <!-- <li><a href="${localHref}/creations/web-weaves${dotHtml}">my web weaves</a></li> -->
 		                <li><a href="${localHref}/creations/writing${dotHtml}">my writing</a></li>   
@@ -404,11 +404,11 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="watching:">
 				<img src="${nesting}img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true"/>
-				<a href="https://app.tvtime.com/user/33116783" target="_blank">X-Men movies</a>
+				<a href="https://app.tvtime.com/user/33116783" target="_blank">Game Grumps Danganronpa v3</a>
 			</li>
 			<li aria-label="reading:">
 				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
-				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Warrior Cats <span style="font-family:sans-serif;font-size:0.9em">↺</span></a>
+				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Moby-Dick <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a>
 			</li>
 			<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
@@ -416,7 +416,7 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="obsessed with:">
 				<img src="${nesting}img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true"/>
-				<span>Wolverine <span style="font-family:sans-serif;font-size:0.9em">♡</span></span>
+				<span>Deadpool & Wolverine <span style="font-family:sans-serif;font-size:0.9em">♡</span></span>
 			</li>
 		</ul>
 	</div>
