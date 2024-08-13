@@ -573,6 +573,7 @@
   li {
     line-height: 1;
     position: relative;
+    margin-right: -7px;
 
     a {
       display: block;
@@ -726,6 +727,15 @@
   line-height: 1;
   margin-left: 9px;
   vertical-align: middle;
+
+  &.aside-nav__new--small {
+    margin-left: 5px;
+
+    img {
+      width: 25px;
+      height: auto;
+    }
+  }
 }
 
 @keyframes floatingImage {
@@ -776,6 +786,10 @@
 
   .aside-nav__new {
     display: none;
+  }
+
+  .aside-nav li {
+    margin-right: 0;
   }
 
   .aside-nav li summary small:not(.aside-nav__new) {

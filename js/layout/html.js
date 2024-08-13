@@ -84,17 +84,17 @@ export function getBeforeMain() {
 			</li>
 			<li>
 			  	<details id="menu-codinghelp">
-			 		<summary>coding help <small>(8)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
+			 		<summary>coding help <small>(9)</small><small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></summary>
 					<ul>
 						<li><a href="${localHref}/coding/need-help${dotHtml}">need help?</a></li>
 						<li><a href="${localHref}/coding/common-questions${dotHtml}">common questions</a></li>
 						<li><a href="${localHref}/coding/common-mistakes${dotHtml}">common mistakes</a></li>
 						<li><a href="${localHref}/coding/layout-base-code${dotHtml}">layout base code</a></li>
 						<li><a href="${localHref}/coding/snippets${dotHtml}">snippets & tips</a></li>
-						<li><a href="${localHref}/coding/checklist${dotHtml}">self-study checklist<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
+						<li><a href="${localHref}/coding/checklist${dotHtml}">self-study checklist<small class="aside-nav__new aside-nav__new--small"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 						<li><a href="${localHref}/coding/neocities${dotHtml}">neocities help</a></li>
 						<li><a href="${localHref}/coding/my-setup${dotHtml}">my coding setup</a></li>
-						<!-- <li><a href="${localHref}/coding/git-tutorial${dotHtml}">git tutorial<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
+						<li><a href="${localHref}/coding/git-tutorial${dotHtml}">git tutorial<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 						<!-- <li><a href="${localHref}/coding/webpack-tutorial${dotHtml}">webpack tutorial<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
 						<!-- <li><a href="${localHref}/coding/layout-generator${dotHtml}">layout generator<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
 					</ul>
@@ -122,10 +122,15 @@ export function getBeforeMain() {
 		<div class="aside-stuff aside-changelog">
           <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="${nesting}img/layout/icon-code.png" alt="" aria-hidden="true"/></div>
           <ul class="changelog custom-scrollbar" aria-label="Changelog">
+		  		<!-- UPDATE RSS FILE !!! -->
 			  <!-- <li class="changelog__entry">
 	            <strong>2024-08-12</strong>
 	            <a href="/rss.xml" tabindex="-1">I have an RSS feed now!</a>
 	          </li> -->
+			  <li class="changelog__entry">
+	            <strong>2024-08-13</strong>
+	            <a href="/coding/git-tutorial" tabindex="-1">New page: Git Tutorial!</a>
+	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-08-09</strong>
 	            <a href="/coding/checklist" tabindex="-1">New page: Self-Study Coding Checklist!</a>

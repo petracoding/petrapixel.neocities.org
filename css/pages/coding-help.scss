@@ -7,6 +7,17 @@
     font-weight: bold;
   }
 
+  .image {
+    display: inline-block;
+    max-width: 500px;
+    border: 3px dashed currentColor;
+    margin-bottom: 1em;
+
+    img {
+      display: block;
+    }
+  }
+
   p > code,
   li > code {
     background: rgba(0, 0, 0, 0.075);
