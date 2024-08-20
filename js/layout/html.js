@@ -96,7 +96,7 @@ export function getBeforeMain() {
 						<li><a href="${localHref}/coding/my-setup${dotHtml}">my coding setup</a></li>
 						<li><a href="${localHref}/coding/git-tutorial${dotHtml}">git tutorial<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li>
 						<!-- <li><a href="${localHref}/coding/webpack-tutorial${dotHtml}">webpack tutorial<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
-						<!-- <li><a href="${localHref}/coding/layout-generator${dotHtml}">layout generator<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> -->
+						<li><a href="${localHref}/coding/layout-generator${dotHtml}">layout generator<small class="aside-nav__new"><img src="${nesting}img/layout/new.gif" alt="" aria-hidden="true"/></small></a></li> 
 					</ul>
 				</details>
 			</li>
