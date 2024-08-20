@@ -1,7 +1,20 @@
+#blog {
+  margin-top: 1em;
+  padding: 1em;
+
+  .blog-article {
+    border-bottom: 1px dotted;
+  }
+}
+
 .blog-article {
-  margin-bottom: 1.5em;
-  padding-bottom: 0;
-  border-bottom: 1px dotted;
+  padding: 1em 0;
+  margin-bottom: 0.5em;
+
+  &:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
 
   &:last-child {
     border-bottom: 0;
@@ -40,8 +53,7 @@
 
 .blog-article__info {
   display: flex;
-  font-family: $font2;
-  font-size: 0.8em;
+  margin-top: 0.25em;
 }
 
 .blog-article__date {
@@ -50,7 +62,7 @@
 
 .blog-article__tags {
   &::before {
-    content: "┆";
+    content: "";
     display: inline-block;
     margin: 0 0.5em;
   }

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>layout generator | petrapixel</title>
+    <meta name="description" content="Petrapixel's layout builder for Neocities and coding beginners." />
+    <script src="../assets/js/main.js?nocache=20240820"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../img/favicon-code.ico" rel="icon" type="image/x-icon" />
+
+    <!-- code highlight -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J64TL8KVTJ");
+    </script>
+  </head>
+  <body class="load-layout coding-page">
+    <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
+    <a href="#main" id="skip-to-content-link">Skip to content</a>
+    <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
+    <div id="content">
+      <main id="main">
+        <section>
+          <h1>Layout Generator</h1>
+          <p>You can use my layout builder to generate a code for your website. The generated code will include HTML, CSS and (optionally) basic JavaScript.</p>
+          <p><b>This generator is VERY NEW. There might be some bugs. Please tell me about any you see!</b></p>
+
+          <center class="layout-generator-go" style="font-size: 2em">
+            <img aria-hidden="true" src="../img/inline/stars.gif" /> <a href="/layout-generator" aria-label="Go to layout generator">Start generating!</a>
+            <img aria-hidden="true" src="../img/inline/stars.gif" />
+          </center>
+          <p><strong>Features:</strong></p>
+          <ul>
+            <li>✓ choose site width, header, footer, sidebars, colors, font, font size, margins, paddings, etc</li>
+            <li>✓ styled basic content elements (headings, blockquote, code, images, ...)</li>
+            <li>✓ css variables for easy changes later</li>
+            <li>✓ code comments for your comprehension</li>
+            <li>✓ mobile responsive (+ options)</li>
+            <li>✓ basic accessibility + semantic elements</li>
+            <li>✓ optional javascript to load your layout</li>
+            <li>✓ no jquery or other unnecessary bloat</li>
+          </ul>
+          <br />
+          <p>If you like the generator, please share it on your page! You could use my button:</p>
+          <div class="link-back">
+            <a href="https://petrapixel.neocities.org/" target="_blank"
+              ><img src="https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/img/linkback.gif?raw=true" alt="petrapixel"
+            /></a>
+            <textarea name="" id="" cols="30" rows="10" aria-label="link-back code" class="code-textarea">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/img/linkback.gif?raw=true" alt="petrapixel"></a></textarea
+            >
+          </div>
+          <!-- <div id="toc"></div> -->
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <hr />
+
+          <h2>Examples</h2>
+          <p>Here are some examples of layout generated with my tool. (Click to enlarge.)</p>
+          <div class="multi-line-gallery multi-line-gallery--big lightbox-images">
+            <a data-fslightbox href="../img/layout-generator/default.png" class="image">
+              <img src="../img/layout-generator/default.png" alt="" />
+            </a>
+            <a data-fslightbox href="../img/layout-generator/cute.png" class="image">
+              <img src="../img/layout-generator/cute.png" alt="" />
+            </a>
+            <a data-fslightbox href="../img/layout-generator/clouds.png" class="image">
+              <img src="../img/layout-generator/clouds.png" alt="" />
+            </a>
+            <a data-fslightbox href="../img/layout-generator/space.png" class="image">
+              <img src="../img/layout-generator/space.png" alt="" />
+            </a>
+            <a data-fslightbox href="../img/layout-generator/barebones.png" class="image">
+              <img src="../img/layout-generator/barebones.png" alt="" />
+            </a>
+            <a data-fslightbox href="../img/layout-generator/puppy.png" class="image">
+              <img src="../img/layout-generator/puppy.png" alt="" />
+            </a>
+          </div>
+          <p>You can view some example code <a href="https://github.com/petracoding/petrapixel.neocities.org/tree/master/public/layout-generator/example" target="_blank">here</a>.</p>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <hr />
+
+          <h2>How to use</h2>
+          <p>
+            On the <a href="/layout-generator/index.html">generator page</a>, use the provided settings to choose a layout that fits the website you want to make. With every change, the preview (on
+            the bottom half of the screen) will update. Once you're happy, click the "Show Code" button to get the code.
+          </p>
+          <p>The code is seperated into 3 parts. Each part needs to go into its own file.</p>
+          <ul>
+            <li>
+              <b>HTML:</b><br />This is your base for any page on your website. Paste the code into all of your page files (e.g. <code>index.html</code>, <code>about.html</code>, ...) and change the
+              content.
+              <ul>
+                <li>
+                  If a page file is in a subfolder (= not on the same folder level as the CSS and JavaScript files) you need to adjust the paths in the HTML code. <br /><i>Example:</i> Change
+                  <code>./style.css</code> to <code>../style.css</code> or <code>../../style.css</code> etc (depending on how deep your file is).
+                </li>
+              </ul>
+            </li>
+            <li><b>CSS:</b><br />This goes into <code>style.css</code>.</li>
+            <li>
+              <b>JavaScript:</b> <i>(If you've selected the "Load layout per JavaScript" option)</i><br />Create the file <code>layout.js</code> and paste the code in there. Just like the CSS the
+              JavaScript is loaded on every page, so it's only necessary to create this file once, but you might need to adjust the path if your html file is in a subfolder!
+              <ul>
+                <li>Active menu links will be given the class active, so you can style them in the css like so: <code>nav a.active { ... }</code></li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Once you've pasted the code into your files it's time to start editing the code however you like! <b>Don't remove the credit in the code or the console.log statement.</b> You may remove
+            the credit in the footer.
+          </p>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <hr />
+
+          <h2>Credits</h2>
+          <p>
+            This generator was inspired by my own never-completed tumblr theme generator (rest in peace), as well as
+            <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/" target="_blank">Sadgrl's Layout Builder</a>, which you've probably heard of!
+          </p>
+          <p>The background images in the examples / random layouts are from <a href="https://goblin-heart.net/sadgrl/webmastery/downloads/tiledbgs" target="_blank">sadgrl</a>.</p>
+          <p>The example content images are from <a href="https://picsum.photos/" target="_blank">picsum.photos</a>.</p>
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!--<hr />
+
+          <h2>Changelog</h2>
+          <ul>
+            <li><b>2024-08-20:</b> v1.0 released</li>
+          </ul>-->
+
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <!-- ----------------------------------------------------------------------------------------------------- -->
+          <hr />
+
+          <h2>Questions? Suggestions?</h2>
+          <p>
+            If you have questions on how to use the layout feel free to ask me (either on my <a href="https://neocities.org/site/petrapixel" target="_blank">Neocities profile</a> or in my
+            <a href="/about/guestbook.html">guestbook</a>, make sure to include what exactly the problem is and a link to your site). Please read the "How to use" section above first.
+          </p>
+          <p>I'm also happy to receive feature suggestions!</p>
+        </section>
+      </main>
+    </div>
+    <script src="../assets/js/fslightbox.js"></script>
+  </body>
+</html>

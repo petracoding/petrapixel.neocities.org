@@ -114,6 +114,8 @@ function doActiveLinks() {
   if (pathname.includes("neocities-external-widgets") || pathname.includes("neocities-automatic-deployment")) {
     codingHelpMenu.setAttribute("open", "open");
     codingHelpMenu.classList.add("active");
+    document.querySelector("#menu-more").removeAttribute("open");
+    document.querySelector("#menu-more .active").classList.remove("active");
   }
 }
 

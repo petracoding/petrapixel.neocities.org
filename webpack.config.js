@@ -4,7 +4,7 @@ module.exports = {
   mode: "production",
   entry: {
     main: "./js/main.js",
-    // layoutGenerator: "./js/layout-generator/main.js",
+    layoutGenerator: "./js/layout-generator/main.js",
   },
   output: {
     path: path.resolve(__dirname, "public/assets"),

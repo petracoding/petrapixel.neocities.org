@@ -104,6 +104,7 @@ export function getBeforeMain() {
 			  	<details id="menu-more">
 			 		<summary>more <small>(4)</small></summary>
 					<ul>
+						<li><a href="${localHref}/blog${dotHtml}">blog</a></li>
 						<li><a href="${localHref}/shrines/index${dotHtml}">shrines</a></li>
 						<li><a href="${localHref}/about/blinkies${dotHtml}">blinkies & more</a></li> 
 						<li><a href="${localHref}/fun/list-idea-generator${dotHtml}">list idea generator</a></li>
@@ -122,15 +123,22 @@ export function getBeforeMain() {
 		<div class="aside-stuff aside-changelog">
           <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="${nesting}img/layout/icon-code.png" alt="" aria-hidden="true"/></div>
           <ul class="changelog custom-scrollbar" aria-label="Changelog">
-		  		<!-- UPDATE RSS FILE !!! -->
-			  <!-- <li class="changelog__entry">
-	            <strong>2024-08-12</strong>
-	            <a href="/rss.xml" tabindex="-1">I have an RSS feed now!</a>
-	          </li> -->
+			  <li class="changelog__entry">
+	            <strong>2024-08-20</strong>
+	            <a href="/coding/layout-generator" tabindex="-1">New tool: Layout Generator!!!</a>
+	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-08-19</strong>
+	            <a href="/blog" tabindex="-1">Blog with comment sections!</a>
+	          </li>
 			  <li class="changelog__entry">
 	            <strong>2024-08-13</strong>
 	            <a href="/coding/git-tutorial" tabindex="-1">New page: Git Tutorial!</a>
 	          </li>
+			  <li class="changelog__entry">
+	            <strong>2024-08-12</strong>
+	            <a href="/rss.xml" tabindex="-1">I have an RSS feed now!</a>
+	          </li> 
 			  <li class="changelog__entry">
 	            <strong>2024-08-09</strong>
 	            <a href="/coding/checklist" tabindex="-1">New page: Self-Study Coding Checklist!</a>
@@ -384,7 +392,7 @@ export function getBeforeMain() {
 			<div class="aside-stuff__heading"><span>my time</span><img src="${nesting}img/layout/icon-clock.png" alt="" aria-hidden="true"/></div>
 			<div class="aside-stats__stat-content">
 		        <div style="text-align: center">
-				  <iframe title="my time and date" src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1" frameborder="0" width="150" height="17" allowtransparency="true"></iframe>
+				  <iframe title="my time" src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1" frameborder="0" width="150" height="17" allowtransparency="true"></iframe>
 		        </div>
 		    </div>
 		</div>
@@ -417,11 +425,11 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
-				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">ACNH</a>
+				<a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume</a>
 			</li>
 			<li aria-label="obsessed with:">
 				<img src="${nesting}img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true"/>
-				<span>Deadpool & Wolverine <span style="font-family:sans-serif;font-size:0.9em">♡</span></span>
+				<span>Deadpool & Wolverine <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span>
 			</li>
 		</ul>
 	</div>

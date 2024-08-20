@@ -181,25 +181,19 @@
 }
 
 .about-me-page__images {
-  position: absolute;
-  top: 1em;
-  right: 1em;
   display: flex;
-  width: 200px;
-  height: 200px;
-  border-radius: 30px;
-  overflow-x: scroll;
-  padding-bottom: 10px;
-  z-index: 1;
+  justify-content: center;
+  flex-wrap: wrap;
 
   .image {
     position: relative;
-    width: 100%;
+    width: 200px;
     height: auto;
     flex-shrink: 0;
-    border-radius: 40%;
+    border-radius: 10%;
     overflow: hidden;
     margin-right: 10px;
+    margin-bottom: 10px;
 
     &:last-child {
       margin-right: 0;
@@ -224,34 +218,6 @@
       pointer-events: none;
     }
   }
-
-  @media (max-width: 1100px) {
-    width: 150px;
-    height: 150px;
-  }
-
-  @media (max-width: 850px) {
-    position: static;
-    width: 100%;
-    height: auto;
-    overflow: initial;
-    margin-top: 40px;
-
-    .image {
-      width: calc(20% - 8px);
-    }
-  }
-}
-
-.about-me-page__images-text {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  font-size: 70px;
-  z-index: 1;
-  text-align: center;
-  width: 100%;
-  text-shadow: 0px 0px 5px white;
 }
 
 .about-me-page__facts {

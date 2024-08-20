@@ -1,0 +1,207 @@
+/*
+    Below you will be able to freely customize every aspect of the comment widget.
+    Most aspects of the widget are 100% able to be customized in CSS, but for strong structural changes,
+    you may have to edit the JavaScript file.
+
+    These are all the classes and IDs at your disposal!
+    Classes have a c- at the start and IDs have a c_
+    You don't need every single one for a good theme, but I tried to give as many options as possible!
+*/
+/*
+    Containers:
+        #c_widget - The container <div> for the entire widget
+        #c_inputArea - The wrapper <div> around the form
+        #c_container - The wrapper <div> around all the comments
+
+    The input form:
+        #c_form - The whole input <form>
+        #c_widgetTitle - The <h2> title at the top of the form
+
+        .c-inputWrapper- All <div> wrappers for each label/input pair
+        .c-label - All <label>s
+        .c-input - All <input>s
+
+        #c_nameWrapper - The wrapper <div> for the name field
+        .c-nameLabel - The <label> for the name field
+        .c-nameInput - The <input> for the name field
+
+        #c_websiteWrapper - The wrapper <div> for the website field
+        .c-websiteLabel - The <label> for the website field
+        .c-websiteInput - The <input> for the website field
+
+        #c_textWrapper - The wrapper <div> for the text field
+        .c-textLabel - The <label> for the text field
+        .c-textInput - The <input> for the text field
+
+        #c_submitButton - The submit button (It's an <input> element with a type of "submit")
+        #c_replyingText - The text <span> that displays when a user is replying to a comment
+
+    The comment section:
+        .c-comment - All comment <div>s
+        .c-reply - All reply <div>s (contained within parent comment <div>s)
+        .c-name - The name of the person submitting the comment/reply (an <h3> element)
+        .c-timestamp - The timestamp of when the comment/reply was made (a <span> element)
+        .c-site - The website linked at the top of the comment/reply (an <a> element)
+        .c-text - The actual text body of the comment/reply (a <p> element)
+        .c-replyButton - All reply <button>s
+        .c-expandButton - The <button>s to reveal/hide replies (These only show if s_collapsedReplies is set to true in the JS)
+        
+        #c_pagination - The <div> wrapper for the pagination at the bottom (Only shows if there's more than one page)
+        .c-paginationButton - Both left and right directional <button>s
+        #c_leftButton - The left <button>
+        #c_rightButton - The right <button>
+*/
+
+/* Main */
+#c_widget {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 15px 0;
+  overflow: auto;
+  //   background-image: url("bow-bg.gif"); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
+  //   background-attachment: fixed;
+  //   font-family: "Trebuchet MS";
+  //   font-size: 14px;
+  //   color: #211f24;
+}
+
+#c_widget button,
+#c_widget input[type="submit"] {
+  padding: 4px;
+  text-decoration: none;
+  text-transform: lowercase;
+  text-align: center;
+  background-color: var(--asideBackgroundColor);
+  color: var(--textColor);
+  border: 1px solid currentColor;
+  border-radius: 5px;
+}
+#c_widget button:hover,
+#c_widget input[type="submit"]:hover {
+  background-color: var(--asideBackgroundColor);
+  color: var(--linkColorHover);
+  border: 1px solid currentColor;
+}
+#c_widget button:disabled,
+#c_widget input[type="submit"]:disabled {
+  opacity: 60%;
+}
+#c_widget button:disabled:hover,
+#c_widget input[type="submit"]:disabled:hover {
+  background-color: white;
+  color: var(--textColor);
+  border: 1px solid currentColor;
+}
+
+/* Input section */
+#c_inputDiv {
+  padding: 10px;
+  text-transform: lowercase;
+  background-color: var(--asideBackgroundColor);
+  border: 1px dashed currentColor;
+  border-radius: 5px;
+}
+#c_container {
+  margin-top: 10px;
+}
+
+#c_widgetTitle {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.c-inputWrapper {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.c-input {
+  padding: 4px;
+  color: #5e2c49;
+  border-radius: 4px;
+  border: 1px solid currentColor;
+  background: var(--mainBackgroundColor);
+  outline: none;
+}
+.c-input:focus {
+  border: 1px solid currentColor;
+}
+
+.c-textInput {
+  width: calc(100% - 10px);
+  max-width: 900px;
+  resize: none;
+}
+#c_submitButton {
+  display: block;
+  cursor: $cursorPointer;
+  font-family: $font;
+  font-size: 1.5em;
+}
+#c_replyingText {
+  color: #5e2c49;
+}
+
+/* Comment section */
+.c-comment {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: var(--asideBackgroundColor);
+  border: 1px dashed currentColor;
+  border-radius: 4px;
+}
+.c-reply {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: var(--asideBackgroundColor);
+  border: 1px dashed currentColor;
+  border-radius: 4px;
+}
+.c-reply:last-child {
+  margin-bottom: 0;
+}
+
+.c-name {
+  display: inline-block;
+  margin: 0;
+  margin-right: 10px;
+  padding: 0;
+  font-size: 1.2em;
+}
+.c-site {
+  text-transform: lowercase;
+  color: var(--linkColor);
+}
+.c-site:hover {
+  color: var(--linkColorHover);
+}
+.c-timestamp {
+  float: right;
+  opacity: 60%;
+}
+.c-text {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  text-align: justify;
+}
+
+/* Pagination */
+#c_pagination {
+  text-align: center;
+}
+.c-replyButton {
+  margin-top: 10px;
+}
+.c-expandButton {
+  float: right;
+  margin-top: 10px;
+}
+.c-paginationButton {
+  margin-right: 4px;
+  margin-left: 4px;
+}

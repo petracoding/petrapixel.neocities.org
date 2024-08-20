@@ -6,6 +6,9 @@ let filter;
 let limit;
 let i = 1;
 
+const articleFileNames = ["neocities-external-widgets", "neocities-automatic-deployment", "why-i-stopped-using-social-media"];
+// add at the end
+
 document.addEventListener("DOMContentLoaded", function () {
   initBlog();
 });
@@ -25,37 +28,22 @@ function initBlog() {
   if (filter && !isReadMore) {
     const originalTitle = document.querySelector("main h1").innerHTML;
     document.querySelector("main h1").innerHTML = originalTitle + ": posts about <i>" + filter + "</i>";
+    const blogEl = document.querySelector("#blog");
+    if (!blogEl) return;
+    blogEl.innerHTML = "";
+  } else {
+    // NOT MAIN BLOG SITE
+    return;
   }
 
-  // Load JSON
-  const file = isLocalhost ? `http://localhost:52330/public/blog/blog.json` : `https://petrapixel.neocities.org/blog/blog.json`;
-  fetch(`${file}${noCache}`)
-    .then(function (response) {
-      switch (response.status) {
-        case 200:
-          return response.json();
-        case 404:
-          throw response;
-      }
-    })
-    .then(function (data) {
-      // Load all articles
-      const articlesJson = data["blog"];
-      [...articlesJson].forEach((articleJson) => {
-        if (isReadMore) {
-          if (window.location.href.includes(articleJson["fileName"] + ".html")) {
-            // do not output this article, because we are on the page of this article.
-          } else {
-            loadArticle(articleJson["fileName"]);
-          }
-        } else {
-          loadArticle(articleJson["fileName"]);
-        }
-      });
-    })
-    .catch(function (response) {
-      console.error("Loading Blog Json: " + response.statusText);
-    });
+  // Load all articles:
+  articleFileNames.reverse().forEach((articleFileName) => {
+    if (isReadMore && window.location.href.includes(articleFileName + ".html")) {
+      // do not output this article, because we are on the page of this article.
+    } else {
+      loadArticle(articleFileName);
+    }
+  });
 }
 
 function loadArticle(fileName) {
@@ -79,12 +67,12 @@ function loadArticle(fileName) {
 
       // Add article to current DOM (if it fits filters)
       if (i <= limit && (filter == "" || articleTags.includes(filter))) {
-        i++;
         addArticleToDOM(blogEl, doc, articleTags, file);
+        i++;
       }
     })
     .catch(function (response) {
-      console.error("Loading Blog Article: " + response.statusText);
+      console.error("Loading Blog Article failed: " + response.statusText);
     });
 }
 
@@ -121,26 +109,34 @@ function addArticleToDOM(blogEl, doc, articleTags, file) {
     articleTagsHtml += `</div>`;
   }
 
-  const titleTag = isReadMore ? "div" : "h2";
+  let articleHTML = `<article class="blog-article">
+  		${imageHtml}
+  		<h2 class="blog-article__title"><a href="${file}">${articleTitle}</a></h2>
+	   	<div class="blog-article__info">
+		  <div class="blog-article__date">${articleDate}</div>
+		  ${articleTagsHtml}
+	  	</div> 
+	  	<div class="blog-article__description">${articleDescription ? articleDescription : articlePreviewTrimmed}</div>
+	  	<a href="${file}" class="blog-article__read" aria-label="Read '${articleTitle}'">Read...</a>
+  </article>`;
 
-  const articleHTML = `
-	  <section>
-		  <article class="blog-article">
-		  ${imageHtml}
-		  <${titleTag} class="blog-article__title"><a href="${file}">${articleTitle}</a></${titleTag}>
-			  <!-- <div class="blog-article__info">
-				  <div class="blog-article__date">${articleDate}</div>
-				  ${articleTagsHtml}
-			  </div> 
-			  <div class="blog-article__description"><small>${articleDescription}</small></div> -->
-			  <div class="blog-article__description">${articlePreviewTrimmed}</div>
-			  <a href="${file}" class="blog-article__read" aria-label="Read '${articleTitle}'">Read...</a>
-		  </article>
-	  </section>
-  	`;
+  //   if (isReadMore) {
+  //     articleHTML = `<article class="blog-article">
+  // 	  		${imageHtml}
+  // 	  		<div class="blog-article__title"><a href="${file}">${articleTitle}</a></div>
+  // 		   	<div class="blog-article__info">
+  // 			  <div class="blog-article__date">${articleDate}</div>
+  // 			  ${articleTagsHtml}
+  // 		  	</div>
+  // 		  	<div class="blog-article__description">${articleDescription ? articleDescription : articlePreviewTrimmed}</div>
+  // 		  	<a href="${file}" class="blog-article__read" aria-label="Read '${articleTitle}'">Read...</a>
+  // 	  </article>`;
+  //   }
 
   blogEl.insertAdjacentHTML("beforeend", articleHTML);
 }
+
+// HELPERS:
 
 // https://stackoverflow.com/a/5448595/3187492
 function findGetParameter(parameterName) {
