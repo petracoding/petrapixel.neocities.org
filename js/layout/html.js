@@ -300,14 +300,19 @@ export function getBeforeMain() {
 		<div class="aside-stuff aside-poll" aria-hidden="true">
 			<div class="aside-stuff__heading" aria-hidden="true">Poll<img src="${nesting}img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
 			
-			<form method="post" action="https://poll.pollcode.com/18931664"><div style="background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;"><div style="padding:2px 0px 4px 2px;"><strong>how much do you usually exercise per week?</strong></div><input type="radio" name="answer" value="1" id="answer189316641" style="float:left;" /><label for="answer189316641" style="float:left;width:150px;">exercise? what's that?</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="2" id="answer189316642" style="float:left;" /><label for="answer189316642" style="float:left;width:150px;">less than 1 hour</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="3" id="answer189316643" style="float:left;" /><label for="answer189316643" style="float:left;width:150px;">1-2 hours</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="4" id="answer189316644" style="float:left;" /><label for="answer189316644" style="float:left;width:150px;">2-3 hours </label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="5" id="answer189316645" style="float:left;" /><label for="answer189316645" style="float:left;width:150px;">3-4 hours</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="6" id="answer189316646" style="float:left;" /><label for="answer189316646" style="float:left;width:150px;">4-5 hours</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="7" id="answer189316647" style="float:left;" /><label for="answer189316647" style="float:left;width:150px;">more than 5 hours</label><div style="clear:both;height:2px;"></div><div align="center" style="padding:3px;"><input type="submit" value=" Vote ">&nbsp;<input type="submit" name="view" value=" View "></div><div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div></div></form>
+			<form method="post" action="https://poll.pollcode.com/44866815"><div style="background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;"><div style="padding:2px 0px 4px 2px;"><strong>what's your favorite season?</strong></div><input type="radio" name="answer" value="1" id="answer448668151" style="float:left;" /><label for="answer448668151" style="float:left;width:150px;">spring</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="2" id="answer448668152" style="float:left;" /><label for="answer448668152" style="float:left;width:150px;">summer</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="3" id="answer448668153" style="float:left;" /><label for="answer448668153" style="float:left;width:150px;">autumn</label><div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="4" id="answer448668154" style="float:left;" /><label for="answer448668154" style="float:left;width:150px;">winter</label><div style="clear:both;height:2px;"></div><div align="center" style="padding:3px;"><input type="submit" value=" Vote ">&nbsp;<input type="submit" name="view" value=" View "></div><div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div></div></form>
 		</div>
+
+		<!-- old polls: 
+			- https://poll.pollcode.com/18931664_result?v
+		-->
+
 
 		<!-- ----------------- IMAGE OF THE MOMENT ----------------- -->
 		<div class="aside-stuff aside-poll">
 			<div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="${nesting}img/layout/icon-hearts.png" alt="" aria-hidden="true"/></div>
-			<a href="https://www.tumblr.com/petrapng/757874138276839424/pictures-of-wolverine-where-his-hair-makes-him?source=share" target="_blank" class="image-of-the-moment">
-				<img src="https://64.media.tumblr.com/d47ef96a9b7767a6ee39927200af1a62/4edd630e3d6f13cd-fe/s640x960/f863f86d9d82052db24d57c9661dcdbd752af283.jpg" alt="Wolverine" title="wolverine <3<3 he has kitty ears" />
+			<a href="https://www.tumblr.com/ggrrrhhh/759336669214375936?source=share" target="_blank" class="image-of-the-moment">
+				<img src="https://64.media.tumblr.com/71c6df5852c606ad237fecde30e59c60/b9b9b5739cd3df7b-7a/s1280x1920/7916d100ac0a650769b67e6653ac09ceae4c51dd.jpg" alt="Hugh Jackman and Ryan Reynolds" title="Hugh Jackman and Ryan Reynolds" />
 			</a>
 		</div>
 		
@@ -417,11 +422,11 @@ export function getBeforeMain() {
 			</li>
 			<li aria-label="watching:">
 				<img src="${nesting}img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true"/>
-				<a href="https://app.tvtime.com/user/33116783" target="_blank">Game Grumps Danganronpa v3</a>
+				<a href="https://app.tvtime.com/user/33116783" target="_blank">Hugh Jackman movies</a>
 			</li>
 			<li aria-label="reading:">
 				<img src="${nesting}img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true"/>
-				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">Moby-Dick <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a>
+				<a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank">The Secret History <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a>
 			</li>
 			<li aria-label="playing:">
 				<img src="${nesting}img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true"/>
