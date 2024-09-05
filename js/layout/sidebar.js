@@ -6,58 +6,9 @@ export function initSidebar() {
   doActiveLinks();
   initLastFmWidget();
   initStatusCafeWidget();
-  initMutuals();
   initBlinkies();
 
-  if (isLocalhost) buildRssFeedFromChangelog();
-}
-
-function buildRssFeedFromChangelog() {
-  if (!isLocalhost) return;
-  const changelogEl = document.querySelector(".changelog");
-  if (!changelogEl) return;
-  const changelogEntries = changelogEl.querySelectorAll(".changelog__entry");
-  const time = new Date().toUTCString();
-
-  let items = ``;
-
-  [...changelogEntries].forEach((changelogEntry) => {
-    const dateStr = changelogEntry.querySelector("strong").innerHTML; // 2024-02-23
-    const dateStrParts = dateStr ? dateStr.split("-") : "";
-    const date = dateStr ? new Date(dateStrParts[0], dateStrParts[1] - 1, dateStrParts[2]).toUTCString() : time;
-    const description = changelogEntry.querySelector("a, span").innerHTML;
-    const link = changelogEntry.querySelector("a") ? "https://petrapixel.neocities.org/" + changelogEntry.querySelector("a").getAttribute("href") : "https://petrapixel.neocities.org/";
-
-    items += `<item>
-	<title>${description}</title>
-	<link>${link}</link>
-	<pubDate>${date}</pubDate>
-</item>`;
-  });
-
-  const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
-<channel>
-  <title>petrapixel</title>
-  <description>Welcome to petrapixel! Here you can find many resources for Neocities, coding help, media recommendations and more in a cute Old Web aesthetic!</description>
-  <link>https://petrapixel.neocities.org/</link>
-  <lastBuildDate>${time}</lastBuildDate>
-  <ttl>1440</ttl>
-  <image>
-	  <link>https://petrapixel.neocities.org/</link>
-	  <title>petrapixel</title>
-	  <url>https://petrapixel.neocities.org/img/layout/petrapixel.png</url>
-	  <width>300</width>
-	  <height>100</height>
-	</image>
- ${items}
-</channel>
-</rss>`;
-
-  console.log("%c RSS:", "font-size: 14pt;color:white;background:red");
-  console.log(rssFeed.replaceAll("\n", ""));
-
-  // TODO: write automatically
+  //   initMarquee(".aside-mutuals__buttons", 0.5);
 }
 
 function initMenu() {
@@ -149,75 +100,8 @@ function initBlinkies() {
   const wrapper = document.querySelector(".aside-blinkies");
   if (!wrapper) return;
 
-  const file = isLocalhost ? `http://localhost:52330/public/about/blinkies.html` : `https://petrapixel.neocities.org/about/blinkies.html`;
-  fetch(file + noCache)
-    .then(function (response) {
-      switch (response.status) {
-        case 200:
-          return response.text();
-        case 404:
-          throw response;
-      }
-    })
-    .then(function (template) {
-      // Get DOM from page
-      const domParser = new DOMParser();
-      const doc = domParser.parseFromString(template, "text/html");
-
-      // Add to Sidebar
-      const wrapper = document.querySelector(".aside-blinkies");
-      if (!wrapper) return;
-      const nesting = wrapper.getAttribute("data-nesting");
-      wrapper.querySelector(".aside-blinkies__buttons div").innerHTML = doc.querySelector("#buttons-to-load").innerHTML.replaceAll("../", nesting);
-      //   wrapper.querySelector(".aside-blinkies__stamps div").innerHTML = doc.querySelector("#stamps-to-load").innerHTML.replaceAll("../", nesting);
-      wrapper.querySelector(".aside-blinkies__blinkies div").innerHTML = doc.querySelector("#blinkies-to-load").innerHTML.replaceAll("../", nesting);
-      //   wrapper.querySelector(".aside-blinkies__userboxes div").innerHTML = doc.querySelector("#userboxes-to-load").innerHTML.replaceAll("../", nesting);
-
-      initMarquee(".aside-blinkies__buttons", 0.5);
-      initMarquee(".aside-blinkies__stamps", 0.4);
-      initMarquee(".aside-blinkies__blinkies", 0.5);
-      initMarquee(".aside-blinkies__userboxes", 0.6);
-    })
-    .catch(function (response) {
-      console.error("Problem with loading blinkies: " + response.statusText);
-    });
-}
-
-function initMutuals() {
-  const wrapper = document.querySelector(".aside-mutuals");
-  if (!wrapper) return;
-
-  const file = isLocalhost ? `http://localhost:52330/public/about/neighbors.html` : `https://petrapixel.neocities.org/about/neighbors.html`;
-  fetch(file + noCache)
-    .then(function (response) {
-      switch (response.status) {
-        case 200:
-          return response.text();
-        case 404:
-          throw response;
-      }
-    })
-    .then(function (template) {
-      // Get DOM from page
-      const domParser = new DOMParser();
-      const doc = domParser.parseFromString(template, "text/html");
-
-      // Add to Sidebar
-      const wrapper = document.querySelector(".aside-mutuals");
-      if (!wrapper) return;
-      const nesting = wrapper.getAttribute("data-nesting");
-      const neighborsToLoad = doc.querySelector("#neighbors-to-load").innerHTML.replaceAll("../", nesting);
-      wrapper.querySelector(".aside-mutuals__buttons div").innerHTML = neighborsToLoad;
-      const homeWrapper = document.querySelector("#home-neighbors");
-      if (homeWrapper) {
-        homeWrapper.innerHTML = neighborsToLoad;
-      }
-
-      initMarquee(".aside-mutuals__buttons", 0.6);
-    })
-    .catch(function (response) {
-      console.error("Problem with loading mutuals: " + response.statusText);
-    });
+  //   initMarquee(".aside-blinkies__buttons", 0.5);
+  //   initMarquee(".aside-blinkies__blinkies", 0.5);
 }
 
 function initMarquee(selector, speed) {

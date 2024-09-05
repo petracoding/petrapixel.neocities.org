@@ -1,36 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>git tutorial | petrapixel</title>
-    <meta name="description" content="A simple Git and GitHub tutorial for beginner coders. Especially for Neocities." />
-    <script src="../assets/js/main.js?nocache=20240821"></script>
+    
+    <meta
+      name="description"
+      content="A simple Git and GitHub tutorial for beginner coders. Especially for Neocities."
+    />
+    
+    <script src="../assets/js/main.js?nocache=20240904"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../img/favicon-code.ico" rel="icon" type="image/x-icon" />
-    <style>
-      a.anchor,
-      .zeroclipboard-container {
-        display: none;
-      }
+    <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon" />
 
-      main code {
-        font-weight: normal;
-      }
-
-      main h3 {
-        margin-top: 1.5em;
-      }
-    </style>
-
-    <!-- code highlight 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>
       hljs.highlightAll();
     </script>
-	-->
-
+     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
     <script>
@@ -41,410 +32,1223 @@
       gtag("js", new Date());
       gtag("config", "G-J64TL8KVTJ");
     </script>
+     
   </head>
-  <body class="load-layout coding-page">
+  <body class="" >
     <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
     <a href="#main" id="skip-to-content-link">Skip to content</a>
-    <a href="/sitemap.html" id="skip-to-content-link2">Go to Sitemap</a>
+    <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
     <div id="content">
-      <main id="main" class="git-tutorial">
-        <section>
-          <h1>Git & GitHub Tutorial</h1>
-          <p>
-            When I tried to learn git I had a lot of trouble, because even though they are 'beginner tutorials' out there, all of them were either too complicated to too minimalistic. So, here's my
-            attempt to teach you exactly the steps you need to use git as a beginner.
-          </p>
-          <p><b>Why to use Git:</b></p>
+      <!-- ------------------------------------------------ -->
+      <!-- --------------------- HEADER ------------------- -->
+      <!-- ------------------------------------------------ -->
+      
+      <div id="theme-toggler" aria-hidden="true">
+        <button type="button">
+          <img src="../assets/img/layout/moon.gif" width="20" style="height: 20px; image-rendering: pixelated" alt="" />
+          <span>toggle theme</span>
+        </button>
+      </div>
+      
+      <header>
+        <div class="header-heading">
+          <a href="/"><img src="../assets/img/layout/petrapixel.png" aria-label="petrapixel" height="100" width="300" /></a>
+        </div>
+      </header>
+      <aside class="aside aside--left">
+        <details>
+          <summary id="mobile-nav-toggle">Open Navigation</summary>
+          <nav class="aside-nav">
+            <div class="aside-nav__heading" aria-hidden="true">Menu</div>
+            <ul aria-label="Menu">
+              <li>
+                <a href="/"><img width="9" src="../assets/img/layout/heart.png" alt="" aria-hidden="true" />home</a>
+              </li>
+              <li>
+                <details id="menu-aboutsite">
+                  <summary>about <small>(5)</small></summary>
+                  <ul>
+                    <li>
+                      <a href="/about-me/about">about me ➚</a>
+                    </li>
+                    <li><a href="/about/about-the-site">about the site</a></li>
+                    <li><a href="/about/guestbook">guestbook</a></li>
+                    <!-- <li><a href="/about/neighbors">neighbors</a></li> -->
+                    <li><a href="/about/credits">credits</a></li>
+                    <li><a href="/sitemap">sitemap</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details id="menu-mycreations">
+                  <summary>my creations <small>(6)</small></summary>
+                  <ul>
+                    <li><a href="/creations/art">my art</a></li>
+                    <li><a href="/creations/coding">my coding</a></li>
+                    <li>
+                      <a href="/creations/playlists">my playlists</a>
+                    </li>
+                    <li><a href="/creations/video-edits">my video edits</a></li>
+                    <li><a href="/creations/writing">my writing</a></li>
+                    <li><a href="/creations/picmix">my picmixes</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details id="menu-mediarecs">
+                  <summary>media recs <small>(5)</small></summary>
+                  <ul>
+                    <li><a href="/recs/music" aria-label="music recommendations">record player</a></li>
+                    <li><a href="/recs/tv-shows" aria-label="tv show recommendations">tv room</a></li>
+                    <li><a href="/recs/movies" aria-label="movie recommendations">cinema</a></li>
+                    <li><a href="/recs/books" aria-label="book recommendations">library</a></li>
+                    <li><a href="/recs/games" aria-label="game recommendations">arcade</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details id="menu-resources">
+                  <summary>resources for you <small>(6)</small></summary>
+                  <ul>
+                    <li><a href="/resources/bookmarks">bookmarks</a></li>
+                    <li><a href="/resources/software-recs">software recs</a></li>
+                    <li><a href="/resources/clipboard">clipboard</a></li>
+                    <li><a href="/resources/notion">notion</a></li>
+                    <li><a href="/resources/google-spreadsheets-excel">spreadsheets</a></li>
+                    <li><a href="/resources/vocabulary">vocabulary</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details id="menu-codinghelp">
+                  <summary>
+                    coding help <small>(10)</small><small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+                  </summary>
+                  <strong>Beginners:</strong>
+                  <ul>
+                    <li><a href="/coding/need-help">need help?</a></li>
+                    <li><a href="/coding/common-questions">common questions</a></li>
+                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
+                    <li><a href="/coding/layout-base-code">layout base code</a></li>
+                    <li><a href="/coding/snippets">snippets & tips</a></li>
+
+                    <li><a href="/coding/neocities">neocities help</a></li>
+                    <li><a href="/coding/my-setup">my coding setup</a></li>
+                  </ul>
+                  <strong>Advanced:</strong>
+                  <ul>
+                    <li>
+                      <a href="/coding/git-tutorial"
+                        >git tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                      <!--
+                      <a href="/coding/npm-tutorial"
+                        >node/npm tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                      <a href="/coding/webpack-tutorial"
+                        >webpack tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                      <a href="/coding/eleventy-tutorial"
+                        >eleventy (11ty) tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                  -->
+                    </li>
+                  </ul>
+                  <strong>Tools:</strong>
+                  <ul>
+                    <li>
+                      <a href="/coding/checklist"
+                        >self-study checklist<small class="aside-nav__new aside-nav__new--small"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="/coding/layout-generator"
+                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details id="menu-more">
+                  <summary>more <small>(5)</small></summary>
+                  <ul>
+                    <li><a href="/blog">blog</a></li>
+                    <li><a href="/shrines/index">shrines</a></li>
+                    <li><a href="/about/blinkies">blinkies & more</a></li>
+                    <li><a href="/fun/list-idea-generator">list idea generator</a></li>
+                    <li><a href="/fun/bored-button">are you bored?</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </nav>
+
+          <img src="../assets/img/layout/divider1.gif" alt="" aria-hidden="true" />
+
+          <div class="aside-dreamland desktop-only">
+            <!-- ----------------- CHANGELOG ----------------- -->
+            <div class="aside-stuff aside-changelog">
+              <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="../assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
+              <ul class="changelog custom-scrollbar" aria-label="Changelog">
+                   
+                <li class="changelog__entry">
+                  <strong>2024-09-05</strong>
+                  
+                  <span>The site is now generated using 11ty!</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-20</strong>
+                  
+                  <a href="/coding/layout-generator" tabindex="-1">New tool: Layout Generator!!!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-19</strong>
+                  
+                  <a href="/blog" tabindex="-1">Blog with comment sections!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-13</strong>
+                  
+                  <a href="/coding/git-tutorial" tabindex="-1">New page: Git Tutorial!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-12</strong>
+                  
+                  <a href="/rss.xml" tabindex="-1">I have an RSS feed now!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-09</strong>
+                  
+                  <a href="/coding/checklist" tabindex="-1">New page: Self-Study Coding Checklist!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-07</strong>
+                  
+                  <span>New link-back button! If you&#39;re not hotlinking please update it!</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-05</strong>
+                  
+                  <a href="/about-me/about.html" tabindex="-1">New main font and background and about-me page!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-08-04</strong>
+                  
+                  <span>Image of the moment added to sidebar! Also some small content changes.</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-07-20</strong>
+                  
+                  <a href="/creations/playlists.html" tabindex="-1">Added some playlists and tv show recs!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-07-17</strong>
+                  
+                  <span>Updated my age :)</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-07-07</strong>
+                  
+                  <a href="/resources/software-recs.html" tabindex="-1">Improved the look of my software recs and bookmarks pages</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-07-06</strong>
+                  
+                  <span>Spring cleaning in July.</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-06-28</strong>
+                  
+                  <span>A few small updates.</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-05-04</strong>
+                  
+                  <a href="/coding/common-questions.html" tabindex="-1">New coding help pages! &#39;Common questions&#39; and &#39;Need help?&#39;</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-26</strong>
+                  
+                  <a href="/coding/common-mistakes.html" tabindex="-1">New coding help page: &#39;Common mistakes&#39;!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-21</strong>
+                  
+                  <a href="/about/social-media.html" tabindex="-1">Social media page added</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-19</strong>
+                  
+                  <a href="/about-me/about.html" tabindex="-1">New about-me page!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-17</strong>
+                  
+                  <a href="/about/about-the-site.html" tabindex="-1">New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-07</strong>
+                  
+                  <a href="/about/credits.html" tabindex="-1">New FavIcon!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-06</strong>
+                  
+                  <a href="/resources/google-spreadsheets-excel.html" tabindex="-1">New page: Spreadsheet templates</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-05</strong>
+                  
+                  <a href="/coding/my-setup.html" tabindex="-1">New page: My coding setup</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-04-04</strong>
+                  
+                  <span>Accessibility improvements</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-03-28</strong>
+                  
+                  <a href="/shrines/minimalism.html" tabindex="-1">Minimalism shrine added!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-03-28</strong>
+                  
+                  <a href="/about/about-the-site.html" tabindex="-1">Dark mode added!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-03-27</strong>
+                  
+                  <a href="/creations/picmix.html" tabindex="-1">Picmix page added!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-03-05</strong>
+                  
+                  <a href="/shrines/index.html" tabindex="-1">New shrine overview</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-03-02</strong>
+                  
+                  <a href="/resources/vocabulary.html" tabindex="-1">Vocabulary page added!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-27</strong>
+                  
+                  <a href="/about/cats.html" tabindex="-1">Cats page added!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-26</strong>
+                  
+                  <a href="/about/media-log.html" tabindex="-1">Media log added!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-25</strong>
+                  
+                  <a href="/about/about-the-site.html" tabindex="-1">&#39;About the site&#39; page added, and a new logo!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-23</strong>
+                  
+                  <a href="/shrines/german-nostalgia.html" tabindex="-1">Added my first shrine!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-21</strong>
+                  
+                  <a href="/blog.html" tabindex="-1">Another huge update, and blog added!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-15</strong>
+                  
+                  <span>Huge Update!</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-12</strong>
+                  
+                  <span>More Content, Design update</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-10</strong>
+                  
+                  <span>Even more content</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-09</strong>
+                  
+                  <span>More Content</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-08</strong>
+                  
+                  <span>Bugfixes</span>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-02-07</strong>
+                  
+                  <a href="/" tabindex="-1">Site creation!</a>
+                  
+                </li>
+                 
+              </ul>
+            </div>
+
+            <!-- ----------------- LINK BACK ----------------- -->
+            <div class="aside-stuff aside-link-back">
+              <div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true" /></div>
+              <p>
+                Hotlinking is a-okay!
+                <!-- <br><small style="line-height: 1;display: block;">You can change the .webp to .gif if you want.</small> -->
+              </p>
+              <a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"
+                ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"
+              /></a>
+              <textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
+              >
+            </div>
+
+            <img src="../assets/img/layout/divider1.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
+
+            <!-- ----------------- POLL ----------------- -->
+            <div class="aside-stuff aside-poll" aria-hidden="true">
+              <div class="aside-stuff__heading" aria-hidden="true">Poll<img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
+
+              <form method="post" action="https://poll.pollcode.com/44866815">
+                <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
+                  <div style="padding: 2px 0px 4px 2px"><strong>what's your favorite season?</strong></div>
+                  <input type="radio" name="answer" value="1" id="answer448668151" style="float: left" /><label for="answer448668151" style="float: left; width: 150px">spring</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="2" id="answer448668152" style="float: left" /><label for="answer448668152" style="float: left; width: 150px">summer</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="3" id="answer448668153" style="float: left" /><label for="answer448668153" style="float: left; width: 150px">autumn</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="4" id="answer448668154" style="float: left" /><label for="answer448668154" style="float: left; width: 150px">winter</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
+                  <div align="right" style="font-size: 10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div>
+                </div>
+              </form>
+            </div>
+
+            <!-- old polls: 
+			- https://poll.pollcode.com/18931664_result?v
+		-->
+
+            <!-- ----------------- IMAGE OF THE MOMENT ----------------- -->
+            <div class="aside-stuff aside-poll">
+              <div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="../assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
+              <a href="https://www.tumblr.com/ggrrrhhh/759336669214375936?source=share" target="_blank" class="image-of-the-moment">
+                <img
+                  src="https://64.media.tumblr.com/71c6df5852c606ad237fecde30e59c60/b9b9b5739cd3df7b-7a/s1280x1920/7916d100ac0a650769b67e6653ac09ceae4c51dd.jpg"
+                  alt="Hugh Jackman and Ryan Reynolds"
+                  title="Hugh Jackman and Ryan Reynolds"
+                />
+              </a>
+            </div>
+
+            <!-- ----------------- BLINKIES ----------------- -->
+            <div class="aside-stuff aside-blinkies" aria-hidden="true">
+              <marquee class="marquee aside-blinkies__buttons" scrollamount="5"><div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (5).gif" alt="Blinkie: This user is bi" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (32).webp" alt="Blinkie: Bi & Polyamorous" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (12).gif" alt="Blinkie: Bisexual pride" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/bi-rights.gif" alt="Blinkie: Bi Rights" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/bisexual.gif" alt="Blinkie: I swing both ways!" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (1).gif" alt="Blinkie: Cryptozoology" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (3).gif" alt="Blinkie: I want to believe" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (4).gif" alt="Blinkie: I love Horror Movies" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (2).gif" alt="Blinkie: I love Glitter" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (6).gif" alt="Blinkie: Let the music play" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (7).gif" alt="Blinkie: Like the legends of the penis" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (8).gif" alt="Blinkie: Animal Crossing" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (9).gif" alt="Blinkie: Stardew Valley" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (10).gif" alt="Blinkie: I love toast" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (11).gif" alt="Blinkie: Smosh" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (14).gif" alt="Blinkie: Daydreamer" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (15).gif" alt="Blinkie: Minecraft diamonds are a girl's best friend" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (16).gif" alt="Blinkie: I need more time!" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (17).gif" alt="Blinkie: Hawaii: Part 2" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (18).gif" alt="Blinkie: It's gay love, baby" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (19).gif" alt="Blinkie: Never trust a replubican" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (22).gif" alt="Blinkie: Sexy naughty bitchy me" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (23).gif" alt="Blinkie: Born to shop" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (24).gif" alt="Blinkie: Daydream Believer" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (25).gif" alt="Blinkie: Hopeless Romantic" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (26).gif" alt="Blinkie: Pink! Pink! ... I love Pink!" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (27).gif" alt="Blinkie: I love Halloween" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (29).gif" alt="Blinkie: I hate mean people!" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (30).png" alt="Blinkie: Bite me. :)" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (31).webp" alt="Blinkie: I am a gay vampire and you can't stop me" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (31).gif" alt="Blinkie: Introvert" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (32).gif" alt="Blinkie: Artist" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (33).gif" alt="Blinkie: I love comments!" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (30).gif" alt="Blinkie: tummy ache survivor" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (34).gif" alt="Blinkie: I view the page source" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/cringeculture.webp" alt="Blinkie: Cringe Culture is DEAD" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/homoeroticsubtext.gif" alt="Blinkie: Homoerotic Subtext" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/i-love-comments.gif" alt="Blinkie: I love comments" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/deletetiktok.webp" alt="Blinkie: Delete TikTok" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/i-love-my-computer.gif" alt="Blinkie: I love my computer" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/neocities-user.webp" alt="Blinkie: Neocities user" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/my-back-hurts.gif" alt="Blinkie: My back hurts!!!" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/jurassic-park.gif" alt="Blinkie: Welcome to Jurassic Park" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/water-drinker.gif" alt="Blinkie: Water Drinker" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/dresslikeshit.gif" alt="Blinkie: Dress like shit" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/onthefloor.gif" alt="Blinkie: Fuck this, I am sitting on the floor" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/censorship.gif" alt="Blinkie: Censorship kills creativity" /></div>
+<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/corporateinvasion.gif" alt="Blinkie: I feel violated by the corporate invasion on my attention span" /></div></marquee>
+              <marquee class="marquee aside-blinkies__blinkies" scrollamount="4"><div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (1).gif" alt="Stamp: Delete Twitter, make a Neocities" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (2).gif" alt="Button: Best viewed with Computer" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (3).gif" alt="Button: Firefox now!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (4).gif" alt="Button: old man yaoi now!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (5).gif" alt="Button: This site is gay" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (6).jpg" alt="Button: AO3" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (7).gif" alt="Button: HTML: Learn it today!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (7).jpg" alt="Button: Tumblr" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (8).png" alt="Button: Minesweeper" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (8).gif" alt="Button: Ditch Social Media Now!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (9).png" alt="Button: EZGif now!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (10).png" alt="Button: Made with Visual Studio Code" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/neocities.gif" alt="Button: Neocities.org: The web is yours!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/jquery.gif" alt="Button: jQuery is evil!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/responsivesite.jpg" alt="Button: Responsive Website" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/getqueer.gif" alt="Button: Get Queer now!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/bookmark-this-page.gif" alt="Button: Bookmark this page!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/alienow.gif" alt="Button: The truth now!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/creationofadam.gif" alt="Button: Creation of Adam" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/statuscafe.gif" alt="Button: Status Cafe" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/ban-time-travel.png" alt="Button: Ban time travel 'now'!" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/project-gutenberg.gif" alt="Button: Gutenberg Project" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/queercode.png" alt="Button: you're telling me a queer coded this" /></div>
+<div><img width="88" height="31" src="../assets/img/blinkies/buttons/pictochat.gif" alt="Button: I miss using Pictochat" /></div>
+
+<!-- CSS Check:-->
+<div>
+  <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" tabindex="-1">
+    <img style="border: 0; width: 88px; height: 31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+  </a>
+</div></marquee>
+            </div>
+
+            <!-- ----------------- COMING SOON ----------------- -->
+            <!--
+		<div class="aside-stuff aside-changelog">
+          <div class="aside__heading aside__heading--comingsoon" aria-hidden="true">Coming Soon</div>
+          <div class="changelog custom-scrollbar">
+			  <ul aria-label="Coming Soon">
+			 	<li>loading screen</li>
+			 	<li>blog post about polyamory</li>
+			 	<li>dinosaur shrine</li> 
+			 	<li>more shrines</li> 
+			 	<li>advanced coding tutorials</li> 
+				<li>self-made blinkies/buttons/stamps</li>
+			  </ul>
+		  </div>
+        </div>
+		-->
+          </div>
+        </details>
+      </aside>
+      <aside class="aside aside--right desktop-only">
+        <!-- ----------------- CLAP, KIRBY ----------------- -->
+        <div class="aside-stuff aside-clap-kirby">
+          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook">
+            <img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
+            <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode" />
+          </a>
+          <a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
+            <img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode" />
+            <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode" />
+          </a>
+          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">
+            <img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
+            <small>click to clap for me!</small>
+          </a>
+        </div>
+
+        <img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
+
+        <!-- ----------------- STATS / STATUS ----------------- -->
+        <div class="aside-stuff aside-stats">
+          <!--
+		<div class="aside-stats__stat">
+			<div class="aside-stuff__heading"><span>visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
+			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel/stats" target="_blank" id="hitcount"></a></div>
+		</div>
+		<div class="aside-stats__stat">
+			<div class="aside-stuff__heading"><span>followers</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
+			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel" target="_blank">54</a></div>
+		</div>
+		-->
+          <div class="aside-stats__stat">
+            <div class="aside-stuff__heading"><span>visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
+            <div class="aside-stats__stat-content">
+              <center>
+                <a href="https://www.free-website-hit-counter.com">
+                  <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /> </a
+                >
+              </center>
+              <small style="font-size: 0.7em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
+            </div>
+          </div>
+          <div class="aside-stats__stat">
+            <div class="aside-stuff__heading"><span>my time</span><img src="../assets/img/layout/icon-clock.png" alt="" aria-hidden="true" /></div>
+            <div class="aside-stats__stat-content">
+              <div style="text-align: center">
+                <iframe
+                  title="my time"
+                  src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1"
+                  frameborder="0"
+                  width="150"
+                  height="17"
+                  allowtransparency="true"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="aside-stats__stat">
+            <div class="aside-stuff__heading"><span>my status</span><img src="../assets/img/layout/icon-happy.png" alt="" aria-hidden="true" /></div>
+            <div class="aside-stats__stat-content" id="statuscafe">
+              <div id="statuscafe-username"></div>
+              <div id="statuscafe-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <img src="../assets/img/layout/divider3.gif" alt="" aria-hidden="true" style="margin-top: -2px" />
+
+        <!-- ----------------- CURRENTLY ----------------- -->
+        <div class="aside-stuff aside-currently">
+          <div class="aside-stuff__heading">Currently</div>
           <ul>
-            <li>You will be able to see the change history of your files. If you break something, you can easily restore old versions of files.</li>
-            <li>You will have an online version of your project, which you can share with others. (It's also a neat backup so your project can't be lost!)</li>
-            <li>You will be able to work with other people on your project.</li>
-            <li>If you connect your repository to the host of your website (e.g. Neocities), all changes will automatically be uploaded there as well. (See step 5 for details.)</li>
+            <li aria-label="listening to:">
+              <img src="../assets/img/layout/icon-music.png" alt="" title="listening to:" aria-hidden="true" />
+              <a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">various</a>
+            </li>
+            <li aria-label="watching:">
+              <img src="../assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">X-Men '97</a>
+            </li>
+            <li aria-label="reading:">
+              <img src="../assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
+              <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank"
+                >The Secret History
+                <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a
+              >
+            </li>
+            <li aria-label="playing:">
+              <img src="../assets/img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true" />
+              <a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume</a>
+            </li>
+            <li aria-label="obsessed with:">
+              <img src="../assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
+              <span
+                >Deadpool & Wolverine
+                <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
+              >
+            </li>
           </ul>
-          <p>If you want to look at an example GitHub repository, check out <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">the one for this very website</a>!</p>
-          <p>
-            If you have questions or feedback regarding the tutorial, feel free to contact me via my
-            <a href="http://localhost:52330/public/img/layout/kirby2light.png" target="_blank">Neocities profile</a> or <a href="/about/guestbook" target="_blank">Guestbook</a>! I would love to
-            improve the guide in any way possible.
-          </p>
-          <blockquote>
-            This tutorial was written using git <b>version 2.41.0</b>. If you use a much older or newer version some of the information here might be outdated! You can check your version by running:
-            <code>git -v</code>
-          </blockquote>
+        </div>
 
-          <!-- https://github.blog/developer-skills/programming-languages-and-frameworks/what-is-git-our-beginners-guide-to-version-control/ -->
+        <!-- ----------------- NEIGHBORS ----------------- -->
+        <div class="aside-stuff aside-mutuals" data-nesting="../" aria-hidden="true">
+          <div class="aside-stuff__heading">
+            <a href="/about/neighbors">Neighbors<img src="../assets/img/layout/icon-building.png" alt="" aria-hidden="true" /></a>
+          </div>
+          <a href="#afterneighbours" class="skiplink" aria-hidden="true">Skip neighbours</a>
+          <div id="beforeneighbours"></div>
+          <marquee class="marquee aside-mutuals__buttons" scrollamount="5"><a title="Florrie's Garden" href="https://florrie.ichi.city/" target="_blank"><img width="88" height="31" src="../assets/img/links/florrie.gif" alt="florrie" /></a>
+<a title="cinajimrollie" href="https://florrie.ichi.city/" target="_blank"><img width="88" height="31" src="https://i.postimg.cc/hvr1jPrP/cinajimrollie.png" alt="cinajimrollie" /></a>
+<a href="https://lostletters.neocities.org/" title="lostletters"><img width="88" height="31" src="../assets/img/links/lostletters.gif" alt="lostletters" /></a>
+<a href="https://strawberry-gashes.neocities.org" title="strawberry-gashes"><img width="88" height="31" src="https://i.imgur.com/V9sIpx6.gif" alt="strawberry-gashes" /></a>
+<a href="https://lexiqqq.com/" title="lexiqqq"><img width="88" height="31" src="../assets/img/links/lexiqqq.gif" alt="lexiqqq" /></a>
+<a href="https://cinni.net/" title="cinni.net"><img width="88" height="31" src="../assets/img/links/cinni.png" alt="cinni.net" /></a>
+<a href="https://comfort.kayla.care/" title="Comfort"
+  ><img width="88" height="31" src="https://64.media.tumblr.com/7e6e9b6d9030a392c9fe248c4994aa4e/9594f64d816b9c9e-94/s100x200/2bb06e351525682bf448afebfac361caffc248ce.gif" alt="Comfort"
+/></a>
+<a href="https://sakuradreams.neocities.org/" title="sakuradreams"><img width="88" height="31" src="../assets/img/links/sakuradreams.gif" alt="sakuradreams" /></a>
+<a href="https://doqmeat.com/" title="doqmeant"><img width="88" height="31" src="../assets/img/links/doqmeat.png" alt="doqmeant" /></a>
+<a href="https://lavenderblues.neocities.org/" title="lavenderblues"><img width="88" height="31" src="../assets/img/links/lavenderblues.gif" alt="lavenderblues" /></a>
+<a href="https://vencake.neocities.org/" title="VenCake"><img width="88" height="31" src="../assets/img/links/vencake.png" alt="VenCake" /></a>
+<a href="https://faintlymacabre.neocities.org/" title="faintlymacabre"><img width="88" height="31" src="../assets/img/links/faintlymacabre.gif" alt="faintlymacabre" /></a>
+<a href="https://tthumbelina.neocities.org/" title="tthumbelina"><img width="88" height="31" src="../assets/img/links/tthumbelina.GIF" alt="tthumbelina" /></a>
+<a href="https://chocolaterevel.neocities.org/" title="chocolaterevel"><img width="88" height="31" src="../assets/img/links/chocolaterevel.png" alt="chocolaterevel" /></a>
+<a href="https://furbee.neocities.org/" title="furbee"><img width="88" height="31" src="../assets/img/links/furbee.png" alt="furbee" /></a>
+<a href="https://digibun.neocities.org/" title="digibun"><img width="88" height="31" src="../assets/img/links/digibun.png" alt="digibun" /></a>
+<a href="https://yapi.lol/" title="yapi.lol"><img width="88" height="31" src="../assets/img/links/yapilol.gif" alt="yapi.lol" /></a>
+<a href="https://cyberstheb.neocities.org/" title="cyberstheb"><img width="88" height="31" src="../assets/img/links/cyberstheb.png" alt="cyberstheb" /></a>
+<a href="https://thegardenofmadeline.neocities.org/" title="thegardenofmadeline"><img width="88" height="31" src="../assets/img/links/gardenofmadeline.gif" alt="thegardenofmadeline" /></a>
+<a href="https://maplebear.neocities.org/" title="maplebear"><img width="88" height="31" src="https://i.imgur.com/YB9L6sN.gif" alt="maplebear" /></a>
+<a href="https://jeith.neocities.org/" title="jeith"><img width="88" height="31" src="https://jeith.com/jeith.gif" alt="jeith" /></a>
+<a href="https://alexparozi.neocities.org/" title="cascade!"><img width="88" height="31" src="https://file.garden/ZnR0Oyc2xySzmhy2/button.png" alt="cascade!" /></a>
+<a href="https://jeansgurl98.neocities.org/" title="jeansgurl98"><img width="88" height="31" src="../assets/img/links/jeansgurl98.png" alt="jeansgurl98" /></a>
+<a href="https://freaksaint.neocities.org/" title="freaksaint"><img width="88" height="31" src="https://i.imgur.com/0G6GQYJ.png" alt="freaksaint" /></a>
+<a href="https://artwork.neocities.org/" title="artwork"><img width="88" height="31" src="../assets/img/links/artwork.gif" alt="artwork" /></a>
+<a href="https://metmoxie.com/" title="metmoxie"><img width="88" height="31" src="../assets/img/links/metmoxie.webp" alt="metmoxie" /></a>
+<a href="https://lavender-but-bread.neocities.org/" title="lavender-but-bread"
+  ><img width="88" height="31" src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif" alt="lavender-but-bread"
+/></a>
+<a href="https://melxncholyman.neocities.org/" title="melxncholyman"><img width="88" height="31" src="../assets/img/links/melxncholyman.png" alt="melxncholyman" /></a>
+<a href="https://kubikill.neocities.org/" title="kubikill"
+  ><img width="88" height="31" src="https://kubikill.neocities.org/kubikill88x31static.png" alt="kubikill's Cyberspace Portal"
+/></a>
+<a href="https://alphacentauri.neocities.org/" title="alphacentauri"
+  ><img width="88" height="31" src="https://alphacentauri.neocities.org/_img/alphacentauri.gif" alt="alphacentauri"
+/></a>
+<a href="https://solita.neocities.org/" title="Solita"><img width="88" height="31" src="../assets/img/links/solita.png" alt="Solita" /></a>
+<a href="https://daniele63.com/" title="Daniele's Website"><img width="88" height="31" src="../assets/img/links/danieles.jpg" alt="Daniele's Website" /></a>
+<a href="https://wilburwilliams.uk/" title="Wilbur's Site"><img width="88" height="31" src="../assets/img/links/wilburwilliams.gif" alt="Wilbur's Site" /></a>
+<a href="https://cheytopia.neocities.org/" title="cheytopia"><img width="88" height="31" src="../assets/img/links/cheytopia.png" alt="cheytopia" /></a>
+<a href="https://cowgrls.neocities.org/" title="jimbo's barnyard"><img width="88" height="31" src="https://cowgrls.neocities.org/barnyard88x31.gif" alt="jimbo's barnyard" /></a>
+<a href="https://firozah.com/" title="firozah"><img width="88" height="31" src="../assets/img/links/firozah.gif" alt="firozah" /></a>
 
-          <!-- <center style="padding: 0.4em 0 0.6em"><b>This guide is still work-in-progress!</b></center> -->
+<!-- <a href="LINK" title="TITLE"><img width="88" height="31" src="../assets/img/links/IMAGE" alt="TITLE" /></a> --></marquee>
+          <div id="afterneighbours">Click <a href="/about/neighbors">here</a> to view them all.</div>
+          <a href="#beforeneighbours" class="skiplink" aria-hidden="true">Skip to before neighbours</a>
+        </div>
 
-          <div id="toc"></div>
-        </section>
+        <!-- ----------------- CHATBOX ----------------- -->
+        <div class="aside-stuff aside-chatbox">
+          <div class="aside-stuff__heading" aria-hidden="true">Chatbox<img src="../assets/img/layout/icon-chat.png" alt="" aria-hidden="true" /></div>
+          <a href="#afterchatbox" class="skiplink" aria-hidden="true">Skip chatbox iFrame</a>
+          <div id="beforechatbox"></div>
+          <iframe
+            src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk"
+            width="100%"
+            height="300"
+            allowtransparency="yes"
+            allow="autoplay"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            scrolling="auto"
+            aria-label="Chatbox"
+          ></iframe>
+          <div id="afterchatbox"></div>
+          <a href="#beforechatbox" class="skiplink" aria-hidden="true">Skip to before chatbox iFrame</a>
+        </div>
 
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- ----------------- FLAG COUNTER ----------------- -->
+        <!--
+		<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter"
+        ><img alt="Flag Counter" src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" border="0"/></a>
+	  -->
+      </aside>
 
-        <section>
-          <h2>Understanding Git</h2>
+      <!-- ----------------- BACK TO TOP ----------------- -->
+      <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
 
-          <h3>Git vs GitHub</h3>
-          <p>First, let's look at SimpleWikipedia's definition of git and GitHub:</p>
-          <blockquote>
-            <strong>Git</strong> is a distributed revision control system. It is a computer program that helps people create other computer programs together. <strong>GitHub</strong> is an online
-            software development assistance and version control service. This platform uses Git.
-          </blockquote>
-          <p>We will be working with both Git and GitHub. To clarify, this is the difference:</p>
-          <ul>
-            <li><strong>Git</strong> is the core technology, with which you can create git repositories.</li>
-            <li><strong>GitHub.com</strong> is a web interface for git repositories. There are other ones too, but GitHub is by far the most popular.</li>
-          </ul>
-          <p>
-            You can think of a <em>repository</em> as a project. For example, I have a repository for a game I'm making and
-            <a href="https://github.com/petracoding/petrapixel.neocities.org">another repository for my website</a> (go ahead and check it out to get a sense of what it looks like!)
-          </p>
+      <!-- ------------------------------------------------ -->
+      <!-- ----------------- MAIN CONTENT ----------------- -->
+      <!-- ------------------------------------------------ -->
+      <main id="main" class="coding-page git-tutorial">
+        
+<style>
+  a.anchor,
+  .zeroclipboard-container {
+    display: none;
+  }
 
-          <h3>What we'll do</h3>
-          <p>
-            We will be connecting our local files (aka the project on your PC) with your GitHub repository (aka the files uploaded to GitHub). Then, with just one command/click, you will be able to
-            upload your local changes to the online repository. Other people can look at and download your repository (if you have set it to public). You will also be able to view the change history
-            of every file.
-          </p>
-          <p>
-            Also, other people can work on your repository (though all changes need to be approved by you, obviously). That's like, one of the main reasons to use git (besides version control).
-            However, I will not go into this in detail. It's important to understand the basics first. And for your beginner project/website it's probably just you anyway.
-          </p>
-          <h3>The process</h3>
-          <p>
-            You will make changes in your project as usual. Once you've made a few changes you will choose ("<b>stage</b>") the changed files that belong together (for example a new feature, an edited
-            page, etc.) We will then <b>commit</b> these chosen ("staged") files and give all of the changes a name, e.g. <i>"Update About-Me Page"</i>.
-          </p>
-          <p>I've tried to visualize it here: <span style="opacity: 0.5">(Behold my magnum opus)</span></p>
-          <div class="image"><img src="../img/etc/git-tutorial/magnumopus.png" alt="" /></div>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h2>Requirements</h2>
+  main code {
+    font-weight: normal;
+  }
 
-          <h3>Install Git</h3>
-          <p>You need to have git installed on your device.</p>
-          <p>
-            Go <a href="https://git-scm.com/downloads" target="_blank">here</a> to download Git. If you're using <b>Windows</b> you can also download it
-            <a href="https://gitforwindows.org/" target="_blank">here</a>.
-          </p>
-          <h3>GitHub Account</h3>
-          <p>Create an account on <a href="https://github.com/" target="_blank">Github.com</a>, if you don't already have one.</p>
-          <p>
-            If you're using <b>VSCode</b> I highly recommend logging in with your GitHub account in VSCode. Go
-            <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git" target="_blank">here</a> for more information.
-          </p>
-          <h3>How to use commands</h3>
-          <p>You need to be able to use command line comments.</p>
-          <p>
-            If you're using <b>VSCode</b>, simply right-click the file tree on the left side of the program and choose "Open in Integrated Terminal". This will open the terminal on the bottom of the
-            program:
-          </p>
-          <div class="image"><img src="../img/etc/git-tutorial/1.png" alt="" /></div>
-          <div class="image"><img src="../img/etc/git-tutorial/2.png" alt="" /></div>
-          <p>
-            Other IDEs (= programs you code in) might also have integrated terminals. If you use Notepad++ or other simple editors to work on your code you can open a Windows terminal by
-            <b>right-clicking in your folder in the Windows explorer and choosing "Open in Terminal"</b> (I'm using Windows 11 so it might be labelled differently for you). The Windows Powershell will
-            open.
-          </p>
-          <p>Some very basic commands you should know: (<code>cd</code> stands for 'change directory')</p>
-          <ul>
-            <li><code>cd ..</code> to move to the next folder up</li>
-            <li><code>cd &lt;folder&gt;</code> to move into the folder, e.g. <code>cd images/gifs</code></li>
-          </ul>
-          <!-- <p>
+  main h3 {
+    margin-top: 1.5em;
+  }
+</style>
+
+<section>
+  <h1>Git & GitHub Tutorial</h1>
+  <p>
+    When I tried to learn git I had a lot of trouble, because even though they are 'beginner tutorials' out there, all of them were either too complicated to too minimalistic. So, here's my attempt to
+    teach you exactly the steps you need to use git as a beginner.
+  </p>
+  <p><b>Why to use Git:</b></p>
+  <ul>
+    <li>You will be able to see the change history of your files. If you break something, you can easily restore old versions of files.</li>
+    <li>You will have an online version of your project, which you can share with others. (It's also a neat backup so your project can't be lost!)</li>
+    <li>You will be able to work with other people on your project.</li>
+    <li>If you connect your repository to the host of your website (e.g. Neocities), all changes will automatically be uploaded there as well. (See step 5 for details.)</li>
+  </ul>
+  <p>If you want to look at an example GitHub repository, check out <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">the one for this very website</a>!</p>
+  <p>
+    If you have questions or feedback regarding the tutorial, feel free to contact me via my
+    <a href="https://neocities.org/site/petrapixel" target="_blank">Neocities profile</a> or <a href="/about/guestbook" target="_blank">Guestbook</a>! I would love to improve the guide in any way
+    possible.
+  </p>
+  <blockquote>
+    This tutorial was written using git <b>version 2.41.0</b>. If you use a much older or newer version some of the information here might be outdated! You can check your version by running:
+    <code>git -v</code>
+  </blockquote>
+
+  <!-- https://github.blog/developer-skills/programming-languages-and-frameworks/what-is-git-our-beginners-guide-to-version-control/ -->
+
+  <!-- <center style="padding: 0.4em 0 0.6em"><b>This guide is still work-in-progress!</b></center> -->
+
+  <div id="toc"></div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2>Understanding Git</h2>
+
+  <h3>Git vs GitHub</h3>
+  <p>First, let's look at SimpleWikipedia's definition of git and GitHub:</p>
+  <blockquote>
+    <strong>Git</strong> is a distributed revision control system. It is a computer program that helps people create other computer programs together. <strong>GitHub</strong> is an online software
+    development assistance and version control service. This platform uses Git.
+  </blockquote>
+  <p>We will be working with both Git and GitHub. To clarify, this is the difference:</p>
+  <ul>
+    <li><strong>Git</strong> is the core technology, with which you can create git repositories.</li>
+    <li><strong>GitHub.com</strong> is a web interface for git repositories. There are other ones too, but GitHub is by far the most popular.</li>
+  </ul>
+  <p>
+    You can think of a <em>repository</em> as a project. For example, I have a repository for a game I'm making and
+    <a href="https://github.com/petracoding/petrapixel.neocities.org">another repository for my website</a> (go ahead and check it out to get a sense of what it looks like!)
+  </p>
+
+  <h3>What we'll do</h3>
+  <p>
+    We will be connecting our local files (aka the project on your PC) with your GitHub repository (aka the files uploaded to GitHub). Then, with just one command/click, you will be able to upload
+    your local changes to the online repository. Other people can look at and download your repository (if you have set it to public). You will also be able to view the change history of every file.
+  </p>
+  <p>
+    Also, other people can work on your repository (though all changes need to be approved by you, obviously). That's like, one of the main reasons to use git (besides version control). However, I
+    will not go into this in detail. It's important to understand the basics first. And for your beginner project/website it's probably just you anyway.
+  </p>
+  <h3>The process</h3>
+  <p>
+    You will make changes in your project as usual. Once you've made a few changes you will choose ("<b>stage</b>") the changed files that belong together (for example a new feature, an edited page,
+    etc.) We will then <b>commit</b> these chosen ("staged") files and give all of the changes a name, e.g. <i>"Update About-Me Page"</i>.
+  </p>
+  <p>I've tried to visualize it here: <span style="opacity: 0.5">(Behold my magnum opus)</span></p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/magnumopus.png" alt="" /></div>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<section>
+  <h2>Requirements</h2>
+
+  <h3>Install Git</h3>
+  <p>You need to have git installed on your device.</p>
+  <p>
+    Go <a href="https://git-scm.com/downloads" target="_blank">here</a> to download Git. If you're using <b>Windows</b> you can also download it
+    <a href="https://gitforwindows.org/" target="_blank">here</a>.
+  </p>
+  <h3>GitHub Account</h3>
+  <p>Create an account on <a href="https://github.com/" target="_blank">Github.com</a>, if you don't already have one.</p>
+  <p>
+    If you're using <b>VSCode</b> I highly recommend logging in with your GitHub account in VSCode. Go
+    <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git" target="_blank">here</a> for more information.
+  </p>
+  <h3>How to use commands</h3>
+  <p>You need to be able to use command line comments.</p>
+  <p>
+    If you're using <b>VSCode</b>, simply right-click the file tree on the left side of the program and choose "Open in Integrated Terminal". This will open the terminal on the bottom of the program:
+  </p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/1.png" alt="" /></div>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/2.png" alt="" /></div>
+  <p>
+    Other IDEs (= programs you code in) might also have integrated terminals. If you use Notepad++ or other simple editors to work on your code you can open a Windows terminal by
+    <b>right-clicking in your folder in the Windows explorer and choosing "Open in Terminal"</b> (I'm using Windows 11 so it might be labelled differently for you). The Windows Powershell will open.
+  </p>
+  <p>Some very basic commands you should know: (<code>cd</code> stands for 'change directory')</p>
+  <ul>
+    <li><code>cd ..</code> to move to the next folder up</li>
+    <li><code>cd &lt;folder&gt;</code> to move into the folder, e.g. <code>cd images/gifs</code></li>
+  </ul>
+  <!-- <p>
             (Note: Technically, for many (not all) of the command you will learn it doesn't matter which folder you are in as long as it is in your project. However, I highly recommend staying in the
             root folder of your project for everything. So, basically, don't use the <code>cd</code> commands once you're in your project folder unless you know what you're doing.)
           </p> -->
-          <p>To stop/cancel a running command you can use Ctrl+C.<br />If it's a git command, such as <code>git log</code>, you can end it by pressing <b>q</b> (short for 'quit').</p>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h2>1. Creating a new project</h2>
+  <p>To stop/cancel a running command you can use Ctrl+C.<br />If it's a git command, such as <code>git log</code>, you can end it by pressing <b>q</b> (short for 'quit').</p>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<section>
+  <h2>1. Creating a new project</h2>
 
-          <p>Go to GitHub and create an empty repository. You could call it <i>my-website</i> or <i>example.neocities.org</i> or something like that. Do <b>not</b> include a .README file.</p>
-          <div class="image"><img src="../img/etc/git-tutorial/0.png" alt="" /></div>
-          <p>On the repostiory page, copy the HTTPS (not SSH!) link. We will need this in a second.</p>
-          <div class="image"><img src="../img/etc/git-tutorial/3b.png" alt="" /></div>
-          <p>(If you want to find this link later, it will be in the "Code" menu:)</p>
-          <div class="image"><img src="../img/etc/git-tutorial/3.png" alt="" /></div>
-          <p>Open a terminal in your project folder. (If you don't have a project folder yet create it now and add at least one file.)</p>
-          <!-- <p>
+  <p>Go to GitHub and create an empty repository. You could call it <i>my-website</i> or <i>example.neocities.org</i> or something like that. Do <b>not</b> include a .README file.</p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/0.png" alt="" /></div>
+  <p>On the repostiory page, copy the HTTPS (not SSH!) link. We will need this in a second.</p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/3b.png" alt="" /></div>
+  <p>(If you want to find this link later, it will be in the "Code" menu:)</p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/3.png" alt="" /></div>
+  <p>Open a terminal in your project folder. (If you don't have a project folder yet create it now and add at least one file.)</p>
+  <!-- <p>
             Choose whether you want to call your primary branch <em>main</em> or <em>master</em> . (It doesn't really matter. <em>master</em> used to be the default, and is still extremely common, but
             <em>main</em> is the default now.) I will use <em>main</em> for all following examples.
           </p> -->
-          <p>Then execute the following commands one by one: (In the second one, replace <code>&lt;https link&gt;</code> with the link you just copied!)</p>
-          <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
-            <pre><code>git init
+  <p>Then execute the following commands one by one: (In the second one, replace <code>&lt;https link&gt;</code> with the link you just copied!)</p>
+  <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
+    <pre><code>git init
 git remote add origin &lt;https link&gt;
 git add .
 git commit -m "First Commit"
 git branch -M main
 git push --set-upstream origin main
 git pull --set-upstream origin main</code></pre>
-          </div>
-          <p>Explanation:</p>
-          <ul>
-            <li><code>git init</code> initalizes your current folder as a git repository</li>
-            <li><code>git remote add origin ...</code> connects your local folder with the GitHub repository you have created on github.com</li>
-            <li><code>git add .</code> stages all your files. (you will learn what this means in a second)</li>
-            <li><code>git commit -m "First Commit"</code> commits the staged files. (you will learn what this means in a second)</li>
-            <li>
-              <code>git branch -M main</code> renames the branch to 'main'. This is sometimes necessary because sometimes the branch is called 'master' by default, which is wrong for our example.
-            </li>
-            <li>
-              <code>git push --set-upstream origin main</code> pushes (= uploads) your local files to your GitHub repository. This is also where we define the <em>main</em> branch as the default
-              target for this command, which we will only have to do this one time.
-            </li>
+  </div>
+  <p>Explanation:</p>
+  <ul>
+    <li><code>git init</code> initalizes your current folder as a git repository</li>
+    <li><code>git remote add origin ...</code> connects your local folder with the GitHub repository you have created on github.com</li>
+    <li><code>git add .</code> stages all your files. (you will learn what this means in a second)</li>
+    <li><code>git commit -m "First Commit"</code> commits the staged files. (you will learn what this means in a second)</li>
+    <li><code>git branch -M main</code> renames the branch to 'main'. This is sometimes necessary because sometimes the branch is called 'master' by default, which is wrong for our example.</li>
+    <li>
+      <code>git push --set-upstream origin main</code> pushes (= uploads) your local files to your GitHub repository. This is also where we define the <em>main</em> branch as the default target for
+      this command, which we will only have to do this one time.
+    </li>
 
-            <li>
-              <code>git pull --set-upstream origin main</code> pulls (= downloads) the files in your GitHub repository into your local folder. (Right now this won't do anything because the files in
-              your GitHub repostiory and your PC are the same.) This is also where we define the <em>main</em> branch as the default target for this command, which we will only have to do this one
-              time.
-            </li>
-          </ul>
-          <br />
-          <details>
-            <summary>Troubleshooting</summary>
-            <p>If you get the error <code>"error: remote origin already exists."</code> execute <code>git remote rm origin</code> and try again.</p>
-            <p>If you initalized the GitHub repository with a .README file, you might have to execute these commands instead:</p>
-            <pre><code>git init
+    <li>
+      <code>git pull --set-upstream origin main</code> pulls (= downloads) the files in your GitHub repository into your local folder. (Right now this won't do anything because the files in your
+      GitHub repostiory and your PC are the same.) This is also where we define the <em>main</em> branch as the default target for this command, which we will only have to do this one time.
+    </li>
+  </ul>
+  <br />
+  <details>
+    <summary>Troubleshooting</summary>
+    <p>If you get the error <code>"error: remote origin already exists."</code> execute <code>git remote rm origin</code> and try again.</p>
+    <p>If you initalized the GitHub repository with a .README file, you might have to execute these commands instead:</p>
+    <pre><code>git init
 git remote add origin &lt;https link&gt;
 git switch -c main
 git add .
 git commit -m "First Commit"
 git pull --set-upstream origin main --allow-unrelated-histories
 git push --set-upstream origin main</code></pre>
-            <b>Broken something? Want to restart?</b>
-            <p>
-              If you want your project folder not to be a git repository anymore, you have to delete the (hidden) <code>.git</code> folder in the project: Open your project in the Windows Explorer,
-              make visible files and folders visible in the settings of the Windows Explorer, and delete the <code>.git</code> folder. You can now start from the beginning (<code>git init</code> and
-              so on).
-            </p>
-          </details>
+    <b>Broken something? Want to restart?</b>
+    <p>
+      If you want your project folder not to be a git repository anymore, you have to delete the (hidden) <code>.git</code> folder in the project: Open your project in the Windows Explorer, make
+      visible files and folders visible in the settings of the Windows Explorer, and delete the <code>.git</code> folder. You can now start from the beginning (<code>git init</code> and so on).
+    </p>
+  </details>
 
-          <br />
-          <p>You should now see your project files in your repository on GitHub.com!</p>
-          <blockquote>The set-up for this project is now done. What you will learn next is what you will do whenever you work on your project!</blockquote>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h2>2. Staging changes</h2>
+  <br />
+  <p>You should now see your project files in your repository on GitHub.com!</p>
+  <blockquote>The set-up for this project is now done. What you will learn next is what you will do whenever you work on your project!</blockquote>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<section>
+  <h2>2. Staging changes</h2>
 
-          <p>
-            Edit your code as you usually would. Once you want to "save" your changes it's time to add all changed files that you want to "save" to the so-called <i>staging area</i> by
-            <b>staging</b> them. You can think of this step as <b>choosing which files to save together as a feature</b>.
-          </p>
+  <p>
+    Edit your code as you usually would. Once you want to "save" your changes it's time to add all changed files that you want to "save" to the so-called <i>staging area</i> by <b>staging</b> them.
+    You can think of this step as <b>choosing which files to save together as a feature</b>.
+  </p>
 
-          <p>When using commands, execute this for every file:</p>
-          <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
-            <pre><code>git add &lt;file&gt;</code></pre>
-          </div>
-          <p>...for example: <code>git add index.html</code></p>
-          <p>If you want to stage multiple files at once you can do something like this: (this would stage every changed file in the 'blog' folder) <code>git add blog/.</code></p>
+  <p>When using commands, execute this for every file:</p>
+  <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
+    <pre><code>git add &lt;file&gt;</code></pre>
+  </div>
+  <p>...for example: <code>git add index.html</code></p>
+  <p>If you want to stage multiple files at once you can do something like this: (this would stage every changed file in the 'blog' folder) <code>git add blog/.</code></p>
 
-          <p>To stage <em>every</em> changed file, you can simply do: <code>git add .</code></p>
-          <p><strong>Or: </strong>When using the VSCode UI simply press the small "+" next any changed file to stage it:</p>
-          <div class="image"><img src="../img/etc/git-tutorial/4.png" alt="" /></div>
+  <p>To stage <em>every</em> changed file, you can simply do: <code>git add .</code></p>
+  <p><strong>Or: </strong>When using the VSCode UI simply press the small "+" next any changed file to stage it:</p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/4.png" alt="" /></div>
 
-          <!-- <p>
+  <!-- <p>
             To stage only a <strong>part</strong> of a file, you can use: <code>git add -p &lt;filename&gt;</code> and define for every line what you want to do. (y=stage,n=not stage,q=not stage and
             no more,a=stage and all others,s=split,e=manually edit with + and - and #)
           </p> -->
 
-          <br />
-          <details>
-            <summary>Show me how to un-stage files</summary>
-            <h3>Unstaging Files</h3>
-            <p>When unstaging files your changes will <b>not</b> be undone. The only thing that changes is the status of the file: It will change from staged to unstaged.</p>
-            <p>To un-stage files/folders, execute <code>git restore --staged &lt;file&gt;</code> or <code>git reset HEAD -- &lt;file&gt;</code> (They do the same thing.)</p>
-            <p><strong>Or: </strong>When using the VSCode UI simply press the small "-" next to any staged file to unstage it:</p>
-            <div class="image"><img src="../img/etc/git-tutorial/5.png" alt="" /></div>
-            <br />
-          </details>
-          <br />
-          <p>
-            <b>Important tip:</b> To show the <b>status</b> of all files, use <code>git status</code>. This will show you which files have been changed, and whether these changes are already staged or
-            not. Keep in mind that one file can be both staged and unstaged if you made changes in it after staging other changes.
-          </p>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h2>3. Commiting changes</h2>
+  <br />
+  <details>
+    <summary>Show me how to un-stage files</summary>
+    <h3>Unstaging Files</h3>
+    <p>When unstaging files your changes will <b>not</b> be undone. The only thing that changes is the status of the file: It will change from staged to unstaged.</p>
+    <p>To un-stage files/folders, execute <code>git restore --staged &lt;file&gt;</code> or <code>git reset HEAD -- &lt;file&gt;</code> (They do the same thing.)</p>
+    <p><strong>Or: </strong>When using the VSCode UI simply press the small "-" next to any staged file to unstage it:</p>
+    <div class="image"><img src="../assets/img/etc/git-tutorial/5.png" alt="" /></div>
+    <br />
+  </details>
+  <br />
+  <p>
+    <b>Important tip:</b> To show the <b>status</b> of all files, use <code>git status</code>. This will show you which files have been changed, and whether these changes are already staged or not.
+    Keep in mind that one file can be both staged and unstaged if you made changes in it after staging other changes.
+  </p>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<section>
+  <h2>3. Commiting changes</h2>
 
-          <p>Every staged file can then be 'commited'. You can think of this as "saving" all the changes that belong together (e.g. a feature, new page, bugfix).</p>
-          <p>When using commands, execute this once: (-m stands for message, which is the title you give your commit)</p>
-          <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
-            <pre><code>git commit -m "Example message"</code></pre>
-          </div>
-          <p><strong>Or: </strong>When using the VSCode UI simply type your message into the input box at the top and click 'Commit':</p>
-          <div class="image"><img src="../img/etc/git-tutorial/6.png" alt="" /></div>
-          <p>Some <strong>good</strong> examples for commit messages:</p>
-          <ul>
-            <li>"BUGFIX: Fix order of gallery items"</li>
-            <li>"Create gallery element"</li>
-          </ul>
-          <p>Some <strong>bad</strong> examples for commit messages:</p>
-          <ul>
-            <li>"i changed the color of the title" (too narrative)</li>
-            <li>"update" (too indescriptive)</li>
-          </ul>
+  <p>Every staged file can then be 'commited'. You can think of this as "saving" all the changes that belong together (e.g. a feature, new page, bugfix).</p>
+  <p>When using commands, execute this once: (-m stands for message, which is the title you give your commit)</p>
+  <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
+    <pre><code>git commit -m "Example message"</code></pre>
+  </div>
+  <p><strong>Or: </strong>When using the VSCode UI simply type your message into the input box at the top and click 'Commit':</p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/6.png" alt="" /></div>
+  <p>Some <strong>good</strong> examples for commit messages:</p>
+  <ul>
+    <li>"BUGFIX: Fix order of gallery items"</li>
+    <li>"Create gallery element"</li>
+  </ul>
+  <p>Some <strong>bad</strong> examples for commit messages:</p>
+  <ul>
+    <li>"i changed the color of the title" (too narrative)</li>
+    <li>"update" (too indescriptive)</li>
+  </ul>
 
-          <h3>Amending changes</h3>
-          <p>If you want to add more changes to your most recent commit instead of creating yet another commit, you can amend your changes.</p>
-          <details>
-            <summary>Show me how to amend changes</summary>
-            <p><b>Only do this if you haven't pushed your most recent commit yet!</b></p>
-            <p><b>Stage your files</b> as you usually would. Then, instead of using <code>git commit</code>, do:</p>
-            <pre><code>git commit --amend -m "an updated commit message"</code></pre>
-            <p>or, if you don't want to change your previous commit message, you can do:</p>
-            <pre><code>git commit --amend --no-edit</code></pre>
-            <p>This will add your changes to your most recent commit. The commit message will stay unchanged.</p>
-            <p><strong>Or: </strong>If you're using VSCode you can open the submenu of the "Commit" button and click "Commit (Amend)":</p>
-            <div class="image"><img src="../img/etc/git-tutorial/amend.png" alt="" /></div>
-          </details>
+  <h3>Amending changes</h3>
+  <p>If you want to add more changes to your most recent commit instead of creating yet another commit, you can amend your changes.</p>
+  <details>
+    <summary>Show me how to amend changes</summary>
+    <p><b>Only do this if you haven't pushed your most recent commit yet!</b></p>
+    <p><b>Stage your files</b> as you usually would. Then, instead of using <code>git commit</code>, do:</p>
+    <pre><code>git commit --amend -m "an updated commit message"</code></pre>
+    <p>or, if you don't want to change your previous commit message, you can do:</p>
+    <pre><code>git commit --amend --no-edit</code></pre>
+    <p>This will add your changes to your most recent commit. The commit message will stay unchanged.</p>
+    <p><strong>Or: </strong>If you're using VSCode you can open the submenu of the "Commit" button and click "Commit (Amend)":</p>
+    <div class="image"><img src="../assets/img/etc/git-tutorial/amend.png" alt="" /></div>
+  </details>
 
-          <h3>Undoing commits</h3>
-          <p>If you commited something that you didn't mean to, you can undo it.</p>
-          <details>
-            <summary>Show me how to undo commits</summary>
-            <p>There are two ways to "undo" a commit.</p>
-            <ul>
-              <li><strong>Revert</strong> = It's as if someone had gone it and changed everything back; the changes stay visible in the edit history of the file.</li>
-              <li><strong>Reset</strong> = It's as if the commit had never happened. (Not recommended.)</li>
-            </ul>
+  <h3>Undoing commits</h3>
+  <p>If you commited something that you didn't mean to, you can undo it.</p>
+  <details>
+    <summary>Show me how to undo commits</summary>
+    <p>There are two ways to "undo" a commit.</p>
+    <ul>
+      <li><strong>Revert</strong> = It's as if someone had gone it and changed everything back; the changes stay visible in the edit history of the file.</li>
+      <li><strong>Reset</strong> = It's as if the commit had never happened. (Not recommended.)</li>
+    </ul>
 
-            <br />
-            <h4>How to Revert</h4>
-            <p>To <b>revert</b> a commit you can execute:</p>
-            <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
-              <pre><code>git revert --no-edit &lt;commit_hash&gt;</code></pre>
-            </div>
+    <br />
+    <h4>How to Revert</h4>
+    <p>To <b>revert</b> a commit you can execute:</p>
+    <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
+      <pre><code>git revert --no-edit &lt;commit_hash&gt;</code></pre>
+    </div>
 
-            <p>That will create a new commit that undoes the changes in your previous commit.</p>
-            <p>
-              You can find the <b>commit hash</b> of your previous commit by showing a list of the previous commits with <code>git log --oneline</code>. The hash could look like this:
-              <i>fcd745f</i> or this: <i>fcd745f74822c61cf30442407165c1b86fe5ccf5</i> . (How to copy the ID depends on which terminal you're using. Perhaps Ctrl+C as usual, perhaps selecting the ID
-              and right-clicking to paste it into the current command, perhaps in a completely different way.)
-            </p>
+    <p>That will create a new commit that undoes the changes in your previous commit.</p>
+    <p>
+      You can find the <b>commit hash</b> of your previous commit by showing a list of the previous commits with <code>git log --oneline</code>. The hash could look like this: <i>fcd745f</i> or this:
+      <i>fcd745f74822c61cf30442407165c1b86fe5ccf5</i> . (How to copy the ID depends on which terminal you're using. Perhaps Ctrl+C as usual, perhaps selecting the ID and right-clicking to paste it
+      into the current command, perhaps in a completely different way.)
+    </p>
 
-            <br />
-            <h4>How to Reset</h4>
-            <p>To <b>reset</b> a commit <b>that has not been pushed yet</b> you can execute:</p>
-            <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
-              <pre><code>git reset &lt;previous_commit_hash&gt;</code></pre>
-            </div>
-            <p>
-              You need to use the commit hash of the commit you want to <b>reset to</b>, <u>not</u> of the commit you are resetting. This means you have to use the commit hash of your second-to-last
-              commit.
-            </p>
-            <p>After executing this command the commit will be undone, but the edits you want gone are still there as unstaged changes. You can undo them manually or use <code>git restore .</code></p>
-          </details>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h2>4. Pushing changes</h2>
+    <br />
+    <h4>How to Reset</h4>
+    <p>To <b>reset</b> a commit <b>that has not been pushed yet</b> you can execute:</p>
+    <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
+      <pre><code>git reset &lt;previous_commit_hash&gt;</code></pre>
+    </div>
+    <p>
+      You need to use the commit hash of the commit you want to <b>reset to</b>, <u>not</u> of the commit you are resetting. This means you have to use the commit hash of your second-to-last commit.
+    </p>
+    <p>After executing this command the commit will be undone, but the edits you want gone are still there as unstaged changes. You can undo them manually or use <code>git restore .</code></p>
+  </details>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<section>
+  <h2>4. Pushing changes</h2>
 
-          <p>Now that you have created your commit(s), we can push (= upload) them into the repostiory.</p>
-          <p>Simply execute:</p>
-          <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
-            <pre><code>git push</code></pre>
-          </div>
-          <p><strong>Or: </strong>When using the VSCode UI simply press "Sync Changes":</p>
-          <div class="image"><img src="../img/etc/git-tutorial/7.png" alt="" /></div>
-          <p>Now, if you refresh your GitHub page, you should see the changes.</p>
-          <p>If you click on the "Commits" button you can see a list of all your previous commits/changes.</p>
-          <div class="image"><img src="../img/etc/git-tutorial/8.png" alt="" /></div>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h2>5. Connecting to Neocities <small>(Optional)</small></h2>
+  <p>Now that you have created your commit(s), we can push (= upload) them into the repostiory.</p>
+  <p>Simply execute:</p>
+  <div class="snippet-clipboard-content notranslate position-relative overflow-auto">
+    <pre><code>git push</code></pre>
+  </div>
+  <p><strong>Or: </strong>When using the VSCode UI simply press "Sync Changes":</p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/7.png" alt="" /></div>
+  <p>Now, if you refresh your GitHub page, you should see the changes.</p>
+  <p>If you click on the "Commits" button you can see a list of all your previous commits/changes.</p>
+  <div class="image"><img src="../assets/img/etc/git-tutorial/8.png" alt="" /></div>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<section>
+  <h2>5. Connecting to Neocities <small>(Optional)</small></h2>
 
-          <p>
-            With the help of a <a href="https://github.com/marketplace/actions/deploy-to-neocities" target="_blank">GitHub Action</a> you can connect your repository to your Neocities website. This
-            way, all changes to your GitHub repository will be automatically uploaded to Neocities the moment you <b>push</b> them. (It only updates the files that were actually changed, don't worry
-            about your Neocities feed.)
-          </p>
-          <!-- <p>Please read <a href="https://petrapixel.neocities.org/coding/neocities.html#github-action" rel="nofollow">the guide</a> for more information.</p> -->
+  <p>
+    With the help of a <a href="https://github.com/marketplace/actions/deploy-to-neocities" target="_blank">GitHub Action</a> you can connect your repository to your Neocities website. This way, all
+    changes to your GitHub repository will be automatically uploaded to Neocities the moment you <b>push</b> them. (It only updates the files that were actually changed, don't worry about your
+    Neocities feed.)
+  </p>
+  <!-- <p>Please read <a href="https://petrapixel.neocities.org/coding/neocities.html#github-action" rel="nofollow">the guide</a> for more information.</p> -->
 
-          <h4>How to set it up:</h4>
-          <ol class="list-with-more-spacing" style="padding-left: 1em">
-            <li>Make sure all the files in your project that should be uploaded to Neocities are in a folder called <i>public</i>.</li>
-            <li>
-              Create the following file in the root of your project (<i>NOT</i> in the <i>public</i> folder):<br /><code>.github/workflows/neocities.yml</code> <br />Make sure you spell it correctly!
-              Don't forget the "." at the start of the first folder name.
-            </li>
-            <li>Insert the code shown <a href="https://github.com/marketplace/actions/deploy-to-neocities#usage" target="_blank">here</a> into your file.</li>
-            <li>If your branch is called 'main' instead of 'master' make sure to change that on line 7.</li>
-            <li>Comment out (= add a # at the start of the lines) or delete lines 21 to 28. You don't need them.</li>
-            <li>
-              If you want to you can set <i>cleanup</i> to <i>true</i>. This means that files that are still in your Neocities but not in your project anymore are deleted from Neocities. (I recommend
-              this, otherwise you will eventually run out of space in your Neocities account.)
-            </li>
-            <li>
-              Get your API Key for your Neocities account. (It can be found in your Site Settings on Neocities under "<span style="text-transform: none">API</span>").<br />
-              <div class="image"><img src="../img/etc/git-tutorial/api1.png" alt="" /></div>
-            </li>
-            <li>
-              Open your repository on GitHub, go to its "Settings", then "Secrets and Variables" -&gt; "Actions". Add a secret with the name
-              <span style="text-transform: none">NEOCITIES_API_TOKEN</span> and set your Neocities API Key as the value.<br />
-              <div class="image"><img src="../img/etc/git-tutorial/api2.png" alt="" /></div>
-            </li>
-          </ol>
-          <p>Done! Now whenever you push to your master/main branch, the changed/added files will automatically be uploaded to your Neocities site.</p>
-        </section>
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- ----------------------------------------------------------------------------------------------------- -->
-        <section>
-          <h2>Additional Commands</h2>
+  <h4>How to set it up:</h4>
+  <ol class="list-with-more-spacing" style="padding-left: 1em">
+    <li>Make sure all the files in your project that should be uploaded to Neocities are in a folder called <i>public</i>.</li>
+    <li>
+      Create the following file in the root of your project (<i>NOT</i> in the <i>public</i> folder):<br /><code>.github/workflows/neocities.yml</code> <br />Make sure you spell it correctly! Don't
+      forget the "." at the start of the first folder name.
+    </li>
+    <li>Insert the code shown <a href="https://github.com/marketplace/actions/deploy-to-neocities#usage" target="_blank">here</a> into your file.</li>
+    <li>If your branch is called 'main' instead of 'master' make sure to change that on line 7.</li>
+    <li>Comment out (= add a # at the start of the lines) or delete lines 21 to 28. You don't need them.</li>
+    <li>
+      If you want to you can set <i>cleanup</i> to <i>true</i>. This means that files that are still in your Neocities but not in your project anymore are deleted from Neocities. (I recommend this,
+      otherwise you will eventually run out of space in your Neocities account.)
+    </li>
+    <li>
+      Get your API Key for your Neocities account. (It can be found in your Site Settings on Neocities under "<span style="text-transform: none">API</span>").<br />
+      <div class="image"><img src="../assets/img/etc/git-tutorial/api1.png" alt="" /></div>
+    </li>
+    <li>
+      Open your repository on GitHub, go to its "Settings", then "Secrets and Variables" -&gt; "Actions". Add a secret with the name
+      <span style="text-transform: none">NEOCITIES_API_TOKEN</span> and set your Neocities API Key as the value.<br />
+      <div class="image"><img src="../assets/img/etc/git-tutorial/api2.png" alt="" /></div>
+    </li>
+  </ol>
+  <p>Done! Now whenever you push to your master/main branch, the changed/added files will automatically be uploaded to your Neocities site.</p>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<section>
+  <h2>Additional Commands</h2>
 
-          <p>Here are some additional commands I will offer you without much context. Google them if you want to know more.</p>
-          <ul>
-            <li>To show all files and their current state (e.g. not staged, staged): <code>git status</code></li>
-            <li>To show a log of all commits: <code>git log --oneline</code> or <code>git log</code></li>
-            <li>To show all changes: <code>git diff</code>, or just a specific file/folder: <code>git diff &lt;path&gt;</code></li>
-            <li>To discard the changes in a (not-yet-staged) file: <code>git restore &lt;file&gt;</code> or all: <code>git restore .</code></li>
-            <li>To show the git version you're using: <code>git -v</code></li>
-          </ul>
+  <p>Here are some additional commands I will offer you without much context. Google them if you want to know more.</p>
+  <ul>
+    <li>To show all files and their current state (e.g. not staged, staged): <code>git status</code></li>
+    <li>To show a log of all commits: <code>git log --oneline</code> or <code>git log</code></li>
+    <li>To show all changes: <code>git diff</code>, or just a specific file/folder: <code>git diff &lt;path&gt;</code></li>
+    <li>To discard the changes in a (not-yet-staged) file: <code>git restore &lt;file&gt;</code> or all: <code>git restore .</code></li>
+    <li>To show the git version you're using: <code>git -v</code></li>
+  </ul>
 
-          <h4>Remotes:</h4>
-          <ul>
-            <li>Show all remotes: <code>git remote -v</code></li>
-            <li>Delete a remote <code>git remote remove &lt;name&gt;</code></li>
-          </ul>
+  <h4>Remotes:</h4>
+  <ul>
+    <li>Show all remotes: <code>git remote -v</code></li>
+    <li>Delete a remote <code>git remote remove &lt;name&gt;</code></li>
+  </ul>
 
-          <h4>Branches:</h4>
-          <ul>
-            <li>Show branches: <code>git branch</code></li>
-            <li>
-              Make new branch and check it out: <code>git switch -c &lt;new-branch&gt;</code><br />(used to be <code>git checkout -b &lt;new-branch&gt;</code>. more info
-              <a href="https://stackoverflow.com/a/1394804/3187492" target="_blank">here</a>.)
-            </li>
-            <li>Add current changes to new branch: Do the above, your changes will be kept</li>
-          </ul>
-        </section>
-        <!-- To add to tutorial:
+  <h4>Branches:</h4>
+  <ul>
+    <li>Show branches: <code>git branch</code></li>
+    <li>
+      Make new branch and check it out: <code>git switch -c &lt;new-branch&gt;</code><br />(used to be <code>git checkout -b &lt;new-branch&gt;</code>. more info
+      <a href="https://stackoverflow.com/a/1394804/3187492" target="_blank">here</a>.)
+    </li>
+    <li>Add current changes to new branch: Do the above, your changes will be kept</li>
+  </ul>
+</section>
+<!-- To add to tutorial:
 		 
 			- .gitignore
 			- branches
 			- how to work with others, + PRs
 		-->
+
       </main>
+
+      <!-- ------------------------------------------------ -->
+      <!-- ----------------- FOOTER ----------------- -->
+      <!-- ------------------------------------------------ -->
+      <footer>
+        <div class="footer-content">
+          <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS" /></a> <i>┊</i> created by petrapixel
+          2024 - <span style="font-size: 1.3em">∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
+          <span class="desktop-only"> <i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
+        </div>
+        <div class="footer-content mobile-only">
+          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">
+            <img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
+            <small>click to clap for me!</small>
+          </a>
+          <br />
+          <center>
+            <small>Visitors:</small>
+            <a href="https://www.free-website-hit-counter.com">
+              <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" />
+            </a>
+            
+          </center>
+        </div>
+      </footer>
     </div>
+    
   </body>
 </html>

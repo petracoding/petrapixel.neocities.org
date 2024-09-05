@@ -1,0 +1,123 @@
+---
+layout: petrapixel.njk
+title: "need help?"
+description: "What to do if you're stuck when coding? Where can you ask coding questions, specifically about Neocities? How do you troubleshoot and help yourself?"
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+---
+
+<script>
+  console.log("This is the console!! You've found it! :D");
+  console.log("This is the console!! You've found it! :D");
+  console.log("This is the console!! You've found it! :D");
+  console.log("This is the console!! You've found it! :D");
+</script>
+
+<section>
+  <h1>Need help? Having problems?</h1>
+  <p>
+    Learning to code means running into problems, like, every five minutes. That's totally normal. Google will help a ton (and never feel bad for using it!). But what if even googling doesn't help?
+    Well... Here you go.
+  </p>
+  <div id="toc"></div>
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+  <h2>How to troubleshoot</h2>
+  <p style="padding-left: 1em"><i>to troubleshoot</i> (v.): "trace and correct faults in a mechanical or electronic system."</p>
+  <p>
+    The most important thing for troubleshooting your web development projects is knowing how to use your <b>browser's developer tools</b>. Every browser has them, and thankfully they work roughly the
+    same in all of them, so you only need to learn it once. Open your website in a browser of your choice and press F12 or open the development tools over your browser's menu (e.g. Firefox: Menu on
+    top right -> More tools -> Web developer tools). Alternatively, you can also right-click any element on your page and select "Inspect"/"Inspect element", this will also open the development tools.
+    The development tools have multiple tabs. For beginners, only 2 are important: Inspector, and Console.
+  </p>
+  <h3>Inspector</h3>
+  <p>
+    This will show you the HTML of your page. You can select lines of code to select elements on your page, and the CSS rules that apply to that element will be shown at the bottom. You can also
+    temporarily change these CSS rules or the HTML to try things out without having to edit your code. (Keep in mind that any changes you make in here are <b>gone</b> once you refresh the page!).
+  </p>
+  <p>
+    The Inspector is a great tool to find out how elements are actually rendered in the browser (as this might differ from what you expect) and to find out which CSS rules apply to an element (for
+    example, it might be the case that a CSS rule you just coded doesn't work because it is overwritten by another one).
+  </p>
+  <h3>Console</h3>
+  <p>
+    The console is your best friend when you work with JavaScript. I recommend always leaving it open when making changes in your javascript. It will show you all errors, as well as any outputs you
+    have defined in your code using <code>console.log(...);</code>. These <code>console.log(...);</code> statements are a great and easy way for beginners to debug JavaScript code, because you can
+    output the value of one or multiple variables and check if they are as expected. For example, your code might not work because the value of a variable is a string even though you expected it to be
+    a number.
+  </p>
+  <p>Example:</p>
+  <pre><code>const myVariable = "test";
+console.log("My variable = " + myVariable);</code></pre>
+  <p>
+    Errors are also great to see. (What? Errors are great? Yes they are!) Most of the time, they tell you exactly what is going wrong with your code, you just actually have to read what the error
+    message says. If you don't understand it, google it, and you will find out.
+  </p>
+  <p>Here are two common errors:</p>
+  <ul>
+    <li><b>Any error with "undefined", e.g. "reference to undefined property":</b> A variable that you are trying to read/use has no value (the value <code>null</code>).</li>
+    <li>
+      <b>"Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at...":</b> This error pops up on Neocities page if you have a free account and are trying to use
+      external scripts. <a href="/coding/common-questions.html#external-script">Read more about this problem here.</a>
+    </li>
+  </ul>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+  <h2>Where to ask questions</h2>
+  <p>
+    <b>StackOverflow:</b> The best and most popular site to ask for coding help is <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a>. They are very strict with how you need to ask
+    questions, so be sure to read the section "How to ask questions" below. Tag your questions with relevant languages (like javascript) or hosting sites (like Neocities) to get more answers.
+  </p>
+  <p>
+    <b>Reddit:</b> If your site is on Neocities you can also ask question in the <a href="https://www.reddit.com/r/neocities" target="_blank">/r/Neocities</a> subreddit. I'm also lurking over there
+    and helping beginners from time to time. Again, make sure to read the section "How to ask questions" below so that we can help you better!
+  </p>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+  <h2>How to ask questions</h2>
+  <p>Before asking questions:</p>
+  <ul>
+    <li><b>Troubleshoot</b> to see if you can find the mistake yourself (see above)</li>
+    <li><b>Google</b> your problem; you're most likely not the first with this question</li>
+    <li>Read through my <a href="/coding/common-questions.html">common questions</a> page or any <b>FAQ</b>s you know.</li>
+    <li>
+      Use the <b>rubber-duck method</b>:
+      <i
+        >"The idea is that when a programmer needs to debug their code, they should explain the program line-by-line to a rubber duck. Often, the act of explaining the problem step by step will cause
+        the solution to present itself."
+      </i>
+      (Yes, this actually works. No, you don't need to use an actual rubber duck.)
+    </li>
+  </ul>
+  <p>Still need help? Alright.</p>
+  <p>How to ask questions:</p>
+  <ul>
+    <li><b>Include your code</b>. Only include the code that is relevant to your problem. Never just paste your entire file(s); nobody's going to read that.</li>
+    <li>
+      <b>Explain your code (if necessary)</b>. Your code - if your code quality is good - should be pretty much self-explanatory. If it's not, you should add some explanatory comments so that those
+      trying to help you will have an easier time doing so.
+    </li>
+    <li><b>Include a link</b> to the relevant page (if applicable, and unless the change is not online yet)</li>
+    <li>
+      <b>Describe your problem</b> in as much detail as possible. Mention:
+      <ul>
+        <li>What you are trying to do.</li>
+        <li>What the result should be.</li>
+        <li>What the result is currently. / What's wrong.</li>
+        <li>What you've already tried. / What you know the problems <i>isn't</i>.</li>
+        <li>(If applicable) Which browser you are using and on which device (e.g. Firefox on Windows 10 desktop, large screen)</li>
+        <li>etc.</li>
+      </ul>
+    </li>
+    <li><b>Be polite.</b> You're asking for free help, say please and thank you and don't demand help or quicker answers.</li>
+  </ul>
+</section>

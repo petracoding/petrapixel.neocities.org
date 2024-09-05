@@ -1,0 +1,74 @@
+---
+layout: petrapixel.njk
+title: "neighbors"
+nesting: "../"
+---
+
+<!-- freezeframe.js -->
+<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    const e = new Freezeframe();
+    document.getElementById("play-gif").addEventListener("click", function () {
+      e.start();
+    });
+    document.getElementById("stop-gif").addEventListener("click", function () {
+      e.stop();
+    });
+  });
+</script>
+
+<section>
+  <h1>Neighbors & Other Cool Sites!</h1>
+  <!-- <button id="play-gif">Play GIFs</button>
+          <button id="stop-gif">Stop GIFs</button> -->
+  <hr />
+  <h2>Neighbors & Friends</h2>
+  <p>
+    Neighbors are friends of the site or, in the case of neocities site, neocities users I follow who follow me back :) You should check out their sites! You can view all sites I follow on
+    <a href="https://neocities.org/site/petrapixel/follows" target="_blank">my neocities profile</a>.
+  </p>
+  <div class="cool-sites cool-sites--more-spacing freezeframeX">{% include 'neighbors.njk' %}</div>
+  <!-- <p>
+            + <a href="https://firozah.com/">firozah</a></a>
+          </p> -->
+  <p>If we're mutuals but you're not here please shoot me a message!</p>
+  <!-- --------------------------------------------------------------- -->
+  <hr />
+  <h2>Other Cool Sites</h2>
+  <div class="cool-sites cool-sites--more-spacing freezeframeX">
+    <a href="https://pomelo.neocities.org/" title="pomelo"><img src="https://i.imgur.com/TqJ5nX2.gif" alt="pomelo" /></a>
+    <a href="https://plasticdino.neocities.org/" title="plasticdino"><img src="https://plasticdino.neocities.org/buttons/plasticdino.gif" alt="plasticdino" /></a>
+    <a href="https://moonview.neocities.org/" title="moonview"><img src="https://moonview.neocities.org/88x31/moonview88x31_NEW.gif" alt="moonview" /></a>
+    <a href="https://nyaa.neocities.org/" title="nyaa"><img src="../assets/img/links/nyaabanner.gif" alt="nyaa.neocities.org" /></a>
+    <a href="https://virtualobserver.moe/" title="virtualobserver.moe"><img src="https://virtualobserver.moe/images/sitebutton.png" alt="virtual observer" /></a>
+    <a href="https://epicfranb.neocities.org/" title="epicfranb"><img src="https://epicfranb.neocities.org/pics/STARSBUTTON3.gif" alt="epicfranb" /></a>
+    <a href="https://meixins.neocities.org/" title="meixins"><img src="../assets/img/links/meixins.gif" style="image-rendering: pixelated" alt="meixins" /></a>
+    <a href="https://pklucky.neocities.org/" title="pklucky"><img src="../assets/img/links/pklucky.gif" alt="PKLucky's Beachside Lounge" /></a>
+    <a href="https://shishka.neocities.org/" title="shishka"><img src="https://shishka.neocities.org/shishka/assets/img/shishka-go-go-go.gif" alt="shishka" /></a>
+    <a href="https://doctordizzy.space/" title="doctordizzy.space"><img src="../assets/img/links/doctorydizzy.gif" alt="doctordizzy.space" /></a>
+    <a href="https://bechnokid.neocities.org/" title="bechnokid"><img src="../assets/img/links/bechnokid.jpg" alt="bechnokid" /></a>
+    <a href="https://nefritvel.neocities.org/" title="nefritvel"><img width="88" height="31" src="../assets/img/links/nefritvel.gif" alt="nefritvel" /></a>
+    <a href="https://sentimentalfuturist.net/" title="sentimental futurist"><img width="88" height="31" src="../assets/img/links/sentimentalfuturist.png" alt="sentimental futurist" /></a>
+    <a href="https://isopod.cool/" title="isopod.cool"><img width="88" height="31" src="../assets/img/links/isopod.png" alt="isopod.cool" /></a>
+    <a href="https://catboo.neocities.org/" title="catboo"><img width="88" height="31" src="../assets/img/links/catboo.webp" alt="catboo" /></a>
+    <!-- <a href="LINK" title="TITLE"><img width="88" height="31" src="../assets/img/links/IMAGE" alt="TITLE" /></a> -->
+  </div>
+  <p>
+    Want to get listed here? I check out every single person's website that <a href="https://neocities.org/site/petrapixel" target="_blank">follows me</a> or writes into my
+    <a href="/about/guestbook.html">guestbook</a> (though it might take me a while)!
+  </p>
+  <p>If you're linking to me but I'm not linking to you just shoot me a message !! :)</p>
+</section>
+<section>
+  <h2>Link back to me!</h2>
+  <p>Hotlinking is a-okay! <img aria-hidden="true" src="../assets/img/inline/happy.gif" /></p>
+  <div class="link-back">
+    <a href="https://petrapixel.neocities.org/" target="_blank"
+      ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"
+    /></a>
+    <textarea name="" id="" cols="30" rows="10" aria-label="link-back code" class="code-textarea">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
+    >
+  </div>
+</section>

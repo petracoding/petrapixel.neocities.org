@@ -1,0 +1,187 @@
+---
+layout: petrapixel.njk
+title: "common coding questions"
+description: "Common questions that beginner coders have, and their answers. How to build a layout, how to have the same layout on every page, ... Neocities."
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+---
+
+<section>
+  <h1>Common Questions</h1>
+  <p>I sometimes try to help out over at the <a href="https://www.reddit.com/r/neocities" target="_blank">/r/Neocities</a> subreddit, and I've noticed that the same questions keep coming up.</p>
+  <div id="toc"></div>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="grid">How do I build a layout like this...?</h2>
+  <p>
+    Firstly, <b class="cw">don't</b> use tables and floats, like some people want to tell you; it's what web developers did decades ago. We don't have to torture ourselves like that anymore. It's
+    difficult to do, and not very accessible since the elements are not semantic. (This means that screen readers (and search engines) don't know what's what.)
+  </p>
+  <p><b>Use CSS grid rules.</b> It's a great and easy solution for modern layouts, and it's very simple to make them responsive (by changing the <code>grid-template</code> for smaller screens).</p>
+  <p>Here's what it could look like: (This example uses <a href="#semantic-elements">semantic elements</a> to make the site more accessible.)</p>
+  <pre><code>
+.container {
+  display: grid;
+  grid-template:
+    "header header" /* row 1 */
+    "sidebar main"  /* row 2 */
+    "footer footer" /* row 3 */
+	/ 1fr 2fr;  /* column widths (1fr = one fraction) */
+  grid-gap: 10px;   /* (optional) space between areas */
+}
+
+/* assign your elements to the areas you defined in the grid-template rule: */
+header { grid-area: header; }
+aside { grid-area: sidebar; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+			</code></pre>
+  <p>(Make sure <b>not</b> to use quotation marks (") when using the <code>grid-area</code> rules. It won't work.)</p>
+  <p>Here is a working example of a grid layout:</p>
+  <div id="gridexample">
+    <div class="item1">Header</div>
+    <div class="item2">Aside</div>
+    <div class="item3">Main</div>
+    <div class="item4">Footer</div>
+  </div>
+  <style>
+    #gridexample {
+      display: grid;
+      grid-template:
+        "header header"
+        "sidebar main"
+        "footer footer"
+        / 1fr 2fr;
+      grid-gap: 10px;
+    }
+    #gridexample > * {
+      border: 1px solid;
+      padding: 10px;
+    }
+    .item1 {
+      grid-area: header;
+    }
+    .item2 {
+      grid-area: sidebar;
+    }
+    .item3 {
+      grid-area: main;
+      min-height: 4em;
+    }
+    .item4 {
+      grid-area: footer;
+    }
+  </style>
+  <br />
+  <p>Very simple layouts can also easily be made using <b>flexbox</b>. I highly recommend learning how to use flexbox because it makes a ton of things easier, it's probably my favorite CSS rule.</p>
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <p>Grid:</p>
+    <ul>
+      <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">A Complete Guide to CSS Grid</a></li>
+      <li><a href="https://www.w3schools.com/cssref/pr_grid-template.php" target="_blank">grid-template on W3Schools</a></li>
+      <li>
+        <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_grid-template3" target="_blank">Another code example</a>
+      </li>
+    </ul>
+    <p>Flexbox:</p>
+    <ul>
+      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to CSS Flexbox</a></li>
+      <li><a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">Flexbox on W3Schools</a></li>
+    </ul>
+  </div>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="layout">What do I do so I don't have to change my layout in all HTML files for every change?</h2>
+  <p>There's lots of things you could do. Here are 3 popular options:</p>
+  <ul class="list-with-more-spacing">
+    <li>
+      Load your pages as iframes.
+      <span class="cw">Not recommended <span style="font-weight: normal">(though prevalent on Neocities)</span>, more info see <a href="/coding/common-mistakes.html#iframes">here</a>.</span>
+    </li>
+    <li>
+      Load everything that stays the same on every page per <b>JavaScript</b>. This is what I recommend for beginners. I have a tutorial and ready-to-paste code
+      <a href="/coding/layout-base-code.html">on my layout base code page</a>.
+      <small
+        >Note: Rarely - but sometimes, users have Javascript completely deactivated. Those users won't be able to browse your site, so make sure to include a
+        <a href="https://www.w3schools.com/tags/tag_noscript.asp" target="_blank">noscript tag</a> on every page.</small
+      >
+    </li>
+    <li>
+      Use a <b>static site generator</b>. This has the best result, but it's much more difficult than the JavaScript solution mentioned above, so you should already be comfortable with coding. There
+      are many static site generators to choose from, for example:
+      <ul>
+        <li>
+          <a href="https://www.11ty.dev/" target="_blank"><b>11ty (Eleventy)</b></a
+          >. I highly recommend 11ty because it is very simple to use. I'm working on a tutorial right now, check back later!
+        </li>
+        <li>
+          <a href="https://jekyllrb.com/" target="_blank"><b>Jekyll</b></a> (requires Ruby). I don't recommend this honestly, but if you're interested in using Jekyll I recommend
+          <a href="https://lostletters.neocities.org/2022/11/02/jekyll">lostletters' tutorial</a>.
+        </li>
+        <li>
+          <a href="https://spike.readme.io/docs/quick-start" target="_blank"><b>Spike</b></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <!--
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <ul>
+      <li><a href="/coding/layout-base-code.html">My tutorial: Loading layout with Javascript</a> !!!</li>
+      <li><a href="https://lostletters.neocities.org/2022/11/02/jekyll" target="_blank">Lostletters' tutorial: Using Jekyll</a></li>
+    </ul>
+  </div>
+  -->
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="external-script">Why does my script/widget not work? <small>(Neocities)</small></h2>
+  <p>
+    Are you trying to use an external script (= a script that isn't hosted on your own website)? Unfortunately, if you have a free website on Neocities created after ~2022 you are not allowed to use
+    external scripts, such as guestbooks, shoutboxes, status/mood widgets, and even hit counters <b>unless</b> they are iFrames:
+  </p>
+  <p>
+    iFrames, and any widgets that use them, <b>do</b> work. For guestbooks I recommend using <a href="https://www.smartgb.com/" target="_blank">smartgb</a> (which is what I use for
+    <a href="/guestbook.html">my guestbook</a> iframe) because it is very customizable and looks good in an iframe. For a chatbox you can use <a href="https://www.cbox.ws/" target="_blank">cbox</a>,
+    because it works via an iframe.
+  </p>
+  <p>
+    There is also a trick you could use to use external scripts with your free account, but you need a second website that is not hosted on Neocities:
+    <a href="/blog/neocities-external-widgets.html" target="_blank">How to use external widgets with Neocities free plans</a>
+  </p>
+  <!-- <div class="learn">
+            <strong>Read more:</strong>
+            <ul>
+              <li></li>
+            </ul>
+          </div> -->
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- <hr />
+
+          <h2 id="loading-times">How can I make my website load faster?</h2>
+          <p>TODO</p>
+          <div class="learn">
+            <strong>Outlinks:</strong>
+            <ul>
+              <li><a href="LINK" target="_blank">LINK</a></li>
+            </ul>
+          </div> -->
+</section>

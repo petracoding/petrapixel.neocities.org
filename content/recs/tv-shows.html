@@ -1,0 +1,66 @@
+---
+layout: petrapixel.njk
+title: "tv recs"
+description: "Here's my Neocities page for tv show recommendations! All my favorite tv shows in one page!"
+nesting: "../"
+---
+
+<section>
+  <h1>TV Recs</h1>
+  <p>Here are some tv shows I've enjoyed and would definitely recommend!</p>
+  <p>(Work in progress, I will add more soon!)</p>
+  <strong class="rec-filters-title">Filter:</strong>
+  <div class="rec-filters">
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
+        <button class="rec-filters__button is-checked" data-filter="">any genre</button>
+        <button class="rec-filters__button" data-filter=".action">action</button>
+        <button class="rec-filters__button" data-filter=".adventure">adventure</button>
+        <button class="rec-filters__button" data-filter=".animation">animation</button>
+        <button class="rec-filters__button" data-filter=".comedy">comedy</button>
+        <button class="rec-filters__button" data-filter=".drama">drama</button>
+        <button class="rec-filters__button" data-filter=".horror">horror</button>
+        <button class="rec-filters__button" data-filter=".queer">queer</button>
+        <button class="rec-filters__button" data-filter=".romance">romance</button>
+        <button class="rec-filters__button" data-filter=".sci-fi">sci-fi</button>
+        <!-- <button class="rec-filters__button" data-filter=".thriller">thriller</button> -->
+      </div>
+    </div>
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
+        <button class="rec-filters__button is-checked" data-filter="">any start year</button>
+        <button class="rec-filters__button" data-filter=".1950-79">1950-79</button>
+        <!-- <button class="rec-filters__button" data-filter=".80s">80s</button>
+                <button class="rec-filters__button" data-filter=".90s">90s</button> -->
+        <button class="rec-filters__button" data-filter=".2000s">2000s</button>
+        <button class="rec-filters__button" data-filter=".2010s">2010s</button>
+        <button class="rec-filters__button" data-filter=".2020s">2020s</button>
+      </div>
+    </div>
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
+        <button class="rec-filters__button is-checked" data-filter="">any rating</button>
+        <button class="rec-filters__button" data-filter=".r1">★★★★</button>
+        <button class="rec-filters__button" data-filter=".r2">★★★★<small>½</small></button>
+        <button class="rec-filters__button" data-filter=".r3">★★★★★</button>
+      </div>
+    </div>
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
+        <button class="rec-filters__button is-checked" data-filter="">any status</button>
+        <button class="rec-filters__button" data-filter=".ongoing">ongoing</button>
+        <button class="rec-filters__button" data-filter=".ended">ended</button>
+      </div>
+    </div>
+  </div>
+  <div class="isotope-items isotope-items--tv"></div>
+</section>
+
+<!-- Isotope: -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="recs.js"></script>
+<script>
+  loadData("tv-shows");
+</script>

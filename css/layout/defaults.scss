@@ -81,8 +81,9 @@ body {
   display: flex;
 
   > * {
-    display: flex;
-    white-space: nowrap;
+    display: inline-block;
+    //   display: flex;
+    //   white-space: nowrap;
   }
 }
 

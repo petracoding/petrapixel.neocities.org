@@ -44,7 +44,7 @@ function giveActiveClassToLinks() {
     const pathname = window.location.pathname.replace("/public/", "");
 
     if (href == "/" || href == "/index.html") {
-      if (window.location.href == "http://localhost:52330/" || pathname == "/") {
+      if (window.location.href == "http://localhost:8080/" || pathname == "/") {
         el.classList.add("active");
       }
     } else {

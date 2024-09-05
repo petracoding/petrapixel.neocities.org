@@ -92,11 +92,12 @@
 
 /*----------  Main  ----------*/
 
-body:not(.-layout-loaded) main {
-  @media (min-width: $lg) {
-    margin-top: 103px;
-  }
-}
+// body:not(.-layout-loaded) main {
+//   @media (min-width: $lg) {
+//     margin-top: 103px;
+//     margin-top: 102px;
+//   }
+// }
 
 main {
   background: var(--mainBackgroundColor);

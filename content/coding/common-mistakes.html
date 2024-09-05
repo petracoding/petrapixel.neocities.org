@@ -1,0 +1,231 @@
+---
+layout: petrapixel.njk
+title: "common coding mistakes"
+description: "Common mistakes that beginner coders make, and how to fix them. Using jQuery, tables, float, iFrame layouts and ignoring accessibility. Neocities."
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+---
+
+<section>
+  <h1>Common Mistakes</h1>
+  <p>Here I'm going to list some common mistakes that beginner and amateur coders like to make. These are very prevalent on Neocities because old tips and tutorials are spread around.</p>
+  <p>Oh, and, don't feel bad if you've made these mistakes. I have too when I started coding.</p>
+  <div id="toc"></div>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="jquery">Using jQuery</h2>
+  <p>
+    jQuery used to be very popular, because it made a lot of JavaScript things easier. But nowadays there is not a single reason to use jQuery anymore. Everything that you can do in jQuery, you can do
+    in JavaScript (and it's easier, too) - and you won't need to include an external library that bloats up your loading times.
+  </p>
+  <p>
+    Personally, the last reason I had for using jQuery was it's <code>ready</code> function, which waits for the DOM to load. I didn't know for a long time that this is just as possible and simple
+    without jQuery. This is all you need - no jQuery necessary:
+  </p>
+  <pre><code>document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
+});</code></pre>
+  <p>Another thing you might be using jQuery for is a simple for-each loop over an array of elements. Here is the pure Javascript version of that:</p>
+  <pre><code>const myElements = document.querySelectorAll(".element");
+[...myElements].forEach((el) => {
+  console.log(el);
+});</code></pre>
+  <p>By the way, if you're using a layout, plugin or widget which requires jQuery...: that is a good sign that either it's outdated, or the creator doesn't know what they're doing.</p>
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <ul>
+      <li><a href="https://youmightnotneedjquery.com/" target="_blank">Pure JS alternatives to common jQuery use cases</a></li>
+      <li><a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp" target="_blank">JS querySelectorAll()</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event" target="_blank">JS DOMContentLoaded event</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?retiredLocale=de#examples" target="_blank">JS forEach</a></li>
+    </ul>
+  </div>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="tables-float">Creating a layout with tables and <i>float</i></h2>
+  <p>
+    Just don't do this to yourself. This is what web developers did decades ago; we don't have to torture ourselves like this anymore. It's difficult to do, and not very accessible since the elements
+    are not semantic. (This means that screen readers (and search engines) don't know what's what.)
+  </p>
+  <p>I would use CSS's grid rules. <a href="/coding/common-questions.html#grid">I have a tutorial on that here.</a></p>
+  <p>Here's what it would look like:</p>
+  <pre><code>.container {
+  display: grid;
+  grid-template:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-gap: 10px;
+}
+
+header { grid-area: header; }
+aside { grid-area: sidebar; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+			</code></pre>
+  <div id="gridexample">
+    <div class="item1">Header</div>
+    <div class="item2">Sidebar</div>
+    <div class="item3">Main</div>
+    <div class="item4">Footer</div>
+  </div>
+  <style>
+    #gridexample {
+      display: grid;
+      grid-template:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-gap: 10px;
+    }
+    #gridexample > * {
+      border: 1px solid;
+      padding: 2px;
+    }
+    .item1 {
+      grid-area: header;
+    }
+    .item2 {
+      grid-area: sidebar;
+    }
+    .item3 {
+      grid-area: main;
+      min-height: 4em;
+    }
+    .item4 {
+      grid-area: footer;
+    }
+  </style>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="iframes">Creating a layout with iFrames</h2>
+  <p>Some people use iFrames in layouts so that they don't have to deal with editing their sidebar/menu on multiple pages at once. Well...</p>
+  <p>
+    Firstly, <b>there are much better ways to load the same sidebar/menu on every one of your pages.</b>
+    <a href="/coding/common-questions#layout">I have some tips about that on my "common questions" page.</a>
+  </p>
+  <p>Secondly, iFrames were not meant to be used that way. They're great for widgets and plugins, like YouTube embeds, but that's about it.</p>
+  <p>Some reasons not to use iFrames unless you really have to:</p>
+  <ul>
+    <li>
+      Users won't see your pages' URLs in the address bar of their browser if you use iFrames. That means they won't be able to create bookmarks to specific pages, or share the links! It also won't
+      show up in the user's browser history correctly, and they won't be able to use the browser's previous/next page buttons.
+    </li>
+    <li>iFrames are not as accessible as normal pages.</li>
+    <li>iFrames won't expand to fit their content, which makes styling hard.</li>
+    <li>You're essentially loading 2 pages instead of 1, which can impact loading times.</li>
+  </ul>
+  <p>So just... don't.</p>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="nesting">Wrong HTML nesting</h2>
+  <p>
+    Sometimes, when editing our code, we put a few closing tags (like <code>&lt;/div&gt;</code>) too many or forget to close elements, or maybe we paste code at the wrong spot. All of these lead to
+    wrong nesting, which in turn leads to weird layouts, CSS not working, scripts to throw errors, and more calamity.
+  </p>
+  <p>
+    I recommend inspecting your site with your browser's <abbr title="Development Tools">Dev Tools</abbr>: It lets you see the nesting visually. Hovering over the code for an element, for example,
+    highlights that element on the page.
+  </p>
+  <p>
+    Getting nesting right is difficult in an editor that doesn't check for nesting errors or formats your HTML automatically (such as Neocities' built-in editor.) I recommend using an editor that
+    supports formatting, <a href="/coding/my-setup.html" target="_blank">my favorite is VSCode</a>, but it can be a bit hard to set up. If you want something really simple you can paste your code into
+    <a href="https://www.freeformatter.com/html-formatter.html" target="_blank">an online HTML formatter like this one</a>, then you can easily see where the nesting goes wrong because the indentation
+    will also be wrong.
+  </p>
+  <p>And as I said, look for stray closing tags that don't belong to any element. They mess things up.</p>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="semantic-elements">Not using Semantic Elements <small>(or using the wrong semantic elements)</small></h2>
+  <p style="padding-left: 1em"><i>semantic (adj.)</i>: connected with the meanings of words</p>
+  <p>
+    Semantic HTML elements carry meaning. Imagine this: You're a program that reads websites. Maybe you do this to help blind people browse the web, maybe you look for search results for Google. You
+    come upon a site that has five elements: <code>div, div, div, div, div, div, div</code>. What's going on? You have no idea what these elements are! This is where sementic elements come in. Instead
+    of many divs, how about these elements: <code>header, footer, aside, nav, main, section, article</code>. Their function is much clearer, right?
+  </p>
+  <p>
+    That's exactly why you should use these elements. They're good for accessibility and <abbr title="Search Engine Optimization">SEO</abbr>. Good thing, too, that they are just as easy to use as
+    divs: you use them in the exact same way.
+  </p>
+  <img src="https://www.w3schools.com/html/img_sem_elements.gif" title="Picture from W3Schools" alt="" aria-hidden="true" />
+  <p>Some common HTML elements you've heard about are also semantic: <code>button, table, details</code> etc. Make sure to use them for their intended purpose:</p>
+  <ul>
+    <li>All buttons should do something on click.</li>
+    <li>Everything that's clickable should either be a link (&lt;a href=""&gt;) or a &lt;button&gt;.</li>
+    <li>Don't use &lt;a&gt; elements as buttons.</li>
+    <li>Lastly, as already mentioned, don't use tables or iframes for your site layout.</li>
+  </ul>
+  <p>
+    Basic formatting elements like &lt;b&gt;, &lt;i&gt; and &lt;u&gt; are also semantic. Use them for bold, italic, and underlined text. If you want to use elements for more elaborate styling, use
+    &lt;strong&gt; and &lt;em&gt; (em = emphasis).
+  </p>
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <ul>
+      <li>
+        <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">HTML5 Semantic Elements</a>
+      </li>
+      <li><a href="https://www.w3schools.com/html/html_formatting.asp" target="_blank">HTML5 Formatting Elements (b, i, strong, em)</a></li>
+    </ul>
+  </div>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <hr />
+
+  <h2 id="accessibility">Ignoring Basic Accessibility</h2>
+  <p>
+    It's impossible to make your website 100% accessible. It's time-consuming to make it <i>very</i> accessible. But it's easy to make it <i>at least a little</i> accessible, so you have no excuse not
+    to do it.
+  </p>
+  <p>Here are some easy ways to make your site more accessible:</p>
+  <ul>
+    <li>All content images should have the <code>alt</code> attribute with a short description of the image.</li>
+    <li>All decorative images should have <code>aria-hidden="true"</code> and an empty alt-attribute (<code>alt=""</code>)</li>
+    <li>All images have to have the alt-attribute. If there is no alternative text, it should be empty.</li>
+    <li>All clickable elements (links, buttons, etc.) should be interactable with the keyboard. (This is already the case if you use the &lt;a&gt; and &lt;button&gt; elements.</li>
+    <li>No autoplay music/video.</li>
+    <li>No flashing images without warnings.</li>
+    <li>Use rem/em instead of px for font sizes, so that the site can be scaled</li>
+  </ul>
+  <p>These are <i>very</i> basic accessibility features, please check out the links below to learn more. (Never be satisfied with achieving the bare minimum of accessibility.)</p>
+  <p>
+    Also keep in mind that your site should be responsive, so that it is more accessible to mobile users, and not load too many resources, so it is more accessible to those with a bad/limited internet
+    connection.
+  </p>
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <ul>
+      <li>
+        <a href="/resources/bookmarks.html#accessibility">My Accessibility bookmarks</a>
+      </li>
+      <li><a href="https://pinkvampyr.leprd.space/accessiblenet/resources.php" target="_blank">Accessible Net Directory's Resources</a></li>
+      <li><a href="https://wave.webaim.org/" target="_blank">WAVE accessibility evaluation tool</a></li>
+      <li>
+        <a href="https://www.w3schools.com/css/css_font_size.asp" target="_blank">W3Schools em font size</a>
+      </li>
+    </ul>
+  </div>
+</section>

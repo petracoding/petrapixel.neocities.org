@@ -1,0 +1,25 @@
+---
+layout: petrapixel.njk
+title: "list idea generator"
+description: "his site generates some list ideas that you could write!"
+nesting: "../"
+---
+
+<section>
+  <h1>List Idea Generator</h1>
+  <p>
+    I love writing lists, and I think you should try it too! If you click on the "Generate" button below it will spit out one idea for a list you could write. Feel free to click as many times as you
+    want.
+  </p>
+  <p>There are currently <span class="random-generator__number">?</span> different ideas.</p>
+  <p>
+    I highly recommend the small-ish web community <a href="https://listography.com/" target="_blank">listography</a> to keep your lists. It's my favorite website on the whole Internet. I have around
+    500 lists over there...
+  </p>
+  <p>You could also make a page on your website for each of these ideas!</p>
+  <div class="random-generator" data-generator="list-idea">
+    <button class="random-generator__button">Generate</button>
+    <div class="random-generator__label" style="display: none">You should write a list of...</div>
+    <div class="random-generator__output"></div>
+  </div>
+</section>

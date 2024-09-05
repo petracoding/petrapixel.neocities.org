@@ -1,0 +1,17 @@
+---
+layout: petrapixel.njk
+title: "bored button "
+description: "Are you bored? Press the button for an idea of what you could do!"
+nesting: "../"
+---
+
+<section>
+  <h1>Are you bored?</h1>
+  <p>Press the button for an idea of what you could do!</p>
+  <p>There are currently <span class="random-generator__number">?</span> different ideas.</p>
+  <div class="random-generator" data-generator="bored-button">
+    <button class="random-generator__button">I'm bored</button>
+    <div class="random-generator__label" style="display: none">Here's what you could do...</div>
+    <div class="random-generator__output"></div>
+  </div>
+</section>

@@ -5,7 +5,6 @@
 
   & {
     // = body
-    //   background-image: url("http://localhost:52330/public/assets/img/bg-dark.png");
     // background-image: url("https://petrapixel.neocities.org/assets/img/bg-dark.png");
     background-image: url("https://64.media.tumblr.com/c8563b4f5ef374afcc8cd5a59c128718/8b1ad74d907c42b9-88/s500x750/e37951f77bb58dae62a6d8747da18b8563f34a43.pnj");
   }
@@ -29,7 +28,7 @@
     }
   }
 
-  &.coding-page main {
+  main.coding-page {
     pre code:not(.hljs),
     pre code.hljs {
       filter: invert(1) hue-rotate(210deg);

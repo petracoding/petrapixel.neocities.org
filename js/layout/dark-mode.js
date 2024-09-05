@@ -1,5 +1,4 @@
 const scriptEl = document.querySelector('head script[src*="main.js"]');
-const nesting = scriptEl ? (scriptEl.getAttribute("src").startsWith("assets/js/main.js") ? "./" : "../") : "../";
 
 function getCurrentTheme() {
   // if there's a cookie, use cookie
@@ -52,19 +51,4 @@ export function initThemeSwitcher() {
       }
     });
   }
-}
-
-export function themeSwitcherHTML() {
-  return `<div id="theme-toggler" aria-hidden="true">
-    <button type="button">
-      <img src="${nesting}img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated;" alt="" />
-      <span>toggle theme</span>
-    </button>
-  </div>`;
-}
-
-// for non-standard-layout pages
-export function addThemeSwitcherToPage() {
-  document.body.insertAdjacentHTML("beforeend", themeSwitcherHTML());
-  initThemeSwitcher();
 }
