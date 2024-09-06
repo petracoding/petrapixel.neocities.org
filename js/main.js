@@ -76,17 +76,17 @@ function buildTableOfContents() {
     headingEl.setAttribute("id", link);
     const isH2 = headingEl.tagName == "H2";
     if (twoLevels && isH2) {
-      if (!isFirst) output += `</ol></li>`;
+      if (!isFirst) output += `</ul></li>`;
       output += `
 	  <li><a href="#${link}">${title}</a>
-	  <ol>`;
+	  <ul>`;
     } else {
       output += `
 	  <li><a href="#${link}">${title}</a></li>`;
     }
     isFirst = false;
   });
-  container.innerHTML = output + "</ol>";
+  container.innerHTML = output + "</ul>";
 }
 
 function initTooltips() {

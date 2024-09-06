@@ -1,5 +1,7 @@
 [
   { "date": "2024-09-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2024-09-06", "text": "New tutorial: Eleventy (11ty) tutorial for beginners!", "link": "/coding/eleventy-tutorial" },
+  { "date": "2024-09-06", "text": "New tutorial: Node/npm tutorial for beginners!", "link": "/coding/npm-tutorial" },
   { "date": "2024-09-05", "text": "The site is now generated using 11ty!", "link": "" },
   { "date": "2024-08-20", "text": "New tool: Layout Generator!!!", "link": "/coding/layout-generator" },
   { "date": "2024-08-19", "text": "Blog with comment sections!", "link": "/blog" },

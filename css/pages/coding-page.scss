@@ -119,3 +119,16 @@ main.coding-page {
     }
   }
 }
+
+.buy-me-a-coffee {
+  margin-top: 1.5em;
+  text-align: center;
+  font-size: 1.2em;
+  border: 3px dotted;
+
+  small {
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+  }
+}

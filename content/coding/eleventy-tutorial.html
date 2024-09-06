@@ -1,0 +1,440 @@
+---
+layout: petrapixel.njk
+title: "11ty (eleventy) tutorial"
+description: "A tutorial on how to set up and use 11ty (eleventy), a static site generator, for beginners. Neocities."
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+---
+
+<section>
+  <h1><b>11ty (eleventy)</b> Tutorial</h1>
+  <p>
+    Eleventy is a static site generator. You can create "templates" (either .html or .njk files) and re-use them. This way you don't have to edit your header in every single page file, etc. Then you
+    execute a command, and Eleventy will generate all your page files for you. These files you can upload to your website as you normally would.
+  </p>
+  <p>If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!</p>
+  <div id="toc" data-two-levels="yeh"></div>
+</section>
+
+<section>
+  <h2 id="requirements">Requirements</h2>
+  <p>
+    You need to have <b>Node.js</b> ("node") (version 14 or higher) and <b>npm</b> installed on your computer. Your project needs a <code>package.json</code>. You need to be able to use a command
+    line. <b>Read <a href="/coding/npm-tutorial">my npm tutorial</a> to find out how to do all of these things.</b>
+  </p>
+  <p>I also highly recommend using a program for coding that has a built-in terminal, such as <a target="_blank" href="https://code.visualstudio.com/">VSCode</a>.</p>
+  <p>In your terminal, check your installed version of node and npm:</p>
+  <ul>
+    <li>
+      <p><code>node -v</code> should print <code>20.17.0</code> or higher</p>
+    </li>
+    <li>
+      <p><code>npm -v</code> should print <code>10.8.2</code> or higher</p>
+    </li>
+  </ul>
+  <p>If your version isn't up-to-date enough you simply need <a target="_blank" href="https://nodejs.org/en/download/prebuilt-installer">install the latest Node.js</a> on your device.</p>
+</section>
+
+<section>
+  <h2 id="installation">Installation</h2>
+  <p>In your project, execute the following command to install eleventy as a dev dependency for your project:</p>
+  <p><code>npm install --save-dev @11ty/eleventy</code></p>
+  <p>You should now see <i>"@11ty/eleventy"</i> in the list of your dependencies in your <code>package.json</code> file.</p>
+  <br />
+  <p>If you're using VSCode, I highly recommend installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.</p>
+</section>
+
+<section>
+  <h2 id="configuration">Configuration</h2>
+  <p>In the root of your project, create a file called <code>.eleventy.js</code> (don't forget the period at the start of the filename!).</p>
+  <p>This file is where we will put all our configuration (settings) for Eleventy. Basically, here we tell it how we want it to work.</p>
+  <p>The most minimal version of this file looks like this:</p>
+  <pre><code>module.exports = function (eleventyConfig) {
+
+  // This will stop the default behaviour of foo.html files being turned into foo/index.html files
+  eleventyConfig.addGlobalData("permalink", "{% raw %}{{ page.filePathStem }}{% endraw %}.html");
+
+  return {
+    dir: {
+      input: "content",
+      output: "public",
+    },
+  };
+};
+</code></pre>
+  <p>
+    <code>input</code> defines the name of the folder in which your templates and pages will go. This is the folder in which you will make your changes. In this example I called it "content", but you
+    can choose any name you like (one common name would be "src" - short for "source").
+  </p>
+  <p>
+    <code>output</code> defines the name of the folder into which the finished html files will be generated. In this example I called it "public", but you can choose any name you like (common names
+    are "public" and "dist" - short for "distribution"). Eleventy doesn't delete files, so this folder can also contain other things, such as your images or other assets.
+    <b>Essentially, the contents of the "public" folder will be what you upload to your website.</b> Everything else (such as the input folder) is only necessary for development, and therefore does
+    not need to be uploaded.
+  </p>
+  <p>Here is an example of a larger configuration file, with explanations:</p>
+  <pre><code>module.exports = function (eleventyConfig) {
+  // This makes the eleventy command quieter (with less detail)
+  eleventyConfig.setQuietMode(true);
+
+  // This will stop the default behaviour of foo.html files being turned into foo/index.html files
+  eleventyConfig.addGlobalData("permalink", "{% raw %}{{ page.filePathStem }}{% endraw %}.html");
+
+  // This will make Eleventy not use your .gitignore file to ignore files
+  eleventyConfig.setUseGitIgnore(false);
+
+  // This will copy this folder to the output without modifying it at all
+  eleventyConfig.addPassthroughCopy("content/assets");
+
+  // This defines which files will be copied
+  eleventyConfig.setTemplateFormats(["html", "njk", "txt", "js", "css", "xml", "json"]);
+
+  // This defines the input and output directories
+  return {
+    dir: {
+      input: "content",
+      output: "public",
+    },
+  };
+};
+</code></pre>
+</section>
+
+<section>
+  <h2 id="nunjucks">Nunjucks</h2>
+  <p>
+    In this tutorial I will show you how to use <a target="_blank" href="https://www.11ty.dev/docs/languages/nunjucks/">Nunjucks</a> to create templates. (There are also other templating languages you
+    can use with Eleventy.) Eleventy will turn our Nunjucks templates into normal HTML files. You don't need any additional things to write Nunjucks code, but if you're using VSCode i recommend
+    installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.
+  </p>
+  <p>
+    You can use Nunjucks in your <code>.html</code> files (located in your input folder) without a problem. Alternatively, you can also create a Nunjucks file by giving the file the extension
+    <code>.njk</code>. This is necessary for some files (see later). <code>.njk</code> files can contain normal HTML code, don't worry.
+  </p>
+  <p>
+    For a full documentation on what you can do with Nunjucks and how, go <a target="_blank" href="https://mozilla.github.io/nunjucks/templating.html#variables">here</a>. Here are some of the most
+    important things:
+  </p>
+  <pre><code>Setting a variable:
+    {% raw %}{% set myText = "Hello World!" %}{% endraw %}
+    {% raw %}{% set showHeader = true %}{% endraw %}
+
+Outputting a variable:
+    {% raw %}{{ myText }}{% endraw %}
+
+Outputting a variable (without escaping HTML):
+    {% raw %}{{ myHTML | safe }}{% endraw %}
+
+If:
+    {% raw %}{% if showHeader %}{% endraw %}
+      &lt;header&gt;...&lt;/header&gt;
+    {% raw %}{% endif %}{% endraw %}
+
+If/Else:
+    {% raw %}{% if hungry %}{% endraw %}
+      I am hungry
+    {% raw %}{% elseif tired %}{% endraw %}
+      I am tired
+    {% raw %}{% else %}{% endraw %}
+      I am good!
+    {% raw %}{% endif %}{% endraw %}
+
+For Loop:
+    {% raw %}{% for item in items %}{% endraw %}
+      &lt;li&gt;{% raw %}{{ item.title }}{% endraw %}&lt;/li&gt;
+    {% raw %}{% else %}{% endraw %}
+      &lt;li&gt;This would display if the 'item' collection were empty&lt;/li&gt;
+    {% raw %}{% endfor %}{% endraw %}
+</code></pre>
+  <p>
+    Note: Logical operators like <code>&amp;&amp;</code>, <code>||</code> and <code>!</code> as you know them from JavaScript do not exist in Nunjucks, you need to use the words "and", "or" and "not",
+    e.g.:
+  </p>
+  <pre><code>{% raw %}{% if myVariable1 and myVariable2 %}{% endraw %}...{% raw %}{% endif %}{% endraw %}
+{% raw %}{% if myVariable1 or myVariable2 %}{% endraw %}...{% raw %}{% endif %}{% endraw %}
+{% raw %}{% if not myVariable %}{% endraw %}...{% raw %}{% endif %}{% endraw %}
+</code></pre>
+  <p>Comparisions work the same as in JavaScript (e.g. <code>==</code>, <code>!=</code>, <code>&lt;=</code> ...)</p>
+</section>
+
+<section>
+  <h2 id="data">Using Data (Optional)</h2>
+  <p>The variables you use can come from several different data sources, such as:</p>
+  <ul>
+    <li>that very file (<code>{% raw %}{% set myText = "Hello World!" %}{% endraw %}</code>)</li>
+    <li>the "front matter" of that file (see later) (<code>myText = Hello World</code>)</li>
+    <li>a <b>data file</b> in the <code>_data</code> subfolder of your input folder.</li>
+  </ul>
+  <p>I will now describe data files in detail.</p>
+  <p>
+    In your input folder (in my example that is the "content" folder), create a subfolder with the name <code>_data</code>. In there, you can create
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">JSON</a> files (<code>.json</code>) with data. You can then reference that data by using the file
+    name as a variable name in Nunjucks.
+  </p>
+  <blockquote>If you don't know JSON syntax: don't worry. It's pretty much self-explanatory if you know JavaScript. As usual, <code>[]</code> are arrays and <code>{}</code> are objects.</blockquote>
+  <p>Example: <code>changelog.json</code></p>
+  <pre><code>[
+  { "date": "2024-12-07", "text": "Created page" },
+  { "date": "2024-12-08", "text": "Bugfixes" },
+]
+</code></pre>
+  <p>Usage in Nunjucks:</p>
+  <pre><code>&lt;ul&gt;
+    {% raw %}{% for item in changelog %}{% endraw %}
+      &lt;li&gt;{% raw %}{{ item.date }}{% endraw %}: {% raw %}{{ item.text }}{% endraw %}&lt;/li&gt;
+    {% raw %}{% endfor %}{% endraw %}
+&lt;/ul&gt;
+</code></pre>
+  <p>(This would output a list of all objects in the <code>changelog.json</code> file.)</p>
+  <p>There are also other ways to get data. If you're interested read <a target="_blank" href="https://www.11ty.dev/docs/data/#sources-of-data">the documentation</a>.</p>
+</section>
+
+<section>
+  <h2 id="partials">Partials (Optional)</h2>
+  <p>You can create <code>.njk</code> files and include them in your pages like so:</p>
+  <pre><code>&lt;header&gt;
+    {% raw %}{% include 'headerImage.njk' %}{% endraw %}
+    {% raw %}{% include 'menu.njk' %}{% endraw %}
+&lt;/header&gt;
+</code></pre>
+  <p>These files <b>must</b> be located in a <code>_includes</code> folder in your input folder. (In my example this would be <code>content/_includes</code>.)</p>
+</section>
+
+<section>
+  <h2 id="templates">Templates</h2>
+  <h3 id="template">Step 1: The template</h3>
+  <p>Template files must be located in a <code>_includes</code> folder in your input folder. (In my example this would be <code>content/_includes</code>.)</p>
+  <p>
+    A template file needs to have the file extension <code>.njk</code>, but besides that it can look like a totally normal HTML file. You can (and should) use Nunjucks code to output things that vary
+    from page to page, such as page title, etc. (Like so: <code>&lt;title&gt;{% raw %}{{ title }}{% endraw %}&lt;/title&gt;</code>) We will define the values of those variables in the page files in
+    the next step.
+  </p>
+  <h3 id="page">Step 2: The page</h3>
+  <p>Whether your page file is an <code>.html</code> or a <code>.njk</code> file doesn't matter - You can use templates in the same way.</p>
+  <p>All we need to do is the so-called <b>"front matter"</b>. It's a section at the top of the file that looks like this:</p>
+  <pre><code>---
+layout: myTemplate.njk
+title: About Me
+showSelfie: true
+---
+</code></pre>
+  <p>This example defines three variables and gives them values. For text variables (strings) the quotation marks are optional. This would work just as well: <code>title: "About Me"</code>.</p>
+  <p>You can choose the names of the variables, except for <code>layout</code>. <code>layout</code> always defines the filename of the layout you want to use.</p>
+  <p>The rest of the file is normal HTML (with some Nunjucks code if you want).</p>
+  <p>Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
+  <blockquote>
+    <p>
+      <b>Tip:</b> You can even create other types of files, such as .xml files, with Nunjucks. Simply create the file with the extension <code>.njk</code> but add the <code>permalink</code> variable
+      to the front matter, e.g.: <code>permalink: "rss.xml"</code>, which would turn that file into <code>rss.xml</code>. (<a
+        target="_blank"
+        href="https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/rss.njk"
+        >Here</a
+      >
+      is a complete example on how to generate an RSS file with Eleventy.)
+    </p>
+  </blockquote>
+  <h3 id="example">Example</h3>
+  <p><code>content/_includes/myTemplate.njk</code>:</p>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;{% raw %}{{ title }}{% endraw %}&lt;/title&gt;
+    &lt;script src="{% raw %}{{ nesting }}{% endraw %}main.js"&gt;&lt;/script&gt;
+    &lt;meta content="text/html;charset=utf-8" http-equiv="Content-Type" /&gt;
+    &lt;meta content="utf-8" http-equiv="encoding" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;link href="{% raw %}{{ nesting }}{% endraw %}favicon.ico" rel="icon" type="image/x-icon" /&gt;
+  &lt;/head&gt;
+  &lt;body class="{% raw %}{{ bodyClass }}{% endraw %}"&gt;
+    &lt;header&gt;Header&lt;/header&gt;
+    &lt;main&gt;
+      {% raw %}{{ content | safe }}{% endraw %}
+    &lt;/main&gt;
+    &lt;footer&gt;Footer&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <p><code>content/about-me.html</code> (or <code>.njk</code>):</p>
+  <pre><code>---
+layout: myTemplate.njk
+title: About Me
+bodyClass: about-me-page
+nesting: "../"
+---
+
+&lt;h1&gt;About Me&lt;/h1&gt;
+&lt;p&gt;Here is the main content of your file...&lt;/p&gt;
+</code></pre>
+  <p>The generated file would be <code>public/about-me.html</code>:</p>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;About Me&lt;/title&gt;
+    &lt;script src="../main.js"&gt;&lt;/script&gt;
+    &lt;meta content="text/html;charset=utf-8" http-equiv="Content-Type" /&gt;
+    &lt;meta content="utf-8" http-equiv="encoding" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;link href="../favicon.ico" rel="icon" type="image/x-icon" /&gt;
+  &lt;/head&gt;
+  &lt;body class="about-me-page"&gt;
+    &lt;header&gt;Header&lt;/header&gt;
+    &lt;main&gt;
+      &lt;h1&gt;About Me&lt;/h1&gt;
+      &lt;p&gt;Here is the main content of your file...&lt;/p&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;Footer&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <blockquote>
+    <p>
+      Pay close attention to the <code>nesting</code> variable I defined. This is a good way of making sure that the relative paths in the template work for all pages, no matter the folder depth of
+      the page.
+    </p>
+    <p>
+      In a page file in the root folder (such as <code>index.html</code>, your home page) the value would be <code>./</code>, in a page 1 folder deep it would be <code>../</code>, in a page 2 folders
+      deep it would be <code>../../</code> and so on.
+    </p>
+    <p>
+      Keep in mind that the paths are relative to your <b>output</b> folder. This means, in the example above, <i>main.js</i> and <i>favicon.ico</i> are both in the output folder:
+      <code>public/main.js</code> and <code>public/favicon.ico</code>.
+    </p>
+  </blockquote>
+</section>
+
+<section>
+  <h2 id="extending-files">Extending files</h2>
+  <p>
+    An alternative to using Eleventy templates with front matter (as described in the previous step) is to <b>extend</b> an njk template. This will give you more freedom than the simple templates as
+    described earlier. However, it is often not really necessary. I highly recommend <b>not</b> doing this unless you actually have to.
+  </p>
+  <details>
+    <summary>Show me how</summary>
+    <p>
+      This is <b>only possible in <code>.njk</code> files</b> and you don't need the "front matter" described earlier.
+    </p>
+    <p>Blocks defined in the extended file can be overwritten by re-defining the blocks in the other file.</p>
+    <p>Here is an example:</p>
+    <p><code>myTemplate.njk</code> (which defines the <i>title</i> block and gives it default content):</p>
+    <pre><code>...
+&lt;header&gt;
+    {% raw %}{% block title %}{% endraw %}&lt;h1&gt;Hello World!&lt;/h1&gt;{% raw %}{% endblock %}{% endraw %}
+&lt;/header&gt;
+...
+</code></pre>
+    <p><code>about-me.njk</code> (which extends the template and overwrites the content of the <i>title block</i>):</p>
+    <pre><code>{% raw %}{% extends 'myTemplate.njk' %}{% endraw %}
+{% raw %}{% block title %}{% endraw %}&lt;h1&gt;About Me&lt;/h1&gt;{% raw %}{% endblock %}{% endraw %}
+</code></pre>
+    <p>would output:</p>
+    <pre><code>...
+&lt;header&gt;
+    &lt;h1&gt;About Me&lt;/h1&gt;
+&lt;/header&gt;
+...
+</code></pre>
+  </details>
+</section>
+
+<section>
+  <h2 id="running-eleventy">Running Eleventy</h2>
+  <p>Execute this command in your terminal to run Eleventy: <code>npx @11ty/eleventy</code></p>
+  <p>
+    This will generate your .html files based on the files (such as templates) in your input directory. You have to execute this command after every change you make in your input folder.
+    <b>To preview your website, use the files in the output folder</b> or the web server (see below).
+  </p>
+  <p>You can also make Eleventy 'watch' your files for changes, so that you don't have to manually execute the command after every change:</p>
+  <ul>
+    <li><code>npx @11ty/eleventy --watch</code> watches your files</li>
+    <li><code>npx @11ty/eleventy --serve</code> watches your files and starts a web server</li>
+  </ul>
+  <p>
+    If you do this, whenever you save a change, Eleventy will generate the html files anew. If you're using the web server (aka viewing your website at localhost, e.g.
+    <i><a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a></i
+    >) the page will even refresh for you automatically.
+  </p>
+  <hr />
+  <h3 id="custom-command">Defining a custom command (Optional)</h3>
+  <p>In your <code>package.json</code> file, you can define custom commands. Here is an example:</p>
+  <p>This would make the command <code>npm run build</code> execute <code>npx @11ty/eleventy</code>:</p>
+  <pre><code>{
+  ...
+  "scripts": {
+    "build": "npx @11ty/eleventy"
+  }
+}
+</code></pre>
+  <p>I highly recommend this because it's less of a handful to type out.</p>
+  <p>You can even combine the eleventy command with other commands you might be using, such as webpack:</p>
+  <pre><code>{
+  ...
+  "scripts": {
+    "build": "npx @11ty/eleventy &amp; webpack",
+    "watch": "npx @11ty/eleventy --serve &amp; webpack --watch",
+  }
+}
+</code></pre>
+  <p>(These will run both the Eleventy and the Webpack commands at the same time.)</p>
+</section>
+
+<section>
+  <h2 id="done">Done!</h2>
+  <p>Your project structure will look a bit like this:</p>
+  <pre><code>content/			&lt;-- your input folder
+    _data/
+        myData.json		&lt;-- a data file you can access as a variable
+    _includes/
+        myTemplate.njk		&lt;-- a template you can re-use
+        header.njk		&lt;-- a file you can include in another one
+    about/
+        about-me.html		&lt;-- this is where you make changes
+public/				&lt;-- your output folder
+    about/
+        about-me.html		&lt;-- generated automatically, don't edit this
+.eleventy.js			&lt;-- the configuration file
+</code></pre>
+  <p><strong>REMEMBER:</strong></p>
+  <ul>
+    <li>Do not edit the generated files (in the output folder), as they will be overwritten the next time you run Eleventy. Only make changes in the input folder.</li>
+    <li>Run <code>npx @11ty/eleventy</code> after every change (or let Eleventy watch your files and do this for you) to see the changes.</li>
+    <li>The contents of the output folder are what you upload to your website.</li>
+  </ul>
+  <p>If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!</p>
+</section>
+
+<section>
+  <h2 id="links">Links</h2>
+  <p>Here are some links to official documentation & other helpful stuff.</p>
+  <ul>
+    <li>
+      <a href="https://www.11ty.dev/" target="_blank">Official Eleventy Documentation</a>
+      <ul>
+        <li><a href="https://www.11ty.dev/docs/config/" target="_blank">Configuration file (.eleventy.js)</a></li>
+        <li><a href="https://www.11ty.dev/docs/layouts/" target="_blank">Layouts</a></li>
+        <li><a href="https://www.11ty.dev/docs/languages/nunjucks/" target="_blank">Nunjucks</a></li>
+        <li><a href="https://www.11ty.dev/docs/permalinks/#changing-the-output-location" target="_blank">Changing output location</a></li>
+        <li><a href="https://www.11ty.dev/docs/usage/#re-run-eleventy-when-you-save" target="_blank">Commands</a></li>
+        <li><a href="https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore" target="_blank">(Not) ignoring files</a></li>
+        <li><a href="https://www.11ty.dev/docs/data-frontmatter/" target="_blank">Front Matter</a></li>
+      </ul>
+    </li>
+    <li><a href="https://mozilla.github.io/nunjucks/templating.html#variables" target="_blank">Nunjucks Documentation</a></li>
+    <li><a href="https://github.com/11ty/eleventy/issues/913#issuecomment-592130359" target="_blank">Keep page.html instead of page/index.html</a></li>
+    <li><a href="https://nodejs.org/en/download/prebuilt-installer" target="_blank">Node.js Download Page</a></li>
+    <li><a href="https://medium.com/@tarngerine/how-the-heck-do-i-use-eleventy-the-intro-guide-i-wish-i-had-84d9b2689031" target="_blank">"How the heck do I use Eleventy?"</a></li>
+  </ul>
+</section>
+
+<section class="buy-me-a-coffee">
+  <p>
+    I spend <i>hours</i> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
+    <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
+  </p>
+  <p>
+    <small
+      >If you have questions about this tutorial feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I
+      promise I don't bite!</small
+    >
+  </p>
+</section>

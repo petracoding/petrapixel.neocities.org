@@ -116,6 +116,10 @@ main {
     margin-bottom: 1em;
     background: var(--mainBackgroundColor);
 
+    p:first-child {
+      margin-top: 0;
+    }
+
     p:last-child {
       margin-bottom: 0;
     }

@@ -16,6 +16,18 @@
 		
 	 
 		<item>
+			<title>New tutorial: Eleventy (11ty) tutorial for beginners!</title>
+			<link>https://petrapixel.neocities.org/coding/eleventy-tutorial</link>
+			<pubDate>2024-09-06</pubDate>
+		</item>
+	 
+		<item>
+			<title>New tutorial: Node/npm tutorial for beginners!</title>
+			<link>https://petrapixel.neocities.org/coding/npm-tutorial</link>
+			<pubDate>2024-09-06</pubDate>
+		</item>
+	 
+		<item>
 			<title>The site is now generated using 11ty!</title>
 			<link>https://petrapixel.neocities.org/</link>
 			<pubDate>2024-09-05</pubDate>
