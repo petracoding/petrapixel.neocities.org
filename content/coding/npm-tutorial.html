@@ -4,12 +4,20 @@ title: "npm tutorial"
 description: "A tutorial on how to set up and use Node.js and npm, for beginners. Neocities."
 nesting: "../"
 codeHighlight: true
+progressBar: true
 mainClass: coding-page
 ---
 
 <section>
   <h1><i>Node.js</i> and <i>npm</i> Tutorial</h1>
   <p>Knowing how to use <b>npm</b> is a requirement for using many cool things such as webpack and eleventy, so here is a tutorial on everything you need to know!</p>
+  <blockquote class="contact">
+    <p>
+      If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
+      and I'd love to help.
+    </p>
+  </blockquote>
+  <br />
   <div id="toc" data-two-levels="yeh"></div>
 </section>
 
@@ -25,7 +33,9 @@ mainClass: coding-page
     When I give you a command, for example <code>npm --version</code>, this means you have to type that in and press enter. It will output one or multiple lines of information (in this case your
     installed version of npm).
   </p>
-  <blockquote><b>Tip</b>: You can use the up-arrow key on your keyboard to load the most recent command. This is practical if you have a command you need to execute again and again.</blockquote>
+  <blockquote class="tip">
+    <b>Tip</b>: You can use the up-arrow key on your keyboard to load the most recent command. This is practical if you have a command you need to execute again and again.
+  </blockquote>
   <p>
     Make sure the current path in your terminal is the root folder of your project (e.g. <code>D:\Projects\my-project</code>). The current path in your terminal is shown to the left of where you type.
     If you've opened the integrated terminal in VSCode the path should already be correct. If you need to change the path of the terminal you can do this with the <i>cd</i> command (= &quot;change
@@ -48,7 +58,7 @@ mainClass: coding-page
     <b>npm (Node Package Manager)</b> is a tool which will allow you to install third party libraries/packages (other people's code, such as webpack or eleventy) by using the command line. Check if
     you have it installed via <code>npm --version</code>. When you install Node.js, npm is automatically installed, which means you don't need to install this seperately.
   </p>
-  <blockquote>FYI: We will be installing node and npm <b>globally</b> (once on your device) and all packages <b>locally</b> (once per project).</blockquote>
+  <blockquote class="tip">FYI: We will be installing node and npm <b>globally</b> (once on your device) and all packages <b>locally</b> (once per project).</blockquote>
   <details>
     <summary>Additional Definitions</summary>
     <p>You don't technically <i>need</i> to know this, but it's good to know, especially when following tutorials online.</p>
@@ -93,16 +103,17 @@ mainClass: coding-page
   </p>
   <p>Also execute <code>npm -v</code> to check if npm was also successfully installed (it will show a different version than node, that's okay).</p>
   <p>If both commands work and show you a version you have successfully installed node and npm! :)</p>
-  <blockquote>
+  <blockquote class="tip">
     <p>
       <b>Tip:</b> If you ever need a newer version of node, just download the newer installer and go through the installation wizard again. It will replace your current version with the newer one.
       Only do this if you know it won't mess with your projects!
     </p>
-    <p>
-      <b>Note:</b> If you need multiple different node versions on your computer because you have projects that require different node versions, you can use nvm (Node Version manager) (not to be
-      confused with npm). This tutorial will <b>not</b> include this.
-    </p>
   </blockquote>
+  <blockquote class="tip">
+    <b>Note:</b> If you need multiple different node versions on your computer because you have projects that require different node versions, you can use nvm (Node Version manager) (not to be
+    confused with npm). This tutorial will <b>not</b> include this.
+  </blockquote>
+
   <p>Once you've installed node and npm you don't need to do it again. It's installed on your device, not in your project, so you can use it in all your projects.</p>
 </section>
 
@@ -119,7 +130,7 @@ mainClass: coding-page
 }
 </code></pre>
   <p>You can add more information, such as <i>version</i> or <i>description</i> and custom commands (see below), but that's all optional for most projects, especially small/personal projects.</p>
-  <blockquote>
+  <blockquote class="tip">
     <p>(Alternatively, instead of creating the file yourself, you can run the <code>npm init</code> command, which will ask you some questions about your project and generate the file for you.)</p>
   </blockquote>
   <p>Done! Now you can now start installing packages.</p>
@@ -152,16 +163,16 @@ mainClass: coding-page
     If you don't have a gitignore file yet, create it like this: In the root folder of your project, create a file with the name <code>.gitignore</code> (don't forget the period at the start). In it,
     type <code>node_modules</code>. This will make git ignore the <code>node_modules</code> folder, as if it wasn't there.
   </p>
-  <blockquote>Don't know what Git is? <a href="/coding/git-tutorial">Check out my git tutorial.</a></blockquote>
+  <blockquote class="help">Don't know what Git is? <a href="/coding/git-tutorial">Check out my git tutorial.</a></blockquote>
 </section>
 <section>
   <h2 id="installing-packages">Installing Packages</h2>
 
   <p>You can install packages using this command: <code>npm install &lt;package&gt;</code>, e.g. <code>npm install webpack</code>.</p>
-  <blockquote>
+  <blockquote class="tip">
     <p>
-      Note: Packages are either installed as dependencies or development dependencies (devDependencies). The distinction is probably not important to you as a beginner: either is fine. To install a
-      package as a devDependency use this command: <code>npm install &lt;package&gt; --save-dev</code>
+      <b>Note:</b> Packages are either installed as dependencies or development dependencies (devDependencies). The distinction is probably not important to you as a beginner: either is fine. To
+      install a package as a devDependency use this command: <code>npm install &lt;package&gt; --save-dev</code>
     </p>
   </blockquote>
   <p>
@@ -208,7 +219,7 @@ mainClass: coding-page
     You <i>can</i> edit these manually and install them by running <code>npm install</code> (more info on that later). However, it's also possible to install/update/deinstall packages with command
     line commands alone, without editing this file manually.
   </p>
-  <blockquote>
+  <blockquote class="tip">
     <p>
       These version rules are based on <a href="https://docs.npmjs.com/about-semantic-versioning" target="_blank">semantic versioning</a>. Essentially, this just means that the first number is a
       <b>major release</b> (which breaks backward comaptibility), the second number is a <b>minor release</b> (which adds new features), and the third number is a <b>patch release</b> (which fixes
@@ -339,10 +350,15 @@ dev <span class="hljs-keyword">package</span>-<span class="hljs-symbol">b@</span
     I spend <i>hours</i> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
     <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
   </p>
+</section>
+
+<section>
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
   <p>
-    <small
-      >If you have questions about this tutorial feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I
-      promise I don't bite!</small
-    >
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
+    you don't hit the max character limit on comments.
   </p>
+  <div id="c_widget"></div>
+  <script src="../assets/js/comment-widget.js"></script>
 </section>

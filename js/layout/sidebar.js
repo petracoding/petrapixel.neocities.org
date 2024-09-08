@@ -71,6 +71,7 @@ function doActiveLinks() {
 }
 
 function initLastFmWidget() {
+  if (!document.querySelector("#song")) return;
   let user = "Petra1999";
   let url = "https://lastfm-last-played.biancarosa.com.br/" + user + "/latest-song";
   let song = document.querySelector("#song");
@@ -84,6 +85,8 @@ function initLastFmWidget() {
 }
 
 function initStatusCafeWidget() {
+  if (!document.getElementById("statuscafe-username")) return;
+
   fetch("https://status.cafe/users/petra1999/status.json")
     .then((r) => r.json())
     .then((r) => {

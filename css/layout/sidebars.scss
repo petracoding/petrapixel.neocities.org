@@ -586,10 +586,10 @@
     }
 
     details > strong {
-      padding-left: 1.5em;
-      margin-top: 0.5em;
+      padding-left: 1em;
+      margin-top: 0.75em;
+      margin-bottom: 0.25em;
       display: block;
-      font-size: 0.9em;
     }
 
     details[open] summary {
@@ -661,7 +661,7 @@
         background-color: $pink;
       }
 
-      // bullets
+      // "new"
       img:not([src*="link.png"]) {
         display: inline-block;
         margin-right: 11px;

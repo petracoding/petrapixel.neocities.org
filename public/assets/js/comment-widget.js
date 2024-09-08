@@ -35,8 +35,8 @@ const s_dstEnd = ["November", "Sunday", 1, 2]; // Example shown is the first Sun
 
 // Misc - Other random settings
 const s_commentsPerPage = 5; // The max amount of comments that can be displayed on one page, any number >= 1 (Replies not counted)
-const s_maxLength = 2000; // The max character length of a comment
-const s_maxLengthName = 30; // The max character length of a name
+const s_maxLength = 10000; // The max character length of a comment
+const s_maxLengthName = 50; // The max character length of a name
 const s_commentsOpen = true; // Change to false if you'd like to close your comment section site-wide (Turn it off on Google Forms too!)
 const s_collapsedReplies = false; // True for collapsed replies with a button, false for replies to display automatically
 const s_longTimestamp = false; // True for a date + time, false for just the date

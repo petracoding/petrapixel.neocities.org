@@ -10,6 +10,7 @@
     />
     
     <script src="../assets/js/main.js?nocache=20240906"></script>
+    <link rel="stylesheet" href="../assets/main.css" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -124,18 +125,28 @@
                   <summary>
                     coding help <small>(12)</small><small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
                   </summary>
-                  <strong>Beginners:</strong>
+                  <br />
                   <ul>
-                    <li><a href="/coding/need-help">need help?</a></li>
-                    <li><a href="/coding/common-questions">common questions</a></li>
-                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
-                    <li><a href="/coding/layout-base-code">layout base code</a></li>
-                    <li><a href="/coding/snippets">snippets & tips</a></li>
-
-                    <li><a href="/coding/neocities">neocities help</a></li>
+                    <li>
+                      <a href="/coding/layout-generator"
+                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="/coding/checklist">self-study checklist</a>
+                    </li>
+                    <li><a href="/coding/neocities">neocities tips</a></li>
                     <li><a href="/coding/my-setup">my coding setup</a></li>
                   </ul>
-                  <strong>Advanced:</strong>
+                  <strong>Beginner Guides:</strong>
+                  <ul>
+                    <li><a href="/coding/common-questions">common questions</a></li>
+                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
+                    <li><a href="/coding/snippets">snippets & tips</a></li>
+                    <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
+                    <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
+                  </ul>
+                  <strong>Intermediate Guides:</strong>
                   <ul>
                     <li>
                       <a href="/coding/git-tutorial">git tutorial</a>
@@ -151,19 +162,6 @@
                       ></a>
                       
                   -->
-                    </li>
-                  </ul>
-                  <strong>Tools:</strong>
-                  <ul>
-                    <li>
-                      <a href="/coding/checklist"
-                        >self-study checklist<small class="aside-nav__new aside-nav__new--small"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="/coding/layout-generator"
-                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
                     </li>
                   </ul>
                 </details>
@@ -826,11 +824,22 @@
       <!-- ----------------- BACK TO TOP ----------------- -->
       <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
 
+      <!-- ----------------- PROGRESS BAR ----------------- -->
+      
+
       <!-- ------------------------------------------------ -->
       <!-- ----------------- MAIN CONTENT ----------------- -->
       <!-- ------------------------------------------------ -->
       <main id="main" class="coding-page">
         
+<style>
+  h2::before {
+    content: "Mistake: ";
+    font-size: 0.8em;
+    font-style: italic;
+  }
+</style>
+
 <section>
   <h1>Common Mistakes</h1>
   <p>Here I'm going to list some common mistakes that beginner and amateur coders like to make. These are very prevalent on Neocities because old tips and tutorials are spread around.</p>
@@ -840,8 +849,8 @@
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="jquery">Using jQuery</h2>
   <p>
     jQuery used to be very popular, because it made a lot of JavaScript things easier. But nowadays there is not a single reason to use jQuery anymore. Everything that you can do in jQuery, you can do
@@ -873,8 +882,8 @@
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="tables-float">Creating a layout with tables and <i>float</i></h2>
   <p>
     Just don't do this to yourself. This is what web developers did decades ago; we don't have to torture ourselves like this anymore. It's difficult to do, and not very accessible since the elements
@@ -933,8 +942,8 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="iframes">Creating a layout with iFrames</h2>
   <p>Some people use iFrames in layouts so that they don't have to deal with editing their sidebar/menu on multiple pages at once. Well...</p>
   <p>
@@ -957,8 +966,8 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="nesting">Wrong HTML nesting</h2>
   <p>
     Sometimes, when editing our code, we put a few closing tags (like <code>&lt;/div&gt;</code>) too many or forget to close elements, or maybe we paste code at the wrong spot. All of these lead to
@@ -979,8 +988,8 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="semantic-elements">Not using Semantic Elements <small>(or using the wrong semantic elements)</small></h2>
   <p style="padding-left: 1em"><i>semantic (adj.)</i>: connected with the meanings of words</p>
   <p>
@@ -1017,8 +1026,30 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
+</section>
 
+<section>
+  <h2 id="a-vs-button">Using <i>&lt;button&gt;</i> instead of <i>&lt;a&gt;</i></h2>
+  <p>I've seen many beginners use the <code>&lt;button&gt;</code> element to create links. This is very, very wrong.</p>
+  <p>You should use <code>&lt;a&gt;</code> for links to other pages / websites.</p>
+  <p>You should use <code>&lt;button&gt;</code> for anything users can click that <i>isn't</i> a link. Examples: form buttons, submit buttons, like buttons, close buttons, etc.</p>
+  <p><b>Never</b> nest an <code>&lt;a&gt;</code> tag inside of a <code>&lt;button&gt;</code> tag or the other way around. An element is either a link <b>or</b> a button; never both.</p>
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <ul>
+      <li>
+        <a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank">&lt;a&gt;</a>
+      </li>
+      <li><a href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">&lt;button&gt;</a></li>
+    </ul>
+  </div>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+</section>
+
+<section>
   <h2 id="accessibility">Ignoring Basic Accessibility</h2>
   <p>
     It's impossible to make your website 100% accessible. It's time-consuming to make it <i>very</i> accessible. But it's easy to make it <i>at least a little</i> accessible, so you have no excuse not

@@ -132,8 +132,10 @@ body {
   .aside-mutuals,
   .aside-blinkies + hr,
   .aside-mutuals + hr,
+  img[src*="layout/new.gif"],
   img[src*="inline/star.gif"],
   img[src*="divider2.gif"],
+  img[src*="divider3.gif"],
   img[src*="inline/stars.gif"],
   img[src*="inline/wave.gif"] {
     display: none !important;

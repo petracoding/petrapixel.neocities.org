@@ -7,6 +7,14 @@ codeHighlight: true
 mainClass: coding-page
 ---
 
+<style>
+  h2::before {
+    content: "Mistake: ";
+    font-size: 0.8em;
+    font-style: italic;
+  }
+</style>
+
 <section>
   <h1>Common Mistakes</h1>
   <p>Here I'm going to list some common mistakes that beginner and amateur coders like to make. These are very prevalent on Neocities because old tips and tutorials are spread around.</p>
@@ -16,8 +24,8 @@ mainClass: coding-page
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="jquery">Using jQuery</h2>
   <p>
     jQuery used to be very popular, because it made a lot of JavaScript things easier. But nowadays there is not a single reason to use jQuery anymore. Everything that you can do in jQuery, you can do
@@ -49,8 +57,8 @@ mainClass: coding-page
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="tables-float">Creating a layout with tables and <i>float</i></h2>
   <p>
     Just don't do this to yourself. This is what web developers did decades ago; we don't have to torture ourselves like this anymore. It's difficult to do, and not very accessible since the elements
@@ -109,8 +117,8 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="iframes">Creating a layout with iFrames</h2>
   <p>Some people use iFrames in layouts so that they don't have to deal with editing their sidebar/menu on multiple pages at once. Well...</p>
   <p>
@@ -133,8 +141,8 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="nesting">Wrong HTML nesting</h2>
   <p>
     Sometimes, when editing our code, we put a few closing tags (like <code>&lt;/div&gt;</code>) too many or forget to close elements, or maybe we paste code at the wrong spot. All of these lead to
@@ -155,8 +163,8 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2 id="semantic-elements">Not using Semantic Elements <small>(or using the wrong semantic elements)</small></h2>
   <p style="padding-left: 1em"><i>semantic (adj.)</i>: connected with the meanings of words</p>
   <p>
@@ -193,8 +201,30 @@ footer { grid-area: footer; }
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
+</section>
 
+<section>
+  <h2 id="a-vs-button">Using <i>&lt;button&gt;</i> instead of <i>&lt;a&gt;</i></h2>
+  <p>I've seen many beginners use the <code>&lt;button&gt;</code> element to create links. This is very, very wrong.</p>
+  <p>You should use <code>&lt;a&gt;</code> for links to other pages / websites.</p>
+  <p>You should use <code>&lt;button&gt;</code> for anything users can click that <i>isn't</i> a link. Examples: form buttons, submit buttons, like buttons, close buttons, etc.</p>
+  <p><b>Never</b> nest an <code>&lt;a&gt;</code> tag inside of a <code>&lt;button&gt;</code> tag or the other way around. An element is either a link <b>or</b> a button; never both.</p>
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <ul>
+      <li>
+        <a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank">&lt;a&gt;</a>
+      </li>
+      <li><a href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">&lt;button&gt;</a></li>
+    </ul>
+  </div>
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+</section>
+
+<section>
   <h2 id="accessibility">Ignoring Basic Accessibility</h2>
   <p>
     It's impossible to make your website 100% accessible. It's time-consuming to make it <i>very</i> accessible. But it's easy to make it <i>at least a little</i> accessible, so you have no excuse not

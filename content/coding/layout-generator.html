@@ -29,6 +29,10 @@ lightbox: true
     <li>✓ no jquery or other unnecessary bloat</li>
   </ul>
   <br />
+  <blockquote class="contact">
+    <p>If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy!</p>
+  </blockquote>
+  <br />
   <p>If you like the generator, please share it on your page! You could use my button:</p>
   <div class="link-back">
     <a href="https://petrapixel.neocities.org/" target="_blank"
@@ -38,6 +42,7 @@ lightbox: true
 <a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/assets/img/linkback.gif?raw=true" alt="petrapixel"></a></textarea
     >
   </div>
+
   <!-- <div id="toc"></div> -->
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -78,33 +83,60 @@ lightbox: true
 <section>
   <h2>How to use</h2>
   <p>
-    On the <a href="/layout-generator/index.html">generator page</a>, use the provided settings to choose a layout that fits the website you want to make. With every change, the preview (on the bottom
-    half of the screen) will update. Once you're happy, click the "Show Code" button to get the code.
+    On the <a href="/layout-generator">generator page</a>, use the provided settings to choose a layout that fits the website you want to make. With every change, the preview (on the bottom half of
+    the screen) will update. Once you're happy, click the "Show Code" button to get the code.
   </p>
-  <p>The code is seperated into 3 parts. Each part needs to go into its own file.</p>
-  <ul>
-    <li>
-      <b>HTML:</b><br />This is your base for any page on your website. Paste the code into all of your page files (e.g. <code>index.html</code>, <code>about.html</code>, ...) and change the content.
-      <ul>
-        <li>
-          If a page file is in a subfolder (= not on the same folder level as the CSS and JavaScript files) you need to adjust the paths in the HTML code. <br /><i>Example:</i> Change
-          <code>./style.css</code> to <code>../style.css</code> or <code>../../style.css</code> etc (depending on how deep your file is).
-        </li>
-      </ul>
-    </li>
-    <li><b>CSS:</b><br />This goes into <code>style.css</code>.</li>
-    <li>
-      <b>JavaScript:</b> <i>(If you've selected the "Load layout per JavaScript" option)</i><br />Create the file <code>layout.js</code> and paste the code in there. Just like the CSS the JavaScript
-      is loaded on every page, so it's only necessary to create this file once, but you might need to adjust the path if your html file is in a subfolder!
-      <ul>
-        <li>Active menu links will be given the class active, so you can style them in the css like so: <code>nav a.active { ... }</code></li>
-      </ul>
-    </li>
-  </ul>
+
+  <h3>HTML:</h3>
   <p>
-    Once you've pasted the code into your files it's time to start editing the code however you like! <b>Don't remove the credit in the code or the console.log statement.</b> You may remove the credit
-    in the footer.
+    This is your base for any page on your website. Paste the code into all of your page files (e.g. <code>index.html</code>, <code>about.html</code>, ...) and change the content however you want.
   </p>
+  <p>If a page file is in a subfolder (= not on the same folder level as the CSS and JavaScript files) you need to adjust the paths in the HTML code.</p>
+  <details>
+    <summary>Show me how</summary>
+    <p>Page file is in root folder (no subfolder):</p>
+    <pre><code>&lt;link href="./style.css" rel="stylesheet" /&gt;
+&lt;script src="./layout.js"&gt;&lt;/script&gt;</code></pre>
+    <p>Page file is in 1 subfolder:</p>
+    <pre><code>&lt;link href="../style.css" rel="stylesheet" /&gt;
+&lt;script src="../layout.js"&gt;&lt;/script&gt;</code></pre>
+    <p>Page file is in 2 subfolders:</p>
+    <pre><code>&lt;link href="../../style.css" rel="stylesheet" /&gt;
+&lt;script src="../../layout.js"&gt;&lt;/script&gt;</code></pre>
+    <p>And so on.</p>
+  </details>
+
+  <h3>CSS:</h3>
+  <p>This goes into <code>style.css</code>.</p>
+
+  <h3>JavaScript:</h3>
+  <p><b>(If you've selected the "Load layout per JavaScript" option)</b></p>
+  <p>
+    Create the file <code>layout.js</code> in the same folder as the <code>style.css</code> and paste the code in there. Just like the CSS the JavaScript is loaded on every page, so it's only
+    necessary to create this file once.
+  </p>
+  <p>The code should work as-is without making a change.</p>
+  <blockquote class="tip"><b>Tip: </b>Active menu links will be given the class <i>active</i>, so you can style them in the CSS, <br />e.g. <code>nav a.active { ... }</code></blockquote>
+
+  <br />
+  <p>
+    Once you've pasted the code into your files it's time to start editing the code however you like! <b>Don't remove the credit in the code comment or the console.log statement.</b> You may remove
+    the credit in the footer and main content of the page.
+  </p>
+
+  <h3>Cache:</h3>
+  <blockquote class="warning">
+    A word about <b>cache:</b> If you can't see the changes you're making in your layout your browser might be loading an old version of the CSS/JavaScript from the cache. (If you've ever heard "Try
+    clearing your browser's cache" in response to a problem: This is why.)
+
+    <p>
+      Clearing your cache is one way to see the up-to-date code on your website, but it also requires your returning visitors to do the same, so it's better to <i>prevent</i> the browser from caching
+      your script in the first place.
+    </p>
+    <p>To do this, simply add <code>?nocache=1</code> at the end of <code>layout.js</code> and <code>style.css</code> and increase the number every time you make a change.</p>
+    <pre><code>&lt;link href="./style.css<b>?nocache=123</b>" rel="stylesheet" /&gt;
+&lt;script src="./layout.js<b>?nocache=123</b>"&gt;&lt;/script&gt;</code></pre>
+  </blockquote>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -137,6 +169,7 @@ lightbox: true
   <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
 
+<!--
 <section>
   <h2>Questions? Suggestions?</h2>
   <p>
@@ -144,11 +177,22 @@ lightbox: true
     <a href="/about/guestbook.html">guestbook</a>, make sure to include what exactly the problem is and a link to your site). Please read the "How to use" section above first.
   </p>
   <p>I'm also happy to receive feature suggestions, but I can't promise anything because I'm quite busy!</p>
-</section>
+</section>-->
 
 <section class="buy-me-a-coffee">
   <p>
     I spent <i>hours</i> of my free time creating this tool for free. If you'd like to say thanks, please share this tutorial with others and/or
     <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
   </p>
+</section>
+
+<section id="comments">
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
+  <p>
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
+    you don't hit the max character limit on comments.
+  </p>
+  <div id="c_widget"></div>
+  <script src="../assets/js/comment-widget.js"></script>
 </section>

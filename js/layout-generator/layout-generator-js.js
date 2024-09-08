@@ -28,7 +28,7 @@ function footerHTML() {
   // You can use it to refer to images etc.
   // Example: <img src="${nesting}img/logo.png"> might output <img src="../img/logo.png">
 
-  return ${"`" + layoutBefore + "`"};
+  return ${"`" + layoutAfter + "`"};
 }
 
 function getNesting() {

@@ -4,6 +4,7 @@ title: "11ty (eleventy) tutorial"
 description: "A tutorial on how to set up and use 11ty (eleventy), a static site generator, for beginners. Neocities."
 nesting: "../"
 codeHighlight: true
+progressBar: true
 mainClass: coding-page
 ---
 
@@ -13,7 +14,16 @@ mainClass: coding-page
     Eleventy is a static site generator. You can create "templates" (either .html or .njk files) and re-use them. This way you don't have to edit your header in every single page file, etc. Then you
     execute a command, and Eleventy will generate all your page files for you. These files you can upload to your website as you normally would.
   </p>
-  <p>If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!</p>
+  <blockquote class="project">
+    If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!
+  </blockquote>
+  <blockquote class="contact">
+    <p>
+      If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
+      and I'd love to help.
+    </p>
+  </blockquote>
+  <br />
   <div id="toc" data-two-levels="yeh"></div>
 </section>
 
@@ -21,8 +31,9 @@ mainClass: coding-page
   <h2 id="requirements">Requirements</h2>
   <p>
     You need to have <b>Node.js</b> ("node") (version 14 or higher) and <b>npm</b> installed on your computer. Your project needs a <code>package.json</code>. You need to be able to use a command
-    line. <b>Read <a href="/coding/npm-tutorial">my npm tutorial</a> to find out how to do all of these things.</b>
+    line.
   </p>
+  <blockquote class="help">Read <a href="/coding/npm-tutorial">my npm tutorial</a> to find out how to do all of these things.</blockquote>
   <p>I also highly recommend using a program for coding that has a built-in terminal, such as <a target="_blank" href="https://code.visualstudio.com/">VSCode</a>.</p>
   <p>In your terminal, check your installed version of node and npm:</p>
   <ul>
@@ -50,9 +61,9 @@ mainClass: coding-page
   <p>In the root of your project, create a file called <code>.eleventy.js</code> (don't forget the period at the start of the filename!).</p>
   <p>This file is where we will put all our configuration (settings) for Eleventy. Basically, here we tell it how we want it to work.</p>
   <p>The most minimal version of this file looks like this:</p>
-  <pre><code>module.exports = function (eleventyConfig) {
+  <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
 
-  // This will stop the default behaviour of foo.html files being turned into foo/index.html files
+  // This will stop the default behaviour of foo.html being turned into foo/index.html
   eleventyConfig.addGlobalData("permalink", "{% raw %}{{ page.filePathStem }}{% endraw %}.html");
 
   return {
@@ -74,11 +85,11 @@ mainClass: coding-page
     not need to be uploaded.
   </p>
   <p>Here is an example of a larger configuration file, with explanations:</p>
-  <pre><code>module.exports = function (eleventyConfig) {
+  <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
   // This makes the eleventy command quieter (with less detail)
   eleventyConfig.setQuietMode(true);
 
-  // This will stop the default behaviour of foo.html files being turned into foo/index.html files
+  // This will stop the default behaviour of foo.html being turned into foo/index.html
   eleventyConfig.addGlobalData("permalink", "{% raw %}{{ page.filePathStem }}{% endraw %}.html");
 
   // This will make Eleventy not use your .gitignore file to ignore files
@@ -172,7 +183,9 @@ For Loop:
     <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">JSON</a> files (<code>.json</code>) with data. You can then reference that data by using the file
     name as a variable name in Nunjucks.
   </p>
-  <blockquote>If you don't know JSON syntax: don't worry. It's pretty much self-explanatory if you know JavaScript. As usual, <code>[]</code> are arrays and <code>{}</code> are objects.</blockquote>
+  <blockquote class="help">
+    If you don't know JSON syntax: don't worry. It's pretty much self-explanatory if you know JavaScript. As usual, <code>[]</code> are arrays and <code>{}</code> are objects.
+  </blockquote>
   <p>Example: <code>changelog.json</code></p>
   <pre><code>[
   { "date": "2024-12-07", "text": "Created page" },
@@ -223,7 +236,7 @@ showSelfie: true
   <p>You can choose the names of the variables, except for <code>layout</code>. <code>layout</code> always defines the filename of the layout you want to use.</p>
   <p>The rest of the file is normal HTML (with some Nunjucks code if you want).</p>
   <p>Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
-  <blockquote>
+  <blockquote class="tip">
     <p>
       <b>Tip:</b> You can even create other types of files, such as .xml files, with Nunjucks. Simply create the file with the extension <code>.njk</code> but add the <code>permalink</code> variable
       to the front matter, e.g.: <code>permalink: "rss.xml"</code>, which would turn that file into <code>rss.xml</code>. (<a
@@ -287,7 +300,7 @@ nesting: "../"
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-  <blockquote>
+  <blockquote class="tip">
     <p>
       Pay close attention to the <code>nesting</code> variable I defined. This is a good way of making sure that the relative paths in the template work for all pages, no matter the folder depth of
       the page.
@@ -400,7 +413,9 @@ public/				&lt;-- your output folder
     <li>Run <code>npx @11ty/eleventy</code> after every change (or let Eleventy watch your files and do this for you) to see the changes.</li>
     <li>The contents of the output folder are what you upload to your website.</li>
   </ul>
-  <p>If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!</p>
+  <blockquote class="project">
+    If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!
+  </blockquote>
 </section>
 
 <section>
@@ -431,10 +446,15 @@ public/				&lt;-- your output folder
     I spend <i>hours</i> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
     <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
   </p>
+</section>
+
+<section>
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
   <p>
-    <small
-      >If you have questions about this tutorial feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I
-      promise I don't bite!</small
-    >
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
+    you don't hit the max character limit on comments.
   </p>
+  <div id="c_widget"></div>
+  <script src="../assets/js/comment-widget.js"></script>
 </section>

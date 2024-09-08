@@ -10,6 +10,7 @@
     />
     
     <script src="../assets/js/main.js?nocache=20240906"></script>
+    <link rel="stylesheet" href="../assets/main.css" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -124,18 +125,28 @@
                   <summary>
                     coding help <small>(12)</small><small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
                   </summary>
-                  <strong>Beginners:</strong>
+                  <br />
                   <ul>
-                    <li><a href="/coding/need-help">need help?</a></li>
-                    <li><a href="/coding/common-questions">common questions</a></li>
-                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
-                    <li><a href="/coding/layout-base-code">layout base code</a></li>
-                    <li><a href="/coding/snippets">snippets & tips</a></li>
-
-                    <li><a href="/coding/neocities">neocities help</a></li>
+                    <li>
+                      <a href="/coding/layout-generator"
+                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="/coding/checklist">self-study checklist</a>
+                    </li>
+                    <li><a href="/coding/neocities">neocities tips</a></li>
                     <li><a href="/coding/my-setup">my coding setup</a></li>
                   </ul>
-                  <strong>Advanced:</strong>
+                  <strong>Beginner Guides:</strong>
+                  <ul>
+                    <li><a href="/coding/common-questions">common questions</a></li>
+                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
+                    <li><a href="/coding/snippets">snippets & tips</a></li>
+                    <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
+                    <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
+                  </ul>
+                  <strong>Intermediate Guides:</strong>
                   <ul>
                     <li>
                       <a href="/coding/git-tutorial">git tutorial</a>
@@ -151,19 +162,6 @@
                       ></a>
                       
                   -->
-                    </li>
-                  </ul>
-                  <strong>Tools:</strong>
-                  <ul>
-                    <li>
-                      <a href="/coding/checklist"
-                        >self-study checklist<small class="aside-nav__new aside-nav__new--small"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="/coding/layout-generator"
-                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
                     </li>
                   </ul>
                 </details>
@@ -826,6 +824,14 @@
       <!-- ----------------- BACK TO TOP ----------------- -->
       <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
 
+      <!-- ----------------- PROGRESS BAR ----------------- -->
+      
+      <div class="progress-bar-container">
+        <div>You're <span class="progress-bar-percent">0</span>% done reading!</div>
+        <div class="progress-bar-wrapper"><div class="progress-bar"></div></div>
+      </div>
+      
+
       <!-- ------------------------------------------------ -->
       <!-- ----------------- MAIN CONTENT ----------------- -->
       <!-- ------------------------------------------------ -->
@@ -859,22 +865,32 @@
     <li>You will be able to work with other people on your project.</li>
     <li>If you connect your repository to the host of your website (e.g. Neocities), all changes will automatically be uploaded there as well. (See step 5 for details.)</li>
   </ul>
-  <p>If you want to look at an example GitHub repository, check out <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">the one for this very website</a>!</p>
-  <p>
-    If you have questions or feedback regarding the tutorial, feel free to contact me via my
-    <a href="https://neocities.org/site/petrapixel" target="_blank">Neocities profile</a> or <a href="/about/guestbook" target="_blank">Guestbook</a>! I would love to improve the guide in any way
-    possible.
-  </p>
-  <blockquote>
+  <br>
+  
+  <blockquote class="project">
+    <p>If you want to look at an example GitHub repository, check out <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">the one for this very website</a>!</p>
+  </blockquote>
+
+  <blockquote class="warning">
     This tutorial was written using git <b>version 2.41.0</b>. If you use a much older or newer version some of the information here might be outdated! You can check your version by running:
     <code>git -v</code>
   </blockquote>
+  
+   <blockquote class="contact">
+    <p>
+      If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
+      and I'd love to help.
+    </p>
+  </blockquote>
 
+  <br>
   <!-- https://github.blog/developer-skills/programming-languages-and-frameworks/what-is-git-our-beginners-guide-to-version-control/ -->
 
   <!-- <center style="padding: 0.4em 0 0.6em"><b>This guide is still work-in-progress!</b></center> -->
 
   <div id="toc"></div>
+  
+
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -886,7 +902,7 @@
 
   <h3>Git vs GitHub</h3>
   <p>First, let's look at SimpleWikipedia's definition of git and GitHub:</p>
-  <blockquote>
+  <blockquote class="tip">
     <strong>Git</strong> is a distributed revision control system. It is a computer program that helps people create other computer programs together. <strong>GitHub</strong> is an online software
     development assistance and version control service. This platform uses Git.
   </blockquote>
@@ -1022,7 +1038,7 @@ git push --set-upstream origin main</code></pre>
 
   <br />
   <p>You should now see your project files in your repository on GitHub.com!</p>
-  <blockquote>The set-up for this project is now done. What you will learn next is what you will do whenever you work on your project!</blockquote>
+  <blockquote class="success">The set-up for this project is now done. What you will learn next is what you will do whenever you work on your project!</blockquote>
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -1062,10 +1078,10 @@ git push --set-upstream origin main</code></pre>
     <br />
   </details>
   <br />
-  <p>
-    <b>Important tip:</b> To show the <b>status</b> of all files, use <code>git status</code>. This will show you which files have been changed, and whether these changes are already staged or not.
+<blockquote class="tip">  <p></p>
+    <b>Important tip:</b> To show the <b>status</b> of all files, use <code><b>git status</b></code>. <br>This will show you which files have been changed, and whether these changes are already staged or not.
     Keep in mind that one file can be both staged and unstaged if you made changes in it after staging other changes.
-  </p>
+  </p></blockquote>
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -1239,12 +1255,18 @@ git push --set-upstream origin main</code></pre>
   <p>
     I spend <i>hours</i> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
     <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
-  </p><p>
-    <small
-      >If you have questions about this tutorial feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I
-      promise I don't bite!</small
-    >
   </p>
+</section>
+
+<section>
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
+  <p>
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure you
+    don't hit the max character limit on comments.
+  </p>
+  <div id="c_widget"></div>
+  <script src="../assets/js/comment-widget.js"></script>
 </section>
 
       </main>

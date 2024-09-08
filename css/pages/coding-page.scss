@@ -1,6 +1,18 @@
 main.coding-page {
+  h3 {
+    margin-top: 1.75em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h2 + h3 {
+    margin-top: 1em;
+  }
+
   hr {
-    margin: 3em 0;
+    margin: 2em 0;
   }
 
   .cw {
@@ -18,12 +30,26 @@ main.coding-page {
     }
   }
 
+  pre {
+    white-space: break-spaces; // ?
+  }
+
   p > code,
   li > code {
     background: rgba(0, 0, 0, 0.075);
     padding: 2px 5px;
     border-radius: 6px;
     font-size: 13px;
+  }
+
+  // comments
+  #c_widget textarea.c-input {
+    min-height: 10em;
+    resize: vertical;
+
+    @media (min-width: $lg) {
+      min-height: 15em;
+    }
   }
 
   // Code Highlighter
@@ -130,5 +156,140 @@ main.coding-page {
     max-width: 450px;
     display: block;
     margin: 0 auto;
+  }
+}
+
+.buy-me-a-coffee + section {
+  border: 3px dotted;
+}
+
+blockquote.warning,
+blockquote.tip,
+blockquote.success,
+blockquote.project,
+blockquote.help,
+blockquote.contact {
+  position: relative;
+
+  &::after {
+    content: "💡";
+    position: absolute;
+    font-size: 20px;
+    top: -5px;
+    left: -13px;
+  }
+
+  @media (min-width: $lg) {
+    padding-left: 70px;
+
+    &::after {
+      font-size: 26px;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::after {
+      transform: translateY(-50%) scale(1.2) rotate(-10deg);
+
+      @media (prefers-reduced-motion) {
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+blockquote.warning::after {
+  content: "⚠️";
+  filter: sepia(0.3);
+
+  @media (min-width: $lg) {
+    font-size: 28px;
+  }
+}
+
+blockquote.tip::after {
+  content: "💡";
+  left: -8px;
+
+  @media (min-width: $lg) {
+    font-size: 30px;
+    left: 22px;
+  }
+}
+
+blockquote.success::after {
+  content: "✔️";
+  filter: hue-rotate(40deg) sepia(0.3);
+
+  @media (min-width: $lg) {
+    font-size: 28px;
+  }
+}
+
+blockquote.project::after {
+  content: "📁";
+  left: -9px;
+
+  @media (min-width: $lg) {
+    left: 20px;
+  }
+}
+
+blockquote.help::after {
+  content: "❔";
+  left: -8px;
+
+  @media (min-width: $lg) {
+    left: 24px;
+  }
+}
+
+blockquote.contact::after {
+  content: "💬";
+}
+
+// Progress Bar:
+
+.progress-bar-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 200px;
+  background: var(--backgroundColor);
+  border-radius: 10px;
+  border: 1px solid $pink;
+  padding: 7px 8px;
+  margin: auto;
+  transform: translateY(20px);
+  transition: 0.5s ease;
+  z-index: 9999;
+  opacity: 0;
+
+  @media (max-width: $md) {
+    display: none;
+  }
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+}
+
+.progress-bar-wrapper {
+  border-radius: 10px;
+  background: rgba($textColor, 0.2);
+  margin-top: 5px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--textColor);
+  border-radius: 10px;
+
+  &::before {
+    height: 1%;
   }
 }

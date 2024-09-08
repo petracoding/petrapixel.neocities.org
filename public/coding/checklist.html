@@ -10,6 +10,7 @@
     />
     
     <script src="../assets/js/main.js?nocache=20240906"></script>
+    <link rel="stylesheet" href="../assets/main.css" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -118,18 +119,28 @@
                   <summary>
                     coding help <small>(12)</small><small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
                   </summary>
-                  <strong>Beginners:</strong>
+                  <br />
                   <ul>
-                    <li><a href="/coding/need-help">need help?</a></li>
-                    <li><a href="/coding/common-questions">common questions</a></li>
-                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
-                    <li><a href="/coding/layout-base-code">layout base code</a></li>
-                    <li><a href="/coding/snippets">snippets & tips</a></li>
-
-                    <li><a href="/coding/neocities">neocities help</a></li>
+                    <li>
+                      <a href="/coding/layout-generator"
+                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="/coding/checklist">self-study checklist</a>
+                    </li>
+                    <li><a href="/coding/neocities">neocities tips</a></li>
                     <li><a href="/coding/my-setup">my coding setup</a></li>
                   </ul>
-                  <strong>Advanced:</strong>
+                  <strong>Beginner Guides:</strong>
+                  <ul>
+                    <li><a href="/coding/common-questions">common questions</a></li>
+                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
+                    <li><a href="/coding/snippets">snippets & tips</a></li>
+                    <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
+                    <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
+                  </ul>
+                  <strong>Intermediate Guides:</strong>
                   <ul>
                     <li>
                       <a href="/coding/git-tutorial">git tutorial</a>
@@ -145,19 +156,6 @@
                       ></a>
                       
                   -->
-                    </li>
-                  </ul>
-                  <strong>Tools:</strong>
-                  <ul>
-                    <li>
-                      <a href="/coding/checklist"
-                        >self-study checklist<small class="aside-nav__new aside-nav__new--small"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="/coding/layout-generator"
-                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
                     </li>
                   </ul>
                 </details>
@@ -820,6 +818,9 @@
       <!-- ----------------- BACK TO TOP ----------------- -->
       <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
 
+      <!-- ----------------- PROGRESS BAR ----------------- -->
+      
+
       <!-- ------------------------------------------------ -->
       <!-- ----------------- MAIN CONTENT ----------------- -->
       <!-- ------------------------------------------------ -->
@@ -964,13 +965,16 @@
     <li><input type="checkbox" /><a href="https://css-tricks.com/bem-101/" target="_blank">BEM (Block-Element-Modifier)</a> <span>(naming convention)</span></li>
     <li><input type="checkbox" /><a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp" target="_blank">Responsiveness </a><span>(media queries)</span></li>
     <li>
+      <input type="checkbox" /><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"><code>prefers-color-scheme</code> </a><span>(for dark mode)</span>
+    </li>
+    <li>
       <input type="checkbox" /><a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank">Browser compatibility (vendor prefixes)</a> (not necessary if you use SCSS)
     </li>
     <li><input type="checkbox" /><a href="https://www.w3schools.com/css/css3_variables.asp" target="_blank">CSS Variables</a> <span>(not necessary if you use SCSS)</span></li>
   </ul>
   <h3 id="intermediate-scss">SCSS</h3>
   <ul class="checklist">
-    <li><input type="checkbox" /><a href="https://www.freecodecamp.org/news/the-beginners-guide-to-sass/" target="_blank">SCSS Beginner's Guide</a></li>
+    <li><input type="checkbox" /><a href="https://sass-lang.com/guide/" target="_blank">SCSS Beginner's Guide</a></li>
     <li><input type="checkbox" /><a href="https://www.w3schools.com/sass/sass_variables.php" target="_blank">SCSS Variables</a></li>
     <li><input type="checkbox" /><a href="https://www.w3schools.com/sass/sass_mixin_include.php" target="_blank">SCSS Mixins</a></li>
     <li><input type="checkbox" /><a href="https://stackoverflow.com/a/43321755/3187492" target="_blank">SCSS vs 'Sass'</a> <span>(for understanding only)</span></li>
