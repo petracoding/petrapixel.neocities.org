@@ -9,7 +9,7 @@
       content="What to do if you&#39;re stuck when coding? Where can you ask coding questions, specifically about Neocities? How do you troubleshoot and help yourself?"
     />
     
-    <script src="../assets/js/main.js?nocache=20240906"></script>
+    <script src="../assets/js/main.js?nocache=20240909"></script>
     <link rel="stylesheet" href="../assets/main.css" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
@@ -153,15 +153,12 @@
                       <a href="/coding/npm-tutorial"
                         >node/npm tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
                       ></a>
-                      <a href="/coding/eleventy-tutorial"
-                        >eleventy (11ty) tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                      <!--
                       <a href="/coding/webpack-tutorial"
                         >webpack tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
                       ></a>
-                      
-                  -->
+                      <a href="/coding/eleventy-tutorial"
+                        >eleventy (11ty) tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
                     </li>
                   </ul>
                 </details>
@@ -189,6 +186,13 @@
               <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="../assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
               <ul class="changelog custom-scrollbar" aria-label="Changelog">
                    
+                <li class="changelog__entry">
+                  <strong>2024-09-09</strong>
+                  
+                  <a href="/coding/webpack-tutorial" tabindex="-1">New tutorial: Webpack tutorial for beginners!</a>
+                  
+                </li>
+                  
                 <li class="changelog__entry">
                   <strong>2024-09-06</strong>
                   
@@ -882,6 +886,7 @@ console.log("My variable = " + myVariable);</code></pre>
     Errors are also great to see. (What? Errors are great? Yes they are!) Most of the time, they tell you exactly what is going wrong with your code, you just actually have to read what the error
     message says. If you don't understand it, google it, and you will find out.
   </p>
+  <p>Error messages even sometimes show you exactly in which line of which file the errors happens. Click on the blue file name to jump to that position directly.</p>
   <p>Here are two common errors:</p>
   <ul>
     <li><b>Any error with "undefined", e.g. "reference to undefined property":</b> A variable that you are trying to read/use has no value (the value <code>null</code>).</li>
@@ -890,6 +895,7 @@ console.log("My variable = " + myVariable);</code></pre>
       external scripts. <a href="/coding/common-questions.html#external-script">Read more about this problem here.</a>
     </li>
   </ul>
+  <p>Keep in mind that the console might also show you errors/warnings from browser addons you have installed that affect the page. You can ignore those.</p>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->

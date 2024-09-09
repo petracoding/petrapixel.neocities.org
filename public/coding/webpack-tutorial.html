@@ -9,7 +9,7 @@
       content="A tutorial on how to set up and use Webpack, for beginners. Neocities."
     />
     
-    <script src="../assets/js/main.js?nocache=20240906"></script>
+    <script src="../assets/js/main.js?nocache=20240909"></script>
     <link rel="stylesheet" href="../assets/main.css" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
@@ -153,15 +153,12 @@
                       <a href="/coding/npm-tutorial"
                         >node/npm tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
                       ></a>
-                      <a href="/coding/eleventy-tutorial"
-                        >eleventy (11ty) tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                      <!--
                       <a href="/coding/webpack-tutorial"
                         >webpack tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
                       ></a>
-                      
-                  -->
+                      <a href="/coding/eleventy-tutorial"
+                        >eleventy (11ty) tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
                     </li>
                   </ul>
                 </details>
@@ -189,6 +186,13 @@
               <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="../assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
               <ul class="changelog custom-scrollbar" aria-label="Changelog">
                    
+                <li class="changelog__entry">
+                  <strong>2024-09-09</strong>
+                  
+                  <a href="/coding/webpack-tutorial" tabindex="-1">New tutorial: Webpack tutorial for beginners!</a>
+                  
+                </li>
+                  
                 <li class="changelog__entry">
                   <strong>2024-09-06</strong>
                   
@@ -858,7 +862,7 @@
 
   <blockquote class="project">
     <p>
-      You can find the files/codes for this entire example project <a href="TODO">HERE</a>. <br /><small
+      You can find the files/codes for this entire example project <a href="https://github.com/petracoding/webpack-example" target="_blank">HERE</a>. <br /><small
         >Please note that simply copying the contents of those files is <i>not</i> the same as installing webpack. You will still need to run the installation commands, for example.</small
       >
     </p>
@@ -963,7 +967,7 @@ a:hover {
 <section>
   <h2 id="project-structure">Project Structure</h2>
   <p>Our project is going to have a structure like this:</p>
-  <pre><code>/dist
+  <pre><code class="language-plaintext">/dist
     - index.html	&lt;- your home page
     - generated files...
 /src
@@ -1020,11 +1024,10 @@ webpack.config.js
   </p>
   <h3 id="css">CSS</h3>
   <p>Now, run this to install all required packages for handling CSS and SCSS:</p>
-  <p><code>npm install --save-dev css-loader style-loader sass-loader sass mini-css-extract-plugin</code></p>
+  <p><code>npm install --save-dev css-loader sass-loader sass mini-css-extract-plugin</code></p>
   <p>This will install the following packages:</p>
   <ul>
     <li><i>css-loader</i> (To interpret @import and url() in CSS files.)</li>
-    <li><i>style-loader</i> (To inject CSS into the DOM.) (Optional)</li>
     <li><i>sass-loader</i> (To compile SCSS to CSS.)</li>
     <li><i>sass</i> (A requirement for <i>sass-loader</i>.)</li>
     <li><i>mini-css-extract-plugin</i> (Extracts CSS into separate files)</li>
@@ -1036,36 +1039,13 @@ webpack.config.js
   <h2 id="configuration">Configuration</h2>
   <p>The configuration file is the file in which you tell webpack what to do and how.</p>
   <p>Create a file <code>webpack.config.js</code> in your root folder. Webpack will automatically detect and use this configuration file.</p>
-  <p>The most minimal settings could look like this:</p>
-  <pre><code class="language-js">const path = require("path");
-
-module.exports = {
-  entry: "./src/index.js",
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-  },
-  module: {
-    rules: [],
-  },
-};
-</code></pre>
-  <p><b>Explanation:</b></p>
-  <ul>
-    <li><code>entry</code> defines your main javascript file which webpack should load. Your main javascript file is the one that loads all others. The default is <i>/src/index.js</i> .</li>
-    <li>
-      <code>output</code> defines where webpack should save the generated file(s) (which will include your javascript, css, and so on). You can change the file name and path to your liking. The
-      default is <i>/dist/main.js</i>
-    </li>
-    <li><code>module.rules</code> is an array of rules which specify how webpack handles your files. We will add rules inside this array (= inside the <code>[]</code>) in the next step.</li>
-  </ul>
-  <p>But we need more configuration than just this.</p>
-  <p>Here is a good starting point with most things already configured: (Paste it into your configuration file now.)</p>
-  <pre style="white-space: break-spaces"><code class="language-js">const path = require("path");
+  <p>We will start with this configuration: (Paste it into your configuration file now.)</p>
+  <pre style="white-space: break-spaces"><code class="language-javascript">const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development",
+  // This enables production mode, which minifies the JS and CSS files for fast loading times:
+  mode: "production",
 
   // Define entry file (which loads every other file):
   entry: "./src/index.js",
@@ -1110,20 +1090,43 @@ module.exports = {
   devtool: "source-map",
 };
 </code></pre>
+  <p><b>Additional Explanation:</b></p>
+  <ul>
+    <li><code>entry</code> defines your main javascript file which webpack should load. Your main javascript file is the one that loads all others.</li>
+    <li>
+      <code>output</code> defines where webpack should save the generated file(s) (which will include your javascript, css, and so on). You can change the file name and path to your liking. The
+      default is <i>/dist/main.js</i>
+      <ul>
+        <li><code>filename</code>: this will be the name of your generated JavaScript file</li>
+        <li><code>path</code>: this will be the location of your generated files (In this example the 'dist' folder)</li>
+        <li>
+          <code>assetModuleFilename</code>: this defines the file path and name of any asset files webpack uses (such as images, fonts, etc.). In this example they will be saved in an 'assets'
+          subfolder in the 'dist' folder and retain their original path and file names.
+        </li>
+      </ul>
+    </li>
+    <li><code>module.rules</code> is an array of rules which specify how webpack handles your files (in our case we have a rule for <code>.css</code> and a rule for <code>.scss</code> files)</li>
+  </ul>
   <blockquote class="tip">
     <p>
       <b>Advanced Tip:</b> You can have multiple configuration files (e.g. for different purposes), but then you need to specify which one it should use, e.g. like this:<br />
       <code>npm webpack --config webpack2.config.js</code>
     </p>
   </blockquote>
+  <p>
+    In previous versions of Webpack it was necessary to add configuration to be able to use assets in your CSS and JavaScript files (such as images, fonts, etc.) Thankfully, in Webpack 5 we don't need
+    to do this anymore.
+  </p>
   <hr />
   <h3 id="css-directly-in-dom">CSS directly in DOM (Optional)</h3>
   <p>If you want, you can also add your CSS code into your head directly like this <code>&lt;style&gt;...&lt;/style&gt;</code> instead of into a CSS file.</p>
   <p>Keep in mind that this will loading the styles of your website <i>slightly</i> slower, so I don't recommend it unless you have a good reason.</p>
   <details>
     <summary>Show me how</summary>
-    <p>We're just replacing <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code>:</p>
-    <pre><code class="language-js">  // Rule for .css files:
+    <p>First, install style-loader:</p>
+    <p><code>npm install --save-dev style-loader</code></p>
+    <p>Next, we're just replacing <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code>:</p>
+    <pre><code class="language-javascript">  // Rule for .css files:
   {
     test: /\.css$/i,
     use: [
@@ -1141,28 +1144,51 @@ module.exports = {
     ],
   },
 </code></pre>
+
+    <p>You can now remove the <code>&lt;link rel="stylesheet" href="main.css" /&gt;</code> line from your HTML files (if you have it) because the CSS will be added directly.</p>
+    <p>Done!</p>
+    <p>(You can deinstall MiniCssExtractPlugin if you want.)</p>
   </details>
 </section>
 
 <section>
   <h2 id="usage">Usage</h2>
-  <h3 id="css-1">CSS</h3>
-  <p>Our <code>main.scss</code> could look like this:</p>
-  <pre><code class="language-scss">body {
-  font-size: 16px;
-  color: green;
-}
-
-@import "css/example"; // imports the file "css/example.scss"
+  <p>We will create 2 SCSS and 2 JavaScript files to test if our setup works.</p>
+  <p>Remember the project structure we're going for:</p>
+  <pre><code class="language-plaintext">/dist
+    - index.html
+    - generated files...
+<b>/src
+    - css/		&lt;- your scss files are in here
+        example.(s)css
+    - js/		&lt;- your javascript files are in here
+        example.js</b>
+    - img/
+    - fonts/
+    <b>- index.js		&lt;- your entry javascript file (which loads all others)
+    - main.scss		&lt;- your entry scss file (which loads all others)</b>
+.gitignore
+package-lock.json
+package.json
+webpack.config.js
 </code></pre>
-  <p><code>css/example.scss</code>:</p>
+
+  <h3 id="css-1">CSS</h3>
+  <p>Our <code>src/main.scss</code> could look like this:</p>
+  <pre><code class="language-scss">@import "css/example1";
+@import "css/example2";
+@import "css/example3";
+</code></pre>
+  <p>Use it to import all other css files. Keep in mind that you will get an error if you try to import files that do not exist!</p>
+  <p style="margin-top: 2em">The other files are completely normal, like this:</p>
+  <p><code>src/css/example1.scss</code>:</p>
   <pre><code class="language-scss">body {
   text-decoration: underline;
 }
 </code></pre>
   <h3 id="javascript">JavaScript</h3>
-  <p>Our <code>index.js</code> could look like this:</p>
-  <pre style="white-space: break-spaces"><code class="language-js">import "./main.scss"; // loads all css
+  <p>Our <code>src/index.js</code> could look like this:</p>
+  <pre style="white-space: break-spaces"><code class="language-javascript">import "./main.scss"; // loads all css
 import { doExample } from "./js/example.js"; // loads the function doExample() from example.js
 
 document.addEventListener("DOMContentLoaded", () =&gt; {
@@ -1170,32 +1196,68 @@ document.addEventListener("DOMContentLoaded", () =&gt; {
   doExample();
 });
 </code></pre>
-  <p><code>js/example.js</code>:</p>
+  <p>Use this file to import all other JavaScript files (by importing their functions and running the functions) and your main SCSS file (see first line).</p>
+  <p style="margin-top: 2em">The other JavaScript files are completely normal, except that all function that we import somewhere else need the <code>export</code> keyword:</p>
+  <p><code>src/js/example.js</code>:</p>
   <pre><code>export function doExample() {
   console.log("This example works too!");
 }
 </code></pre>
-  <h3 id="running-webpack">Running Webpack</h3>
-  <p>We'll now see if everything works so far.</p>
-  <p>Run <code>npx webpack</code> to <b>build your files</b>, or...</p>
-  <p>Run <code>npx webpack --watch</code> to <b>watch your files</b>. (This means they will automatically build if you change any of them, and is very practical when working on your project.)</p>
+
+  <h3 id="assets">Assets</h3>
+  <p>You can use assets (such as images, fonts, etc.) in your CSS and JavaScript files normally:</p>
+
+  <pre><code>@font-face {
+  font-family: "rainyhearts";
+  src: url("fonts/rainyhearts.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "rainyhearts";
+  background-image: url(img/example.png);
+}</code></pre>
+
+  <p>The path should be relative to your <b>src</b> folder, <i>not</i> the file you're currently editing!<br />For example, if <i>example.png</i> is in <i>src/img</i> :</p>
+  <p>Correct: <code>background-image: url(img/example.png);</code><br />Inorrect: <code>background-image: url(../img/example.png);</code></p>
 
   <blockquote class="tip">
-    <p><b>Remember these two commands!</b> You will use them every time you work on your project!</p>
-    <p>Note that these commands start with npX, not npM!</p>
+    Add your assets to your <code>src</code> folder (e.g. in src/img and src/fonts). All assets that you use in your CSS and JavaScript will be copied into the <code>dist</code> folder by Webpack.
+    Remember not to change the generated files in the <code>dist</code> folder; Only manage your assets in the <code>src</code> folder.
   </blockquote>
-  <p>A javascript file (and, later, perhaps other asset files once you've configured them) will be generated in your <code>dist</code> folder.</p>
+
+  <h3 id="running-webpack">Running Webpack</h3>
+  <p>We'll now see if everything works so far.</p>
+  <p>Run <code>npx webpack</code> to <b>build (= generate) your files</b>, or...</p>
+  <p>Run <code>npx webpack --watch</code> to <b>watch your files</b>. (This means they will automatically build if you change any of them, and is very practical when working on your project.)</p>
+
+  <blockquote class="warning">
+    <p><b>Remember these two commands!</b> You will use them every time you work on your project! Note that these commands start with npX, not npM!</p>
+  </blockquote>
+  <blockquote class="tip">
+    <p>You could also define custom npm commands to run webpack, e.g. <code>npm run watch</code>. <a href="/coding/npm-tutorial.html#custom-commands">Here's how to do this.</a></p>
+  </blockquote>
+  <p>A JavaScript and CSS file (and, later, perhaps other asset files once you've configured them) will be generated in your <code>dist</code> folder.</p>
+  <p>(Note that no CSS file will be generated if you used <i>style-loader</i> instead of <i>MiniCssExtractPlugin</i>.)</p>
+  <p>
+    It will also generate <code>.map</code> files if you've configured it to do this. These are <b>source maps</b> that help the browser reference lines of code in minified CSS and JavaScript files.
+    You don't need to do anything with them, just leave them.
+  </p>
   <h3 id="html">HTML</h3>
-  <p>In your page file (located in your dist folder), you need to use the generated javascript css files (also located in your dist folder), and you do this like always:</p>
+  <p>In your page files (located in your dist folder), you need to use the generated JavaScript and CSS files (also located in your dist folder) as usual:</p>
   <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
     &lt;title&gt;Webpack Example&lt;/title&gt;
-    &lt;!-- loading javascript file: --&gt;
+
+    <b>&lt;!-- loading javascript file: --&gt;
     &lt;script src="main.js"&gt;&lt;/script&gt;
+
     &lt;!-- loading css file: --&gt;
-    &lt;link rel="stylesheet" href="main.css" /&gt;
+    &lt;link rel="stylesheet" href="main.css" /&gt;</b>
   &lt;/head&gt;
   &lt;body&gt;
     Hello World.
@@ -1207,54 +1269,54 @@ document.addEventListener("DOMContentLoaded", () =&gt; {
   <blockquote class="success"><p>Everything should work now!</p></blockquote>
   <details>
     <summary>Having Problems?</summary>
-    <ul>
-      <li>
-        Remember to either run <code>npm webpack --watch</code> or <code>npx webpack</code>. If you're using <code>npx webpack</code> you need to run the command after every change you make in your
-        javascript/css files.
-      </li>
-
-      <li>Make sure you're loading your <code>main.js</code> (<b>not</b> the <code>index.js</code>) in your html file.</li>
-      <li>
-        If your html file is in a subfolder instead of directly in the <code>dist</code> folder, make sure to adjust the path to the <code>main.js</code>, e.g.
-        <code>&lt;script src="../main.js"&gt;&lt;/script&gt;</code>
-      </li>
-    </ul>
+    <p>
+      Remember to either run <code>npm webpack --watch</code> or <code>npx webpack</code>. If you're using <code>npx webpack</code> you need to run the command after every change you make in your
+      javascript/css files.
+    </p>
+    <p>Make sure you're loading the generated file (e.g. <code>main.js</code>), <b>not</b> the source file (e.g. <code>index.js</code>) in your html file.</p>
+    <p>
+      If your html file is in a subfolder instead of directly in the <code>dist</code> folder, make sure to adjust the path to the file as usual, e.g.
+      <code>&lt;script src="../main.js"&gt;&lt;/script&gt;</code>
+    </p>
   </details>
 </section>
 
 <section>
   <h2 id="faq">FAQ</h2>
-  <ul class="list-with-more-spacing">
-    <li>
-      <b>"I can't see my changes!"</b> <br />
-      Make sure you run <code>npx webpack</code> after every change, or run <code>npx webpack --watch</code> so that webpack detects all changes automatically. Whenever you re-open your project you
-      will need to run it again.
-    </li>
-    <li>
-      <b>"How do I stop the currently running command?"</b> <br />It depends on your terminal. In VSCode make sure you're focusing the terminal and press Ctrl+C (as if copying something). Then you
-      might confirm by typing Y (for "Yes") and pressing enter.
-    </li>
-  </ul>
+
+  <p>
+    <b>"I can't see my changes!"</b> <br />
+    Make sure you run <code>npx webpack</code> after every change, or run <code>npx webpack --watch</code> so that webpack detects all changes automatically. Whenever you re-open your project you will
+    need to run it again.
+  </p>
+  <p>
+    <b>"How do I stop the currently running command?"</b> <br />It depends on your terminal. In VSCode make sure you're focusing the terminal and press Ctrl+C (as if copying something). Then you might
+    confirm by typing Y (for "Yes") and pressing enter.
+  </p>
+
   <br />
   <p><strong style="font-size: 1.1em">Possible error messages:</strong> (Always check your terminal and your browser's console!)</p>
-  <ul class="list-with-more-spacing">
-    <li>
-      <code style="font-style: italic; font-weight: normal">"Module build failed. [...] Cannot find module '...'"</code><br />
-      You have probably added a configuration for a loader to your <code>webpack.config.js</code> without actually executing the command that installs said loader.
-    </li>
-    <li>
-      <code style="font-style: italic; font-weight: normal">"Module parse failed. [...] You may need an appropriate loader to handle this file type..."</code> <br />This means exactly what it says.
-      Make sure you have the necessary loader(s) for that file type installed and have the rules for this file type in your configuration file (<code>webpack.config.js</code>).
-    </li>
-    <li>
-      <code style="font-style: italic; font-weight: normal">"Uncaught SyntaxError: import declarations may only appear at top level of a module"</code> <br />Exactly what is says: Imports should only
-      be used on the very top of JavaScript files. Also make sure you are editing the javascript file in your <code>src</code> folder, not the one in the <code>dist</code> folder (that one you should
-      never edit because it will be overwritten!)
-    </li>
-  </ul>
+
+  <p>
+    <code style="font-style: italic; font-weight: normal">"Module not found: Error: Can't resolve ..." / "Module build failed. Cannot find module ..."</code><br />
+    If the module in the error message is an image/font/asset file that you're trying to use, make sure you don't have a typo in the file name and that the relative path is correct. The path should be
+    relative to your <b>src</b> folder, <i>not</i> the file you're currently editing!<br />For example, if <i>example.png</i> is in <i>src/img</i>: <br />Correct:
+    <code>background-image: url(img/example.png);</code><br />Inorrect:
+    <code>background-image: url(../img/example.png);</code>
+  </p>
+  <p style="margin-top: 1.5em">
+    <code style="font-style: italic; font-weight: normal">"Module parse failed. [...] You may need an appropriate loader to handle this file type..."</code> <br />This means exactly what it says. Make
+    sure you have the necessary loader(s) for that file type installed and have the rules for this file type in your configuration file (<code>webpack.config.js</code>).
+  </p>
+  <p style="margin-top: 1.5em">
+    <code style="font-style: italic; font-weight: normal">"Uncaught SyntaxError: import declarations may only appear at top level of a module"</code> <br />Exactly what is says: Imports should only be
+    used on the very top of JavaScript files. Also make sure you are editing the javascript file in your <code>src</code> folder, not the one in the <code>dist</code> folder (that one you should never
+    edit because it will be overwritten!)
+  </p>
+
   <br />
   <blockquote class="contact">
-    <p>If you have a problem that isn't here use the comment section below!</p>
+    <p>If you have a problem or question that isn't here use the comment section below!</p>
   </blockquote>
 </section>
 
@@ -1272,6 +1334,18 @@ document.addEventListener("DOMContentLoaded", () =&gt; {
     </li>
     <!-- <li><a href="LINK" target="_blank">TITLE</a></li> -->
   </ul>
+  <br />
+  <blockquote class="project">
+    <p>
+      You can find the files/codes for this entire example project <a href="https://github.com/petracoding/webpack-example" target="_blank">HERE</a>. <br /><small
+        >Please note that simply copying the contents of those files is <i>not</i> the same as installing webpack. You will still need to run the installation commands, for example.</small
+      >
+    </p>
+  </blockquote>
+
+  <blockquote class="project">
+    <p>If you want to look at real project that uses webpack, check out <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">the one for this very website</a>!</p>
+  </blockquote>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
