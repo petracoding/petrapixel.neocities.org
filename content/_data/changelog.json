@@ -1,5 +1,7 @@
 [
   { "date": "2024-09-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2024-09-11", "text": "New tutorial: How to position elements with CSS (+ Flexbox, Grid!) and create layouts!", "link": "/coding/positioning-tutorial" },
+  { "date": "2024-09-10", "text": "New page: Coding Cheatsheet!", "link": "/coding/cheatsheet" },
   { "date": "2024-09-09", "text": "New tutorial: Webpack tutorial for beginners!", "link": "/coding/webpack-tutorial" },
   { "date": "2024-09-06", "text": "New tutorial: Eleventy (11ty) tutorial for beginners!", "link": "/coding/eleventy-tutorial" },
   { "date": "2024-09-06", "text": "New tutorial: Node/npm tutorial for beginners!", "link": "/coding/npm-tutorial" },

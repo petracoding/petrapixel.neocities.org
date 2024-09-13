@@ -5,6 +5,7 @@ description: "Neocities base code for layouts so that you don't have to update e
 nesting: "../"
 codeHighlight: true
 mainClass: coding-page
+progressBar: true
 ---
 
 <script>
@@ -43,12 +44,20 @@ mainClass: coding-page
   </p>
   <p><small>Keep in mind that users who have deactivated JavaScript in their browser will not be able to navigate your site.</small></p>
 
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
+  <blockquote class="contact">
+    <p>
+      If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
+      and I'd love to help.
+    </p>
+  </blockquote>
+  <div id="toc"></div>
 
-  <h2>What it does</h2>
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+</section>
+<section>
+  <h2>What it will do</h2>
   <p>Your header and footer HTML will be in a single JavaScript file, so you'll only need to update it once.</p>
   <p>HTML in your .html file:</p>
   <pre><code>&lt;body&gt;
@@ -69,8 +78,8 @@ mainClass: coding-page
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <hr />
-
+</section>
+<section>
   <h2>Tutorial</h2>
   <p><strong>Step 1: The JS code</strong></p>
 
@@ -262,15 +271,22 @@ const footerEl = `
   <p>If you have page on which your layout should not be loaded, give the <code>&lt;body&gt;</code> element the "no-layout" class.</p>
 </section>
 
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
 <section class="buy-me-a-coffee">
   <p>
-    I spend <i>hours</i> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
+    I spend <b>hours</b> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
     <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
   </p>
+</section>
+
+<section>
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
   <p>
-    <small
-      >If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I promise I
-      don't bite!</small
-    >
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
+    you don't hit the max character limit on comments.
   </p>
+  <div id="c_widget"></div>
+  <script src="../assets/js/comment-widget.js"></script>
 </section>

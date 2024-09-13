@@ -57,6 +57,20 @@
     background: #d98d00;
   }
 
+  .coding-page {
+    .example0,
+    .example1,
+    .example2,
+    .example3,
+    .example4,
+    .example5,
+    .example6,
+    .example7,
+    .example8 {
+      background: #af7200;
+    }
+  }
+
   .code-textarea {
     background: rgba(43, 43, 43, 0.5);
     color: white;
@@ -85,6 +99,12 @@
   main details summary,
   .blog-article__read {
     background: #25724b;
+  }
+
+  @media (min-width: $lg) {
+    main details[open] {
+      border-color: #25724b;
+    }
   }
 
   .rec-filters__button {

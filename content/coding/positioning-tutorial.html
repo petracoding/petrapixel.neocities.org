@@ -1,0 +1,1714 @@
+---
+layout: petrapixel.njk
+title: "positioning tutorial"
+description: "A tutorial on how to position elements, including the display and position CSS properties, flex box and grid, for beginners. Neocities."
+nesting: "../"
+codeHighlight: true
+progressBar: true
+mainClass: coding-page
+---
+
+<style>
+  main section {
+    margin-bottom: 3em;
+  }
+
+  main section * {
+    box-sizing: content-box; /* so it doesn't fuck up the tutorial examples */
+  }
+
+  .example {
+    border: 2px dotted currentColor;
+    margin-bottom: 1.1em;
+    padding: 1em;
+  }
+
+  @media (max-width: 900px) {
+    main {
+      overflow-x: auto;
+    }
+
+    .example {
+      padding: 0.5em;
+    }
+  }
+
+  p + .example {
+    margin-top: -0.5em;
+  }
+
+  .progress-bar-container {
+    bottom: 120px;
+  }
+
+  #toc > b {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    display: block;
+  }
+
+  #toc > ol > li {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 0.7em;
+  }
+
+  #toc > ol > li li {
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+</style>
+
+<section>
+  <h1>Positioning Tutorial</h1>
+  <p>Many beginners have trouble understanding how to position elements and create layouts in CSS. So I wrote this guide to teach you the most important stuff!</p>
+
+  <blockquote class="warning mobile-only">
+    <p><b>Hello mobile user!</b> Due to the large amount of layout previews on this page I highly recommend viewing it on a desktop instead!</p>
+  </blockquote>
+
+  <blockquote class="contact">
+    <p>
+      If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
+      and I'd love to help.
+    </p>
+  </blockquote>
+
+  <div id="toc" data-two-levels="true"></div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="box-model">The Box Model (<code>box-sizing</code>)</h2>
+  <p>The "box model" describes how paddings and borders work in CSS.</p>
+  <p>By default, paddings and borders are added to any width/height you define:</p>
+  <style>
+    .example0 {
+      border: 5px solid currentColor;
+      padding: 10px;
+      margin: 10px;
+      height: 100px;
+      width: 300px;
+    }
+  </style>
+  <div class="example" style="min-height: 0px">
+    <div style="box-sizing: content-box" class="example0">
+      <code>height: 100px;<br />width: 300px;</code><br />Default.
+    </div>
+  </div>
+  <p>Actual height: 100px + padding (2x 10px) + border (2x 5px) = <b>130px</b>.<br />Actual width: 300px + padding (2x 10px) + border (2x 5px) = <b>330px</b></p>
+
+  <hr />
+  <p>With <code>box-sizing: border-box</code> you can change this behaviour. The paddings and borders will now be included in the width/height defined:</p>
+  <div class="example" style="min-height: 0px">
+    <div style="box-sizing: border-box" class="example0">
+      <code>height: 100px;<br />width: 300px;<br />box-sizing: border-box;</code>
+    </div>
+  </div>
+  <p>Actual height: <b>100px</b><br />Actual widht: <b>300px</b></p>
+
+  <blockquote class="tip">
+    <p>If you prefer this behaviour in general you can give <i>every</i> element on your page <code>box-sizing: border-box</code> by using</p>
+    <pre><code>* {
+  box-sizing: border-box;
+}</code></pre>
+    <p><b>I highly recommend doing this.</b></p>
+  </blockquote>
+  <!-- <p>The <code>box-sizing</code> property does not work on <code>inline</code> elements.</p> -->
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="display">The <code>display</code> property</h2>
+  <p>The <code>display</code> property is one of the most important CSS properties, so it's important to understand it well. It can take these values:</p>
+  <ul class="list-with-more-spacing">
+    <li><code>display: block</code>: the element is full-width by default and takes up a new line, and can be given a fixed width and height</li>
+    <li><code>display: inline</code>: the element does not take up a new line (instead, it flows with the text), and cannot be given a fixed width and height</li>
+    <li><code>display: inline-block</code>: same as <i>inline</i>, but it's possible to set a size, and margins/paddings work as expected, and you can give it a fixed width and height.</li>
+    <li><code>display: flex</code>: Flexbox (see later)</li>
+    <li><code>display: inline-flex</code>: Flexbox (see later) which does not take up a new line</li>
+    <li><code>display: grid</code>: Grid layout (see later)</li>
+  </ul>
+  <h3 id="display-defaults">Defaults</h3>
+  <p>All HTML elements have either <code>display: block</code> or <code>display: inline</code> as a default setting.</p>
+  <p>
+    Most elements, like <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> are <code>display: block</code> by default. After them, there's an automatic line break. That's why -
+    by default - multiple <code>&lt;div&gt;</code>s are shown underneath one another, not next to each other.
+  </p>
+  <p>
+    Some elements, like <code>&lt;span&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code> are <code>display: inline</code> by default, which
+    means they flow with the text. This is why you can make a word in a line <b>bold</b> without creating a line break. Unfortunately, you can't set a fixed size to
+    <code>display: inline</code> elements. But you can make them <code>display: inline-block</code> instead and then you can, and margins and paddings will work as expected.
+  </p>
+  <h3 id="display-examples">Examples</h3>
+  <p>In each of the following examples I added a box in the middle of the text. The boxes have the following styling additionally to the <code>display</code> property:</p>
+  <pre><code>height: 60px;
+padding: 10px;
+margin: 10px;</code></pre>
+  <p>
+    Notice how <code>display: inline</code> does have the padding and margin, but it's not quite behaving as expected: The top and bottom marings are ignored by other elements. The
+    <code>height</code> we set is ignored completly (and <code>width</code> would have been ignored too).
+  </p>
+  <style>
+    .example1 {
+      border: 1px solid currentColor;
+      height: 60px;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+  <div class="example">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span style="display: block" class="example1">display: <b>block</b></span
+      >Dolores corporis, tempore incidunt sit optio facilis, quae aliquam non odio, debitis mollitia nihil culpa voluptatum odit voluptate voluptatem cupiditate sed suscipit!
+    </p>
+  </div>
+  <div class="example">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span style="display: inline" class="example1">display: <b>inline</b></span> Dolores corporis, tempore incidunt sit optio facilis, quae
+      aliquam non odio, debitis mollitia nihil culpa voluptatum odit voluptate voluptatem cupiditate sed suscipit!
+    </p>
+  </div>
+  <div class="example">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span style="display: inline-block" class="example1">display: <b>inline-block</b></span> Dolores corporis, tempore incidunt sit optio
+      facilis, quae aliquam non odio, debitis mollitia nihil culpa voluptatum odit voluptate voluptatem cupiditate sed suscipit!
+    </p>
+  </div>
+  <details>
+    <summary>Show more examples</summary>
+    <p>
+      Here are the rest of the possible values. Note that they are - so far - not much different from the ones above. Flexbox and Grid mostly become interesting once your element includes multiple
+      elements inside of it. More to that later.
+    </p>
+    <div class="example">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span style="display: flex" class="example1">display: flex</span> Dolores corporis, tempore incidunt sit optio facilis, quae aliquam
+        non odio, debitis mollitia nihil culpa voluptatum odit voluptate voluptatem cupiditate sed suscipit!
+      </p>
+    </div>
+    <div class="example">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span style="display: inline-flex" class="example1">display: inline-flex</span> Dolores corporis, tempore incidunt sit optio facilis,
+        quae aliquam non odio, debitis mollitia nihil culpa voluptatum odit voluptate voluptatem cupiditate sed suscipit!
+      </p>
+    </div>
+    <div class="example">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span style="display: grid" class="example1">display: grid</span> Dolores corporis, tempore incidunt sit optio facilis, quae aliquam
+        non odio, debitis mollitia nihil culpa voluptatum odit voluptate voluptatem cupiditate sed suscipit!
+      </p>
+    </div>
+  </details>
+  <blockquote class="tip">
+    <p>
+      I never use the <code>display: inline</code> rule. In 99% of cases, you're better off using <code>display: inline-block</code> instead. But it's important to know that
+      <code>display: inline</code> exists because it is the default styling of some elements, as I mentioned before.
+    </p>
+  </blockquote>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="position">The <code>position</code> property</h2>
+  <p>
+    The <code>position</code> property is important to understand when using the properties <code>top</code>, <code>bottom</code>, <code>left</code> and/or <code>right</code> to set an element's
+    positon.
+  </p>
+  <p>It can take the following values:</p>
+  <ul class="list-with-more-spacing">
+    <li><code>position: static</code> (Default, does nothing)</li>
+    <li><code>position: relative</code>: sets the element's position relative to <b>itself</b></li>
+    <li>
+      <code>position: absolute</code>: sets the element's position relative to <b>the closest <abbr title="I'll explain what this means in a second.">positioned</abbr> element</b>
+    </li>
+    <li><code>position: fixed</code>: sets the element's position relative to the <b>browser window</b></li>
+    <li>
+      <code>position: sticky</code>: Like <i>fixed</i>, but "sticks" to the top of the screen when you try to scroll past it. Not used much these days, because behaviour such as this is usually
+      created using JavaScript
+    </li>
+  </ul>
+
+  <h3 id="top-bottom-left-right"><code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code></h3>
+  <p>
+    You can use <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> to set the position of an element. What exactly it does depends on the value of the
+    <code>positon</code> property, as I just described.
+  </p>
+  <blockquote class="warning">These properties only work on <b>positioned elements</b>. (You will learn about this in a second.)</blockquote>
+  <p>
+    As a unit you can use <b>px</b> (Pixels) or <b>%</b> (percent) or <b>vh</b> (percent of browser height) or <b>vw</b> (percent of browser width), or any other distance unit (such as <b>em</b>).
+  </p>
+  <p>Examples:</p>
+  <pre><code>.element {
+  top: 50px;
+  left: 50px;
+}</code></pre>
+  <pre><code>.element {
+  top: 50%;
+  left: 50%;
+}</code></pre>
+
+  <h3 id="positioned-elements">"Positioned" Elements</h3>
+  <p>
+    When you hear "positioned element" it means any element that has any position value <i>other than</i> <code>static</code>. So elements with <code>position: relative</code> or
+    <code>position: absolute</code> or <code>position: fixed</code>, for example, are "positioned".
+  </p>
+  <p>By default, all elements have <code>position: static</code> and are therefore <i>not</i> positioned.</p>
+  <blockquote class="warning">
+    <p>
+      Whenever you want to use <code>position: absolute</code> you have to make sure that one of its wrappers is positioned (= e.g. has <code>position: relative</code>). Otherwise it will not work!
+    </p>
+  </blockquote>
+  <p>Here is a very common example of absolute positioning:</p>
+  <div class="two-columns">
+    <pre style="margin-top: 0"><code>&lt;div class=&quot;container&quot;&gt;
+   &lt;div class=&quot;element&quot;&gt;Element&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <pre><code>.container {
+  display: relative;
+}
+
+.element {
+  display: absolute;
+  left: 50%;
+  top: 50%;
+}
+	</code></pre>
+  </div>
+  <div class="example" style="min-height: 150px; position: relative">
+    Container<br /><code>position: relative;</code>
+    <div class="example2" style="position: absolute; left: 50%; top: 50%">Element <br /><code>position: absolute;</code></div>
+  </div>
+  <p>
+    Notice that the left side of the inner element is at 50% of the outer one, and the top side of the inner element is at 50% of the outer one. Therefore, using <b>50%</b> is
+    <b>not the same centering as an element</b>. We will cover how to center an element later in the this tutorial.
+  </p>
+
+  <h3 id="positon-examples">Examples</h3>
+  <p>To illustrate the different values for the <code>position</code> property visually, here are some examples:</p>
+  <style>
+    .example2 {
+      display: inline-block;
+      border: 1px solid currentColor;
+      padding: 10px;
+    }
+  </style>
+  <div class="example" style="min-height: 120px">
+    <div class="example2">position: <b>static</b></div>
+  </div>
+  <div class="example" style="min-height: 120px">
+    <div class="example2" style="position: relative">position: <b>relative</b><br />(no top/bottom/left/right)</div>
+  </div>
+  <div class="example" style="min-height: 120px">
+    <div class="example2" style="position: relative; bottom: 20px; right: 20px">position: <b>relative</b>;<br />bottom: 20px;<br />right: 20px;</div>
+  </div>
+  <div class="example" style="min-height: 170px; position: relative">
+    (This bigger box has <code>position: relative</code>, otherwise this would not work!)
+    <div class="example2" style="position: absolute; bottom: 20px; right: 20px">position: <b>absolute</b>;<br />bottom: 20px;<br />right: 20px;</div>
+  </div>
+  <div class="example" style="min-height: 120px">
+    <div class="example2" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999">position: <b>fixed</b>;<br />bottom: 20px;<br />right: 20px;</div>
+    For <i>position: <b>fixed</b> </i> look on the bottom right of your browser :)
+  </div>
+  <p>(For an example for <code>position: sticky</code> click <a target="_blank" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sticky_element">here</a>.)</p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="transform">Transforming Elements (<code>transform</code>)</h2>
+  <p>The <code>transform</code> property can do a lot of stuff, like repositioning ("translating"), resizing ("scaling"), rotating and mirroring an element.</p>
+  <!-- <blockquote class="warning"><code>transform</code> only works on <b>positioned</b> elements!</blockquote> WRONG -->
+  <p>Some examples:</p>
+  <pre><code>transform: scale(1.5);
+transform: rotate(90deg);
+transform: translate(10px);
+transform: translate(10px, 10px);
+transform: translateX(10px);
+transform: skew(10deg, 10deg);
+</code></pre>
+  <p>
+    You can use multiple transforms at once by writing them next to each other, seperated by a space. Example:
+    <code style="white-space: initial">transform: translate(15px, 15px) scale(1.2) rotate(5deg);</code>
+  </p>
+  <p>For a full list of all possible values go <a href="https://www.w3schools.com/cssref/css3_pr_transform.php" target="_blank">here</a>.</p>
+  <blockquote class="warning">
+    <p>
+      <code>transform</code> only changes the <b>appearance</b> of an element (e.g. it's apparent size, font size and position), but <b>not</b> the actual space it takes up on your page (or actual
+      font size, etc)!
+    </p>
+    <p>You can see an example of this below: In the last box, notice how the element overflows its container even though only the size and rotation was changed and not its position.</p>
+    <p>Therefore, in most cases, <b>you should only use transform for effects and decoration</b>, not for the basic positioning of the elements.</p>
+    <p>Transformed elements may appear slightly blurry in some browsers and resolutions. There's nothing you can do about that.</p>
+  </blockquote>
+
+  <h3 id="transform-values">Values</h3>
+  <p>The transforms always have parentheses <code>()</code> in which you add the values.</p>
+  <p>
+    Some transforms (like scale and rotate) only have one value. For Example: Scale has a percentage (written as a number, e.g. <code>1</code> = 100%, <code>0.5</code> = 50%, and so on). Rotate uses
+    degrees (<code>deg</code>).
+  </p>
+  <p>
+    Other transforms, such as translate, have two values: one for <b>X</b> (horizontal: left to right) and the second for <b>Y</b> (vertical: top to bottom). For example,
+    <code>translate(5px, 10px)</code> moves an element 5px to the right (= horizontal) and 10px down (= vertical). You can use negative values to move an element to the left or up. <br />If you only
+    want to change X <b>or</b> Y, you can also use a shortcut like so: <code>translateX(5px)</code> or <code>translateY(10px)</code>.
+  </p>
+  <p>Note that <code>translate(5px)</code> (without a second value) is the same as <code>translateX(5px)</code>.</p>
+  <p>
+    When you use <code>%</code> in <code>translate</code>, it refers to the element's own width/height! For example <code>translate(50%)</code> moves the element half of its own width to the right.
+  </p>
+
+  <h3 id="transform-examples">Examples</h3>
+  <style>
+    .example3 {
+      display: inline-block;
+      border: 1px solid currentColor;
+      padding: 10px;
+    }
+  </style>
+  <p>Default:</p>
+  <div class="example" style="min-height: 100px">
+    <div class="example3">transform: <b>none</b></div>
+  </div>
+  <p>Repositioning ("Translating"):</p>
+  <div class="example" style="min-height: 100px">
+    <div class="example3" style="transform: translate(15px, 15px)">transform: <b>translate(15px, 15px)</b></div>
+  </div>
+  <p>Resizing ("Scaling"): <small>(This still has the same font size as the other examples!)</small></p>
+  <div class="example" style="min-height: 100px">
+    <div class="example3" style="transform: scale(1.2)">transform: <b>scale(1.2)</b></div>
+  </div>
+  <p>Rotating:</p>
+  <div class="example" style="min-height: 100px">
+    <div class="example3" style="transform: rotate(5deg)">transform: <b>rotate(5deg)</b></div>
+  </div>
+  <p>
+    Mirroring: <small>(this works by using <code>transform: scaleX(-1)</code>)</small>
+  </p>
+  <div class="example" style="min-height: 100px">
+    <div class="example3" style="transform: scaleX(-1)">transform: <b>scaleX(-1)</b></div>
+  </div>
+  <p>Combination of multiple transforms:</p>
+  <div class="example" style="min-height: 100px">
+    <div class="example3" style="transform: scale(1.2) rotate(5deg)">transform: <b>scale(1.2) rotate(5deg)</b></div>
+  </div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="z-index">Stack Order (<code>z-index</code>)</h2>
+  <p>
+    If you have two elements on the same position with one "in front of" the other (which happens a lot when you use <code>position: absolute</code> or <code>position: fixed</code> you might have to
+    define the <i>stack order</i> of the elements so that the correct one is in the "front".
+  </p>
+  <p>We can do this by defining a z-index, e.g. <code>z-index: 1;</code></p>
+  <blockquote class="warning">
+    <p>
+      z-index only works on <b>positioned elements</b> (= elements that have a positon value other than the default, so either <code>position: relative</code> or <code>position: absolute</code> or
+      <code>position: fixed</code>).
+    </p>
+  </blockquote>
+  <br />
+  <p>A higher z-index means that the element will be shown further in the front.</p>
+  <p>The stack order of elements is:</p>
+  <ul>
+    <li>Of the elements with a z-index, the one with the highest one</li>
+    <li>All other elements with a z-index, ordered by how high it is</li>
+    <li>Lastly, all elements without a z-index</li>
+  </ul>
+  <p>If two elements have the same z-index (or none at all) the last element will be shown the furthest in the front.</p>
+
+  <br />
+  <style>
+    .example6 {
+      display: inline-block;
+      border: 1px solid currentColor;
+      padding: 10px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 120px;
+    }
+
+    .example6:nth-child(3) {
+      border-style: dotted;
+    }
+
+    .example6:nth-child(2) {
+      border-style: dashed;
+    }
+  </style>
+  <p>By default the last element in the furthest in front:</p>
+  <div class="example" style="min-height: 100px; position: relative">
+    <div class="example6">1<br />(no z-index)</div>
+    <div class="example6" style="left: 80px">2<br />(no z-index)</div>
+    <div class="example6" style="left: 160px">3<br />(no z-index)</div>
+  </div>
+  <p>We can overwrite this by giving an element (in this example the first one) <code>z-index: 1</code>:</p>
+  <div class="example" style="min-height: 100px; position: relative">
+    <div class="example6" style="z-index: 1">1<br />(<code>z-index: 1</code>)</div>
+    <div class="example6" style="left: 80px">2<br />(no z-index)</div>
+    <div class="example6" style="left: 160px">3<br />(no z-index)</div>
+  </div>
+  <p>In this example the first two elements have the same z-index (1). Therefore the last element (which has a z-index) is shown in front:</p>
+  <div class="example" style="min-height: 100px; position: relative">
+    <div class="example6" style="z-index: 1">1<br />(<code>z-index: 1</code>)</div>
+    <div class="example6" style="left: 80px; z-index: 1">2<br />(<code>z-index: 1</code>)</div>
+    <div class="example6" style="left: 160px">3<br />(no z-index)</div>
+  </div>
+  <p>Obviously, if an element has a higher z-index than another one, it is shown in the front:</p>
+  <div class="example" style="min-height: 100px; position: relative">
+    <div class="example6" style="z-index: 1">1<br />(<code>z-index: 1</code>)</div>
+    <div class="example6" style="left: 80px; z-index: 1">2<br />(<code>z-index: 1</code>)</div>
+    <div class="example6" style="left: 160px; z-index: 2">3<br />(<code>z-index: 2</code>)</div>
+  </div>
+
+  <br />
+
+  <blockquote class="tip">
+    <p>You will often see people use <code>z-index: 99999;</code> to make sure that that element will always be shown on the very front.</p>
+    <p>This is often not necessary: As you can see in the examples above, often <code>z-index: 1;</code> or another small number already does the trick!</p>
+  </blockquote>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="centering">How to Center Elements</h2>
+
+  <h3 id="centering-horizontal">Horizontal</h3>
+  <p>To horizontally center the <b>content</b> of an element you can simply use <code>text-align: center</code>:</p>
+  <style>
+    .example4 {
+      border: 1px solid currentColor;
+      padding: 10px;
+    }
+  </style>
+  <div class="example">
+    <span class="example4" style="display: block; text-align: center">text-align: center;</span>
+  </div>
+
+  <p>And yes, this works with images and other <i>inline</i> (or Iinline-block) elements too:</p>
+  <div class="example">
+    <span class="example4" style="display: block; text-align: center"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" /></span>
+  </div>
+
+  <br />
+
+  <p>To horizontally center elements themselves you can use <br /><code>margin-left: auto; margin-right: auto;</code> <br />(short version: <code>margin: 0 auto;</code>).</p>
+  <p>This only works for <b>block</b> elements (= <code>display: block</code>) with a fixed width (e.g. <code>width: 300px;</code>)!</p>
+  <div class="example" style="min-height: 250px">
+    <div class="example4" style="width: 300px; margin-left: auto; margin-right: auto">display: block;<br />width: 300px;<br />margin-left: auto;<br />margin-right: auto;</div>
+  </div>
+
+  <h3 id="centering-vertical">Vertical</h3>
+  <p>One way to vertically center an element is to use absolute positioning with <code>top: 50%</code> and <code>transform: translateY(-50%)</code>.</p>
+  <p>(Don't forget that the container element needs to have <code>position: relative</code> for your absolute positioning to work!)</p>
+  <div class="example" style="min-height: 250px; position: relative">
+    position: relative;
+    <div class="example4" style="position: absolute; top: 50%; transform: translateY(-50%)">position: absolute;<br />top: 50%;<br />transform: translateY(-50%);</div>
+  </div>
+  <details>
+    <summary>Please explain !?</summary>
+    <p>This works because <code>top: 50%</code> sets the top edge of the element into the vertical center, and <code>transform: translateY(-50%)</code> moves the element up half its own height.</p>
+    <p>To demonstrate, this is what it would look like without <code>transform: translateY(-50%)</code>:</p>
+    <div class="example" style="min-height: 250px; position: relative">
+      <div class="example4" style="position: absolute; top: 50%">position: absolute;<br />top: 50%;<br />(No transform)</div>
+    </div>
+  </details>
+
+  <h3 id="centering-in-text">In-Text</h3>
+  <p>
+    If you have an inline element inside of text you can use <code>vertical-align: middle</code> to center it vertically. Instead of <code>middle</code> you could also try <code>top</code> or
+    <code>bottom</code>; I recommend trying all values and seeing which one looks best. Often (but not always) the default (<code>basline</code>) actually looks the most centered, so you don't have to
+    do anything at all.
+  </p>
+  <style>
+    .example5 {
+      display: inline-block;
+      border: 1px solid currentColor;
+      width: 10px;
+      height: 10px;
+    }
+  </style>
+  <div class="example">
+    <p>Text Text <span class="example5" style="vertical-align: baseline"></span> Text Text. This is <code>vertical-align: baseline</code> (default)</p>
+    <p>Text Text <span class="example5" style="vertical-align: middle"></span> Text Text. This is <code>vertical-align: middle</code></p>
+    <p>Text Text <span class="example5" style="vertical-align: top"></span> Text Text. This is <code>vertical-align: top</code></p>
+    <p>Text Text <span class="example5" style="vertical-align: bottom"></span> Text Text. This is <code>vertical-align: bottom</code></p>
+  </div>
+
+  <h3 id="flexbox-centering">Centering with Flexbox</h3>
+  <p>
+    The easiest and fastest way to center an element both horizontally and vertically is to use Flexbox. <b>(I do this literally all the time!)</b> I will explain Flexbox in detail in a moment; For
+    now all you need to know is 3 magic lines.
+  </p>
+  <p>These lines must be applied to the <b>outer element</b>, not the inner one! The inner element does not need any styling.</p>
+  <pre><code>.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.element {
+	
+}</code></pre>
+  <div class="example" style="min-height: 200px; display: flex; justify-content: center; align-items: center">
+    <div class="example4">Hello World</div>
+  </div>
+  <p>
+    To understand why this works, read the next section (CSS Flexbox)! But, in short: The first line defines the container as a flex box, the second horizontally centers its content, and the third
+    line vertically centers its content.
+  </p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="flexbox">CSS Flexbox (<code>display: flex</code>)</h2>
+  <p>If you give a container element <code>display: flex</code> the behaviour of all its children (= elements in it) will change.</p>
+  <p>Let's look at some examples. (In all the examples below the inner elements have a bit of padding and margin, but otherwise no styling concerning size or position.)</p>
+  <style>
+    .example7 {
+      border: 1px solid currentColor;
+      padding: 5px 10px;
+      margin: 5px 10px;
+    }
+  </style>
+
+  <hr />
+  <p>This is what it would look like without Flexbox: (The boxes are all full-width because they are <code>div</code>s, which are <code>display: block</code> by default.)</p>
+  <div class="example">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+
+  <hr />
+
+  <p>Once we give the wrapper element <code>display: flex</code> things change:</p>
+  <div class="example" style="display: flex">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>We can add <code>flex-direction: row-reverse</code> to reverse the order:</p>
+  <div class="example" style="display: flex; flex-direction: row-reverse">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+
+  <hr />
+
+  <h3><code>justify-content</code></h3>
+  <p>We use <code>justify-content</code> to define the position of the elements along the main axis (in this case horizontally).</p>
+  <p>By default, it's <code>justify-content: flex-start</code>, which does what it says: The elements are at the start:</p>
+  <div class="example" style="display: flex; justify-content: flex-start">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>We can change this to <code>justify-content: flex-end</code>:</p>
+  <div class="example" style="display: flex; justify-content: flex-end">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>To center the elements, we can use <code>justify-content: center</code>:</p>
+  <div class="example" style="display: flex; justify-content: center">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>For even spacing, we can use <code>justify-content: space-around</code>:</p>
+  <div class="example" style="display: flex; justify-content: space-around">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>...or <code>justify-content: space-evenly</code>:</p>
+  <div class="example" style="display: flex; justify-content: space-evenly">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>...or <code>justify-content: space-between</code>:</p>
+  <div class="example" style="display: flex; justify-content: space-between">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+
+  <hr />
+
+  <h3><code>align-items</code></h3>
+  <p>We use <code>align-items</code> to define the position of the elements along the other axis (in this case vertically).</p>
+  <blockquote class="warning">
+    <p>Do not confuse <code>align-items</code> with <code>align-content</code>, which does something else!</p>
+  </blockquote>
+  <p>The default is <code>align-items: stretch</code>, which stretches the items to fill the height of the container. (If your container has an automatic height you won't notice this at all.):</p>
+  <div class="example" style="min-height: 130px; display: flex">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>We can change this to <code>align-items: flex-start</code>:</p>
+  <div class="example" style="min-height: 130px; display: flex; align-items: flex-start">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>or <code>align-items: flex-end</code>:</p>
+  <div class="example" style="min-height: 130px; display: flex; align-items: flex-end">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>And centering is just as easy too: <code>align-items: center</code>:</p>
+  <div class="example" style="min-height: 130px; display: flex; align-items: center">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>... In combination with <code>justify-content: center</code> this will center our elements along both axes:</p>
+  <div class="example" style="min-height: 130px; display: flex; justify-content: center; align-items: center">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+
+  <hr />
+
+  <h3 id="flex-direction"><code>flex-direction: column</code></h3>
+  <p>To change the direction of a flexbox to vertical, use <code>flex-direction: column</code>:</p>
+  <div class="example" style="display: flex; flex-direction: column">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>(The boxes are full-width here because the default value for <code>align-items</code> (which controls the positiong along the second axis) is <code>stretch</code>.)</p>
+  <blockquote class="tip">
+    <p><b>The main axis is now vertical</b>, not horizontal.</p>
+    <p>
+      That means we change the horizontal alignment with <code>align-items</code>, not <code>justify-content</code>.<br />
+      And we change the vertical alignment with <code>justify-content</code>, not <code>align-items</code>.
+    </p>
+  </blockquote>
+  <p>Using <code>align-items: flex-start</code>:</p>
+  <div class="example" style="display: flex; flex-direction: column; align-items: flex-start">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>or <code>align-items: center</code>:</p>
+  <div class="example" style="display: flex; flex-direction: column; align-items: center">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+  <p>To reverse, we use <code>flex-direction: column-reverse</code>:</p>
+  <div class="example" style="display: flex; flex-direction: column-reverse">
+    <div class="example7">1</div>
+    <div class="example7">2</div>
+    <div class="example7">3</div>
+    <div class="example7">4</div>
+    <div class="example7">5</div>
+  </div>
+
+  <hr />
+
+  <h3 id="flex-wrap"><code>flex-wrap: wrap</code></h3>
+  <p>Let's imagine our elements don't all fit in our container.</p>
+  <p>By default, the elements shrink as much as they can: (These items all have a width of 50px, but shrink to try their best to fit into their container)</p>
+  <div class="example" style="display: flex; max-width: 200px">
+    <div class="example7" style="width: 50px">1</div>
+    <div class="example7" style="width: 50px">2</div>
+    <div class="example7" style="width: 50px">3</div>
+    <div class="example7" style="width: 50px">4</div>
+    <div class="example7" style="width: 50px">5</div>
+  </div>
+  <p>If we don't want that to happen we can give each of the <b>items</b> (not the wrapper) <code>flex-shrink: 0</code>:</p>
+  <div class="example" style="display: flex; max-width: 200px">
+    <div class="example7" style="width: 50px; flex-shrink: 0">1</div>
+    <div class="example7" style="width: 50px; flex-shrink: 0">2</div>
+    <div class="example7" style="width: 50px; flex-shrink: 0">3</div>
+    <div class="example7" style="width: 50px; flex-shrink: 0">4</div>
+    <div class="example7" style="width: 50px; flex-shrink: 0">5</div>
+  </div>
+  <p>The widths are correct now, but it's overflowing! What to do?</p>
+  <p>We'll use <code>flex-wrap: wrap</code> (on the wrapper)! (We don't need to use <code>flex-shrink: 0</code> anymore.) The elements that don't fit in the container overflow into the next line:</p>
+  <div class="example" style="display: flex; max-width: 200px; flex-wrap: wrap">
+    <div class="example7" style="width: 50px">1</div>
+    <div class="example7" style="width: 50px">2</div>
+    <div class="example7" style="width: 50px">3</div>
+    <div class="example7" style="width: 50px">4</div>
+    <div class="example7" style="width: 50px">5</div>
+  </div>
+  <br />
+  <p><code>flex-wrap</code> works with <code>flex-direction: column</code> too:</p>
+  <div class="example" style="display: flex; flex-direction: column; max-height: 250px; flex-wrap: wrap">
+    <div class="example7" style="height: 50px">1</div>
+    <div class="example7" style="height: 50px">2</div>
+    <div class="example7" style="height: 50px">3</div>
+    <div class="example7" style="height: 50px">4</div>
+    <div class="example7" style="height: 50px">5</div>
+  </div>
+  <p>To stop the default stretch, we'll use <code>align-items: flex-start</code> again:</p>
+  <div class="example" style="display: flex; flex-direction: column; max-height: 250px; flex-wrap: wrap; align-items: flex-start">
+    <div class="example7" style="height: 50px">1</div>
+    <div class="example7" style="height: 50px">2</div>
+    <div class="example7" style="height: 50px">3</div>
+    <div class="example7" style="height: 50px">4</div>
+    <div class="example7" style="height: 50px">5</div>
+  </div>
+  <p>
+    We can add <code>align-content: flex-start</code> (notice that it's <i>align-<b>content</b></i> now, not <i>align-items</i>!) to keep the items closer together:
+  </p>
+  <div class="example" style="display: flex; flex-direction: column; max-height: 250px; flex-wrap: wrap; align-content: flex-start; align-items: flex-start">
+    <div class="example7" style="height: 50px">1</div>
+    <div class="example7" style="height: 50px">2</div>
+    <div class="example7" style="height: 50px">3</div>
+    <div class="example7" style="height: 50px">4</div>
+    <div class="example7" style="height: 50px">5</div>
+  </div>
+
+  <hr />
+
+  <h3 id="flex-shrink-grow"><code>flex-shrink</code> and <code>flex-grow</code></h3>
+  <p>
+    We've already seen one way to style the items themselves: <code>flex-shrink</code>, which controls whether an item is allowed to or "shrink" to fit the wrapper. The default value is
+    <code>1</code>, which means "Yes, this element will try to shrink to fit the container." We can set it to <code>0</code> to stop an item from shrinking.
+  </p>
+  <p>Here's an example with the 3rd element having <code>flex-shrink: 0</code>:</p>
+  <div class="example" style="display: flex; max-width: 300px">
+    <div class="example7" style="width: 100px">1</div>
+    <div class="example7" style="width: 100px">2</div>
+    <div class="example7" style="width: 100px; flex-shrink: 0">3</div>
+    <div class="example7" style="width: 100px">4</div>
+    <div class="example7" style="width: 100px">5</div>
+  </div>
+
+  <br />
+
+  <p>
+    There's also <code>flex-grow</code> you can use to allow items to "grow" to fill the space in a container. The default is <code>0</code>, which means by default items do not grow. We can set it to
+    <code>1</code> to allow growing.
+  </p>
+  <p>Without using <code>flex-grow</code> our container would look like this:</p>
+  <div class="example" style="display: flex">
+    <div class="example7" style="width: 40px">1</div>
+    <div class="example7" style="width: 40px">2</div>
+    <div class="example7" style="width: 40px">3</div>
+    <div class="example7" style="width: 40px">4</div>
+    <div class="example7" style="width: 40px">5</div>
+  </div>
+  <p>Here's an example with the 3rd element having <code>flex-grow: 1</code>:</p>
+  <div class="example" style="display: flex">
+    <div class="example7" style="width: 40px">1</div>
+    <div class="example7" style="width: 40px">2</div>
+    <div class="example7" style="width: 40px; flex-grow: 1">3</div>
+    <div class="example7" style="width: 40px">4</div>
+    <div class="example7" style="width: 40px">5</div>
+  </div>
+
+  <br />
+
+  <p>Values bigger than 1 can be used to define the importance of shrinking/growing of elements.</p>
+  <p>In this example, the 3rd element has <code>flex-grow: 1</code> and the 4th element has <code>flex-grow: 2</code>, which means that the 4th element will grow more than the 3rd:</p>
+  <div class="example" style="display: flex">
+    <div class="example7" style="width: 50px">1</div>
+    <div class="example7" style="width: 50px">2</div>
+    <div class="example7" style="width: 50px; flex-grow: 1">3</div>
+    <div class="example7" style="width: 50px; flex-grow: 2">4</div>
+    <div class="example7" style="width: 50px">5</div>
+  </div>
+
+  <br />
+
+  <p>
+    There's also <code>flex-basis</code>, which sets the inital size of an item (in px or %). You won't need this a lot. Go
+    <a href="https://www.w3schools.com/cssref/css3_pr_flex-basis.php" target="_blank">here</a> to read about it.
+  </p>
+  <p>A shortcut for <code>flex-grow</code> + <code>flex-shrink</code> + <code>flex-basis</code> (in this order) is <code>flex</code>.</p>
+  <p>For example, <code>flex: 0 1 5px;</code> means: <code>flex-grow: 0</code> + <code>flex-shrink: 1</code> + <code>flex-basis: 5px</code>.</p>
+
+  <br />
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="grid">CSS Grid (<code>display: grid</code>)</h2>
+
+  <p>By using <code>display: grid</code> you can easily create grid-based layouts.</p>
+
+  <style>
+    .example8 {
+      border: 1px solid currentColor;
+      padding: 5px 10px;
+    }
+
+    .example8-header {
+      grid-area: header;
+    }
+    .example8-sidebar {
+      grid-area: sidebar;
+    }
+    .example8-main {
+      grid-area: main;
+      min-height: 6em;
+    }
+    .example8-footer {
+      grid-area: footer;
+    }
+
+    .grid-example1 {
+      grid-template:
+        "header header"
+        "sidebar main"
+        "footer footer"
+        / 100px 1fr;
+    }
+
+    .grid-example2 {
+      grid-template:
+        "header header"
+        "sidebar main"
+        "sidebar footer"
+        / 1fr 2fr;
+    }
+
+    .grid-example3 {
+      grid-template:
+        "header header"
+        "sidebar main"
+        "sidebar footer"
+        / 1fr 3fr;
+    }
+
+    .grid-example4 {
+      grid-template:
+        "header"
+        "sidebar"
+        "main"
+        "footer";
+    }
+  </style>
+
+  <p>Let's look at an example:</p>
+
+  <div class="example grid-example1" style="display: grid; grid-gap: 10px">
+    <div class="example8 example8-header"><b>Header</b></div>
+    <div class="example8 example8-sidebar"><b>Sidebar</b><br />(100px)</div>
+    <div class="example8 example8-main"><b>Main Content</b><br />(remaining width)</div>
+    <div class="example8 example8-footer"><b>Footer</b></div>
+  </div>
+
+  <div class="two-columns">
+    <pre style="margin-top: 0"><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;header&gt;Header&lt;/header&gt;
+  &lt;aside&gt;Sidebar&lt;/aside&gt;
+  &lt;main&gt;Main Content&lt;/main&gt;
+  &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+
+    <pre><code>.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template:
+    "header header"
+    "sidebar main"
+    "footer footer"
+    / 100px 1fr;
+}
+
+header { grid-area: header; }
+aside { grid-area: sidebar; }
+main { grid-area: main; }
+footer { grid-area: footer; }</code></pre>
+  </div>
+
+  <p>Now, the CSS code might look confusing, so let's go through it step-by-step:</p>
+
+  <ul>
+    <li>First, give your wrapper <code>display: grid</code> to use a grid layout.</li>
+    <li>We use <code>grid-gap: 10px</code>, which is a great way to define the margins between our elements.</li>
+    <li>
+      Then we will define the layout with <code>grid-template</code>. This property takes two values, seperated by a slash (<code>/</code>):
+      <ul>
+        <li>
+          The first value is your template, in which you define so-called <b>grid areas</b>. You can give them any name you like. In this example I chose <i>header</i>, <i>sidebar</i>, <i>main</i> and
+          <i>footer</i>.<br />Every <b>row</b> of your layout is in quotation marks (<code>""</code>), seperated by a space or line break. In each row you define each <b>column</b> of your layout,
+          seperated by a space. <br />Note that you can use one grid area multiple times if it spans multiple columns or rows. (In this example <i>header</i> and <i>footer</i> both span two columns.)
+        </li>
+        <li>
+          The second value is a list of column widths, e.g. <code>100px 1fr</code> which would make the first column <code>100px</code> wide and the second column <code>1fr</code> (= one fraction) of
+          the remaining width. Since we only use 1 fraction in total that 1 fraction is 100% of the remaining width.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      Finally, for each of the wrapper's child elements (our header, sidebar, main content, and footer) we must define which "grid area" (of those defined by us in the <code>grid-template</code> rule)
+      it belongs to.
+      <blockquote class="warning">
+        <p>Make sure <b>not</b> to use quotation marks (") when using the <code>grid-area</code> rules. It won't work.</p>
+        <p>Correct: <code>grid-area: blah;</code><br />Incorrect: <code>grid-area: "blah";</code></p>
+      </blockquote>
+    </li>
+  </ul>
+
+  <p>And that's it! You can set your elements' heights like you usually would.</p>
+
+  <hr />
+
+  <p>Let's look at another example.</p>
+
+  <div class="example grid-example2" style="display: grid; grid-gap: 10px">
+    <div class="example8 example8-header"><b>Header</b></div>
+    <div class="example8 example8-sidebar"><b>Sidebar</b><br />(1/3 of width)</div>
+    <div class="example8 example8-main"><b>Main Content</b><br />(2/3 of width)</div>
+    <div class="example8 example8-footer"><b>Footer</b><br />(2/3 of width)</div>
+  </div>
+
+  <p>
+    This time, we're using different names for our grid areas, but the main difference is our layout. By changing the <code>grid-template</code> we have created a different layout, one in which our
+    sidebar spans two rows.
+  </p>
+
+  <pre><code>.container {
+  display: grid;
+  grid-template:
+    "myHeader myHeader"
+    "mySidebar myMainContent"
+    "mySidebar myFooter"
+    / 1fr 2fr;
+  grid-gap: 10px;
+}
+
+header { grid-area: myHeader; }
+aside { grid-area: mySidebar; }
+main { grid-area: myMainContent; }
+footer { grid-area: myFooter; }</code></pre>
+
+  <p>
+    We also changed our column widths to <code>1fr 2fr</code>. Remember, <code>fr</code> means <b>fraction</b> (of the remaining width). In our example we have 3 fractions in total (1fr + 2fr = 3),
+    which means that <code>1fr</code> is one-third of the width (1/3), and <code>2fr</code> is two-thirds of the width (2/3).
+  </p>
+
+  <br />
+
+  <p>
+    If we wanted the sidebar to take up a bit less space we could use a higher total of fractions, e.g. <code>1fr 3fr</code>. The total is 4, so <code>1fr</code> is one-quarter (1/4) and
+    <code>3fr</code> is three-quartes (3/4):
+  </p>
+
+  <div class="example grid-example3" style="display: grid; grid-gap: 10px">
+    <div class="example8 example8-header"><b>Header</b></div>
+    <div class="example8 example8-sidebar"><b>Sidebar</b><br />(1/4 of width)</div>
+    <div class="example8 example8-main"><b>Main Content</b><br />(3/4 of width)</div>
+    <div class="example8 example8-footer"><b>Footer</b><br />(3/4 of width)</div>
+  </div>
+
+  <h3 id="grid-mobile">Mobile Responsiveness</h3>
+  <p>
+    We can easily make our layout mobile responsive by changing the <code>grid-template</code> rule for smaller screens. I highly recommend using only a 1-column layout for mobile, otherwise the
+    columns are horribly small. (Because we only have one column we can also just leave out the column width information.)
+  </p>
+  <pre><code>@media (max-width: 800px) {
+  .container {
+    grid-template:
+      "myHeader"
+      "mySidebar"
+      "myMainContent"
+      "myFooter";
+  }  
+}</code></pre>
+
+  <p>On mobile, our layout would now look like this:</p>
+  <div class="example grid-example4" style="display: grid; grid-gap: 10px">
+    <div class="example8 example8-header"><b>Header</b></div>
+    <div class="example8 example8-sidebar"><b>Sidebar</b></div>
+    <div class="example8 example8-main"><b>Main Content</b></div>
+    <div class="example8 example8-footer"><b>Footer</b></div>
+  </div>
+
+  <p>In an example such as this you might also want to hide your sidebar on mobile:</p>
+  <pre><code>@media (max-width: 800px) {
+  aside {
+    display: none;
+  }  
+}</code></pre>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="overflow">Scrollboxes (<code>overflow</code>)</h2>
+  <p>If you want to create a scrolling box, give your element a fixed <code>height</code> or <code>max-height</code> and <code>overflow-y: auto</code>.</p>
+  <div class="example" style="max-height: 7em; overflow-y: auto">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quaerat cupiditate mollitia veniam officiis. Repellendus doloribus consectetur numquam sint quo, dolorem itaque officia provident
+      illum tempore assumenda sunt ratione reprehenderit.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quaerat cupiditate mollitia veniam officiis. Repellendus doloribus consectetur numquam sint quo, dolorem itaque officia provident
+      illum tempore assumenda sunt ratione reprehenderit.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quaerat cupiditate mollitia veniam officiis. Repellendus doloribus consectetur numquam sint quo, dolorem itaque officia provident
+      illum tempore assumenda sunt ratione reprehenderit.
+    </p>
+  </div>
+
+  <hr />
+
+  <p>Btw, You can do the same thing but horizontally with a fixed <code>width</code> or <code>max-width</code> and <code>overflow-x: auto</code>:</p>
+  <div class="example" style="max-width: 50%; overflow-x: auto; display: flex">
+    <p style="flex-shrink: 0">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quaerat cupiditate mollitia veniam officiis. Repellendus doloribus consectetur numquam sint quo, dolorem itaque officia provident
+      illum tempore assumenda sunt ratione reprehenderit.
+    </p>
+  </div>
+  <p>(In this example I gave the container <code>display: flex</code> and the inner element <code>flex-shrink: 0</code> to stop the text from breaking automatically.)</p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="images">Working with Images</h2>
+
+  <p>By default, elements stretch automatically to fit the size of their content, so images aren't much of a problem.</p>
+
+  <p>But imagine we have a container with a fixed width and/or height, and an image inside it. By default, the image won't fit:</p>
+  <div class="example" style="width: 200px; height: 150px; padding: 10px"><img width="250" src="../assets/img/me/me1.jpg" /></div>
+
+  <br /><br />
+
+  <p><small>(That's me by the way, hello!!)</small></p>
+  <p>We could add <code>overflow: hidden</code> to hide the "overflowing" parts:</p>
+
+  <div class="example" style="width: 200px; height: 150px; padding: 10px; overflow: hidden"><img width="250" src="../assets/img/me/me1.jpg" /></div>
+
+  <p>... but that's still not ideal.</p>
+
+  <p>The trick to get the width right is to give the image <code>width: 100%</code> and <code>height: auto</code>. This is what we get:</p>
+
+  <div class="example" style="width: 200px; height: 150px; padding: 10px"><img style="width: 100%; height: auto" width="250" src="../assets/img/me/me1.jpg" /></div>
+
+  <br />
+
+  <p>If your container had automatic height this would be enough, but in our example we still have vertical overflow! (Even with <code>overflow: hidden</code> it would still be noticable!)</p>
+
+  <p>So, clearly what we need to do is give the image <code>height: 100%</code>, right? Let's see:</p>
+
+  <div class="example" style="width: 200px; height: 150px; padding: 10px"><img style="width: 100%; height: 100%" width="250" src="../assets/img/me/me1.jpg" /></div>
+
+  <p>Okay, that fits smugly into the container, but the image is horribly stretched! We can fix this by adding <code>object-fit: contain</code>:</p>
+
+  <div class="example" style="width: 200px; height: 150px; padding: 10px"><img style="width: 100%; height: 100%; object-fit: contain" width="250" src="../assets/img/me/me1.jpg" /></div>
+
+  <p>...or <code>object-fit: cover</code>, if you're okay with parts of the image being cropped off:</p>
+
+  <div class="example" style="width: 200px; height: 150px; padding: 10px"><img style="width: 100%; height: 100%; object-fit: cover" width="250" src="../assets/img/me/me1.jpg" /></div>
+
+  <p>You can change the image crop's position by defining <code>object-position</code>. For example, <code>object-position: top</code> will focus on the top part of the image:</p>
+
+  <div class="example" style="width: 200px; height: 150px; padding: 10px">
+    <img style="width: 100%; height: 100%; object-fit: cover; object-position: top" width="250" src="../assets/img/me/me1.jpg" />
+  </div>
+
+  <p>This is the code we ended up with:</p>
+
+  <pre><code>.container {
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}</code></pre>
+
+  <br />
+  <blockquote class="tip">
+    <p>
+      If you ever see an annoying little empty space under an image even though you didn't define a margin there, try giving the image element <code>display: block</code>. That often gets rid of that
+      unwanted space.
+    </p>
+    <p>(Don't ask me why this happens... I have no clue lol.)</p>
+  </blockquote>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="image-gallery">Example: Building an Image Gallery</h2>
+  <p>
+    Let's combine (almost) everything we've learned by creating an image gallery with 10 images. There should be 4 images per row, or 2 images per row on mobile. On hover, the images should zoom in
+    and rotate a bit and show a caption.
+  </p>
+  <p>At the end, it will look like this:</p>
+
+  <style>
+    /* Wrapper */
+    .example-image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Items */
+    .example-image-gallery div {
+      box-sizing: border-box;
+      width: calc(25% - 5px - 5px);
+      margin: 5px;
+      border: 5px solid;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Images */
+    .example-image-gallery div img {
+      transition: transform 0.5s ease;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Captions */
+    .example-image-gallery div span {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      background: white;
+      color: black;
+      padding: 5px 10px;
+      font-size: 20px;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: transform 0.4s ease, opacity 0.5s ease;
+    }
+
+    /* Images on Hover */
+    .example-image-gallery div:hover img {
+      transform: scale(1.35) rotate(10deg);
+    }
+
+    /* Captions on Hover */
+    .example-image-gallery div:hover span {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Mobile */
+    @media (max-width: 800px) {
+      /* Items */
+      .example-image-gallery div {
+        width: calc(50% - 5px - 5px);
+      }
+    }
+  </style>
+
+  <div class="example-image-gallery">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 2</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 3</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 4</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 5</span></div>
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 6</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 7</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 8</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 9</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
+  </div>
+
+  <br />
+  <details>
+    <summary>Show Full Code</summary>
+
+    <p>You don't need to read all of this right now, we're going to build up to it step-by-step!</p>
+
+    <pre><code>/* Wrapper */
+.example-image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Items */
+.example-image-gallery div {
+  box-sizing: border-box;
+  width: calc(25% - 10px);
+  margin: 5px;
+  border: 5px solid;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Images */
+.example-image-gallery div img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Captions */
+.example-image-gallery div span {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  font-size: 20px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.4s ease, opacity 0.5s ease;
+}
+
+/* Images on Hover */
+.example-image-gallery div:hover img {
+  transform: scale(1.35) rotate(10deg);
+}
+
+/* Captions on Hover */
+.example-image-gallery div:hover span {
+  opacity: 1;
+  transform: none;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .example-image-gallery div {
+    width: calc(50% - 10px);
+  }
+}
+</code></pre>
+  </details>
+
+  <h3 id="step1"><b>Step 1:</b> The HTML</h3>
+  <p>The HTML for this project is very straightforward.</p>
+  <p>All our items are a simple <code>div</code> with an image (<code>img</code>) and a caption (<code>span</code>).</p>
+  <pre><code>&lt;div class=&quot;example-image-gallery&quot;&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example1.jpg&quot; /&gt; &lt;span&gt;Image 1&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example2.jpg&quot; /&gt; &lt;span&gt;Image 2&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example3.jpg&quot; /&gt; &lt;span&gt;Image 3&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example4.jpg&quot; /&gt; &lt;span&gt;Image 4&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example5.jpg&quot; /&gt; &lt;span&gt;Image 5&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example6.jpg&quot; /&gt; &lt;span&gt;Image 6&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example7.jpg&quot; /&gt; &lt;span&gt;Image 7&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example8.jpg&quot; /&gt; &lt;span&gt;Image 8&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example9.jpg&quot; /&gt; &lt;span&gt;Image 9&lt;/span&gt; &lt;/div&gt;
+    &lt;div&gt; &lt;img src=&quot;./img/example10.jpg&quot; /&gt; &lt;span&gt;Image 10&lt;/span&gt; &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+  <h3 id="step2"><b>Step 2:</b> Item Sizing</h3>
+
+  <p>
+    We're going to start our CSS with a simple code to make sure the images aren't bigger than they should be. We will give our items (the <code>div</code>s) a width of 25% because we want 4 images
+    per row. I will also add a margin and border. To make sure that the images fill up their wrapper and don't overflow we use the <code>object-fit: cover</code> trick we learned earlier.
+  </p>
+
+  <style>
+    .example-image-gallery1 div {
+      width: 25%;
+      margin: 5px;
+      border: 5px solid;
+    }
+
+    .example-image-gallery1 div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+  <pre><code>.example-image-gallery div {
+  width: 25%;
+  margin: 5px;
+  border: 5px solid;
+}
+
+.example-image-gallery div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}</code></pre>
+
+  <p>Now, our items should look like this:</p>
+  <div class="example-image-gallery1">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+  </div>
+
+  <h3 id="step3"><b>Step 3:</b> Flexbox</h3>
+
+  <p>Right now, all our items are underneath one another instead of next to each other.</p>
+  <p>We will use flexbox to get them to display in a row, and automatically overflow to the next line.</p>
+
+  <pre><code>.example-image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}</code></pre>
+
+  <style>
+    .example-image-gallery2 {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+  <div class="example-image-gallery1 example-image-gallery2">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 2</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 3</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 4</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 5</span></div>
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 6</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 7</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 8</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 9</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
+  </div>
+
+  <br />
+
+  <p>Almost there! <b>One problem: We have 3 items in a line instead of the 4 we wanted.</b></p>
+
+  <p>This is because we defined the width of each item as 25%, but we also have a margin of 5px and a border of 5px on the left and right.</p>
+
+  <p>
+    First, we'll add <code>box-sizing: border-box</code> to our items so that the borders (and padding, if we had any) count towards the width. That takes care of the borders, but the margins are
+    still a problem.
+  </p>
+
+  <p>
+    So we need to set the width of each item to 25% minus 5px (left margin) minus 5px (right margin). We can do this using <code>calc()</code>: <code>width: calc(25% - 5px - 5px)</code>, or just
+    <code>width: calc(25% - 10px)</code>.
+  </p>
+
+  <p>
+    While we're at it, we will also fix the width for mobile browsers. On smaller screens everything will be a bit smaller, so we only want to show 2 images per row instead of 4. This means our width
+    will be 50% (minus margins) instead of 25% (minus margins):
+  </p>
+
+  <p>The code:</p>
+
+  <pre><code>/* Items */
+.example-image-gallery div {
+  box-sizing: border-box;
+  width: calc(25% - 10px);
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .example-image-gallery div {
+    width: calc(50% - 10px);
+  }
+}</code></pre>
+
+  <p>Now our gallery is already looking pretty good:</p>
+
+  <style>
+    /* Items */
+    .example-image-gallery3 div {
+      box-sizing: border-box;
+      width: calc(25% - 10px);
+    }
+
+    @media (max-width: 800px) {
+      .example-image-gallery3 div {
+        width: calc(50% - 10px);
+      }
+    }
+  </style>
+  <div class="example-image-gallery1 example-image-gallery2 example-image-gallery3">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 2</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 3</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 4</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 5</span></div>
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 6</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 7</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 8</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 9</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
+  </div>
+
+  <h3 id="step4"><b>Step 4:</b> Captions</h3>
+
+  <p>
+    It's time to style our captions. We want them to be "in front of" the images, which means we have to use absolute positioning (<code>position: absolute</code>) and place the caption where we want
+    (<code>bottom: 15px</code> and <code>left: 0</code>). We'll also add some basic styling, like <code>width: 100%</code>. To make sure the width is correct, we add
+    <code>box-sizing: border-box</code> again.
+  </p>
+
+  <p>Remember that, because we're using absolute positioning, the parent element needs to be "positioned", so we will give the item <code>position: relative</code> to take care of that.</p>
+
+  <p>This is the code we added:</p>
+
+  <pre><code>/* Items */
+.example-image-gallery div {
+  position: relative;
+}
+
+/* Captions */
+.example-image-gallery div span {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 20px;
+}</code></pre>
+
+  <style>
+    /* Items */
+    .example-image-gallery4 div {
+      position: relative;
+    }
+
+    /* Captions */
+    .example-image-gallery4 div span {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      background: white;
+      color: black;
+      padding: 5px 10px;
+      font-size: 20px;
+    }
+  </style>
+
+  <p>Here's what it looks like:</p>
+  <div class="example-image-gallery1 example-image-gallery2 example-image-gallery3 example-image-gallery4">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 2</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 3</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 4</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 5</span></div>
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 6</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 7</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 8</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 9</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
+  </div>
+
+  <p>We could be done now, but I want to show you how to add some hover effects!</p>
+
+  <h3 id="step5"><b>Step 5:</b> Captions on Hover</h3>
+
+  <p>First, we want the caption to show on hover only. We can do this by giving the captions <code>opacity: 0</code> by default and <code>opacity: 1</code> on hover.</p>
+  <p>
+    To add some movement I will also give the captions <code>transform: translateY(100px)</code> by default and reset that to <code>transform: none</code> on hover. This means that the caption will be
+    100px further down when the element is not being hovered over, which essentially means that it moves up as we hover on it.
+  </p>
+  <p>I'm adding a <code>transition</code> (for both the transform and the opacity) to make the effect smoother.</p>
+  <blockquote class="tip">
+    <p><code>transition</code> rules should always be added to the normal CSS rules, not the on-hover rules, otherwise it will only work when the mouse moves in but not out.</p>
+  </blockquote>
+
+  <p>Here's the code we're adding:</p>
+  <pre><code>/* Captions */
+.example-image-gallery div span {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.4s ease, opacity 0.5s ease;
+}
+
+/* Captions on Hover */
+.example-image-gallery div:hover span {
+  opacity: 1;
+  transform: none;
+}</code></pre>
+
+  <style>
+    /* Captions */
+    .example-image-gallery5 div span {
+      opacity: 0;
+      transform: translateY(100px);
+      transition: transform 0.4s ease, opacity 0.5s ease;
+    }
+
+    /* Captions on Hover */
+    .example-image-gallery5 div:hover span {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+  <p>Hover over the images to preview the effect:</p>
+  <div class="example-image-gallery1 example-image-gallery2 example-image-gallery3 example-image-gallery4 example-image-gallery5">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 2</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 3</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 4</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 5</span></div>
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 6</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 7</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 8</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 9</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
+  </div>
+
+  <p>For now, you might see the captions being visible outside of the frames as they move up. We will fix this in the next step.</p>
+
+  <h3 id="step6"><b>Step 6:</b> Image Hover Effects</h3>
+
+  <p>
+    Finally, we're gonna add some image effects on hover. We want the images to become larger and rotate a bit, so we can use something like <code>transform: scale(1.35) rotate(10deg)</code>. We're
+    adding that to the images, not the whole items, otherwise our captions would move too.
+  </p>
+  <p>Again, we're adding a transition (<b>not</b> just on hover!) to make the movement smoother.</p>
+
+  <pre><code>/* Images */
+.example-image-gallery div img {
+  transition: transform 0.5s ease;
+}
+
+/* Images on Hover */
+.example-image-gallery div:hover img {
+  transform: scale(1.35) rotate(10deg);
+}</code></pre>
+
+  <style>
+    /* Images */
+    .example-image-gallery6 div img {
+      transition: transform 0.5s ease;
+    }
+
+    /* Images on Hover */
+    .example-image-gallery6 div:hover img {
+      transform: scale(1.35) rotate(10deg);
+    }
+  </style>
+
+  <p>Now it looks like this:</p>
+
+  <div class="example-image-gallery1 example-image-gallery2 example-image-gallery3 example-image-gallery4 example-image-gallery5 example-image-gallery6">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 2</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 3</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 4</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 5</span></div>
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 6</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 7</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 8</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 9</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
+  </div>
+
+  <p>
+    Oops! Our images are moving outside of their frames! We can add <code>overflow: hidden;</code> to the items to stop that from happening. This also fixes the problem that our captions show up
+    slightly outside of the frames.
+  </p>
+
+  <pre><code>/* Items */
+.example-image-gallery div {
+  overflow: hidden;
+}</code></pre>
+  <style>
+    /* Items */
+    .example-image-gallery7 div {
+      overflow: hidden;
+    }
+  </style>
+
+  <p>Now we're done:</p>
+
+  <div class="example-image-gallery1 example-image-gallery2 example-image-gallery3 example-image-gallery4 example-image-gallery5 example-image-gallery6 example-image-gallery7">
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 2</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 3</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 4</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 5</span></div>
+    <div><img src="../assets/img/me/likes1.jpg" /><span>Image 6</span></div>
+    <div><img src="../assets/img/me/likes2.jpg" /><span>Image 7</span></div>
+    <div><img src="../assets/img/me/likes3.jpg" /><span>Image 8</span></div>
+    <div><img src="../assets/img/me/likes4.jpg" /><span>Image 9</span></div>
+    <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
+  </div>
+
+  <p>Looks neat, doesn't it?</p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <blockquote class="success">
+    <p><b>Congrats!</b> This is all I can teach you for now. I hope this tutorial helped you a bit!</p>
+  </blockquote>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section class="buy-me-a-coffee">
+  <p>
+    I spend <b>hours</b> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
+    <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
+  </p>
+</section>
+
+<section>
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
+  <p>
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
+    you don't hit the max character limit on comments.
+  </p>
+  <div id="c_widget"></div>
+  <script src="../assets/js/comment-widget.js"></script>
+</section>

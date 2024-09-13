@@ -1,4 +1,12 @@
 main.coding-page {
+  h2 {
+    margin-top: 1.75em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   h3 {
     margin-top: 1.75em;
 
@@ -40,6 +48,10 @@ main.coding-page {
     padding: 2px 5px;
     border-radius: 6px;
     font-size: 13px;
+
+    @media (min-width: $md) {
+      white-space: nowrap;
+    }
   }
 
   // comments
@@ -71,6 +83,10 @@ main.coding-page {
   .hljs-name,
   .hljs-selector-tag {
     color: #373737;
+  }
+
+  .hljs-comment {
+    opacity: 0.75;
   }
 }
 
@@ -291,5 +307,48 @@ blockquote.contact::after {
 
   &::before {
     height: 1%;
+  }
+}
+
+/*
+	CHEATSHEET
+*/
+
+.cheatsheet-blockquote {
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.cheatsheet-blockquote pre {
+  margin: 0;
+}
+
+.cheatsheet-blockquote small {
+  font-size: 0.9em;
+  opacity: 0.7;
+  display: block;
+  margin-left: 1em;
+  font-weight: normal;
+  user-select: none;
+  font-family: sans-serif;
+  letter-spacing: 0.1px;
+}
+
+/*
+	POSITIONING TUTORIAL
+*/
+
+.coding-page {
+  .example0,
+  .example1,
+  .example2,
+  .example3,
+  .example4,
+  .example5,
+  .example6,
+  .example7,
+  .example8 {
+    background: #fff3a4;
   }
 }

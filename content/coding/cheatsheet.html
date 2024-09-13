@@ -1,0 +1,480 @@
+---
+layout: petrapixel.njk
+title: "coding cheatsheet"
+description: "A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities."
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+---
+
+<section>
+  <h1>Cheatsheet</h1>
+  <p>A reference for often-used lines of code and commands.</p>
+  <div id="toc"></div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="css">CSS</h2>
+  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote>
+
+  <h3>Absolute Positioning:</h3>
+  <pre><code class="language-scss"></code></pre>
+
+  <h3>Flexbox:</h3>
+  <pre><code class="language-scss"></code></pre>
+
+  <h3>Grid:</h3>
+  <pre><code class="language-scss"></code></pre>
+
+  <h3>Animation:</h3>
+  <pre><code>@keyframes floatyAnimation {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-4px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+div {
+  animation: floatyAnimation 2s ease-in-out infinite;
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
+}
+</code></pre>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="js">JavaScript</h2>
+  <h3>Waiting for DOM:</h3>
+  <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
+  // code here...
+});
+</code></pre>
+  <h3>For-Each over Elements:</h3>
+  <pre><code>const myElements = document.querySelectorAll(".element");
+[...myElements].forEach((el) => {
+  console.log(el);
+});</code></pre>
+
+  <h3>ECMAScript:</h3>
+  <pre><code class="language-javascript">import "./myStyles.scss";
+import "./myFolder/myFile";
+import { doSomething } from "./myFolder/myFile";
+
+export function doSomething() {
+	...
+}
+</code></pre>
+
+  <h3><code>fetch</code>:</h3>
+  <pre><code>fetch("/example.json")
+  .then(response => {
+    // handle the response
+    if (res.ok) {
+      console.log("ok! (200)");
+    }
+    response.json();
+  })
+  .then(response => {
+    console.log(response); // e.g. response.json();
+  })
+  .catch(error => {
+    // handle the error. note: 404 errors do not land here.
+    console.log(error);
+  });</code></pre>
+  <p>
+    JSON -&gt; JS Object: <code>jsonData.json()</code><br />
+    JS Object -&gt; JSON: <code>JSON.stringify(obj)</code>
+  </p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="scss">SCSS</h2>
+  <pre><code class="language-scss">$font: Helvetica, Arial;
+$textColor: black;
+$linkColor: #333333;
+
+body {
+  font: $font;
+  color: $textColor;
+  font-size: 14px;
+}
+
+a {
+  color: $linkColor;
+
+  b {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: saturate($linkColor, 1.2);
+    color: desaturate($linkColor, 1.2);
+    color: darken($linkColor, 1.2);
+    color: lighten($linkColor, 1.2);
+    color: opacify($linkColor, 0.5);
+  }
+}
+</code></pre>
+  <h3>Mixins:</h3>
+  <pre><code class="language-scss">@mixin theme($theme: black) {
+  background: $theme;
+  color: #fff;
+}
+
+.info {
+  @include theme;
+}
+.alert {
+  @include theme($theme: red);
+}
+</code></pre>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="git">Git / GitHub</h2>
+  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/git-tutorial">git tutorial</a>.</blockquote>
+
+  <h3>New Project:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>git init <small>initalizes your current folder as a git repository</small>
+git remote add origin &lt;https link&gt; <small>connects your local folder with the GitHub repository you have created on github.com</small>
+git add . <small>stages all your files</small>
+git commit -m "First Commit" <small>commits the staged files</small>
+git branch -M main <small>renames the branch to 'main'</small>
+git push --set-upstream origin main <small>pushes (= uploads) your local files to your GitHub repository</small>
+git pull --set-upstream origin main <small>pulls (= downloads) the files in your GitHub repository into your local folder</small></pre>
+  </blockquote>
+
+  <h3>Staging, Committing, Pushing:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>git status <small>shows the status of every changed file</small>
+git add &lt;file&gt; <small>stages a file</small>
+git add . <small>stages all changed files</small>
+git commit -m "Example message" <small>commits the staged files</small>
+git commit --amend -m "an updated commit message" <small>adds the staged files to the previous commit</small>
+git commit --amend --no-edit <small>adds the staged files to the previous commit, without changing the commit message</small>
+git push <small>pushes (= uploads) your local files to your GitHub repository</small></pre>
+  </blockquote>
+
+  <h3>Undoing:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
+git reset &lt;previous_commit_hash&gt; <small>revert a commit as if it never happened</small>
+git restore --staged &lt;file&gt; <small>unstages a file</small>
+git reset HEAD -- &lt;file&gt; <small>same as above (unstages a file)</small>
+git restore &lt;file&gt; <small>discards changes in an unstaged file</small>
+git restore . <small>discards all changes in all unstaged files</small></pre>
+  </blockquote>
+
+  <h3>Branches:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>git branch <small>shows branches</small>
+git switch -c &lt;new-branch&gt; <small>makes a new branch and checks it out (currently changed files will be kept)</small>
+git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre>
+  </blockquote>
+
+  <h3>Misc.:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
+git log <small>show a log of all commits</small>
+git log --oneline <small>show a log of all commits (shorter)</small>
+git diff <small>shows all changes</small>
+git diff &lt;a&gt; <small>shows all changes in a file/folder</small>
+git -v <small>shows the git version you are using</small>
+git remote -v <small>shows all remotes</small>
+git remote remove &lt;name&gt; <small>deletes a remote</small></pre>
+  </blockquote>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="npm">npm</h2>
+  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote>
+
+  <h3>Installing Packages:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
+npm install --save-dev &lt;package&gt; <small>installs a package as a dev dependency</small>
+npm uninstall &lt;package&gt; <small>uninstalls a package</small>
+npm install <small>installs all dependencies</small>
+npm update <small>installs and updates all dependencies</small></pre>
+  </blockquote>
+
+  <h3>Misc.:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
+node -v <small>shows node version</small>
+npm -v <small>shows npm version</small>
+npm init <small>created package.json for you</small>
+npm cache clean --force <small>clears cache</small>
+npm list -g --depth=0 <small>shows all installed packages</small>
+npmoutdated <small>shows all outdated packages</small>
+npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre>
+  </blockquote>
+
+  <h3>Example <code>package.json</code> :</h3>
+  <pre><code>{
+  "name": "project-name",
+  "private": true,
+  "devDependencies": {
+    
+  },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  }
+}
+</code></pre>
+
+  <h3>Versions:</h3>
+  <ul>
+    <li><code>1.2.3</code>: only version 1.2.3, nothing else</li>
+    <li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li>
+    <li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li>
+    <li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li>
+    <li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li>
+    <li><code>*</code>: any version</li>
+  </ul>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="webpack">Webpack</h2>
+  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/webpack-tutorial">webpack tutorial</a>.</blockquote>
+
+  <h3>Installation:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>npm install --save-dev webpack webpack-cli <small>installs webpack</small>
+npm install --save-dev style-loader css-loader sass-loader sass mini-css-extract-plugin <small>installs packages required for (s)css handling</small>
+npm list --depth=0 | findstr webpack  <small>shows webpack version</small></pre>
+  </blockquote>
+
+  <h3>Running:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>npx webpack <small>builds your files</small>
+npx webpack --watch <small>watches your files (and builds them when a change happens)</small>
+npx webpack --config webpack2.config.js <small>runs webpack using a specific configuration file</small></pre>
+  </blockquote>
+
+  <h3>Example <code>webpack.config.js</code> :</h3>
+  <pre style="white-space: break-spaces"><code class="language-javascript">const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+  // This enables production mode, which minifies the JS and CSS files for fast loading times:
+  mode: "production",
+
+  // Define entry file (which loads every other file):
+  entry: "./src/index.js",
+
+  // Define output file/directory:
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "assets/[path][name][ext]", // Preserve original file paths and file names for resources (images, fonts, etc.)
+  },
+
+  module: {
+    rules: [
+      // Rule for .css files:
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader, // extracts css into a file
+          "css-loader", // necessary to load css
+        ],
+      },
+      // Rule for .scss files:
+      {
+        test: /\.scss$/i,
+        use: [
+          MiniCssExtractPlugin.loader, // extracts css into a file
+          "css-loader", // necessary to load css
+          "sass-loader", // turns scss into css
+        ],
+      },
+    ],
+  },
+
+  plugins: [
+    // define name for generated css files:
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
+
+  // Generate source maps for easier debugging:
+  devtool: "source-map",
+};
+</code></pre>
+
+  <p>(Replace <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code> to inject CSS into DOM.)</p>
+
+  <h3>SCSS:</h3>
+  <pre><code class="language-scss">@import "css/example";</code></pre>
+
+  <h3>JavaScript:</h3>
+  <pre style="white-space: break-spaces"><code class="language-javascript">import "./main.scss"; 
+import { doExample } from "./js/example.js"; 
+
+document.addEventListener("DOMContentLoaded", () =&gt; {
+  doExample();
+});
+</code></pre>
+  <pre><code>export function doExample() {
+  console.log("This example works too!");
+}
+</code></pre>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="11ty">11ty (Eleventy)</h2>
+  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote>
+
+  <h3>Installation:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre>
+  </blockquote>
+
+  <h3>Running:</h3>
+  <blockquote class="cheatsheet-blockquote">
+    <pre>npx @11ty/eleventy <small>builds your files</small>
+npx @11ty/eleventy --watch <small>watches your files (and builds them when a change happens)</small>
+npx @11ty/eleventy --serve <small>watches your files (and builds them when a change happens), and stars a webserver on localhost</small></pre>
+  </blockquote>
+
+  <h3>Example <code>.eleventy.js</code> :</h3>
+  <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
+  // This makes the eleventy command quieter (with less detail)
+  eleventyConfig.setQuietMode(true);
+
+  // This will stop the default behaviour of foo.html being turned into foo/index.html
+  eleventyConfig.addGlobalData("permalink", "{% raw %}{{ page.filePathStem }}{% endraw %}.html");
+
+  // This will make Eleventy not use your .gitignore file to ignore files
+  eleventyConfig.setUseGitIgnore(false);
+
+  // This will copy this folder to the output without modifying it at all
+  eleventyConfig.addPassthroughCopy("content/assets");
+
+  // This defines which files will be copied
+  eleventyConfig.setTemplateFormats(["html", "njk", "txt", "js", "css", "xml", "json"]);
+
+  // This defines the input and output directories
+  return {
+    dir: {
+      input: "content",
+      output: "public",
+    },
+  };
+};
+</code></pre>
+
+  <h3>Nunjucks:</h3>
+  <pre><code class="language-plaintext">Setting a variable:
+    {% raw %}{% set myText = "Hello World!" %}{% endraw %}
+    {% raw %}{% set showHeader = true %}{% endraw %}
+
+Outputting a variable:
+    {% raw %}{{ myText }}{% endraw %}
+
+Outputting a variable (without escaping HTML):
+    {% raw %}{{ myHTML | safe }}{% endraw %}
+
+If:
+    {% raw %}{% if showHeader %}{% endraw %}
+      &lt;header&gt;...&lt;/header&gt;
+    {% raw %}{% endif %}{% endraw %}
+
+If/Else:
+    {% raw %}{% if hungry %}{% endraw %}
+      I am hungry
+    {% raw %}{% elseif tired %}{% endraw %}
+      I am tired
+    {% raw %}{% else %}{% endraw %}
+      I am good!
+    {% raw %}{% endif %}{% endraw %}
+
+For Loop:
+    {% raw %}{% for item in items %}{% endraw %}
+      &lt;li&gt;{% raw %}{{ item.title }}{% endraw %}&lt;/li&gt;
+    {% raw %}{% else %}{% endraw %}
+      &lt;li&gt;This would display if the 'item' collection were empty&lt;/li&gt;
+    {% raw %}{% endfor %}{% endraw %}
+
+Include:
+    {% raw %}{% include 'menu.njk' %}{% endraw %}
+
+Logical Operators (and, or, not instead of && || !)
+    {% raw %}{% if myVariable1 and myVariable2 %}{% endraw %}...{% raw %}{% endif %}{% endraw %}
+    {% raw %}{% if myVariable1 or myVariable2 %}{% endraw %}...{% raw %}{% endif %}{% endraw %}
+    {% raw %}{% if not myVariable %}{% endraw %}...{% raw %}{% endif %}{% endraw %}
+</code></pre>
+
+  <h3>Example Template (e.g. <code>_includes/myTemplate.njk</code>):</h3>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;{% raw %}{{ title }}{% endraw %}&lt;/title&gt;
+    &lt;script src="{% raw %}{{ nesting }}{% endraw %}main.js"&gt;&lt;/script&gt;
+    &lt;meta content="text/html;charset=utf-8" http-equiv="Content-Type" /&gt;
+    &lt;meta content="utf-8" http-equiv="encoding" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;link href="{% raw %}{{ nesting }}{% endraw %}favicon.ico" rel="icon" type="image/x-icon" /&gt;
+  &lt;/head&gt;
+  &lt;body class="{% raw %}{{ bodyClass }}{% endraw %}"&gt;
+    &lt;header&gt;Header&lt;/header&gt;
+    &lt;main&gt;
+      {% raw %}{{ content | safe }}{% endraw %}
+    &lt;/main&gt;
+    &lt;footer&gt;Footer&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+  <h3>Example <code>page.html</code> or <code>page.njk</code> :</h3>
+  <pre><code>---
+layout: myTemplate.njk
+title: About Me
+bodyClass: about-me-page
+nesting: "../"
+---
+
+&lt;h1&gt;About Me&lt;/h1&gt;
+&lt;p&gt;Here is the main content of your file...&lt;/p&gt;
+</code></pre>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section class="buy-me-a-coffee">
+  <p>
+    I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
+    <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
+  </p>
+  <p>
+    <small
+      >If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I promise I
+      don't bite!</small
+    >
+  </p>
+</section>

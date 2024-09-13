@@ -64,6 +64,14 @@ main {
     padding: 1em;
     margin: 1em 0;
     border-radius: 10px;
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
   }
 
   pre {
@@ -128,6 +136,11 @@ main {
     line-height: 1.2;
     font-family: $font3;
 
+    code {
+      font-size: 0.9em;
+      font-weight: normal;
+    }
+
     &:first-child {
       margin-top: 0;
     }
@@ -165,7 +178,8 @@ main {
   details {
     summary {
       background: $green;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       position: relative;
       border-radius: 5px;
       padding: 0.1em 0.5em;
@@ -173,9 +187,13 @@ main {
       user-select: none;
 
       &::before {
-        content: "⮯";
+        // content: "⮯";
+        content: "+";
         display: inline-block;
-        margin-right: 0.5em;
+        margin-right: 0.25em;
+        font-size: 30px;
+        line-height: 1;
+        transition: transform 0.3s ease;
       }
 
       &:hover {
@@ -185,12 +203,28 @@ main {
 
     &[open] {
       summary::before {
-        content: "⮭";
+        // content: "⮭";
+        transform: rotate(45deg);
+      }
+    }
+
+    @media (min-width: $lg) {
+      border-left: 2px solid transparent;
+      border-top-left-radius: 5px;
+      transition: border-color 0.3s ease;
+
+      &[open] {
+        border-color: $green;
+
+        summary ~ * {
+          margin-left: 1.5em;
+        }
       }
     }
   }
 
   abbr {
+    text-decoration: underline dashed;
     cursor: help;
   }
 }

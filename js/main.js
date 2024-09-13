@@ -58,17 +58,19 @@ function buildTableOfContents() {
   let output = "<b>Table of Contents:</b><ol>";
   let isFirst = true;
   [...allHeadings].forEach((headingEl) => {
-    const title = headingEl.innerHTML.replaceAll("(Optional)", "");
+    const title = headingEl.innerHTML.replaceAll("<b>", "").replaceAll("</b>", "");
     const link =
       headingEl.getAttribute("id") ||
       encodeURI(
         title
+          .replaceAll("(Optional)", "")
           .replaceAll(" ", "-")
           .replaceAll(":", "")
           .replaceAll("#", "")
           .replaceAll(".", "")
           .replaceAll("(", "")
           .replaceAll(")", "")
+          .replaceAll('"', "")
           .replaceAll("&amp;", "")
           .replaceAll(/<[^>]*>?/gm, "")
           .replace(/-$/, "")

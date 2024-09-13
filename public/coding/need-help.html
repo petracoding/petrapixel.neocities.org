@@ -9,8 +9,8 @@
       content="What to do if you&#39;re stuck when coding? Where can you ask coding questions, specifically about Neocities? How do you troubleshoot and help yourself?"
     />
     
-    <script src="../assets/js/main.js?nocache=20240909"></script>
-    <link rel="stylesheet" href="../assets/main.css" />
+    <script src="../assets/js/main.js?nocache=20240913"></script>
+    <link rel="stylesheet" href="../assets/main.css?nocache=20240913" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -135,6 +135,7 @@
                     <li>
                       <a href="/coding/checklist">self-study checklist</a>
                     </li>
+                    <li><a href="/coding/cheatsheet">cheatsheet</a></li>
                     <li><a href="/coding/neocities">neocities tips</a></li>
                     <li><a href="/coding/my-setup">my coding setup</a></li>
                   </ul>
@@ -145,20 +146,21 @@
                     <li><a href="/coding/snippets">snippets & tips</a></li>
                     <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
                     <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
+                    <li>
+                      <a href="/coding/positioning-tutorial"
+                        >Positioning/Layout Tutorial (+ Flexbox, Grid)<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
                   </ul>
                   <strong>Intermediate Guides:</strong>
                   <ul>
                     <li>
                       <a href="/coding/git-tutorial">git tutorial</a>
-                      <a href="/coding/npm-tutorial"
-                        >node/npm tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
+                      <a href="/coding/npm-tutorial">node/npm tutorial</a>
                       <a href="/coding/webpack-tutorial"
                         >webpack tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
                       ></a>
-                      <a href="/coding/eleventy-tutorial"
-                        >eleventy (11ty) tutorial<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
+                      <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial</a>
                     </li>
                   </ul>
                 </details>
@@ -186,6 +188,20 @@
               <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="../assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
               <ul class="changelog custom-scrollbar" aria-label="Changelog">
                    
+                <li class="changelog__entry">
+                  <strong>2024-09-11</strong>
+                  
+                  <a href="/coding/positioning-tutorial" tabindex="-1">New tutorial: How to position elements with CSS (+ Flexbox, Grid!) and create layouts!</a>
+                  
+                </li>
+                  
+                <li class="changelog__entry">
+                  <strong>2024-09-10</strong>
+                  
+                  <a href="/coding/cheatsheet" tabindex="-1">New page: Coding Cheatsheet!</a>
+                  
+                </li>
+                  
                 <li class="changelog__entry">
                   <strong>2024-09-09</strong>
                   
@@ -504,16 +520,32 @@
             <div class="aside-stuff aside-poll" aria-hidden="true">
               <div class="aside-stuff__heading" aria-hidden="true">Poll<img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
 
-              <form method="post" action="https://poll.pollcode.com/44866815">
+              <form method="post" action="https://poll.pollcode.com/83362553">
                 <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
-                  <div style="padding: 2px 0px 4px 2px"><strong>what's your favorite season?</strong></div>
-                  <input type="radio" name="answer" value="1" id="answer448668151" style="float: left" /><label for="answer448668151" style="float: left; width: 150px">spring</label>
+                  <div style="padding: 2px 0px 4px 2px"><strong>coders, which of these topics do you have the most problems with?</strong></div>
+                  <input type="radio" name="answer" value="1" id="answer833625531" style="float: left" /><label for="answer833625531" style="float: left; width: 150px"
+                    >code quality / organization</label
+                  >
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="2" id="answer448668152" style="float: left" /><label for="answer448668152" style="float: left; width: 150px">summer</label>
+                  <input type="radio" name="answer" value="2" id="answer833625532" style="float: left" /><label for="answer833625532" style="float: left; width: 150px">custom fonts</label>
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="3" id="answer448668153" style="float: left" /><label for="answer448668153" style="float: left; width: 150px">autumn</label>
+                  <input type="radio" name="answer" value="3" id="answer833625533" style="float: left" /><label for="answer833625533" style="float: left; width: 150px"
+                    >css effects (transitions and animations)</label
+                  >
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="4" id="answer448668154" style="float: left" /><label for="answer448668154" style="float: left; width: 150px">winter</label>
+                  <input type="radio" name="answer" value="4" id="answer833625534" style="float: left" /><label for="answer833625534" style="float: left; width: 150px"
+                    >manipulating page content with javascript</label
+                  >
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="5" id="answer833625535" style="float: left" /><label for="answer833625535" style="float: left; width: 150px"
+                    >using plugins / scripts / libraries</label
+                  >
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="6" id="answer833625536" style="float: left" /><label for="answer833625536" style="float: left; width: 150px">none of these</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="7" id="answer833625537" style="float: left" /><label for="answer833625537" style="float: left; width: 150px"
+                    >i'm not a coder but like polls</label
+                  >
                   <div style="clear: both; height: 2px"></div>
                   <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
                   <div align="right" style="font-size: 10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div>
@@ -528,12 +560,8 @@
             <!-- ----------------- IMAGE OF THE MOMENT ----------------- -->
             <div class="aside-stuff aside-poll">
               <div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="../assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
-              <a href="https://www.tumblr.com/ggrrrhhh/759336669214375936?source=share" target="_blank" class="image-of-the-moment">
-                <img
-                  src="https://64.media.tumblr.com/71c6df5852c606ad237fecde30e59c60/b9b9b5739cd3df7b-7a/s1280x1920/7916d100ac0a650769b67e6653ac09ceae4c51dd.jpg"
-                  alt="Hugh Jackman and Ryan Reynolds"
-                  title="Hugh Jackman and Ryan Reynolds"
-                />
+              <a href="https://pinterest.com/pin/3729612238111070/" target="_blank" class="image-of-the-moment">
+                <img src="https://i.pinimg.com/736x/44/58/3f/44583f8db5b6a9aef3f9784a6e718633.jpg" alt="Hugh Jackman and Ryan Reynolds" title="Nightcrawler (X-Men '97')" />
               </a>
             </div>
 
@@ -717,12 +745,12 @@
             </li>
             <li aria-label="watching:">
               <img src="../assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank">X-Men '97</a>
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">X-Men: The Animated Series (1992), Hazbin Hotel</a>
             </li>
             <li aria-label="reading:">
               <img src="../assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
               <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank"
-                >The Secret History
+                >The Code Book
                 <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a
               >
             </li>
@@ -733,7 +761,7 @@
             <li aria-label="obsessed with:">
               <img src="../assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
               <span
-                >Deadpool & Wolverine
+                >Deadpool & Wolverine, X-Men
                 <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
               >
             </li>
@@ -958,7 +986,7 @@ console.log("My variable = " + myVariable);</code></pre>
 
 <section class="buy-me-a-coffee">
   <p>
-    I spend <i>hours</i> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
+    I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
     <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
   </p>
   <p>
