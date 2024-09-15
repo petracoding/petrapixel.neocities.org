@@ -237,13 +237,20 @@
 }
 
 .about-me-page__faves {
-  margin-right: 100px;
+  flex: 1 1 33%;
   margin-bottom: 50px;
 
-  &[aria-label="YouTubers"],
-  &[aria-label="Games"],
-  &[aria-label="Musicians"] {
-    margin-right: 63px;
+  @media (max-width: $lg) {
+    flex: 1 1 50%;
+  }
+
+  @media (max-width: $sm) {
+    flex: 1 1 100%;
+  }
+
+  ul {
+    margin-top: 0.75em;
+    text-transform: lowercase;
   }
 
   strong {
@@ -275,12 +282,56 @@
     font-size: 24px;
     padding-left: 0.5em;
   }
+}
 
-  //   .custom-scrollbar {
-  //     max-height: 10em;
-  //     overflow: hidden;
-  //     overflow-y: scroll;
-  //   }
+.about-me-page__aesthetics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.about-me-page__aesthetic {
+  margin: 10px;
+}
+
+.about-me-page__aesthetic-title {
+  text-align: center;
+  font-size: 1.3em;
+  margin-bottom: 7px;
+}
+
+.about-me-page__aesthetic-images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  grid-gap: 5px;
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+
+  a {
+    height: 140px;
+    flex: 0 0 calc(50% - 5px);
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      img {
+        transform: scale(1.2);
+        filter: none;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.3s ease;
+    filter: brightness(1.1) contrast(0.9) sepia(0.1) hue-rotate(-30deg);
+  }
 }
 
 .media-log h2 {

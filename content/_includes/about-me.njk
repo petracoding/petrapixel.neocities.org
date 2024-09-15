@@ -9,7 +9,7 @@
     />
     {% endif %}
     <script src="{{ nesting }}assets/js/main.js?nocache=20240913"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache=20240913" />
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache=20240915" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,37 +37,37 @@
       <aside>
         <nav>
           <ul aria-label="Navigation">
-            <li class="active">
+            <li class="{% if title == "about" %}active{% endif %}">
               <a href="/about-me/about">
                 <img aria-hidden="true" src="../assets/img/layout/aboutpngs/bow.png" alt="" />
                 <div><span>about</span></div>
               </a>
             </li>
-            <li>
+            <li class="{% if title == "likes" %}active{% endif %}">
               <a href="/about-me/likes">
                 <img aria-hidden="true" src="../assets/img/layout/aboutpngs/pc.png" alt="" />
                 <div><span>likes</span></div>
               </a>
             </li>
-            <li>
+            <li  class="{% if title == "favorites" %}active{% endif %}">
               <a href="/about-me/favorites">
                 <img aria-hidden="true" src="../assets/img/layout/aboutpngs/tv.png" alt="" />
                 <div><span>favorites</span></div>
               </a>
             </li>
-            <li>
+            <li  class="{% if title == "cats" %}active{% endif %}">
               <a href="/about-me/cats">
                 <img aria-hidden="true" src="../assets/img/layout/aboutpngs/paw.png" alt="" />
                 <div><span>cats</span></div>
               </a>
             </li>
-            <li>
+            <li class="{% if title == "media log" %}active{% endif %}">
               <a href="/about-me/media-log">
                 <img aria-hidden="true" src="../assets/img/layout/aboutpngs/ds.png" alt="" />
                 <div><span>media log</span></div>
               </a>
             </li>
-            <li>
+            <li class="{% if title == "elsewhere" %}active{% endif %}">
               <a href="/about-me/elsewhere">
                 <img aria-hidden="true" src="../assets/img/layout/aboutpngs/phone.png" alt="" />
                 <div><span>elsewhere</span></div>
