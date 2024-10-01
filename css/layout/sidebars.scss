@@ -650,7 +650,7 @@
       &:hover,
       &:not(summary):focus {
         color: white;
-        background-color: $pink;
+        background-color: var(--pink);
 
         &.active {
           text-decoration: none;
@@ -659,7 +659,7 @@
 
       &.active {
         color: white;
-        background-color: $pink;
+        background-color: var(--pink);
       }
 
       // "new"

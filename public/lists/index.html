@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>my coding setup | petrapixel</title>
+    <title>lists | petrapixel</title>
     
     <meta
       name="description"
-      content="My coding setup in VSCode (Visual Studio Code), including VSCode plugin /extension suggestions and the settings that I use."
+      content="Welcome to petrapixel! Here you can find many resources for Neocities, coding help, media recommendations and more in a cute Old Web aesthetic!"
     />
     
     <script src="../assets/js/main.js?nocache=20241001"></script>
@@ -871,184 +871,14 @@
       <!-- ------------------------------------------------ -->
       <!-- ----------------- MAIN CONTENT ----------------- -->
       <!-- ------------------------------------------------ -->
-      <main id="main" class="coding-page">
+      <main id="main" class="">
         
 <section>
-  <h1>My Coding Setup</h1>
-  <p>I use the software <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> to code and highly recommend it!</p>
-  <div id="toc"></div>
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-</section>
-<section>
-  <h2 id="setup">Project Setup</h2>
+  <h1>Lists</h1>
+  <p>I love lists. I have almost 500 of them on <a href="https://listography.com/petra1999" target="_blank">listography</a>. Some of them I've copied over to this website!</p>
+  <p><strong>All lists on my website so far:</strong></p>
   <ul>
-    <li>
-      Project is a <b>GitHub</b> repository.
-      <ul>
-        <li>For Neocities: GitHub Action <a href="/blog/neocities-automatic-deployment.html">"Deploy to Neocities"</a></li>
-      </ul>
-    </li>
-    <!-- <li><b>Composer</b></li> -->
-    <li><b>Webpack</b> (javascript & (s)css & asset bundler)</li>
-    <li><b>SCSS</b> (css preprocessor)</li>
-  </ul>
-  <p>My project for this website is on Github and is a good example. <a href="https://github.com/petracoding/petrapixel.neocities.org">Browse the repository here.</a></p>
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-</section>
-<section>
-  <h2 id="shortcuts">Shortcuts I use a lot</h2>
-  <ul>
-    <!-- <li><b>ctrl + f</b> = search (select the text first)</li> -->
-    <li><b>ctrl + (click)</b> = jump into a function/file</li>
-    <li><b>ctrl + #</b> = turn current selection into a comment (and reverse)</li>
-    <li><b>ctrl + d</b> = select the next search result for the current selection (starts multi-cursor)</li>
-    <li><b>ctrl + alt + ↑/↓</b> = duplicate current line</li>
-    <li><b>alt + ↑/↓</b> = move current line up/down</li>
-  </ul>
-  <p>Specific key combinations might differ for you, I don't remember if they're the default...</p>
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-</section>
-<section>
-  <h2 id="vscode-settings">VSCode Settings</h2>
-  <p><b>Tip:</b> You can turn on setting sync to sync your settings across your devices.</p>
-  <p><b>Tip:</b> In the UI, right-click anything you never need to hide it. This will give you more space.</p>
-
-  <h4>My Favorite Themes:</h4>
-  <ul>
-    <li>saturated dark+</li>
-    <li>subtle pink</li>
-    <li>vibrancy continued</li>
-  </ul>
-  <h4>My Settings:</h4>
-  <ul class="list-with-more-spacing">
-    <li>
-      terminal color scheme: search for "workbench color" and click edit json. in <code>workbench.colorCustomizations</code> add a code form
-      <a href="https://glitchbone.github.io/vscode-base16-term/#/unikitty-dark" target="_blank">this generator</a>
-    </li>
-    <li>set editor hover delay to 800</li>
-    <li>turn off editor insert spaces (i want tab indents)</li>
-    <li>turn off explorer decoration badges</li>
-    <li>turn off source control count badge</li>
-    <li>turn on cursor blinking (style: phase)</li>
-    <li>turn on cursor smooth caret animation</li>
-    <li>turn on file auto save after focus change</li>
-    <li>turn on minimap autohide</li>
-    <li>turn on smooth scrolling</li>
-    <li>window title: i have it empty (default: <code style="word-break: break-all">${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}</code>)</li>
-    <li>zoom level: 0.3</li>
-  </ul>
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-</section>
-<section>
-  <h2 id="vscode-extensions">VSCode Extensions</h2>
-  <p>You can install extensions in VSCode via the "Extensions" menu. Make sure to restart VSCode after installation.</p>
-  <hr />
-  <h3><strong>formatting:</strong></h3>
-  <ul class="list-with-more-spacing">
-    <li><b>"format html in php"</b></li>
-    <li>
-      <b>"formatting toggle"</b>
-      <ul>
-        <li>adds a formatting toggle at the bottom right so you can temporarily turn of auto formatting</li>
-      </ul>
-    </li>
-    <li>
-      <b>"prettier"</b>
-      <ul>
-        <li>note: <span>does not format php files (for that i have 'php intelephense') or html in php files (for that i have 'format html in php')</span></li>
-        <li>file not formatting?: <span>there is an error in the file. click the prettier button on the bottom right corner.</span></li>
-      </ul>
-    </li>
-  </ul>
-  <hr />
-  <h3><strong>useful stuff:</strong></h3>
-  <ul class="list-with-more-spacing">
-    <li>
-      <b>"alphabetical sorter"</b>
-      <ul>
-        <li>to use: <span>ctrl + shift + p + 'sort'</span></li>
-      </ul>
-    </li>
-    <li><b>"auto close tag"</b> (html)</li>
-    <li><b>"auto rename tag"</b> (html)</li>
-    <!-- <li><b>"edit csv"</b></li> -->
-    <!-- <li>
-              <b>"footsteps"</b>
-              <ul>
-                <li>settings: <span>set highlight color max opacity to 0.1. change color.</span></li>
-              </ul>
-            </li> -->
-    <li><b>"highlight matching tag"</b> (for html)</li>
-    <li><b>"leet-html"</b> (syntax highlighter for html in javascript)</li>
-    <li>
-      <b>"open in default browser"</b>
-      <ul>
-        <li>to use: right-click in file, choose 'open in default browser'</li>
-      </ul>
-    </li>
-    <!-- <li><b>"rainbow csv"</b> (for csv files)</li> -->
-    <li><b>"svg viewer"</b> (view svg images in VSCode)</li>
-    <!-- <li>
-              <b>"todo tree"</b>
-              <ul>
-                <li>settings: <span>add 'todo' (lowercase) to tags, disable highlighting</span></li>
-              </ul>
-            </li> -->
-    <li>
-      <b>"vs code css comment" </b> (for css)
-      <ul>
-        <li>to use: <span>type 'comment-section' in css file and press enter</span></li>
-      </ul>
-    </li>
-  </ul>
-  <hr />
-  <h3><strong>intellisense: (= code completion, parameter info, quick info)</strong></h3>
-  <ul class="list-with-more-spacing">
-    <li>
-      <b>"php intelephense"</b> (for php)
-      <ul>
-        <li>to use for formatting: <span>right-click in a php file and 'format document'. it will ask which formatter to use, select php intelephense</span></li>
-      </ul>
-    </li>
-    <!-- <li><b>"python"</b></li> -->
-    <li><b>"scss intellisense"</b> (for scss)</li>
-  </ul>
-  <hr />
-  <h3><strong>linter: (= checks for errors)</strong></h3>
-  <ul class="list-with-more-spacing">
-    <li>
-      <b>"stylelint"</b> (for css, scss)
-      <!-- <ul>
-                <li><span>Installation: to do</span></li>
-              </ul> -->
-    </li>
-    <li>
-      <b>"eslint"</b> (for javascript)
-      <ul>
-        <li>
-          <span>Installation:</span>
-          <ol>
-            <li>Download a config file from <a href="https://eslint.org/dspano" target="_blank" rel="nofollow">here</a></li>
-            <li>Put it into <code>C:\Users\{USERNAME}</code></li>
-            <li>In the file, add <code>"browser":true</code> to the list of environments ("env" at the top of the file)</li>
-            <li>In the file, add <code>"sourceType":"module"</code> to "parserOptions".</li>
-            <li>In VSCode do ctrl+shift+p "eslint restart server".</li>
-          </ol>
-        </li>
-        <li><span>"Problems" tab should show problems</span></li>
-      </ul>
-    </li>
-    <li><b>"php import checker"</b> (for php)</li>
-  </ul>
-  <hr />
-  <h3><strong>fun stuff:</strong></h3>
-  <ul>
-    <li>
-      <b>"vscode-pets"</b> (adds cute pets)
-      <ul>
-        <li>to use: ctrl + shift + p + 'pet'</li>
-      </ul>
-    </li>
+    <li><a href="/lists/comics">Marvel Comics</a></li>
   </ul>
 </section>
 

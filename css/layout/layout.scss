@@ -109,6 +109,7 @@ main {
   border-bottom: $mainBorder;
 
   section {
+    position: relative;
     width: 100%;
     padding: 2em;
     border: 2px $purple dotted;

@@ -1,0 +1,39 @@
+.listbox-content {
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    max-width: 100px;
+    height: auto;
+  }
+
+  .text_content > .icon:first-child + * {
+    padding-right: 100px;
+  }
+
+  .text_content > ul {
+    margin-bottom: 2em;
+  }
+
+  .text_content > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .listbox-stricken {
+    text-decoration: line-through;
+  }
+
+  .dates {
+    display: none;
+  }
+
+  @media (max-width: $lg) {
+    .icon {
+      display: none;
+    }
+
+    .text_content > .icon:first-child + * {
+      padding-right: 0;
+    }
+  }
+}

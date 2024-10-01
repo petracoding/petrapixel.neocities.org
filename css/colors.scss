@@ -7,6 +7,10 @@ $greenActive: #a8db9a;
 $red: #ab061d;
 $yellow: #ffba39;
 
+// halloween
+$green: #c03715;
+$greenActive: #8e290a;
+
 // -------------------------------------------
 
 $backgroundColor: darken($light, 2%);
@@ -29,6 +33,7 @@ $asideTextColor: $textColor;
 
 body {
   --textColor: #{$textColor};
+  --pink: #{$pink};
   --backgroundColor: #{$backgroundColor};
   --mainBackgroundColor: #{$mainBackgroundColor};
   --linkColor: #{$linkColor};
@@ -43,6 +48,7 @@ body {
 
 @mixin darkMode1 {
   $textColor: #fcdee2;
+  $pink: #df90a4;
   $backgroundColor: black;
   $mainBackgroundColor: #3c252b;
   $linkColor: lighten($pink, 10%);
@@ -51,6 +57,7 @@ body {
   $asideTextColor: #e6e6e6;
   //
   --textColor: #{$textColor};
+  --pink: #{$pink};
   --backgroundColor: #{$backgroundColor};
   --mainBackgroundColor: #{$mainBackgroundColor};
   --linkColor: #{$linkColor};

@@ -1,4 +1,10 @@
 export function getCSS(variables) {
+  const css = getCSSCode(variables);
+  return css;
+  //   return autoprefixer.compile(css).css;
+}
+
+function getCSSCode(variables) {
   let showMenuInHeaderOnMobile = false;
   if (variables.menuPosition == "leftSidebar" && variables.mobileLeftSidebar == "hide") {
     showMenuInHeaderOnMobile = true;
