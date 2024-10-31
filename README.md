@@ -4,7 +4,7 @@
 
 - :computer: mostly `.html`, `.njk`, `.scss`, `.js`, `.json`
 
-- :gear: created using webpack and eleventy (run `npm install`, `npm run build`)
+- :gear: created using webpack and eleventy
 
 - :fire: feel free to be inspired, but please don't steal large chunks of code
 
@@ -15,7 +15,7 @@
 **Don't know where to start browsing?** Check out these:
 
 - [content](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content) folder: **pages, templates, etc.**
-  - e.g. [content/\_includes/petrapixel.njk](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/_includes/petrapixel.njk) and [content/index.njk](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/index.njk) (homepage)
+  - e.g. [content/\_includes/petrapixel.njk](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/_includes/petrapixel.njk) (template) and [content/index.njk](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/index.njk) (homepage)
 - [public](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public) folder: **generated files** for upload to neocities
   - e.g. [public/index.html](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/index.html) (homepage)
 - [css/main.scss](https://github.com/petracoding/petrapixel.neocities.org/blob/master/css/main.scss): **css**

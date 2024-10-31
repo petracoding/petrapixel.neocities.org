@@ -1,11 +1,12 @@
 ---
-layout: petrapixel.njk
+layout: coding.njk
 title: "git tutorial"
 description: "A simple Git and GitHub tutorial for beginner coders. Especially for Neocities."
 nesting: "../"
 codeHighlight: true
 progressBar: true
 mainClass: coding-page git-tutorial
+toc: true
 ---
 
 <style>
@@ -36,8 +37,8 @@ mainClass: coding-page git-tutorial
     <li>You will be able to work with other people on your project.</li>
     <li>If you connect your repository to the host of your website (e.g. Neocities), all changes will automatically be uploaded there as well. (See step 5 for details.)</li>
   </ul>
-  <br>
-  
+  <br />
+
   <blockquote class="project">
     <p>If you want to look at an example GitHub repository, check out <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">the one for this very website</a>!</p>
   </blockquote>
@@ -46,22 +47,35 @@ mainClass: coding-page git-tutorial
     This tutorial was written using git <b>version 2.41.0</b>. If you use a much older or newer version some of the information here might be outdated! You can check your version by running:
     <code>git -v</code>
   </blockquote>
-  
-   <blockquote class="contact">
+
+  <blockquote class="contact">
     <p>
       If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
       and I'd love to help.
     </p>
   </blockquote>
 
-  <br>
+  <br />
   <!-- https://github.blog/developer-skills/programming-languages-and-frameworks/what-is-git-our-beginners-guide-to-version-control/ -->
 
   <!-- <center style="padding: 0.4em 0 0.6em"><b>This guide is still work-in-progress!</b></center> -->
 
-  <div id="toc"></div>
-  
-
+  <div id="toc">
+    <b>Table of Contents:</b>
+    <ul>
+      <li><a href="#understanding-git">Understanding Git</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#new-project">1. Creating a new project</a></li>
+      <li><a href="#staging">2. Staging changes</a></li>
+      <li><a href="#committing">3. Committing changes</a></li>
+      <li><a href="#pushing">4. Pushing changes</a></li>
+      <li>
+        <a href="#neocities">Connecting to Neocities <small>(Optional)</small></a>
+      </li>
+      <li><a href="#additional-commands">Additional Commands</a></li>
+      <li><a href="#comments">Comments</a></li>
+    </ul>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -249,10 +263,13 @@ git push --set-upstream origin main</code></pre>
     <br />
   </details>
   <br />
-<blockquote class="tip">  <p></p>
-    <b>Important tip:</b> To show the <b>status</b> of all files, use <code><b>git status</b></code>. <br>This will show you which files have been changed, and whether these changes are already staged or not.
-    Keep in mind that one file can be both staged and unstaged if you made changes in it after staging other changes.
-  </p></blockquote>
+  <blockquote class="tip">
+    <p>
+      <b>Important tip:</b> To show the <b>status</b> of all files, use <code><b>git status</b></code
+      >. <br />This will show you which files have been changed, and whether these changes are already staged or not. Keep in mind that one file can be both staged and unstaged if you made changes in
+      it after staging other changes.
+    </p>
+  </blockquote>
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -433,9 +450,9 @@ git push --set-upstream origin main</code></pre>
   <h2>Comments</h2>
   <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
   <p>
-    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure you
-    don't hit the max character limit on comments.
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
+    you don't hit the max character limit on comments.
   </p>
-  <div id="c_widget"></div>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="../assets/js/comment-widget.js"></script>
 </section>

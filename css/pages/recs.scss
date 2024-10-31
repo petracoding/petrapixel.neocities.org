@@ -35,10 +35,10 @@
 .rec-filters__button {
   display: inline-block;
   padding: 0.1em 0.5em;
-  background: rgba($green, 0.5);
+  background: var(--green);
   border: none;
   border-radius: 7px;
-  color: $dark;
+  color: var(--textColor);
   cursor: $cursorPointer;
   border-radius: 5px;
   margin-left: 0;
@@ -52,11 +52,11 @@
 
   &:hover,
   &:active {
-    background: $greenActive;
+    filter: brightness(0.85);
   }
 
   &.is-checked {
-    background: $green;
+    filter: brightness(0.75);
   }
 
   &:first-child {
@@ -114,6 +114,7 @@
   position: relative;
   height: 100%;
   width: 100%;
+  padding-top: 4px;
   padding: 5px;
   padding-top: 4px;
 }
@@ -131,16 +132,16 @@
 
 .rec__info {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  right: 4px;
   display: flex;
   flex-direction: column;
-  border: 5px solid $pink;
+  border: 5px solid var(--pink);
   background: rgba($mainBackgroundColor, 0.9);
-  padding: 1em 0.9em;
-  font-size: 0.9em;
+  padding: 1.5em 1em;
+  //   font-size: 0.9em;
   opacity: 0;
   transition: opacity 0.2s ease;
 
@@ -151,13 +152,15 @@
   }
 
   @media (max-width: $xl) {
-    padding: 0.5em;
+    padding: 1em 0.5em;
   }
 }
 
 .rec__title {
-  font-size: 1.5em;
+  font-size: 1.8em;
   line-height: 1.1;
+  margin-bottom: 0.5em;
+  font-family: $font3;
 
   &.rec__title--long {
     font-size: 1.2em;
@@ -167,12 +170,13 @@
 
 .rec__desc {
   strong {
-    font-family: $font3;
+    font-size: 1.2em;
   }
 }
 
 .rec__author {
   line-height: 1;
+  margin: -0.5em 0 1em;
 }
 
 .rec__stars {
@@ -181,9 +185,9 @@
 }
 
 .rec__rating {
-  color: $dark;
+  color: var(--dark);
   font-size: 1em;
-  text-shadow: 0 0 4px $light;
+  text-shadow: 0 0 4px var(--veryLight);
 }
 
 .rec__link {

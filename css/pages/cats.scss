@@ -34,8 +34,8 @@
   flex: 0 0 50%;
   padding: 1em 1.5em;
   background: rgba($pink, 0.5);
-  border-radius: 15px;
-  border: 5px dashed white;
+  //   border-radius: 15px;
+  border: 2px dotted var(--white);
 
   strong {
     font-weight: bold;
@@ -63,8 +63,8 @@
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 15px;
-    border: 5px dashed white;
+    // border-radius: 15px;
+    border: 3px dotted var(--white);
     filter: brightness(1.1) contrast(1.2);
     transition: filter 0.3s ease, border-radius 0.5s ease, transform 0.5s ease;
   }
@@ -72,23 +72,24 @@
   &::after {
     content: "";
     position: absolute;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    top: 5px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    top: 3px;
     background: #c891bd;
     opacity: 0.2;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    border-radius: 16px;
+    // border-radius: 16px;
   }
 
   &:hover,
   &:focus-within {
     img {
-      border-radius: 25px;
+      //   border-radius: 25px;
       filter: none;
-      transform: rotate(4deg);
+      //   transform: rotate(4deg);
+      transform: skew(-2deg, -2deg) rotate(0deg);
 
       @media (prefers-reduced-motion) {
         transform: none;
@@ -104,7 +105,7 @@
 .cat__description {
   text-align: justify;
   line-height: 1.5;
-  font-size: 19px;
+  font-size: 1.1em;
 
   @media (max-width: $sm) {
     font-size: 1em;
@@ -131,7 +132,7 @@
       height: auto;
       display: block;
       padding: 5px;
-      border-radius: 15px;
+      //   border-radius: 15px;
       filter: brightness(1.05) contrast(1.05);
       transition: filter 0.3s ease, border-radius 0.5s ease, transform 0.5s ease;
     }
@@ -141,10 +142,10 @@
       bottom: 15px;
       left: 15px;
       text-decoration: none;
-      color: black;
+      color: var(--black);
       line-height: 1;
       font-weight: bold;
-      text-shadow: 0px 0px 5px white;
+      text-shadow: 0px 0px 5px var(--white);
       transition: transform 0.5s ease;
     }
 
@@ -159,14 +160,15 @@
       opacity: 0.15;
       pointer-events: none;
       transition: opacity 0.3s ease;
-      border-radius: 16px;
+      //   border-radius: 16px;
     }
 
     &:hover {
       img {
-        border-radius: 25px;
+        // border-radius: 25px;
         filter: none;
-        transform: rotate(4deg);
+        // transform: rotate(4deg);
+        transform: skew(-2deg, -2deg) rotate(0deg);
 
         @media (prefers-reduced-motion) {
           transform: none;

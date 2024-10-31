@@ -1,9 +1,5 @@
-const isLocalhost = window.location.href.includes("http://localhost");
-const noCache = "?nocache=" + new Date().getTime();
-
 export function initSidebar() {
   initMenu();
-  doActiveLinks();
   initLastFmWidget();
   initStatusCafeWidget();
   initBlinkies();
@@ -31,42 +27,6 @@ function initMenu() {
     if (mql.matches) {
       mobileDetailsEl.open = true;
     }
-  }
-}
-
-function doActiveLinks() {
-  const pathname = window.location.pathname.replace("/public", "");
-  const els = document.querySelectorAll(".aside-nav li a");
-  [...els].forEach((el) => {
-    const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
-
-    if (href == "/" || href == "/index.html") {
-      if (pathname == "/") {
-        el.classList.add("active");
-        if (el.closest(".aside-nav details")) {
-          el.closest(".aside-nav details").setAttribute("open", "open");
-          el.closest(".aside-nav details").classList.add("active");
-        }
-      }
-    } else {
-      if (window.location.href.includes(href)) {
-        el.classList.add("active");
-        if (el.closest(".aside-nav details")) {
-          el.closest(".aside-nav details").setAttribute("open", "open");
-          el.closest(".aside-nav details").classList.add("active");
-        }
-      }
-    }
-  });
-
-  // Special pages
-  const codingHelpMenu = document.querySelector(".aside-nav details#menu-codinghelp");
-  if (!codingHelpMenu) return;
-  if (pathname.includes("neocities-external-widgets") || pathname.includes("neocities-automatic-deployment")) {
-    codingHelpMenu.setAttribute("open", "open");
-    codingHelpMenu.classList.add("active");
-    document.querySelector("#menu-more").removeAttribute("open");
-    document.querySelector("#menu-more .active").classList.remove("active");
   }
 }
 

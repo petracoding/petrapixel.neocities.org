@@ -1,18 +1,28 @@
-main {
-  section.clique-section {
-    margin-bottom: 2.5em;
-  }
+.clique {
+  position: relative;
 }
 
-.clique-code {
+.my-clique {
   text-transform: none;
-
-  > p {
-    margin-top: 1.5em;
-  }
+  margin-top: 15px;
 
   .code-textarea {
-    margin-bottom: 1em;
+    margin-top: 1em;
     width: 100%;
   }
 }
+
+.my-clique__preview {
+  font-size: 15px;
+}
+
+// .my-clique-image {
+//   position: absolute;
+//   top: 1em;
+//   right: 1em;
+
+//   @media (min-width: $sm) {
+//     top: 2em;
+//     right: 2em;
+//   }
+// }

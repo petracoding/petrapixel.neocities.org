@@ -1,0 +1,18 @@
+[
+  {
+    "url": "URL_PATH",
+    "title": "TEMPLATE",
+    "dateCreated": "2024-mm-dd",
+    "dateUpdated": "2024-mm-dd",
+    "tags": "TAGS",
+    "description": "DESCRIPTION"
+  },
+  {
+    "url": "why-i-stopped-using-social-media",
+    "title": "Why I stopped using Social Media",
+    "dateCreated": "2024-04-18",
+    "dateUpdated": "2024-10-26",
+    "tags": "web, personal",
+    "description": "Ramblings about social media, why I severely reduced my usage of it, and how I achieved that."
+  }
+]

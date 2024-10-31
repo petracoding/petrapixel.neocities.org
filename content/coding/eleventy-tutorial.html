@@ -1,11 +1,12 @@
 ---
-layout: petrapixel.njk
+layout: coding.njk
 title: "11ty (eleventy) tutorial"
 description: "A tutorial on how to set up and use 11ty (eleventy), a static site generator, for beginners. Neocities."
 nesting: "../"
 codeHighlight: true
 progressBar: true
 mainClass: coding-page
+toc: true
 ---
 
 <section>
@@ -24,7 +25,64 @@ mainClass: coding-page
     </p>
   </blockquote>
   <br />
-  <div id="toc" data-two-levels="yeh"></div>
+
+  <div id="toc" data-two-levels="yeh">
+    <b>Table of Contents:</b>
+    <ol>
+      <li>
+        <a href="#requirements">Requirements</a>
+      </li>
+      <li>
+        <a href="#installation">Installation</a>
+      </li>
+      <li>
+        <a href="#configuration">Configuration</a>
+        <ul>
+          <li>
+            <a href="#minify">Minify (Optional)</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#nunjucks">Nunjucks</a>
+        <ul>
+          <li><a href="#custom-filters">Custom Filters (Optional)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#data">Using Data (Optional)</a>
+      </li>
+      <li>
+        <a href="#partials">Partials (Optional)</a>
+      </li>
+      <li>
+        <a href="#templates">Templates</a>
+        <ul>
+          <li><a href="#template">Step 1: The template</a></li>
+          <li><a href="#page">Step 2: The page</a></li>
+          <li><a href="#example">Example</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#extending-files">Extending files</a>
+      </li>
+      <li>
+        <a href="#running-eleventy">Running Eleventy</a>
+        <ul>
+          <li><a href="#custom-command">Defining a custom command (Optional)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#done">Done!</a>
+      </li>
+      <li>
+        <a href="#links">Links</a>
+      </li>
+      <li>
+        <a href="#comments">Comments</a>
+      </li>
+    </ol>
+  </div>
 </section>
 
 <section>
@@ -110,6 +168,45 @@ mainClass: coding-page
   };
 };
 </code></pre>
+
+  <hr />
+  <h3 id="minify">Minify (Optional)</h3>
+  <p>
+    If you want, you can tell Eleventy to minify your HTML files, e.g. by removing unneeded whitespaces. That means their file size will be smaller, which means they need less space on your server and
+    that they load faster.
+  </p>
+  <p>First, you have to install <i>html-minifier-terser</i> with the command <code>npm install html-minifier-terser</code>.</p>
+  <p>Now, add this to your configuration file (<code>.eleventy.js</code>):</p>
+  <pre><code>// at the very top of the file:
+const htmlmin = require("html-minifier-terser");
+	
+// in module.exports:
+eleventyConfig.addTransform("htmlmin", function (content) {
+    if ((this.page.outputPath || "").endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+      });
+      return minified;
+    }
+    return content;
+  });</code></pre>
+  <p>
+    These are just the options I recommend. <a href="https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference" target="_blank">Here</a> is the full list of available
+    options.
+  </p>
+  <p>(Re-)start eleventy, and it should already work! (You should be able to see that the generated HTML files now have a smaller file size.)</p>
+  <p>
+    If you get an error it might be because you have errors in your HTML code, such as spare &lt;s or &gt;s. Once you fix them all it should work. If you want a part of your code to be ignored by the
+    minifier completely, add <code>&lt;!-- htmlmin:ignore --&gt;</code> before and after it, like so:
+  </p>
+  <pre><code>&lt;!-- htmlmin:ignore --&gt;
+	&lt;p&gt;Hewwoo  ⸜(｡&gt; ᵕ &lt; )⸝♡ &lt;/p&gt;
+&lt;!-- htmlmin:ignore --&gt;
+  </code></pre>
 </section>
 
 <section>
@@ -145,7 +242,7 @@ If:
 If/Else:
     {% raw %}{% if hungry %}{% endraw %}
       I am hungry
-    {% raw %}{% elseif tired %}{% endraw %}
+    {% raw %}{% elsif tired %}{% endraw %}
       I am tired
     {% raw %}{% else %}{% endraw %}
       I am good!
@@ -167,6 +264,22 @@ For Loop:
 {% raw %}{% if not myVariable %}{% endraw %}...{% raw %}{% endif %}{% endraw %}
 </code></pre>
   <p>Comparisions work the same as in JavaScript (e.g. <code>==</code>, <code>!=</code>, <code>&lt;=</code> ...)</p>
+
+  <hr />
+  <h3 id="custom-filters">Custom Filters (Optional)</h3>
+  <p>
+    Filters are ways to change or use information in Nunjucks. You can write your own custom filters, which opens up a lot of possibilites. This is what the Nunjucks code looks like - the filter's
+    name is added after a pipe (|):
+  </p>
+  <pre><code>{% raw %}{{ myVariable | doSomethingWithIt }}{% endraw %}</code></pre>
+  <p>To define a custom filter you add something like this to your configuration file (.eleventy.js):</p>
+  <pre><code>eleventyConfig.addFilter("doSomethingWithIt", function (value) {
+    if (!value) return "";
+    return value.toLowerCase() + " :)";
+  });</code></pre>
+  <p>(This is just a simple example of course.)</p>
+  <blockquote class="warning"><p>If your eleventy watcher is running, make sure to restart it after making this or any other change in the configuration file.</p></blockquote>
+  <p>Assuming <code>myVariable</code> has the value "Hello World", the output of <code>{% raw %}{{ myVariable | doSomethingWithIt }}{% endraw %}</code> will be: hello world :)</p>
 </section>
 
 <section>
@@ -223,6 +336,8 @@ For Loop:
     from page to page, such as page title, etc. (Like so: <code>&lt;title&gt;{% raw %}{{ title }}{% endraw %}&lt;/title&gt;</code>) We will define the values of those variables in the page files in
     the next step.
   </p>
+
+  <p>Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
   <h3 id="page">Step 2: The page</h3>
   <p>Whether your page file is an <code>.html</code> or a <code>.njk</code> file doesn't matter - You can use templates in the same way.</p>
   <p>All we need to do is the so-called <b>"front matter"</b>. It's a section at the top of the file that looks like this:</p>
@@ -232,10 +347,10 @@ title: About Me
 showSelfie: true
 ---
 </code></pre>
+  <p>(You also need the two ---)</p>
   <p>This example defines three variables and gives them values. For text variables (strings) the quotation marks are optional. This would work just as well: <code>title: "About Me"</code>.</p>
   <p>You can choose the names of the variables, except for <code>layout</code>. <code>layout</code> always defines the filename of the layout you want to use.</p>
   <p>The rest of the file is normal HTML (with some Nunjucks code if you want).</p>
-  <p>Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
   <blockquote class="tip">
     <p>
       <b>Tip:</b> You can even create other types of files, such as .xml files, with Nunjucks. Simply create the file with the extension <code>.njk</code> but add the <code>permalink</code> variable
@@ -244,7 +359,7 @@ showSelfie: true
         href="https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/rss.njk"
         >Here</a
       >
-      is a complete example on how to generate an RSS file with Eleventy.)
+      is a complete example on how to generate an RSS file with Eleventy using a data file.)
     </p>
   </blockquote>
   <h3 id="example">Example</h3>
@@ -426,8 +541,10 @@ public/				&lt;-- your output folder
       <a href="https://www.11ty.dev/" target="_blank">Official Eleventy Documentation</a>
       <ul>
         <li><a href="https://www.11ty.dev/docs/config/" target="_blank">Configuration file (.eleventy.js)</a></li>
+        <li><a href="https://www.11ty.dev/docs/transforms/#minify-html-output" target="_blank">Transforms (Minify HTML Output)</a></li>
         <li><a href="https://www.11ty.dev/docs/layouts/" target="_blank">Layouts</a></li>
         <li><a href="https://www.11ty.dev/docs/languages/nunjucks/" target="_blank">Nunjucks</a></li>
+        <li><a href="https://www.11ty.dev/docs/filters/" target="_blank">Custom filters</a></li>
         <li><a href="https://www.11ty.dev/docs/permalinks/#changing-the-output-location" target="_blank">Changing output location</a></li>
         <li><a href="https://www.11ty.dev/docs/usage/#re-run-eleventy-when-you-save" target="_blank">Commands</a></li>
         <li><a href="https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore" target="_blank">(Not) ignoring files</a></li>
@@ -455,6 +572,6 @@ public/				&lt;-- your output folder
     To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
     you don't hit the max character limit on comments.
   </p>
-  <div id="c_widget"></div>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="../assets/js/comment-widget.js"></script>
 </section>

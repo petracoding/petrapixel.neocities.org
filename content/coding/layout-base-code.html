@@ -1,11 +1,12 @@
 ---
-layout: petrapixel.njk
+layout: coding.njk
 title: "layout base code"
 description: "Neocities base code for layouts so that you don't have to update every single file for every change. For beginners!"
 nesting: "../"
 codeHighlight: true
 mainClass: coding-page
 progressBar: true
+toc: true
 ---
 
 <script>
@@ -50,7 +51,14 @@ progressBar: true
       and I'd love to help.
     </p>
   </blockquote>
-  <div id="toc"></div>
+  <div id="toc">
+    <b>Table of Contents:</b>
+    <ol>
+      <li><a href="#what-it-will-do">What it will do</a></li>
+      <li><a href="#tutorial">Tutorial</a></li>
+      <li><a href="#comments">Comments</a></li>
+    </ol>
+  </div>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -287,6 +295,6 @@ const footerEl = `
     To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
     you don't hit the max character limit on comments.
   </p>
-  <div id="c_widget"></div>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="../assets/js/comment-widget.js"></script>
 </section>

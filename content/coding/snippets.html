@@ -1,15 +1,22 @@
 ---
-layout: petrapixel.njk
+layout: coding.njk
 title: "code snippets"
 description: "Quick and helpful coding tips and code snippets for Neocities. Easy enough for beginners!"
 nesting: "../"
 codeHighlight: true
 mainClass: coding-page
+toc: true
 ---
 
 <section>
   <h1>Code Snippets</h1>
-  <div id="toc"></div>
+  <div id="toc">
+    <b>Table of Contents:</b>
+    <ol>
+      <li><a href="#js">JavaScript snippets</a></li>
+      <li><a href="#htmlcss">HTML/CSS Snippets</a></li>
+    </ol>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -88,7 +95,7 @@ let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
 	          .replaceAll(" ", "-")
 	          .replaceAll("#", "")
           	  .replaceAll("&amp;", "")
-	          .replaceAll(/<[^>]*>?/gm, "")
+	          .replaceAll(/&lt;[^&gt;]*&gt;?/gm, "")
           	  .replaceAll("--", "-")
 	      ).toLowerCase();
 	headingEl.setAttribute("id", link);

@@ -36,7 +36,7 @@
 }
 
 .aside--left {
-  border: $mainBorder;
+  border: var(--mainBorder);
   border-right: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -44,7 +44,7 @@
 }
 
 .aside--right {
-  border: $mainBorder;
+  border: var(--mainBorder);
   border-left: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -60,6 +60,55 @@
   .aside--right {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+  }
+}
+
+.aside-nav .aside-scrollbox {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1em 0.5em;
+  border: 1px dashed;
+  margin: 10px 0;
+
+  strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  ul {
+    margin-bottom: 15px;
+
+    li a {
+      padding-left: 20px;
+
+      &::before {
+        left: 6px;
+      }
+    }
+  }
+
+  @media (min-width: $sm) {
+    max-height: 285px;
+  }
+}
+
+a[href*="nekoweb"] {
+  color: var(--textColor);
+  border: 1px solid var(--textColor);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0px 7px;
+  cursor: pointer;
+  font-family: "MS UI Gothic", Verdana, sans-serif;
+  font-size: 12px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: var(--asideBackgroundColor);
   }
 }
 
@@ -82,7 +131,7 @@
   user-select: none;
   border-radius: 10px;
   background: var(--asideBackgroundColor);
-  z-index: 1;
+  z-index: 2;
 
   a {
     &,
@@ -171,6 +220,11 @@
   }
 }
 
+.aside-navlinkads {
+  width: 170px;
+  height: 170px;
+}
+
 .aside-link-back {
   display: flex;
   flex-direction: column;
@@ -224,7 +278,7 @@
   overflow-y: scroll;
   overflow-x: clip;
   margin-top: 0.5em;
-  font-size: 0.9em;
+  font-size: 0.95em;
   border: 1px dashed;
   padding: 1em;
   list-style: none;
@@ -339,9 +393,23 @@
 }
 
 #statuscafe-content {
-  font-size: 0.9em;
+  font-size: 0.95em;
   min-height: 2.5em;
   line-height: 1;
+
+  a {
+    display: block;
+    margin-top: 3px;
+    opacity: 0.7;
+    font-style: italic;
+
+    &:hover,
+    &:focus {
+      font-style: normal;
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
 }
 
 /*----------  Currently  ----------*/
@@ -357,6 +425,10 @@
 
   .aside-stuff__heading {
     top: -7px;
+  }
+
+  img[src*="equalizer"] {
+    filter: brightness(0.8) contrast(1.5) saturate(1.5);
   }
 
   ul {
@@ -392,6 +464,7 @@
   border: 1px dashed;
   padding: 1em;
   padding-bottom: 8px;
+  margin-top: 1.5em !important;
 
   .marquee > * > * {
     margin-right: 0.5em;
@@ -479,6 +552,7 @@
       margin-right: 5px;
 
       & + label {
+        margin-top: 3px;
         max-width: calc(100% - 25px);
       }
     }
@@ -503,6 +577,7 @@
     width: 100%;
     height: auto;
     filter: brightness(1.1) contrast(1.1);
+    image-rendering: pixelated;
     transition: filter 0.3s ease, border-radius 0.5s ease, transform 0.5s ease;
   }
 
@@ -516,14 +591,15 @@
     background: #c891bd;
     opacity: 0.1;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s linear;
   }
 
   &:hover {
     img {
-      border-radius: 15px;
+      //   border-radius: 15px;
       filter: none;
-      transform: rotate(5deg);
+      image-rendering: auto;
+      transform: skew(3deg, 3deg) rotate(0deg);
 
       @media (prefers-reduced-motion) {
         transform: none;
@@ -539,6 +615,8 @@
 /*----------  Chatbox  ----------*/
 
 .aside-chatbox {
+  position: relative;
+
   .aside-stuff__heading {
     top: -14px;
     padding: 0.2em 0.5em;
@@ -546,7 +624,24 @@
   }
 
   iframe[src*="cbox"] {
+    z-index: 1;
+    position: relative;
     border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 17px);
+    width: 100%;
+    background-image: url(https://i.imgur.com/vE1cl1e.gif);
+    // todo
+    // background-image: url("https://petrapixel.neocities.org/assets/img/layout/lace.gif");
+    background-repeat: repeat-x;
+    height: 32px;
+    filter: saturate(2);
   }
 }
 
@@ -572,6 +667,7 @@
     line-height: 1;
     position: relative;
     margin-right: -7px;
+    width: 100%;
 
     a {
       display: block;
@@ -618,7 +714,7 @@
       margin-left: 20px;
 
       &::marker {
-        color: $green;
+        color: var(--green);
       }
 
       small {
@@ -637,7 +733,7 @@
     a,
     summary {
       position: relative;
-      padding: 3px 5px 5px;
+      padding: 2px 5px 4px;
       padding-right: 0;
       color: asideTextColor;
       text-decoration: none;
@@ -649,7 +745,7 @@
 
       &:hover,
       &:not(summary):focus {
-        color: white;
+        color: var(--white);
         background-color: var(--pink);
 
         &.active {
@@ -658,7 +754,7 @@
       }
 
       &.active {
-        color: white;
+        color: var(--white);
         background-color: var(--pink);
       }
 
@@ -686,14 +782,14 @@
   ul ul {
     li {
       a {
-        padding-left: 2em;
+        padding-left: 25px;
         font-size: 18px;
 
         &::before {
-          content: "—";
+          content: "*";
           position: absolute;
-          top: 0.5em;
-          left: 1em;
+          top: 7px;
+          left: 11px;
           font-size: 0.8em;
         }
       }
@@ -701,7 +797,8 @@
   }
 
   ul li:not(:last-child) ul {
-    margin-bottom: 1em;
+    margin-top: 5px;
+    margin-bottom: 15px;
   }
 }
 
@@ -719,7 +816,7 @@
   font-weight: bold;
   margin-left: -1px;
   margin-right: -1px;
-  background: $yellow;
+  background: var(--yellow);
 }
 
 .aside-nav__new {
@@ -811,6 +908,11 @@
 
   .aside-stats__stat {
     display: none;
+  }
+
+  .aside-navlinkads {
+    width: 97px;
+    height: 97px;
   }
 }
 

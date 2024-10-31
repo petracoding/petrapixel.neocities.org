@@ -1,7 +1,7 @@
 .about-me-page {
   #content {
     margin: 5vh 0 0;
-    grid-template: "sidebar main" auto / 220px auto;
+    grid-template: "sidebar main" auto / 210px auto;
   }
 
   #theme-toggler {
@@ -18,9 +18,10 @@
     overflow-y: auto;
     margin-right: 20px;
     background: var(--mainBackgroundColor);
-    border-radius: 50px;
+    border-radius: 5px;
     box-shadow: 0 0 50px var(--mainBackgroundColor);
     padding: 3em;
+    border: 2px dotted;
 
     section {
       margin: 0;
@@ -35,9 +36,10 @@
 
     h2 {
       text-align: center;
+      margin-top: 0.3em;
       margin-bottom: 0.6em;
       text-shadow: 0px 0px 5px var(--linkColor);
-      animation: floatingHeading 2s ease-in-out infinite;
+      //   animation: floatingHeading 2s ease-in-out infinite;
 
       @keyframes floatingHeading {
         0% {
@@ -56,17 +58,19 @@
       }
 
       &::before {
-        content: ".・゜゜・";
+        content: "☆ ・";
         display: inline-block;
         margin-right: 0.5em;
         user-select: none;
+        letter-spacing: -0.15em;
       }
 
       &::after {
-        content: "・゜゜・．";
+        content: "・ ☆";
         display: inline-block;
         margin-left: 0.5em;
         user-select: none;
+        letter-spacing: -0.15em;
       }
     }
   }
@@ -76,6 +80,7 @@
     display: flex;
     max-height: 90vh;
     padding: 0 50px;
+    font-family: "basiic", sans-serif;
 
     nav {
       width: 100%;
@@ -93,7 +98,7 @@
       strong {
         display: inline-block;
         font-size: 1.3em;
-        background: $pink;
+        background: var(--pink);
         margin-bottom: 0.5em;
         padding: 0 0.3em;
         border-radius: 10px;
@@ -129,6 +134,7 @@
           width: 100%;
           height: auto;
           transition: transform 0.3s ease;
+          image-rendering: pixelated;
 
           @media (max-height: 650px) {
             width: 75%;
@@ -149,7 +155,8 @@
           right: 0;
           bottom: 0;
           z-index: 1;
-          text-shadow: 0px 0px 5px white;
+          color: $textColor;
+          text-shadow: 0px 0px 5px var(--white);
           line-height: 0.8;
           padding-bottom: 18px;
         }
@@ -162,6 +169,11 @@
       font-size: 35px;
       font-weight: bold;
       cursor: $cursorDefault;
+
+      span {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+      }
     }
   }
 }
@@ -175,8 +187,30 @@
 
   &:hover,
   &:focus {
-    color: $green;
+    color: var(--green);
     text-decoration-style: wavy;
+  }
+}
+
+.about-me-page__flags {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  img {
+    image-rendering: pixelated;
+  }
+}
+
+.about-me-pages__gpoy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  img {
+    display: inline-block;
+    padding: 10px;
+    max-width: 50%;
   }
 }
 
@@ -190,14 +224,10 @@
     width: 200px;
     height: auto;
     flex-shrink: 0;
-    border-radius: 10%;
+    // border-radius: 10%;
     overflow: hidden;
     margin-right: 10px;
     margin-bottom: 10px;
-
-    &:last-child {
-      margin-right: 0;
-    }
 
     img {
       width: 100%;
@@ -313,13 +343,13 @@
   a {
     height: 140px;
     flex: 0 0 calc(50% - 5px);
-    border-radius: 10px;
+    // border-radius: 10px;
     overflow: hidden;
 
     &:hover,
     &:focus {
       img {
-        transform: scale(1.2);
+        transform: scale(1.15);
         filter: none;
       }
     }
@@ -329,7 +359,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease, filter 0.3s ease;
+    transition: transform 0.1s linear, filter 0.2s linear;
     filter: brightness(1.1) contrast(0.9) sepia(0.1) hue-rotate(-30deg);
   }
 }
@@ -355,7 +385,7 @@
 .about-me-page-window {
   position: relative;
   margin-top: 50px;
-  border: 2px solid $pink;
+  border: 2px solid var(--pink);
   padding: 17px;
   background: var(--mainBackgroundColor);
   max-width: 730px;
@@ -372,12 +402,12 @@
     bottom: 100%;
     left: -2px;
     right: -2px;
-    background: $pink;
+    background: var(--pink);
     height: 30px;
-    color: $mainBackgroundColor;
+    color: var(--mainBackgroundColor);
     font-size: 1.1em;
     padding-left: 20px;
-    border: 2px solid $pink;
+    border: 2px solid var(--pink);
     border-bottom: 0;
     display: flex;
     align-items: center;
@@ -466,18 +496,11 @@
       padding: 2em 1em;
 
       h2 {
-        &::before,
-        &::after {
-          font-size: 0.4em;
-        }
-
         &::before {
-          content: "゜゜・";
           margin-right: 0.3em;
         }
 
         &::after {
-          content: "・゜゜";
           margin-left: 0.3em;
         }
       }

@@ -8,7 +8,7 @@ nesting: "../"
 <section>
   <h1>TV Recs</h1>
   <p>Here are some tv shows I've enjoyed and would definitely recommend!</p>
-  <p>(Work in progress, I will add more soon!)</p>
+
   <strong class="rec-filters-title">Filter:</strong>
   <div class="rec-filters">
     <div class="rec-filters__group">
@@ -21,7 +21,7 @@ nesting: "../"
         <button class="rec-filters__button" data-filter=".drama">drama</button>
         <button class="rec-filters__button" data-filter=".horror">horror</button>
         <button class="rec-filters__button" data-filter=".queer">queer</button>
-        <button class="rec-filters__button" data-filter=".romance">romance</button>
+        <!-- <button class="rec-filters__button" data-filter=".romance">romance</button>-->
         <button class="rec-filters__button" data-filter=".sci-fi">sci-fi</button>
         <!-- <button class="rec-filters__button" data-filter=".thriller">thriller</button> -->
       </div>
@@ -53,7 +53,27 @@ nesting: "../"
       </div>
     </div>
   </div>
-  <div class="isotope-items isotope-items--tv"></div>
+  <div class="isotope-items isotope-items--tv">
+    {% for rec in recs['tv-shows'] %} {% if rec.title != "EXAMPLE" %}
+    <div class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.genres | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}">
+      <div class="rec__inner">
+        <div class="rec__image"><img src="{{ rec.image }}" /></div>
+        <div class="rec__info">
+          <div class="rec__title">{{ rec.title }}</div>
+          {% if rec.ongoing %}
+          <div class="rec__author">(ongoing)</div>
+          {% endif %}
+          <div class="rec__desc">
+            <p><strong>My rating:</strong> <span class="rec__stars">★★★★{% if rec.rating == "2" %}<small>½</small>{% elsif rec.rating == "3" %}★{% endif %}</span></p>
+            <p><strong>Start Year:</strong> {{ rec.year }}</p>
+            <p><strong>Genres:</strong> {{ rec.genres }}</p>
+          </div>
+          <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Serializd</a></div>
+        </div>
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
 </section>
 
 <!-- Isotope: -->
@@ -62,5 +82,5 @@ nesting: "../"
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="recs.js"></script>
 <script>
-  loadData("tv-shows");
+  initIsotope();
 </script>

@@ -22,6 +22,7 @@ export function loadTheme(theme) {
   if (!theme) theme = getCurrentTheme();
 
   localStorage.setItem("theme", theme);
+
   document.body.classList.remove("light-mode");
   document.body.classList.remove("dark-mode");
   document.body.classList.add(theme);
@@ -51,4 +52,30 @@ export function initThemeSwitcher() {
       }
     });
   }
+
+  // Font:
+
+  if (getCurrentFontTheme() === "readable") {
+    document.body.classList.add("readable-font");
+  }
+
+  const btn2 = document.querySelector("#font-toggler button");
+  if (btn2) {
+    btn2.addEventListener("click", () => {
+      if (getCurrentFontTheme() === "readable") {
+        document.body.classList.remove("readable-font");
+        localStorage.setItem("fontTheme", "default");
+      } else {
+        document.body.classList.add("readable-font");
+        localStorage.setItem("fontTheme", "readable");
+      }
+    });
+  }
+}
+
+function getCurrentFontTheme() {
+  // if there's a cookie, use cookie
+  const fontFromStorage = localStorage.getItem("fontTheme");
+  if (fontFromStorage) return fontFromStorage;
+  return "default";
 }

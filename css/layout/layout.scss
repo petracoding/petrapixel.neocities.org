@@ -22,16 +22,16 @@
   button {
     display: flex;
     align-content: center;
-    border: 1px solid #c3afb6;
-    background: #c3afb6;
-    background-image: linear-gradient(to top, #b8888b 16%, #c999a3 79%);
+    border: 1px solid var(--dark);
+    color: var(--black);
+    background: var(--purple);
+    background-image: linear-gradient(to top, var(--purple) 16%, var(--pink) 79%);
     border-radius: 10px;
     padding: 2px 5px;
-    color: rgb(77, 39, 48);
     font-size: 15px;
 
     &:hover {
-      filter: brightness(0.85);
+      filter: brightness(0.9);
     }
   }
 
@@ -42,6 +42,38 @@
   img {
     display: block;
     margin-right: 0.5em;
+  }
+}
+
+#font-toggler {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 999999;
+
+  @media (max-width: $sm) {
+    display: none;
+  }
+
+  button {
+    display: flex;
+    align-content: center;
+    border: 1px solid var(--dark);
+    color: var(--black);
+    background: var(--purple);
+    background-image: linear-gradient(to top, var(--purple) 16%, var(--pink) 79%);
+    border-radius: 10px;
+    padding: 2px 5px;
+    font-size: 15px;
+
+    body.readable-font & {
+      font-family: $readableFont;
+      font-size: 14px;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 }
 
@@ -74,7 +106,7 @@
     padding: 7px 8px;
     background: var(--backgroundColor);
     border-radius: 10px;
-    border: 1px solid $pink;
+    border: 1px solid var(--pink);
     display: inline-block;
     text-decoration: none;
     font-weight: bold;
@@ -83,9 +115,9 @@
 
     &:hover,
     &:focus {
-      color: white;
-      border-color: white;
-      background: $pink;
+      color: var(--white);
+      border-color: var(--white);
+      background: var(--pink);
     }
   }
 }
@@ -105,8 +137,8 @@ main {
   padding: 1em 0;
   display: flex;
   flex-direction: column;
-  border-top: $mainBorder;
-  border-bottom: $mainBorder;
+  border-top: var(--mainBorder);
+  border-bottom: var(--mainBorder);
 
   section {
     position: relative;
@@ -140,7 +172,6 @@ main {
 /*----------  Header  ----------*/
 
 header {
-  background: $headerBackgroundColor;
   grid-area: header;
   text-align: center;
   margin-bottom: -30px;
@@ -155,7 +186,7 @@ header {
   a {
     display: inline-block;
     text-decoration: none;
-    text-shadow: 3px 3px 1px white;
+    text-shadow: 3px 3px 1px var(--white);
     transition: transform 0.2s ease;
     transform: none;
 
@@ -182,7 +213,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: $footerBackgroundColor;
   grid-area: footer;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -190,11 +220,11 @@ footer {
 
 .footer-content {
   text-align: center;
-  padding: 0.4em 1em 0.6em;
-  font-size: 0.8em;
+  padding: 5px 8px;
+  font-size: 0.9em;
   background: var(--backgroundColor);
   border-radius: 3px;
-  border: 1px solid $pink;
+  border: 1px solid var(--pink);
 
   i {
     font-style: normal;
@@ -221,10 +251,12 @@ footer {
 .footer-rss {
   display: inline-block;
   vertical-align: sub;
+  margin-right: 4px;
 
   img {
     display: block;
-    transition: transform 0.3s ease;
+    margin-bottom: -1px;
+    height: 1.2em;
   }
 
   &:hover,
@@ -239,7 +271,7 @@ footer {
 
 #no-js-warning {
   background: red;
-  color: white;
+  color: var(--white);
   position: fixed;
   top: 0;
   left: 0;
@@ -277,7 +309,7 @@ footer {
   line-height: 1;
   font-size: 1.25rem;
   background-color: darken($purple, 10%);
-  color: white;
+  color: var(--white);
   transform: translateY(-3rem);
   transition: transform 0.1s ease-in;
   z-index: 99999999999;
@@ -303,7 +335,6 @@ footer {
  */
 
 @media (max-width: $md) {
-  #content,
   #content {
     grid-template:
       "header header header" auto
@@ -329,7 +360,6 @@ footer {
     margin-bottom: 0;
   }
 
-  #content,
   #content {
     width: calc(100% - 10px);
     grid-template:

@@ -19,6 +19,22 @@ body {
   margin: 0;
   padding: 5px;
 
+  // ?
+  font-family: "ms gothic";
+  font-size: 12px;
+  line-height: 1.5;
+
+  &.readable-font {
+    font-family: $readableFont;
+    font-size: 14px;
+    letter-spacing: 0.013em;
+    line-height: 1.6;
+
+    main strong {
+      font-family: $readableFont;
+    }
+  }
+
   a {
     &,
     &:hover,
@@ -41,8 +57,8 @@ body {
   }
 
   ::selection {
-    color: $purple;
-    background: rgba($green, 0.5);
+    color: var(--textColor);
+    background: var(--light);
   }
 }
 
@@ -59,7 +75,7 @@ body {
 }
 
 .custom-scrollbar {
-  scrollbar-color: $pink $light;
+  scrollbar-color: $pink var(--veryLight);
   scrollbar-width: thin;
 }
 
@@ -69,11 +85,11 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track-piece {
-  background-color: $light;
+  background-color: var(--veryLight);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:vertical {
-  background-color: $pink;
+  background-color: var(--pink);
 }
 
 .marquee {
@@ -130,12 +146,13 @@ body {
   .marquee,
   .aside-blinkies,
   .aside-mutuals,
-  .aside-blinkies + hr,
-  .aside-mutuals + hr,
+  .aside-blinkies + img[src*="divider"],
+  .aside-mutuals + img[src*="divider"],
   img[src*="layout/new.gif"],
   img[src*="inline/star.gif"],
   img[src*="divider2.gif"],
   img[src*="divider3.gif"],
+  img[src*="divider5.gif"],
   img[src*="inline/stars.gif"],
   img[src*="inline/wave.gif"] {
     display: none !important;

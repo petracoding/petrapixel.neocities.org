@@ -2,8 +2,8 @@ $w: 0.625rem;
 $h: 15rem;
 $p: 1.75 * $w;
 $line-w: 1px;
-$c-worst: $green;
-$c-best: $pink;
+$c-worst: var(--green);
+$c-best: var(--pink);
 $sh: 0 0 $w 0 rgba(#000, 0.1);
 
 .writing-chart {
@@ -40,7 +40,7 @@ $sh: 0 0 $w 0 rgba(#000, 0.1);
 
     &.over {
       --s: -1;
-      background: $purple;
+      background: var(--purple);
     }
 
     &::after {
@@ -74,7 +74,7 @@ $sh: 0 0 $w 0 rgba(#000, 0.1);
   position: absolute;
   width: calc(100% - 4em);
   height: 5px;
-  border-top: 2px dotted $green;
+  border-top: 2px dotted var(--green);
   bottom: calc(var(--fy) * #{$h});
   border-radius: $w;
   z-index: 1;

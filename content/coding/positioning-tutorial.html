@@ -1,11 +1,12 @@
 ---
-layout: petrapixel.njk
+layout: coding.njk
 title: "positioning tutorial"
 description: "A tutorial on how to position elements, including the display and position CSS properties, flex box and grid, for beginners. Neocities."
 nesting: "../"
 codeHighlight: true
 progressBar: true
 mainClass: coding-page
+toc: true
 ---
 
 <style>
@@ -37,23 +38,23 @@ mainClass: coding-page
     margin-top: -0.5em;
   }
 
-  .progress-bar-container {
+  #back-to-top-link {
     bottom: 120px;
   }
 
-  #toc > b {
+  #main #toc > b {
     font-size: 1.2em;
     margin-bottom: 0.5em;
     display: block;
   }
 
-  #toc > ol > li {
+  #main #toc > ol > li {
     font-weight: bold;
     font-size: 1.1em;
     margin-bottom: 0.7em;
   }
 
-  #toc > ol > li li {
+  #main #toc > ol > li li {
     font-size: 1em;
     font-weight: normal;
     margin-bottom: 0;
@@ -75,7 +76,96 @@ mainClass: coding-page
     </p>
   </blockquote>
 
-  <div id="toc" data-two-levels="true"></div>
+  <div id="toc" data-two-levels="true">
+    <b>Table of Contents:</b>
+    <ol>
+      <li>
+        <a href="#box-model">The Box Model (<code>box-sizing</code>)</a>
+      </li>
+      <li>
+        <a href="#display">The <code>display</code> property</a>
+        <ul>
+          <li><a href="#display-defaults">Defaults</a></li>
+          <li><a href="#display-examples">Examples</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#position">The <code>position</code> property</a>
+        <ul>
+          <li>
+            <a href="#top-bottom-left-right"><code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code></a>
+          </li>
+          <li><a href="#positioned-elements">"Positioned" Elements</a></li>
+          <li><a href="#positon-examples">Examples</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#transform">Transforming Elements (<code>transform</code>)</a>
+        <ul>
+          <li><a href="#transform-values">Values</a></li>
+          <li><a href="#transform-examples">Examples</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#z-index">Stack Order (<code>z-index</code>)</a>
+      </li>
+      <li>
+        <a href="#centering">How to Center Elements</a>
+        <ul>
+          <li><a href="#centering-horizontal">Horizontal</a></li>
+          <li><a href="#centering-vertical">Vertical</a></li>
+          <li><a href="#centering-in-text">In-Text</a></li>
+          <li><a href="#flexbox-centering">Centering with Flexbox</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#flexbox">CSS Flexbox (<code>display: flex</code>)</a>
+        <ul>
+          <li>
+            <a href="#justify-content"><code>justify-content</code></a>
+          </li>
+          <li>
+            <a href="#align-items"><code>align-items</code></a>
+          </li>
+          <li>
+            <a href="#flex-direction"><code>flex-direction: column</code></a>
+          </li>
+          <li>
+            <a href="#flex-wrap"><code>flex-wrap: wrap</code></a>
+          </li>
+          <li>
+            <a href="#flex-shrink-grow"><code>flex-shrink</code> and <code>flex-grow</code></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#grid">CSS Grid (<code>display: grid</code>)</a>
+        <ul>
+          <li><a href="#grid-mobile">Mobile Responsiveness</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#overflow">Scrollboxes (<code>overflow</code>)</a>
+      </li>
+      <li>
+        <a href="#images">Working with Images</a>
+      </li>
+      <li>
+        <a href="#image-gallery">Example: Building an Image Gallery</a>
+        <ul>
+          <li><a href="#step1">Step 1: The HTML</a></li>
+          <li><a href="#step2">Step 2: Item Sizing</a></li>
+          <li><a href="#step3">Step 3: Flexbox</a></li>
+          <li><a href="#step4">Step 4: Captions</a></li>
+          <li><a href="#step5">Step 5: Captions on Hover</a></li>
+          <li><a href="#step6">Step 6: Image Hover Effects</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#comments">Comments</a>
+      </li>
+    </ol>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -89,25 +179,34 @@ mainClass: coding-page
       border: 5px solid currentColor;
       padding: 10px;
       margin: 10px;
-      height: 100px;
+      height: 150px;
       width: 300px;
     }
   </style>
   <div class="example" style="min-height: 0px">
     <div style="box-sizing: content-box" class="example0">
-      <code>height: 100px;<br />width: 300px;</code><br />Default.
+      <code
+        >height: 150px;<br />width: 300px;<br />border: 5px solid currentColor;<br />
+        padding: 10px;</code
+      ><br />Default.
     </div>
   </div>
-  <p>Actual height: 100px + padding (2x 10px) + border (2x 5px) = <b>130px</b>.<br />Actual width: 300px + padding (2x 10px) + border (2x 5px) = <b>330px</b></p>
+  <p>
+    Actual height: 150px + left padding (10px) + right padding (10px) + left border (5px) + right border (5px) = <b>180px</b><br />Actual width: 300px + left padding (10px) + right padding (10px) +
+    left border (5px) + right border (5px) = <b>330px</b>
+  </p>
 
   <hr />
   <p>With <code>box-sizing: border-box</code> you can change this behaviour. The paddings and borders will now be included in the width/height defined:</p>
   <div class="example" style="min-height: 0px">
     <div style="box-sizing: border-box" class="example0">
-      <code>height: 100px;<br />width: 300px;<br />box-sizing: border-box;</code>
+      <code
+        >height: 150px;<br />width: 300px;<br />border: 5px solid currentColor;<br />
+        padding: 10px;<br />box-sizing: border-box;</code
+      >
     </div>
   </div>
-  <p>Actual height: <b>100px</b><br />Actual widht: <b>300px</b></p>
+  <p>Actual height: <b>150px</b><br />Actual width: <b>300px</b></p>
 
   <blockquote class="tip">
     <p>If you prefer this behaviour in general you can give <i>every</i> element on your page <code>box-sizing: border-box</code> by using</p>
@@ -493,7 +592,7 @@ transform: skew(10deg, 10deg);
     <span class="example4" style="display: block; text-align: center">text-align: center;</span>
   </div>
 
-  <p>And yes, this works with images and other <i>inline</i> (or Iinline-block) elements too:</p>
+  <p>And yes, this works with images and other <code>inline</code> (or <code>inline-block</code>) elements too:</p>
   <div class="example">
     <span class="example4" style="display: block; text-align: center"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" /></span>
   </div>
@@ -1559,7 +1658,7 @@ footer { grid-area: myFooter; }</code></pre>
   </p>
   <p>I'm adding a <code>transition</code> (for both the transform and the opacity) to make the effect smoother.</p>
   <blockquote class="tip">
-    <p><code>transition</code> rules should always be added to the normal CSS rules, not the on-hover rules, otherwise it will only work when the mouse moves in but not out.</p>
+    <p><code>transition</code> rules should always be added to the normal CSS rules, not the on-hover rules (<code>:hover</code>), otherwise it will only work when the mouse moves in but not out.</p>
   </blockquote>
 
   <p>Here's the code we're adding:</p>
@@ -1709,6 +1808,6 @@ footer { grid-area: myFooter; }</code></pre>
     To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
     you don't hit the max character limit on comments.
   </p>
-  <div id="c_widget"></div>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="../assets/js/comment-widget.js"></script>
 </section>

@@ -88,7 +88,7 @@
 }
 #c_widget button:disabled:hover,
 #c_widget input[type="submit"]:disabled:hover {
-  background-color: white;
+  background-color: var(--white);
   color: var(--textColor);
   border: 1px solid currentColor;
 }

@@ -6,8 +6,8 @@ $mobileBreakpoint: $mainWidth;
 */
 :root {
   --background-color: rgb(243, 240, 240);
-  --content-background-color: white;
-  --text-color: black;
+  --content-background-color: var(--white);
+  --text-color: var(--black);
   --link-color: red;
   --link-color-hover: var(--text-color);
   --selection-color: rgba(0, 0, 0, 0.2);

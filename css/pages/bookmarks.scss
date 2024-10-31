@@ -1,6 +1,7 @@
 .bookmarks-section {
   a {
     text-transform: capitalize;
+    filter: brightness(0.8);
   }
 
   p {
@@ -10,6 +11,7 @@
 
   h3 {
     margin-top: 2em !important;
+    font-size: 26px;
 
     h2 + & {
       margin-top: 0.5em !important;
@@ -32,10 +34,10 @@
 .bookmark {
   display: flex;
   padding: 0.5em 0;
-  border-bottom: 1px dotted $pink;
+  border-bottom: 1px dotted var(--pink);
 
   &:first-child {
-    border-top: 1px dotted $pink;
+    border-top: 1px dotted var(--pink);
   }
 
   &:nth-child(odd) {

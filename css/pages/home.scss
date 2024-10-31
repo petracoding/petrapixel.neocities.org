@@ -18,7 +18,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: $pink;
+      background: var(--pink);
       opacity: 0.3;
       pointer-events: none;
     }
@@ -59,7 +59,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: $pink;
+      background: var(--pink);
       opacity: 0.2;
       pointer-events: none;
       z-index: 1;
@@ -119,8 +119,8 @@
   border: 1px $purple dotted;
   font-family: $font2;
   font-size: 13px;
-  background: white;
-  color: black;
+  background: var(--white);
+  color: var(--black);
 
   &:focus {
     outline: none;
@@ -283,6 +283,10 @@
     margin: 2px;
   }
 
+  > div a {
+    text-decoration: none;
+  }
+
   &.cool-sites--more-spacing > * {
     margin: 7px;
   }
@@ -307,6 +311,7 @@
 
   img {
     transition: transform 0.2s ease;
+    object-fit: cover;
 
     &:hover,
     &:focus {

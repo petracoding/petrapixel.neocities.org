@@ -1,3 +1,7 @@
+// halloween cursors
+// $cursorDefault: url("https://cur.cursors-4u.net/holidays/hol-1/hol45.cur") 1 1, auto;
+// $cursorPointer: url("https://cur.cursors-4u.net/holidays/hol-1/hol47.cur") 1 1, pointer;
+
 body {
   --textColor: rgb(74, 0, 0);
   --pink: orange;
@@ -67,15 +71,15 @@ main pre code.hljs {
 
 // Dark Mode:
 body.dark-mode {
-  background: black;
+  background: var(--black);
   background-image: url("https://sadhost.neocities.org/images/tiles/witchbg04.gif");
 
   $textColor: #fcdee2;
   $pink: rgb(205, 89, 0);
-  $backgroundColor: black;
+  $backgroundColor: var(--black);
   $mainBackgroundColor: #291a14;
   $linkColor: lighten($pink, 10%);
-  $linkColorHover: $green;
+  $linkColorHover: var(--green);
   $asideBackgroundColor: #301b12;
   $asideTextColor: #e6e6e6;
   //
@@ -107,18 +111,18 @@ body.dark-mode {
   .aside-nav li a:not(summary):focus,
   .aside-nav li summary:hover,
   .aside-nav li summary:not(summary):focus {
-    background: $pink;
+    background: var(--pink);
   }
 
   #theme-toggler {
     button {
-      color: white;
-      background: black;
+      color: var(--white);
+      background: var(--black);
     }
   }
 
   .progress-bar-container {
-    background: black;
+    background: var(--black);
   }
 
   main details summary,

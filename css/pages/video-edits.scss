@@ -17,9 +17,9 @@ a.video-edit {
 
     img {
       display: block;
+      //   image-rendering: pixelated;
       filter: brightness(1.25) contrast(1.1);
       flex-shrink: 0;
-      border-radius: 3px;
       transition: 0.3s ease;
     }
 
@@ -46,7 +46,7 @@ a.video-edit {
   &:active {
     .image {
       img {
-        border-radius: 10px;
+        image-rendering: auto;
         // filter: brightness(1.4) contrast(1.2);
       }
 
@@ -100,7 +100,7 @@ a.video-edit {
   // time stamp
   i {
     font-style: normal;
-    background: #ffc2b0;
+    background: #ffb0c5;
     display: inline-block;
     margin-left: 10px;
     font-size: 0.8em;
@@ -112,11 +112,11 @@ a.video-edit {
 
 .video-edit--fave {
   &::before {
-    content: "☆";
+    content: "！";
     position: absolute;
     right: 10px;
     top: 10px;
-    color: $purple;
+    color: var(--purple);
     opacity: 0.25;
     line-height: 1;
     font-size: 100px;

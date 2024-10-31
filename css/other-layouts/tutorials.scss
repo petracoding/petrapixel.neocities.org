@@ -2,7 +2,7 @@
 @import "../mixins";
 
 body {
-  --text-color: black;
+  --text-color: var(--black);
   --link-color: rgb(94, 34, 172);
   --link-hover-color: rgb(109, 0, 83);
   --accent-color: rgb(94, 34, 172);
@@ -324,7 +324,7 @@ pre code.hljs {
 
   .learn {
     strong {
-      color: white;
+      color: var(--white);
     }
   }
 

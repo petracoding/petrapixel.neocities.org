@@ -39,15 +39,15 @@
       padding: 0.15em 0.2em;
       font-style: normal;
       cursor: copy;
-      font-size: 1.2em;
-      border: 1px dashed $purple;
-      margin: 0.1em;
+      font-size: 17px;
+      border: 1px dashed var(--purple);
+      margin: 3px;
       line-height: 1;
       text-transform: none;
       word-break: break-word;
 
       &:hover {
-        border-color: $purple;
+        border-color: var(--purple);
         background: rgba($green, 0.7);
       }
 
@@ -55,7 +55,7 @@
       &:focus {
         cursor: grabbing;
         border-style: solid;
-        border-color: $pink;
+        border-color: var(--pink);
       }
     }
   }

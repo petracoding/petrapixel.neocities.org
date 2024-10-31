@@ -2,24 +2,26 @@
 permalink: "rss.xml"
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>petrapixel</title>
   <description>Welcome to petrapixel! Here you can find many resources for Neocities, coding help, media recommendations and more in a cute Old Web aesthetic!</description>
   <link>https://petrapixel.neocities.org/</link>
   <ttl>1440</ttl>
+  <atom:link href="https://petrapixel.neocities.org/rss.xml" rel="self" type="application/rss+xml" />
   <image>
 	  <link>https://petrapixel.neocities.org/</link>
 	  <title>petrapixel</title>
-	  <url>https://petrapixel.neocities.org/img/layout/petrapixel.png</url>
-	  <width>300</width>
-	  <height>100</height>
+	  <url>https://petrapixel.neocities.org/assets/img/layout/petrapixel.png</url>
+	  <width>144</width>
+	  <height>48</height>
 	</image>
 	{% for changelogEntry in changelog %} 
 		{% if changelogEntry.text !== "TEMPLATE" %}<item>
 			<title>{{ changelogEntry.text }}</title>
 			<link>https://petrapixel.neocities.org{{ changelogEntry.link or "/" }}</link>
-			<pubDate>{{ changelogEntry.date }}</pubDate>
+			<guid>https://petrapixel.neocities.org{{ changelogEntry.link or "/" }}</guid>
+			<pubDate>{{ changelogEntry.date | dateToRFC822Format }}</pubDate>
 		</item>{% endif %}
 	{% endfor %}
 </channel>

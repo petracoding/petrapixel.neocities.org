@@ -1,16 +1,28 @@
 ---
-layout: petrapixel.njk
+layout: coding.njk
 title: "coding cheatsheet"
 description: "A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities."
 nesting: "../"
 codeHighlight: true
 mainClass: coding-page
+toc: true
 ---
 
 <section>
   <h1>Cheatsheet</h1>
   <p>A reference for often-used lines of code and commands.</p>
-  <div id="toc"></div>
+  <div id="toc">
+    <b>Table of Contents:</b>
+    <ol>
+      <li><a href="#css">CSS</a></li>
+      <li><a href="#js">JavaScript</a></li>
+      <li><a href="#scss">SCSS</a></li>
+      <li><a href="#git">Git / GitHub</a></li>
+      <li><a href="#npm">npm</a></li>
+      <li><a href="#webpack">Webpack</a></li>
+      <li><a href="#11ty">11ty (Eleventy)</a></li>
+    </ol>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -20,24 +32,50 @@ mainClass: coding-page
   <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote>
 
   <h3>Absolute Positioning:</h3>
-  <pre><code class="language-scss"></code></pre>
+  <pre><code class="language-scss">.parent {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}</code></pre>
 
   <h3>Flexbox:</h3>
-  <pre><code class="language-scss"></code></pre>
+  <pre><code class="language-scss">.container {
+  display: flex;
+  justify-content: center; // horizontal
+  align-items: center; // vertical
+}
+</code></pre>
 
   <h3>Grid:</h3>
-  <pre><code class="language-scss"></code></pre>
+  <pre><code class="language-scss">.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template:
+    "header header"
+    "sidebar main"
+    "footer footer"
+    / 100px 1fr;
+}
+
+header { grid-area: header; }
+aside { grid-area: sidebar; }
+main { grid-area: main; }
+footer { grid-area: footer; }</code></pre>
 
   <h3>Animation:</h3>
   <pre><code>@keyframes floatyAnimation {
   0% {
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translatey(-4px);
+    transform: translateY(-4px);
   }
   100% {
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
 }
 

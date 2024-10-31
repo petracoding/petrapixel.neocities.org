@@ -97,6 +97,14 @@
       "image": "https://a.ltrbxd.com/resized/film-poster/3/9/3/0/5/39305-jennifer-s-body-0-500-0-750-crop.jpg?v=af7fb6bd86"
     },
     {
+      "title": "It",
+      "year": "2017",
+      "genres": "Horror",
+      "rating": "3",
+      "link": "https://letterboxd.com/film/it-2017/",
+      "image": "https://a.ltrbxd.com/resized/sm/upload/w3/47/76/am/6uDpMsdn8bbZScDptbika5JEtSH-0-230-0-345-crop.jpg?v=ee603d8e3b"
+    },
+    {
       "title": "EXAMPLE",
       "year": "2000",
       "genres": "GENRES",
@@ -496,15 +504,6 @@
       "rating": "1",
       "link": "LINK",
       "image": "IMAGE"
-    }
-  ],
-  "ships": [
-    {
-      "title": "egobang",
-      "who": "danny & arin",
-      "fandom": "game grumps",
-      "tags": "rpf, not-canon, favorite",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiqSbLsn38V0VmUU0IyC3RcEx5X_60Igi7qg&usqp=CAU"
     }
   ]
 }

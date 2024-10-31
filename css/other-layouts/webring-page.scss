@@ -23,7 +23,7 @@ body.webring-page {
   main {
     width: 100%;
     max-width: $contentWidth;
-    background: white;
+    background: var(--white);
     padding: 3em 0;
     border-radius: 20px;
   }
@@ -104,8 +104,8 @@ body.webring-page {
     font-family: $font2;
     width: 100%;
     font-size: 11px;
-    background: white;
-    color: black;
+    background: var(--white);
+    color: var(--black);
 
     &:focus {
       outline: none;

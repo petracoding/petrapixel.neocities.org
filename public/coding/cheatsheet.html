@@ -1,915 +1,39 @@
+<!doctype html><html lang="en"><head><title>coding cheatsheet | petrapixel</title><meta name="description" content="A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities."><script src="../assets/js/main.js?nocache=20241101"></script><link rel="stylesheet" href="../assets/main.css?nocache=20241101"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script>hljs.highlightAll()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-J64TL8KVTJ")</script></head><body class="coding-page-layout"><noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a> <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a><div id="content"><div id="theme-toggler" aria-hidden="true"><button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated" alt=""> <span>toggle theme</span></button></div><div id="font-toggler" aria-hidden="true"><button type="button"><span>toggle font</span></button></div><header><div class="header-heading"><a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300"></a></div></header><nav class="coding-navigation"><div class="coding-navigation-category" aria-label="Tools"><div class="coding-navigation-category__title"><a href="/coding#tools">Tools</a></div><ul><li><a href="/coding/layout-generator">layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true"></small></a></li><li><a href="/coding/checklist">self-study checklist</a></li><li><a href="/coding/cheatsheet">cheatsheet</a></li></ul></div><div class="coding-navigation-category" aria-label="Guides"><div class="coding-navigation-category__title"><a href="/coding#guides">Guides</a></div><ul><li><a href="/coding/common-questions">common questions</a></li><li><a href="/coding/common-mistakes">common mistakes</a></li><li><a href="/coding/snippets">snippets & tips</a></li><li><a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a></li><li><a href="/coding/code-quality">code quality guide</a></li><li><a href="/coding/now-what">i know html/css/js. ... now what?<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true"></small></a></li></ul></div><div class="coding-navigation-category" aria-label="Beginner Tutorials"><div class="coding-navigation-category__title"><a href="/coding#beginner">Beginner Tutorials</a></div><ul><li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li><li><a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Advanced Tutorials"><div class="coding-navigation-category__title"><a href="/coding#advanced">Advanced Tutorials</a></div><ul><li><a href="/coding/git-tutorial">git tutorial</a></li><li><a href="/coding/npm-tutorial">node/npm tutorial</a></li><li><a href="/coding/webpack-tutorial">webpack tutorial</a></li><li><a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Miscellaneous"><div class="coding-navigation-category__title"><a href="/coding#misc">Miscellaneous</a></div><ul><li><a href="/coding/neocities">neocities tips</a></li><li><a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a></li></ul></div></nav><aside class="aside aside--left"><div class="coding-back-to-home"><a href="/"><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"></a></div><img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true"><div class="aside-stuff aside-clap-kirby" style="margin-top:20px"><a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode"> </a><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode"> </a><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a></div><div class="aside-stuff aside-link-back"><div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true"></div><p>Hotlinking is a-okay!</p><a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"></a><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea></div><div class="aside-stats__stat" style="margin-bottom:0;margin-top:2em"><div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"></div><div class="aside-stats__stat-content"><center><a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><small style="font-size:.8em;letter-spacing:-.4px;text-align:center;display:block">(might not be entirely accurate)</small></div></div><img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top:-5px"> <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top:2em"><div id="toc-position"></div><div id="toc"></div><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering:pixelated"></aside><div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div><main id="main" class="coding-page"><section><h1>Cheatsheet</h1><p>A reference for often-used lines of code and commands.</p><div id="toc"><b>Table of Contents:</b><ol><li><a href="#css">CSS</a></li><li><a href="#js">JavaScript</a></li><li><a href="#scss">SCSS</a></li><li><a href="#git">Git / GitHub</a></li><li><a href="#npm">npm</a></li><li><a href="#webpack">Webpack</a></li><li><a href="#11ty">11ty (Eleventy)</a></li></ol></div></section><section><h2 id="css">CSS</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote><h3>Absolute Positioning:</h3><pre><code class="language-scss">.parent {
+  position: relative;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>coding cheatsheet | petrapixel</title>
-    
-    <meta
-      name="description"
-      content="A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities."
-    />
-    
-    <script src="../assets/js/main.js?nocache=20241001"></script>
-    <link rel="stylesheet" href="../assets/main.css?nocache=20241001" />
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta content="utf-8" http-equiv="encoding" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon" />
+.child {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}</code></pre><h3>Flexbox:</h3><pre><code class="language-scss">.container {
+  display: flex;
+  justify-content: center; // horizontal
+  align-items: center; // vertical
+}
+</code></pre><h3>Grid:</h3><pre><code class="language-scss">.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template:
+    "header header"
+    "sidebar main"
+    "footer footer"
+    / 100px 1fr;
+}
 
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-      hljs.highlightAll();
-    </script>
-     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-J64TL8KVTJ");
-    </script>
-     
-  </head>
-  <body class="" >
-    <noscript id="no-js-warning">Please enable JavaScript to view this website!</noscript>
-    <a href="#main" id="skip-to-content-link">Skip to content</a>
-    <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
-    <div id="content">
-      <!-- ------------------------------------------------ -->
-      <!-- --------------------- HEADER ------------------- -->
-      <!-- ------------------------------------------------ -->
-      
-      <div id="theme-toggler" aria-hidden="true">
-        <button type="button">
-          <img src="../assets/img/layout/moon.gif" width="20" style="height: 20px; image-rendering: pixelated" alt="" />
-          <span>toggle theme</span>
-        </button>
-      </div>
-      
-      <header>
-        <div class="header-heading">
-          <a href="/"><img src="../assets/img/layout/petrapixel.png" aria-label="petrapixel" height="100" width="300" /></a>
-        </div>
-      </header>
-      <aside class="aside aside--left">
-        <details>
-          <summary id="mobile-nav-toggle">Open Navigation</summary>
-          <nav class="aside-nav">
-            <div class="aside-nav__heading" aria-hidden="true">Menu</div>
-            <ul aria-label="Menu">
-              <li>
-                <a href="/"><img width="9" src="../assets/img/layout/heart.png" alt="" aria-hidden="true" />home</a>
-              </li>
-              <li>
-                <details id="menu-aboutsite">
-                  <summary>about <small>(5)</small></summary>
-                  <ul>
-                    <li>
-                      <a href="/about-me/about">about me ➚</a>
-                    </li>
-                    <li><a href="/about/about-the-site">about the site</a></li>
-                    <li><a href="/about/guestbook">guestbook</a></li>
-                    <!-- <li><a href="/about/neighbors">neighbors</a></li> -->
-                    <li><a href="/about/credits">credits</a></li>
-                    <li><a href="/sitemap">sitemap</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details id="menu-mycreations">
-                  <summary>my creations <small>(6)</small></summary>
-                  <ul>
-                    <li><a href="/creations/art">my art</a></li>
-                    <li><a href="/creations/coding">my coding</a></li>
-                    <li>
-                      <a href="/creations/playlists">my playlists</a>
-                    </li>
-                    <li><a href="/creations/video-edits">my video edits</a></li>
-                    <li><a href="/creations/writing">my writing</a></li>
-                    <li><a href="/creations/picmix">my picmixes</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details id="menu-mediarecs">
-                  <summary>media recs <small>(5)</small></summary>
-                  <ul>
-                    <li><a href="/recs/music" aria-label="music recommendations">record player</a></li>
-                    <li><a href="/recs/tv-shows" aria-label="tv show recommendations">tv room</a></li>
-                    <li><a href="/recs/movies" aria-label="movie recommendations">cinema</a></li>
-                    <li><a href="/recs/books" aria-label="book recommendations">library</a></li>
-                    <li><a href="/recs/games" aria-label="game recommendations">arcade</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details id="menu-resources">
-                  <summary>resources for you <small>(6)</small></summary>
-                  <ul>
-                    <li><a href="/resources/bookmarks">bookmarks</a></li>
-                    <li><a href="/resources/software-recs">software recs</a></li>
-                    <li><a href="/resources/clipboard">clipboard</a></li>
-                    <li><a href="/resources/notion">notion</a></li>
-                    <li><a href="/resources/google-spreadsheets-excel">spreadsheets</a></li>
-                    <li><a href="/resources/vocabulary">vocabulary</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details id="menu-codinghelp">
-                  <summary>
-                    coding help <small>(16)</small><small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
-                  </summary>
-                  <br />
-                  <ul>
-                    <li>
-                      <a href="/coding/layout-generator"
-                        >layout generator<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="/coding/checklist">self-study checklist</a>
-                    </li>
-                    <li><a href="/coding/cheatsheet">cheatsheet</a></li>
-                    <li><a href="/coding/neocities">neocities tips</a></li>
-                    <li><a href="/coding/my-setup">my coding setup</a></li>
-                  </ul>
-                  <strong>Beginner Guides:</strong>
-                  <ul>
-                    <li><a href="/coding/common-questions">common questions</a></li>
-                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
-                    <li><a href="/coding/snippets">snippets & tips</a></li>
-                    <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
-                    <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
-                    <li>
-                      <a href="/coding/positioning-tutorial"
-                        >positioning/layout tutorial (+ flexbox, grid)<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="/coding/code-quality"
-                        >code quality guide<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                  </ul>
-                  <strong>Intermediate Guides:</strong>
-                  <ul>
-                    <li>
-                      <a href="/coding/git-tutorial">git tutorial</a>
-                      <a href="/coding/npm-tutorial">node/npm tutorial</a>
-                      <a href="/coding/webpack-tutorial">webpack tutorial</a>
-                      <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial</a>
-                    </li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details id="menu-more">
-                  <summary>more <small>(5)</small></summary>
-                  <ul>
-                    <li><a href="/blog">blog</a></li>
-                    <li><a href="/shrines/index">shrines</a></li>
-                    <li><a href="/about/blinkies">blinkies & more</a></li>
-                    <li><a href="/fun/list-idea-generator">list idea generator</a></li>
-                    <li><a href="/fun/bored-button">are you bored?</a></li>
-                  </ul>
-                </details>
-              </li>
-            </ul>
-          </nav>
-
-          <img src="../assets/img/layout/divider1.gif" alt="" aria-hidden="true" />
-
-          <div class="aside-dreamland desktop-only">
-            <!-- ----------------- CHANGELOG ----------------- -->
-            <div class="aside-stuff aside-changelog">
-              <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="../assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
-              <ul class="changelog custom-scrollbar" aria-label="Changelog">
-                   
-                <li class="changelog__entry">
-                  <strong>2024-09-30</strong>
-                  
-                  <span>Halloween Theme!</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-09-15</strong>
-                  
-                  <a href="/coding/code-quality" tabindex="-1">New guide: Code quality (for beginners)</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-09-11</strong>
-                  
-                  <a href="/coding/positioning-tutorial" tabindex="-1">New tutorial: How to position elements with CSS (+ Flexbox, Grid!) and create layouts!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-09-10</strong>
-                  
-                  <a href="/coding/cheatsheet" tabindex="-1">New page: Coding Cheatsheet!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-09-09</strong>
-                  
-                  <a href="/coding/webpack-tutorial" tabindex="-1">New tutorial: Webpack tutorial for beginners!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-09-06</strong>
-                  
-                  <a href="/coding/eleventy-tutorial" tabindex="-1">New tutorial: Eleventy (11ty) tutorial for beginners!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-09-06</strong>
-                  
-                  <a href="/coding/npm-tutorial" tabindex="-1">New tutorial: Node/npm tutorial for beginners!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-09-05</strong>
-                  
-                  <span>The site is now generated using 11ty!</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-20</strong>
-                  
-                  <a href="/coding/layout-generator" tabindex="-1">New tool: Layout Generator!!!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-19</strong>
-                  
-                  <a href="/blog" tabindex="-1">Blog with comment sections!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-13</strong>
-                  
-                  <a href="/coding/git-tutorial" tabindex="-1">New page: Git Tutorial!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-12</strong>
-                  
-                  <a href="/rss.xml" tabindex="-1">I have an RSS feed now!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-09</strong>
-                  
-                  <a href="/coding/checklist" tabindex="-1">New page: Self-Study Coding Checklist!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-07</strong>
-                  
-                  <span>New link-back button! If you&#39;re not hotlinking please update it!</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-05</strong>
-                  
-                  <a href="/about-me/about.html" tabindex="-1">New main font and background and about-me page!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-08-04</strong>
-                  
-                  <span>Image of the moment added to sidebar! Also some small content changes.</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-07-20</strong>
-                  
-                  <a href="/creations/playlists.html" tabindex="-1">Added some playlists and tv show recs!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-07-17</strong>
-                  
-                  <span>Updated my age :)</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-07-07</strong>
-                  
-                  <a href="/resources/software-recs.html" tabindex="-1">Improved the look of my software recs and bookmarks pages</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-07-06</strong>
-                  
-                  <span>Spring cleaning in July.</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-06-28</strong>
-                  
-                  <span>A few small updates.</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-05-04</strong>
-                  
-                  <a href="/coding/common-questions.html" tabindex="-1">New coding help pages! &#39;Common questions&#39; and &#39;Need help?&#39;</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-26</strong>
-                  
-                  <a href="/coding/common-mistakes.html" tabindex="-1">New coding help page: &#39;Common mistakes&#39;!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-21</strong>
-                  
-                  <a href="/about/social-media.html" tabindex="-1">Social media page added</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-19</strong>
-                  
-                  <a href="/about-me/about.html" tabindex="-1">New about-me page!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-17</strong>
-                  
-                  <a href="/about/about-the-site.html" tabindex="-1">New sidebar layouts, a bunch of new pages, new content on existing pages, performance improvements, and a reworked homepage!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-07</strong>
-                  
-                  <a href="/about/credits.html" tabindex="-1">New FavIcon!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-06</strong>
-                  
-                  <a href="/resources/google-spreadsheets-excel.html" tabindex="-1">New page: Spreadsheet templates</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-05</strong>
-                  
-                  <a href="/coding/my-setup.html" tabindex="-1">New page: My coding setup</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-04-04</strong>
-                  
-                  <span>Accessibility improvements</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-03-28</strong>
-                  
-                  <a href="/shrines/minimalism.html" tabindex="-1">Minimalism shrine added!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-03-28</strong>
-                  
-                  <a href="/about/about-the-site.html" tabindex="-1">Dark mode added!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-03-27</strong>
-                  
-                  <a href="/creations/picmix.html" tabindex="-1">Picmix page added!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-03-05</strong>
-                  
-                  <a href="/shrines/index.html" tabindex="-1">New shrine overview</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-03-02</strong>
-                  
-                  <a href="/resources/vocabulary.html" tabindex="-1">Vocabulary page added!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-27</strong>
-                  
-                  <a href="/about/cats.html" tabindex="-1">Cats page added!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-26</strong>
-                  
-                  <a href="/about/media-log.html" tabindex="-1">Media log added!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-25</strong>
-                  
-                  <a href="/about/about-the-site.html" tabindex="-1">&#39;About the site&#39; page added, and a new logo!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-23</strong>
-                  
-                  <a href="/shrines/german-nostalgia.html" tabindex="-1">Added my first shrine!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-21</strong>
-                  
-                  <a href="/blog.html" tabindex="-1">Another huge update, and blog added!</a>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-15</strong>
-                  
-                  <span>Huge Update!</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-12</strong>
-                  
-                  <span>More Content, Design update</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-10</strong>
-                  
-                  <span>Even more content</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-09</strong>
-                  
-                  <span>More Content</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-08</strong>
-                  
-                  <span>Bugfixes</span>
-                  
-                </li>
-                  
-                <li class="changelog__entry">
-                  <strong>2024-02-07</strong>
-                  
-                  <a href="/" tabindex="-1">Site creation!</a>
-                  
-                </li>
-                 
-              </ul>
-            </div>
-
-            <!-- ----------------- LINK BACK ----------------- -->
-            <div class="aside-stuff aside-link-back">
-              <div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true" /></div>
-              <p>
-                Hotlinking is a-okay!
-                <!-- <br><small style="line-height: 1;display: block;">You can change the .webp to .gif if you want.</small> -->
-              </p>
-              <a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"
-                ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"
-              /></a>
-              <textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
-              >
-            </div>
-
-            <img src="../assets/img/layout/divider1.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
-
-            <!-- ----------------- POLL ----------------- -->
-            <div class="aside-stuff aside-poll" aria-hidden="true">
-              <div class="aside-stuff__heading" aria-hidden="true">Poll<img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
-
-              <form method="post" action="https://poll.pollcode.com/44915721">
-                <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
-                  <div style="padding: 2px 0px 4px 2px"><strong>do you watch/like horror movies?</strong></div>
-                  <input type="radio" name="answer" value="1" id="answer449157211" style="float: left" /><label for="answer449157211" style="float: left; width: 150px"
-                    >nope, i'm way too scared!</label
-                  >
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="2" id="answer449157212" style="float: left" /><label for="answer449157212" style="float: left; width: 150px"
-                    >i'm a scaredy-cat, but i try</label
-                  >
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="3" id="answer449157213" style="float: left" /><label for="answer449157213" style="float: left; width: 150px"
-                    >i'm not scared but i just don't enjoy them</label
-                  >
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="4" id="answer449157214" style="float: left" /><label for="answer449157214" style="float: left; width: 150px">occasionally</label>
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="5" id="answer449157215" style="float: left" /><label for="answer449157215" style="float: left; width: 150px"
-                    >i watch quite a few horror movies!</label
-                  >
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="6" id="answer449157216" style="float: left" /><label for="answer449157216" style="float: left; width: 150px"
-                    >horror is my favorite movie genre!</label
-                  >
-                  <div style="clear: both; height: 2px"></div>
-                  <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
-                  <div align="right" style="font-size: 10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div>
-                </div>
-              </form>
-            </div>
-
-            <!-- old polls: 
-			- https://poll.pollcode.com/18931664_result?v
-		-->
-
-            <!-- ----------------- IMAGE OF THE MOMENT ----------------- -->
-            <div class="aside-stuff aside-poll">
-              <div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="../assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
-              <a href="https://at.pinterest.com/pin/96334879525449893/" target="_blank" class="image-of-the-moment">
-                <img src="https://i.pinimg.com/736x/bd/58/62/bd5862d9ff4167c5e70fddedd25a04b9.jpg" alt="Nightcrawler (X-Men Comics)" title="Nightcrawler (X-Men Comics)" />
-              </a>
-            </div>
-
-            <!-- ----------------- BLINKIES ----------------- -->
-            <div class="aside-stuff aside-blinkies" aria-hidden="true">
-              <marquee class="marquee aside-blinkies__buttons" scrollamount="5"><div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (5).gif" alt="Blinkie: This user is bi" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (32).webp" alt="Blinkie: Bi & Polyamorous" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (12).gif" alt="Blinkie: Bisexual pride" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/bi-rights.gif" alt="Blinkie: Bi Rights" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/bisexual.gif" alt="Blinkie: I swing both ways!" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (1).gif" alt="Blinkie: Cryptozoology" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (3).gif" alt="Blinkie: I want to believe" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (4).gif" alt="Blinkie: I love Horror Movies" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (2).gif" alt="Blinkie: I love Glitter" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (6).gif" alt="Blinkie: Let the music play" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (7).gif" alt="Blinkie: Like the legends of the penis" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (8).gif" alt="Blinkie: Animal Crossing" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (9).gif" alt="Blinkie: Stardew Valley" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (10).gif" alt="Blinkie: I love toast" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (11).gif" alt="Blinkie: Smosh" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (14).gif" alt="Blinkie: Daydreamer" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (15).gif" alt="Blinkie: Minecraft diamonds are a girl's best friend" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (16).gif" alt="Blinkie: I need more time!" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (17).gif" alt="Blinkie: Hawaii: Part 2" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (18).gif" alt="Blinkie: It's gay love, baby" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (19).gif" alt="Blinkie: Never trust a replubican" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (22).gif" alt="Blinkie: Sexy naughty bitchy me" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (23).gif" alt="Blinkie: Born to shop" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (24).gif" alt="Blinkie: Daydream Believer" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (25).gif" alt="Blinkie: Hopeless Romantic" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (26).gif" alt="Blinkie: Pink! Pink! ... I love Pink!" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (27).gif" alt="Blinkie: I love Halloween" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (29).gif" alt="Blinkie: I hate mean people!" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (30).png" alt="Blinkie: Bite me. :)" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (31).webp" alt="Blinkie: I am a gay vampire and you can't stop me" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (31).gif" alt="Blinkie: Introvert" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (32).gif" alt="Blinkie: Artist" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (33).gif" alt="Blinkie: I love comments!" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (30).gif" alt="Blinkie: tummy ache survivor" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/b (34).gif" alt="Blinkie: I view the page source" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/cringeculture.webp" alt="Blinkie: Cringe Culture is DEAD" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/homoeroticsubtext.gif" alt="Blinkie: Homoerotic Subtext" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/i-love-comments.gif" alt="Blinkie: I love comments" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/deletetiktok.webp" alt="Blinkie: Delete TikTok" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/i-love-my-computer.gif" alt="Blinkie: I love my computer" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/neocities-user.webp" alt="Blinkie: Neocities user" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/my-back-hurts.gif" alt="Blinkie: My back hurts!!!" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/jurassic-park.gif" alt="Blinkie: Welcome to Jurassic Park" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/water-drinker.gif" alt="Blinkie: Water Drinker" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/dresslikeshit.gif" alt="Blinkie: Dress like shit" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/onthefloor.gif" alt="Blinkie: Fuck this, I am sitting on the floor" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/censorship.gif" alt="Blinkie: Censorship kills creativity" /></div>
-<div><img width="150" height="20" src="../assets/img/blinkies/blinkies/corporateinvasion.gif" alt="Blinkie: I feel violated by the corporate invasion on my attention span" /></div></marquee>
-              <marquee class="marquee aside-blinkies__blinkies" scrollamount="4"><div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (1).gif" alt="Stamp: Delete Twitter, make a Neocities" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (2).gif" alt="Button: Best viewed with Computer" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (3).gif" alt="Button: Firefox now!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (4).gif" alt="Button: old man yaoi now!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (5).gif" alt="Button: This site is gay" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (6).jpg" alt="Button: AO3" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (7).gif" alt="Button: HTML: Learn it today!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (7).jpg" alt="Button: Tumblr" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (8).png" alt="Button: Minesweeper" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (8).gif" alt="Button: Ditch Social Media Now!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (9).png" alt="Button: EZGif now!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/button (10).png" alt="Button: Made with Visual Studio Code" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/neocities.gif" alt="Button: Neocities.org: The web is yours!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/jquery.gif" alt="Button: jQuery is evil!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/responsivesite.jpg" alt="Button: Responsive Website" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/getqueer.gif" alt="Button: Get Queer now!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/bookmark-this-page.gif" alt="Button: Bookmark this page!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/alienow.gif" alt="Button: The truth now!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/creationofadam.gif" alt="Button: Creation of Adam" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/statuscafe.gif" alt="Button: Status Cafe" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/ban-time-travel.png" alt="Button: Ban time travel 'now'!" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/project-gutenberg.gif" alt="Button: Gutenberg Project" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/queercode.png" alt="Button: you're telling me a queer coded this" /></div>
-<div><img width="88" height="31" src="../assets/img/blinkies/buttons/pictochat.gif" alt="Button: I miss using Pictochat" /></div>
-
-<!-- CSS Check:-->
-<div>
-  <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" tabindex="-1">
-    <img style="border: 0; width: 88px; height: 31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
-  </a>
-</div></marquee>
-            </div>
-
-            <!-- ----------------- COMING SOON ----------------- -->
-            <!--
-		<div class="aside-stuff aside-changelog">
-          <div class="aside__heading aside__heading--comingsoon" aria-hidden="true">Coming Soon</div>
-          <div class="changelog custom-scrollbar">
-			  <ul aria-label="Coming Soon">
-			 	<li>loading screen</li>
-			 	<li>blog post about polyamory</li>
-			 	<li>dinosaur shrine</li> 
-			 	<li>more shrines</li> 
-			 	<li>advanced coding tutorials</li> 
-				<li>self-made blinkies/buttons/stamps</li>
-			  </ul>
-		  </div>
-        </div>
-		-->
-          </div>
-        </details>
-      </aside>
-      <aside class="aside aside--right desktop-only">
-        <!-- ----------------- CLAP, KIRBY ----------------- -->
-        <div class="aside-stuff aside-clap-kirby">
-          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook">
-            <img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
-            <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode" />
-          </a>
-          <a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
-            <img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode" />
-            <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode" />
-          </a>
-          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">
-            <img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
-            <small>click to clap for me!</small>
-          </a>
-        </div>
-
-        <img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
-
-        <!-- ----------------- STATS / STATUS ----------------- -->
-        <div class="aside-stuff aside-stats">
-          <!--
-		<div class="aside-stats__stat">
-			<div class="aside-stuff__heading"><span>visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
-			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel/stats" target="_blank" id="hitcount"></a></div>
-		</div>
-		<div class="aside-stats__stat">
-			<div class="aside-stuff__heading"><span>followers</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
-			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel" target="_blank">54</a></div>
-		</div>
-		-->
-          <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
-            <div class="aside-stats__stat-content">
-              <center>
-                <a href="https://www.free-website-hit-counter.com">
-                  <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /> </a
-                >
-              </center>
-              <small style="font-size: 0.7em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
-            </div>
-          </div>
-          <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>my time</span><img src="../assets/img/layout/icon-clock.png" alt="" aria-hidden="true" /></div>
-            <div class="aside-stats__stat-content">
-              <div style="text-align: center">
-                <iframe
-                  title="my time"
-                  src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1"
-                  frameborder="0"
-                  width="150"
-                  height="17"
-                  allowtransparency="true"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-          <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>my status</span><img src="../assets/img/layout/icon-happy.png" alt="" aria-hidden="true" /></div>
-            <div class="aside-stats__stat-content" id="statuscafe">
-              <div id="statuscafe-username"></div>
-              <div id="statuscafe-content"></div>
-            </div>
-          </div>
-        </div>
-
-        <img src="../assets/img/layout/divider3.gif" alt="" aria-hidden="true" style="margin-top: -2px" />
-
-        <!-- ----------------- CURRENTLY ----------------- -->
-        <div class="aside-stuff aside-currently">
-          <div class="aside-stuff__heading">Currently</div>
-          <ul>
-            <li aria-label="listening to:">
-              <img src="../assets/img/layout/icon-music.png" alt="" title="listening to:" aria-hidden="true" />
-              <a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">various</a>
-            </li>
-            <li aria-label="watching:">
-              <img src="../assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank">X-Men: The Animated Series (1992); Hazbin Hotel</a>
-            </li>
-            <li aria-label="reading:">
-              <img src="../assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
-              <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank"
-                >X-Men Comics; The Haunting of Hill House
-                <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a
-              >
-            </li>
-            <li aria-label="playing:">
-              <img src="../assets/img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true" />
-              <a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume</a>
-            </li>
-            <li aria-label="obsessed with:">
-              <img src="../assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
-              <span
-                >X-Men
-                <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
-              >
-            </li>
-          </ul>
-        </div>
-
-        <!-- ----------------- NEIGHBORS ----------------- -->
-        <div class="aside-stuff aside-mutuals" data-nesting="../" aria-hidden="true">
-          <div class="aside-stuff__heading">
-            <a href="/about/neighbors">Neighbors<img src="../assets/img/layout/icon-building.png" alt="" aria-hidden="true" /></a>
-          </div>
-          <a href="#afterneighbours" class="skiplink" aria-hidden="true">Skip neighbours</a>
-          <div id="beforeneighbours"></div>
-          <marquee class="marquee aside-mutuals__buttons" scrollamount="5"><a title="Florrie's Garden" href="https://florrie.ichi.city/" target="_blank"><img width="88" height="31" src="../assets/img/links/florrie.gif" alt="florrie" /></a>
-<a title="cinajimrollie" href="https://florrie.ichi.city/" target="_blank"><img width="88" height="31" src="https://i.postimg.cc/hvr1jPrP/cinajimrollie.png" alt="cinajimrollie" /></a>
-<a href="https://lostletters.neocities.org/" title="lostletters"><img width="88" height="31" src="../assets/img/links/lostletters.gif" alt="lostletters" /></a>
-<a href="https://strawberry-gashes.neocities.org" title="strawberry-gashes"><img width="88" height="31" src="https://i.imgur.com/V9sIpx6.gif" alt="strawberry-gashes" /></a>
-<a href="https://lexiqqq.com/" title="lexiqqq"><img width="88" height="31" src="../assets/img/links/lexiqqq.gif" alt="lexiqqq" /></a>
-<a href="https://cinni.net/" title="cinni.net"><img width="88" height="31" src="../assets/img/links/cinni.png" alt="cinni.net" /></a>
-<a href="https://comfort.kayla.care/" title="Comfort"
-  ><img width="88" height="31" src="https://64.media.tumblr.com/7e6e9b6d9030a392c9fe248c4994aa4e/9594f64d816b9c9e-94/s100x200/2bb06e351525682bf448afebfac361caffc248ce.gif" alt="Comfort"
-/></a>
-<a href="https://sakuradreams.neocities.org/" title="sakuradreams"><img width="88" height="31" src="../assets/img/links/sakuradreams.gif" alt="sakuradreams" /></a>
-<a href="https://doqmeat.com/" title="doqmeant"><img width="88" height="31" src="../assets/img/links/doqmeat.png" alt="doqmeant" /></a>
-<a href="https://lavenderblues.neocities.org/" title="lavenderblues"><img width="88" height="31" src="../assets/img/links/lavenderblues.gif" alt="lavenderblues" /></a>
-<a href="https://vencake.neocities.org/" title="VenCake"><img width="88" height="31" src="../assets/img/links/vencake.png" alt="VenCake" /></a>
-<a href="https://faintlymacabre.neocities.org/" title="faintlymacabre"><img width="88" height="31" src="../assets/img/links/faintlymacabre.gif" alt="faintlymacabre" /></a>
-<a href="https://tthumbelina.neocities.org/" title="tthumbelina"><img width="88" height="31" src="../assets/img/links/tthumbelina.GIF" alt="tthumbelina" /></a>
-<a href="https://chocolaterevel.neocities.org/" title="chocolaterevel"><img width="88" height="31" src="../assets/img/links/chocolaterevel.png" alt="chocolaterevel" /></a>
-<a href="https://furbee.neocities.org/" title="furbee"><img width="88" height="31" src="../assets/img/links/furbee.png" alt="furbee" /></a>
-<a href="https://digibun.neocities.org/" title="digibun"><img width="88" height="31" src="../assets/img/links/digibun.png" alt="digibun" /></a>
-<a href="https://yapi.lol/" title="yapi.lol"><img width="88" height="31" src="../assets/img/links/yapilol.gif" alt="yapi.lol" /></a>
-<a href="https://cyberstheb.neocities.org/" title="cyberstheb"><img width="88" height="31" src="../assets/img/links/cyberstheb.png" alt="cyberstheb" /></a>
-<a href="https://thegardenofmadeline.neocities.org/" title="thegardenofmadeline"><img width="88" height="31" src="../assets/img/links/gardenofmadeline.gif" alt="thegardenofmadeline" /></a>
-<a href="https://maplebear.neocities.org/" title="maplebear"><img width="88" height="31" src="https://i.imgur.com/YB9L6sN.gif" alt="maplebear" /></a>
-<a href="https://jeith.neocities.org/" title="jeith"><img width="88" height="31" src="https://jeith.com/jeith.gif" alt="jeith" /></a>
-<a href="https://alexparozi.neocities.org/" title="cascade!"><img width="88" height="31" src="https://file.garden/ZnR0Oyc2xySzmhy2/button.png" alt="cascade!" /></a>
-<a href="https://jeansgurl98.neocities.org/" title="jeansgurl98"><img width="88" height="31" src="../assets/img/links/jeansgurl98.png" alt="jeansgurl98" /></a>
-<a href="https://freaksaint.neocities.org/" title="freaksaint"><img width="88" height="31" src="https://i.imgur.com/0G6GQYJ.png" alt="freaksaint" /></a>
-<a href="https://artwork.neocities.org/" title="artwork"><img width="88" height="31" src="../assets/img/links/artwork.gif" alt="artwork" /></a>
-<a href="https://metmoxie.com/" title="metmoxie"><img width="88" height="31" src="../assets/img/links/metmoxie.webp" alt="metmoxie" /></a>
-<a href="https://lavender-but-bread.neocities.org/" title="lavender-but-bread"
-  ><img width="88" height="31" src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif" alt="lavender-but-bread"
-/></a>
-<a href="https://melxncholyman.neocities.org/" title="melxncholyman"><img width="88" height="31" src="../assets/img/links/melxncholyman.png" alt="melxncholyman" /></a>
-<a href="https://kubikill.neocities.org/" title="kubikill"
-  ><img width="88" height="31" src="https://kubikill.neocities.org/kubikill88x31static.png" alt="kubikill's Cyberspace Portal"
-/></a>
-<a href="https://alphacentauri.neocities.org/" title="alphacentauri"
-  ><img width="88" height="31" src="https://alphacentauri.neocities.org/_img/alphacentauri.gif" alt="alphacentauri"
-/></a>
-<a href="https://solita.neocities.org/" title="Solita"><img width="88" height="31" src="../assets/img/links/solita.png" alt="Solita" /></a>
-<a href="https://daniele63.com/" title="Daniele's Website"><img width="88" height="31" src="../assets/img/links/danieles.jpg" alt="Daniele's Website" /></a>
-<a href="https://wilburwilliams.uk/" title="Wilbur's Site"><img width="88" height="31" src="../assets/img/links/wilburwilliams.gif" alt="Wilbur's Site" /></a>
-<a href="https://cheytopia.neocities.org/" title="cheytopia"><img width="88" height="31" src="../assets/img/links/cheytopia.png" alt="cheytopia" /></a>
-<a href="https://cowgrls.neocities.org/" title="jimbo's barnyard"><img width="88" height="31" src="https://cowgrls.neocities.org/barnyard88x31.gif" alt="jimbo's barnyard" /></a>
-<a href="https://firozah.com/" title="firozah"><img width="88" height="31" src="../assets/img/links/firozah.gif" alt="firozah" /></a>
-
-<!-- <a href="LINK" title="TITLE"><img width="88" height="31" src="../assets/img/links/IMAGE" alt="TITLE" /></a> --></marquee>
-          <div id="afterneighbours">Click <a href="/about/neighbors">here</a> to view them all.</div>
-          <a href="#beforeneighbours" class="skiplink" aria-hidden="true">Skip to before neighbours</a>
-        </div>
-
-        <!-- ----------------- CHATBOX ----------------- -->
-        <div class="aside-stuff aside-chatbox">
-          <div class="aside-stuff__heading" aria-hidden="true">Chatbox<img src="../assets/img/layout/icon-chat.png" alt="" aria-hidden="true" /></div>
-          <a href="#afterchatbox" class="skiplink" aria-hidden="true">Skip chatbox iFrame</a>
-          <div id="beforechatbox"></div>
-          <iframe
-            src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk"
-            width="100%"
-            height="300"
-            allowtransparency="yes"
-            allow="autoplay"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            scrolling="auto"
-            aria-label="Chatbox"
-          ></iframe>
-          <div id="afterchatbox"></div>
-          <a href="#beforechatbox" class="skiplink" aria-hidden="true">Skip to before chatbox iFrame</a>
-        </div>
-
-        <!-- ----------------- FLAG COUNTER ----------------- -->
-        <!--
-		<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter"
-        ><img alt="Flag Counter" src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" border="0"/></a>
-	  -->
-      </aside>
-
-      <!-- ----------------- BACK TO TOP ----------------- -->
-      <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
-
-      <!-- ----------------- PROGRESS BAR ----------------- -->
-      
-
-      <!-- ------------------------------------------------ -->
-      <!-- ----------------- MAIN CONTENT ----------------- -->
-      <!-- ------------------------------------------------ -->
-      <main id="main" class="coding-page">
-        
-<section>
-  <h1>Cheatsheet</h1>
-  <p>A reference for often-used lines of code and commands.</p>
-  <div id="toc"></div>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="css">CSS</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote>
-
-  <h3>Absolute Positioning:</h3>
-  <pre><code class="language-scss"></code></pre>
-
-  <h3>Flexbox:</h3>
-  <pre><code class="language-scss"></code></pre>
-
-  <h3>Grid:</h3>
-  <pre><code class="language-scss"></code></pre>
-
-  <h3>Animation:</h3>
-  <pre><code>@keyframes floatyAnimation {
+header { grid-area: header; }
+aside { grid-area: sidebar; }
+main { grid-area: main; }
+footer { grid-area: footer; }</code></pre><h3>Animation:</h3><pre><code>@keyframes floatyAnimation {
   0% {
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translatey(-4px);
+    transform: translateY(-4px);
   }
   100% {
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
 }
 
@@ -920,36 +44,20 @@ div {
     animation: none;
   }
 }
-</code></pre>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="js">JavaScript</h2>
-  <h3>Waiting for DOM:</h3>
-  <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
+</code></pre></section><section><h2 id="js">JavaScript</h2><h3>Waiting for DOM:</h3><pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
   // code here...
 });
-</code></pre>
-  <h3>For-Each over Elements:</h3>
-  <pre><code>const myElements = document.querySelectorAll(".element");
+</code></pre><h3>For-Each over Elements:</h3><pre><code>const myElements = document.querySelectorAll(".element");
 [...myElements].forEach((el) => {
   console.log(el);
-});</code></pre>
-
-  <h3>ECMAScript:</h3>
-  <pre><code class="language-javascript">import "./myStyles.scss";
+});</code></pre><h3>ECMAScript:</h3><pre><code class="language-javascript">import "./myStyles.scss";
 import "./myFolder/myFile";
 import { doSomething } from "./myFolder/myFile";
 
 export function doSomething() {
 	...
 }
-</code></pre>
-
-  <h3><code>fetch</code>:</h3>
-  <pre><code>fetch("/example.json")
+</code></pre><h3><code>fetch</code>:</h3><pre><code>fetch("/example.json")
   .then(response => {
     // handle the response
     if (res.ok) {
@@ -963,18 +71,7 @@ export function doSomething() {
   .catch(error => {
     // handle the error. note: 404 errors do not land here.
     console.log(error);
-  });</code></pre>
-  <p>
-    JSON -&gt; JS Object: <code>jsonData.json()</code><br />
-    JS Object -&gt; JSON: <code>JSON.stringify(obj)</code>
-  </p>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="scss">SCSS</h2>
-  <pre><code class="language-scss">$font: Helvetica, Arial;
+  });</code></pre><p>JSON -&gt; JS Object: <code>jsonData.json()</code><br>JS Object -&gt; JSON: <code>JSON.stringify(obj)</code></p></section><section><h2 id="scss">SCSS</h2><pre><code class="language-scss">$font: Helvetica, Arial;
 $textColor: black;
 $linkColor: #333333;
 
@@ -999,9 +96,7 @@ a {
     color: opacify($linkColor, 0.5);
   }
 }
-</code></pre>
-  <h3>Mixins:</h3>
-  <pre><code class="language-scss">@mixin theme($theme: black) {
+</code></pre><h3>Mixins:</h3><pre><code class="language-scss">@mixin theme($theme: black) {
   background: $theme;
   color: #fff;
 }
@@ -1012,96 +107,44 @@ a {
 .alert {
   @include theme($theme: red);
 }
-</code></pre>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="git">Git / GitHub</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/git-tutorial">git tutorial</a>.</blockquote>
-
-  <h3>New Project:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git init <small>initalizes your current folder as a git repository</small>
+</code></pre></section><section><h2 id="git">Git / GitHub</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/git-tutorial">git tutorial</a>.</blockquote><h3>New Project:</h3><blockquote class="cheatsheet-blockquote"><pre>git init <small>initalizes your current folder as a git repository</small>
 git remote add origin &lt;https link&gt; <small>connects your local folder with the GitHub repository you have created on github.com</small>
 git add . <small>stages all your files</small>
 git commit -m "First Commit" <small>commits the staged files</small>
 git branch -M main <small>renames the branch to 'main'</small>
 git push --set-upstream origin main <small>pushes (= uploads) your local files to your GitHub repository</small>
-git pull --set-upstream origin main <small>pulls (= downloads) the files in your GitHub repository into your local folder</small></pre>
-  </blockquote>
-
-  <h3>Staging, Committing, Pushing:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git status <small>shows the status of every changed file</small>
+git pull --set-upstream origin main <small>pulls (= downloads) the files in your GitHub repository into your local folder</small></pre></blockquote><h3>Staging, Committing, Pushing:</h3><blockquote class="cheatsheet-blockquote"><pre>git status <small>shows the status of every changed file</small>
 git add &lt;file&gt; <small>stages a file</small>
 git add . <small>stages all changed files</small>
 git commit -m "Example message" <small>commits the staged files</small>
 git commit --amend -m "an updated commit message" <small>adds the staged files to the previous commit</small>
 git commit --amend --no-edit <small>adds the staged files to the previous commit, without changing the commit message</small>
-git push <small>pushes (= uploads) your local files to your GitHub repository</small></pre>
-  </blockquote>
-
-  <h3>Undoing:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
+git push <small>pushes (= uploads) your local files to your GitHub repository</small></pre></blockquote><h3>Undoing:</h3><blockquote class="cheatsheet-blockquote"><pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
 git reset &lt;previous_commit_hash&gt; <small>revert a commit as if it never happened</small>
 git restore --staged &lt;file&gt; <small>unstages a file</small>
 git reset HEAD -- &lt;file&gt; <small>same as above (unstages a file)</small>
 git restore &lt;file&gt; <small>discards changes in an unstaged file</small>
-git restore . <small>discards all changes in all unstaged files</small></pre>
-  </blockquote>
-
-  <h3>Branches:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git branch <small>shows branches</small>
+git restore . <small>discards all changes in all unstaged files</small></pre></blockquote><h3>Branches:</h3><blockquote class="cheatsheet-blockquote"><pre>git branch <small>shows branches</small>
 git switch -c &lt;new-branch&gt; <small>makes a new branch and checks it out (currently changed files will be kept)</small>
-git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre>
-  </blockquote>
-
-  <h3>Misc.:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
+git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre></blockquote><h3>Misc.:</h3><blockquote class="cheatsheet-blockquote"><pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
 git log <small>show a log of all commits</small>
 git log --oneline <small>show a log of all commits (shorter)</small>
 git diff <small>shows all changes</small>
 git diff &lt;a&gt; <small>shows all changes in a file/folder</small>
 git -v <small>shows the git version you are using</small>
 git remote -v <small>shows all remotes</small>
-git remote remove &lt;name&gt; <small>deletes a remote</small></pre>
-  </blockquote>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="npm">npm</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote>
-
-  <h3>Installing Packages:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
+git remote remove &lt;name&gt; <small>deletes a remote</small></pre></blockquote></section><section><h2 id="npm">npm</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote><h3>Installing Packages:</h3><blockquote class="cheatsheet-blockquote"><pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
 npm install --save-dev &lt;package&gt; <small>installs a package as a dev dependency</small>
 npm uninstall &lt;package&gt; <small>uninstalls a package</small>
 npm install <small>installs all dependencies</small>
-npm update <small>installs and updates all dependencies</small></pre>
-  </blockquote>
-
-  <h3>Misc.:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
+npm update <small>installs and updates all dependencies</small></pre></blockquote><h3>Misc.:</h3><blockquote class="cheatsheet-blockquote"><pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
 node -v <small>shows node version</small>
 npm -v <small>shows npm version</small>
 npm init <small>created package.json for you</small>
 npm cache clean --force <small>clears cache</small>
 npm list -g --depth=0 <small>shows all installed packages</small>
 npmoutdated <small>shows all outdated packages</small>
-npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre>
-  </blockquote>
-
-  <h3>Example <code>package.json</code> :</h3>
-  <pre><code>{
+npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre></blockquote><h3>Example <code>package.json</code> :</h3><pre><code>{
   "name": "project-name",
   "private": true,
   "devDependencies": {
@@ -1112,41 +155,11 @@ npm view &lt;package&gt; version <small>shows the newest available version of a 
     "watch": "webpack --watch"
   }
 }
-</code></pre>
-
-  <h3>Versions:</h3>
-  <ul>
-    <li><code>1.2.3</code>: only version 1.2.3, nothing else</li>
-    <li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li>
-    <li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li>
-    <li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li>
-    <li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li>
-    <li><code>*</code>: any version</li>
-  </ul>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="webpack">Webpack</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/webpack-tutorial">webpack tutorial</a>.</blockquote>
-
-  <h3>Installation:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm install --save-dev webpack webpack-cli <small>installs webpack</small>
+</code></pre><h3>Versions:</h3><ul><li><code>1.2.3</code>: only version 1.2.3, nothing else</li><li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li><li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li><li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li><li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li><li><code>*</code>: any version</li></ul></section><section><h2 id="webpack">Webpack</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/webpack-tutorial">webpack tutorial</a>.</blockquote><h3>Installation:</h3><blockquote class="cheatsheet-blockquote"><pre>npm install --save-dev webpack webpack-cli <small>installs webpack</small>
 npm install --save-dev style-loader css-loader sass-loader sass mini-css-extract-plugin <small>installs packages required for (s)css handling</small>
-npm list --depth=0 | findstr webpack  <small>shows webpack version</small></pre>
-  </blockquote>
-
-  <h3>Running:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npx webpack <small>builds your files</small>
+npm list --depth=0 | findstr webpack  <small>shows webpack version</small></pre></blockquote><h3>Running:</h3><blockquote class="cheatsheet-blockquote"><pre>npx webpack <small>builds your files</small>
 npx webpack --watch <small>watches your files (and builds them when a change happens)</small>
-npx webpack --config webpack2.config.js <small>runs webpack using a specific configuration file</small></pre>
-  </blockquote>
-
-  <h3>Example <code>webpack.config.js</code> :</h3>
-  <pre style="white-space: break-spaces"><code class="language-javascript">const path = require("path");
+npx webpack --config webpack2.config.js <small>runs webpack using a specific configuration file</small></pre></blockquote><h3>Example <code>webpack.config.js</code> :</h3><pre style="white-space:break-spaces"><code class="language-javascript">const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -1195,47 +208,18 @@ module.exports = {
   // Generate source maps for easier debugging:
   devtool: "source-map",
 };
-</code></pre>
-
-  <p>(Replace <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code> to inject CSS into DOM.)</p>
-
-  <h3>SCSS:</h3>
-  <pre><code class="language-scss">@import "css/example";</code></pre>
-
-  <h3>JavaScript:</h3>
-  <pre style="white-space: break-spaces"><code class="language-javascript">import "./main.scss"; 
+</code></pre><p>(Replace <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code> to inject CSS into DOM.)</p><h3>SCSS:</h3><pre><code class="language-scss">@import "css/example";</code></pre><h3>JavaScript:</h3><pre style="white-space:break-spaces"><code class="language-javascript">import "./main.scss"; 
 import { doExample } from "./js/example.js"; 
 
 document.addEventListener("DOMContentLoaded", () =&gt; {
   doExample();
 });
-</code></pre>
-  <pre><code>export function doExample() {
+</code></pre><pre><code>export function doExample() {
   console.log("This example works too!");
 }
-</code></pre>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="11ty">11ty (Eleventy)</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote>
-
-  <h3>Installation:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre>
-  </blockquote>
-
-  <h3>Running:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npx @11ty/eleventy <small>builds your files</small>
+</code></pre></section><section><h2 id="11ty">11ty (Eleventy)</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote><h3>Installation:</h3><blockquote class="cheatsheet-blockquote"><pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre></blockquote><h3>Running:</h3><blockquote class="cheatsheet-blockquote"><pre>npx @11ty/eleventy <small>builds your files</small>
 npx @11ty/eleventy --watch <small>watches your files (and builds them when a change happens)</small>
-npx @11ty/eleventy --serve <small>watches your files (and builds them when a change happens), and stars a webserver on localhost</small></pre>
-  </blockquote>
-
-  <h3>Example <code>.eleventy.js</code> :</h3>
-  <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
+npx @11ty/eleventy --serve <small>watches your files (and builds them when a change happens), and stars a webserver on localhost</small></pre></blockquote><h3>Example <code>.eleventy.js</code> :</h3><pre style="white-space:break-spaces"><code>module.exports = function (eleventyConfig) {
   // This makes the eleventy command quieter (with less detail)
   eleventyConfig.setQuietMode(true);
 
@@ -1259,10 +243,7 @@ npx @11ty/eleventy --serve <small>watches your files (and builds them when a cha
     },
   };
 };
-</code></pre>
-
-  <h3>Nunjucks:</h3>
-  <pre><code class="language-plaintext">Setting a variable:
+</code></pre><h3>Nunjucks:</h3><pre><code class="language-plaintext">Setting a variable:
     {% set myText = "Hello World!" %}
     {% set showHeader = true %}
 
@@ -1300,10 +281,7 @@ Logical Operators (and, or, not instead of && || !)
     {% if myVariable1 and myVariable2 %}...{% endif %}
     {% if myVariable1 or myVariable2 %}...{% endif %}
     {% if not myVariable %}...{% endif %}
-</code></pre>
-
-  <h3>Example Template (e.g. <code>_includes/myTemplate.njk</code>):</h3>
-  <pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><h3>Example Template (e.g. <code>_includes/myTemplate.njk</code>):</h3><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;title&gt;{{ title }}&lt;/title&gt;
@@ -1321,10 +299,7 @@ Logical Operators (and, or, not instead of && || !)
     &lt;footer&gt;Footer&lt;/footer&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-
-  <h3>Example <code>page.html</code> or <code>page.njk</code> :</h3>
-  <pre><code>---
+</code></pre><h3>Example <code>page.html</code> or <code>page.njk</code> :</h3><pre><code>---
 layout: myTemplate.njk
 title: About Me
 bodyClass: about-me-page
@@ -1333,51 +308,4 @@ nesting: "../"
 
 &lt;h1&gt;About Me&lt;/h1&gt;
 &lt;p&gt;Here is the main content of your file...&lt;/p&gt;
-</code></pre>
-</section>
-
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-<section class="buy-me-a-coffee">
-  <p>
-    I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
-    <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
-  </p>
-  <p>
-    <small
-      >If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I promise I
-      don't bite!</small
-    >
-  </p>
-</section>
-
-      </main>
-
-      <!-- ------------------------------------------------ -->
-      <!-- ----------------- FOOTER ----------------- -->
-      <!-- ------------------------------------------------ -->
-      <footer>
-        <div class="footer-content">
-          <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS" /></a> <i>┊</i> created by petrapixel
-          2024 - <span style="font-size: 1.3em">∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
-          <span class="desktop-only"> <i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
-        </div>
-        <div class="footer-content mobile-only">
-          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">
-            <img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
-            <small>click to clap for me!</small>
-          </a>
-          <br />
-          <center>
-            <small>Visitors:</small>
-            <a href="https://www.free-website-hit-counter.com">
-              <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" />
-            </a>
-            
-          </center>
-        </div>
-      </footer>
-    </div>
-    
-  </body>
-</html>
+</code></pre></section><section class="buy-me-a-coffee"><p>I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif"></p><p><small>If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I promise I don't bite!</small></p></section></main><footer><div class="footer-content"><a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS"></a><i>┊</i> created by petrapixel 2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a> <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a> <i>┊</i> <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></span></div><div class="footer-content mobile-only"><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a><br><center><small>Visitors:</small> <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center></div></footer></div></body></html>

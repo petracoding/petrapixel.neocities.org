@@ -1,5 +1,5 @@
 ---
-noCache: "20241001"
+noCache: "20241101"
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ noCache: "20241001"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ nesting }}assets/img/favicon.ico" rel="icon" type="image/x-icon" />
 
-    {% if not noSEO %}
+    {% if not noSEO and not testingOnLocalhost %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
     <script>
@@ -79,7 +79,7 @@ noCache: "20241001"
           </ul>
         </nav>
       </aside>
-      <main id="main">
+      <main id="main" class="custom-scrollbar">
         {{ content | safe }}
       </main>
     </div>

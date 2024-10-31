@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241001"
+noCache: "20241101"
 ---
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ noCache: "20241001"
     <script>
       hljs.highlightAll();
     </script>
-    {% endif %} {% if not noSEO %}
+    {% endif %} {% if not noSEO and not testingOnLocalhost %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
     <script>
@@ -62,6 +62,11 @@ noCache: "20241001"
           <span>toggle theme</span>
         </button>
       </div>
+      <div id="font-toggler" aria-hidden="true">
+        <button type="button">
+          <span>toggle font</span>
+        </button>
+      </div>
       {% endif %}
       <header>
         <div class="header-heading">
@@ -79,14 +84,14 @@ noCache: "20241001"
               </li>
               <li>
                 <details id="menu-aboutsite">
-                  <summary>about <small>(5)</small></summary>
+                  <summary>about <small>(6)</small></summary>
                   <ul>
                     <li>
                       <a href="/about-me/about">about me ➚</a>
                     </li>
                     <li><a href="/about/about-the-site">about the site</a></li>
                     <li><a href="/about/guestbook">guestbook</a></li>
-                    <!-- <li><a href="/about/neighbors">neighbors</a></li> -->
+                    <li><a href="/about/neighbors">neighbors</a></li>
                     <li><a href="/about/credits">credits</a></li>
                     <li><a href="/sitemap">sitemap</a></li>
                   </ul>
@@ -121,75 +126,107 @@ noCache: "20241001"
               </li>
               <li>
                 <details id="menu-resources">
-                  <summary>resources for you <small>(6)</small></summary>
+                  <summary>resources for you <small>(5)</small></summary>
                   <ul>
                     <li><a href="/resources/bookmarks">bookmarks</a></li>
                     <li><a href="/resources/software-recs">software recs</a></li>
                     <li><a href="/resources/clipboard">clipboard</a></li>
                     <li><a href="/resources/notion">notion</a></li>
+                    <!--
                     <li><a href="/resources/google-spreadsheets-excel">spreadsheets</a></li>
+                   -->
                     <li><a href="/resources/vocabulary">vocabulary</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details id="menu-more">
+                  <summary>
+                    random stuff <small>(5)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+                  </summary>
+                  <ul>
+                    <!--
+                    <li><a href="/blog{% if testingOnLocalhost %}/index{% endif %}">blog</a></li>
+					-->
+                    <li><a href="/shrines/index">shrines</a></li>
+                    <li>
+                      <a href="/cliques"
+                        >cliques<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
+                    <li><a href="/about/blinkies">blinkies & more</a></li>
+                    <li><a href="/fun/list-idea-generator">list idea generator</a></li>
+                    <li><a href="/fun/bored-button">are you bored?</a></li>
                   </ul>
                 </details>
               </li>
               <li>
                 <details id="menu-codinghelp">
                   <summary>
-                    coding help <small>(16)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+                    coding help <small>(17)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
                   </summary>
-                  <br />
-                  <ul>
-                    <li>
-                      <a href="/coding/layout-generator"
-                        >layout generator<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="/coding/checklist">self-study checklist</a>
-                    </li>
-                    <li><a href="/coding/cheatsheet">cheatsheet</a></li>
-                    <li><a href="/coding/neocities">neocities tips</a></li>
-                    <li><a href="/coding/my-setup">my coding setup</a></li>
-                  </ul>
-                  <strong>Beginner Guides:</strong>
-                  <ul>
-                    <li><a href="/coding/common-questions">common questions</a></li>
-                    <li><a href="/coding/common-mistakes">common mistakes</a></li>
-                    <li><a href="/coding/snippets">snippets & tips</a></li>
-                    <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
-                    <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
-                    <li>
-                      <a href="/coding/positioning-tutorial"
-                        >positioning/layout tutorial (+ flexbox, grid)<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="/coding/code-quality"
-                        >code quality guide<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-                  </ul>
-                  <strong>Intermediate Guides:</strong>
-                  <ul>
-                    <li>
-                      <a href="/coding/git-tutorial">git tutorial</a>
-                      <a href="/coding/npm-tutorial">node/npm tutorial</a>
-                      <a href="/coding/webpack-tutorial">webpack tutorial</a>
-                      <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial</a>
-                    </li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details id="menu-more">
-                  <summary>more <small>(5)</small></summary>
-                  <ul>
-                    <li><a href="/blog">blog</a></li>
-                    <li><a href="/shrines/index">shrines</a></li>
-                    <li><a href="/about/blinkies">blinkies & more</a></li>
-                    <li><a href="/fun/list-idea-generator">list idea generator</a></li>
-                    <li><a href="/fun/bored-button">are you bored?</a></li>
-                  </ul>
+
+                  <div class="aside-scrollbox">
+                    <strong>Tools:</strong>
+                    <ul>
+                      <li>
+                        <a href="/coding/layout-generator">layout generator</a>
+                      </li>
+                      <li>
+                        <a href="/coding/checklist">self-study checklist</a>
+                      </li>
+                      <li><a href="/coding/cheatsheet">cheatsheet</a></li>
+                    </ul>
+
+                    <strong>Guides:</strong>
+                    <ul>
+                      <li><a href="/coding/common-questions">common questions</a></li>
+                      <li><a href="/coding/common-mistakes">common mistakes</a></li>
+                      <li><a href="/coding/snippets">snippets & tips</a></li>
+                      <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
+                      <li>
+                        <a href="/coding/code-quality">code quality guide</a>
+                      </li>
+                      <li>
+                        <a href="/coding/now-what"
+                          >i know html/css/js... now what?<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                        ></a>
+                      </li>
+                    </ul>
+
+                    <strong>Beginner Tutorials:</strong>
+                    <ul>
+                      <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
+                      <li>
+                        <a href="/coding/positioning-tutorial">positioning/layout tutorial (+ flexbox, grid)</a>
+                      </li>
+                      <li>
+                        <a href="/coding/performance">how to make pages load faster</a>
+                      </li>
+                    </ul>
+
+                    <strong>Advanced Tutorials:</strong>
+                    <ul>
+                      <li>
+                        <a href="/coding/git-tutorial">git tutorial</a>
+                      </li>
+                      <li>
+                        <a href="/coding/npm-tutorial">node/npm tutorial</a>
+                      </li>
+                      <li>
+                        <a href="/coding/webpack-tutorial">webpack tutorial</a>
+                      </li>
+                      <li>
+                        <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial</a>
+                      </li>
+                    </ul>
+
+                    <strong>Miscellaneous:</strong>
+                    <ul>
+                      <li><a href="/coding/neocities">neocities tips</a></li>
+                      <li><a href="/coding/my-setup">my coding setup</a></li>
+                    </ul>
+                  </div>
                 </details>
               </li>
             </ul>
@@ -230,36 +267,28 @@ noCache: "20241001"
               >
             </div>
 
-            <img src="{{ nesting }}assets/img/layout/divider1.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
+            <img src="{{ nesting }}assets/img/layout/divider5.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
 
             <!-- ----------------- POLL ----------------- -->
             <div class="aside-stuff aside-poll" aria-hidden="true">
               <div class="aside-stuff__heading" aria-hidden="true">Poll<img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
 
-              <form method="post" action="https://poll.pollcode.com/44915721">
+              <form method="post" action="https://poll.pollcode.com/75543329">
                 <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
-                  <div style="padding: 2px 0px 4px 2px"><strong>do you watch/like horror movies?</strong></div>
-                  <input type="radio" name="answer" value="1" id="answer449157211" style="float: left" /><label for="answer449157211" style="float: left; width: 150px"
-                    >nope, i'm way too scared!</label
+                  <div style="padding: 2px 0px 4px 2px"><strong>when do you start to listen to christmas songs?</strong></div>
+                  <input type="radio" name="answer" value="1" id="answer755433291" style="float: left" /><label for="answer755433291" style="float: left; width: 150px"
+                    >once halloween is over, baby!</label
                   >
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="2" id="answer449157212" style="float: left" /><label for="answer449157212" style="float: left; width: 150px"
-                    >i'm a scaredy-cat, but i try</label
+                  <input type="radio" name="answer" value="2" id="answer755433292" style="float: left" /><label for="answer755433292" style="float: left; width: 150px">not before december</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="3" id="answer755433293" style="float: left" /><label for="answer755433293" style="float: left; width: 150px"
+                    >in the week before christmas</label
                   >
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="3" id="answer449157213" style="float: left" /><label for="answer449157213" style="float: left; width: 150px"
-                    >i'm not scared but i just don't enjoy them</label
-                  >
+                  <input type="radio" name="answer" value="4" id="answer755433294" style="float: left" /><label for="answer755433294" style="float: left; width: 150px">only on christmas</label>
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="4" id="answer449157214" style="float: left" /><label for="answer449157214" style="float: left; width: 150px">occasionally</label>
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="5" id="answer449157215" style="float: left" /><label for="answer449157215" style="float: left; width: 150px"
-                    >i watch quite a few horror movies!</label
-                  >
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="6" id="answer449157216" style="float: left" /><label for="answer449157216" style="float: left; width: 150px"
-                    >horror is my favorite movie genre!</label
-                  >
+                  <input type="radio" name="answer" value="5" id="answer755433295" style="float: left" /><label for="answer755433295" style="float: left; width: 150px">never</label>
                   <div style="clear: both; height: 2px"></div>
                   <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
                   <div align="right" style="font-size: 10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div>
@@ -271,18 +300,34 @@ noCache: "20241001"
 			- https://poll.pollcode.com/18931664_result?v
 		-->
 
-            <!-- ----------------- IMAGE OF THE MOMENT ----------------- -->
-            <div class="aside-stuff aside-poll">
-              <div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="{{ nesting }}assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
-              <a href="https://at.pinterest.com/pin/96334879525449893/" target="_blank" class="image-of-the-moment">
-                <img src="https://i.pinimg.com/736x/bd/58/62/bd5862d9ff4167c5e70fddedd25a04b9.jpg" alt="Nightcrawler (X-Men Comics)" title="Nightcrawler (X-Men Comics)" />
-              </a>
-            </div>
+            <img src="{{ nesting }}assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="padding-top: 5px" />
 
             <!-- ----------------- BLINKIES ----------------- -->
             <div class="aside-stuff aside-blinkies" aria-hidden="true">
               <marquee class="marquee aside-blinkies__buttons" scrollamount="5">{% include 'blinkies-blinkies.njk' %}</marquee>
               <marquee class="marquee aside-blinkies__blinkies" scrollamount="4">{% include 'blinkies-buttons.njk' %}</marquee>
+            </div>
+
+            <img src="{{ nesting }}assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top: -5px" />
+
+            <img src="{{ nesting }}assets/img/layout/divider7.gif" alt="" aria-hidden="true" style="padding-top: 10px" />
+
+            <!-- ----------------- IMAGE OF THE MOMENT ----------------- 
+            <div class="aside-stuff aside-poll">
+              <div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="{{ nesting }}assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
+              <a href="https://at.pinterest.com/pin/357402920447991964/" target="_blank" class="image-of-the-moment">
+                <img src="https://i.pinimg.com/564x/cc/0c/f9/cc0cf91f9390dc6abfce564c02c23dd8.jpg" alt="Bella and Edward" title="Bella and Edward" />
+              </a>
+            </div>
+            -->
+
+            <!-- ----------------- NAV LINK ----------------- -->
+            <div class="aside-stuff aside-poll">
+              <div class="aside-stuff__heading" aria-hidden="true">Other Sites<img src="{{ nesting }}assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
+              <iframe class="aside-navlinkads" width="170" height="170" style="border: none" src="https://dimden.neocities.org/navlink/" name="neolink" aria-label="Navlink"></iframe>
+              <center>
+                <p style="line-height: 1"><small>These are "ads" to other indie web sites. You should check them out :)</small></p>
+              </center>
             </div>
 
             <!-- ----------------- COMING SOON ----------------- -->
@@ -311,6 +356,14 @@ noCache: "20241001"
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode" />
           </a>
+          <!--
+          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook">
+            <img src="{{ nesting }}assets/img/glitter-graphics/guestbook.gif" alt="sign my guestbook" />
+          </a>
+          <a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
+            <img src="{{ nesting }}assets/img/glitter-graphics/profile.gif" alt="follow me on neocities" />
+          </a>
+		  -->
           <a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode" />
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode" />
@@ -319,6 +372,9 @@ noCache: "20241001"
             <img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
             <small>click to clap for me!</small>
           </a>
+          <!--
+          <a href="https://petrapixel.nekoweb.org/" target="_blank">Follow on Nekoweb</a>
+		  -->
         </div>
 
         <img src="{{ nesting }}assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
@@ -330,10 +386,6 @@ noCache: "20241001"
 			<div class="aside-stuff__heading"><span>visitors</span><img src="{{nesting}}assets/img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
 			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel/stats" target="_blank" id="hitcount"></a></div>
 		</div>
-		<div class="aside-stats__stat">
-			<div class="aside-stuff__heading"><span>followers</span><img src="{{nesting}}assets/img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
-			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel" target="_blank">54</a></div>
-		</div>
 		-->
           <div class="aside-stats__stat">
             <div class="aside-stuff__heading"><span>visitors</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
@@ -343,7 +395,7 @@ noCache: "20241001"
                   <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /> </a
                 >{% endif %}
               </center>
-              <small style="font-size: 0.7em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
+              <small style="font-size: 0.8em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
             </div>
           </div>
           <div class="aside-stats__stat">
@@ -379,31 +431,34 @@ noCache: "20241001"
             <li aria-label="listening to:">
               <img src="{{ nesting }}assets/img/layout/icon-music.png" alt="" title="listening to:" aria-hidden="true" />
               <a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">various</a>
+              <img src="{{ nesting }}assets/img/layout/equalizer.gif" alt="" aria-hidden="true" />
             </li>
             <li aria-label="watching:">
               <img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank">X-Men: The Animated Series (1992); Hazbin Hotel</a>
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">Watcher (Ghost Files, Mystery Files)</a>
             </li>
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
               <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank"
-                >X-Men Comics; The Haunting of Hill House
+                >New Moon (↺)
                 <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a
               >
             </li>
             <li aria-label="playing:">
               <img src="{{ nesting }}assets/img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true" />
-              <a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume</a>
+              <a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume; HunieCam Studio</a>
             </li>
             <li aria-label="obsessed with:">
               <img src="{{ nesting }}assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
               <span
-                >X-Men
+                >Halloween
                 <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
               >
             </li>
           </ul>
         </div>
+
+        <img src="{{ nesting }}assets/img/layout/divider4.gif" alt="" aria-hidden="true" style="padding-top: 5px" />
 
         <!-- ----------------- NEIGHBORS ----------------- -->
         <div class="aside-stuff aside-mutuals" data-nesting="{{ nesting }}" aria-hidden="true">
@@ -412,10 +467,18 @@ noCache: "20241001"
           </div>
           <a href="#afterneighbours" class="skiplink" aria-hidden="true">Skip neighbours</a>
           <div id="beforeneighbours"></div>
-          <marquee class="marquee aside-mutuals__buttons" scrollamount="5">{% include 'neighbors.njk' %}</marquee>
+          <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
+            {% for site in sites %} {% if site.title != "TEMPLATE" and site.neighbor and not site.hide %}
+            <a href="{{ site.link }}" title="{{ site.title }}">
+              <img src="{{ site.image | prepareImageUrl }}" alt="{{ site.title }}" width="88" height="31" loading="lazy" />
+            </a>
+            {% endif %} {% endfor %}
+          </marquee>
           <div id="afterneighbours">Click <a href="/about/neighbors">here</a> to view them all.</div>
           <a href="#beforeneighbours" class="skiplink" aria-hidden="true">Skip to before neighbours</a>
         </div>
+
+        <img src="{{ nesting }}assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top: -5px" />
 
         <!-- ----------------- CHATBOX ----------------- -->
         <div class="aside-stuff aside-chatbox">
@@ -469,8 +532,11 @@ noCache: "20241001"
       <footer>
         <div class="footer-content">
           <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="{{ nesting }}assets/img/layout/rss.png" alt="RSS" /></a> <i>┊</i> created by petrapixel
-          2024 - <span style="font-size: 1.3em">∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
-          <span class="desktop-only"> <i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span>
+          2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
+          <span class="desktop-only">
+            <i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a> <i>┊</i>
+            <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></span
+          >
         </div>
         <div class="footer-content mobile-only">
           <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank">

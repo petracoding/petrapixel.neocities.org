@@ -1,3 +1,5 @@
+const htmlmin = require("html-minifier-terser");
+
 module.exports = function (eleventyConfig) {
   // This makes the Eleventy command quieter (with less detail)
   eleventyConfig.setQuietMode(true);
@@ -13,6 +15,46 @@ module.exports = function (eleventyConfig) {
 
   // This defines which files will be copied
   eleventyConfig.setTemplateFormats(["html", "njk", "txt", "js", "css", "xml", "json"]);
+
+  // Custom Filters
+  eleventyConfig.addFilter("prepareImageUrl", function (str) {
+    if (str.includes("://")) return str;
+    return "../assets/img/links/websites/" + str;
+  });
+  eleventyConfig.addFilter("dateToRFC822Format", function (str) {
+    return str;
+  });
+  eleventyConfig.addFilter("recTurnToClasses", function (str) {
+    if (!str) return "";
+    return str.toLowerCase().replaceAll(" ", "").replaceAll(",", " ");
+  });
+  eleventyConfig.addFilter("recTurnToDecade", function (str) {
+    if (!str) return "";
+    const year = parseInt(str);
+    if (year > 1980) {
+      const decade = Math.floor(year / 10) * 10;
+      return ("" + decade).replace("19", "") + "s";
+    }
+
+    if (year >= 1950) return "1950-79";
+    if (year >= 1900) return "1900-49";
+    return "1800s";
+  });
+
+  // Minify HTML
+  eleventyConfig.addTransform("htmlmin", function (content) {
+    if ((this.page.outputPath || "").endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+      });
+      return minified;
+    }
+    return content;
+  });
 
   // This defines the input and output directories
   return {

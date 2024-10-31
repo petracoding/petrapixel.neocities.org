@@ -3,7 +3,7 @@ body.not-found-page {
 }
 
 .not-found-page-content main {
-  background: white;
+  background: var(--mainBackgroundColor);
   width: 320px;
   padding: 2em;
   margin-top: 3em;

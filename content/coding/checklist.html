@@ -1,10 +1,11 @@
 ---
-layout: petrapixel.njk
+layout: coding.njk
 title: "coding checklist"
 description: "A checklist of topics for self-taught beginner and intermediate coders. Neocities."
 nesting: "../"
 codeHighlight: false
 mainClass: coding-page checklist-main
+toc: true
 ---
 
 <section>
@@ -31,7 +32,32 @@ mainClass: coding-page checklist-main
   <!--
   <center style="padding: 0.4em 0 0.6em"><b>The checklist is still work-in-progress and will be expanded soon!</b></center>-->
 
-  <div id="toc" data-two-levels="true"></div>
+  <div id="toc" data-two-levels="true">
+    <b>Table of Contents:</b>
+    <ol>
+      <li>
+        <a href="#beginners">Beginner Checklist</a>
+        <ul>
+          <li><a href="#beginners-html">HTML</a></li>
+          <li><a href="#beginners-css">CSS</a></li>
+          <li><a href="#beginners-js">JavaScript</a></li>
+          <li><a href="#beginners-a11y">Accessibility</a></li>
+          <li><a href="#beginners-misc">Misc.</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#intermediate">Intermediate Checklist</a>
+        <ul>
+          <li><a href="#intermediate-html">HTML</a></li>
+          <li><a href="#intermediate-css">CSS</a></li>
+          <li><a href="#intermediate-scss">SCSS</a></li>
+          <li><a href="#intermediate-js">JavaScript</a></li>
+          <li><a href="#intermediate-a11y">Accessibility</a></li>
+          <li><a href="#intermediate-misc">Misc.</a></li>
+        </ul>
+      </li>
+    </ol>
+  </div>
 </section>
 
 <!-- 
@@ -133,6 +159,9 @@ mainClass: coding-page checklist-main
   <h2 id="intermediate">Intermediate Checklist</h2>
   <h3 id="intermediate-html">HTML</h3>
   <ul class="checklist">
+    <li>
+      <input type="checkbox" /><a href="https://www.w3schools.com/tags/att_img_loading.asp" target="_blank"><code>loading="lazy"</code></a> (lazy loading images and iframes)
+    </li>
     <li><input type="checkbox" /><a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">Form elements</a> (input, label, select, textarea, button, ...)</li>
     <li><input type="checkbox" /><a href="https://www.greengeeks.com/blog/html-tags-for-seo/" target="_blank">SEO</a> (= Search Engine Optimization, to rank higher in the google search results)</li>
   </ul>
@@ -162,6 +191,10 @@ mainClass: coding-page checklist-main
   </ul>
   <h3 id="intermediate-js">JavaScript</h3>
   <ul class="checklist">
+    <li>
+      <input type="checkbox" /><a href="https://www.onlywebpro.com/tutorials/javascript/optimize-scrolling-performance-by-debouncing-scroll-event-calls" target="_blank">Debouncing event calls</a>
+      <span>(e.g. window.onscroll)</span>
+    </li>
     <li>
       <input type="checkbox" /><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template literals</a>
       <span>(`...` and ${...})</span>
@@ -207,7 +240,7 @@ mainClass: coding-page checklist-main
     <li>
       <input type="checkbox" /><a href="/coding/eleventy-tutorial">Static Site Generators (e.g. Eleventy)</a> <span><i>(My own tutorial!)</i></span>
     </li>
-    <li><input type="checkbox" /><u>Webpack</u> <span>(I will link a tutorial written by myself once it's done!)</span></li>
+    <li><input type="checkbox" /><a href="/coding/webpack-tutorial">Webpack</a> <i>(My own tutorial!)</i></li>
     <li>
       <input type="checkbox" /><a href="https://medium.com/@BlainBrawn/performance-optimization-in-web-development-best-practices-and-tips-bbbbe18c8583" target="_blank"
         >Performance Optimization Basics</a

@@ -1,45 +1,57 @@
-$light: #ffecf8;
+$white: white;
+$black: black;
+
+$veryLight: #ffecf8;
+$light: #ffd3ef;
 $pink: #df90a4;
 $purple: #d47b83;
 $dark: #9c595e;
+
+$textColor: #922a45;
+$textColorBold: #7e243c;
+$linkColor: #c7555f;
+$linkColorHover: #f0b207;
+
 $green: #9adb9b;
 $greenActive: #a8db9a;
 $red: #ab061d;
 $yellow: #ffba39;
 
-// halloween
-$green: #c03715;
-$greenActive: #8e290a;
-
 // -------------------------------------------
 
-$backgroundColor: darken($light, 2%);
-$mainBackgroundColor: $light;
-$mainBorder: 2px solid #c06c6c;
-
-$textColor: darken($pink, 35%);
-$linkColor: darken($purple, 10%);
-$linkColorHover: rgb(240, 178, 7);
-
-$headerBackgroundColor: none;
-$footerBackgroundColor: none;
-
-$asideBackgroundColor: darken($light, 5%);
+$backgroundColor: $veryLight;
+$mainBackgroundColor: $veryLight;
+$asideBackgroundColor: $light;
 $asideTextColor: $textColor;
+$borderColor: $purple;
+$mainBorder: 2px solid $borderColor;
 
 // -------------------------------------------
 
 // Light Mode:
 
 body {
-  --textColor: #{$textColor};
+  --white: #{$white};
+  --black: #{$black};
+  --veryLight: #{$veryLight};
+  --light: #{$light};
   --pink: #{$pink};
-  --backgroundColor: #{$backgroundColor};
-  --mainBackgroundColor: #{$mainBackgroundColor};
+  --purple: #{$purple};
+  --dark: #{$dark};
+  --textColor: #{$textColor};
+  --textColorBold: #{$textColorBold};
   --linkColor: #{$linkColor};
   --linkColorHover: #{$linkColorHover};
+  --green: #{$green};
+  --greenActive: #{$greenActive};
+  --red: #{$red};
+  --yellow: #{$yellow};
+  --backgroundColor: #{$backgroundColor};
+  --mainBackgroundColor: #{$mainBackgroundColor};
   --asideBackgroundColor: #{$asideBackgroundColor};
   --asideTextColor: #{$asideTextColor};
+  --borderColor: #{$borderColor};
+  --mainBorder: #{$mainBorder};
 }
 
 // -------------------------------------------
@@ -47,33 +59,55 @@ body {
 // Dark Mode:
 
 @mixin darkMode1 {
-  $textColor: #fcdee2;
-  $pink: #df90a4;
-  $backgroundColor: black;
-  $mainBackgroundColor: #3c252b;
+  $white: black;
+  $black: white;
+  $textColor: #e8cfd3;
+  $textColorBold: #e5cbcf;
+  $pink: #a06674;
+  $purple: #865360;
+  $backgroundColor: #271e20;
+  $mainBackgroundColor: #2a2123;
   $linkColor: lighten($pink, 10%);
-  $linkColorHover: $green;
-  $asideBackgroundColor: #492a32;
-  $asideTextColor: #e6e6e6;
+  $linkColorHover: var(--green);
+  $asideBackgroundColor: #1e1a1b;
+  $asideTextColor: #cac6c6;
+  $green: #1b5e3c;
+  $greenActive: #1b5e3c;
+  $light: #56313b;
+  $yellow: #ca8608;
+  $borderColor: black;
+  $mainBorder: 2px solid $borderColor;
+  $red: #ff0024;
   //
-  --textColor: #{$textColor};
+  --white: #{$white};
+  --black: #{$black};
+  --veryLight: #{$veryLight};
+  --light: #{$light};
   --pink: #{$pink};
-  --backgroundColor: #{$backgroundColor};
-  --mainBackgroundColor: #{$mainBackgroundColor};
+  --purple: #{$purple};
+  --dark: #{$dark};
+  --textColor: #{$textColor};
+  --textColorBold: #{$textColorBold};
   --linkColor: #{$linkColor};
   --linkColorHover: #{$linkColorHover};
+  --green: #{$green};
+  --greenActive: #{$greenActive};
+  --red: #{$red};
+  --yellow: #{$yellow};
+  --backgroundColor: #{$backgroundColor};
+  --mainBackgroundColor: #{$mainBackgroundColor};
   --asideBackgroundColor: #{$asideBackgroundColor};
   --asideTextColor: #{$asideTextColor};
+  --borderColor: #{$borderColor};
+  --mainBorder: #{$mainBorder};
 }
 
-// -------------------------------------------
+.dark-mode {
+  @include darkMode1;
+}
 
 // @media (prefers-color-scheme: dark) {
 //   body:not(.dark-mode):not(.light-mode) {
 //     @include darkMode1;
 //   }
 // }
-
-.dark-mode {
-  @include darkMode1;
-}

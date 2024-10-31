@@ -9,7 +9,6 @@ nesting: "../"
   <h1>Movie Recs</h1>
   <p>Here are some movies I've enjoyed and would definitely recommend!</p>
   <p>You can also seem them on <a href="https://letterboxd.com/petra1999/films/rated/4-5/by/rating/" target="_blank">my letterboxd profile</a>!</p>
-  <p>(Work in progress, I will add more soon!)</p>
   <strong class="rec-filters-title">Filter:</strong>
   <div class="rec-filters">
     <div class="rec-filters__group">
@@ -49,7 +48,24 @@ nesting: "../"
       </div>
     </div>
   </div>
-  <div class="isotope-items isotope-items--movies"></div>
+  <div class="isotope-items isotope-items--movies">
+    {% for rec in recs['movies'] %} {% if rec.title != "EXAMPLE" %}
+    <div class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.genres | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}">
+      <div class="rec__inner">
+        <div class="rec__image"><img src="{{ rec.image }}" /></div>
+        <div class="rec__info">
+          <div class="rec__title">{{ rec.title }}</div>
+          <div class="rec__desc">
+            <p><strong>My rating:</strong> <span class="rec__stars">★★★★{% if rec.rating == "2" %}<small>½</small>{% elsif rec.rating == "3" %}★{% endif %}</span></p>
+            <p><strong>Year:</strong> {{ rec.year }}</p>
+            <p><strong>Genres:</strong> {{ rec.genres }}</p>
+          </div>
+          <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Letterboxd</a></div>
+        </div>
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
 </section>
 
 <!-- Isotope: -->
@@ -58,5 +74,5 @@ nesting: "../"
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="recs.js"></script>
 <script>
-  loadData("movies");
+  initIsotope();
 </script>
