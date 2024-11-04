@@ -174,8 +174,7 @@
     "linksBackToMe": true,
     "neighbor": true,
     "inspiration": true,
-    "resources": true,
-    "TODO": "FOLLOW"
+    "resources": true
   },
   {
     "link": "https://artwork.neocities.org/",
@@ -243,7 +242,14 @@
     "linksBackToMe": false,
     "neighbor": true
   },
-
+  {
+    "title": "Macaque",
+    "image": "macaquemoe.png",
+    "link": "https://macaque.moe/",
+    "linksBackToMe": false,
+    "neighbor": true,
+    "inspiration": true
+  },
   {
     "title": "TEMPLATE",
     "image": "IMAGE ------------------------------------------------------------------------------------",

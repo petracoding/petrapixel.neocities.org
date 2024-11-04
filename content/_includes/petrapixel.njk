@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241101"
+noCache: "20241104"
 ---
 
 <!DOCTYPE html>
@@ -239,7 +239,7 @@ noCache: "20241101"
             <div class="aside-stuff aside-changelog">
               <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="{{ nesting }}assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
               <ul class="changelog custom-scrollbar" aria-label="Changelog">
-                {% for changelogEntry in changelog %} {% if changelogEntry.text !== "TEMPLATE" %}
+                {% for changelogEntry in changelog %} {% if changelogEntry.text != "TEMPLATE" %}
                 <li class="changelog__entry">
                   <strong>{{ changelogEntry.date }}</strong>
                   {% if changelogEntry.link == "" %}
@@ -435,7 +435,7 @@ noCache: "20241101"
             </li>
             <li aria-label="watching:">
               <img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank">Watcher (Ghost Files, Mystery Files)</a>
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">Cowboy Bebop, Watcher (Mystery Files)</a>
             </li>
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
@@ -451,7 +451,7 @@ noCache: "20241101"
             <li aria-label="obsessed with:">
               <img src="{{ nesting }}assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
               <span
-                >Halloween
+                >Twilight
                 <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
               >
             </li>

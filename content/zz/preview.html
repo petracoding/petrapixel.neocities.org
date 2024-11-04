@@ -1,0 +1,31 @@
+---
+layout: petrapixel.njk
+title: "petrapixel"
+nesting: "../"
+---
+
+<section>
+  <h1>Petrapixel was updated</h1>
+  <p>This page exists because the automatic Neocities preview annoys me.</p>
+  <hr />
+  <h2>Changelog</h2>
+  <br />
+  <ul>
+    {% for changelogEntry in changelog %} {% if changelogEntry.text != "TEMPLATE" %}
+    <li class="changelog__entry">
+      <strong>{{ changelogEntry.date }}</strong>
+      {% if changelogEntry.link == "" %}
+      <span>{{ changelogEntry.text }}</span>
+      {% else %}
+      <a href="{{ changelogEntry.link }}" tabindex="-1">{{ changelogEntry.text }}</a>
+      {% endif %}
+    </li>
+    {% endif %} {% endfor %}
+  </ul>
+</section>
+
+<style>
+  main .changelog__entry:first-child {
+    font-size: 1.5em;
+  }
+</style>
