@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de" xml:lang="de">
+  <head>
+    <title>nbc hannibal</title>
+    <meta name="description" content="My shrine for NBC Hannibal." />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://www.favicon.cc/favicon/936/873/favicon.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="./hannibal.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js)
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J64TL8KVTJ");
+    </script> -->
+
+    <script>
+      //   alert("This page contains gore, blood, etc.");
+    </script>
+  </head>
+  <body>
+    <section id="flesh">
+      <div>
+        <img src="../assets/img/shrines/hannibal/will.png" />
+        <p>i believe <br />in the <b>flesh</b></p>
+      </div>
+      <div>
+        <img src="../assets/img/shrines/hannibal/hannibal.png" loading="lazy" />
+        <p>and the <br /><b>appetites</b>.</p>
+      </div>
+    </section>
+
+    <section id="desc">
+      <p>
+        NBC Hannibal is a tv show based on the Hannibal books. It's not the same story that you might know from 'Silence of the Lambs', but takes place earlier in Hannibal Lecter's life. The main
+        character of the show is Will Graham, who helps the FBI catch serial killers. He soon meets Hannibal Lecter, a psychologist, and (kind of) befriends him. That's all I'm going to say to the
+        plot... /// The show is one of the best tv shows I've ever seen. It might be slow-paced at times, and the language used is very flowery, but something about it is so good that it will never
+        ever leave my brain. The best thing about the show is without a doubt the relationship of Will and Hannibal, and how it changes over the seasons. Beware, though: The show is very gorey and
+        brutal at times, so it's probably not for you if you're squeamish. Also, it was unfortunately cancelled after 3 seasons.
+      </p>
+      <p>
+        Below is a quote from the show. Click the "<span style="font-family: serif">+</span>" to show another quote. I've added 20 quotes in total, and they all make me want to pull my hair out (in a
+        good way).
+      </p>
+    </section>
+
+    <section id="quote">
+      <p>
+        <span
+          >you and i have begun to <em style="font-style: normal; filter: blur(1px)">b</em><em style="font-style: normal; filter: blur(2px)">l</em
+          ><em style="font-style: normal; filter: blur(3px)">u</em><em style="font-style: normal; filter: blur(4px)">r.</em></span
+        >
+        <button type="button" aria-label="Next quote" title="Next quote">+</button>
+      </p>
+    </section>
+
+    <section id="primavera">
+      <img src="../assets/img/shrines/hannibal/primavera.png" loading="lazy" />
+      <img src="../assets/img/shrines/hannibal/botticelli-primavera.jpg" loading="lazy" />
+    </section>
+
+    <footer>
+      <p>shrine created by <a href="/">petra</a>. additional credits:</p>
+      <ul>
+        <li><a href="https://hannibalscreencaps.tumblr.com/" target="_blank">screencaps</a></li>
+        <li><a href="https://fonts.google.com/noto/specimen/Noto+Serif+JP" target="_blank">font</a></li>
+        <li><a href="https://www.goodreads.com/quotes/271993-i-believe-in-the-flesh-and-the-appetites-seeing-hearings" target="_blank">quote</a></li>
+        <li><a href="https://www.google.com/search?client=firefox-b-d&q=primavera+by+boticelli" target="_blank">painting</a></li>
+        <li><a href="https://www.cursors-4u.com/cursor/2011/11/29/bloody-knife.html" target="_blank">cursor</a></li>
+        <li><a href="https://www.favicon.cc/?action=icon&file_id=873936" target="_blank">favicon</a></li>
+      </ul>
+    </footer>
+  </body>
+  <script>
+    let currentQuote = 0;
+    const quotes = [
+      "you and i have begun to blur.",
+      "i’m curious whether either of us can survive separation.",
+      "because i wanted to run away with him.",
+      "i decided when i heard his voice.",
+      "i let you know me. see me.",
+      "you didn't deserve to kill him.",
+      "we couldn't leave without you.",
+      "before you and after you.",
+      "you can't control with respect to whom you fall in love.",
+      "can't live with him, can't live without him.",
+      "i've never known myself as well as i know myself when i'm with him.",
+      "this is all i ever wanted for you, will. for both of us.",
+      "if i saw you everyday forever, will, i would remember this time.",
+      "i was worried you were dead.",
+      "i don't care about the lives you save; i care about your life.",
+      "achilles wished all greeks would die, so that he and patroclus could conquer troy alone.",
+      "cruelty is a gift humanity has given itself",
+      "killing must feel good to God, too. he does it all the time.",
+      "and now death has followed you home, come to live in your house",
+      "when the fox hears the rabbit scream, he comes a-runnin', but not to help.",
+    ];
+
+    document.querySelector("#quote button").addEventListener("click", () => {
+      currentQuote++;
+      if (currentQuote == quotes.length) currentQuote = 0;
+      document.querySelector("#quote span").innerHTML = quotes[currentQuote];
+    });
+  </script>
+</html>

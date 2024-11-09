@@ -71,6 +71,11 @@ nesting: "../"
           <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Serializd</a></div>
         </div>
       </div>
+      <div class="rec__outer">
+        {% if rec.description %}
+        <div class="rec__description">{{ rec.description }}</div>
+        {% endif %}
+      </div>
     </div>
     {% endif %}{% endfor %}
   </div>

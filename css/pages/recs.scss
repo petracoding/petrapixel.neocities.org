@@ -80,25 +80,28 @@
 /* ---- items ---- */
 
 .isotope-items > .rec {
-  width: 25%;
+  width: 50%;
   float: left;
 
-  @media (max-width: $xl) {
-    width: 33.333%;
-  }
+  //   @media (max-width: $xl) {
+  //     width: 33.333%;
+  //   }
 
-  @media (max-width: 800px) {
-    width: 50%;
+  @media (max-width: 1200px) {
+    width: 100%;
   }
 
   @media (max-width: $xs) {
-    width: 100%;
+    .rec__outer {
+      display: none;
+    }
   }
 }
 
 /* ---- Rec ---- */
 
 .rec {
+  display: flex;
   position: relative;
   line-height: 1.5;
 
@@ -202,4 +205,13 @@
   margin-top: 10px;
   line-height: 1;
   font-size: 0.9em;
+}
+
+.rec__outer {
+  padding: 10px;
+  flex: 0 0 50%;
+}
+
+.rec__description {
+  line-height: 1;
 }

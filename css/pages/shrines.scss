@@ -1,11 +1,16 @@
 .shrines {
   @media (min-width: $sm) {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 
 .shrine {
   margin: 0.5em;
+
+  @media (min-width: $sm) {
+    flex: 0 0 calc(50% - 2em);
+  }
 
   @media (min-width: $lg) {
     margin: 1em;
@@ -28,15 +33,16 @@
 
     &:hover,
     &:focus {
-      img {
+      > img {
         transform: scale(1.07);
       }
     }
 
-    img {
+    > img {
       width: 100%;
       height: auto;
       transition: transform 0.2s ease;
+      border-radius: 7px;
     }
 
     div {

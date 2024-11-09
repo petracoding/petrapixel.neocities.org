@@ -1,0 +1,250 @@
+:root {
+  --red: rgb(186, 0, 0);
+  --white: rgb(174, 174, 174);
+}
+
+* {
+  box-sizing: border-box;
+  cursor: url(https://cur.cursors-4u.net/others/oth-8/oth704.cur), auto;
+}
+
+::selection {
+  background-color: var(--red);
+  color: black;
+}
+
+body {
+  font-family: serif;
+  font-family: "Noto Serif JP", serif;
+  background: #111012;
+  color: var(--white);
+  margin: 0;
+}
+
+a {
+  color: var(--red);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+/* ----------------- */
+
+#flesh {
+  text-transform: uppercase;
+}
+
+#flesh div {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#flesh img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 2s ease;
+  filter: brightness(1.2) saturate(1.2) hue-rotate(-3deg);
+}
+
+#flesh p {
+  position: absolute;
+  margin: 0;
+  bottom: 2vw;
+  right: 2vw;
+  line-height: 1;
+  font-size: 100px;
+  color: var(--red);
+  text-align: right;
+  text-shadow: 3px 1px 5px #1b0307d4;
+  letter-spacing: -4px;
+}
+
+#flesh p b {
+  letter-spacing: 0;
+}
+
+#flesh div:last-child {
+  height: 120vh;
+}
+
+#flesh div:last-child p {
+  right: auto;
+  left: 2vw;
+  bottom: 10vw;
+  text-align: left;
+}
+
+#flesh div:last-child img {
+  object-position: right;
+}
+
+@media (max-width: 1000px) {
+  #flesh div {
+    height: 60vh;
+  }
+
+  #flesh div:last-child {
+    height: 60vh;
+  }
+
+  #flesh p {
+    font-size: 10vw;
+  }
+}
+
+/* ----------------- */
+
+#desc {
+  padding: 30px 5vw;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+#desc p:first-child {
+  text-align: justify;
+}
+
+/* ----------------- */
+
+#quote {
+  padding: 0 5vw;
+  margin-bottom: 50px;
+}
+
+#quote p {
+  margin: 0;
+  line-height: 1;
+  font-size: 100px;
+  color: var(--red);
+  min-height: 3.33em;
+}
+
+@media (max-width: 1000px) {
+  #quote p {
+    font-size: 10vw;
+  }
+
+  #quote p span {
+    display: inline-block;
+  }
+}
+
+#quote p span::before,
+#quote p span::after {
+  content: "“";
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--white);
+  display: inline-flex;
+  margin-right: 0.1em;
+}
+
+#quote p span::after {
+  content: "”";
+  margin-right: 0;
+  margin-left: 0.1em;
+}
+
+#quote button {
+  font-size: 80px;
+  color: var(--red);
+  background: none;
+  border: none;
+  font-family: serif;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media (max-width: 1000px) {
+  #quote button {
+    font-size: 15vw;
+  }
+}
+
+#quote button:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* ----------------- */
+
+#primavera {
+  position: relative;
+  overflow: hidden;
+}
+
+#primavera img {
+  display: block;
+}
+
+#primavera img:first-child {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transform-origin: top;
+  transition: transform 1s ease;
+}
+
+#primavera img:last-child {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0;
+  filter: brightness(0.6) contrast(1.1) blur(10px);
+  transform: scale(0.45) translateY(-270px);
+  transform-origin: center;
+  transition: opacity 0.8s ease, filter 0.9s ease, transform 0.9s ease;
+}
+
+#primavera:hover img:first-child {
+  transform: scale(2);
+}
+
+#primavera:hover img:last-child {
+  opacity: 0.8;
+  filter: brightness(0.5) contrast(1.1);
+  transform: none;
+}
+
+@media (max-width: 1000px) {
+  #primavera img:last-child {
+    transform: scale(0.45) translateY(-120px);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  #primavera img {
+    transition: none !important;
+  }
+}
+
+/* ----------------- */
+footer {
+  margin: 20px 20px 25px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+
+footer ul a {
+  display: inline-block;
+  padding: 0 3px;
+}
