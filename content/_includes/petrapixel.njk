@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241109"
+noCache: "20241116"
 ---
 
 <!DOCTYPE html>
@@ -114,16 +114,29 @@ noCache: "20241109"
               </li>
               <li>
                 <details id="menu-mediarecs">
-                  <summary>media recs <small>(5)</small></summary>
+                  <summary>
+                    media recs <small>(5)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+                  </summary>
                   <ul>
-                    <li><a href="/recs/music" aria-label="music recommendations">record player</a></li>
-                    <li><a href="/recs/tv-shows" aria-label="tv show recommendations">tv room</a></li>
-                    <li><a href="/recs/movies" aria-label="movie recommendations">cinema</a></li>
-                    <li><a href="/recs/books" aria-label="book recommendations">library</a></li>
-                    <li><a href="/recs/games" aria-label="game recommendations">arcade</a></li>
+                    <li>
+                      <a href="/recs/tv-shows" aria-label="tv show recommendations">tv room<img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" aria-hidden="true" /></a>
+                    </li>
+                    <li>
+                      <a href="/recs/movies" aria-label="movie recommendations">cinema<img src="{{ nesting }}assets/img/layout/icon-movie.png" alt="" aria-hidden="true" /></a>
+                    </li>
+                    <li>
+                      <a href="/recs/books" aria-label="book recommendations">library<img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" aria-hidden="true" /></a>
+                    </li>
+                    <li>
+                      <a href="/recs/games" aria-label="game recommendations">arcade<img src="{{ nesting }}assets/img/layout/icon-game.png" alt="" aria-hidden="true" /></a>
+                    </li>
+                    <li>
+                      <a href="/recs/music" aria-label="music recommendations">record player<img src="{{ nesting }}assets/img/layout/icon-music.png" alt="" aria-hidden="true" /></a>
+                    </li>
                   </ul>
                 </details>
               </li>
+
               <li>
                 <details id="menu-resources">
                   <summary>resources for you <small>(5)</small></summary>
@@ -435,7 +448,7 @@ noCache: "20241109"
             </li>
             <li aria-label="watching:">
               <img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank">WWDITS (s6)</a>
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">WWDITS (s6); Agatha All Along</a>
             </li>
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
@@ -446,7 +459,7 @@ noCache: "20241109"
             </li>
             <li aria-label="playing:">
               <img src="{{ nesting }}assets/img/layout/icon-game.png" alt="" title="playing:" aria-hidden="true" />
-              <a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Neko Atsume</a>
+              <a href="https://www.backloggd.com/u/Petra1999/" target="_blank">Super Mario 3D World; Neko Atsume</a>
             </li>
             <li aria-label="obsessed with:">
               <img src="{{ nesting }}assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />

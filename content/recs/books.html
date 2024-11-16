@@ -68,6 +68,13 @@ nesting: "../"
           <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Goodreads</a></div>
         </div>
       </div>
+      <div class="rec__outer">
+        {% if rec.description %}
+        <div class="rec__description">{{ rec.description }}</div>
+        {% else %}
+        <div class="rec__description">I think this book is really cool and you should totally read it if you think you might like it!</div>
+        {% endif %}
+      </div>
     </div>
     {% endif %}{% endfor %}
   </div>

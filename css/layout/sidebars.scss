@@ -840,6 +840,15 @@ a[href*="nekoweb"] {
   }
 }
 
+#menu-mediarecs {
+  img {
+    animation: none;
+    margin-left: 9px;
+    margin-right: 0;
+    margin-top: 3px;
+  }
+}
+
 @keyframes floatingImage {
   0% {
     transform: translatey(0px);
