@@ -1,0 +1,63 @@
+---
+layout: petrapixel.njk
+title: "youtube recs"
+description: "Here's my Neocities page for youtube channel recommendations! All my favorite youtube channels in one page!"
+nesting: "../"
+---
+
+<section>
+  <h1>YouTube Channel Recs</h1>
+  <p>Here are some tv shows I've enjoyed and would definitely recommend! (FYI, I don't list second channels separately, even if they have a different type of content.)</p>
+  <p>
+    For context, I have notifications turned on for most of these channels, because I love them so much that I want to be instantly notified if there's a new video! The only exception to this are Game
+    Grumps and GMM because they upload almost daily.
+  </p>
+
+  <strong class="rec-filters-title">Filter:</strong>
+  <div class="rec-filters">
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
+        <button class="rec-filters__button is-checked" data-filter="">any type</button>
+        <button class="rec-filters__button" data-filter=".commentary">commentary</button>
+        <button class="rec-filters__button" data-filter=".show">show</button>
+        <button class="rec-filters__button" data-filter=".animation">animation</button>
+        <button class="rec-filters__button" data-filter=".science,.gaming,.diy,.comedy">others</button>
+      </div>
+    </div>
+  </div>
+  <div class="isotope-items isotope-items--tv">
+    {% for rec in recs['youtube'] %} {% if rec.title != "EXAMPLE" %}
+    <div class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.genres | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}">
+      <div class="rec__inner">
+        <div class="rec__image"><img src="{{ nesting }}assets/img/etc/youtube-recs/{{ rec.image }}" /></div>
+        <div class="rec__info">
+          <div class="rec__title">{{ rec.title }}</div>
+          <div class="rec__desc" style="display: none">
+            <p><strong>Type:</strong> {{ rec.genres }}</p>
+          </div>
+          <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Go to channel</a></div>
+          {% if rec.link2 %}
+          <div class="rec__link"><a href="{{ rec.link2 }}" target="_blank">Go to 2nd channel</a></div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="rec__outer">
+        {% if rec.description %}
+        <div class="rec__description">{{ rec.description }}</div>
+        {% else %}
+        <div class="rec__description">I think this channel is really cool and you should totally watch it if you think you might like it!</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
+</section>
+
+<!-- Isotope: -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="recs.js"></script>
+<script>
+  initIsotope();
+</script>

@@ -3,6 +3,8 @@
 */
 
 .blog-page-layout {
+  font-size: 14px;
+
   #content {
     width: 600px;
     display: flex;
@@ -26,6 +28,10 @@
     section {
       margin-bottom: 0;
       margin-top: 2em;
+    }
+
+    strong {
+      font-size: 18px;
     }
   }
 

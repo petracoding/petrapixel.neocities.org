@@ -1,0 +1,45 @@
+.polls {
+  form > div {
+    background-color: transparent !important;
+    color: inherit !important;
+    font-size: 0.9em !important;
+    width: 100% !important;
+    font-family: inherit !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    margin-left: -5px;
+    margin-right: -5px;
+
+    // Question
+    > div {
+      padding: 2px 5px 4px 5px !important;
+
+      strong {
+        display: block;
+        line-height: 1.2;
+        margin-bottom: 0.5em;
+        font-size: 17px;
+      }
+    }
+
+    input[type="radio"] {
+      margin-top: 2px;
+      margin-right: 5px;
+
+      & + label {
+        margin-top: 3px;
+        width: calc(100% - 25px) !important;
+      }
+    }
+
+    [align="center"],
+    > div:not([align]):last-child {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    > div[align="right"]:last-child {
+      display: none;
+    }
+  }
+}

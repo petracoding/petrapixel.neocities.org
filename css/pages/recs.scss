@@ -202,6 +202,10 @@
   &::before {
     content: "➜ ";
   }
+
+  & + .rec__link {
+    margin-top: 0;
+  }
 }
 
 .rec__why {

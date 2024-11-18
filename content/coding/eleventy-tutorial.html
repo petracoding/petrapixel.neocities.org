@@ -38,6 +38,7 @@ toc: true
       <li>
         <a href="#configuration">Configuration</a>
         <ul>
+          <li><a href="#ignore">Ignore Files (Optional)</a></li>
           <li>
             <a href="#minify">Minify (Optional)</a>
           </li>
@@ -168,6 +169,17 @@ toc: true
   };
 };
 </code></pre>
+
+  <hr />
+  <h3 id="ignore">Ignore Files (Optional)</h3>
+  <p>If you want Eleventy to ignore certain files you can create a file with the name <code>.eleventyignore</code> in the root of your project with content such as this:</p>
+  <pre><code>README.md
+content/wip/
+content/wip-page.html
+example/**/*.njk</code></pre>
+  <p>More info <a href="https://www.11ty.dev/docs/ignores/" target="_blank">here</a>.</p>
+  <p>By default, Eleventy will also ignore everything defined in your <code>.gitignore</code> file. To change this, add this line to your configuration (as mentioned above):</p>
+  <pre><code>eleventyConfig.setUseGitIgnore(false);</code></pre>
 
   <hr />
   <h3 id="minify">Minify (Optional)</h3>

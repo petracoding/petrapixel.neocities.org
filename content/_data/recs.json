@@ -298,16 +298,6 @@
   ],
   "books": [
     {
-      "title": "EXAMPLE",
-      "author": "AUTHOR",
-      "year": "1920",
-      "genres": "Test",
-      "ageRange": "adult",
-      "rating": "1",
-      "link": "LINK",
-      "image": "IMAGE"
-    },
-    {
       "title": "The Secret History",
       "author": "Donna Tartt",
       "year": "1992",
@@ -319,7 +309,7 @@
       "description": "Do you like dark academia? Do you like fucked up characters that bond over horrible things? Do you enjoy hating characters? Are you insane? If you've answered Yes to any of these questions, read this book. It's long, but it's worth it."
     },
     {
-      "title": "Twenty Thousand Leagues Under the Sea",
+      "title": "20,000 Leagues Under the Sea",
       "author": "Jules Verne",
       "year": "1869",
       "genres": "Sci-Fi, Adventure, Classics",
@@ -552,6 +542,127 @@
       "rating": "1",
       "link": "LINK",
       "image": "IMAGE"
+    }
+  ],
+  "youtube": [
+    {
+      "title": "Game Grumps",
+      "genres": "gaming",
+      "link": "https://www.youtube.com/@GameGrumps",
+      "link2": "https://www.youtube.com/@thegrumps",
+      "image": "gamegrumps.jpg",
+      "description": "Game Grumps are Arin and Dan, two friends who have been making gaming videos for over 10 years! If I had to choose one single youtube channel to watch for the rest of my life, this one would be it. They're wonderful and absolutely hilarious."
+    },
+    {
+      "title": "Danny Gonzalez",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@Danny-Gonzalez",
+      "link2": "https://www.youtube.com/@2Danny2Furious",
+      "image": "danny.jpg",
+      "description": "Danny is my favorite commentary youtuber out there. I have watched every single one of his videos 2-3 times. He is consistently entertaining and hilarious. He also makes great comedy music!"
+    },
+    {
+      "title": "Drew Gooden",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@drewisgooden",
+      "image": "drew.jpg",
+      "description": "Drew has a hilarious deadpan humor and covers funny and interesting topics on his commentary channel. He was my introduction to 'commentary youtube' and I love him for it. I've seen all of his videos more than once."
+    },
+    {
+      "title": "Kurtis Conner",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@kurtisconner",
+      "image": "kurtis.jpg",
+      "description": "Kurtis completes the golden commentary trio (Danny, Drew, Kurtis). He also makes very funny videos, and recently has been making long-form videos on niche topics which are absolutely amazing!"
+    },
+    {
+      "title": "Chad Chad",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@thechadx2",
+      "link2": "https://www.youtube.com/@chadchadchad8263",
+      "image": "chadchad.jpg",
+      "description": "Chad Chad is yet another funny commentary youtuber! If you like Danny, Drew and Kurtis you will like her!"
+    },
+    {
+      "title": "Jarvis Johnson",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@jarvis",
+      "link2": "https://www.youtube.com/@JarvisJohnsonGOLD",
+      "image": "jarvis.jpg",
+      "description": "Jarvis is another great commentary youtuber. I especially like his more relaxed second-channel videos. He's great."
+    },
+    {
+      "title": "Jenny Nicholson",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@JennyNicholson",
+      "image": "jennynicholson.jpg",
+      "description": "Jenny Nicholson is a commentary youtuber who usually makes (very-)long-form videos that are insane deep-dives into interesting niche (nerdy) topics."
+    },
+    {
+      "title": "Sam O'Nella Academy",
+      "genres": "animation",
+      "link": "https://www.youtube.com/@SamONellaAcademy",
+      "image": "samonella.jpg",
+      "description": "Ugly and very entertaining animated videos about interested topics. Go ahead and binge it, you won't regret it."
+    },
+    {
+      "title": "Stephanie Lange",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@stephanielange",
+      "image": "stephanielange.jpg",
+      "description": "Stephanie makes great videos about the unhealthy and dangerous beauty standard for women today! A bresh of fresh air in today's internet."
+    },
+    {
+      "title": "Vsauce",
+      "genres": "science",
+      "link": "https://www.youtube.com/@Vsauce",
+      "link2": "https://www.youtube.com/@dingsauce",
+      "image": "vsauce.jpg",
+      "description": "If you haven't watched Vsauce -- what the hell are you doing? This is one of THE best science channels on youtube. Michael is is very charismatic and entertaining, and the videos are very interesting!"
+    },
+    {
+      "title": "Domics",
+      "genres": "animation",
+      "link": "https://www.youtube.com/@Domics",
+      "image": "domics.jpg",
+      "description": "Domics is my favorite animator on YouTube. He makes funny videos about his life! Unfortunately he is not that active these days."
+    },
+    {
+      "title": "Good Mythical Morning",
+      "genres": "show",
+      "link": "https://www.youtube.com/@GoodMythicalMorning",
+      "link2": "https://www.youtube.com/@GoodMythicalMORE",
+      "image": "gmm.jpg",
+      "description": "Good Mythical Morning is one of the best shows on youtube. Five times a week there's a main episode and some bonus content ('More'). Rhett and Link are life-long friends, and they and their crew create consistently entertaining videos!"
+    },
+    {
+      "title": "Jay Foreman (Map Men)",
+      "genres": "show",
+      "link": "https://www.youtube.com/@JayForeman",
+      "image": "mapmen.jpg",
+      "description": "Jay Foreman and Mark Cooper-Jones are the 'Map Men'! They make super intersting videos about geography, England, and so on, and their British humor is fucking hilarious!!"
+    },
+    {
+      "title": "Micarah Tewers",
+      "genres": "diy",
+      "link": "https://www.youtube.com/@MicarahTewers",
+      "image": "micarahtewers.jpg",
+      "description": "Micarah is a seamstress and makes videos about that, but even if you're not interested in sewing I recommend her videos because she has a really cooky personality and an interesting life!"
+    },
+    {
+      "title": "Matt Rose",
+      "genres": "comedy",
+      "link": "https://www.youtube.com/@Matt_Rose",
+      "image": "mattrose.jpg",
+      "description": "Matt Rose reads out funny Reddit threats, tweets, etc, and he does it in a very entertaining way. Great for watching while waiting for the bus!"
+    },
+    {
+      "title": "Watcher / Buzzfeed Unsolved",
+      "genres": "show",
+      "link": "https://www.youtube.com/@watcher",
+      "link2": "https://www.youtube.com/@BuzzFeedUnsolvedNetwork",
+      "image": "watcher.jpg",
+      "description": "Buzzfeed Unsolved is one of the best YouTube shows I've ever seen. If you like cryptids, ghosts, or true crime you should definitely check it out! Their new channel is called Watcher."
     }
   ]
 }
