@@ -431,6 +431,10 @@ a[href*="nekoweb"] {
     filter: brightness(0.8) contrast(1.5) saturate(1.5);
   }
 
+  #song:not(.nowplaying) + img[src*="equalizer"] {
+    display: none;
+  }
+
   ul {
     list-style: none;
     padding: 0;

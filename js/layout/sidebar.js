@@ -41,6 +41,9 @@ function initLastFmWidget() {
     })
     .then(function (json) {
       song.innerHTML = json["track"]["name"] + " – " + json["track"]["artist"]["#text"];
+      if (json["track"]["@attr"]["nowplaying"]) {
+        song.classList.add("nowplaying");
+      }
     });
 }
 

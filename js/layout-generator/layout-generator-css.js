@@ -99,7 +99,7 @@ a:focus {
 .layout {
   display: grid;
   grid-gap: var(--margin);
-  ${variables.width == "small" ? "max-width: 1000px;" : variables.width == "wide" ? "max-width: 1200px;" : "width: 100%;"}
+  ${variables.width == "small" ? "width: 1000px;" : variables.width == "wide" ? "width: 1200px;" : "width: 100%;"}
   grid-template: ${
     variables.sidebars == "left"
       ? '"header header" auto "leftSidebar main" auto "footer footer" auto / var(--sidebar-width) auto'

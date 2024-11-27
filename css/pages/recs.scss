@@ -163,15 +163,15 @@
 }
 
 .rec__title {
-  font-size: 1.8em;
+  font-size: 1.7em;
   line-height: 1.1;
   margin-bottom: 0.5em;
   font-family: $font3;
 
-  &.rec__title--long {
-    font-size: 1.2em;
-    line-height: 1;
-  }
+  //   &.rec__title--long {
+  //     font-size: 1.2em;
+  //     line-height: 1;
+  //   }
 }
 
 .rec__desc {

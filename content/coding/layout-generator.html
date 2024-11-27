@@ -122,24 +122,29 @@ toc: true
   <blockquote class="tip"><b>Tip: </b>Active menu links will be given the class <i>active</i>, so you can style them in the CSS, <br />e.g. <code>nav a.active { ... }</code></blockquote>
 
   <br />
+  <br />
+
   <p>
     Once you've pasted the code into your files it's time to start editing the code however you like! <b>Don't remove the credit in the code comment or the console.log statement.</b> You may remove
     the credit in the footer and main content of the page.
   </p>
 
   <h3>Cache:</h3>
-  <blockquote class="warning">
-    A word about <b>cache:</b> If you can't see the changes you're making in your layout your browser might be loading an old version of the CSS/JavaScript from the cache. (If you've ever heard "Try
-    clearing your browser's cache" in response to a problem: This is why.)
+  <blockquote class="warning">Not clearing your cache might result in you not seeing the changes on your page!</blockquote>
 
-    <p>
-      Clearing your cache is one way to see the up-to-date code on your website, but it also requires your returning visitors to do the same, so it's better to <i>prevent</i> the browser from caching
-      your script in the first place.
-    </p>
-    <p>To do this, simply add <code>?nocache=1</code> at the end of <code>layout.js</code> and <code>style.css</code> and increase the number every time you make a change.</p>
-    <pre><code>&lt;link href="./style.css<b>?nocache=123</b>" rel="stylesheet" /&gt;
+  <p><b>Clear your site cache after making any changes!</b></p>
+  <p>
+    If you can't see the changes you're making in your layout your browser might be loading an old version of the CSS/JavaScript from the cache. If you've ever heard "Try clearing your browser's
+    cache" in response to a problem: This is why.
+  </p>
+
+  <p>
+    Clearing your own cache will make your website look good for you, but visitors who have visited your website before might have an old version of the CSS/JavaScript cached too, and you can't tell
+    them to clear their cache. Therefore, it's better to <i>prevent</i> the browser from caching your script in the first place:
+  </p>
+  <p>To do this, simply add <code>?nocache=1</code> to your js/css file paths and increase the number every time you make a change.</p>
+  <pre><code>&lt;link href="./style.css<b>?nocache=123</b>" rel="stylesheet" /&gt;
 &lt;script src="./layout.js<b>?nocache=123</b>"&gt;&lt;/script&gt;</code></pre>
-  </blockquote>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->

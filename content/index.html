@@ -53,7 +53,8 @@ freezeframe: true
   <div class="hello-its-me">
     <div class="hello-its-me-image">
       <img src="assets/img/layout/me.png" alt="A mirror selfie of me. My phone is covering most of my face. I'm wearing a brown top and long, gray skirt. My hair is half blonde, half brown." />
-      <!-- CHRISTMAS <img src="https://pngimg.com/d/santa_hat_PNG23.png" id="santa-hat" /> -->
+      <!-- CHRISTMAS  -->
+      <img src="https://pngimg.com/d/santa_hat_PNG23.png" id="santa-hat" />
     </div>
     <div class="hello-its-me-content">
       <h2><img aria-hidden="true" src="assets/img/inline/stars.gif" /> About me <small style="font-size: 0.6em; font-weight: normal" aria-hidden="true">｡:ﾟ૮ ˶ˆ ﻌ ˆ˶ ა ﾟ:｡</small></h2>
@@ -346,7 +347,7 @@ freezeframe: true
         <strong>my neighbors:</strong>
       </p>
       <div>
-        {% for site in sites %} {% if site.title != "TEMPLATE" and site.neighbor and not site.hide %}
+        {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide and site.neighbor or site.friend %}
         <a href="{{ site.link }}" title="{{ site.title }}">
           <img src="{{ site.image | prepareImageUrl }}" alt="{{ site.title }}" width="88" height="31" loading="lazy" />
         </a>

@@ -7,7 +7,8 @@
       "rating": "3",
       "link": "https://letterboxd.com/film/swiss-army-man/",
       "image": "https://a.ltrbxd.com/resized/sm/upload/pp/ya/j6/9k/kH7Jwo3Pv0pbosU4rzDafTigIZx-0-230-0-345-crop.jpg?v=5acfbde8a0",
-      "description": "This is a movie abount a man stranded on an island who befriends a farting corpse played by Daniel Radcliffe. I.... LOVE IT. Might not be everyone's cup of tea, but I promise you this has much more than just flatulance humor (otherwise I wouldn't like it either!). It makes me cry every time."
+      "description": "This is a movie abount a man stranded on an island who befriends a farting corpse played by Daniel Radcliffe. I.... LOVE IT. Might not be everyone's cup of tea, but I promise you this has much more than just flatulance humor (otherwise I wouldn't like it either!). It makes me cry every time.",
+      "cw": "attempted suicide, stalking, corpse"
     },
     {
       "title": "Little Miss Sunshine",
@@ -79,7 +80,8 @@
       "rating": "3",
       "link": "https://letterboxd.com/film/zodiac/",
       "image": "https://a.ltrbxd.com/resized/sm/upload/58/tf/z6/gw/qKQIjErYaN149hZRP5Vgf8RoC7S-0-500-0-750-crop.jpg?v=72ee5db942",
-      "description": "This is a perfect thriller movie. It's about the Zodiac killer, and not for the faint-hearted, but it's so good. I usually don't like over-long movies but this one is an exception because it keeps you on the edge of your seat for all of its 157 minutes of runtime."
+      "description": "This is a perfect thriller movie. It's about the Zodiac killer, and not for the faint-hearted, but it's so good. I usually don't like over-long movies but this one is an exception because it keeps you on the edge of your seat for all of its 157 minutes of runtime.",
+      "cw": "based on a real serial killer; shows scenes of murder; mentions of pedophilia"
     },
     {
       "title": "The Princess Bride",
@@ -168,7 +170,8 @@
       "rating": "2",
       "link": "https://www.serializd.com/show/What-We-Do-in-the-Shadows-83631",
       "image": "https://artworks.thetvdb.com/banners/posters/5c9c50f57f0b2.jpg",
-      "description": "Genuinely the funniest show I've ever seen. All of the main characters are absolutely amazing (and queer), too! You should watch this if you like vampires, queer characters, and silly silly jokes."
+      "description": "Genuinely the funniest show I've ever seen. All of the main characters are absolutely amazing (and queer), too! You should watch this if you like vampires, queer characters, and silly silly jokes.",
+      "cw": "(comedic) gore"
     },
     {
       "title": "Hannibal",
@@ -179,7 +182,8 @@
       "rating": "2",
       "link": "https://www.serializd.com/show/Hannibal-40008",
       "image": "https://artworks.thetvdb.com/banners/posters/259063-9.jpg",
-      "description": "This show gave me brain worms 6 years ago and I'm still not over it. Super gorey, super queer, super quotable, super great show. Don't watch it if you're squeamish, otherwise go for it! It picks up quite fast after the first few episodes."
+      "description": "This show gave me brain worms 6 years ago and I'm still not over it. Super gorey, super queer, super quotable, super great show. Don't watch it if you're squeamish, otherwise go for it! It picks up quite fast after the first few episodes.",
+      "cw": "heavy gore, murder, cannibalism, toxic relationships, and more"
     },
     {
       "title": "Star Trek",
@@ -257,7 +261,8 @@
       "link": "https://www.serializd.com/show/Succession-76331",
       "image": "https://artworks.thetvdb.com/banners/series/338186/posters/62089567.jpg",
       "description": "This will have you on the edge of your seat. Don't just watch the first episode though: You will hate the characters and not want to continue. But you will grow to LOVE to hate these characters! There's lot of drama and cringefail dudes. I loved this so much more than I thought I would!",
-      "ifYouLike": "contemporary drama, complicated family relationships and cringefail dudes"
+      "ifYouLike": "contemporary drama, complicated family relationships and cringefail dudes",
+      "cw": "implied abuse"
     },
     {
       "title": "House MD",
@@ -269,7 +274,8 @@
       "link": "https://www.serializd.com/show/House-1408",
       "image": "https://artworks.thetvdb.com/banners/series/73255/posters/230801.jpg",
       "description": "Here's my choice of medical drama. House's relationship with both Cuddy (his female boss) and Wilson (his male coworker) is insanity-inducing in the best way. Plus, he's really funny.",
-      "ifYouLike": "medical shows, middle-aged characters and comedy-dramas"
+      "ifYouLike": "medical shows, middle-aged characters and comedy-dramas",
+      "cw": "heavy drug use; mentions of sickness, death, rape, etc."
     },
     {
       "title": "Fleabag",
@@ -294,6 +300,18 @@
       "image": "https://artworks.thetvdb.com/banners/posters/305177-2.jpg",
       "description": "From the creator and star of Fleabag. This is only 2 hours long but very fun! Also, there are some awesome queer characters!",
       "ifYouLike": "cringe comedy and gay ships"
+    },
+    {
+      "title": "Derry Girls",
+      "ongoing": false,
+      "seasons": 3,
+      "year": "2018",
+      "genres": "Comedy",
+      "rating": "2",
+      "link": "https://www.serializd.com/show/Derry-Girls-76148",
+      "image": "https://artworks.thetvdb.com/banners/posters/338903-1.jpg",
+      "description": "This short but sweet show is about a very lovable group of teens in Northern Ireland that get up to crazy stuff. The comedy is interspersed with serious, touching moments. I binged this in a few days and I'm so sad there's not more.",
+      "cw": "mentions the historical context of military conflict, bombing, etc in passing; side character death"
     }
   ],
   "books": [
@@ -306,7 +324,8 @@
       "rating": "2",
       "link": "https://www.goodreads.com/book/show/29044.The_Secret_History",
       "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1451554846i/29044.jpg",
-      "description": "Do you like dark academia? Do you like fucked up characters that bond over horrible things? Do you enjoy hating characters? Are you insane? If you've answered Yes to any of these questions, read this book. It's long, but it's worth it."
+      "description": "Do you like dark academia? Do you like fucked up characters that bond over horrible things? Do you enjoy hating characters? Are you insane? If you've answered Yes to any of these questions, read this book. It's long, but it's worth it.",
+      "cw": "murder, incest, alcoholism"
     },
     {
       "title": "20,000 Leagues Under the Sea",
@@ -339,7 +358,8 @@
       "rating": "1",
       "link": "https://www.goodreads.com/book/show/76620.Watership_Down",
       "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1405136931i/76620.jpg",
-      "description": "Do you like Warrior Cats? Well, here's something similar but with rabbits! It's quite gorey and even scary at times, nothing for children! Also watch the classic movie."
+      "description": "Do you like Warrior Cats? Well, here's something similar but with rabbits! It's quite gorey and even scary at times, nothing for children! Also watch the classic movie.",
+      "cw": "violence, death, vivid description of small spaces"
     },
     {
       "title": "Harry Potter",
@@ -361,7 +381,8 @@
       "rating": "3",
       "link": "https://www.goodreads.com/book/show/111332.Into_the_Wild",
       "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327994729i/111332.jpg",
-      "description": "I read this series as a kid and recently re-read it, thinking that it's going to be childish, but it wasn't. It holds up very well. The plot and the characters are just great. If you like cats (who doesn't? let's be real) read it!"
+      "description": "I read this series as a kid and recently re-read it, thinking that it's going to be childish, but it wasn't. It holds up very well. The plot and the characters are just great. If you like cats (who doesn't? let's be real) read it!",
+      "cw": "kid-friendly descriptions of violence and death"
     },
     {
       "title": "The Curious Incident of the Dog in the Night-Time",
@@ -375,6 +396,18 @@
       "description": "This used to be my favorite book. It's a quick read, and I really like it. There's not much more I can say to it. Time to re-read it. Again."
     },
     {
+      "title": "Flowers in the Attic",
+      "author": "V.C. Andrews",
+      "year": "1979",
+      "genres": "Horror",
+      "ageRange": "adult",
+      "rating": "2",
+      "link": "https://www.goodreads.com/book/show/43448.Flowers_in_the_Attic",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327880853l/43448.jpg",
+      "description": "I once googled 'What's the most fucked up book?' and this came up. I read it, and it did not disappoint. It's really, really fucking good though.",
+      "cw": "all kinds of abuse, incent, death"
+    },
+    {
       "title": "Sapiens: A Brief History of Humankind",
       "author": "Yuval Noah Harari",
       "year": "2011",
@@ -385,17 +418,7 @@
       "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1703329310i/23692271.jpg",
       "description": "My favorite non-fiction book. I picked this up without knowing anything about it because it was on sale, and it blew my mind. I love the first section especially, which is about pre-history. This book changed the way I look at life."
     },
-    {
-      "title": "Flowers in the Attic",
-      "author": "V.C. Andrews",
-      "year": "1979",
-      "genres": "Horror",
-      "ageRange": "adult",
-      "rating": "2",
-      "link": "https://www.goodreads.com/book/show/43448.Flowers_in_the_Attic",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327880853l/43448.jpg",
-      "description": "I once googled 'What's the most fucked up book?' and this came up. I read it, and it did not disappoint. It's really, really fucking good though."
-    },
+
     {
       "title": "Sex at Dawn",
       "author": "Christopher Ryan, Cacilda Jethá",
@@ -662,7 +685,8 @@
       "link": "https://www.youtube.com/@watcher",
       "link2": "https://www.youtube.com/@BuzzFeedUnsolvedNetwork",
       "image": "watcher.jpg",
-      "description": "Buzzfeed Unsolved is one of the best YouTube shows I've ever seen. If you like cryptids, ghosts, or true crime you should definitely check it out! Their new channel is called Watcher."
+      "description": "Buzzfeed Unsolved is one of the best YouTube shows I've ever seen. If you like cryptids, ghosts, or true crime you should definitely check it out! Their new channel is called Watcher.",
+      "cw": "one of the shows is about true crime (murder etc)"
     }
   ]
 }

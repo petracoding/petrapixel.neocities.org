@@ -34,6 +34,9 @@ nesting: "../"
           <div class="rec__title">{{ rec.title }}</div>
           <div class="rec__desc" style="display: none">
             <p><strong>Type:</strong> {{ rec.genres }}</p>
+            {% if rec.cw %}
+            <p><strong>Content Warnings:</strong> <abbr title="{{ rec.cw }}">hover to reveal (spoilers!)</abbr></p>
+            {% endif %}
           </div>
           <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Go to channel</a></div>
           {% if rec.link2 %}

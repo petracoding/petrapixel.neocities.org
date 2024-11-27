@@ -50,6 +50,9 @@ nesting: "../"
             <p><strong>My rating:</strong> <span class="rec__stars">★★★★{% if rec.rating == "2" %}<small>½</small>{% elsif rec.rating == "3" %}★{% endif %}</span></p>
             <p><strong>Platform:</strong> {{ rec.platform }}</p>
             <p><strong>Type:</strong> {{ rec.gameType }}</p>
+            {% if rec.cw %}
+            <p><strong>Content Warnings:</strong> <abbr title="{{ rec.cw }}">hover to reveal (spoilers!)</abbr></p>
+            {% endif %}
           </div>
           <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Backloggd</a></div>
         </div>

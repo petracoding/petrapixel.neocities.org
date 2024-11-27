@@ -15,6 +15,16 @@
     "neighbor": true,
     "friend": true
   },
+
+  {
+    "title": "Latte Lavanda",
+    "image": "https://files.catbox.moe/8r80x1.png",
+    "link": "https://latte-lavanda.neocities.org/",
+    "linksBackToMe": false,
+    "neighbor": false,
+    "friend": true,
+    "inspiration": false
+  },
   {
     "link": "https://lostletters.neocities.org/",
     "title": "lostletters",
