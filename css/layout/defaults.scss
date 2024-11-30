@@ -81,7 +81,7 @@ body {
 }
 
 .custom-scrollbar {
-  scrollbar-color: $pink var(--veryLight);
+  scrollbar-color: var(--pink) var(--veryLight);
   scrollbar-width: thin;
 }
 

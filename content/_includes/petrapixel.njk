@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241127"
+noCache: "20241130"
 ---
 
 <!DOCTYPE html>
@@ -83,15 +83,23 @@ noCache: "20241127"
                 <a href="/"><img width="9" src="{{ nesting }}assets/img/layout/heart.png" alt="" aria-hidden="true" />home</a>
               </li>
               <li>
-                <details id="menu-aboutsite">
-                  <summary>about <small>(6)</small></summary>
+                <details id="menu-aboutme">
+                  <summary>about me <small>(3)</small></summary>
                   <ul>
-                    <li>
-                      <a href="/about-me/about">about me ➚</a>
-                    </li>
+                    <li><a href="/about/about-me">about me</a></li>
+                    <li><a href="/about/cats">my cats</a></li>
+                    <li><a href="/about/media-log">media log</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details id="menu-aboutsite">
+                  <summary>about the site <small>(5)</small></summary>
+                  <ul>
                     <li><a href="/about/about-the-site">about the site</a></li>
-                    <li><a href="/about/guestbook">guestbook</a></li>
+                    <li class="mobile-only"><a href="/zz/changelog">changelog</a></li>
                     <li><a href="/about/neighbors">neighbors</a></li>
+                    <li><a href="/about/guestbook">guestbook</a></li>
                     <li><a href="/about/credits">credits</a></li>
                     <li><a href="/sitemap">sitemap</a></li>
                   </ul>
@@ -160,30 +168,19 @@ noCache: "20241127"
               </li>
               <li>
                 <details id="menu-more">
-                  <summary>
-                    random stuff <small>(5)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
-                  </summary>
+                  <summary>random stuff <small>(5)</small></summary>
                   <ul>
                     <li>
-                      <a href="/blog{% if testingOnLocalhost %}/index{% endif %}"
-                        >blog<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
-                    </li>
-
-                    <li>
-                      <a href="/shrines/index"
-                        >shrines<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
+                      <a href="/blog{% if testingOnLocalhost %}/index{% endif %}">blog </a>
                     </li>
                     <li>
-                      <a href="/cliques"
-                        >cliques<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
+                      <a href="/shrines/index">shrines</a>
                     </li>
                     <li>
-                      <a href="/fun/polls"
-                        >polls<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
+                      <a href="/cliques">cliques</a>
+                    </li>
+                    <li>
+                      <a href="/fun/polls">polls</a>
                     </li>
                     <li><a href="/about/blinkies">blinkies & more</a></li>
                     <li><a href="/fun/list-idea-generator">list idea generator</a></li>
@@ -195,7 +192,7 @@ noCache: "20241127"
                 <details id="menu-codinghelp">
                   <summary>coding & webmastery <small>(17)</small></summary>
 
-                  <div class="aside-scrollbox">
+                  <div class="aside-scrollbox custom-scrollbar">
                     <strong>Tools:</strong>
                     <ul>
                       <li>
@@ -466,7 +463,7 @@ noCache: "20241127"
             </li>
             <li aria-label="watching:">
               <img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank">WWDITS (s6); Derry Girls</a>
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">WWDITS (s6); Camp Cretaceous</a>
             </li>
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
@@ -562,8 +559,8 @@ noCache: "20241127"
       <!-- ------------------------------------------------ -->
       <footer>
         <div class="footer-content">
-          <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="{{ nesting }}assets/img/layout/rss.png" alt="RSS" /></a> <i>┊</i> created by petrapixel
-          2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
+          <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="{{ nesting }}assets/img/layout/rss.png" alt="RSS" /></a> <i>┊</i>
+          <span class="desktop-only">created by</span> petrapixel 2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
           <span class="desktop-only">
             <i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a> <i>┊</i>
             <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></span
@@ -581,6 +578,10 @@ noCache: "20241127"
               <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" />
             </a>
             {% endif %}
+          </center>
+          <br />
+          <center>
+            <a href="#" tabindex="-1">go to top</a>
           </center>
         </div>
       </footer>

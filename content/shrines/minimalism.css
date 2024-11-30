@@ -17,6 +17,25 @@ body {
   max-width: 890px;
 }
 
+nav {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  line-height: 1;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.5em;
+  opacity: 0.5;
+}
+
+nav a:hover,
+nav a:focus {
+  opacity: 1;
+}
+
 hr {
   border: 0;
   border-top: 1px solid currentColor;

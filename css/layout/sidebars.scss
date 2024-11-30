@@ -92,7 +92,7 @@
   }
 }
 
-a[href*="nekoweb"] {
+.aside a[href*="nekoweb"] {
   color: var(--textColor);
   border: 1px solid var(--textColor);
   background: rgba(255, 255, 255, 0.2);
