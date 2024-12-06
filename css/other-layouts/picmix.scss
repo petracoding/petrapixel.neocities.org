@@ -54,3 +54,22 @@
   font-size: 2em;
   z-index: 99;
 }
+
+.fractal-art {
+  border: none;
+  background: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+
+    @media (min-width: $xl) {
+      image-rendering: pixelated;
+    }
+  }
+}

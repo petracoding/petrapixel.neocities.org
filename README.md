@@ -15,8 +15,8 @@
 **Don't know where to start browsing?** Check out these:
 
 - [content](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content) folder: **pages, templates, etc.**
-  - e.g. [content/\_includes/petrapixel.njk](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/_includes/petrapixel.njk) (template) and [content/index.njk](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/index.njk) (homepage)
-- [public](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public) folder: **generated files** for upload to neocities
+  - e.g. [content/\_includes/petrapixel.njk](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/_includes/petrapixel.njk) (template) and [content/index.html](https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/index.html) (homepage)
+- [public](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public) folder: **generated files** for upload to neocities (minified)
   - e.g. [public/index.html](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public/index.html) (homepage)
 - [css/main.scss](https://github.com/petracoding/petrapixel.neocities.org/blob/master/css/main.scss): **css**
   - e.g. [css/layout/layout.scss](https://github.com/petracoding/petrapixel.neocities.org/blob/master/css/layout/layout.scss)

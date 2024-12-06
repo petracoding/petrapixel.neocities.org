@@ -1,5 +1,6 @@
 [
-  { "date": "2024-11-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2024-12-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2024-12-06", "text": "New faq page", "link": "/about/faq" },
   { "date": "2024-11-30", "text": "New layout for my 'about me' page!", "link": "/about/about-me" },
   { "date": "2024-11-27", "text": "Christmas Theme! Media recs now have content warnings.", "link": "/" },
   { "date": "2024-11-18", "text": "New blog post about polyamory! Happy (early) polyamory day!", "link": "/blog/polyamory-thoughts" },

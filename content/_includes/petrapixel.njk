@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241130"
+noCache: "20241206"
 ---
 
 <!DOCTYPE html>
@@ -86,7 +86,11 @@ noCache: "20241130"
                 <details id="menu-aboutme">
                   <summary>about me <small>(3)</small></summary>
                   <ul>
-                    <li><a href="/about/about-me">about me</a></li>
+                    <li>
+                      <a href="/about/about-me"
+                        >about me <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
                     <li><a href="/about/cats">my cats</a></li>
                     <li><a href="/about/media-log">media log</a></li>
                   </ul>
@@ -94,9 +98,18 @@ noCache: "20241130"
               </li>
               <li>
                 <details id="menu-aboutsite">
-                  <summary>about the site <small>(5)</small></summary>
+                  <summary>
+                    about the site <small>(5)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+                  </summary>
                   <ul>
-                    <li><a href="/about/about-the-site">about the site</a></li>
+                    <li>
+                      <a href="/about/about-the-site">about the site</a>
+                    </li>
+                    <li>
+                      <a href="/about/faq"
+                        >faq<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
                     <li class="mobile-only"><a href="/zz/changelog">changelog</a></li>
                     <li><a href="/about/neighbors">neighbors</a></li>
                     <li><a href="/about/guestbook">guestbook</a></li>
@@ -107,7 +120,9 @@ noCache: "20241130"
               </li>
               <li>
                 <details id="menu-mycreations">
-                  <summary>my creations <small>(6)</small></summary>
+                  <summary>
+                    my creations <small>(6)</small> <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+                  </summary>
                   <ul>
                     <li><a href="/creations/art">my art</a></li>
                     <li><a href="/creations/coding">my coding</a></li>
@@ -117,20 +132,20 @@ noCache: "20241130"
                     <li><a href="/creations/video-edits">my video edits</a></li>
                     <li><a href="/creations/writing">my writing</a></li>
                     <li><a href="/creations/picmix">my picmixes</a></li>
+                    <li>
+                      <a href="/creations/fractals"
+                        >my fractal art<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+                      ></a>
+                    </li>
                   </ul>
                 </details>
               </li>
               <li>
                 <details id="menu-mediarecs">
-                  <summary>
-                    media recs <small>(5)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
-                  </summary>
+                  <summary>media recs <small>(5)</small></summary>
                   <ul>
                     <li>
-                      <a href="/recs/youtube" aria-label="youtube recommendations"
-                        >youtube<img src="{{ nesting }}assets/img/layout/icon-computer.png" alt="" aria-hidden="true" /><small class="aside-nav__new"
-                          ><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                      ></a>
+                      <a href="/recs/youtube" aria-label="youtube recommendations">youtube<img src="{{ nesting }}assets/img/layout/icon-computer.png" alt="" aria-hidden="true" /></a>
                     </li>
                     <li>
                       <a href="/recs/tv-shows" aria-label="tv show recommendations">television<img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" aria-hidden="true" /></a>
@@ -297,21 +312,27 @@ noCache: "20241130"
             <div class="aside-stuff aside-poll" aria-hidden="true">
               <div class="aside-stuff__heading" aria-hidden="true">Poll<img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
 
-              <form method="post" action="https://poll.pollcode.com/13348726">
+              <form method="post" action="https://poll.pollcode.com/89182837">
                 <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
-                  <div style="padding: 2px 0px 4px 2px"><strong>which webring should i make?</strong></div>
-                  <input type="radio" name="answer" value="1" id="answer133487261" style="float: left" /><label for="answer133487261" style="float: left; width: 150px"
-                    >sites with coding resources</label
+                  <div style="padding: 2px 0px 4px 2px"><strong>biggest indie website red flag?</strong></div>
+                  <input type="radio" name="answer" value="1" id="answer891828371" style="float: left" /><label for="answer891828371" style="float: left; width: 150px">uses iframes for pages</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="2" id="answer891828372" style="float: left" /><label for="answer891828372" style="float: left; width: 150px">autoplay music</label>
+                  <div style="clear: both; height: 2px"></div>
+                  <input type="radio" name="answer" value="3" id="answer891828373" style="float: left" /><label for="answer891828373" style="float: left; width: 150px"
+                    >still default colors from sadgirl's layout generator</label
                   >
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="2" id="answer133487262" style="float: left" /><label for="answer133487262" style="float: left; width: 150px">polyamory</label>
+                  <input type="radio" name="answer" value="4" id="answer891828374" style="float: left" /><label for="answer891828374" style="float: left; width: 150px"
+                    >no attempt at mobile responsiveness</label
+                  >
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="3" id="answer133487263" style="float: left" /><label for="answer133487263" style="float: left; width: 150px">dinosaur lovers</label>
+                  <input type="radio" name="answer" value="5" id="answer891828375" style="float: left" /><label for="answer891828375" style="float: left; width: 150px"
+                    >no attempt at accessibility</label
+                  >
                   <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="4" id="answer133487264" style="float: left" /><label for="answer133487264" style="float: left; width: 150px">music playlists</label>
-                  <div style="clear: both; height: 2px"></div>
-                  <input type="radio" name="answer" value="5" id="answer133487265" style="float: left" /><label for="answer133487265" style="float: left; width: 150px"
-                    >words / vocabulary / etymology / linguistics</label
+                  <input type="radio" name="answer" value="6" id="answer891828376" style="float: left" /><label for="answer891828376" style="float: left; width: 150px"
+                    >uncompressed images that take ages to load</label
                   >
                   <div style="clear: both; height: 2px"></div>
                   <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
@@ -479,7 +500,7 @@ noCache: "20241130"
             <li aria-label="obsessed with:">
               <img src="{{ nesting }}assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
               <span
-                >Nandermo
+                >Dinosaurs; 90s music
                 <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
               >
             </li>

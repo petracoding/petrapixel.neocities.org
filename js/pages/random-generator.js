@@ -1,4 +1,6 @@
 export function initRandomGenerator() {
+  if (document.querySelector("#gimmerandomfact")) initRandomFactAboutMe();
+
   const el = document.querySelector(".random-generator");
   if (!el) return;
 
@@ -14,6 +16,49 @@ export function initRandomGenerator() {
     document.querySelector(".random-generator__label").style.display = "block";
     const currentItem = outputEl.innerHTML ? outputEl.innerHTML : false;
     outputEl.innerHTML = generateRandomItem(items, currentItem);
+  });
+}
+
+function initRandomFactAboutMe() {
+  const btn = document.querySelector("#gimmerandomfact");
+  const factEl = document.querySelector("#randomfact");
+
+  btn.addEventListener("click", () => {
+    const currentItem = factEl.innerHTML ? factEl.innerHTML : false;
+    factEl.innerHTML = generateRandomItem(
+      [
+        "I started learning how to play the drums when I was a kid (but it never came to fruition).",
+        "My dad once built a swingset for me and my sister that we still love to use!",
+        "Before she met me, my girlfriend regularly watched a video I had uploaded to YouTube (a video of our favorite band).",
+        "I got my first tattoo right after passing my driving test!",
+        "I'm the opposite of a procrastinator. I get stressed out when I don't do everything right away.",
+        "I always go to sleep between 10:30 and 11:00pm.",
+        "My favorite song as a child was Dragostea Din Tei by O-Zone.",
+        "I have the dinosaur (opisthotonic) death pose tattoed on my left shoulder.",
+        "Every night I cuddle a stuffed animal. His name is Mr. Sloth.",
+        "I watch YouTube while doing my morning/evening routine. (Usually Game Grumps, Danny Gonzalez or Drew Gooden)",
+        "I maintain over 500 lists over at listography.com",
+        "My chinese zodiac is the rabbit.",
+        "I'm scared of spiders, large man-made things (especially submerged), deep water, and calling people on the phone!",
+        "I share a birthday with Donald Sutherland, David Hasselhoff, and Angela Merkel.",
+        "I know someone who is friends with a rapper I like",
+        "I know the blurb of a random old romance novel I've never read and will never read by heart.",
+        "I'm really interested in etymology, prehistory, cannibalism, 18th century sailing ships, and dinosaurs.",
+        "I'm fluent in German and English, and am currently learning Spanish (level A2). I want to learn Yiddish at some point.",
+        "My first phone was the Nokia 6020 in silver.",
+        "I've reguarily been writing into my diary since 2011.",
+        "When I build something in Sims it's usually a tiny house.",
+        "I think the banjo is a cool instrument and I enjoy what it sounds like.",
+        "In my opinion, the most handsome man on earth is Dan Avidan.",
+        "My favorite song that isn't on Spotify is 'Manchmal' by Ben Blümel.",
+        "In 2023 I once watched 25 movies in 24 days.",
+        "I really enjoy Christian imagery and symbolism in media.",
+        "When I was young my biggest fear was the stairway scene from The Exorcist.",
+        "When I was really young I used to fall asleep to the sounds of my older brother playing World of Warcraft every night",
+        "One of my professors used to be a jungle guide and scuba instructor, and once met Jeff Bezos before he was famous.",
+      ],
+      currentItem
+    );
   });
 }
 

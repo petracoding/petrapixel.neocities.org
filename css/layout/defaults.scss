@@ -192,7 +192,7 @@ body {
   }
 }
 
-body::after {
+body:not(.reduced-layout)::after {
   content: "";
   // Snow
   position: fixed;
