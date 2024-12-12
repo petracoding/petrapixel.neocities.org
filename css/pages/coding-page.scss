@@ -650,3 +650,29 @@ main {
 footer {
   grid-area: footer;
 }
+
+// WIDGETS
+
+.widget-previews {
+  @media (min-width: $lg) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.widget-preview {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+
+  textarea {
+    max-width: 500px;
+    min-height: 80px;
+  }
+
+  iframe {
+    // border: 1px solid currentColor;
+    height: 100px;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,144 @@
+---
+layout: coding.njk
+title: "widgets for free neocities websites"
+description: "A tool to create widges that you can use on free Neocities accounts!"
+nesting: "../"
+mainClass: coding-page
+---
+
+<section>
+  <h1>Widgets</h1>
+  <p>
+    Neocities free accounts don't allow external scripts. This means you won't be able to use most widgets. But iFrames are allowed! So I have created this little tool that creates iFrames for the
+    most popular widgets.
+  </p>
+  <hr />
+  <p><strong>How to use:</strong></p>
+  <p>
+    Just copy the code and paste it in your HTML file. The iframe will show the widget, you can position and size it just like any other element. The background of the iframe is transparent, so it
+    will look good on any background. Keep in mind that you can't change the styling
+    <i>inside</i> the iframe with your own CSS code.
+  </p>
+  <p>
+    To set parameters such as usernames and to style the element, just change the parameters in the iframe's 'src' attribute. For example, change <code>center=0</code> to <code>center=1</code> to
+    center the text. (Keep in mind that the content itself will always be centered in the iframe.) For colors you should provide a hex value (e.g. <code>d92f2f</code>) <i>without</i> the #! For fonts,
+    just type the name of any <a href="https://www.w3schools.com/cssref/css_websafe_fonts.php" target="_blank">web-safe font</a> with spaces as usual, e.g. <code>font=Times New Roman</code>. Other
+    fonts (e.g. Google fonts) won't work.
+  </p>
+  <p>
+    Some parameters are required, e.g. your status.cafe username for the status.cafe widget. Not inputting it will result in the widget not displaying correctly. (Weird symbols in those parameters,
+    e.g. if your status.cafe usernames includes a #, will also break the code, sorry! Comment below if you're experiencing with issues, I'll try to fix it.)
+  </p>
+  <p><b>I'd appreciate you linking back to me on your website if you enjoy these widgets!</b></p>
+</section>
+
+<section>
+  <h2>Status.Cafe Status</h2>
+  <p>Original Widget Source: <a href="https://status.cafe/current-status" target="_blank">status.cafe</a></p>
+  <p>Settings:</p>
+  <ul>
+    <li>styling parameters <code>center</code>, <code>font</code>, <code>fontSize</code>, <code>color</code>, <code>linkColor</code></li>
+    <li><code>username</code>: your status.cafe username</li>
+    <li><code>hideUsername</code>: set to 1 to hide the username</li>
+    <li><code>hideUsernameAndTime</code>: set to 1 to hide the username, emoji and time</li>
+  </ul>
+  <hr />
+  <div class="widget-previews">
+    <div class="widget-preview">
+      <strong>Example 1</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+<iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=0&font=Times New Roman&fontSize=14px&color=565673&linkColor=0303cf&username=Petra1999&hideUsername=0" frameborder="0" title="Status.Cafe Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe src="/widgets/statuscafe?center=0&font=Times New Roman&fontSize=14px&color=565673&linkColor=0303cf&username=Petra1999&hideUsername=0" frameborder="0" title="Status.Cafe Status"></iframe>
+    </div>
+    <div class="widget-preview">
+      <strong>Example 2</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+<iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=1&font=Arial&fontSize=18px&color=d92f2f&linkColor=d92f2f&username=Petra1999&hideUsernameAndTime=1" frameborder="0" title="Status.Cafe Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe src="/widgets/statuscafe?center=1&font=Arial&fontSize=18px&color=d92f2f&linkColor=d92f2f&username=Petra1999&hideUsernameAndTime=1" frameborder="0" title="Status.Cafe Status"></iframe>
+    </div>
+    <div class="widget-preview">
+      <strong>Example 3</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+<iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=1&font=Courier New&fontSize=13px&color=157f15&linkColor=086e08&username=Petra1999&hideUsername=1" frameborder="0" title="Status.Cafe Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe src="/widgets/statuscafe?center=1&font=Courier New&fontSize=13px&color=157f15&linkColor=086e08&username=Petra1999&hideUsername=1" frameborder="0" title="Status.Cafe Status"></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Last.Fm Currently Listening / Last Song</h2>
+  <p>Original Widget Source: <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank">biancarosa</a></p>
+  <p>Settings:</p>
+  <ul>
+    <li>styling parameters <code>center</code>, <code>font</code>, <code>fontSize</code>, <code>color</code></li>
+    <li><code>username</code>: your last.fm username</li>
+    <li><code>swapPositions</code>: set to 1 to display the artist first</li>
+    <li><code>delimiter</code>: text for between title and artist, default: –</li>
+    <li><code>underline</code>: set to 0 to remove the link underline</li>
+  </ul>
+
+  <div class="widget-previews">
+    <div class="widget-preview">
+      <strong>Example 1</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+<iframe src="https://petrapixel.neocities.org/widgets/lastfm?center=1&font=Arial&fontSize=16px&color=0d7d0d&username=Petra1999&swapPositions=1&delimiter=~&underline=1" frameborder="0" title="Last.Fm Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe src="/widgets/lastfm?center=1&font=Arial&fontSize=16px&color=0d7d0d&username=Petra1999&swapPositions=1&delimiter=~&underline=1" frameborder="0" title="Last.Fm Status"></iframe>
+    </div>
+    <div class="widget-preview">
+      <strong>Example 2</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+<iframe src="https://petrapixel.neocities.org/widgets/lastfm?center=1&font=Times New Roman&fontSize=14px&color=9e5461&username=Petra1999&swapPositions=0&delimiter=by&underline=0" frameborder="0" title="Last.Fm Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe
+        src="/widgets/lastfm?center=1&font=Times New Roman&fontSize=14px&color=9e5461&username=Petra1999&swapPositions=0&delimiter=by&underline=0"
+        frameborder="0"
+        title="Last.Fm Status"
+      ></iframe>
+    </div>
+    <div class="widget-preview">
+      <strong>Example 3</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+<iframe src="https://petrapixel.neocities.org/widgets/lastfm?center=1&font=Garamond&fontSize=13px&color=3b3b3b&username=Petra1999&swapPositions=1&delimiter=:&underline=0" frameborder="0" title="Last.Fm Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe src="/widgets/lastfm?center=1&font=Garamond&fontSize=13px&color=3b3b3b&username=Petra1999&swapPositions=1&delimiter=:&underline=0" frameborder="0" title="Last.Fm Status"></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>...more?</h2>
+  <p>You can request a widget in the comments!</p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section class="buy-me-a-coffee">
+  <p>
+    I spend <b>hours</b> of my free time creating these tools that I publish for free. If you'd like to say thanks, please share these widgets with others and/or
+    <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
+  </p>
+</section>
+
+<section>
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
+  <p>Please don't request widgets that already work via iframes (e.g. cbox, guestbooks), as you will be able to use them already!</p>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
+  <script src="../assets/js/comment-widget.js"></script>
+</section>
