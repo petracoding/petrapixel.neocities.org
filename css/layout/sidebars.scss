@@ -6,21 +6,6 @@
   padding: 10px 14px;
   color: var(--asideTextColor);
 
-  #mobile-nav-toggle {
-    display: none;
-    font-weight: bold;
-    font-size: 1.3em;
-    text-align: center;
-
-    & + * {
-      display: block;
-    }
-  }
-
-  [open] #mobile-nav-toggle {
-    padding-bottom: 0.5em;
-  }
-
   hr {
     border: none;
     border-bottom: 1px dashed var(--asideTextColor);
@@ -33,6 +18,10 @@
     height: auto;
     margin: 1em 0;
   }
+}
+
+#mobile-nav {
+  display: none;
 }
 
 .aside--left {
@@ -166,10 +155,6 @@
 /* ************
 	LEFT COL.
    ************ */
-
-.aside-dreamland {
-  margin-top: 2em;
-}
 
 .aside-clap-kirby {
   display: flex;
@@ -938,13 +923,21 @@
  */
 
 @media (max-width: $sm) {
-  .aside {
-    #mobile-nav-toggle {
-      display: block;
+  #mobile-nav {
+    display: block;
 
-      & + * {
-        display: initial;
-      }
+    & + .aside-nav {
+      display: none;
+    }
+  }
+
+  #mobile-nav-toggle {
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+
+    & + * {
+      display: block;
     }
   }
 

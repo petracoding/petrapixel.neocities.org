@@ -270,13 +270,13 @@ footer {
 /*----------  Others  ----------*/
 
 #no-js-warning {
-  background: red;
+  background: var(--dark);
   color: var(--white);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 5px 50px;
+  padding: 8px 50px;
   text-align: center;
   opacity: 0;
   animation: noJsFade ease 1s;

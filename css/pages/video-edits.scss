@@ -93,7 +93,7 @@ a.video-edit {
     }
 
     &::after {
-      content: "” ";
+      content: " ”";
     }
   }
 
@@ -112,14 +112,16 @@ a.video-edit {
 
 .video-edit--fave {
   &::before {
-    content: "！";
+    content: "♡";
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 10px;
     color: var(--purple);
     opacity: 0.25;
     line-height: 1;
     font-size: 100px;
+    font-weight: bold;
+    font-style: normal;
   }
 }
 

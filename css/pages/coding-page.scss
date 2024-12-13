@@ -443,9 +443,31 @@ main.coding-page {
   border: 3px dotted;
 
   small {
-    max-width: 450px;
+    max-width: 480px;
     display: block;
     margin: 0 auto;
+  }
+
+  @media (prefers-reduced-motion) {
+    img {
+      display: none;
+    }
+  }
+
+  @media (min-width: $lg) {
+    display: flex;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    p {
+      line-height: 1.6;
+    }
+
+    img {
+      margin-left: 2em;
+      margin-right: 1em;
+    }
   }
 }
 
@@ -654,7 +676,7 @@ footer {
 // WIDGETS
 
 .widget-previews {
-  @media (min-width: $lg) {
+  @media (min-width: $xl) {
     display: flex;
     justify-content: space-around;
   }
