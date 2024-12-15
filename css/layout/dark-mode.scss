@@ -115,6 +115,32 @@
   .aside-nav__new {
     filter: invert(1) hue-rotate(180deg);
   }
+
+  /*
+  	GOOGLE SEARCH
+   */
+
+  .aside {
+    .gsc-results-wrapper-overlay,
+    .gsc-webResult.gsc-result,
+    .gsc-webResult.gsc-result:hover,
+    .gsc-above-wrapper-area {
+      border: none;
+      background: var(--mainBackgroundColor);
+    }
+
+    .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
+    .gs-fileFormatType {
+      color: var(--textColor);
+    }
+
+    .gs-webResult.gs-result a.gs-title:visited,
+    .gs-webResult.gs-result a.gs-title:visited b,
+    .gs-imageResult a.gs-title:visited,
+    .gs-imageResult a.gs-title:visited b {
+      color: var(--linkColor);
+    }
+  }
 }
 
 // ---------------------------------------------------------------------

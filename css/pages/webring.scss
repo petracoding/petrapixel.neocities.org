@@ -1,0 +1,28 @@
+.webring-members {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px dashed currentColor;
+    padding: 0.5em 1em;
+  }
+
+  @media (max-width: $md) {
+    th {
+      display: none;
+    }
+
+    td {
+      display: block;
+
+      &:first-child {
+        font-weight: bold;
+      }
+
+      &:last-child {
+        border-bottom: 3px dotted;
+      }
+    }
+  }
+}

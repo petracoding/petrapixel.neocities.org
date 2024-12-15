@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("%c Widget provided by petrapixel !!!", "font-size: 14pt;");
   console.log("%c Get yours: https://petrapixel.neocities.org/coding/widgets", "font-size: 12pt;");
 
-  const params = getSearchParameters();
+  const params = getParameters();
   if (params["color"]) document.body.style.color = params["color"] == "black" || params["color"] == "white" ? params["color"] : "#" + params["color"];
   if (params["fontSize"]) document.body.style.fontSize = params["fontSize"];
   if (params["center"]) document.body.style.textAlign = params["center"] == "1" ? "center" : "left";
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initLastFm(params);
 });
 
-function getSearchParameters() {
+function getParameters() {
   let prmstr = window.location.search.substr(1);
   return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
 }

@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241213"
+noCache: "20241215"
 ---
 
 <!DOCTYPE html>
@@ -81,7 +81,18 @@ noCache: "20241213"
         {% include "nav.njk" %}
 
         <div class="aside-dreamland desktop-only">
+          <!-- ----------------- SEARCHBAR ----------------- -->
+          <script async src="https://cse.google.com/cse.js?cx=d0371551e40124126"></script>
+          <div class="gcse-search"></div>
+
           <img src="{{ nesting }}assets/img/layout/divider1.gif" alt="" aria-hidden="true" />
+
+          <!-- ----------------- CONTEST ----------------- 
+          <a class="aside-contest" href="/contest">
+            <img src="{{ nesting }}assets/img/layout/trophy.gif" />
+            <div><b>Indie Web Contest</b><small>Participate now!</small></div>
+          </a>
+-->
 
           <!-- ----------------- CHANGELOG ----------------- -->
           <div class="aside-stuff aside-changelog">
@@ -301,7 +312,7 @@ noCache: "20241213"
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
               <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank"
-                >Twilight: Breaking Dawn
+                >"Want" by Gillian Anderson
                 <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a
               >
             </li>
@@ -312,7 +323,7 @@ noCache: "20241213"
             <li aria-label="obsessed with:">
               <img src="{{ nesting }}assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
               <span
-                >Dinosaurs
+                >Rocky Horror
                 <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
               >
             </li>

@@ -2,6 +2,8 @@
 /public/resources/templates.html
 /public/shrines/geoguessr.html
 /public/contest.html
+/public/webring/
+/public/webring.html
 
 # ignore these files because neocities doesn't allow them
 *.cur

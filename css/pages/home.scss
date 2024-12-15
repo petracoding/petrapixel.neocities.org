@@ -253,7 +253,7 @@
   border: 3px dotted rgba($pink, 0.5);
   padding: 1em;
   border-radius: 15px;
-  max-height: 224px;
+  max-height: 245px;
   overflow-y: auto;
 
   > *:first-child {
@@ -415,5 +415,9 @@
         content: ":";
       }
     }
+  }
+
+  .neighborhood__scroll-box {
+    max-height: none !important;
   }
 }
