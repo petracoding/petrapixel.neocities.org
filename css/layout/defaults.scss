@@ -25,9 +25,9 @@ body {
   padding: 5px;
 
   // ?
-  font-family: "ms gothic";
-  font-size: 12px;
-  line-height: 1.5;
+  //   font-family: "ms gothic";
+  //   font-size: 12px;
+  //   line-height: 1.5;
 
   &.readable-font {
     font-family: $readableFont;
@@ -154,6 +154,7 @@ body {
   .aside-mutuals,
   .aside-blinkies + img[src*="divider"],
   .aside-mutuals + img[src*="divider"],
+  .aside-tip-jar,
   img[src*="layout/new.gif"],
   img[src*="inline/star.gif"],
   img[src*="divider2.gif"],

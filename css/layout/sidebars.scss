@@ -728,6 +728,44 @@
   }
 }
 
+/*----------  Tip Jar  ----------*/
+
+.aside-tip-jar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 35px;
+  border-top: 1px Dashed currentColor;
+  padding-top: 20px;
+
+  b {
+    display: block;
+    line-height: 1;
+    font-size: 1.4em;
+    font-family: $font3;
+  }
+
+  img {
+    margin-right: 5px;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    b {
+      text-decoration: underline;
+      text-decoration-style: wavy;
+    }
+
+    img {
+      transform: scale(1.2);
+    }
+  }
+}
+
 /*----------  Image of the moment  ----------*/
 
 .image-of-the-moment {

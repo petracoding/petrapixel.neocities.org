@@ -16,12 +16,12 @@ main {
   }
 
   p {
-    margin: 1em 0;
+    margin: 0.5em 0;
   }
 
   strong {
     font-family: $font2, $font, sans-serif;
-    font-size: 1.1em;
+    // font-size: 1.1em;
     color: var(--textColorBold);
   }
 
@@ -38,7 +38,7 @@ main {
 
     li {
       margin-bottom: 0.15em;
-      line-height: 1.3;
+      //   line-height: 1.3;
     }
 
     &.list-with-more-spacing {

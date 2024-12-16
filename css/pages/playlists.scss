@@ -70,7 +70,7 @@
     transition: border-radius 0.2s ease;
     min-height: 100%;
     object-fit: cover;
-    image-rendering: pixelated;
+    // image-rendering: pixelated;
   }
 
   &::after {
@@ -126,7 +126,7 @@
 
 .playlist__title {
   display: block;
-  line-height: 1.2;
+  line-height: 1;
   color: var(--pink);
 }
 
@@ -137,7 +137,7 @@
 .playlist__info {
   font-size: 0.9em;
   color: var(--purple);
-  margin-top: 3px;
+  //   margin-top: 3px;
 }
 
 @media (min-width: $sm) {

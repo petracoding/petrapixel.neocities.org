@@ -4,6 +4,8 @@ title: "webring"
 description: "TODO"
 ---
 
+<script src="{{ nesting }}assets/js/webringu.js?nocache=1"></script>
+
 <section>
   <h1>Webring</h1>
   <p>
@@ -20,6 +22,7 @@ description: "TODO"
         <th>#</th>
         <th>Name</th>
         <th>URL</th>
+        <th>Slug</th>
         <th>Resources</th>
       </tr>
     </thead>
@@ -28,6 +31,7 @@ description: "TODO"
         <td>1</td>
         <td>Petra</td>
         <td><a href="https://petrapixel.neocities.org/">petrapixel.neocities.org</a></td>
+        <td>petrapixel</td>
         <td>layout builder, widgets, tutorials, snippets, tools, links and more!</td>
       </tr>
     </tbody>
@@ -39,6 +43,14 @@ description: "TODO"
   <p>Putting this code on your page will render the webring widget:</p>
   <textarea style="width: 100%" class="code-textarea" name="" id="" rows="10" aria-label="Webring Code"></textarea>
 
+  <div class="webringu">
+    <a href="/webring">Webringu</a>
+    <a href="/webring?slug=YOURSLUGHERE&action=previous">PREV</a>
+    <a href="/webring?slug=YOURSLUGHERE&action=random">RANDOM</a>
+    <a href="/webring?slug=YOURSLUGHERE&action=next">NEXT</a>
+  </div>
+
+  <p>You need to change the slug (see form below).</p>
   <p>Please put the code on your website <b>before</b> filling out the form below. It will say "This site isn't part of the webring yet." until I've added you.</p>
   <p>You may style it however you want. You can remove the Random link, but please don't remove the Previous or Next links.</p>
 </section>
@@ -77,5 +89,5 @@ description: "TODO"
   <p>List them in a comma separated list in your preferred order (as you can see in members list above.)</p>
   <p>I'll try to add you as soon as possible. Check back to this page or check the webring widget on your website to see if you've been added.</p>
   <div id="c_widget">Comment Widget could not be loaded!</div>
-  <script src="../assets/js/comment-widget.js"></script>
+  <script src="{{ nesting }}assets/js/comment-widget.js"></script>
 </section>

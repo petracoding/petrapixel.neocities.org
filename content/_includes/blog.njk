@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241215"
+noCache: "20241216"
 ---
 
 <!DOCTYPE html>
@@ -99,7 +99,7 @@ noCache: "20241215"
           <h2 style="height: 0px; overflow: hidden">Comments</h2>
 		  {% if commentsText %}<p>{{ commentsText | safe }}</p>{% endif %}
           <div id="c_widget">Comment Widget could not be loaded!</div>
-          <script src="../assets/js/comment-widget.js"></script>
+          <script src="{{ nesting }}assets/js/comment-widget.js"></script>
         </section>
 		{% endif %}
       </main>
