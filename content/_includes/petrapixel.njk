@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20241216"
+noCache: "20241220"
 ---
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ noCache: "20241216"
           <a href="/"><img src="{{ nesting }}assets/img/layout/petrapixel.png" aria-label="petrapixel" height="100" width="300" /></a>
         </div>
       </header>
-      <aside class="aside aside--left">
+      <aside class="aside aside--left" data-nosnippet="true">
         <details id="mobile-nav">
           <summary id="mobile-nav-toggle">Open Navigation</summary>
           {% include "nav.njk" %}
@@ -90,7 +90,7 @@ noCache: "20241216"
           <!-- ----------------- CONTEST ----------------- -->
 
           <a class="aside-contest" href="/contest">
-            <img src="{{ nesting }}assets/img/layout/trophy.gif" />
+            <img src="{{ nesting }}assets/img/layout/trophy.gif" width="80" height="85" />
             <div><b>Indie Web Contest</b><small>Participate now!</small></div>
           </a>
 
@@ -221,7 +221,7 @@ noCache: "20241216"
 		-->
         </div>
       </aside>
-      <aside class="aside aside--right desktop-only">
+      <aside class="aside aside--right desktop-only" data-nosnippet="true">
         <!-- ----------------- CLAP, KIRBY ----------------- -->
         <div class="aside-stuff aside-clap-kirby">
           <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook">

@@ -22,10 +22,21 @@ nesting: "../"
       </div>
     </div>
     <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="price">
+        <button class="rec-filters__button is-checked" data-filter="">any price</button>
+        <button class="rec-filters__button" data-filter=".free">free</button>
+        <button class="rec-filters__button" data-filter=".€" style="font-family: sans-serif; font-size: 16px">€</button>
+        <button class="rec-filters__button" data-filter=".€€" style="font-family: sans-serif; font-size: 16px">€€</button>
+        <button class="rec-filters__button" data-filter=".€€€" style="font-family: sans-serif; font-size: 16px">€€€</button>
+      </div>
+    </div>
+    <div class="rec-filters__group">
       <div class="rec-filters__buttons js-radio-button-group" data-filter-group="size">
         <button class="rec-filters__button is-checked" data-filter="">any type</button>
         <button class="rec-filters__button" data-filter=".singleplayer">singleplayer</button>
-        <button class="rec-filters__button" data-filter=".multiplayer">multiplayer</button>
+        <button class="rec-filters__button" data-filter=".local,.online">multiplayer</button>
+        <button class="rec-filters__button" data-filter=".local">local multiplayer</button>
+        <button class="rec-filters__button" data-filter=".online">online multiplayer</button>
       </div>
     </div>
     <div class="rec-filters__group">
@@ -40,7 +51,7 @@ nesting: "../"
   <div class="isotope-items isotope-items--games">
     {% for rec in recs['games'] %} {% if rec.title != "EXAMPLE" %}
     <div
-      class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.genres | recTurnToClasses }} {{ rec.platform | recTurnToClasses }} {{ rec.gameType | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}"
+      class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.price | recTurnToClasses }} {{ rec.genres | recTurnToClasses }} {{ rec.platform | recTurnToClasses }} {{ rec.gameType | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}"
     >
       <div class="rec__inner">
         <div class="rec__image"><img src="{{ rec.image }}" /></div>

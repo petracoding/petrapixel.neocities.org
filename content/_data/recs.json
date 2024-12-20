@@ -163,8 +163,8 @@
     },
     {
       "title": "What We Do In The Shadows",
-      "ongoing": true,
-      "seasons": 5,
+      "ongoing": false,
+      "seasons": 6,
       "year": "2019",
       "genres": "Comedy, Fantasy, Horror, Queer",
       "rating": "2",
@@ -435,8 +435,9 @@
     {
       "title": "Portal 2",
       "platform": "pc, switch, other",
-      "gameType": "singleplayer, multiplayer",
+      "gameType": "singleplayer, local, online",
       "rating": "3",
+      "price": "€€",
       "link": "https://www.backloggd.com/games/portal-2/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.jpg",
       "description": "This is the best video game ever created. The singleplayer mode is perfect, the co-op mode is perfect, the humor is on point, the graphics hold up really well, and it's so much fun."
@@ -446,6 +447,7 @@
       "platform": "switch",
       "gameType": "singleplayer",
       "rating": "3",
+      "price": "€€€",
       "link": "https://www.backloggd.com/games/the-legend-of-zelda-breath-of-the-wild/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.jpg",
       "description": "One hell of an open-world game. This was the first LOZ game I've ever played, and it blew my mind. I even prefer it over its sequel."
@@ -453,8 +455,9 @@
     {
       "title": "Minecraft",
       "platform": "pc, switch, mobile, other",
-      "gameType": "singleplayer, multiplayer",
+      "gameType": "singleplayer, online",
       "rating": "3",
+      "price": "€€",
       "link": "https://www.backloggd.com/games/minecraft/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg",
       "description": "I've spent most of my early teen years playing this game. Absolutely worth it."
@@ -462,8 +465,9 @@
     {
       "title": "Mario Kart 8 Deluxe",
       "platform": "switch",
-      "gameType": "singleplayer, multiplayer",
+      "gameType": "singleplayer, local, online",
       "rating": "3",
+      "price": "€€€",
       "link": "https://www.backloggd.com/games/mario-kart-8-deluxe/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co213p.jpg",
       "description": "You know this. "
@@ -471,8 +475,9 @@
     {
       "title": "Animal Crossing: New Horizons",
       "platform": "switch",
-      "gameType": "singleplayer, multiplayer",
+      "gameType": "singleplayer, local, online",
       "rating": "1",
+      "price": "€€€",
       "link": "https://www.backloggd.com/games/animal-crossing-new-horizons/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wls.jpg",
       "description": "I played this for more than 300 hours and enjoyed it a lot! It does get boring at some point, but apparently not in the first 300 hours so you're good."
@@ -482,15 +487,17 @@
       "platform": "pc",
       "gameType": "singleplayer",
       "rating": "2",
+      "price": "€€",
       "link": "https://www.backloggd.com/games/papers-please/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1vep.jpg",
-      "description": "Very neat little, high-quality game. It's quite difficult though."
+      "description": "Very neat little, high-quality game about checking people's passports. (I'ts more fun than it sounds.) It's quite difficult though."
     },
     {
       "title": "Overcooked!",
       "platform": "pc, other",
-      "gameType": "multiplayer",
+      "gameType": "local",
       "rating": "2",
+      "price": "€€",
       "link": "https://www.backloggd.com/games/overcooked/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co262g.jpg",
       "description": "Perfect game to play with your friends and destroy your friendships with! Absolutely hectic cooking fun!"
@@ -500,6 +507,7 @@
       "platform": "switch",
       "gameType": "singleplayer",
       "rating": "3",
+      "price": "€€€",
       "link": "https://www.backloggd.com/games/super-mario-odyssey/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1mxf.jpg",
       "description": "Best Mario game ever. It's so beautiful, fun, and lovely. I can't believe it took me so long to play this."
@@ -507,8 +515,9 @@
     {
       "title": "Keep Talking and Nobody Explodes",
       "platform": "pc, switch",
-      "gameType": "multiplayer",
+      "gameType": "local",
       "rating": "3",
+      "price": "€€",
       "link": "https://www.backloggd.com/games/keep-talking-and-nobody-explodes/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/aykvlxlmax2rcvljwkqn.jpg",
       "description": "A must-have communicative co-op game if you like solving puzzles! The gameplay is really unique because one person has to have the actual printed-out handbook in his hand."
@@ -516,8 +525,9 @@
     {
       "title": "The Wiki Game",
       "platform": "browser",
-      "gameType": "multiplayer",
+      "gameType": "online",
       "rating": "2",
+      "price": "free",
       "link": "https://www.backloggd.com/games/the-wiki-game/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7sik.jpg",
       "description": "This is free to play in your browser. Basically, you have to browse Wikipedia and find a certain article before your opponents do, using only the links in articles. It's super fun."
@@ -525,8 +535,9 @@
     {
       "title": "Stardew Valley",
       "platform": "pc, switch, mobile",
-      "gameType": "singleplayer, multiplayer",
+      "gameType": "singleplayer, online",
       "rating": "2",
+      "price": "€€",
       "link": "https://www.backloggd.com/games/stardew-valley/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/xrpmydnu9rpxvxfjkiu7.jpg",
       "description": "I grew up with Harvest Moon, so this was a must. It's a really great farming game in a retro style, and there is a lot of content, even for late-game!"
@@ -534,8 +545,9 @@
     {
       "title": "Battleblock Theater",
       "platform": "pc, other",
-      "gameType": "multiplayer",
+      "gameType": "local",
       "rating": "2",
+      "price": "€€",
       "link": "https://www.backloggd.com/games/battleblock-theater/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ify.jpg",
       "description": "If you're looking for a fun platformer to play in local multiplayer, I highly recommend this one. It's also really funny."
@@ -543,20 +555,32 @@
     {
       "title": "GeoGuessr",
       "platform": "browser",
-      "gameType": "singleplayer, multiplayer",
+      "gameType": "singleplayer, online",
       "rating": "1",
+      "price": "€",
       "link": "https://www.backloggd.com/games/geoguessr/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7ebv.jpg",
-      "description": "Unfortunately not free-to-play anymore (except once a day), but it's just so great. "
+      "description": "Guess where in the world you are! Unfortunately not free-to-play anymore, but it's just so great. A must-play for geography nerds."
     },
     {
       "title": "Neko Atsume",
       "platform": "mobile",
       "gameType": "singleplayer",
       "rating": "2",
+      "price": "free",
       "link": "https://www.backloggd.com/games/neko-atsume-kitty-collector/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1o8i.webp",
       "description": "This is my favorite mobile game because it's not addicting, it's so relaxing and you never spend a lot of time in the app because the whole point is to come back later and see which cute kitties have visited you. Even my mom loves this."
+    },
+    {
+      "title": "Home Safety Hotline",
+      "platform": "pc, switch",
+      "gameType": "singleplayer",
+      "rating": "2",
+      "price": "€€",
+      "link": "https://www.backloggd.com/games/home-safety-hotline/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co71xm.jpg",
+      "description": "This is a very creative game about helping people who have weird little creatures in their house. If you like analog horror this is for you! It's not scary, don't worry. Unfortunately it's very short, but it's obvious that a lot of love was poured into the development of this game!"
     },
     {
       "title": "EXAMPLE",

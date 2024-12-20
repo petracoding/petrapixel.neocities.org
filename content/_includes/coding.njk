@@ -1,6 +1,6 @@
 ---
-testingOnLocalhost: false
-noCache: "20241216"
+testingOnLocalhost: true
+noCache: "20241220"
 ---
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ noCache: "20241216"
           <a href="/"><img src="{{ nesting }}assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300" /></a>
         </div>
       </header>
-      <nav class="coding-navigation">
+      <nav class="coding-navigation" data-nosnippet="true">
         <div class="coding-navigation-category" aria-label="Tools">
           <div class="coding-navigation-category__title">
             <a href="/coding#tools"
@@ -98,16 +98,16 @@ noCache: "20241216"
 
         <div class="coding-navigation-category" aria-label="Guides">
           <div class="coding-navigation-category__title">
-            <a href="/coding#guides">Guides</a>
+            <a href="/coding#guides"
+              >Guides <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+            ></a>
           </div>
           <ul>
-            <!--
             <li>
               <a href="/coding/how-to-make-a-website"
                 >how to make a website <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
               ></a>
             </li>
-			-->
             <li><a href="/coding/common-questions">common questions</a></li>
             <li><a href="/coding/common-mistakes">common mistakes</a></li>
             <li><a href="/coding/snippets">snippets & tips</a></li>
@@ -172,7 +172,7 @@ noCache: "20241216"
           </ul>
         </div>
       </nav>
-      <aside class="aside aside--left">
+      <aside class="aside aside--left" data-nosnippet="true">
         <div class="coding-back-to-home">
           <a href="/"
             ><span><span>⇠</span> go back home</span> <img src="{{ nesting }}assets/img/layout/pc.gif" alt="" aria-hidden="true"

@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
     return "../assets/img/links/websites/" + str;
   });
   eleventyConfig.addFilter("dateToRFC822Format", function (str) {
+    // todo
     return str;
   });
   eleventyConfig.addFilter("recTurnToClasses", function (str) {

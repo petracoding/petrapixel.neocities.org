@@ -143,7 +143,7 @@
 
   .custom-scrollbar {
     height: 40vh;
-    max-height: 230px;
+    max-height: 243px;
     overflow-y: auto;
     margin-right: 20px;
     padding-left: 24px;
@@ -245,7 +245,7 @@
   border: 2px solid var(--pink);
   padding: 17px;
   background: var(--mainBackgroundColor);
-  max-width: 730px;
+  max-width: 240px;
   min-width: 180px;
   margin-right: 20px;
 
@@ -360,8 +360,12 @@
     flex: 0 0 50%;
   }
 
-  .about-me-page__windows > * {
-    width: 100%;
+  .about-me-page__windows {
+    justify-content: flex-start;
+
+    & > * {
+      width: 100%;
+    }
   }
 
   .about-me-page-sns-coding {

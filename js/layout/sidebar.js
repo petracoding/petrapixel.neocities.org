@@ -47,6 +47,42 @@ function initLastFmWidget() {
         }
       }
     });
+
+  //   let cardElementAdded = false;
+  //   const spotifyCardCode = `<a href="https://data-card-for-spotify.herokuapp.com/card?user_id=11123584461">
+  //   <img src="https://data-card-for-spotify.herokuapp.com/api/card?user_id=11123584461" alt="Data Card for Spotify"></a>`;
+
+  //   song.addEventListener("click", () => {
+  //     if (!cardElementAdded) {
+  //       document.querySelector("#spotifyCard").innerHTML = spotifyCardCode;
+  //       cardElementAdded = true;
+  //     }
+  //     document.querySelector(".spotify-card-popup").setAttribute("aria-hidden", "false");
+  //   });
+
+  //   const closeBtn = document.querySelector(".spotify-iframe-container__close");
+  //   closeBtn.addEventListener("click", () => {
+  //     document.querySelector("#spotifyCard").setAttribute("aria-hidden", "true");
+  //   });
+
+  //   doOnEscPress(() => {
+  //     document.querySelector("#spotifyCard").setAttribute("aria-hidden", "true");
+  //   });
+}
+
+function doOnEscPress(f) {
+  document.onkeydown = function (evt) {
+    evt = evt || window.event;
+    var isEscape = false;
+    if ("key" in evt) {
+      isEscape = evt.key === "Escape" || evt.key === "Esc";
+    } else {
+      isEscape = evt.keyCode === 27;
+    }
+    if (isEscape) {
+      f();
+    }
+  };
 }
 
 function initStatusCafeWidget() {
