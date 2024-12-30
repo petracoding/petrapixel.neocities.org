@@ -3,6 +3,7 @@
 /public/shrines/geoguessr.html
 /public/webring/
 /public/webring.html
+/public/layouts
 
 # ignore these files because neocities doesn't allow them
 *.cur

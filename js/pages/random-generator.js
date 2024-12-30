@@ -1,5 +1,6 @@
 export function initRandomGenerator() {
   if (document.querySelector("#gimmerandomfact")) initRandomFactAboutMe();
+  if (document.querySelector("#gimmerandomfavorite")) initRandomFavorite();
 
   const el = document.querySelector(".random-generator");
   if (!el) return;
@@ -59,6 +60,49 @@ function initRandomFactAboutMe() {
       ],
       currentItem
     );
+  });
+}
+
+function initRandomFavorite() {
+  const btn = document.querySelector("#gimmerandomfavorite");
+  const factEl = document.querySelector("#randomfavorite");
+
+  btn.addEventListener("click", () => {
+    const currentItem = factEl.innerHTML ? factEl.innerHTML : false;
+    const rando = generateRandomItem(
+      [
+        ["art", "campbell's soup cans, by andy warhol"],
+        ["pterosaur", "quetzalcoatlus"],
+        ["food", "breakfast"],
+        ["season", "summer"],
+        ["pokémon", "mew, oddish"],
+        ["audio book narrator", "stephen fry"],
+        ["animal", "cats, dogs, sloths, snakes, small bird"],
+        ["card game", "black stories, dixit, koi-koi"],
+        ["board games", "concept"],
+        ["snack", "potato chips with rosemary"],
+        ["scent", "wooden furniture"],
+        ["holiday", "new year's eve"],
+        ["language", "english"],
+        ["music genre", "comedy"],
+        ["music video", "ninja sex party - take on me"],
+        ["poem", "der berg - heinz erhardt"],
+        ["oil painting", "the lament for icarus, by frederic leighton"],
+        ["newsletter", "game grumps newsletter"],
+        ["podcast", "coldmirror's harry podcast"],
+        ["female name", "campbell"],
+        ["aesthetic", "midwest gothic"],
+        ["playground choice", "swingset"],
+        ["dog breed", "pitbull"],
+        ["gore", "blood, bruises, cannibalism"],
+        ["superhero", "wolverine"],
+        ["marvel character", "loki"],
+        ["programming language", "javascript (i'm serious)"],
+        ["wikipedia article", "sailing ship"],
+      ],
+      currentItem
+    );
+    factEl.innerHTML = `<b>my favorite <u>${rando[0]}:</u></b><br>${rando[1]}`;
   });
 }
 
