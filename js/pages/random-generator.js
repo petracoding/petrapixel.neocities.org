@@ -99,6 +99,7 @@ function initRandomFavorite() {
         ["marvel character", "loki"],
         ["programming language", "javascript (i'm serious)"],
         ["wikipedia article", "sailing ship"],
+        ["perfume", "darling by brut parfums / fabergé "],
       ],
       currentItem
     );

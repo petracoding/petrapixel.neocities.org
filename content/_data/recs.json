@@ -312,6 +312,18 @@
       "image": "https://artworks.thetvdb.com/banners/posters/338903-1.jpg",
       "description": "This short but sweet show is about a very lovable group of teens in Northern Ireland that get up to crazy stuff. The comedy is interspersed with serious, touching moments. I binged this in a few days and I'm so sad there's not more.",
       "cw": "mentions the historical context of military conflict, bombing, etc in passing; side character death"
+    },
+    {
+      "title": "Jurassic World: Camp Cretaceous",
+      "ongoing": false,
+      "seasons": 5,
+      "year": "2020",
+      "genres": "Action, Animation, Drama, Sci-Fi, Queer",
+      "rating": "1",
+      "link": "https://www.serializd.com/show/Jurassic-World-Camp-Cretaceous-93741",
+      "image": "https://artworks.thetvdb.com/banners/v4/series/365066/posters/606c90def1f43.jpg",
+      "description": "This is technically a kids' show, but if you're into Jurassic Park or dinosaurs in general you will love this! It's really good and I fell in love with the characters. Action, cuteness, and friendship guaranteed! Also watch the second show 'Jurassic World: Chaos Theory', which takes place after a timeskip, and is just as good if not better!!!",
+      "cwX": "suitable for children, but can be scary, and has many offscreen deaths"
     }
   ],
   "books": [
@@ -583,12 +595,24 @@
       "description": "This is a very creative game about helping people who have weird little creatures in their house. If you like analog horror this is for you! It's not scary, don't worry. Unfortunately it's very short, but it's obvious that a lot of love was poured into the development of this game!"
     },
     {
+      "title": "Subnautica",
+      "price": "€€",
+      "platform": "switch, pc, other",
+      "gameType": "singleplayer",
+      "rating": "2",
+      "link": "https://www.backloggd.com/games/subnautica/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1iqw.jpg",
+      "description": "An awesome open-world game about being stranded on an alien ocean planet. The graphics aged really well, it can be quite scary (especially if you have thalassophobia), and the progression into late-game is very fun! If you like exploration, oceans, and scariness this is for you!"
+    },
+    {
       "title": "EXAMPLE",
+      "price": "€€",
       "platform": "switch",
       "gameType": "singleplayer",
       "rating": "1",
       "link": "LINK",
-      "image": "IMAGE"
+      "image": "IMAGE",
+      "description": "TYPEHERE"
     }
   ],
   "youtube": [
