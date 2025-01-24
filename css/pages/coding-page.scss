@@ -609,6 +609,140 @@ blockquote.contact::after {
   }
 }
 
+// Comprehension Questions:
+
+.comprehension {
+  margin: 2em 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  position: relative;
+  border-left: 3px solid var(--borderColor);
+
+  &::before {
+    content: "QUIZ!";
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 5px;
+    transform: translateY(-50%) rotate(-90deg);
+    top: 50%;
+    right: calc(100% - 15px);
+  }
+
+  [data-comprehension]:last-child & {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $md) {
+    padding-left: 1em;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &.comprehension--correct {
+    [data-correct] {
+      background-color: var(--green);
+    }
+
+    .comprehension__answer {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.comprehension__question {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  padding-left: 0.25em;
+}
+
+.comprehension__answers {
+  @media (min-width: $md) {
+    &.comprehension__answers--half {
+      display: flex;
+      flex-wrap: wrap;
+      grid-gap: 10px;
+
+      .comprehension__answer {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+  }
+}
+
+.comprehension__answer {
+  display: block;
+  color: var(--textColor);
+  border: none;
+  padding: 0;
+  background: rgba($pink, 0.2);
+  padding: 0.5em 1em;
+  margin: 0;
+  margin-bottom: 0.5em;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.2s ease;
+
+  b {
+    font-size: 1.2em;
+  }
+
+  &::after {
+    content: "✗";
+    opacity: 0;
+    position: absolute;
+    top: 7px;
+    right: 14px;
+    font-size: 20px;
+    transition: opacity 0.2s ease;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:not([disabled]) {
+    cursor: $cursorPointer;
+
+    &:hover,
+    &:focus {
+      background: rgba($pink, 0.4);
+    }
+  }
+
+  &[data-correct] {
+    &::after {
+      content: "✓";
+      top: 8px;
+      right: 13px;
+    }
+  }
+
+  &.comprehension__answer--incorrect {
+    background: rgba($red, 0.4);
+  }
+}
+
+.comprehension__hint {
+  margin-top: 0.5em;
+  padding-left: 0.25em;
+
+  &[aria-hidden] {
+    display: none;
+  }
+}
+
 /*
 	CHEATSHEET
 */

@@ -6,6 +6,7 @@ import { initPlaylists } from "./pages/playlists";
 import { initWritingChart } from "./pages/writing";
 import { initRandomGenerator } from "./pages/random-generator";
 import { initChecklist } from "./pages/checklist";
+import { initComprehensionQuestions } from "./pages/comprehension-questions";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Misc.
   initTooltips();
   initProgressBar();
+  initComprehensionQuestions();
 
   // Localhost only:
   localhostHelper();

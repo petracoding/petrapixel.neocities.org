@@ -6,13 +6,16 @@
     </li>
     <li>
       <details id="menu-aboutme">
-        <summary>about me <small>(3)</small></summary>
+        <summary>about me <small>(4)</small></summary>
         <ul>
           <li>
             <a href="/about/about-me">about me</a>
           </li>
           <li><a href="/about/cats">my cats</a></li>
           <li><a href="/about/media-log">media log</a></li>
+          <li>
+            <a href="/blog{% if testingOnLocalhost %}/index{% endif %}">blog </a>
+          </li>
         </ul>
       </details>
     </li>
@@ -95,11 +98,8 @@
     </li>
     <li>
       <details id="menu-more">
-        <summary>random stuff <small>(5)</small></summary>
+        <summary>fun stuff! <small>(6)</small></summary>
         <ul>
-          <li>
-            <a href="/blog{% if testingOnLocalhost %}/index{% endif %}">blog </a>
-          </li>
           <li>
             <a href="/shrines/index">shrines</a>
           </li>
@@ -117,9 +117,7 @@
     </li>
     <li>
       <details id="menu-codinghelp">
-        <summary>
-          coding & webmastery <small>(18)</small><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
-        </summary>
+        <summary>coding & webmastery <small>(18)</small></summary>
 
         <div class="aside-scrollbox custom-scrollbar">
           <strong>Tools:</strong>
