@@ -19,6 +19,7 @@ toc: true
       <li>
         <a href="#external-script">Why does my script/widget not work? <small>(Neocities)</small></a>
       </li>
+      <li><a href="#viewport">My website doesn't show the mobile version on mobile</a></li>
     </ol>
   </div>
 
@@ -191,6 +192,13 @@ footer { grid-area: footer; }
               <li><a href="LINK" target="_blank">LINK</a></li>
             </ul>
           </div> -->
+</section>
+
+<section>
+  <h2 id="viewport">My website doesn't show the mobile version on mobile</h2>
+  <p>You're probably missing this line in your HTML head:</p>
+  <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</code></pre>
+  <p>(Add it anywhere between &lt;head&gt; and &lt;/head&gt;)</p>
 </section>
 
 <section class="buy-me-a-coffee">

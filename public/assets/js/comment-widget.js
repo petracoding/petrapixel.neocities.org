@@ -410,6 +410,7 @@ function createComment(data) {
   let comment = document.createElement("div");
 
   // Get the right timestamps
+  // IF THERE IS AN ERROR HERE IT IS BECAUSE THE COLUMN IN THE GOOGLE DOC IS NOT NAMED "Timestamp" !!!
   let timestamps = convertTimestamp(data.Timestamp);
   let timestamp;
   if (s_longTimestamp) {

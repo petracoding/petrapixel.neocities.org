@@ -69,7 +69,7 @@ function headerHTML() {
         </div>
 		<div class="sidebar-section">
           <div class="sidebar-title">Section Title</div>
-          <img class="full-width-image" src="https://picsum.photos/id/25/900/400">
+          <img class="full-width-image" src="https://picsum.photos/id/40/1000/400">
         </div>
 		<div class="sidebar-section">
           <div class="sidebar-title">Section Title</div>
@@ -140,7 +140,7 @@ function footerHTML() {
         </div>
 		<div class="sidebar-section">
           <div class="sidebar-title">Section Title</div>
-          <img class="full-width-image" src="https://picsum.photos/id/25/900/400">
+          <img class="full-width-image" src="https://picsum.photos/id/40/1000/400">
         </div>
 		<div class="sidebar-section">
           <div class="sidebar-title">Section Title</div>

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   localhostHelper();
 
   // SNOW
-  initSnow();
+  //   initSnow();
 });
 
 function prepareScrollToTop() {

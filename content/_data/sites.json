@@ -133,6 +133,14 @@
     "neighbor": true
   },
   {
+    "title": "Ballonlea",
+    "image": "macaquemoe.png",
+    "link": "https://ballonlea.net/",
+    "linksBackToMe": true,
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
     "link": "https://cyberstheb.neocities.org/",
     "title": "cyberstheb",
     "image": "cyberstheb.png",
@@ -252,14 +260,7 @@
     "linksBackToMe": false,
     "neighbor": true
   },
-  {
-    "title": "Macaque",
-    "image": "macaquemoe.png",
-    "link": "https://macaque.moe/",
-    "linksBackToMe": false,
-    "neighbor": true,
-    "inspiration": true
-  },
+
   {
     "title": "TEMPLATE",
     "image": "IMAGE ------------------------------------------------------------------------------------",
