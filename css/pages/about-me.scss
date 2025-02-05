@@ -310,7 +310,7 @@
     height: 79px;
     width: 79px;
     margin: 3px;
-    overflow: hidden;
+    // overflow: hidden;
 
     @media (max-width: $sm) {
       width: 19vw;
@@ -320,17 +320,19 @@
     &:hover,
     &:focus {
       img {
-        transform: scale(1.15);
+        transform: scale(1.4);
+        z-index: 1;
         filter: none;
       }
     }
   }
 
   img {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.1s linear, filter 0.2s linear;
+    transition: transform 0.2s linear, filter 0.2s linear;
     filter: brightness(1.4) contrast(0.8) sepia(0.15) hue-rotate(-30deg);
   }
 }

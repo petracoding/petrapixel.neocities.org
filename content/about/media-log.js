@@ -4,6 +4,8 @@ let currentYearTags;
 let currentMonthTags;
 
 function initMediaLog() {
+  count = 0;
+
   // Read
   const yearEls = document.querySelectorAll("#media-log-content > [data-year]");
   [...yearEls].forEach((yearEl) => {

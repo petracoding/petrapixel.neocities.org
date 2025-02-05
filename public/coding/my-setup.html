@@ -1,2 +1,326 @@
-<!doctype html><html lang="en"><head><title>my coding setup | petrapixel</title><meta name="description" content="My coding setup in VSCode (Visual Studio Code), including VSCode plugin /extension suggestions and the settings that I use."><script src="../assets/js/main.js?nocache=20250201"></script><link rel="stylesheet" href="../assets/main.css?nocache=20250201"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"><script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-J64TL8KVTJ")</script></head><body class="coding-page-layout"><noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a> <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a><div id="content"><div id="theme-toggler" aria-hidden="true"><button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated" alt=""> <span>toggle theme</span></button></div><div id="font-toggler" aria-hidden="true"><button type="button"><span>toggle font</span></button></div><header><div class="header-heading"><a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300"></a></div></header><nav class="coding-navigation" data-nosnippet="true"><div class="coding-navigation-category" aria-label="Tools"><div class="coding-navigation-category__title">Tools</div><ul><li><a href="/coding/layout-generator">layout generator</a></li><li><a href="/coding/widgets">widgets for free neocities accounts</a></li><li><a href="/coding/checklist">self-study checklist</a></li><li><a href="/coding/cheatsheet">cheatsheet</a></li></ul></div><div class="coding-navigation-category" aria-label="Guides"><div class="coding-navigation-category__title">Guides</div><ul><li><a href="/coding/how-to-make-a-website">how to make a website</a></li><li><a href="/coding/common-questions">common questions</a></li><li><a href="/coding/common-mistakes">common mistakes</a></li><li><a href="/coding/snippets">snippets & tips</a></li><li><a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a></li><li><a href="/coding/code-quality">code quality guide</a></li><li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li></ul></div><div class="coding-navigation-category" aria-label="Beginner Tutorials"><div class="coding-navigation-category__title">Beginner Tutorials</div><ul><li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li><li><a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Advanced Tutorials"><div class="coding-navigation-category__title">Advanced Tutorials</div><ul><li><a href="/coding/git-tutorial">git tutorial</a></li><li><a href="/coding/npm-tutorial">node/npm tutorial</a></li><li><a href="/coding/webpack-tutorial">webpack tutorial</a></li><li><a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Miscellaneous"><div class="coding-navigation-category__title">Miscellaneous</div><ul><li><a href="/coding/neocities">neocities tips</a></li><li><a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a></li></ul></div></nav><aside class="aside aside--left" data-nosnippet="true"><div class="coding-back-to-home"><a href="/"><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"></a></div><img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true"><div class="aside-stuff aside-clap-kirby" style="margin-top:20px"><a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode"> </a><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode"> </a><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a></div><div class="aside-stuff aside-link-back"><div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true"></div><p>Hotlinking is a-okay!</p><a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"></a><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea></div><div class="aside-stats__stat" style="margin-bottom:0;margin-top:2em"><div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"></div><div class="aside-stats__stat-content"><center><a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><small style="font-size:.8em;letter-spacing:-.4px;text-align:center;display:block">(might not be entirely accurate)</small></div></div><img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top:-5px"> <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top:2em"><div id="toc-position"></div><div id="toc"></div><a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"><img src="../assets/img/layout/coffee.gif" width="70"><div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering:pixelated"> <a class="aside-contest" href="/contest"><img src="../assets/img/layout/trophy.gif" width="80" height="85"><div><b>Indie Web Contest</b><small>Participate now!</small></div></a></aside><div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div><main id="main" class="coding-page"><section><h1>My Coding Setup</h1><p>I use the software <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> to code and highly recommend it!</p><div id="toc"><b>Table of Contents:</b><ol><li><a href="#setup">Project Setup</a></li><li><a href="#shortcuts">Shortcuts I use a lot</a></li><li><a href="#vscode-settings">VSCode Settings</a></li><li><a href="#vscode-extensions">VSCode Extensions</a></li></ol></div></section><section><h2 id="setup">Project Setup</h2><ul><li>Project is a <b>GitHub</b> repository.<ul><li>For Neocities: GitHub Action <a href="/blog/neocities-automatic-deployment.html">"Deploy to Neocities"</a></li></ul></li><li><b>Webpack</b> (javascript & (s)css & asset bundler)</li><li><b>SCSS</b> (css preprocessor)</li></ul><p>My project for this website is on Github and is a good example. <a href="https://github.com/petracoding/petrapixel.neocities.org">Browse the repository here.</a></p></section><section><h2 id="shortcuts">Shortcuts I use a lot</h2><ul><li><b>ctrl + (click)</b> = jump into a function/file</li><li><b>ctrl + #</b> = turn current selection into a comment (and reverse)</li><li><b>ctrl + d</b> = select the next search result for the current selection (starts multi-cursor)</li><li><b>ctrl + alt + ↑/↓</b> = duplicate current line</li><li><b>alt + ↑/↓</b> = move current line up/down</li><li><b>ctrl + T</b> = opens search (e.g. to quickly open files)</li></ul><p>Specific key combinations might differ for you, I don't remember if they're the default...</p></section><section><h2 id="vscode-settings">VSCode Settings</h2><p><b>Tip:</b> You can turn on setting sync to sync your settings across your devices.</p><p><b>Tip:</b> In the UI, right-click anything you never need to hide it. This will give you more space.</p><h4>My Favorite Themes:</h4><ul><li>saturated dark+</li><li>subtle pink</li><li>vibrancy continued</li></ul><h4>My Settings:</h4><ul class="list-with-more-spacing"><li>terminal color scheme: search for "workbench color" and click edit json. in <code>workbench.colorCustomizations</code> add a code form <a href="https://glitchbone.github.io/vscode-base16-term/#/unikitty-dark" target="_blank">this generator</a></li><li>set editor hover delay to 800</li><li>turn off editor insert spaces (i want tab indents)</li><li>turn off explorer decoration badges</li><li>turn off source control count badge</li><li>turn on cursor blinking (style: phase)</li><li>turn on cursor smooth caret animation</li><li>turn on file auto save after focus change</li><li>turn on minimap autohide</li><li>turn on smooth scrolling</li><li>window title: i have it empty (default: <code style="word-break:break-all">${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}</code>)</li><li>zoom level: 0.3</li></ul></section><section><h2 id="vscode-extensions">VSCode Extensions</h2><p>You can install extensions in VSCode via the "Extensions" menu. Make sure to restart VSCode after installation.</p><hr><h3><strong>formatting:</strong></h3><ul class="list-with-more-spacing"><li><b>"format html in php"</b></li><li><b>"formatting toggle"</b><ul><li>adds a formatting toggle at the bottom right so you can temporarily turn of auto formatting</li></ul></li><li><b>"prettier"</b><ul><li>note: <span>does not format php files (for that i have 'php intelephense') or html in php files (for that i have 'format html in php')</span></li><li>file not formatting?: <span>there is an error in the file. click the prettier button on the bottom right corner.</span></li></ul></li></ul><hr><h3><strong>useful stuff:</strong></h3><ul class="list-with-more-spacing"><li><b>"alphabetical sorter"</b><ul><li>to use: <span>ctrl + shift + p + 'sort'</span></li></ul></li><li><b>"auto close tag"</b> (html)</li><li><b>"auto rename tag"</b> (html)</li><li><b>"highlight matching tag"</b> (for html)</li><li><b>"leet-html"</b> (syntax highlighter for html in javascript)</li><li><b>"open in default browser"</b><ul><li>to use: right-click in file, choose 'open in default browser'</li></ul></li><li><b>"svg viewer"</b> (view svg images in VSCode)</li><li><b>"vs code css comment" </b>(for css)<ul><li>to use: <span>type 'comment-section' in css file and press enter</span></li></ul></li></ul><hr><h3><strong>intellisense: (= code completion, parameter info, quick info)</strong></h3><ul class="list-with-more-spacing"><li><b>"php intelephense"</b> (for php)<ul><li>to use for formatting: <span>right-click in a php file and 'format document'. it will ask which formatter to use, select php intelephense</span></li></ul></li><li><b>"scss intellisense"</b> (for scss)</li></ul><hr><h3><strong>linter: (= checks for errors)</strong></h3><ul class="list-with-more-spacing"><li><b>"stylelint"</b> (for css, scss)</li><li><b>"eslint"</b> (for javascript)<ul><li><span>Installation:</span><ol><li>Download a config file from <a href="https://eslint.org/dspano" target="_blank" rel="nofollow">here</a></li><li>Put it into <code>C:\Users\{USERNAME}</code></li><li>In the file, add <code>"browser":true</code> to the list of environments ("env" at the top of the file)</li><li>In the file, add <code>"sourceType":"module"</code> to "parserOptions".</li><li>In VSCode do ctrl+shift+p "eslint restart server".</li></ol></li><li><span>"Problems" tab should show problems</span></li></ul></li><li><b>"php import checker"</b> (for php)</li></ul><hr><h3><strong>fun stuff:</strong></h3><ul><li><b>"vscode-pets"</b> (adds cute pets)<ul><li>to use: ctrl + shift + p + 'pet'</li></ul></li></ul></section></main><footer><div class="footer-content"><a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS"></a><i>┊</i> created by petrapixel 2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a> <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i> <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></div><div class="footer-content mobile-only"><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a><br><center><small>Visitors:</small> <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><br><center><a href="#" tabindex="-1" style="font-size:1.5em">go to top</a></center></div></footer></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>my coding setup | petrapixel</title>
+    <meta name="description" content="My coding setup in VSCode (Visual Studio Code), including VSCode plugin /extension suggestions and the settings that I use." />
+    <script src="../assets/js/main.js?nocache=20250205"></script>
+    <link rel="stylesheet" href="../assets/main.css?nocache=20250205" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
+    <script>
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      (window.dataLayer = window.dataLayer || []), gtag("js", new Date()), gtag("config", "G-J64TL8KVTJ");
+    </script>
+  </head>
+  <body class="coding-page-layout">
+    <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a>
+    <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
+    <div id="content">
+      <div id="theme-toggler" aria-hidden="true">
+        <button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height: 20px; image-rendering: pixelated" alt="" /> <span>toggle theme</span></button>
+      </div>
+      <div id="font-toggler" aria-hidden="true">
+        <button type="button"><span>toggle font</span></button>
+      </div>
+      <header>
+        <div class="header-heading">
+          <a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300" /></a>
+        </div>
+      </header>
+      <nav class="coding-navigation" data-nosnippet="true">
+        <div class="coding-navigation-category" aria-label="Tools">
+          <div class="coding-navigation-category__title">Tools</div>
+          <ul>
+            <li><a href="/coding/layout-generator">layout generator</a></li>
+            <li><a href="/coding/widgets">widgets for free neocities accounts</a></li>
+            <li><a href="/coding/checklist">self-study checklist</a></li>
+            <li><a href="/coding/cheatsheet">cheatsheet</a></li>
+          </ul>
+        </div>
+        <div class="coding-navigation-category" aria-label="Guides">
+          <div class="coding-navigation-category__title">Guides</div>
+          <ul>
+            <li><a href="/coding/how-to-make-a-website">how to make a website</a></li>
+            <li><a href="/coding/common-questions">common questions</a></li>
+            <li><a href="/coding/common-mistakes">common mistakes</a></li>
+            <li><a href="/coding/snippets">snippets & tips</a></li>
+            <li>
+              <a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a>
+            </li>
+            <li><a href="/coding/code-quality">code quality guide</a></li>
+            <li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li>
+          </ul>
+        </div>
+        <div class="coding-navigation-category" aria-label="Beginner Tutorials">
+          <div class="coding-navigation-category__title">Beginner Tutorials</div>
+          <ul>
+            <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
+            <li>
+              <a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a>
+            </li>
+          </ul>
+        </div>
+        <div class="coding-navigation-category" aria-label="Advanced Tutorials">
+          <div class="coding-navigation-category__title">Advanced Tutorials</div>
+          <ul>
+            <li><a href="/coding/git-tutorial">git tutorial</a></li>
+            <li><a href="/coding/npm-tutorial">node/npm tutorial</a></li>
+            <li><a href="/coding/webpack-tutorial">webpack tutorial</a></li>
+            <li>
+              <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a>
+            </li>
+          </ul>
+        </div>
+        <div class="coding-navigation-category" aria-label="Miscellaneous">
+          <div class="coding-navigation-category__title">Miscellaneous</div>
+          <ul>
+            <li><a href="/coding/neocities">neocities tips</a></li>
+            <li>
+              <a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <aside class="aside aside--left" data-nosnippet="true">
+        <div class="coding-back-to-home">
+          <a href="/"
+            ><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"
+          /></a>
+        </div>
+        <img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true" />
+        <div class="aside-stuff aside-clap-kirby" style="margin-top: 20px">
+          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"
+            ><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
+            <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode" /> </a
+          ><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"
+            ><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode" />
+            <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode" /> </a
+          ><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"
+            ><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
+            <small>click to clap for me!</small></a
+          >
+        </div>
+        <div class="aside-stuff aside-link-back">
+          <div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true" /></div>
+          <p>Hotlinking is a-okay!</p>
+          <a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"
+            ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31" /></a
+          ><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
+          >
+        </div>
+        <div class="aside-stats__stat" style="margin-bottom: 0; margin-top: 2em">
+          <div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
+          <div class="aside-stats__stat-content">
+            <center>
+              <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /></a>
+            </center>
+            <small style="font-size: 0.8em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
+          </div>
+        </div>
+        <img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top: -5px" />
+        <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
+        <div id="toc-position"></div>
+        <div id="toc"></div>
+        <a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"
+          ><img src="../assets/img/layout/coffee.gif" width="70" />
+          <div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a
+        ><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
+        <a class="aside-contest" href="/contest"
+          ><img src="../assets/img/layout/trophy.gif" width="80" height="85" />
+          <div><b>Indie Web Contest</b><small>Participate now!</small></div></a
+        >
+      </aside>
+      <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
+      <main id="main" class="coding-page">
+        <section>
+          <h1>My Coding Setup</h1>
+          <p>I use the software <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> to code and highly recommend it!</p>
+          <div id="toc">
+            <b>Table of Contents:</b>
+            <ol>
+              <li><a href="#setup">Project Setup</a></li>
+              <li><a href="#shortcuts">Shortcuts I use a lot</a></li>
+              <li><a href="#vscode-settings">VSCode Settings</a></li>
+              <li><a href="#vscode-extensions">VSCode Extensions</a></li>
+            </ol>
+          </div>
+        </section>
+        <section>
+          <h2 id="setup">Project Setup</h2>
+          <ul>
+            <li>
+              Project is a <b>GitHub</b> repository.
+              <ul>
+                <li>For Neocities: GitHub Action <a href="/blog/neocities-automatic-deployment.html">"Deploy to Neocities"</a></li>
+              </ul>
+            </li>
+            <li><b>Webpack</b> (javascript & (s)css & asset bundler)</li>
+            <li><b>SCSS</b> (css preprocessor)</li>
+          </ul>
+          <p>My project for this website is on Github and is a good example. <a href="https://github.com/petracoding/petrapixel.neocities.org">Browse the repository here.</a></p>
+        </section>
+        <section>
+          <h2 id="shortcuts">Shortcuts I use a lot</h2>
+          <ul>
+            <li><b>ctrl + (click)</b> = jump into a function/file</li>
+            <li><b>ctrl + #</b> = turn current selection into a comment (and reverse)</li>
+            <li><b>ctrl + d</b> = select the next search result for the current selection (starts multi-cursor)</li>
+            <li><b>ctrl + alt + ↑/↓</b> = duplicate current line</li>
+            <li><b>alt + ↑/↓</b> = move current line up/down</li>
+            <li><b>ctrl + T</b> = opens search (e.g. to quickly open files)</li>
+          </ul>
+          <p>Specific key combinations might differ for you, I don't remember if they're the default...</p>
+        </section>
+        <section>
+          <h2 id="vscode-settings">VSCode Settings</h2>
+          <p><b>Tip:</b> You can turn on setting sync to sync your settings across your devices.</p>
+          <p><b>Tip:</b> In the UI, right-click anything you never need to hide it. This will give you more space.</p>
+          <h4>My Favorite Themes:</h4>
+          <ul>
+            <li>saturated dark+</li>
+            <li>subtle pink</li>
+            <li>vibrancy continued</li>
+          </ul>
+          <h4>My Settings:</h4>
+          <ul class="list-with-more-spacing">
+            <li>
+              terminal color scheme: search for "workbench color" and click edit json. in <code>workbench.colorCustomizations</code> add a code form
+              <a href="https://glitchbone.github.io/vscode-base16-term/#/unikitty-dark" target="_blank">this generator</a>
+            </li>
+            <li>set editor hover delay to 800</li>
+            <li>turn off editor insert spaces (i want tab indents)</li>
+            <li>turn off explorer decoration badges</li>
+            <li>turn off source control count badge</li>
+            <li>turn on cursor blinking (style: phase)</li>
+            <li>turn on cursor smooth caret animation</li>
+            <li>turn on file auto save after focus change</li>
+            <li>turn on minimap autohide</li>
+            <li>turn on smooth scrolling</li>
+            <li>
+              window title: i have it empty (default: <code style="word-break: break-all">${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}</code>)
+            </li>
+            <li>zoom level: 0.3</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="vscode-extensions">VSCode Extensions</h2>
+          <p>You can install extensions in VSCode via the "Extensions" menu. Make sure to restart VSCode after installation.</p>
+          <hr />
+          <h3><strong>formatting:</strong></h3>
+          <ul class="list-with-more-spacing">
+            <li><b>"format html in php"</b></li>
+            <li>
+              <b>"formatting toggle"</b>
+              <ul>
+                <li>adds a formatting toggle at the bottom right so you can temporarily turn of auto formatting</li>
+              </ul>
+            </li>
+            <li>
+              <b>"prettier"</b>
+              <ul>
+                <li>note: <span>does not format php files (for that i have 'php intelephense') or html in php files (for that i have 'format html in php')</span></li>
+                <li>file not formatting?: <span>there is an error in the file. click the prettier button on the bottom right corner.</span></li>
+              </ul>
+            </li>
+          </ul>
+          <hr />
+          <h3><strong>useful stuff:</strong></h3>
+          <ul class="list-with-more-spacing">
+            <li>
+              <b>"alphabetical sorter"</b>
+              <ul>
+                <li>to use: <span>ctrl + shift + p + 'sort'</span></li>
+              </ul>
+            </li>
+            <li><b>"auto close tag"</b> (html)</li>
+            <li><b>"auto rename tag"</b> (html)</li>
+            <li><b>"highlight matching tag"</b> (for html)</li>
+            <li><b>"leet-html"</b> (syntax highlighter for html in javascript)</li>
+            <li>
+              <b>"open in default browser"</b>
+              <ul>
+                <li>to use: right-click in file, choose 'open in default browser'</li>
+              </ul>
+            </li>
+            <li><b>"svg viewer"</b> (view svg images in VSCode)</li>
+            <li>
+              <b>"vs code css comment" </b>(for css)
+              <ul>
+                <li>to use: <span>type 'comment-section' in css file and press enter</span></li>
+              </ul>
+            </li>
+          </ul>
+          <hr />
+          <h3><strong>intellisense: (= code completion, parameter info, quick info)</strong></h3>
+          <ul class="list-with-more-spacing">
+            <li>
+              <b>"php intelephense"</b> (for php)
+              <ul>
+                <li>to use for formatting: <span>right-click in a php file and 'format document'. it will ask which formatter to use, select php intelephense</span></li>
+              </ul>
+            </li>
+            <li><b>"scss intellisense"</b> (for scss)</li>
+          </ul>
+          <hr />
+          <h3><strong>linter: (= checks for errors)</strong></h3>
+          <ul class="list-with-more-spacing">
+            <li><b>"stylelint"</b> (for css, scss)</li>
+            <li>
+              <b>"eslint"</b> (for javascript)
+              <ul>
+                <li>
+                  <span>Installation:</span>
+                  <ol>
+                    <li>Download a config file from <a href="https://eslint.org/dspano" target="_blank" rel="nofollow">here</a></li>
+                    <li>Put it into <code>C:\Users\{USERNAME}</code></li>
+                    <li>In the file, add <code>"browser":true</code> to the list of environments ("env" at the top of the file)</li>
+                    <li>In the file, add <code>"sourceType":"module"</code> to "parserOptions".</li>
+                    <li>In VSCode do ctrl+shift+p "eslint restart server".</li>
+                  </ol>
+                </li>
+                <li><span>"Problems" tab should show problems</span></li>
+              </ul>
+            </li>
+            <li><b>"php import checker"</b> (for php)</li>
+          </ul>
+          <hr />
+          <h3><strong>fun stuff:</strong></h3>
+          <ul>
+            <li>
+              <b>"vscode-pets"</b> (adds cute pets)
+              <ul>
+                <li>to use: ctrl + shift + p + 'pet'</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <div class="footer-content">
+          <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS" /></a><i>┊</i> created by petrapixel 2024 -
+          <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
+          <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i>
+          <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a>
+        </div>
+        <div class="footer-content mobile-only">
+          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"
+            ><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
+            <small>click to clap for me!</small></a
+          ><br />
+          <center>
+            <small>Visitors:</small>
+            <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /></a>
+          </center>
+          <br />
+          <center><a href="#" tabindex="-1" style="font-size: 1.5em">go to top</a></center>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

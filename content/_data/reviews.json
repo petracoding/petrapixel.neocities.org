@@ -1,0 +1,57 @@
+[
+  {
+    "title": "EXAMPLE",
+    "month": "2025-01",
+    "type": "TODOADDTYPE",
+    "rating": "⭐⭐⭐⭐⭐ ½",
+    "image": "IMAGEURL",
+    "link": "LINKURL",
+    "text": ""
+  },
+
+  {
+    "title": "Subnautica",
+    "month": "2025-01",
+    "type": "game (PC/Console)",
+    "rating": "⭐⭐⭐⭐ ½",
+    "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1iqw.jpg",
+    "link": "https://www.backloggd.com/games/subnautica/",
+    "text": "I'm terrified of the ocean, and big things in the ocean, and fish... So this game is a bit like exposure therapy to me. Anyways. It's really good! The exploration aspect is really fun, and the survival aspect is good too (not too difficult, not too easy). This game came out in 2014 but the graphics aged wonderfully, there was not a single moment where I thought something didn't look good. Occasionally, this game has some great humor that reminded me of Portal 2. It's mostly possible to play without using guides/google, but sometimes I was stuck and had to look something up. Also, at around mid-game the difficulty really picks up unless you pick the right upgrades and locations and I almost gave up on the game. Overall, I enjoyed this game just as much as I thought I would, so if you think you might like it, you should try it!"
+  },
+  {
+    "title": "My Secret Garden",
+    "month": "2025-01",
+    "type": "Book by Nancy Friday",
+    "rating": "⭐⭐⭐⭐",
+    "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387708704i/2997.jpg",
+    "link": "https://www.goodreads.com/book/show/2997.My_Secret_Garden",
+    "text": "'My Secret Garden' is a collection of sexual fantasies by real women in the 1970s. Some of the fantasies are quite normal, some very strange and even disgusting. It's a fascinating read about a topic that people (especially women) STILL don't really talk about. I was made aware of this book when I saw the book 'want' by Gillian Anderson on the shelves of a bookstore. 'want' is a modern version of 'My Secret Garden', and it's also an interesting read! Overall, I really liked the 'My Secret Garden', but it gets a bit tedious because some parts are very long, and I found myself skimming over them."
+  },
+  {
+    "title": "Jurassic World: Chaos Theory",
+    "month": "2025-01",
+    "type": "TV SHOW",
+    "rating": "⭐⭐⭐⭐¾",
+    "image": "https://serializd-tmdb-images.b-cdn.net/t/p/w500/c2Od0cY2IeayDj5osUxZSAD1QK.jpg",
+    "link": "https://www.serializd.com/show/Jurassic-World%3A-Chaos-Theory-237512",
+    "text": "This is a sequel (after a 7 year time jump) to 'Jurassic World: Camp Cretaceous', which is a children's show set in the Jurassic World universe. As a fan of that universe, I looked into it, not expecting much because I'm not that into children's TV, but I was so pleasently surprised! It's a really good show, and Chaos Theory is even better! (I also like that the characters are now young adults, not kids anymore.) Seriously, the first season of this is PEAK CINEMA, it's sooooo good. So yeah, if you like dinosaurs and/or Jurassic Park, go watch both these shows! I love all the characters :) I'm impatiently waiting for season 3."
+  },
+  {
+    "title": "EXAMPLE",
+    "month": "2025-01",
+    "type": "TODOADDTYPE",
+    "rating": "⭐⭐⭐⭐⭐ ½",
+    "image": "IMAGEURL",
+    "link": "LINKURL",
+    "text": ""
+  },
+  {
+    "title": "EXAMPLE",
+    "month": "2025-01",
+    "type": "TODOADDTYPE",
+    "rating": "⭐⭐⭐⭐⭐ ½",
+    "image": "IMAGEURL",
+    "link": "LINKURL",
+    "text": ""
+  }
+]

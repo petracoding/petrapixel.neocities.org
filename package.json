@@ -15,7 +15,7 @@
   },
   "scripts": {
     "webpack": "webpack --watch",
-    "eleventy": "npx @11ty/eleventy --serve",
+    "eleventy": "npx @11ty/eleventy --serve --port=8080",
     "build": "npx @11ty/eleventy & webpack"
   }
 }

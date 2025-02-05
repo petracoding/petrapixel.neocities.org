@@ -10,9 +10,31 @@ nesting: "../"
   }
 </style>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const countDownDate = new Date("Feb 16, 2024 09:05:00").getTime();
+    const now = new Date().getTime();
+    const distance = now - countDownDate;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const years = Math.floor(days / 365);
+    days = days - years * 365;
+    let output = "";
+    if (years > 0) {
+      output = "(" + years + " year and " + days + " days ago) ";
+    } else {
+      output = "(" + days + " days ago) ";
+    }
+    document.getElementById("countdownthingy").innerHTML = output;
+  });
+</script>
+
 <section>
   <h1>About the Site <img aria-hidden="true" src="../assets/img/inline/star.gif" /></h1>
-  <p>This site was created in February of 2024 after I had a bout of inspiration looking at other Neocities pages. All the design and coding is done by myself.</p>
+
+  <p>
+    This site was created in February of 2024 <abbr id="countdownthingy" title="calculated automatically"></abbr>after I had a bout of inspiration looking at other Neocities pages. All the design and
+    coding is done by myself.
+  </p>
   <p>
     The code for the page is <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">available on GitHub</a>. Feel free to browse around, but please don't steal large chunks
     of code (or judge me for bad code quality...). For credits please visit the <a href="/about/credits.html">credits page</a>. My website was created using webpack (static module bundler) and
@@ -123,7 +145,7 @@ nesting: "../"
   <p>You won't find any autoplay music/video on my website.</p>
 </section>
 <section>
-  <h2>Accessibility <img aria-hidden="true" src="../assets/img/inline/stars.gif" /></h2>
+  <h2>Accessibility <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" /></h2>
   <p>This site should be usable on any screen size, desktop and mobile, and should work in all browsers.</p>
   <p>I have made an effort to make the site as accessible as possible for anyone, with any disability. I've used the following resources (list incomplete):</p>
   <ul>
