@@ -1,242 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>11ty (eleventy) tutorial | petrapixel</title>
-    <meta name="description" content="A tutorial on how to set up and use 11ty (eleventy), a static site generator, for beginners. Neocities." />
-    <script src="../assets/js/main.js?nocache=20250205"></script>
-    <link rel="stylesheet" href="../assets/main.css?nocache=20250205" />
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta content="utf-8" http-equiv="encoding" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-      hljs.highlightAll();
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
-    <script>
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      (window.dataLayer = window.dataLayer || []), gtag("js", new Date()), gtag("config", "G-J64TL8KVTJ");
-    </script>
-  </head>
-  <body class="coding-page-layout">
-    <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a>
-    <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
-    <div id="content">
-      <div id="theme-toggler" aria-hidden="true">
-        <button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height: 20px; image-rendering: pixelated" alt="" /> <span>toggle theme</span></button>
-      </div>
-      <div id="font-toggler" aria-hidden="true">
-        <button type="button"><span>toggle font</span></button>
-      </div>
-      <header>
-        <div class="header-heading">
-          <a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300" /></a>
-        </div>
-      </header>
-      <nav class="coding-navigation" data-nosnippet="true">
-        <div class="coding-navigation-category" aria-label="Tools">
-          <div class="coding-navigation-category__title">Tools</div>
-          <ul>
-            <li><a href="/coding/layout-generator">layout generator</a></li>
-            <li><a href="/coding/widgets">widgets for free neocities accounts</a></li>
-            <li><a href="/coding/checklist">self-study checklist</a></li>
-            <li><a href="/coding/cheatsheet">cheatsheet</a></li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Guides">
-          <div class="coding-navigation-category__title">Guides</div>
-          <ul>
-            <li><a href="/coding/how-to-make-a-website">how to make a website</a></li>
-            <li><a href="/coding/common-questions">common questions</a></li>
-            <li><a href="/coding/common-mistakes">common mistakes</a></li>
-            <li><a href="/coding/snippets">snippets & tips</a></li>
-            <li>
-              <a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a>
-            </li>
-            <li><a href="/coding/code-quality">code quality guide</a></li>
-            <li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Beginner Tutorials">
-          <div class="coding-navigation-category__title">Beginner Tutorials</div>
-          <ul>
-            <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
-            <li>
-              <a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a>
-            </li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Advanced Tutorials">
-          <div class="coding-navigation-category__title">Advanced Tutorials</div>
-          <ul>
-            <li><a href="/coding/git-tutorial">git tutorial</a></li>
-            <li><a href="/coding/npm-tutorial">node/npm tutorial</a></li>
-            <li><a href="/coding/webpack-tutorial">webpack tutorial</a></li>
-            <li>
-              <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a>
-            </li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Miscellaneous">
-          <div class="coding-navigation-category__title">Miscellaneous</div>
-          <ul>
-            <li><a href="/coding/neocities">neocities tips</a></li>
-            <li>
-              <a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <aside class="aside aside--left" data-nosnippet="true">
-        <div class="coding-back-to-home">
-          <a href="/"
-            ><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"
-          /></a>
-        </div>
-        <img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true" />
-        <div class="aside-stuff aside-clap-kirby" style="margin-top: 20px">
-          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"
-            ><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
-            <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode" /> </a
-          ><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"
-            ><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode" />
-            <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode" /> </a
-          ><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"
-            ><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
-            <small>click to clap for me!</small></a
-          >
-        </div>
-        <div class="aside-stuff aside-link-back">
-          <div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true" /></div>
-          <p>Hotlinking is a-okay!</p>
-          <a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"
-            ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31" /></a
-          ><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
-          >
-        </div>
-        <div class="aside-stats__stat" style="margin-bottom: 0; margin-top: 2em">
-          <div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
-          <div class="aside-stats__stat-content">
-            <center>
-              <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /></a>
-            </center>
-            <small style="font-size: 0.8em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
-          </div>
-        </div>
-        <img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top: -5px" />
-        <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
-        <div id="toc-position"></div>
-        <div id="toc"></div>
-        <a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"
-          ><img src="../assets/img/layout/coffee.gif" width="70" />
-          <div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a
-        ><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
-        <a class="aside-contest" href="/contest"
-          ><img src="../assets/img/layout/trophy.gif" width="80" height="85" />
-          <div><b>Indie Web Contest</b><small>Participate now!</small></div></a
-        >
-      </aside>
-      <div class="progress-bar-container">
-        <div>You're <span class="progress-bar-percent">0</span>% done reading!</div>
-        <div class="progress-bar-wrapper"><div class="progress-bar"></div></div>
-      </div>
-      <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
-      <main id="main" class="coding-page">
-        <section>
-          <h1><b>11ty (eleventy)</b> Tutorial</h1>
-          <p>
-            Eleventy is a static site generator. You can create "templates" (either .html or .njk files) and re-use them. This way you don't have to edit your header in every single page file, etc.
-            Then you execute a command, and Eleventy will generate all your page files for you. These files you can upload to your website as you normally would.
-          </p>
-          <blockquote class="project">
-            If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!
-          </blockquote>
-          <blockquote class="contact">
-            <p>
-              If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're
-              stuck, and I'd love to help.
-            </p>
-          </blockquote>
-          <br />
-          <div id="toc" data-two-levels="yeh">
-            <b>Table of Contents:</b>
-            <ol>
-              <li><a href="#requirements">Requirements</a></li>
-              <li><a href="#installation">Installation</a></li>
-              <li>
-                <a href="#configuration">Configuration</a>
-                <ul>
-                  <li><a href="#ignore">Ignore Files (Optional)</a></li>
-                  <li><a href="#minify">Minify (Optional)</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#nunjucks">Nunjucks</a>
-                <ul>
-                  <li><a href="#custom-filters">Custom Filters (Optional)</a></li>
-                </ul>
-              </li>
-              <li><a href="#data">Using Data (Optional)</a></li>
-              <li><a href="#partials">Partials (Optional)</a></li>
-              <li>
-                <a href="#templates">Templates</a>
-                <ul>
-                  <li><a href="#template">Step 1: The template</a></li>
-                  <li><a href="#page">Step 2: The page</a></li>
-                  <li><a href="#example">Example</a></li>
-                </ul>
-              </li>
-              <li><a href="#extending-files">Extending files</a></li>
-              <li>
-                <a href="#running-eleventy">Running Eleventy</a>
-                <ul>
-                  <li><a href="#custom-command">Defining a custom command (Optional)</a></li>
-                </ul>
-              </li>
-              <li><a href="#done">Done!</a></li>
-              <li><a href="#links">Links</a></li>
-              <li><a href="#comments">Comments</a></li>
-            </ol>
-          </div>
-        </section>
-        <section>
-          <h2 id="requirements">Requirements</h2>
-          <p>
-            You need to have <b>Node.js</b> ("node") (version 14 or higher) and <b>npm</b> installed on your computer. Your project needs a <code>package.json</code>. You need to be able to use a
-            command line.
-          </p>
-          <blockquote class="help">Read <a href="/coding/npm-tutorial">my npm tutorial</a> to find out how to do all of these things.</blockquote>
-          <p>I also highly recommend using a program for coding that has a built-in terminal, such as <a target="_blank" href="https://code.visualstudio.com/">VSCode</a>.</p>
-          <p>In your terminal, check your installed version of node and npm:</p>
-          <ul>
-            <li>
-              <p><code>node -v</code> should print <code>20.17.0</code> or higher</p>
-            </li>
-            <li>
-              <p><code>npm -v</code> should print <code>10.8.2</code> or higher</p>
-            </li>
-          </ul>
-          <p>If your version isn't up-to-date enough you simply need <a target="_blank" href="https://nodejs.org/en/download/prebuilt-installer">install the latest Node.js</a> on your device.</p>
-        </section>
-        <section>
-          <h2 id="installation">Installation</h2>
-          <p>In your project, execute the following command to install eleventy as a dev dependency for your project:</p>
-          <p><code>npm install --save-dev @11ty/eleventy</code></p>
-          <p>You should now see <i>"@11ty/eleventy"</i> in the list of your dependencies in your <code>package.json</code> file.</p>
-          <br />
-          <p>If you're using VSCode, I highly recommend installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.</p>
-        </section>
-        <section>
-          <h2 id="configuration">Configuration</h2>
-          <p>In the root of your project, create a file called <code>.eleventy.js</code> (don't forget the period at the start of the filename!).</p>
-          <p>This file is where we will put all our configuration (settings) for Eleventy. Basically, here we tell it how we want it to work.</p>
-          <p>The most minimal version of this file looks like this:</p>
-          <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
+<!doctype html><html lang="en"><head><title>11ty (eleventy) tutorial | petrapixel</title><meta name="description" content="A tutorial on how to set up and use 11ty (eleventy), a static site generator, for beginners. Neocities."><script src="../assets/js/main.js?nocache=20250205"></script><link rel="stylesheet" href="../assets/main.css?nocache=20250205"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script>hljs.highlightAll()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-J64TL8KVTJ")</script></head><body class="coding-page-layout"><noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a> <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a><div id="content"><div id="theme-toggler" aria-hidden="true"><button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated" alt=""> <span>toggle theme</span></button></div><div id="font-toggler" aria-hidden="true"><button type="button"><span>toggle font</span></button></div><header><div class="header-heading"><a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300"></a></div></header><nav class="coding-navigation" data-nosnippet="true"><div class="coding-navigation-category" aria-label="Tools"><div class="coding-navigation-category__title">Tools</div><ul><li><a href="/coding/layout-generator">layout generator</a></li><li><a href="/coding/widgets">widgets for free neocities accounts</a></li><li><a href="/coding/checklist">self-study checklist</a></li><li><a href="/coding/cheatsheet">cheatsheet</a></li></ul></div><div class="coding-navigation-category" aria-label="Guides"><div class="coding-navigation-category__title">Guides</div><ul><li><a href="/coding/how-to-make-a-website">how to make a website</a></li><li><a href="/coding/common-questions">common questions</a></li><li><a href="/coding/common-mistakes">common mistakes</a></li><li><a href="/coding/snippets">snippets & tips</a></li><li><a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a></li><li><a href="/coding/code-quality">code quality guide</a></li><li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li></ul></div><div class="coding-navigation-category" aria-label="Beginner Tutorials"><div class="coding-navigation-category__title">Beginner Tutorials</div><ul><li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li><li><a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Advanced Tutorials"><div class="coding-navigation-category__title">Advanced Tutorials</div><ul><li><a href="/coding/git-tutorial">git tutorial</a></li><li><a href="/coding/npm-tutorial">node/npm tutorial</a></li><li><a href="/coding/webpack-tutorial">webpack tutorial</a></li><li><a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Miscellaneous"><div class="coding-navigation-category__title">Miscellaneous</div><ul><li><a href="/coding/neocities">neocities tips</a></li><li><a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a></li></ul></div></nav><aside class="aside aside--left" data-nosnippet="true"><div class="coding-back-to-home"><a href="/"><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"></a></div><img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true"><div class="aside-stuff aside-clap-kirby" style="margin-top:20px"><a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode"> </a><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode"> </a><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a></div><div class="aside-stuff aside-link-back"><div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true"></div><p>Hotlinking is a-okay!</p><a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"></a><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea></div><div class="aside-stats__stat" style="margin-bottom:0;margin-top:2em"><div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"></div><div class="aside-stats__stat-content"><center><a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><small style="font-size:.8em;letter-spacing:-.4px;text-align:center;display:block">(might not be entirely accurate)</small></div></div><img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top:-5px"> <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top:2em"><div id="toc-position"></div><div id="toc"></div><a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"><img src="../assets/img/layout/coffee.gif" width="70"><div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering:pixelated"> <a class="aside-contest" href="/contest"><img src="../assets/img/layout/trophy.gif" width="80" height="85"><div><b>Indie Web Contest</b><small>Participate now!</small></div></a></aside><div class="progress-bar-container"><div>You're <span class="progress-bar-percent">0</span>% done reading!</div><div class="progress-bar-wrapper"><div class="progress-bar"></div></div></div><div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div><main id="main" class="coding-page"><section><h1><b>11ty (eleventy)</b> Tutorial</h1><p>Eleventy is a static site generator. You can create "templates" (either .html or .njk files) and re-use them. This way you don't have to edit your header in every single page file, etc. Then you execute a command, and Eleventy will generate all your page files for you. These files you can upload to your website as you normally would.</p><blockquote class="project">If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!</blockquote><blockquote class="contact"><p>If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck, and I'd love to help.</p></blockquote><br><div id="toc" data-two-levels="yeh"><b>Table of Contents:</b><ol><li><a href="#requirements">Requirements</a></li><li><a href="#installation">Installation</a></li><li><a href="#configuration">Configuration</a><ul><li><a href="#ignore">Ignore Files (Optional)</a></li><li><a href="#minify">Minify (Optional)</a></li></ul></li><li><a href="#nunjucks">Nunjucks</a><ul><li><a href="#custom-filters">Custom Filters (Optional)</a></li></ul></li><li><a href="#data">Using Data (Optional)</a></li><li><a href="#partials">Partials (Optional)</a></li><li><a href="#templates">Templates</a><ul><li><a href="#template">Step 1: The template</a></li><li><a href="#page">Step 2: The page</a></li><li><a href="#example">Example</a></li></ul></li><li><a href="#extending-files">Extending files</a></li><li><a href="#running-eleventy">Running Eleventy</a><ul><li><a href="#custom-command">Defining a custom command (Optional)</a></li></ul></li><li><a href="#done">Done!</a></li><li><a href="#links">Links</a></li><li><a href="#comments">Comments</a></li></ol></div></section><section><h2 id="requirements">Requirements</h2><p>You need to have <b>Node.js</b> ("node") (version 14 or higher) and <b>npm</b> installed on your computer. Your project needs a <code>package.json</code>. You need to be able to use a command line.</p><blockquote class="help">Read <a href="/coding/npm-tutorial">my npm tutorial</a> to find out how to do all of these things.</blockquote><p>I also highly recommend using a program for coding that has a built-in terminal, such as <a target="_blank" href="https://code.visualstudio.com/">VSCode</a>.</p><p>In your terminal, check your installed version of node and npm:</p><ul><li><p><code>node -v</code> should print <code>20.17.0</code> or higher</p></li><li><p><code>npm -v</code> should print <code>10.8.2</code> or higher</p></li></ul><p>If your version isn't up-to-date enough you simply need <a target="_blank" href="https://nodejs.org/en/download/prebuilt-installer">install the latest Node.js</a> on your device.</p></section><section><h2 id="installation">Installation</h2><p>In your project, execute the following command to install eleventy as a dev dependency for your project:</p><p><code>npm install --save-dev @11ty/eleventy</code></p><p>You should now see <i>"@11ty/eleventy"</i> in the list of your dependencies in your <code>package.json</code> file.</p><br><p>If you're using VSCode, I highly recommend installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.</p></section><section><h2 id="configuration">Configuration</h2><p>In the root of your project, create a file called <code>.eleventy.js</code> (don't forget the period at the start of the filename!).</p><p>This file is where we will put all our configuration (settings) for Eleventy. Basically, here we tell it how we want it to work.</p><p>The most minimal version of this file looks like this:</p><pre style="white-space:break-spaces"><code>module.exports = function (eleventyConfig) {
 
   // This will stop the default behaviour of foo.html being turned into foo/index.html
   eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.html");
@@ -248,19 +11,7 @@
     },
   };
 };
-</code></pre>
-          <p>
-            <code>input</code> defines the name of the folder in which your templates and pages will go. This is the folder in which you will make your changes. In this example I called it "content",
-            but you can choose any name you like (one common name would be "src" - short for "source").
-          </p>
-          <p>
-            <code>output</code> defines the name of the folder into which the finished html files will be generated. In this example I called it "public", but you can choose any name you like (common
-            names are "public" and "dist" - short for "distribution"). Eleventy doesn't delete files, so this folder can also contain other things, such as your images or other assets.
-            <b>Essentially, the contents of the "public" folder will be what you upload to your website.</b> Everything else (such as the input folder) is only necessary for development, and therefore
-            does not need to be uploaded.
-          </p>
-          <p>Here is an example of a larger configuration file, with explanations:</p>
-          <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
+</code></pre><p><code>input</code> defines the name of the folder in which your templates and pages will go. This is the folder in which you will make your changes. In this example I called it "content", but you can choose any name you like (one common name would be "src" - short for "source").</p><p><code>output</code> defines the name of the folder into which the finished html files will be generated. In this example I called it "public", but you can choose any name you like (common names are "public" and "dist" - short for "distribution"). Eleventy doesn't delete files, so this folder can also contain other things, such as your images or other assets. <b>Essentially, the contents of the "public" folder will be what you upload to your website.</b> Everything else (such as the input folder) is only necessary for development, and therefore does not need to be uploaded.</p><p>Here is an example of a larger configuration file, with explanations:</p><pre style="white-space:break-spaces"><code>module.exports = function (eleventyConfig) {
   // This makes the eleventy command quieter (with less detail)
   eleventyConfig.setQuietMode(true);
 
@@ -284,26 +35,10 @@
     },
   };
 };
-</code></pre>
-          <hr />
-          <h3 id="ignore">Ignore Files (Optional)</h3>
-          <p>If you want Eleventy to ignore certain files you can create a file with the name <code>.eleventyignore</code> in the root of your project with content such as this:</p>
-          <pre><code>README.md
+</code></pre><hr><h3 id="ignore">Ignore Files (Optional)</h3><p>If you want Eleventy to ignore certain files you can create a file with the name <code>.eleventyignore</code> in the root of your project with content such as this:</p><pre><code>README.md
 content/wip/
 content/wip-page.html
-example/**/*.njk</code></pre>
-          <p>More info <a href="https://www.11ty.dev/docs/ignores/" target="_blank">here</a>.</p>
-          <p>By default, Eleventy will also ignore everything defined in your <code>.gitignore</code> file. To change this, add this line to your configuration (as mentioned above):</p>
-          <pre><code>eleventyConfig.setUseGitIgnore(false);</code></pre>
-          <hr />
-          <h3 id="minify">Minify (Optional)</h3>
-          <p>
-            If you want, you can tell Eleventy to minify your HTML files, e.g. by removing unneeded whitespaces. That means their file size will be smaller, which means they need less space on your
-            server and that they load faster.
-          </p>
-          <p>First, you have to install <i>html-minifier-terser</i> with the command <code>npm install html-minifier-terser</code>.</p>
-          <p>Now, add this to your configuration file (<code>.eleventy.js</code>):</p>
-          <pre><code>// at the very top of the file:
+example/**/*.njk</code></pre><p>More info <a href="https://www.11ty.dev/docs/ignores/" target="_blank">here</a>.</p><p>By default, Eleventy will also ignore everything defined in your <code>.gitignore</code> file. To change this, add this line to your configuration (as mentioned above):</p><pre><code>eleventyConfig.setUseGitIgnore(false);</code></pre><hr><h3 id="minify">Minify (Optional)</h3><p>If you want, you can tell Eleventy to minify your HTML files, e.g. by removing unneeded whitespaces. That means their file size will be smaller, which means they need less space on your server and that they load faster.</p><p>First, you have to install <i>html-minifier-terser</i> with the command <code>npm install html-minifier-terser</code>.</p><p>Now, add this to your configuration file (<code>.eleventy.js</code>):</p><pre><code>// at the very top of the file:
 const htmlmin = require("html-minifier-terser");
 	
 // in module.exports:
@@ -319,37 +54,10 @@ eleventyConfig.addTransform("htmlmin", function (content) {
       return minified;
     }
     return content;
-  });</code></pre>
-          <p>
-            These are just the options I recommend. <a href="https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference" target="_blank">Here</a> is the full list of
-            available options.
-          </p>
-          <p>(Re-)start eleventy, and it should already work! (You should be able to see that the generated HTML files now have a smaller file size.)</p>
-          <p>
-            If you get an error it might be because you have errors in your HTML code, such as spare &lt;s or &gt;s. Once you fix them all it should work. If you want a part of your code to be ignored
-            by the minifier completely, add <code>&lt;!-- htmlmin:ignore --&gt;</code> before and after it, like so:
-          </p>
-          <pre><code>&lt;!-- htmlmin:ignore --&gt;
+  });</code></pre><p>These are just the options I recommend. <a href="https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference" target="_blank">Here</a> is the full list of available options.</p><p>(Re-)start eleventy, and it should already work! (You should be able to see that the generated HTML files now have a smaller file size.)</p><p>If you get an error it might be because you have errors in your HTML code, such as spare &lt;s or &gt;s. Once you fix them all it should work. If you want a part of your code to be ignored by the minifier completely, add <code>&lt;!-- htmlmin:ignore --&gt;</code> before and after it, like so:</p><pre><code>&lt;!-- htmlmin:ignore --&gt;
 	&lt;p&gt;Hewwoo  ⸜(｡&gt; ᵕ &lt; )⸝♡ &lt;/p&gt;
 &lt;!-- htmlmin:ignore --&gt;
-  </code></pre>
-        </section>
-        <section>
-          <h2 id="nunjucks">Nunjucks</h2>
-          <p>
-            In this tutorial I will show you how to use <a target="_blank" href="https://www.11ty.dev/docs/languages/nunjucks/">Nunjucks</a> to create templates. (There are also other templating
-            languages you can use with Eleventy.) Eleventy will turn our Nunjucks templates into normal HTML files. You don't need any additional things to write Nunjucks code, but if you're using
-            VSCode i recommend installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.
-          </p>
-          <p>
-            You can use Nunjucks in your <code>.html</code> files (located in your input folder) without a problem. Alternatively, you can also create a Nunjucks file by giving the file the extension
-            <code>.njk</code>. This is necessary for some files (see later). <code>.njk</code> files can contain normal HTML code, don't worry.
-          </p>
-          <p>
-            For a full documentation on what you can do with Nunjucks and how, go <a target="_blank" href="https://mozilla.github.io/nunjucks/templating.html#variables">here</a>. Here are some of the
-            most important things:
-          </p>
-          <pre><code>Setting a variable:
+  </code></pre></section><section><h2 id="nunjucks">Nunjucks</h2><p>In this tutorial I will show you how to use <a target="_blank" href="https://www.11ty.dev/docs/languages/nunjucks/">Nunjucks</a> to create templates. (There are also other templating languages you can use with Eleventy.) Eleventy will turn our Nunjucks templates into normal HTML files. You don't need any additional things to write Nunjucks code, but if you're using VSCode i recommend installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.</p><p>You can use Nunjucks in your <code>.html</code> files (located in your input folder) without a problem. Alternatively, you can also create a Nunjucks file by giving the file the extension <code>.njk</code>. This is necessary for some files (see later). <code>.njk</code> files can contain normal HTML code, don't worry.</p><p>For a full documentation on what you can do with Nunjucks and how, go <a target="_blank" href="https://mozilla.github.io/nunjucks/templating.html#variables">here</a>. Here are some of the most important things:</p><pre><code>Setting a variable:
     {% set myText = "Hello World!" %}
     {% set showHeader = true %}
 
@@ -379,114 +87,31 @@ For Loop:
     {% else %}
       &lt;li&gt;This would display if the 'item' collection were empty&lt;/li&gt;
     {% endfor %}
-</code></pre>
-          <p>
-            Note: Logical operators like <code>&amp;&amp;</code>, <code>||</code> and <code>!</code> as you know them from JavaScript do not exist in Nunjucks, you need to use the words "and", "or"
-            and "not", e.g.:
-          </p>
-          <pre><code>{% if myVariable1 and myVariable2 %}...{% endif %}
+</code></pre><p>Note: Logical operators like <code>&amp;&amp;</code>, <code>||</code> and <code>!</code> as you know them from JavaScript do not exist in Nunjucks, you need to use the words "and", "or" and "not", e.g.:</p><pre><code>{% if myVariable1 and myVariable2 %}...{% endif %}
 {% if myVariable1 or myVariable2 %}...{% endif %}
 {% if not myVariable %}...{% endif %}
-</code></pre>
-          <p>Comparisions work the same as in JavaScript (e.g. <code>==</code>, <code>!=</code>, <code>&lt;=</code> ...)</p>
-          <hr />
-          <h3 id="custom-filters">Custom Filters (Optional)</h3>
-          <p>
-            Filters are ways to change or use information in Nunjucks. You can write your own custom filters, which opens up a lot of possibilites. This is what the Nunjucks code looks like - the
-            filter's name is added after a pipe (|):
-          </p>
-          <pre><code>{{ myVariable | doSomethingWithIt }}</code></pre>
-          <p>To define a custom filter you add something like this to your configuration file (.eleventy.js):</p>
-          <pre><code>eleventyConfig.addFilter("doSomethingWithIt", function (value) {
+</code></pre><p>Comparisions work the same as in JavaScript (e.g. <code>==</code>, <code>!=</code>, <code>&lt;=</code> ...)</p><hr><h3 id="custom-filters">Custom Filters (Optional)</h3><p>Filters are ways to change or use information in Nunjucks. You can write your own custom filters, which opens up a lot of possibilites. This is what the Nunjucks code looks like - the filter's name is added after a pipe (|):</p><pre><code>{{ myVariable | doSomethingWithIt }}</code></pre><p>To define a custom filter you add something like this to your configuration file (.eleventy.js):</p><pre><code>eleventyConfig.addFilter("doSomethingWithIt", function (value) {
     if (!value) return "";
     return value.toLowerCase() + " :)";
-  });</code></pre>
-          <p>(This is just a simple example of course.)</p>
-          <blockquote class="warning"><p>If your eleventy watcher is running, make sure to restart it after making this or any other change in the configuration file.</p></blockquote>
-          <p>Assuming <code>myVariable</code> has the value "Hello World", the output of <code>{{ myVariable | doSomethingWithIt }}</code> will be: hello world :)</p>
-        </section>
-        <section>
-          <h2 id="data">Using Data (Optional)</h2>
-          <p>The variables you use can come from several different data sources, such as:</p>
-          <ul>
-            <li>that very file (<code>{% set myText = "Hello World!" %}</code>)</li>
-            <li>the "front matter" of that file (see later) (<code>myText = Hello World</code>)</li>
-            <li>a <b>data file</b> in the <code>_data</code> subfolder of your input folder.</li>
-          </ul>
-          <p>I will now describe data files in detail.</p>
-          <p>
-            In your input folder (in my example that is the "content" folder), create a subfolder with the name <code>_data</code>. In there, you can create
-            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">JSON</a> files (<code>.json</code>) with data. You can then reference that data by using
-            the file name as a variable name in Nunjucks.
-          </p>
-          <blockquote class="help">
-            If you don't know JSON syntax: don't worry. It's pretty much self-explanatory if you know JavaScript. As usual, <code>[]</code> are arrays and <code>{}</code> are objects.
-          </blockquote>
-          <p>Example: <code>changelog.json</code></p>
-          <pre><code>[
+  });</code></pre><p>(This is just a simple example of course.)</p><blockquote class="warning"><p>If your eleventy watcher is running, make sure to restart it after making this or any other change in the configuration file.</p></blockquote><p>Assuming <code>myVariable</code> has the value "Hello World", the output of <code>{{ myVariable | doSomethingWithIt }}</code> will be: hello world :)</p></section><section><h2 id="data">Using Data (Optional)</h2><p>The variables you use can come from several different data sources, such as:</p><ul><li>that very file (<code>{% set myText = "Hello World!" %}</code>)</li><li>the "front matter" of that file (see later) (<code>myText = Hello World</code>)</li><li>a <b>data file</b> in the <code>_data</code> subfolder of your input folder.</li></ul><p>I will now describe data files in detail.</p><p>In your input folder (in my example that is the "content" folder), create a subfolder with the name <code>_data</code>. In there, you can create <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">JSON</a> files (<code>.json</code>) with data. You can then reference that data by using the file name as a variable name in Nunjucks.</p><blockquote class="help">If you don't know JSON syntax: don't worry. It's pretty much self-explanatory if you know JavaScript. As usual, <code>[]</code> are arrays and <code>{}</code> are objects.</blockquote><p>Example: <code>changelog.json</code></p><pre><code>[
   { "date": "2024-12-07", "text": "Created page" },
   { "date": "2024-12-08", "text": "Bugfixes" },
 ]
-</code></pre>
-          <p>Usage in Nunjucks:</p>
-          <pre><code>&lt;ul&gt;
+</code></pre><p>Usage in Nunjucks:</p><pre><code>&lt;ul&gt;
     {% for item in changelog %}
       &lt;li&gt;{{ item.date }}: {{ item.text }}&lt;/li&gt;
     {% endfor %}
 &lt;/ul&gt;
-</code></pre>
-          <p>(This would output a list of all objects in the <code>changelog.json</code> file.)</p>
-          <p>There are also other ways to get data. If you're interested read <a target="_blank" href="https://www.11ty.dev/docs/data/#sources-of-data">the documentation</a>.</p>
-        </section>
-        <section>
-          <h2 id="partials">Partials (Optional)</h2>
-          <p>You can create <code>.njk</code> files and include them in your pages like so:</p>
-          <pre><code>&lt;header&gt;
+</code></pre><p>(This would output a list of all objects in the <code>changelog.json</code> file.)</p><p>There are also other ways to get data. If you're interested read <a target="_blank" href="https://www.11ty.dev/docs/data/#sources-of-data">the documentation</a>.</p></section><section><h2 id="partials">Partials (Optional)</h2><p>You can create <code>.njk</code> files and include them in your pages like so:</p><pre><code>&lt;header&gt;
     {% include 'headerImage.njk' %}
     {% include 'menu.njk' %}
 &lt;/header&gt;
-</code></pre>
-          <p>These files <b>must</b> be located in a <code>_includes</code> folder in your input folder. (In my example this would be <code>content/_includes</code>.)</p>
-        </section>
-        <section>
-          <h2 id="templates">Templates</h2>
-          <h3 id="template">Step 1: The template</h3>
-          <p>Template files must be located in a <code>_includes</code> folder in your input folder. (In my example this would be <code>content/_includes</code>.)</p>
-          <p>
-            A template file needs to have the file extension <code>.njk</code>, but besides that it can look like a totally normal HTML file. You can (and should) use Nunjucks code to output things
-            that vary from page to page, such as page title, etc. (Like so: <code>&lt;title&gt;{{ title }}&lt;/title&gt;</code>) We will define the values of those variables in the page files in the
-            next step.
-          </p>
-          <p>Wherever you want the content of the page to be, type <code>{{ content | safe }}</code></p>
-          <h3 id="page">Step 2: The page</h3>
-          <p>Whether your page file is an <code>.html</code> or a <code>.njk</code> file doesn't matter - You can use templates in the same way.</p>
-          <p>All we need to do is the so-called <b>"front matter"</b>. It's a section at the top of the file that looks like this:</p>
-          <pre><code>---
+</code></pre><p>These files <b>must</b> be located in a <code>_includes</code> folder in your input folder. (In my example this would be <code>content/_includes</code>.)</p></section><section><h2 id="templates">Templates</h2><h3 id="template">Step 1: The template</h3><p>Template files must be located in a <code>_includes</code> folder in your input folder. (In my example this would be <code>content/_includes</code>.)</p><p>A template file needs to have the file extension <code>.njk</code>, but besides that it can look like a totally normal HTML file. You can (and should) use Nunjucks code to output things that vary from page to page, such as page title, etc. (Like so: <code>&lt;title&gt;{{ title }}&lt;/title&gt;</code>) We will define the values of those variables in the page files in the next step.</p><p>Wherever you want the content of the page to be, type <code>{{ content | safe }}</code></p><h3 id="page">Step 2: The page</h3><p>Whether your page file is an <code>.html</code> or a <code>.njk</code> file doesn't matter - You can use templates in the same way.</p><p>All we need to do is the so-called <b>"front matter"</b>. It's a section at the top of the file that looks like this:</p><pre><code>---
 layout: myTemplate.njk
 title: About Me
 showSelfie: true
 ---
-</code></pre>
-          <p>(You also need the two ---)</p>
-          <p>
-            This example defines three variables and gives them values. For text variables (strings) the quotation marks are optional. This would work just as well: <code>title: "About Me"</code>.
-          </p>
-          <p>You can choose the names of the variables, except for <code>layout</code>. <code>layout</code> always defines the filename of the layout you want to use.</p>
-          <p>The rest of the file is normal HTML (with some Nunjucks code if you want).</p>
-          <blockquote class="tip">
-            <p>
-              <b>Tip:</b> You can even create other types of files, such as .xml files, with Nunjucks. Simply create the file with the extension <code>.njk</code> but add the
-              <code>permalink</code> variable to the front matter, e.g.: <code>permalink: "rss.xml"</code>, which would turn that file into <code>rss.xml</code>. (<a
-                target="_blank"
-                href="https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/rss.njk"
-                >Here</a
-              >
-              is a complete example on how to generate an RSS file with Eleventy using a data file.)
-            </p>
-          </blockquote>
-          <h3 id="example">Example</h3>
-          <p><code>content/_includes/myTemplate.njk</code>:</p>
-          <pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><p>(You also need the two ---)</p><p>This example defines three variables and gives them values. For text variables (strings) the quotation marks are optional. This would work just as well: <code>title: "About Me"</code>.</p><p>You can choose the names of the variables, except for <code>layout</code>. <code>layout</code> always defines the filename of the layout you want to use.</p><p>The rest of the file is normal HTML (with some Nunjucks code if you want).</p><blockquote class="tip"><p><b>Tip:</b> You can even create other types of files, such as .xml files, with Nunjucks. Simply create the file with the extension <code>.njk</code> but add the <code>permalink</code> variable to the front matter, e.g.: <code>permalink: "rss.xml"</code>, which would turn that file into <code>rss.xml</code>. (<a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org/blob/master/content/rss.njk">Here</a> is a complete example on how to generate an RSS file with Eleventy using a data file.)</p></blockquote><h3 id="example">Example</h3><p><code>content/_includes/myTemplate.njk</code>:</p><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;title&gt;{{ title }}&lt;/title&gt;
@@ -504,9 +129,7 @@ showSelfie: true
     &lt;footer&gt;Footer&lt;/footer&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-          <p><code>content/about-me.html</code> (or <code>.njk</code>):</p>
-          <pre><code>---
+</code></pre><p><code>content/about-me.html</code> (or <code>.njk</code>):</p><pre><code>---
 layout: myTemplate.njk
 title: About Me
 bodyClass: about-me-page
@@ -515,9 +138,7 @@ nesting: "../"
 
 &lt;h1&gt;About Me&lt;/h1&gt;
 &lt;p&gt;Here is the main content of your file...&lt;/p&gt;
-</code></pre>
-          <p>The generated file would be <code>public/about-me.html</code>:</p>
-          <pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><p>The generated file would be <code>public/about-me.html</code>:</p><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;title&gt;About Me&lt;/title&gt;
@@ -536,99 +157,32 @@ nesting: "../"
     &lt;footer&gt;Footer&lt;/footer&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-          <blockquote class="tip">
-            <p>
-              Pay close attention to the <code>nesting</code> variable I defined. This is a good way of making sure that the relative paths in the template work for all pages, no matter the folder
-              depth of the page.
-            </p>
-            <p>
-              In a page file in the root folder (such as <code>index.html</code>, your home page) the value would be <code>./</code>, in a page 1 folder deep it would be <code>../</code>, in a page 2
-              folders deep it would be <code>../../</code> and so on.
-            </p>
-            <p>
-              Keep in mind that the paths are relative to your <b>output</b> folder. This means, in the example above, <i>main.js</i> and <i>favicon.ico</i> are both in the output folder:
-              <code>public/main.js</code> and <code>public/favicon.ico</code>.
-            </p>
-          </blockquote>
-        </section>
-        <section>
-          <h2 id="extending-files">Extending files</h2>
-          <p>
-            An alternative to using Eleventy templates with front matter (as described in the previous step) is to <b>extend</b> an njk template. This will give you more freedom than the simple
-            templates as described earlier. However, it is often not really necessary. I highly recommend <b>not</b> doing this unless you actually have to.
-          </p>
-          <details>
-            <summary>Show me how</summary>
-            <p>
-              This is <b>only possible in <code>.njk</code> files</b> and you don't need the "front matter" described earlier.
-            </p>
-            <p>Blocks defined in the extended file can be overwritten by re-defining the blocks in the other file.</p>
-            <p>Here is an example:</p>
-            <p><code>myTemplate.njk</code> (which defines the <i>title</i> block and gives it default content):</p>
-            <pre><code>...
+</code></pre><blockquote class="tip"><p>Pay close attention to the <code>nesting</code> variable I defined. This is a good way of making sure that the relative paths in the template work for all pages, no matter the folder depth of the page.</p><p>In a page file in the root folder (such as <code>index.html</code>, your home page) the value would be <code>./</code>, in a page 1 folder deep it would be <code>../</code>, in a page 2 folders deep it would be <code>../../</code> and so on.</p><p>Keep in mind that the paths are relative to your <b>output</b> folder. This means, in the example above, <i>main.js</i> and <i>favicon.ico</i> are both in the output folder: <code>public/main.js</code> and <code>public/favicon.ico</code>.</p></blockquote></section><section><h2 id="extending-files">Extending files</h2><p>An alternative to using Eleventy templates with front matter (as described in the previous step) is to <b>extend</b> an njk template. This will give you more freedom than the simple templates as described earlier. However, it is often not really necessary. I highly recommend <b>not</b> doing this unless you actually have to.</p><details><summary>Show me how</summary><p>This is <b>only possible in <code>.njk</code> files</b> and you don't need the "front matter" described earlier.</p><p>Blocks defined in the extended file can be overwritten by re-defining the blocks in the other file.</p><p>Here is an example:</p><p><code>myTemplate.njk</code> (which defines the <i>title</i> block and gives it default content):</p><pre><code>...
 &lt;header&gt;
     {% block title %}&lt;h1&gt;Hello World!&lt;/h1&gt;{% endblock %}
 &lt;/header&gt;
 ...
-</code></pre>
-            <p><code>about-me.njk</code> (which extends the template and overwrites the content of the <i>title block</i>):</p>
-            <pre><code>{% extends 'myTemplate.njk' %}
+</code></pre><p><code>about-me.njk</code> (which extends the template and overwrites the content of the <i>title block</i>):</p><pre><code>{% extends 'myTemplate.njk' %}
 {% block title %}&lt;h1&gt;About Me&lt;/h1&gt;{% endblock %}
-</code></pre>
-            <p>would output:</p>
-            <pre><code>...
+</code></pre><p>would output:</p><pre><code>...
 &lt;header&gt;
     &lt;h1&gt;About Me&lt;/h1&gt;
 &lt;/header&gt;
 ...
-</code></pre>
-          </details>
-        </section>
-        <section>
-          <h2 id="running-eleventy">Running Eleventy</h2>
-          <p>Execute this command in your terminal to run Eleventy: <code>npx @11ty/eleventy</code></p>
-          <p>
-            This will generate your .html files based on the files (such as templates) in your input directory. You have to execute this command after every change you make in your input folder.
-            <b>To preview your website, use the files in the output folder</b> or the web server (see below).
-          </p>
-          <p>You can also make Eleventy 'watch' your files for changes, so that you don't have to manually execute the command after every change:</p>
-          <ul>
-            <li><code>npx @11ty/eleventy --watch</code> watches your files</li>
-            <li><code>npx @11ty/eleventy --serve</code> watches your files and starts a web server</li>
-          </ul>
-          <p>
-            If you do this, whenever you save a change, Eleventy will generate the html files anew. If you're using the web server (aka viewing your website at localhost, e.g.
-            <i><a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a></i
-            >) the page will even refresh for you automatically.
-          </p>
-          <hr />
-          <h3 id="custom-command">Defining a custom command (Optional)</h3>
-          <p>In your <code>package.json</code> file, you can define custom commands. Here is an example:</p>
-          <p>This would make the command <code>npm run build</code> execute <code>npx @11ty/eleventy</code>:</p>
-          <pre><code>{
+</code></pre></details></section><section><h2 id="running-eleventy">Running Eleventy</h2><p>Execute this command in your terminal to run Eleventy: <code>npx @11ty/eleventy</code></p><p>This will generate your .html files based on the files (such as templates) in your input directory. You have to execute this command after every change you make in your input folder. <b>To preview your website, use the files in the output folder</b> or the web server (see below).</p><p>You can also make Eleventy 'watch' your files for changes, so that you don't have to manually execute the command after every change:</p><ul><li><code>npx @11ty/eleventy --watch</code> watches your files</li><li><code>npx @11ty/eleventy --serve</code> watches your files and starts a web server</li></ul><p>If you do this, whenever you save a change, Eleventy will generate the html files anew. If you're using the web server (aka viewing your website at localhost, e.g. <i><a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a></i>) the page will even refresh for you automatically.</p><hr><h3 id="custom-command">Defining a custom command (Optional)</h3><p>In your <code>package.json</code> file, you can define custom commands. Here is an example:</p><p>This would make the command <code>npm run build</code> execute <code>npx @11ty/eleventy</code>:</p><pre><code>{
   ...
   "scripts": {
     "build": "npx @11ty/eleventy"
   }
 }
-</code></pre>
-          <p>I highly recommend this because it's less of a handful to type out.</p>
-          <p>You can even combine the eleventy command with other commands you might be using, such as webpack:</p>
-          <pre><code>{
+</code></pre><p>I highly recommend this because it's less of a handful to type out.</p><p>You can even combine the eleventy command with other commands you might be using, such as webpack:</p><pre><code>{
   ...
   "scripts": {
     "build": "npx @11ty/eleventy &amp; webpack",
     "watch": "npx @11ty/eleventy --serve &amp; webpack --watch",
   }
 }
-</code></pre>
-          <p>(These will run both the Eleventy and the Webpack commands at the same time.)</p>
-        </section>
-        <section>
-          <h2 id="done">Done!</h2>
-          <p>Your project structure will look a bit like this:</p>
-          <pre><code>content/			&lt;-- your input folder
+</code></pre><p>(These will run both the Eleventy and the Webpack commands at the same time.)</p></section><section><h2 id="done">Done!</h2><p>Your project structure will look a bit like this:</p><pre><code>content/			&lt;-- your input folder
     _data/
         myData.json		&lt;-- a data file you can access as a variable
     _includes/
@@ -640,79 +194,4 @@ public/				&lt;-- your output folder
     about/
         about-me.html		&lt;-- generated automatically, don't edit this
 .eleventy.js			&lt;-- the configuration file
-</code></pre>
-          <p><strong>REMEMBER:</strong></p>
-          <ul>
-            <li>Do not edit the generated files (in the output folder), as they will be overwritten the next time you run Eleventy. Only make changes in the input folder.</li>
-            <li>Run <code>npx @11ty/eleventy</code> after every change (or let Eleventy watch your files and do this for you) to see the changes.</li>
-            <li>The contents of the output folder are what you upload to your website.</li>
-          </ul>
-          <blockquote class="project">
-            If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!
-          </blockquote>
-        </section>
-        <section>
-          <h2 id="links">Links</h2>
-          <p>Here are some links to official documentation & other helpful stuff.</p>
-          <ul>
-            <li>
-              <a href="https://www.11ty.dev/" target="_blank">Official Eleventy Documentation</a>
-              <ul>
-                <li><a href="https://www.11ty.dev/docs/config/" target="_blank">Configuration file (.eleventy.js)</a></li>
-                <li><a href="https://www.11ty.dev/docs/transforms/#minify-html-output" target="_blank">Transforms (Minify HTML Output)</a></li>
-                <li><a href="https://www.11ty.dev/docs/layouts/" target="_blank">Layouts</a></li>
-                <li><a href="https://www.11ty.dev/docs/languages/nunjucks/" target="_blank">Nunjucks</a></li>
-                <li><a href="https://www.11ty.dev/docs/filters/" target="_blank">Custom filters</a></li>
-                <li><a href="https://www.11ty.dev/docs/permalinks/#changing-the-output-location" target="_blank">Changing output location</a></li>
-                <li><a href="https://www.11ty.dev/docs/usage/#re-run-eleventy-when-you-save" target="_blank">Commands</a></li>
-                <li><a href="https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore" target="_blank">(Not) ignoring files</a></li>
-                <li><a href="https://www.11ty.dev/docs/data-frontmatter/" target="_blank">Front Matter</a></li>
-              </ul>
-            </li>
-            <li><a href="https://mozilla.github.io/nunjucks/templating.html#variables" target="_blank">Nunjucks Documentation</a></li>
-            <li><a href="https://github.com/11ty/eleventy/issues/913#issuecomment-592130359" target="_blank">Keep page.html instead of page/index.html</a></li>
-            <li><a href="https://nodejs.org/en/download/prebuilt-installer" target="_blank">Node.js Download Page</a></li>
-            <li><a href="https://medium.com/@tarngerine/how-the-heck-do-i-use-eleventy-the-intro-guide-i-wish-i-had-84d9b2689031" target="_blank">"How the heck do I use Eleventy?"</a></li>
-          </ul>
-        </section>
-        <section class="buy-me-a-coffee">
-          <p>
-            I spend <b>hours</b> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
-            <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
-          </p>
-          <img src="../assets/img/layout/coffee.gif" alt="coffee" width="80" />
-        </section>
-        <section>
-          <h2>Comments</h2>
-          <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
-          <p>
-            To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to
-            make sure you don't hit the max character limit on comments.
-          </p>
-          <div id="c_widget">Comment Widget could not be loaded!</div>
-          <script src="../assets/js/comment-widget.js"></script>
-        </section>
-      </main>
-      <footer>
-        <div class="footer-content">
-          <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS" /></a><i>┊</i> created by petrapixel 2024 -
-          <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
-          <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i>
-          <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a>
-        </div>
-        <div class="footer-content mobile-only">
-          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"
-            ><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
-            <small>click to clap for me!</small></a
-          ><br />
-          <center>
-            <small>Visitors:</small>
-            <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /></a>
-          </center>
-          <br />
-          <center><a href="#" tabindex="-1" style="font-size: 1.5em">go to top</a></center>
-        </div>
-      </footer>
-    </div>
-  </body>
-</html>
+</code></pre><p><strong>REMEMBER:</strong></p><ul><li>Do not edit the generated files (in the output folder), as they will be overwritten the next time you run Eleventy. Only make changes in the input folder.</li><li>Run <code>npx @11ty/eleventy</code> after every change (or let Eleventy watch your files and do this for you) to see the changes.</li><li>The contents of the output folder are what you upload to your website.</li></ul><blockquote class="project">If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!</blockquote></section><section><h2 id="links">Links</h2><p>Here are some links to official documentation & other helpful stuff.</p><ul><li><a href="https://www.11ty.dev/" target="_blank">Official Eleventy Documentation</a><ul><li><a href="https://www.11ty.dev/docs/config/" target="_blank">Configuration file (.eleventy.js)</a></li><li><a href="https://www.11ty.dev/docs/transforms/#minify-html-output" target="_blank">Transforms (Minify HTML Output)</a></li><li><a href="https://www.11ty.dev/docs/layouts/" target="_blank">Layouts</a></li><li><a href="https://www.11ty.dev/docs/languages/nunjucks/" target="_blank">Nunjucks</a></li><li><a href="https://www.11ty.dev/docs/filters/" target="_blank">Custom filters</a></li><li><a href="https://www.11ty.dev/docs/permalinks/#changing-the-output-location" target="_blank">Changing output location</a></li><li><a href="https://www.11ty.dev/docs/usage/#re-run-eleventy-when-you-save" target="_blank">Commands</a></li><li><a href="https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore" target="_blank">(Not) ignoring files</a></li><li><a href="https://www.11ty.dev/docs/data-frontmatter/" target="_blank">Front Matter</a></li></ul></li><li><a href="https://mozilla.github.io/nunjucks/templating.html#variables" target="_blank">Nunjucks Documentation</a></li><li><a href="https://github.com/11ty/eleventy/issues/913#issuecomment-592130359" target="_blank">Keep page.html instead of page/index.html</a></li><li><a href="https://nodejs.org/en/download/prebuilt-installer" target="_blank">Node.js Download Page</a></li><li><a href="https://medium.com/@tarngerine/how-the-heck-do-i-use-eleventy-the-intro-guide-i-wish-i-had-84d9b2689031" target="_blank">"How the heck do I use Eleventy?"</a></li></ul></section><section class="buy-me-a-coffee"><p>I spend <b>hours</b> of my free time writing these tutorials that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif"></p><img src="../assets/img/layout/coffee.gif" alt="coffee" width="80"></section><section><h2>Comments</h2><p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p><p>To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure you don't hit the max character limit on comments.</p><div id="c_widget">Comment Widget could not be loaded!</div><script src="../assets/js/comment-widget.js"></script></section></main><footer><div class="footer-content"><a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS"></a><i>┊</i> created by petrapixel 2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a> <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i> <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></div><div class="footer-content mobile-only"><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a><br><center><small>Visitors:</small> <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><br><center><a href="#" tabindex="-1" style="font-size:1.5em">go to top</a></center></div></footer></div></body></html>

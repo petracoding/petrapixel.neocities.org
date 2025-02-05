@@ -1,169 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>coding cheatsheet | petrapixel</title>
-    <meta name="description" content="A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities." />
-    <script src="../assets/js/main.js?nocache=20250205"></script>
-    <link rel="stylesheet" href="../assets/main.css?nocache=20250205" />
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta content="utf-8" http-equiv="encoding" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-      hljs.highlightAll();
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
-    <script>
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      (window.dataLayer = window.dataLayer || []), gtag("js", new Date()), gtag("config", "G-J64TL8KVTJ");
-    </script>
-  </head>
-  <body class="coding-page-layout">
-    <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a>
-    <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
-    <div id="content">
-      <div id="theme-toggler" aria-hidden="true">
-        <button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height: 20px; image-rendering: pixelated" alt="" /> <span>toggle theme</span></button>
-      </div>
-      <div id="font-toggler" aria-hidden="true">
-        <button type="button"><span>toggle font</span></button>
-      </div>
-      <header>
-        <div class="header-heading">
-          <a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300" /></a>
-        </div>
-      </header>
-      <nav class="coding-navigation" data-nosnippet="true">
-        <div class="coding-navigation-category" aria-label="Tools">
-          <div class="coding-navigation-category__title">Tools</div>
-          <ul>
-            <li><a href="/coding/layout-generator">layout generator</a></li>
-            <li><a href="/coding/widgets">widgets for free neocities accounts</a></li>
-            <li><a href="/coding/checklist">self-study checklist</a></li>
-            <li><a href="/coding/cheatsheet">cheatsheet</a></li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Guides">
-          <div class="coding-navigation-category__title">Guides</div>
-          <ul>
-            <li><a href="/coding/how-to-make-a-website">how to make a website</a></li>
-            <li><a href="/coding/common-questions">common questions</a></li>
-            <li><a href="/coding/common-mistakes">common mistakes</a></li>
-            <li><a href="/coding/snippets">snippets & tips</a></li>
-            <li>
-              <a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a>
-            </li>
-            <li><a href="/coding/code-quality">code quality guide</a></li>
-            <li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Beginner Tutorials">
-          <div class="coding-navigation-category__title">Beginner Tutorials</div>
-          <ul>
-            <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
-            <li>
-              <a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a>
-            </li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Advanced Tutorials">
-          <div class="coding-navigation-category__title">Advanced Tutorials</div>
-          <ul>
-            <li><a href="/coding/git-tutorial">git tutorial</a></li>
-            <li><a href="/coding/npm-tutorial">node/npm tutorial</a></li>
-            <li><a href="/coding/webpack-tutorial">webpack tutorial</a></li>
-            <li>
-              <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a>
-            </li>
-          </ul>
-        </div>
-        <div class="coding-navigation-category" aria-label="Miscellaneous">
-          <div class="coding-navigation-category__title">Miscellaneous</div>
-          <ul>
-            <li><a href="/coding/neocities">neocities tips</a></li>
-            <li>
-              <a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <aside class="aside aside--left" data-nosnippet="true">
-        <div class="coding-back-to-home">
-          <a href="/"
-            ><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"
-          /></a>
-        </div>
-        <img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true" />
-        <div class="aside-stuff aside-clap-kirby" style="margin-top: 20px">
-          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"
-            ><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
-            <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode" /> </a
-          ><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"
-            ><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode" />
-            <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode" /> </a
-          ><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"
-            ><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
-            <small>click to clap for me!</small></a
-          >
-        </div>
-        <div class="aside-stuff aside-link-back">
-          <div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true" /></div>
-          <p>Hotlinking is a-okay!</p>
-          <a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"
-            ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31" /></a
-          ><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
-          >
-        </div>
-        <div class="aside-stats__stat" style="margin-bottom: 0; margin-top: 2em">
-          <div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
-          <div class="aside-stats__stat-content">
-            <center>
-              <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /></a>
-            </center>
-            <small style="font-size: 0.8em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
-          </div>
-        </div>
-        <img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top: -5px" />
-        <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
-        <div id="toc-position"></div>
-        <div id="toc"></div>
-        <a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"
-          ><img src="../assets/img/layout/coffee.gif" width="70" />
-          <div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a
-        ><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
-        <a class="aside-contest" href="/contest"
-          ><img src="../assets/img/layout/trophy.gif" width="80" height="85" />
-          <div><b>Indie Web Contest</b><small>Participate now!</small></div></a
-        >
-      </aside>
-      <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
-      <main id="main" class="coding-page">
-        <section>
-          <h1>Cheatsheet</h1>
-          <p>A reference for often-used lines of code and commands.</p>
-          <div id="toc">
-            <b>Table of Contents:</b>
-            <ol>
-              <li><a href="#css">CSS</a></li>
-              <li><a href="#js">JavaScript</a></li>
-              <li><a href="#scss">SCSS</a></li>
-              <li><a href="#git">Git / GitHub</a></li>
-              <li><a href="#npm">npm</a></li>
-              <li><a href="#webpack">Webpack</a></li>
-              <li><a href="#11ty">11ty (Eleventy)</a></li>
-            </ol>
-          </div>
-        </section>
-        <section>
-          <h2 id="css">CSS</h2>
-          <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote>
-          <h3>Absolute Positioning:</h3>
-          <pre><code class="language-scss">.parent {
+<!doctype html><html lang="en"><head><title>coding cheatsheet | petrapixel</title><meta name="description" content="A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities."><script src="../assets/js/main.js?nocache=20250205"></script><link rel="stylesheet" href="../assets/main.css?nocache=20250205"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script>hljs.highlightAll()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-J64TL8KVTJ")</script></head><body class="coding-page-layout"><noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a> <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a><div id="content"><div id="theme-toggler" aria-hidden="true"><button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated" alt=""> <span>toggle theme</span></button></div><div id="font-toggler" aria-hidden="true"><button type="button"><span>toggle font</span></button></div><header><div class="header-heading"><a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300"></a></div></header><nav class="coding-navigation" data-nosnippet="true"><div class="coding-navigation-category" aria-label="Tools"><div class="coding-navigation-category__title">Tools</div><ul><li><a href="/coding/layout-generator">layout generator</a></li><li><a href="/coding/widgets">widgets for free neocities accounts</a></li><li><a href="/coding/checklist">self-study checklist</a></li><li><a href="/coding/cheatsheet">cheatsheet</a></li></ul></div><div class="coding-navigation-category" aria-label="Guides"><div class="coding-navigation-category__title">Guides</div><ul><li><a href="/coding/how-to-make-a-website">how to make a website</a></li><li><a href="/coding/common-questions">common questions</a></li><li><a href="/coding/common-mistakes">common mistakes</a></li><li><a href="/coding/snippets">snippets & tips</a></li><li><a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a></li><li><a href="/coding/code-quality">code quality guide</a></li><li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li></ul></div><div class="coding-navigation-category" aria-label="Beginner Tutorials"><div class="coding-navigation-category__title">Beginner Tutorials</div><ul><li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li><li><a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Advanced Tutorials"><div class="coding-navigation-category__title">Advanced Tutorials</div><ul><li><a href="/coding/git-tutorial">git tutorial</a></li><li><a href="/coding/npm-tutorial">node/npm tutorial</a></li><li><a href="/coding/webpack-tutorial">webpack tutorial</a></li><li><a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Miscellaneous"><div class="coding-navigation-category__title">Miscellaneous</div><ul><li><a href="/coding/neocities">neocities tips</a></li><li><a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a></li></ul></div></nav><aside class="aside aside--left" data-nosnippet="true"><div class="coding-back-to-home"><a href="/"><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"></a></div><img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true"><div class="aside-stuff aside-clap-kirby" style="margin-top:20px"><a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode"> </a><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode"> </a><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a></div><div class="aside-stuff aside-link-back"><div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true"></div><p>Hotlinking is a-okay!</p><a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"></a><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea></div><div class="aside-stats__stat" style="margin-bottom:0;margin-top:2em"><div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"></div><div class="aside-stats__stat-content"><center><a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><small style="font-size:.8em;letter-spacing:-.4px;text-align:center;display:block">(might not be entirely accurate)</small></div></div><img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top:-5px"> <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top:2em"><div id="toc-position"></div><div id="toc"></div><a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"><img src="../assets/img/layout/coffee.gif" width="70"><div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering:pixelated"> <a class="aside-contest" href="/contest"><img src="../assets/img/layout/trophy.gif" width="80" height="85"><div><b>Indie Web Contest</b><small>Participate now!</small></div></a></aside><div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div><main id="main" class="coding-page"><section><h1>Cheatsheet</h1><p>A reference for often-used lines of code and commands.</p><div id="toc"><b>Table of Contents:</b><ol><li><a href="#css">CSS</a></li><li><a href="#js">JavaScript</a></li><li><a href="#scss">SCSS</a></li><li><a href="#git">Git / GitHub</a></li><li><a href="#npm">npm</a></li><li><a href="#webpack">Webpack</a></li><li><a href="#11ty">11ty (Eleventy)</a></li></ol></div></section><section><h2 id="css">CSS</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote><h3>Absolute Positioning:</h3><pre><code class="language-scss">.parent {
   position: relative;
 }
 
@@ -171,16 +7,12 @@
   position: absolute;
   top: 10px;
   left: 10px;
-}</code></pre>
-          <h3>Flexbox:</h3>
-          <pre><code class="language-scss">.container {
+}</code></pre><h3>Flexbox:</h3><pre><code class="language-scss">.container {
   display: flex;
   justify-content: center; // horizontal
   align-items: center; // vertical
 }
-</code></pre>
-          <h3>Grid:</h3>
-          <pre><code class="language-scss">.container {
+</code></pre><h3>Grid:</h3><pre><code class="language-scss">.container {
   display: grid;
   grid-gap: 10px;
   grid-template:
@@ -193,9 +25,7 @@
 header { grid-area: header; }
 aside { grid-area: sidebar; }
 main { grid-area: main; }
-footer { grid-area: footer; }</code></pre>
-          <h3>Animation:</h3>
-          <pre><code>@keyframes floatyAnimation {
+footer { grid-area: footer; }</code></pre><h3>Animation:</h3><pre><code>@keyframes floatyAnimation {
   0% {
     transform: translateY(0px);
   }
@@ -214,31 +44,20 @@ div {
     animation: none;
   }
 }
-</code></pre>
-        </section>
-        <section>
-          <h2 id="js">JavaScript</h2>
-          <h3>Waiting for DOM:</h3>
-          <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
+</code></pre></section><section><h2 id="js">JavaScript</h2><h3>Waiting for DOM:</h3><pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
   // code here...
 });
-</code></pre>
-          <h3>For-Each over Elements:</h3>
-          <pre><code>const myElements = document.querySelectorAll(".element");
+</code></pre><h3>For-Each over Elements:</h3><pre><code>const myElements = document.querySelectorAll(".element");
 [...myElements].forEach((el) => {
   console.log(el);
-});</code></pre>
-          <h3>ECMAScript:</h3>
-          <pre><code class="language-javascript">import "./myStyles.scss";
+});</code></pre><h3>ECMAScript:</h3><pre><code class="language-javascript">import "./myStyles.scss";
 import "./myFolder/myFile";
 import { doSomething } from "./myFolder/myFile";
 
 export function doSomething() {
 	...
 }
-</code></pre>
-          <h3><code>fetch</code>:</h3>
-          <pre><code>fetch("/example.json")
+</code></pre><h3><code>fetch</code>:</h3><pre><code>fetch("/example.json")
   .then(response => {
     // handle the response
     if (res.ok) {
@@ -252,12 +71,7 @@ export function doSomething() {
   .catch(error => {
     // handle the error. note: 404 errors do not land here.
     console.log(error);
-  });</code></pre>
-          <p>JSON -&gt; JS Object: <code>jsonData.json()</code><br />JS Object -&gt; JSON: <code>JSON.stringify(obj)</code></p>
-        </section>
-        <section>
-          <h2 id="scss">SCSS</h2>
-          <pre><code class="language-scss">$font: Helvetica, Arial;
+  });</code></pre><p>JSON -&gt; JS Object: <code>jsonData.json()</code><br>JS Object -&gt; JSON: <code>JSON.stringify(obj)</code></p></section><section><h2 id="scss">SCSS</h2><pre><code class="language-scss">$font: Helvetica, Arial;
 $textColor: black;
 $linkColor: #333333;
 
@@ -282,9 +96,7 @@ a {
     color: opacify($linkColor, 0.5);
   }
 }
-</code></pre>
-          <h3>Mixins:</h3>
-          <pre><code class="language-scss">@mixin theme($theme: black) {
+</code></pre><h3>Mixins:</h3><pre><code class="language-scss">@mixin theme($theme: black) {
   background: $theme;
   color: #fff;
 }
@@ -295,82 +107,44 @@ a {
 .alert {
   @include theme($theme: red);
 }
-</code></pre>
-        </section>
-        <section>
-          <h2 id="git">Git / GitHub</h2>
-          <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/git-tutorial">git tutorial</a>.</blockquote>
-          <h3>New Project:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>git init <small>initalizes your current folder as a git repository</small>
+</code></pre></section><section><h2 id="git">Git / GitHub</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/git-tutorial">git tutorial</a>.</blockquote><h3>New Project:</h3><blockquote class="cheatsheet-blockquote"><pre>git init <small>initalizes your current folder as a git repository</small>
 git remote add origin &lt;https link&gt; <small>connects your local folder with the GitHub repository you have created on github.com</small>
 git add . <small>stages all your files</small>
 git commit -m "First Commit" <small>commits the staged files</small>
 git branch -M main <small>renames the branch to 'main'</small>
 git push --set-upstream origin main <small>pushes (= uploads) your local files to your GitHub repository</small>
-git pull --set-upstream origin main <small>pulls (= downloads) the files in your GitHub repository into your local folder</small></pre>
-          </blockquote>
-          <h3>Staging, Committing, Pushing:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>git status <small>shows the status of every changed file</small>
+git pull --set-upstream origin main <small>pulls (= downloads) the files in your GitHub repository into your local folder</small></pre></blockquote><h3>Staging, Committing, Pushing:</h3><blockquote class="cheatsheet-blockquote"><pre>git status <small>shows the status of every changed file</small>
 git add &lt;file&gt; <small>stages a file</small>
 git add . <small>stages all changed files</small>
 git commit -m "Example message" <small>commits the staged files</small>
 git commit --amend -m "an updated commit message" <small>adds the staged files to the previous commit</small>
 git commit --amend --no-edit <small>adds the staged files to the previous commit, without changing the commit message</small>
-git push <small>pushes (= uploads) your local files to your GitHub repository</small></pre>
-          </blockquote>
-          <h3>Undoing:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
+git push <small>pushes (= uploads) your local files to your GitHub repository</small></pre></blockquote><h3>Undoing:</h3><blockquote class="cheatsheet-blockquote"><pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
 git reset &lt;previous_commit_hash&gt; <small>revert a commit as if it never happened</small>
 git restore --staged &lt;file&gt; <small>unstages a file</small>
 git reset HEAD -- &lt;file&gt; <small>same as above (unstages a file)</small>
 git restore &lt;file&gt; <small>discards changes in an unstaged file</small>
-git restore . <small>discards all changes in all unstaged files</small></pre>
-          </blockquote>
-          <h3>Branches:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>git branch <small>shows branches</small>
+git restore . <small>discards all changes in all unstaged files</small></pre></blockquote><h3>Branches:</h3><blockquote class="cheatsheet-blockquote"><pre>git branch <small>shows branches</small>
 git switch -c &lt;new-branch&gt; <small>makes a new branch and checks it out (currently changed files will be kept)</small>
-git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre>
-          </blockquote>
-          <h3>Misc.:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
+git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre></blockquote><h3>Misc.:</h3><blockquote class="cheatsheet-blockquote"><pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
 git log <small>show a log of all commits</small>
 git log --oneline <small>show a log of all commits (shorter)</small>
 git diff <small>shows all changes</small>
 git diff &lt;a&gt; <small>shows all changes in a file/folder</small>
 git -v <small>shows the git version you are using</small>
 git remote -v <small>shows all remotes</small>
-git remote remove &lt;name&gt; <small>deletes a remote</small></pre>
-          </blockquote>
-        </section>
-        <section>
-          <h2 id="npm">npm</h2>
-          <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote>
-          <h3>Installing Packages:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
+git remote remove &lt;name&gt; <small>deletes a remote</small></pre></blockquote></section><section><h2 id="npm">npm</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote><h3>Installing Packages:</h3><blockquote class="cheatsheet-blockquote"><pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
 npm install --save-dev &lt;package&gt; <small>installs a package as a dev dependency</small>
 npm uninstall &lt;package&gt; <small>uninstalls a package</small>
 npm install <small>installs all dependencies</small>
-npm update <small>installs and updates all dependencies</small></pre>
-          </blockquote>
-          <h3>Misc.:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
+npm update <small>installs and updates all dependencies</small></pre></blockquote><h3>Misc.:</h3><blockquote class="cheatsheet-blockquote"><pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
 node -v <small>shows node version</small>
 npm -v <small>shows npm version</small>
 npm init <small>created package.json for you</small>
 npm cache clean --force <small>clears cache</small>
 npm list -g --depth=0 <small>shows all installed packages</small>
 npmoutdated <small>shows all outdated packages</small>
-npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre>
-          </blockquote>
-          <h3>Example <code>package.json</code> :</h3>
-          <pre><code>{
+npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre></blockquote><h3>Example <code>package.json</code> :</h3><pre><code>{
   "name": "project-name",
   "private": true,
   "devDependencies": {
@@ -381,34 +155,11 @@ npm view &lt;package&gt; version <small>shows the newest available version of a 
     "watch": "webpack --watch"
   }
 }
-</code></pre>
-          <h3>Versions:</h3>
-          <ul>
-            <li><code>1.2.3</code>: only version 1.2.3, nothing else</li>
-            <li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li>
-            <li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li>
-            <li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li>
-            <li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li>
-            <li><code>*</code>: any version</li>
-          </ul>
-        </section>
-        <section>
-          <h2 id="webpack">Webpack</h2>
-          <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/webpack-tutorial">webpack tutorial</a>.</blockquote>
-          <h3>Installation:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>npm install --save-dev webpack webpack-cli <small>installs webpack</small>
+</code></pre><h3>Versions:</h3><ul><li><code>1.2.3</code>: only version 1.2.3, nothing else</li><li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li><li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li><li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li><li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li><li><code>*</code>: any version</li></ul></section><section><h2 id="webpack">Webpack</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/webpack-tutorial">webpack tutorial</a>.</blockquote><h3>Installation:</h3><blockquote class="cheatsheet-blockquote"><pre>npm install --save-dev webpack webpack-cli <small>installs webpack</small>
 npm install --save-dev style-loader css-loader sass-loader sass mini-css-extract-plugin <small>installs packages required for (s)css handling</small>
-npm list --depth=0 | findstr webpack  <small>shows webpack version</small></pre>
-          </blockquote>
-          <h3>Running:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>npx webpack <small>builds your files</small>
+npm list --depth=0 | findstr webpack  <small>shows webpack version</small></pre></blockquote><h3>Running:</h3><blockquote class="cheatsheet-blockquote"><pre>npx webpack <small>builds your files</small>
 npx webpack --watch <small>watches your files (and builds them when a change happens)</small>
-npx webpack --config webpack2.config.js <small>runs webpack using a specific configuration file</small></pre>
-          </blockquote>
-          <h3>Example <code>webpack.config.js</code> :</h3>
-          <pre style="white-space: break-spaces"><code class="language-javascript">const path = require("path");
+npx webpack --config webpack2.config.js <small>runs webpack using a specific configuration file</small></pre></blockquote><h3>Example <code>webpack.config.js</code> :</h3><pre style="white-space:break-spaces"><code class="language-javascript">const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -457,38 +208,18 @@ module.exports = {
   // Generate source maps for easier debugging:
   devtool: "source-map",
 };
-</code></pre>
-          <p>(Replace <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code> to inject CSS into DOM.)</p>
-          <h3>SCSS:</h3>
-          <pre><code class="language-scss">@import "css/example";</code></pre>
-          <h3>JavaScript:</h3>
-          <pre style="white-space: break-spaces"><code class="language-javascript">import "./main.scss"; 
+</code></pre><p>(Replace <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code> to inject CSS into DOM.)</p><h3>SCSS:</h3><pre><code class="language-scss">@import "css/example";</code></pre><h3>JavaScript:</h3><pre style="white-space:break-spaces"><code class="language-javascript">import "./main.scss"; 
 import { doExample } from "./js/example.js"; 
 
 document.addEventListener("DOMContentLoaded", () =&gt; {
   doExample();
 });
-</code></pre>
-          <pre><code>export function doExample() {
+</code></pre><pre><code>export function doExample() {
   console.log("This example works too!");
 }
-</code></pre>
-        </section>
-        <section>
-          <h2 id="11ty">11ty (Eleventy)</h2>
-          <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote>
-          <h3>Installation:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre>
-          </blockquote>
-          <h3>Running:</h3>
-          <blockquote class="cheatsheet-blockquote">
-            <pre>npx @11ty/eleventy <small>builds your files</small>
+</code></pre></section><section><h2 id="11ty">11ty (Eleventy)</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote><h3>Installation:</h3><blockquote class="cheatsheet-blockquote"><pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre></blockquote><h3>Running:</h3><blockquote class="cheatsheet-blockquote"><pre>npx @11ty/eleventy <small>builds your files</small>
 npx @11ty/eleventy --watch <small>watches your files (and builds them when a change happens)</small>
-npx @11ty/eleventy --serve <small>watches your files (and builds them when a change happens), and stars a webserver on localhost</small></pre>
-          </blockquote>
-          <h3>Example <code>.eleventy.js</code> :</h3>
-          <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
+npx @11ty/eleventy --serve <small>watches your files (and builds them when a change happens), and stars a webserver on localhost</small></pre></blockquote><h3>Example <code>.eleventy.js</code> :</h3><pre style="white-space:break-spaces"><code>module.exports = function (eleventyConfig) {
   // This makes the eleventy command quieter (with less detail)
   eleventyConfig.setQuietMode(true);
 
@@ -512,9 +243,7 @@ npx @11ty/eleventy --serve <small>watches your files (and builds them when a cha
     },
   };
 };
-</code></pre>
-          <h3>Nunjucks:</h3>
-          <pre><code class="language-plaintext">Setting a variable:
+</code></pre><h3>Nunjucks:</h3><pre><code class="language-plaintext">Setting a variable:
     {% set myText = "Hello World!" %}
     {% set showHeader = true %}
 
@@ -552,9 +281,7 @@ Logical Operators (and, or, not instead of && || !)
     {% if myVariable1 and myVariable2 %}...{% endif %}
     {% if myVariable1 or myVariable2 %}...{% endif %}
     {% if not myVariable %}...{% endif %}
-</code></pre>
-          <h3>Example Template (e.g. <code>_includes/myTemplate.njk</code>):</h3>
-          <pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><h3>Example Template (e.g. <code>_includes/myTemplate.njk</code>):</h3><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;title&gt;{{ title }}&lt;/title&gt;
@@ -572,9 +299,7 @@ Logical Operators (and, or, not instead of && || !)
     &lt;footer&gt;Footer&lt;/footer&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-          <h3>Example <code>page.html</code> or <code>page.njk</code> :</h3>
-          <pre><code>---
+</code></pre><h3>Example <code>page.html</code> or <code>page.njk</code> :</h3><pre><code>---
 layout: myTemplate.njk
 title: About Me
 bodyClass: about-me-page
@@ -583,44 +308,4 @@ nesting: "../"
 
 &lt;h1&gt;About Me&lt;/h1&gt;
 &lt;p&gt;Here is the main content of your file...&lt;/p&gt;
-</code></pre>
-        </section>
-        <section class="buy-me-a-coffee">
-          <div>
-            <p>
-              I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
-              <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
-            </p>
-            <p>
-              <small
-                >If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I
-                promise I don't bite!</small
-              >
-            </p>
-          </div>
-          <img src="../assets/img/layout/coffee.gif" alt="coffee" width="80" />
-        </section>
-      </main>
-      <footer>
-        <div class="footer-content">
-          <a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS" /></a><i>┊</i> created by petrapixel 2024 -
-          <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a>
-          <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i>
-          <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a>
-        </div>
-        <div class="footer-content mobile-only">
-          <a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"
-            ><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
-            <small>click to clap for me!</small></a
-          ><br />
-          <center>
-            <small>Visitors:</small>
-            <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /></a>
-          </center>
-          <br />
-          <center><a href="#" tabindex="-1" style="font-size: 1.5em">go to top</a></center>
-        </div>
-      </footer>
-    </div>
-  </body>
-</html>
+</code></pre></section><section class="buy-me-a-coffee"><div><p>I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif"></p><p><small>If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I promise I don't bite!</small></p></div><img src="../assets/img/layout/coffee.gif" alt="coffee" width="80"></section></main><footer><div class="footer-content"><a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS"></a><i>┊</i> created by petrapixel 2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a> <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i> <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></div><div class="footer-content mobile-only"><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a><br><center><small>Visitors:</small> <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><br><center><a href="#" tabindex="-1" style="font-size:1.5em">go to top</a></center></div></footer></div></body></html>
