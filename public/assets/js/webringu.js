@@ -1,29 +1,24 @@
-const members = [
-  {
-    url: "https://www.example0.com/",
-    title: "Example0",
-    slug: "example0",
-  },
-  {
-    url: "https://www.example1.com/",
-    title: "Example1",
-    slug: "example1",
-  },
-  {
-    url: "http://localhost:8080/",
-    title: "Example3Localhost",
-    slug: "YOURSLUGHERE",
-  },
-];
-
-// Start of Code. Only edit here if you know what you're doing.
+// Webringu Webring Script by PetraPixel (https://petrapixel.neocities.org/coding/webringu)
 
 document.addEventListener("DOMContentLoaded", function () {
   const params = getParameters();
-  if (!params["slug"] || !params["action"]) return;
+  if (params["slug"] && params["action"]) {
+    doAction(params);
+  }
 
+  const membersListEl = document.querySelector("#webringulist");
+  if (membersListEl) createMembersList(membersListEl);
+
+  const membersCountEl = document.querySelector("#webringucount");
+  if (membersCountEl) membersCountEl.innerHTML = members.length;
+});
+
+function doAction(params) {
   const index = getIndexOfMember(params["slug"]);
-  if (index == -1) return;
+  if (index == -1) {
+    console.error(params["slug"] + " not found in webring member list.");
+    return;
+  }
 
   const action = params["action"].replace(".html", "").toLowerCase();
 
@@ -38,13 +33,40 @@ document.addEventListener("DOMContentLoaded", function () {
       indexToRedirectTo = Math.floor(Math.random() * members.length);
     }
   } else {
-    console.error("Webring Error. Wrong action.");
+    console.error("Webring Error: Wrong action.");
     return;
   }
 
-  console.log("Redirecting to " + members[indexToRedirectTo].slug);
-  // window.location.replace(members[indexToRedirectTo].url);
-});
+  window.location.replace(members[indexToRedirectTo].url);
+}
+
+function createMembersList(el) {
+  const hasDescription = members[0].description ? true : false;
+
+  let output = `<table class="webring-members">
+    <thead>
+      <tr>
+        <th>Member</th>
+        <th>Website</th>
+        ${hasDescription ? `<th>Description</th>` : ""}
+      </tr>
+    </thead>
+    <tbody>`;
+
+  members.forEach((member) => {
+    let prettyUrl = member.url.replace("https://", "");
+    prettyUrl = prettyUrl.endsWith("/") ? prettyUrl.slice(0, -1) : prettyUrl;
+    output += `<tr>
+        <td><abbr title="slug: ${member.slug}">${member.title}</abbr></td>
+        <td><a href="${member.url}">${member.buttonUrl ? `<img src="${member.buttonUrl}" width="88" />` : ""}${prettyUrl}</a></td>
+		${hasDescription ? `<td>${member.description ? member.description : ""}</td>` : ""}
+      </tr>`;
+  });
+
+  output += `</tbody>
+  </table>`;
+  el.innerHTML = output;
+}
 
 function getIndexOfMember(slug) {
   let i = 0;

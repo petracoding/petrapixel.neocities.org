@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20250205"
+noCache: "20250209"
 ---
 
 <!DOCTYPE html>
@@ -15,8 +15,7 @@ noCache: "20250205"
     {% endif %}
     <script src="{{ nesting }}assets/js/main.js?nocache={{ noCache }}"></script>
     <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ noCache }}" />
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta content="utf-8" http-equiv="encoding" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ nesting }}assets/img/favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -83,22 +82,26 @@ noCache: "20250205"
             <li>
               <a href="/coding/widgets">widgets for free neocities accounts</a>
             </li>
+            <li><a href="/coding/cheatsheet">cheatsheet</a></li>
+            <li>
+              <a href="/coding/bookmarks"
+                >bookmarks (helpful sites)<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+              ></a>
+            </li>
             <li>
               <a href="/coding/checklist">self-study checklist</a>
             </li>
-            <li><a href="/coding/cheatsheet">cheatsheet</a></li>
           </ul>
         </div>
 
-        <div class="coding-navigation-category" aria-label="Guides">
-          <div class="coding-navigation-category__title">Guides</div>
+        <div class="coding-navigation-category" aria-label="First Steps">
+          <div class="coding-navigation-category__title">First Steps</div>
           <ul>
             <li>
               <a href="/coding/how-to-make-a-website">how to make a website</a>
             </li>
             <li><a href="/coding/common-questions">common questions</a></li>
             <li><a href="/coding/common-mistakes">common mistakes</a></li>
-            <li><a href="/coding/snippets">snippets & tips</a></li>
             <li>
               <a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a>
             </li>
@@ -148,6 +151,7 @@ noCache: "20250205"
           <div class="coding-navigation-category__title">Miscellaneous</div>
           <ul>
             <li><a href="/coding/neocities">neocities tips</a></li>
+            <li><a href="/coding/snippets">code snippets</a></li>
             <li>
               <a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a>
             </li>
@@ -227,7 +231,7 @@ noCache: "20250205"
 
         <a class="aside-contest" href="/contest">
           <img src="{{ nesting }}assets/img/layout/trophy.gif" width="80" height="85" />
-          <div><b>Indie Web Contest</b><small>Participate now!</small></div>
+          <div><b>Indie Web Contest</b><small>Vote now!</small></div>
         </a>
       </aside>
 

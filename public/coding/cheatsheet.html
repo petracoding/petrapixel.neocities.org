@@ -1,5 +1,110 @@
-<!doctype html><html lang="en"><head><title>coding cheatsheet | petrapixel</title><meta name="description" content="A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities."><script src="../assets/js/main.js?nocache=20250205"></script><link rel="stylesheet" href="../assets/main.css?nocache=20250205"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script>hljs.highlightAll()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-J64TL8KVTJ")</script></head><body class="coding-page-layout"><noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a> <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a><div id="content"><div id="theme-toggler" aria-hidden="true"><button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated" alt=""> <span>toggle theme</span></button></div><div id="font-toggler" aria-hidden="true"><button type="button"><span>toggle font</span></button></div><header><div class="header-heading"><a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300"></a></div></header><nav class="coding-navigation" data-nosnippet="true"><div class="coding-navigation-category" aria-label="Tools"><div class="coding-navigation-category__title">Tools</div><ul><li><a href="/coding/layout-generator">layout generator</a></li><li><a href="/coding/widgets">widgets for free neocities accounts</a></li><li><a href="/coding/checklist">self-study checklist</a></li><li><a href="/coding/cheatsheet">cheatsheet</a></li></ul></div><div class="coding-navigation-category" aria-label="Guides"><div class="coding-navigation-category__title">Guides</div><ul><li><a href="/coding/how-to-make-a-website">how to make a website</a></li><li><a href="/coding/common-questions">common questions</a></li><li><a href="/coding/common-mistakes">common mistakes</a></li><li><a href="/coding/snippets">snippets & tips</a></li><li><a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a></li><li><a href="/coding/code-quality">code quality guide</a></li><li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li></ul></div><div class="coding-navigation-category" aria-label="Beginner Tutorials"><div class="coding-navigation-category__title">Beginner Tutorials</div><ul><li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li><li><a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Advanced Tutorials"><div class="coding-navigation-category__title">Advanced Tutorials</div><ul><li><a href="/coding/git-tutorial">git tutorial</a></li><li><a href="/coding/npm-tutorial">node/npm tutorial</a></li><li><a href="/coding/webpack-tutorial">webpack tutorial</a></li><li><a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Miscellaneous"><div class="coding-navigation-category__title">Miscellaneous</div><ul><li><a href="/coding/neocities">neocities tips</a></li><li><a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a></li></ul></div></nav><aside class="aside aside--left" data-nosnippet="true"><div class="coding-back-to-home"><a href="/"><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"></a></div><img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true"><div class="aside-stuff aside-clap-kirby" style="margin-top:20px"><a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode"> </a><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode"> </a><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a></div><div class="aside-stuff aside-link-back"><div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true"></div><p>Hotlinking is a-okay!</p><a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"></a><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea></div><div class="aside-stats__stat" style="margin-bottom:0;margin-top:2em"><div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"></div><div class="aside-stats__stat-content"><center><a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><small style="font-size:.8em;letter-spacing:-.4px;text-align:center;display:block">(might not be entirely accurate)</small></div></div><img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top:-5px"> <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top:2em"><div id="toc-position"></div><div id="toc"></div><a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"><img src="../assets/img/layout/coffee.gif" width="70"><div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering:pixelated"> <a class="aside-contest" href="/contest"><img src="../assets/img/layout/trophy.gif" width="80" height="85"><div><b>Indie Web Contest</b><small>Participate now!</small></div></a></aside><div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div><main id="main" class="coding-page"><section><h1>Cheatsheet</h1><p>A reference for often-used lines of code and commands.</p><div id="toc"><b>Table of Contents:</b><ol><li><a href="#css">CSS</a></li><li><a href="#js">JavaScript</a></li><li><a href="#scss">SCSS</a></li><li><a href="#git">Git / GitHub</a></li><li><a href="#npm">npm</a></li><li><a href="#webpack">Webpack</a></li><li><a href="#11ty">11ty (Eleventy)</a></li></ol></div></section><section><h2 id="css">CSS</h2><blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote><h3>Absolute Positioning:</h3><pre><code class="language-scss">.parent {
+<!doctype html><html lang="en"><head><title>coding cheatsheet | petrapixel</title><meta name="description" content="A cheatsheet / reference for common coding use cases and commands, for SCSS, JavaScript, git (and GitHub), npm, webpack and eleventy (11ty). Neocities."><script src="../assets/js/main.js?nocache=20250209"></script><link rel="stylesheet" href="../assets/main.css?nocache=20250209"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script>hljs.highlightAll()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-J64TL8KVTJ")</script></head><body class="coding-page-layout"><noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript><a href="#main" id="skip-to-content-link">Skip to content</a> <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a><div id="content"><div id="theme-toggler" aria-hidden="true"><button type="button"><img src="../assets/img/layout/moon.gif" width="20" style="height:20px;image-rendering:pixelated" alt=""> <span>toggle theme</span></button></div><div id="font-toggler" aria-hidden="true"><button type="button"><span>toggle font</span></button></div><header><div class="header-heading"><a href="/"><img src="../assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300"></a></div></header><nav class="coding-navigation" data-nosnippet="true"><div class="coding-navigation-category" aria-label="Tools"><div class="coding-navigation-category__title">Tools</div><ul><li><a href="/coding/layout-generator">layout generator</a></li><li><a href="/coding/widgets">widgets for free neocities accounts</a></li><li><a href="/coding/cheatsheet">cheatsheet</a></li><li><a href="/coding/bookmarks">bookmarks (helpful sites)<small class="aside-nav__new"><img src="../assets/img/layout/new.gif" alt="" aria-hidden="true"></small></a></li><li><a href="/coding/checklist">self-study checklist</a></li></ul></div><div class="coding-navigation-category" aria-label="First Steps"><div class="coding-navigation-category__title">First Steps</div><ul><li><a href="/coding/how-to-make-a-website">how to make a website</a></li><li><a href="/coding/common-questions">common questions</a></li><li><a href="/coding/common-mistakes">common mistakes</a></li><li><a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a></li><li><a href="/coding/code-quality">code quality guide</a></li><li><a href="/coding/now-what">i know html/css/js. ... now what?</a></li></ul></div><div class="coding-navigation-category" aria-label="Beginner Tutorials"><div class="coding-navigation-category__title">Beginner Tutorials</div><ul><li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li><li><a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Advanced Tutorials"><div class="coding-navigation-category__title">Advanced Tutorials</div><ul><li><a href="/coding/git-tutorial">git tutorial</a></li><li><a href="/coding/npm-tutorial">node/npm tutorial</a></li><li><a href="/coding/webpack-tutorial">webpack tutorial</a></li><li><a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a></li></ul></div><div class="coding-navigation-category" aria-label="Miscellaneous"><div class="coding-navigation-category__title">Miscellaneous</div><ul><li><a href="/coding/neocities">neocities tips</a></li><li><a href="/coding/snippets">code snippets</a></li><li><a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a></li></ul></div></nav><aside class="aside aside--left" data-nosnippet="true"><div class="coding-back-to-home"><a href="/"><span><span>⇠</span> go back home</span> <img src="../assets/img/layout/pc.gif" alt="" aria-hidden="true"></a></div><img src="../assets/img/layout/divider4.gif" alt="" aria-hidden="true"><div class="aside-stuff aside-clap-kirby" style="margin-top:20px"><a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook"><img width="145" height="56" src="../assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode"> </a><a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank"><img width="145" height="56" src="../assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode"> <img width="145" height="56" src="../assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode"> </a><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a></div><div class="aside-stuff aside-link-back"><div class="aside-stuff__heading">Link back!<img src="../assets/img/layout/icon-copy.png" alt="" aria-hidden="true"></div><p>Hotlinking is a-okay!</p><a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"></a><textarea class="code-textarea" name="" id="" rows="10" aria-label="link-back code">
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea></div><div class="aside-stats__stat" style="margin-bottom:0;margin-top:2em"><div class="aside-stuff__heading"><span>Visitors</span><img src="../assets/img/layout/icon-stats.png" alt="" aria-hidden="true"></div><div class="aside-stats__stat-content"><center><a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><small style="font-size:.8em;letter-spacing:-.4px;text-align:center;display:block">(might not be entirely accurate)</small></div></div><img src="../assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top:-5px"> <img src="../assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="margin-top:2em"><div id="toc-position"></div><div id="toc"></div><a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank"><img src="../assets/img/layout/coffee.gif" width="70"><div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div></a><img src="../assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering:pixelated"> <a class="aside-contest" href="/contest"><img src="../assets/img/layout/trophy.gif" width="80" height="85"><div><b>Indie Web Contest</b><small>Vote now!</small></div></a></aside><div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div><main id="main" class="coding-page"><section><h1>Cheatsheet</h1><p>A reference for often-used lines of code and commands.</p><div id="toc"><b>Table of Contents:</b><ol><li><a href="#html">HTML</a></li><li><a href="#css">CSS</a></li><li><a href="#js">JavaScript</a></li><li><a href="#scss">SCSS</a></li><li><a href="#git">Git / GitHub</a></li><li><a href="#npm">npm</a></li><li><a href="#webpack">Webpack</a></li><li><a href="#11ty">11ty (Eleventy)</a></li></ol></div></section><section><h2 id="html">HTML</h2><h3>Page Code</h3><label style="display:block;text-align:right"><input type="checkbox" id="explanation-toggle"> Show explanatory comments</label><pre id="hide-explanation"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Page Title&lt;/title&gt;
+      &lt;meta name=&quot;description&quot; content=&quot;Page Description.&quot; /&gt;
+      &lt;meta charset=&quot;utf-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+      &lt;link href=&quot;favicon.ico&quot; rel=&quot;icon&quot; type=&quot;image/x-icon&quot; /&gt;
+      &lt;script src=&quot;example.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;example.css&quot; /&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Page content here...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><pre id="show-explanation" style="display:none"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;!-- Page Title (in tab, bookmarks, Google results, ...): --&gt;
+      &lt;title&gt;Page Title&lt;/title&gt;
+      &lt;!-- Site Description (shown e.g. in Google results): --&gt;
+      &lt;meta name=&quot;description&quot; content=&quot;Page Description.&quot; /&gt;
+      &lt;!-- Ensures all characters are rendered correctly: --&gt;
+      &lt;meta charset=&quot;utf-8&quot;&gt;
+      &lt;!-- Set viewport width to device width (for responsiveness): --&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+      &lt;!-- Set FavIcon (small image in tab): --&gt;
+      &lt;link href=&quot;favicon.ico&quot; rel=&quot;icon&quot; type=&quot;image/x-icon&quot; /&gt;
+      &lt;!-- Reference JavaScript (.js) file: --&gt;
+      &lt;script src=&quot;example.js&quot;&gt;&lt;/script&gt;
+      &lt;!-- Reference CSS (.css) file: --&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;example.css&quot; /&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Page content here...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3>Basic Elements</h3><pre><code class="language-html">&lt;!-- Comment (is not rendered on page) --&gt;
+	
+&lt;div&gt;Div (All-purpose element that takes up entire line)&lt;/div&gt;
+&lt;span&gt;Span (All-purpose element that does not take up entire line)&lt;/span&gt;
+
+&lt;!-- Image --&gt;
+&lt;img src=&quot;example.png&quot; width=&quot;500&quot; alt=&quot;Alternative text here. Useful for screenreaders or if image is broken.&quot; /&gt;
+
+&lt;!-- Horizontal Line / Divider: --&gt;
+&lt;hr /&gt;</code></pre><p>Text:</p><pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+&lt;p&gt;Paragraph/Text&lt;/p&gt;
+
+&lt;b&gt;Bold Text&lt;/b&gt;
+&lt;strong&gt;Bold Text (or otherwise emphasised)&lt;/strong&gt;
+&lt;i&gt;Italic Text&lt;/i&gt;
+&lt;em&gt;Italic Text (or otherwise emphasised)&lt;/em&gt;
+&lt;u&gt;Underline Text&lt;/u&gt;
+&lt;s&gt;Strike-through Text&lt;/s&gt;
+&lt;abbr title=&quot;Abbreviation&quot;&gt;Abbr.&lt;/abbr&gt;
+
+&lt;a href=&quot;https://www.google.com/&quot;&gt;Link&lt;/a&gt;
+&lt;a href=&quot;/page&quot;&gt;Link with relative path&lt;/a&gt;
+&lt;a href=&quot;https://www.google.com/&quot; target=&quot;_blank&quot;&gt;Link that opens in new tab/window&lt;/a&gt;
+
+&lt;!-- Line break: --&gt;
+&lt;br /&gt;
+
+&lt;!-- Collapsible Text: --&gt;
+&lt;details&gt;
+   &lt;summary&gt;Button/Summary Text&lt;/summary&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/details&gt;</code></pre><p>Sections of the page:</p><pre><code class="language-html">&lt;main&gt;Main content of page&lt;/main&gt;
+&lt;aside&gt;Sidebar(s)&lt;/aside&gt;
+&lt;section&gt;Section&lt;/section&gt;
+&lt;article&gt;Article/Entry&lt;/article&gt;
+&lt;nav&gt;Navigation&lt;/nav&gt;
+&lt;header&gt;Header&lt;/header&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;</code></pre><p>Lists:</p><pre><code class="language-html">&lt;!-- Ordered List (1., 2., 3., ...): --&gt;
+&lt;ol&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Unordered List (bullet points): --&gt;
+&lt;ul&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Nested List: --&gt;
+&lt;ul&gt;
+   &lt;li&gt;Level 1
+      &lt;ul&gt;
+         &lt;li&gt;Level 2&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;Level 1&lt;/li&gt;
+&lt;/ul&gt;</code></pre></section><script>function change(e){e?(document.querySelector("#hide-explanation").style.display="none",document.querySelector("#show-explanation").style.display="block"):(document.querySelector("#hide-explanation").style.display="block",document.querySelector("#show-explanation").style.display="none")}document.addEventListener("DOMContentLoaded",(()=>{const e=document.querySelector("#explanation-toggle");e.checked=!1,e.addEventListener("change",(()=>{change(event.currentTarget.checked)}))}))</script><style>#hide-explanation,#show-explanation{height:300px;resize:vertical;overflow-y:scroll}</style><section><h2 id="css">CSS</h2><h3>Media Queries:</h3><p>These help you define CSS rules that are only applied on specific screen sizes.</p><pre><code title="language-scss">@media (min-width: 700px) {
+  .example { ... }
+}
+
+@media (max-width: 700px) {
+  .example { ... }
+}</code></pre><h3>Absolute Positioning:</h3><pre><code class="language-scss">.parent {
   position: relative;
 }
 
@@ -7,7 +112,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
-}</code></pre><h3>Flexbox:</h3><pre><code class="language-scss">.container {
+}</code></pre><blockquote class="tip">For a more detailed explanation on how to position elements and create layouts check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote><h3>Flexbox:</h3><pre><code class="language-scss">.container {
   display: flex;
   justify-content: center; // horizontal
   align-items: center; // vertical
@@ -44,10 +149,10 @@ div {
     animation: none;
   }
 }
-</code></pre></section><section><h2 id="js">JavaScript</h2><h3>Waiting for DOM:</h3><pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
+</code></pre></section><section><h2 id="js">JavaScript</h2><h3>Waiting for DOM:</h3><p>If your JavaScript reads from the page content (e.g. <code>.querySelector()</code>) you should <b>always</b> make sure to wait until the page has finished loading before your JavaScript code is executed. Otherwise, you might get 'Element not found' errors.</p><pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
   // code here...
 });
-</code></pre><h3>For-Each over Elements:</h3><pre><code>const myElements = document.querySelectorAll(".element");
+</code></pre><h3>For-Each over Elements:</h3><p>For when you want to do something with every element in an array.</p><pre><code>const myElements = document.querySelectorAll(".element");
 [...myElements].forEach((el) => {
   console.log(el);
 });</code></pre><h3>ECMAScript:</h3><pre><code class="language-javascript">import "./myStyles.scss";
@@ -308,4 +413,4 @@ nesting: "../"
 
 &lt;h1&gt;About Me&lt;/h1&gt;
 &lt;p&gt;Here is the main content of your file...&lt;/p&gt;
-</code></pre></section><section class="buy-me-a-coffee"><div><p>I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif"></p><p><small>If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I promise I don't bite!</small></p></div><img src="../assets/img/layout/coffee.gif" alt="coffee" width="80"></section></main><footer><div class="footer-content"><a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS"></a><i>┊</i> created by petrapixel 2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a> <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i> <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></div><div class="footer-content mobile-only"><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a><br><center><small>Visitors:</small> <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><br><center><a href="#" tabindex="-1" style="font-size:1.5em">go to top</a></center></div></footer></div></body></html>
+</code></pre></section><section class="buy-me-a-coffee"><div><p>I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif"></p><p><small>If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="https://neocities.org/site/petrapixel" target="_blank">neocities profile</a>. I promise I don't bite!</small></p></div><img src="../assets/img/layout/coffee.gif" alt="coffee" width="80"></section></main><footer><div class="footer-content"><a class="footer-rss" href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed"><img src="../assets/img/layout/rss.png" alt="RSS"></a><i>┊</i> created by petrapixel 2024 - <span>∞</span> <i>┊</i> <a href="https://neocities.org/site/petrapixel" target="_blank">my neocities profile</a> <span class="desktop-only"><i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i> <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">github</a></span> <i>┊</i> <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a></div><div class="footer-content mobile-only"><a id="clap-for-me" href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel" target="_blank"><img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com"> <small>click to clap for me!</small></a><br><center><small>Visitors:</small> <a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter"></a></center><br><center><a href="#" tabindex="-1" style="font-size:1.5em">go to top</a></center></div></footer></div></body></html>

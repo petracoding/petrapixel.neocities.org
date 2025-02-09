@@ -1,13 +1,18 @@
+# Always ignore:
 /public/layout-generator/test
-/public/resources/templates.html
-/public/shrines/geoguessr.html
-/public/shrines/ggnsp.html
-/public/webring/
-/public/webring.html
-/public/layouts
 
-# ignore these files because neocities doesn't allow them
+# WIP pages:
+/public/layouts
+/public/resources/templates.html
+/public/shrines/ggnsp.html
+/public/shrines/ggnsp.css
+/public/webring.html
+/public/coding/webringu.html
+/public/coding/glossary.html
+
+# Ignore these files because neocities doesn't allow them:
 *.cur
+*.mp3
 
 # -----------------------------------------------------------------
 # .gitignore

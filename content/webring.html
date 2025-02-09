@@ -4,55 +4,57 @@ title: "webring"
 description: "TODO"
 ---
 
-<script src="{{ nesting }}assets/js/webringu.js?nocache=1"></script>
+<script>
+  // Member List. You need to update this by hand.
+  const members = [
+    {
+      url: "https://petrapixel.neocities.org/",
+      title: "PetraPixel",
+      slug: "petrapixel",
+      buttonUrl: "https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif",
+      description: "layout builder, widgets, tutorials, snippets, tools, links and more!",
+    },
+  ];
+</script>
+<script src="{{ nesting }}assets/js/webringu.js?nocache=2"></script>
 
 <section>
   <h1>Webring</h1>
+  <p>This is a webring for indie websites that offer resources/help/tips/tutorials/etc for coders!</p>
   <p>
-    This webring was created using june's super cool super easy webring template <a href="https://webcatz.neocities.org/resources/webstring/" target="_blank">webstring</a>! Everybody say thank you
-    june!
+    This webring was created using <a href="/coding/webringu">my own webring template Webringu.</a> You can use it too!
+    <img aria-hidden="true" alt="" src="{{ nesting }}assets/img/inline/happy.gif" />
   </p>
 </section>
 
 <section>
   <h2>Members</h2>
-  <table class="webring-members">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>URL</th>
-        <th>Slug</th>
-        <th>Resources</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Petra</td>
-        <td><a href="https://petrapixel.neocities.org/">petrapixel.neocities.org</a></td>
-        <td>petrapixel</td>
-        <td>layout builder, widgets, tutorials, snippets, tools, links and more!</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- <p>This webring has <span id="webringucount"></span> members.</p> -->
+  <div id="webringulist"></div>
+  <noscript>Please enable JavaScript to view the member list.</noscript>
+  <p>Nobody else yet, please join!</p>
 </section>
 
 <section>
-  <h2>Code</h2>
+  <h2>Widget Code</h2>
   <p>Putting this code on your page will render the webring widget:</p>
-  <textarea style="width: 100%" class="code-textarea" name="" id="" rows="10" aria-label="Webring Code"></textarea>
+  <textarea style="width: 100%; margin-bottom: 1em" class="code-textarea" name="" id="" rows="10" aria-label="Webring Code">TODO ADD</textarea>
 
-  <div class="webringu">
-    <a href="/webring">Webringu</a>
-    <a href="/webring?slug=YOURSLUGHERE&action=previous">PREV</a>
-    <a href="/webring?slug=YOURSLUGHERE&action=random">RANDOM</a>
-    <a href="/webring?slug=YOURSLUGHERE&action=next">NEXT</a>
+  <p><b>You need to change YOURSLUGHERE to your slug</b> (see join form below).</p>
+  <p>The widget will look like this:</p>
+  <br />
+
+  <div>
+    <a href="https://petrapixel.neocities.org/webring"><b>Resource Webring</b></a
+    ><br />
+    <a href="https://petrapixel.neocities.org/webring?slug=YOURSLUGHERE&action=previous">[ prev ]</a>
+    <a href="https://petrapixel.neocities.org/webring?slug=YOURSLUGHERE&action=random">[ random ]</a>
+    <a href="https://petrapixel.neocities.org/webring?slug=YOURSLUGHERE&action=next">[ next ]</a>
   </div>
 
-  <p>You need to change the slug (see form below).</p>
-  <p>Please put the code on your website <b>before</b> filling out the form below. It will say "This site isn't part of the webring yet." until I've added you.</p>
-  <p>You may style it however you want. You can remove the Random link, but please don't remove the Previous or Next links.</p>
+  <br />
+
+  <p>You may style the widget however you want. You can remove the <i>random</i> link, but please don't remove the <i>previous</i>, <i>next</i> or webring links.</p>
 </section>
 
 <section>
@@ -70,24 +72,7 @@ description: "TODO"
 
   <hr />
 
-  <h3>Form</h3>
-  <p>
-    To join, leave a comment below with your <b>name</b> (whatever you want to be called; NOT the title of your website) and <b>URL</b> to the page with the webring code (e.g. your homepage, links
-    page, ...). In the message, please include <b>which kinds of web resources</b> you have on your website, for example...:
-  </p>
-  <ul>
-    <li>coding tutorials</li>
-    <li>layouts</li>
-    <li>bookmarks/links</li>
-    <li>scripts</li>
-    <li>code snippets</li>
-    <li>widgets</li>
-    <li>buttons/blinkies/userboxes</li>
-    <li>graphics/pixels/deco</li>
-    <li>...</li>
-  </ul>
-  <p>List them in a comma separated list in your preferred order (as you can see in members list above.)</p>
-  <p>I'll try to add you as soon as possible. Check back to this page or check the webring widget on your website to see if you've been added.</p>
-  <div id="c_widget">Comment Widget could not be loaded!</div>
-  <script src="{{ nesting }}assets/js/comment-widget.js"></script>
+  <h3>Join</h3>
+
+  <p>Please use <a href="https://forms.gle/st3g8xobQnLKDwndA" target="_blank">this form</a> to join!</p>
 </section>

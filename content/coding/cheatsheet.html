@@ -14,6 +14,7 @@ toc: true
   <div id="toc">
     <b>Table of Contents:</b>
     <ol>
+      <li><a href="#html">HTML</a></li>
       <li><a href="#css">CSS</a></li>
       <li><a href="#js">JavaScript</a></li>
       <li><a href="#scss">SCSS</a></li>
@@ -28,8 +29,166 @@ toc: true
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>
+  <h2 id="html">HTML</h2>
+
+  <h3>Page Code</h3>
+  <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" /> Show explanatory comments</label>
+  <pre id="hide-explanation"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Page Title&lt;/title&gt;
+      &lt;meta name=&quot;description&quot; content=&quot;Page Description.&quot; /&gt;
+      &lt;meta charset=&quot;utf-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+      &lt;link href=&quot;favicon.ico&quot; rel=&quot;icon&quot; type=&quot;image/x-icon&quot; /&gt;
+      &lt;script src=&quot;example.js&quot;&gt;&lt;/script&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;example.css&quot; /&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Page content here...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <pre id="show-explanation" style="display: none"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;!-- Page Title (in tab, bookmarks, Google results, ...): --&gt;
+      &lt;title&gt;Page Title&lt;/title&gt;
+      &lt;!-- Site Description (shown e.g. in Google results): --&gt;
+      &lt;meta name=&quot;description&quot; content=&quot;Page Description.&quot; /&gt;
+      &lt;!-- Ensures all characters are rendered correctly: --&gt;
+      &lt;meta charset=&quot;utf-8&quot;&gt;
+      &lt;!-- Set viewport width to device width (for responsiveness): --&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+      &lt;!-- Set FavIcon (small image in tab): --&gt;
+      &lt;link href=&quot;favicon.ico&quot; rel=&quot;icon&quot; type=&quot;image/x-icon&quot; /&gt;
+      &lt;!-- Reference JavaScript (.js) file: --&gt;
+      &lt;script src=&quot;example.js&quot;&gt;&lt;/script&gt;
+      &lt;!-- Reference CSS (.css) file: --&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;example.css&quot; /&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Page content here...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+  <h3>Basic Elements</h3>
+  <pre><code class="language-html">&lt;!-- Comment (is not rendered on page) --&gt;
+	
+&lt;div&gt;Div (All-purpose element that takes up entire line)&lt;/div&gt;
+&lt;span&gt;Span (All-purpose element that does not take up entire line)&lt;/span&gt;
+
+&lt;!-- Image --&gt;
+&lt;img src=&quot;example.png&quot; width=&quot;500&quot; alt=&quot;Alternative text here. Useful for screenreaders or if image is broken.&quot; /&gt;
+
+&lt;!-- Horizontal Line / Divider: --&gt;
+&lt;hr /&gt;</code></pre>
+
+  <p>Text:</p>
+  <pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+&lt;p&gt;Paragraph/Text&lt;/p&gt;
+
+&lt;b&gt;Bold Text&lt;/b&gt;
+&lt;strong&gt;Bold Text (or otherwise emphasised)&lt;/strong&gt;
+&lt;i&gt;Italic Text&lt;/i&gt;
+&lt;em&gt;Italic Text (or otherwise emphasised)&lt;/em&gt;
+&lt;u&gt;Underline Text&lt;/u&gt;
+&lt;s&gt;Strike-through Text&lt;/s&gt;
+&lt;abbr title=&quot;Abbreviation&quot;&gt;Abbr.&lt;/abbr&gt;
+
+&lt;a href=&quot;https://www.google.com/&quot;&gt;Link&lt;/a&gt;
+&lt;a href=&quot;/page&quot;&gt;Link with relative path&lt;/a&gt;
+&lt;a href=&quot;https://www.google.com/&quot; target=&quot;_blank&quot;&gt;Link that opens in new tab/window&lt;/a&gt;
+
+&lt;!-- Line break: --&gt;
+&lt;br /&gt;
+
+&lt;!-- Collapsible Text: --&gt;
+&lt;details&gt;
+   &lt;summary&gt;Button/Summary Text&lt;/summary&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/details&gt;</code></pre>
+
+  <p>Sections of the page:</p>
+  <pre><code class="language-html">&lt;main&gt;Main content of page&lt;/main&gt;
+&lt;aside&gt;Sidebar(s)&lt;/aside&gt;
+&lt;section&gt;Section&lt;/section&gt;
+&lt;article&gt;Article/Entry&lt;/article&gt;
+&lt;nav&gt;Navigation&lt;/nav&gt;
+&lt;header&gt;Header&lt;/header&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;</code></pre>
+
+  <p>Lists:</p>
+  <pre><code class="language-html">&lt;!-- Ordered List (1., 2., 3., ...): --&gt;
+&lt;ol&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Unordered List (bullet points): --&gt;
+&lt;ul&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+   &lt;li&gt;List Item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Nested List: --&gt;
+&lt;ul&gt;
+   &lt;li&gt;Level 1
+      &lt;ul&gt;
+         &lt;li&gt;Level 2&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;Level 1&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const inputEl = document.querySelector("#explanation-toggle");
+    inputEl.checked = false;
+    inputEl.addEventListener("change", () => {
+      change(event.currentTarget.checked);
+    });
+  });
+
+  function change(isChecked) {
+    if (!isChecked) {
+      document.querySelector("#hide-explanation").style.display = "block";
+      document.querySelector("#show-explanation").style.display = "none";
+    } else {
+      document.querySelector("#hide-explanation").style.display = "none";
+      document.querySelector("#show-explanation").style.display = "block";
+    }
+  }
+</script>
+<style>
+  #show-explanation,
+  #hide-explanation {
+    height: 300px;
+    resize: vertical;
+    overflow-y: scroll;
+  }
+</style>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
   <h2 id="css">CSS</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote>
+
+  <h3>Media Queries:</h3>
+  <p>These help you define CSS rules that are only applied on specific screen sizes.</p>
+  <pre><code title="language-scss">@media (min-width: 700px) {
+  .example { ... }
+}
+
+@media (max-width: 700px) {
+  .example { ... }
+}</code></pre>
 
   <h3>Absolute Positioning:</h3>
   <pre><code class="language-scss">.parent {
@@ -41,6 +200,8 @@ toc: true
   top: 10px;
   left: 10px;
 }</code></pre>
+
+  <blockquote class="tip">For a more detailed explanation on how to position elements and create layouts check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote>
 
   <h3>Flexbox:</h3>
   <pre><code class="language-scss">.container {
@@ -94,11 +255,16 @@ div {
 <section>
   <h2 id="js">JavaScript</h2>
   <h3>Waiting for DOM:</h3>
+  <p>
+    If your JavaScript reads from the page content (e.g. <code>.querySelector()</code>) you should <b>always</b> make sure to wait until the page has finished loading before your JavaScript code is
+    executed. Otherwise, you might get 'Element not found' errors.
+  </p>
   <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
   // code here...
 });
 </code></pre>
   <h3>For-Each over Elements:</h3>
+  <p>For when you want to do something with every element in an array.</p>
   <pre><code>const myElements = document.querySelectorAll(".element");
 [...myElements].forEach((el) => {
   console.log(el);
@@ -512,8 +678,8 @@ nesting: "../"
     </p>
     <p>
       <small
-        >If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my <a href="/about/guestbook" target="_blank">neocities profile</a>. I promise
-        I don't bite!</small
+        >If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my
+        <a href="https://neocities.org/site/petrapixel" target="_blank">neocities profile</a>. I promise I don't bite!</small
       >
     </p>
   </div>
