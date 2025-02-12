@@ -3,8 +3,7 @@
   <head>
     <title>petrapixel's layout generator</title>
     <meta name="description" content="A layout builder for Neocities and coding beginners." />
-    <script src="../assets/js/layoutGenerator.js?nocache=index5"></script>
-    <!--    <script src="../assets/js/autoprefixer.js"></script> -->
+    <script src="../assets/js/layoutGenerator.js?nocache=index7"></script>
     <link rel="stylesheet" href="../assets/layoutGenerator.css" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="utf-8" http-equiv="encoding" />
@@ -14,6 +13,28 @@
     <!-- code highlight -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- jscolor (color pickers) -->
+    <script src="../assets/js/jscolor.min.js?nocache=index7"></script>
+    <script>
+      jscolor.presets.default = {
+        format: "any",
+        uppercase: false,
+        palette: "#000000 #3F3F3F #686868 #F1F1F1 #F1F1F1 #FFFFFF",
+        paletteCols: 6,
+        paletteHeight: 20,
+        paletteSpacing: 5,
+        alphaChannel: true,
+        borderWidth: 0,
+        padding: 10,
+      };
+    </script>
+
+    <!-- Custom Fonts (for preview) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
@@ -25,80 +46,269 @@
       gtag("js", new Date());
       gtag("config", "G-J64TL8KVTJ");
     </script>
+
+    <!---
+		TO DO:
+		- Disallow total hiding of mobile navigation
+		- 'No Header' option
+		- Dark Mode (and other JavaScript settings)
+		- More random templates
+		- TEST! ALSO TEST IN CHROME EVEN THOUGH CHROME SUX!!!
+	--->
   </head>
   <body class="layout-generator">
-    <div id="css"></div>
+    <div class="tabs">
+      <button type="button" class="tabs__tab tabs__tab--active" id="tab1btn">Start</button>
+      <button type="button" class="tabs__tab" id="tab3btn">Settings</button>
+      <button type="button" class="tabs__tab" id="tab4btn">Mobile</button>
+      <button type="button" class="tabs__tab" id="tab5btn">JavaScript</button>
+      <button type="button" class="tabs__tab" id="tab6btn"><i>✨ </i>Get Code<i> ✨</i></button>
+    </div>
 
-    <div class="layout-generator-settings">
-      <a href="/coding/layout-generator" class="layout-generator-back">← back</a>
-      <h1>petrapixel's layout generator <small style="font-size: 0.55em; font-weight: normal">v1.0</small></h1>
-      <p>
-        Read about the generator <a href="/coding/layout-generator.html">here.</a> &nbsp; <a href="https://neocities.org/site/petrapixel" target="_blank">Follow me</a> for updates. &nbsp; Scroll down
-        to see the preview. &nbsp; Current settings are saved in your browser as a cookie.
-      </p>
-      <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript>
+    <div class="preview-controls">
+      <div>
+        <b>Preview Zoom:</b>
+        <button type="button" class="zoom-btn" id="zoom100">100%</button>
+        <button type="button" class="zoom-btn" id="zoom75">75%</button>
+        <button type="button" class="zoom-btn" id="zoom50">50%</button>
+        <button type="button" class="zoom-btn zoom-btn--active" id="zoomAuto">Auto</button>
+        <small>You may need to scroll horizontally.</small>
+      </div>
+    </div>
 
-      <div class="layout-generator-settings__columns">
-        <div>
-          <div class="layout-generator-settings__section">
-            <strong>Layout</strong>
-            <div class="layout-generator-setting">
-              <span>Content Width</span
-              ><select name="width">
-                <option value="small">Small</option>
-                <option value="wide">Wide</option>
-                <option value="fullWidth">Full Width</option>
-              </select>
+    <!-- --------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------- -->
+
+    <div id="left">
+      <div id="tab">
+        <div class="tabs__content layout-generator-info" id="tab1">
+          <h1><a href="/">petrapixel</a>'s layout generator</h1>
+          <noscript id="no-js-warning" style="color: red">You need to enable JavaScript to be able to use the layout generator!</noscript>
+          <p>Read about the generator (features, changelog, credits, ...), suggest features or ask for help <a href="/coding/layout-generator.html">on this page.</a></p>
+          <p><a href="https://neocities.org/site/petrapixel" target="_blank">Follow me on Neocities</a> for updates.</p>
+          <p>Current settings are saved in your browser as a cookie, so feel free to leave this page and come back later.</p>
+          <p><b>To start, navigate through the tabs above, starting with 'Settings'.</b></p>
+          <p>
+            Enjoy? <a href="https://ko-fi.com/petrastipjar" target="_blank">Buy me a coffee</a>!
+            <img src="../assets/img/layout/coffee.gif" alt="coffee" width="30" style="vertical-align: text-bottom" />
+          </p>
+
+          <hr />
+          <br />
+          <button type="button" id="randomize">Random Template 🎲</button>
+        </div>
+
+        <!-- --------------------------------------------------------------------------- -->
+
+        <div class="tabs__content layout-generator-settings" id="tab3" aria-hidden="true">
+          <h2>Settings</h2>
+          <div class="layout-generator-settings__columns">
+            <div>
+              <div class="layout-generator-settings__section">
+                <strong>Layout</strong>
+                <div class="layout-generator-setting">
+                  <span>Content Width</span
+                  ><select name="width">
+                    <option value="small">Small (Fixed Width)</option>
+                    <option value="wide">Wide (Fixed Width)</option>
+                    <option value="fullWidth">Full Width (Variable Width)</option>
+                  </select>
+                </div>
+
+                <div class="layout-generator-setting" data-dependency="sidebar">
+                  <span>Sidebars</span
+                  ><select name="sidebars">
+                    <option value="none">None</option>
+                    <option value="left">Left Sidebar</option>
+                    <option value="right">Right Sidebar</option>
+                    <option value="both">Left and Right Sidebars</option>
+                  </select>
+                </div>
+                <div class="layout-generator-setting"><span>Sidebar Width (px)</span><input type="number" name="sidebarWidth" value="200" min="50" max="1000" step="2" /></div>
+                <div class="layout-generator-setting" data-dependency="submenus">
+                  <span>Menu Position</span
+                  ><select name="menuPosition">
+                    <option value="header">Under Header</option>
+                    <option value="leftSidebar">In Left Sidebar</option>
+                    <option value="rightSidebar">In Right Sidebar</option>
+                  </select>
+                </div>
+                <div class="layout-generator-setting">
+                  <span>Submenus</span
+                  ><select name="submenus">
+                    <option value="toggleOnClick">Toggle on click</option>
+                    <option value="openByDefault">Toggle click (open by default)</option>
+                    <option value="alwaysOpen">Always show</option>
+                    <!-- <option value="hover">Open on hover</option> -->
+                  </select>
+                </div>
+
+                <div class="layout-generator-setting">
+                  <span>Footer</span
+                  ><select name="footer">
+                    <option value="none">None</option>
+                    <option value="leftAligned">Left Aligned</option>
+                    <option value="centered">Centered</option>
+                  </select>
+                </div>
+
+                <div class="layout-generator-setting"><span>Margins (px)</span><input type="number" name="margins" value="0" min="0" max="100" step="2" /></div>
+                <div class="layout-generator-setting"><span>Padding (px)</span><input type="number" name="padding" value="0" min="0" max="100" step="2" /></div>
+                <div class="layout-generator-setting" data-dependency="border"><span>Border Width (px)</span><input type="number" name="borderWidth" value="0" min="0" max="100" step="1" /></div>
+                <div class="layout-generator-setting"><span>Round Borders (px)</span><input type="number" name="borderRadius" value="0" min="0" max="100" step="2" /></div>
+              </div>
+
+              <div class="layout-generator-settings__section">
+                <strong>Images</strong>
+
+                <div class="layout-generator-setting" data-dependency="coverBackgroundImage"><span>Background Image URL</span><input type="text" name="backgroundImageUrl" style="width: 100%" /></div>
+
+                <label class="layout-generator-setting"><input type="checkbox" name="coverBackgroundImage" /><span>Stretch background image</span></label>
+
+                <div class="layout-generator-setting" data-dependency="headerImage"><span>Header Image URL</span><input type="text" name="headerImageUrl" style="width: 100%" /></div>
+              </div>
             </div>
 
-            <div class="layout-generator-setting" data-dependency="coverBackgroundImage"><span>Background Image URL</span><input type="text" name="backgroundImageUrl" /></div>
+            <div>
+              <div class="layout-generator-settings__section">
+                <strong>Text</strong>
+                <div class="layout-generator-setting">
+                  <span>Font</span
+                  ><select name="font" data-dependency="customFont">
+                    <optgroup label="Serif">
+                      <option value="Times New Roman, serif">Times New Roman</option>
+                      <option value="Georgia, serif">Georgia</option>
+                      <option value="Garamond, serif">Garamond</option>
+                    </optgroup>
+                    <optgroup label="Sans Serif">
+                      <option value="Open Sans, sans-serif" data-url="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">Open Sans</option>
+                      <option value="Arial, sans-serif">Arial</option>
+                      <option value="Verdana, sans-serif">Verdana</option>
+                      <option value="Helvetica, sans-serif">Helvetica</option>
+                      <option
+                        value="'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif"
+                      >
+                        MS Gothic
+                      </option>
+                      <option value="Comic Sans, cursive">Comic Sans</option>
+                    </optgroup>
+                    <optgroup label="Monospace">
+                      <option value="Courier New, monospace">Courier New</option>
+                      <option value="Lucida Console, monospace">Lucida Console</option>
+                      <option value="Monaco, monospace">Monaco</option>
+                    </optgroup>
+                    <optgroup label="Others">
+                      <option value="Brush Script MT, cursive">Brush Script MT</option>
+                      <option value="'Open-Dyslexic', sans-serif" data-url="https://fonts.cdnfonts.com/css/open-dyslexic">Open Dyslexic</option>
+                      <option value="custom">[ CUSTOM FONT ]</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="layout-generator-setting">
+                  <span>Heading Font</span
+                  ><select name="headingFont" data-dependency="customFont">
+                    <optgroup label="Serif">
+                      <option value="Times New Roman, serif">Times New Roman</option>
+                      <option value="Georgia, serif">Georgia</option>
+                      <option value="Garamond, serif">Garamond</option>
+                    </optgroup>
+                    <optgroup label="Sans Serif">
+                      <option value="Open Sans, sans-serif" data-url="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">Open Sans</option>
+                      <option value="Arial, sans-serif">Arial</option>
+                      <option value="Verdana, sans-serif">Verdana</option>
+                      <option value="Helvetica, sans-serif">Helvetica</option>
+                      <option
+                        value="'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif"
+                      >
+                        MS Gothic
+                      </option>
+                      <option value="Comic Sans, cursive">Comic Sans</option>
+                    </optgroup>
+                    <optgroup label="Monospace">
+                      <option value="Courier New, monospace">Courier New</option>
+                      <option value="Lucida Console, monospace">Lucida Console</option>
+                      <option value="Monaco, monospace">Monaco</option>
+                    </optgroup>
+                    <optgroup label="Others">
+                      <option value="Brush Script MT, cursive">Brush Script MT</option>
+                      <option value="'Open-Dyslexic', sans-serif" data-url="https://fonts.cdnfonts.com/css/open-dyslexic">Open Dyslexic</option>
+                      <option value="custom">[ CUSTOM FONT ]</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="layout-generator-setting"><span>Base Font Size (px)</span><input type="number" name="fontSize" value="12" min="5" max="30" /></div>
+                <p><i>(Make sure to use 100% zoom for the preview to see the real font size.)</i></p>
 
-            <label class="layout-generator-setting"><input type="checkbox" name="coverBackgroundImage" /><span>Stretch background image</span></label>
+                <div class="layout-generator-setting" id="customFont">
+                  <strong>Custom Font:</strong>
+                  <p style="margin-bottom: 0; margin-top: 0.5em">
+                    You can get fonts from sites such as <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>, <a href="https://www.cdnfonts.com/" target="_blank">CDNfonts</a>,
+                    <a href="https://fonts.bunny.net/" target="_blank">FontsBunny</a>.
+                  </p>
+                  <div class="layout-generator-setting">
+                    <span>Exact font name (without quotes)*</span>
+                    <input type="text" name="customFontName" placeholder="Example Font Pro" style="width: 100%" />
+                  </div>
+                  <div class="layout-generator-setting">
+                    <span>Embed/Import URL*</span>
+                    <input type="text" name="customFontUrl" placeholder="https://fonts.googleapis.com/css2?family=Example&display=swap" style="width: 100%" />
+                  </div>
+                  <div class="layout-generator-setting">
+                    <span>Direct URL to font file</span>
+                    <input type="text" name="customFontUrlForPreview" placeholder="https://fonts.gstatic.com/s/example.woff2" style="width: 100%" />
+                    <small style="display: block; line-height: 1">(Only required for Preview; If you leave this blank you won't see your font in the preview.)</small>
+                  </div>
+                </div>
+              </div>
 
-            <div class="layout-generator-setting" data-dependency="headerImage"><span>Header Image URL</span><input type="text" name="headerImageUrl" /></div>
-
-            <div class="layout-generator-setting">
-              <span>Footer</span
-              ><select name="footer">
-                <option value="none">None</option>
-                <option value="leftAligned">Left Aligned</option>
-                <option value="centered">Centered</option>
-              </select>
+              <div class="layout-generator-settings__section">
+                <strong>Colors</strong>
+                <label class="layout-generator-setting" data-dependency="transparentBackground"
+                  ><input type="checkbox" name="transparentBackground" /><span>Transparent Content Background</span></label
+                >
+                <div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Website Background Color</span>
+                    <input name="pageBackgroundColor" data-jscolor="{value:'#F1F1F1'}" />
+                  </div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Main Content Background Color</span><input name="mainBackgroundColor" data-jscolor="{value:'#ffffff'}" />
+                  </div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Sidebar Background Color</span><input name="sidebarBackgroundColor" data-jscolor="{value:'#ffffff'}" />
+                  </div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Border Color</span>
+                    <input name="borderColor" data-jscolor="{value:'#000000'}" />
+                  </div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Text Color</span>
+                    <input name="textColor" data-jscolor="{value:'#000000'}" />
+                  </div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Sidebar Text Color</span>
+                    <input name="sidebarTextColor" data-jscolor="{value:'#000000'}" />
+                  </div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Link Color</span>
+                    <input name="linkColor" data-jscolor="{value:'#630ace'}" />
+                  </div>
+                  <div class="layout-generator-setting layout-generator-setting--color">
+                    <span>Link Hover Color</span>
+                    <input name="linkHoverColor" data-jscolor="{value:'#9c4aff'}" />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="layout-generator-setting" data-dependency="sidebar">
-              <span>Sidebars</span
-              ><select name="sidebars">
-                <option value="none">None</option>
-                <option value="left">Left Sidebar</option>
-                <option value="right">Right Sidebar</option>
-                <option value="both">Left and Right Sidebars</option>
-              </select>
-            </div>
-            <div class="layout-generator-setting"><span>Sidebar Width (px)</span><input type="number" name="sidebarWidth" value="200" min="50" max="1000" step="2" /></div>
-            <div class="layout-generator-setting" data-dependency="submenus">
-              <span>Menu Position</span
-              ><select name="menuPosition">
-                <option value="header">Under Header</option>
-                <option value="leftSidebar">In Left Sidebar</option>
-                <option value="rightSidebar">In Right Sidebar</option>
-              </select>
-            </div>
-            <div class="layout-generator-setting">
-              <span>Submenus</span
-              ><select name="submenus">
-                <option value="toggleOnClick">Toggle on click</option>
-                <option value="openByDefault">Open by default, closeable</option>
-                <option value="alwaysOpen">Open by default, not closeable</option>
-                <!-- <option value="hover">Open on hover</option> -->
-              </select>
-            </div>
-
-            <div class="layout-generator-setting"><span>Margins (px)</span><input type="number" name="margins" value="0" min="0" max="100" step="2" /></div>
-            <div class="layout-generator-setting"><span>Padding (px)</span><input type="number" name="padding" value="0" min="0" max="100" step="2" /></div>
-            <div class="layout-generator-setting" data-dependency="border"><span>Border Width (px)</span><input type="number" name="borderWidth" value="0" min="0" max="100" step="1" /></div>
-            <div class="layout-generator-setting"><span>Round Borders (px)</span><input type="number" name="borderRadius" value="0" min="0" max="100" step="2" /></div>
           </div>
+        </div>
 
+        <!-- --------------------------------------------------------------------------- -->
+
+        <div class="tabs__content layout-generator-settings" id="tab4" aria-hidden="true">
+          <h2>Mobile Settings</h2>
+          <blockquote>To preview the mobile layout resize your browser to be &lt;700px wide.</blockquote>
           <div class="layout-generator-settings__section">
             <strong>Mobile Layout</strong>
             <!-- <label class="layout-generator-setting"><input type="checkbox" name="collapseMobileMenu" />Collapse Mobile Menu<small>&nbsp;(recommended if you have many menu items)</small></label> -->
@@ -113,171 +323,95 @@
             <div class="layout-generator-setting">
               <span>Left Sidebar on Mobile</span
               ><select name="mobileLeftSidebar">
-                <option value="hide">Hide</option>
                 <option value="before">Before content</option>
                 <option value="after">After content</option>
+                <option value="hide">Hide</option>
               </select>
             </div>
             <div class="layout-generator-setting">
               <span>Right Sidebar on Mobile</span
               ><select name="mobileRightSidebar">
-                <option value="hide">Hide</option>
-                <option value="before">Before content</option>
                 <option value="after">After content</option>
+                <option value="before">Before content</option>
+                <option value="hide">Hide</option>
               </select>
             </div>
+
+            <blockquote style="color: red">Keep in mind not to hide the sidebar which has your navigation, otherwise it is impossible to navigate your page on phones!!!</blockquote>
           </div>
         </div>
 
-        <div>
-          <div class="layout-generator-settings__section">
-            <strong>Text</strong>
-            <div class="layout-generator-setting">
-              <span>Font</span
-              ><select name="font">
-                <optgroup label="Serif">
-                  <option value="Times New Roman, serif">Times New Roman</option>
-                  <option value="Georgia, serif">Georgia</option>
-                  <option value="Garamond, serif">Garamond</option>
-                </optgroup>
-                <optgroup label="Sans Serif">
-                  <option value="Arial, sans-serif">Arial</option>
-                  <option value="Verdana, sans-serif">Verdana</option>
-                  <option value="Helvetica, sans-serif">Helvetica</option>
-                </optgroup>
-                <optgroup label="Monospace">
-                  <option value="Courier New, monospace">Courier New</option>
-                  <option value="Lucida Console, monospace">Lucida Console</option>
-                  <option value="Monaco, monospace">Monaco</option>
-                </optgroup>
-              </select>
-            </div>
-            <!-- GOOGLE FONTS won't work for free accounts ! -->
-            <div class="layout-generator-setting">
-              <span>Heading Font</span
-              ><select name="headingFont">
-                <optgroup label="Serif">
-                  <option value="Times New Roman, serif">Times New Roman</option>
-                  <option value="Georgia, serif">Georgia</option>
-                  <option value="Garamond, serif">Garamond</option>
-                </optgroup>
-                <optgroup label="Sans Serif">
-                  <option value="Arial, sans-serif">Arial</option>
-                  <option value="Verdana, sans-serif">Verdana</option>
-                  <option value="Helvetica, sans-serif">Helvetica</option>
-                </optgroup>
-                <optgroup label="Monospace">
-                  <option value="Courier New, monospace">Courier New</option>
-                  <option value="Lucida Console, monospace">Lucida Console</option>
-                  <option value="Monaco, monospace">Monaco</option>
-                </optgroup>
-              </select>
-            </div>
-            <!-- <div class="layout-generator-setting"><span><i>or</i> Custom <a href="https://fonts.google.com/" target="_blank">Google Font</a> Name</span><input type="text" name="googleFont" /></div> -->
-            <div class="layout-generator-setting"><span>Base Font Size (px)</span><input type="number" name="fontSize" value="12" min="5" max="30" /></div>
-          </div>
+        <!-- --------------------------------------------------------------------------- -->
 
+        <div class="tabs__content layout-generator-settings" id="tab5" aria-hidden="true">
+          <h2>JavaScript Settings</h2>
           <div class="layout-generator-settings__section">
-            <strong>Colors</strong>
-            <label class="layout-generator-setting" data-dependency="transparentBackground"><input type="checkbox" name="transparentBackground" /><span>Transparent Content Background</span></label>
-            <div class="layout-generator-settings__two-columns">
-              <div>
-                <div class="layout-generator-setting"><span>Website Background Color</span><input type="color" name="pageBackgroundColor" value="#f1f1f1" /></div>
-                <div class="layout-generator-setting"><span>Main Content Background Color</span><input type="color" name="mainBackgroundColor" value="#ffffff" /></div>
-                <div class="layout-generator-setting"><span>Sidebar Background Color</span><input type="color" name="sidebarBackgroundColor" value="#ffffff" /></div>
-                <div class="layout-generator-setting"><span>Border Color</span><input type="color" name="borderColor" value="#000000" /></div>
-              </div>
-              <div>
-                <div class="layout-generator-setting"><span>Text Color</span><input type="color" name="textColor" value="#000000" /></div>
-                <div class="layout-generator-setting"><span>Sidebar Text Color</span><input type="color" name="sidebarTextColor" value="#000000" /></div>
-                <div class="layout-generator-setting"><span>Link Color</span><input type="color" name="linkColor" value="#630ace" /></div>
-                <div class="layout-generator-setting"><span>Link Hover Color</span><input type="color" name="linkHoverColor" value="#9c4aff" /></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="layout-generator-settings__section">
-            <!-- <strong>JavaScript</strong> -->
             <label class="layout-generator-setting" style="font-size: 1.2em"><input type="checkbox" name="jsLayout" />Load layout per JavaScript</label>
-            <p class="layout-generator-js-desc" style="line-height: 1.2; font-size: 0.8em; margin-top: 0">
+            <blockquote>
               This option will load your layout (header, footer, menu, etc.) automatically on each page. You won't have to update its code in every HTML file, only once in the JavaScript file. Only
-              basic JavaScript knowledge required. More info <a href="/coding/common-questions.html#layout">here</a>.
-            </p>
+              basic JavaScript knowledge required. <br /><a href="/coding/common-questions.html#layout">More info here</a>.
+            </blockquote>
           </div>
-
-          <div class="layout-generator-settings__submit">
-            <center>
-              <button type="submit" id="showCode">✨ Show code ✨</button>
-              <h2>Scroll down for Preview!</h2>
-              <p>The preview updates automatically.<br />To preview the mobile layout make <br />your browser window smaller!</p>
-              <!-- <label class="layout-generator-setting" style="display: inline-flex"><input type="checkbox" name="mobilePreview" />Preview Mobile</label> -->
-            </center>
+          <hr />
+          <div class="layout-generator-settings__section">
+            <p>More JavaScript settings coming soon!</p>
           </div>
         </div>
 
-        <button type="button" id="randomize">Randomize 🎲</button>
+        <!-- --------------------------------------------------------------------------- -->
+
+        <div class="tabs__content layout-generator-codes" id="tab6" aria-hidden="true">
+          <h2>Generated Code</h2>
+          <blockquote>
+            If you need help please read the <a href="/coding/layout-generator#how" target="_blank">"How to Use"</a> section.
+            <br />
+            <b style="text-decoration: underline">Make sure to empty your browser's cache of <span style="text-decoration: underline double">your website</span> after making any changes!</b>
+          </blockquote>
+          <!-- -->
+          <strong>HTML: <small>(index.html, about.html, ...)</small></strong>
+          <pre><code id="output-html"  class="language-html"></code></pre>
+          <button id="copy-html">Copy HTML</button>
+          <p>I highly recommend using an <a href="https://www.freeformatter.com/html-formatter.html" target="_blank">Online HTML Formatter</a> if your editor doesn't format your code by default.</p>
+          <p>
+            Keep in mind that you will have to change the paths to the CSS (and JS) file if your html file is in a subfolder, e.g. <code>href="./style.css"</code> to <code>href="../style.css"</code>
+          </p>
+
+          <!-- -->
+          <strong>CSS: <small>(style.css)</small></strong>
+          <pre><code id="output-css"  class="language-css"></code></pre>
+          <button id="copy-css">Copy CSS</button>
+          <span>I highly recommend using an <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> for this code for better browser compatibility.</span>
+          <!-- -->
+          <div class="layout-generator-codes__js">
+            <strong>JavaScript: <small>(layout.js)</small></strong>
+            <pre><code id="output-js"  class="language-javascript"></code></pre>
+            <button id="copy-js">Copy JavaScript</button>
+            <p>Edit your header/sidebar/footer etc in this file.</p>
+            <p>
+              Use <code>${nesting}</code> in the JavaScript file to output a relative path, e.g. <code>&lt;img src=&quot;${nesting}img/logo.png&quot;&gt;</code> will output
+              <code>&lt;img src=&quot;../img/logo.png&quot;&gt;</code> if the current page is in a subfolder, etc.
+            </p>
+            <p>Active menu links will be given the class <i>active</i>, so you can style them in the CSS, <br />e.g. <code>nav a.active { ... }</code></p>
+          </div>
+          <div class="layout-generator-codes__no-js">
+            <strong>JavaScript</strong>
+            <p>Your selected settings do not require any JavaScript code.</p>
+          </div>
+        </div>
+
+        <!-- --------------------------------------------------------------------------- -->
+
+        <div id="previewhint">I highly recommend using the layout generator on a desktop device if you can. <u>Scroll down for the mobile layout preview!</u></div>
       </div>
     </div>
 
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------- -->
 
-    <div class="layout-generator-codes" aria-hidden="true">
-      <div class="layout-generator-codes__close"><button id="close">Close</button></div>
-      <p>If you need help please read the <a href="/coding/layout-generator#how" target="_blank">"How to Use"</a> section. <b>Make sure to empty your site cache after making any changes!</b></p>
-      <strong>HTML: <small>(index.html, about.html, ...)</small></strong>
-      <pre><code id="output-html"  class="language-html"></code></pre>
-      <button id="copy-html">Copy HTML</button>
-      <span>Keep in mind that you will have to change the paths to the CSS (and JS) file if your html file is in a subfolder.</span>
-      <strong>CSS: <small>(style.css)</small></strong>
-      <pre><code id="output-css"  class="language-css"></code></pre>
-      <button id="copy-css">Copy CSS</button>
-      <span>I <b>highly</b> recommend using <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> on this code for better browser compatibility.</span>
-      <div class="layout-generator-codes__js">
-        <strong>JavaScript: <small>(layout.js)</small></strong>
-        <pre><code id="output-js"  class="language-javascript"></code></pre>
-        <button id="copy-js">Copy JavaScript</button>
-      </div>
-    </div>
-
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-
-    <div id="preview">
-      <div id="layout" class="sidebar-left">
-        <main id="content">
-          <section>
-            <h1>Page Title</h1>
-            <p>This is the preview of template 1 ("Square One") by <a href="https://petrapixel.neocities.org/" target="_blank">petrapixel</a>.</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quia ipsa repudiandae dolorum facilis corrupti eaque aut, tenetur iusto corporis delectus quos alias fuga maiores nulla
-              illum! Esse, possimus ipsa.
-            </p>
-            <h2>Heading 2</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-              justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-              eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </p>
-            <h3>Heading 3</h3>
-            <p>
-              Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-              blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-              laoreet dolore magna aliquam erat volutpat.
-            </p>
-            <h4>Heading 4</h4>
-            <p>
-              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
-              velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
-              te feugait nulla facilisi.
-            </p>
-          </section>
-        </main>
-      </div>
+    <div id="right">
+      <div id="preview"></div>
+      <div id="css"></div>
     </div>
   </body>
 </html>

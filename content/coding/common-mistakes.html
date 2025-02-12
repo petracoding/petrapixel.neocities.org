@@ -23,7 +23,8 @@ toc: true
   <div id="toc">
     <b>Table of Contents:</b>
     <ol>
-      <li><a href="#jquery">Using jQuery</a></li>
+      <li><a href="#troubleshooting">Not Troubleshooting / Not Using the Development Tools</a></li>
+      <li><a href="#formatting">Your code is a mess</a></li>
       <li>
         <a href="#tables-float">Creating a layout with tables and <i>float</i></a>
       </li>
@@ -36,47 +37,47 @@ toc: true
         <a href="#a-vs-button">Using <i>&lt;button&gt;</i> instead of <i>&lt;a&gt;</i></a>
       </li>
       <li><a href="#accessibility">Ignoring Basic Accessibility</a></li>
-      <li><a href="#troubleshooting">Not Troubleshooting</a></li>
+      <li><a href="#jquery">Using jQuery</a></li>
     </ol>
   </div>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
 <section>
-  <h2 id="jquery">Using jQuery</h2>
+  <h2 id="troubleshooting">Not Troubleshooting / Not Using the Development Tools</h2>
   <p>
-    jQuery used to be very popular, because it made a lot of JavaScript things easier. But nowadays there is not a single reason to use jQuery anymore. Everything that you can do in jQuery, you can do
-    in JavaScript (and it's easier, too) - and you won't need to include an external library that bloats up your loading times.
+    Coding is all about trial-and-error. You'll run into problems, and things won't work on your first try. That's why it's very important to learn how to help yourself, aka how to 'troubleshoot'. You
+    don't want to have to ask someone else whenever something doesn't work...
   </p>
-  <p>
-    Personally, the last reason I had for using jQuery was it's <code>ready</code> function, which waits for the DOM to load. I didn't know for a long time that this is just as possible and simple
-    without jQuery. This is all you need - no jQuery necessary:
-  </p>
-  <pre><code>document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
-});</code></pre>
-  <p>Another thing you might be using jQuery for is a simple for-each loop over an array of elements. Here is the pure Javascript version of that:</p>
-  <pre><code>const myElements = document.querySelectorAll(".element");
-[...myElements].forEach((el) => {
-  console.log(el);
-});</code></pre>
-  <p>By the way, if you're using a layout, plugin or widget which requires jQuery...: that is a good sign that either it's outdated, or the creator doesn't know what they're doing.</p>
-  <div class="learn">
-    <strong>Outlinks:</strong>
-    <ul>
-      <li><a href="https://youmightnotneedjquery.com/" target="_blank">Pure JS alternatives to common jQuery use cases</a></li>
-      <li><a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp" target="_blank">JS querySelectorAll()</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event" target="_blank">JS DOMContentLoaded event</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?retiredLocale=de#examples" target="_blank">JS forEach</a></li>
-    </ul>
-  </div>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <p><a href="/coding/need-help">Click here for my Troubleshooting tutorial.</a> It's easy, I promise.</p>
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="formatting">Your code is a mess</h2>
+  <p>I see it <i>all the time</i> that a beginner's code is an absolute mess.</p>
+  <p>Code quality has many facets. <a href="/coding/code-quality">Click here for my complete code quality guide.</a> But here are the most important things to keep in mind:</p>
+  <ul>
+    <li>
+      Good Formatting
+      <ul>
+        <li>
+          If you have ill-formatted code it will not only be much harder to edit, but it will also be much harder to find any mistakes. Try to use a code editor that can automatically format your code
+          (like <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> with some extensions). Alternatively, you can also use an online formatter
+          <a href="https://www.freeformatter.com/html-formatter.html" target="_blank">like this one</a>.
+        </li>
+      </ul>
+    </li>
+    <li>Not using inline CSS (All CSS should be in a CSS file!)</li>
+    <li>Removing old/broken code regularly</li>
+    <li>Using comments to explain more difficult sections of code</li>
+  </ul>
+</section>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
 <section>
   <h2 id="tables-float">Creating a layout with tables and <i>float</i></h2>
   <p>
@@ -132,11 +133,10 @@ footer { grid-area: footer; }
       grid-area: footer;
     }
   </style>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
 <section>
   <h2 id="iframes">Creating a layout with iFrames</h2>
   <p>Some people use iFrames in layouts so that they don't have to deal with editing their sidebar/menu on multiple pages at once. Well...</p>
@@ -156,11 +156,10 @@ footer { grid-area: footer; }
     <li>You're essentially loading 2 pages instead of 1, which can impact loading times.</li>
   </ul>
   <p>So just... don't.</p>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
 <section>
   <h2 id="nesting">Wrong HTML nesting</h2>
   <p>
@@ -178,11 +177,10 @@ footer { grid-area: footer; }
     will also be wrong.
   </p>
   <p>And as I said, look for stray closing tags that don't belong to any element. They mess things up.</p>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
 <section>
   <h2 id="semantic-elements">Not using Semantic Elements <small>(or using the wrong semantic elements)</small></h2>
   <p style="padding-left: 1em"><i>semantic (adj.)</i>: connected with the meanings of words</p>
@@ -216,11 +214,9 @@ footer { grid-area: footer; }
       <li><a href="https://www.w3schools.com/html/html_formatting.asp" target="_blank">HTML5 Formatting Elements (b, i, strong, em)</a></li>
     </ul>
   </div>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
 
 <section>
   <h2 id="a-vs-button">Using <i>&lt;button&gt;</i> instead of <i>&lt;a&gt;</i></h2>
@@ -237,11 +233,9 @@ footer { grid-area: footer; }
       <li><a href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">&lt;button&gt;</a></li>
     </ul>
   </div>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
 
 <section>
   <h2 id="accessibility">Ignoring Basic Accessibility</h2>
@@ -279,14 +273,43 @@ footer { grid-area: footer; }
   </div>
 </section>
 
+<!-- ---------------------------------------------------------------------------------- -->
+
 <section>
-  <h2 id="troubleshooting">Not Troubleshooting</h2>
+  <h2 id="jquery">Using jQuery</h2>
   <p>
-    Coding is all about trial-and-error. You'll run into problems, and things won't work on your first try. That's why it's very important to learn how to help yourself, aka how to 'troubleshoot'. You
-    don't want to have to ask someone else whenever something doesn't work...
+    jQuery used to be very popular, because it made a lot of JavaScript things easier. But nowadays there is not a single reason to use jQuery anymore. Everything that you can do in jQuery, you can do
+    in JavaScript (and it's easier, too) - and you won't need to include an external library that bloats up your loading times.
   </p>
-  <p><a href="/coding/need-help">Click here for my Troubleshooting tutorial.</a> It's easy, I promise.</p>
+  <p>
+    Personally, the last reason I had for using jQuery was it's <code>ready</code> function, which waits for the DOM to load. I didn't know for a long time that this is just as possible and simple
+    without jQuery. This is all you need - no jQuery necessary:
+  </p>
+  <pre><code>document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
+});</code></pre>
+  <p>Another thing you might be using jQuery for is a simple for-each loop over an array of elements. Here is the pure Javascript version of that:</p>
+  <pre><code>const myElements = document.querySelectorAll(".element");
+[...myElements].forEach((el) => {
+  console.log(el);
+});</code></pre>
+  <p>By the way, if you're using a layout, plugin or widget which requires jQuery...: that is a good sign that either it's outdated, or the creator doesn't know what they're doing.</p>
+  <div class="learn">
+    <strong>Outlinks:</strong>
+    <ul>
+      <li><a href="https://youmightnotneedjquery.com/" target="_blank">Pure JS alternatives to common jQuery use cases</a></li>
+      <li><a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp" target="_blank">JS querySelectorAll()</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event" target="_blank">JS DOMContentLoaded event</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?retiredLocale=de#examples" target="_blank">JS forEach</a></li>
+    </ul>
+  </div>
 </section>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+<!-- ---------------------------------------------------------------------------------- -->
 
 <section class="buy-me-a-coffee">
   <div>

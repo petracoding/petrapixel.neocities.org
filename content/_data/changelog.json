@@ -1,5 +1,6 @@
 [
   { "date": "2025-02-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-02-12", "text": "The layout generator was updated: New features, new looks, and other improvements!", "link": "/coding/layout-generator" },
   { "date": "2025-02-09", "text": "Coding bookmarks have moved to their own page and have been expanded!", "link": "/coding/bookmarks" },
   { "date": "2025-02-08", "text": "I've written a manifesto!", "link": "/about/manifesto" },
   { "date": "2025-02-05", "text": "I've got media reviews now!", "link": "/about/media-log" },

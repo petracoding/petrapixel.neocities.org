@@ -74,6 +74,7 @@ toc: true
 </code></pre>
 
   <h3>Basic Elements</h3>
+  <p>(This is not a <a href="https://www.w3schools.com/tags/default.asp" target="_blank">complete list</a>.)</p>
   <pre><code class="language-html">&lt;!-- Comment (is not rendered on page) --&gt;
 	
 &lt;div&gt;Div (All-purpose element that takes up entire line)&lt;/div&gt;
@@ -180,9 +181,90 @@ toc: true
 <section>
   <h2 id="css">CSS</h2>
 
+  <h3>Selectors:</h3>
+  <p>(This is not a <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank">complete list</a>, but has probably 90% of what you will often need.)</p>
+  <pre><code class="language-css">div {…} /* &lt;div&gt; elements */
+.class {…} /* elements with class name 'class' */
+#id {…} /* elements with id 'id' */
+* {…} /* every/any element */
+
+.elementA, .elementB {…} /* elements that have class 'elementA' OR 'elementB' */
+.elementA.elementB {…} /* elements that have classes 'elementA' AND 'elementB' */
+
+.parent .child {…} /* elements that are a descendant of another element */
+.parent > .direct-child {…} /* elements that are a direct child of another element */
+.element + .next-sibling {…} /* elements that are directly after another element (on the same level) */
+.element ~ .later-sibling {…} /* elements that are after another element (on the same level) */
+
+a[title] {…} /* every &lt;a&gt; element with the attribute 'title' */
+a[title="Example"] {…} /* every &lt;a&gt; element with the attribute 'title' and value "Example" */
+
+.link:hover {…} /* elements that are being hovered over */
+.link:active {…} /* elements that are being clicked */
+.link:focus {…} /* elements that are in focus (keyboard navigation) */
+
+.element::before {…} /* creates a pseudo element before this element. requires 'content' property */
+.element::after {…} /* creates a pseudo element after this element. requires 'content' property */
+
+.element:first-child {…} /* elements which are the first child of their parent */
+.element:last-child {…} /* elements which are the last child of their parent */
+.element:nth-child(odd) {…} /* elements which are the 1st, 3rd, … child of their parent */
+.element:nth-child(even) {…} /* elements which are the 2nd, 4th, … child of their parent */
+.element:nth-child(3) {…} /* element that is the 3rd child of their parent */
+.element:first-child:last-child {…} /* elements without siblings */
+
+.element > *:first-child {…} /* an element's first direct child */
+...</code></pre>
+
+  <h3>Commonly Used Properties:</h3>
+  <p>(This is not a <a href="https://www.w3schools.com/cssref/index.php" target="_blank">complete list</a>, but has probably 75% of what you will often need.)</p>
+  <pre><code class="language-scss">/* Positioning */
+display: block; /* block | inline | inline-block | flex | inline-flex | grid | none */
+position: relative; /* static | relative | absolute | fixed */
+z-index: 1; /* defines stack order (whether the element is in the 'front' of other elements) */
+overflow: hidden;
+top: 0; /* also left, right, bottom. only works for elements with position:relative or position:absolute */
+… 
+
+/* Color */
+color: red; /* in hex (#FFFFFF), rgb (rgb(255,255,255)), or rgba */
+background-color: red;
+opacity: 0.5;
+
+/* Text */
+font-size: 16px; /* px | em */
+font-family: Arial, sans-serif; /* If multiple fonts: 2nd, 3rd etc are used if first does not work or is still loading. */
+font-style: italic;
+font-weight: bold;
+text-decoration: underline;
+line-height: 1; /* also in px or em */
+
+/* Size */
+width: 100px; /* px | % | auto */
+height: 100px;
+max-width: 100px;
+max-height: 100px;
+box-sizing: border-box;
+
+/* Margin/Padding/Border */
+margin: 10px; /* all sides */
+margin: 10px 20px; /* top/bottom left/right */
+margin: 10px 15px 20px 25px; /* top right bottom left */
+padding: 10px; /* all sides */
+padding: 10px 20px; /* top/bottom left/right */
+padding: 10px 15px 20px 25px; /* top right bottom left */
+border: 1px solid red; /* all sides */
+border-top: 1px solid red;
+… /* border-right, border-bottom, border-left */
+
+/* Effects */
+transition: 0.5s ease; /* linear | ease | ease-in | ease-out | ease-in-out */
+transform: scale(1.2) rotate(10deg); /* scale rotate translate (also scaleX, scaleY, etc.) */ 
+filter: brightness(1.2) grayscale(1); /* blur, brightness, contrast, grayscale, hue-rotate, invert, saturate */</code></pre>
+
   <h3>Media Queries:</h3>
   <p>These help you define CSS rules that are only applied on specific screen sizes.</p>
-  <pre><code title="language-scss">@media (min-width: 700px) {
+  <pre><code class="language-scss">@media (min-width: 700px) {
   .example { ... }
 }
 
@@ -206,8 +288,19 @@ toc: true
   <h3>Flexbox:</h3>
   <pre><code class="language-scss">.container {
   display: flex;
-  justify-content: center; // horizontal
-  align-items: center; // vertical
+  flex-wrap: wrap; /* allow items to wrap into the next line(s) */
+  justify-content: center; /* horizontal alignment of items */
+  align-items: center; /* vertical alignment of items */
+}
+
+.item {
+  flex-shrink: 0; /* disallow items from shrinking */
+  flex-grow: 1; /* allow items to grow */
+  flex-basis: 100px; /* sets initial size of items */
+
+  /* or... */
+
+  flex: 1 0 100px; /* shortcut for flex-shrink, flex-grow, flex-basis */
 }
 </code></pre>
 
@@ -222,10 +315,10 @@ toc: true
     / 100px 1fr;
 }
 
-header { grid-area: header; }
-aside { grid-area: sidebar; }
-main { grid-area: main; }
-footer { grid-area: footer; }</code></pre>
+.myHeader { grid-area: header; }
+.mySidebar { grid-area: sidebar; }
+.myContent { grid-area: main; }
+.myFooter { grid-area: footer; }</code></pre>
 
   <h3>Animation:</h3>
   <pre><code>@keyframes floatyAnimation {

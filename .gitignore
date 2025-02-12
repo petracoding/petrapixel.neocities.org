@@ -1,5 +1,6 @@
 # Always ignore:
 /public/layout-generator/test
+notes.txt
 
 # WIP pages:
 /public/layouts

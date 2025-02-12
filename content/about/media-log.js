@@ -12,7 +12,8 @@ function initMediaLog() {
     currentYearTags = new Set([]);
     const year = yearEl.getAttribute("data-year");
     const months = buildMonths(yearEl, year);
-    output += `<h2 class="media-log__item ${year} ${Array.from(currentYearTags).join(" ")}">${year}</h2>`;
+    const space = " ";
+    output += `<h2 class="media-log__item ${year} ${Array.from(currentYearTags).join(space)}">${year}</h2>`;
     output += months;
   });
 

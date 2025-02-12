@@ -1,10 +1,11 @@
 export function getJS(layoutBefore, layoutAfter) {
   const nesting = "${nesting}";
 
-  return `const nesting = getNesting();
-
-document.addEventListener("DOMContentLoaded", function () {
+  return `document.addEventListener("DOMContentLoaded", function () {
+  // Page has finished loading. Now, do things.
   loadLayoutByPetraPixel();
+
+  // Add any custom JavaScript code here...
 });
 
 function loadLayoutByPetraPixel() {
@@ -12,8 +13,10 @@ function loadLayoutByPetraPixel() {
   if (!mainEl) return;
   mainEl.insertAdjacentHTML("beforebegin", headerHTML());
   mainEl.insertAdjacentHTML("afterend", footerHTML());
-  giveActiveClassToLinks();
+  giveActiveClassToCurrentPage();
 }
+
+const nesting = getNesting();
 
 function headerHTML() {
   // ${nesting} outputs "./" or "../" depending on current page depth.
@@ -31,33 +34,46 @@ function footerHTML() {
   return ${"`" + layoutAfter + "`"};
 }
 
-function getNesting() {
-  const numberOfSlashes = window.location.pathname.split("/").length - 1;
-  if (numberOfSlashes == 1) return "./";
-  return "../".repeat(numberOfSlashes - 1);
-}
+/* Do not edit anything below this line unless you know what you're doing. */
 
-function giveActiveClassToLinks() {
+function giveActiveClassToCurrentPage() {
   const els = document.querySelectorAll("nav a");
   [...els].forEach((el) => {
     const href = el.getAttribute("href").replace(".html", "").replace("#", "");
     const pathname = window.location.pathname.replace("/public/", "");
+    const currentHref = window.location.href.replace(".html", "") + "END";
 
+	/* Homepage */
     if (href == "/" || href == "/index.html") {
-      if (window.location.href == "http://localhost:8080/" || pathname == "/") {
+      if (pathname == "/") {
         el.classList.add("active");
       }
     } else {
-      if (window.location.href.includes(href)) {
+      /* Other pages */
+      if (currentHref.includes(href + "END")) {
         el.classList.add("active");
 
-        if (el.closest("summary")) {
-          el.closest("details").addAttribute("open");
-          el.closest("summary").classList.add("active");
+        /* Subnavigation: */
+		
+        if (el.closest("details")) {
+          el.closest("details").setAttribute("open", "open");
+          el.closest("details").classList.add("active");
+        }
+
+        if (el.closest("ul")) {
+          if (el.closest("ul").closest("ul")) {
+          	el.closest("ul").closest("ul").classList.add("active");
+          }
         }
       }
     }
   });
+}
+
+function getNesting() {
+  const numberOfSlashes = window.location.pathname.split("/").length - 1;
+  if (numberOfSlashes == 1) return "./";
+  return "../".repeat(numberOfSlashes - 1);
 }
 `;
 }
