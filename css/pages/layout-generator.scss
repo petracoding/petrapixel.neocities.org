@@ -576,6 +576,10 @@ body.layout-generator {
   }
 }
 
+#mobileHint2 {
+  display: none;
+}
+
 // PORTRAIT MODE (+ MOBILE)
 
 @media (orientation: portrait) {
@@ -598,6 +602,14 @@ body.layout-generator {
   }
 
   #previewhint {
+    display: block;
+  }
+
+  #mobileHint1 {
+    display: none;
+  }
+
+  #mobileHint2 {
     display: block;
   }
 

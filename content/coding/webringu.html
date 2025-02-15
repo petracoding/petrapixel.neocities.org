@@ -21,7 +21,7 @@ codeHighlight: true
   <ul>
     <li>Webringu is super easy to use. It doesn't require any JavaScript knowledge beyond editing a simple members array.</li>
     <li>Webringu will work for free Neocities accounts (for both you and your members).</li>
-    <li>Webringu doesn't require your webring's members to include a bloaty script or CSS file on their site.</li>
+    <li>Webringu doesn't require your webring's members to include a bloaty script or CSS file on their site. Just simple links.</li>
     <li>Webringu gives you complete freedom for how the webring widget looks.</li>
     <li>Webringu provides you with <b>next</b>, <b>previous</b> and <b>random</b> links to use in your widgets.</li>
     <li>You can edit Webringu's code to your liking if you know what you're doing.</li>
@@ -42,17 +42,17 @@ codeHighlight: true
   <p>On that page, use this code:</p>
 
   <pre><code class="language-html">&lt;script&gt;
-  // List of members. You need to update this by hand. Slugs need to be unique and without special characters or spaces.
+  // List of members. You need to update this by hand. 
   const members = [
     {
       url: &quot;https://example0.com/&quot;,
       title: &quot;Example0&quot;,
-      slug: &quot;example0&quot;,
+      description: &quot;This description is optional&quot;
     },
     {
       url: &quot;https://example1.com/&quot;,
       title: &quot;Example1&quot;,
-      slug: &quot;example1&quot;,
+      description: &quot;This description is optional&quot;
     },
   ];
 &lt;/script&gt;
@@ -67,11 +67,6 @@ codeHighlight: true
     <p>The rest of Webringu will work like normal.</p>
   </blockquote>
 
-  <p>
-    You will have noticed that every member has something called a <b>slug</b>. That's just a unique ID that includes no special characters, perferibly written in all lowercase. For example
-    <code>petrapixel</code>. You can let your members choose their own slug or assign one to them yourself - whatever your preference.
-  </p>
-
   <p>You need to keep the <code>members</code> array updated, e.g. when a new member joins, when someone leaves, when someone's URL changes, etc.</p>
 
   <hr />
@@ -82,28 +77,23 @@ codeHighlight: true
   <div class="my-webring-widget" style="margin: 30px 0 35px">
     <a href="https://your-webring-page.neocities.org/webring"><b>Your Webring Name</b></a
     ><br />
-    <a href="https://your-webring-page.neocities.org/webring?slug=YOURSLUGHERE&action=previous">previous</a>
-    <a href="https://your-webring-page.neocities.org/webring?slug=YOURSLUGHERE&action=random">random</a>
-    <a href="https://your-webring-page.neocities.org/webring?slug=YOURSLUGHERE&action=next">next</a>
+    <a href="https://your-webring-page.neocities.org/webring?action=previous">previous</a>
+    <a href="https://your-webring-page.neocities.org/webring?action=random">random</a>
+    <a href="https://your-webring-page.neocities.org/webring?action=next">next</a>
   </div>
 
   <p>This is the code for the widget:</p>
   <pre><code class="language-html">&lt;div class=&quot;my-webring-widget&quot;&gt;
     &lt;a href=&quot;https://your-webring-page.neocities.org/webring&quot;&gt;&lt;b&gt;Your Webring Name&lt;/b&gt;&lt;/a&gt;&lt;br /&gt;
-    &lt;a href=&quot;https://your-webring-page.neocities.org/webring?slug=YOURSLUGHERE&amp;action=previous&quot;&gt;previous&lt;/a&gt;
-    &lt;a href=&quot;https://your-webring-page.neocities.org/webring?slug=YOURSLUGHERE&amp;action=random&quot;&gt;random&lt;/a&gt;
-    &lt;a href=&quot;https://your-webring-page.neocities.org/webring?slug=YOURSLUGHERE&amp;action=next&quot;&gt;next&lt;/a&gt;
+    &lt;a href=&quot;https://your-webring-page.neocities.org/webring?action=previous&quot;&gt;previous&lt;/a&gt;
+    &lt;a href=&quot;https://your-webring-page.neocities.org/webring?action=random&quot;&gt;random&lt;/a&gt;
+    &lt;a href=&quot;https://your-webring-page.neocities.org/webring?action=next&quot;&gt;next&lt;/a&gt;
 &lt;/div&gt;</code></pre>
 
   <p>
     Obviously, add your real webring page URL and name (or image) in there. You can use arrows for the <i>next/previous</i> links (e.g. <span style="font-family: Arial">⤻ ⤺ → ← » « ⇨ ⇦</span>). You
     can remove the random link if you don't need it, and you can style the widgets however you want. I recommend simple styling that is achievable with inline CSS only; This way, your members don't
-    have to add a CSS file to their site just to display the widget. But really, you're free to do whatever you want as long as the URLs are correct.
-  </p>
-
-  <p>
-    <b>Tell your members to replace YOURSLUGHERE with their slug</b> (unique ID). Otherwise the links will NOT work. To make sure your members know their slug it's a good idea to include it in your
-    members list. (Webringu's automatic output (see below) includes it, of course.)
+    have to add a CSS file to their site just to display the widget. But really, <b>you're free to do whatever you want here as long as the URLs are correct</b>.
   </p>
 
   <hr />
@@ -125,27 +115,49 @@ codeHighlight: true
       </thead>
       <tbody>
         <tr>
-          <td><abbr title="example0">Example0</abbr></td>
-          <td><a href="https://example0.com/">example0.com</a></td>
+          <td>Example0</td>
+          <td>
+            <a href="https://example0.com/">
+              <img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" width="88" />
+              <div>example0.com</div>
+            </a>
+          </td>
           <td>Example Description</td>
         </tr>
         <tr>
-          <td><abbr title="example1">Example1</abbr></td>
-          <td><a href="https://example1.com/">example1.com</a></td>
+          <td>Example1</td>
+          <td>
+            <a href="https://example1.com/">
+              <img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" width="88" />
+              <div>example1.com</div>
+            </a>
+          </td>
           <td>Example Description</td>
         </tr>
         <tr>
-          <td><abbr title="example2">Example2</abbr></td>
-          <td><a href="https://example2.com/">example2.com</a></td>
+          <td>Example2</td>
+          <td>
+            <a href="https://example2.com/">
+              <img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" width="88" />
+              <div>example2.com</div>
+            </a>
+          </td>
           <td>Example Description</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <p>The description column is only showed if in use. Slugs are displayed when hovering over a member's name/title.</p>
-  <p>Website buttons will be displayed if the member has a "buttonUrl" property, like so:</p>
   <p>You can style this table however you want.</p>
+
+  <p>The description and website buttons will only be displayed if you defined them in the members list like so:</p>
+
+  <pre><code class="language-javascript">{
+  url: &quot;https://example1.com/&quot;,
+  title: &quot;Example1&quot;,
+  description: &quot;Example Description&quot;,
+  buttonUrl: &quot;https://example1.com/button.png&quot;,
+}</code></pre>
 
   <hr />
 

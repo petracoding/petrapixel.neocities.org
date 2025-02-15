@@ -50,7 +50,6 @@ function initRandomFactAboutMe() {
         "I've reguarily been writing into my diary since 2011.",
         "When I build something in Sims it's usually a tiny house.",
         "I think the banjo is a cool instrument and I enjoy what it sounds like.",
-        "In my opinion, the most handsome man on earth is Dan Avidan.",
         "My favorite song that isn't on Spotify is 'Manchmal' by Ben Blümel.",
         "In 2023 I once watched 25 movies in 24 days.",
         "I really enjoy Christian imagery and symbolism in media.",

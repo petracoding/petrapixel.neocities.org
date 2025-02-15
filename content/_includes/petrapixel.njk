@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20250212"
+noCache: "20250215"
 ---
 
 <!DOCTYPE html>
@@ -131,23 +131,25 @@ noCache: "20250212"
           <div class="aside-stuff aside-poll" aria-hidden="true">
             <div class="aside-stuff__heading" aria-hidden="true">Poll<img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
 
-            <form method="post" action="https://poll.pollcode.com/37694218">
+            <form method="post" action="https://poll.pollcode.com/88435277">
               <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
-                <div style="padding: 2px 0px 4px 2px"><strong>are you gonna get the nintendo switch 2?</strong></div>
-                <input type="radio" name="answer" value="1" id="answer376942181" style="float: left" /><label for="answer376942181" style="float: left; width: 150px">yes!!</label>
+                <div style="padding: 2px 0px 4px 2px"><strong>what should i call my webring for sites with indie web resources/tutorials/layouts/etc?</strong></div>
+                <input type="radio" name="answer" value="1" id="answer884352771" style="float: left" /><label for="answer884352771" style="float: left; width: 150px">dev den</label>
                 <div style="clear: both; height: 2px"></div>
-                <input type="radio" name="answer" value="2" id="answer376942182" style="float: left" /><label for="answer376942182" style="float: left; width: 150px">if i had the money...</label>
+                <input type="radio" name="answer" value="2" id="answer884352772" style="float: left" /><label for="answer884352772" style="float: left; width: 150px">code collective</label>
                 <div style="clear: both; height: 2px"></div>
-                <input type="radio" name="answer" value="3" id="answer376942183" style="float: left" /><label for="answer376942183" style="float: left; width: 150px"
-                  >maybe, i'm waiting for details/reviews</label
-                >
+                <input type="radio" name="answer" value="3" id="answer884352773" style="float: left" /><label for="answer884352773" style="float: left; width: 150px">code council</label>
                 <div style="clear: both; height: 2px"></div>
-                <input type="radio" name="answer" value="4" id="answer376942184" style="float: left" /><label for="answer376942184" style="float: left; width: 150px"
-                  >no, i'm fine with my switch</label
-                >
+                <input type="radio" name="answer" value="4" id="answer884352774" style="float: left" /><label for="answer884352774" style="float: left; width: 150px">pixel posse</label>
                 <div style="clear: both; height: 2px"></div>
-                <input type="radio" name="answer" value="5" id="answer376942185" style="float: left" /><label for="answer376942185" style="float: left; width: 150px"
-                  >no, i don't use nintendo consoles</label
+                <input type="radio" name="answer" value="5" id="answer884352775" style="float: left" /><label for="answer884352775" style="float: left; width: 150px">do-while ring</label>
+                <div style="clear: both; height: 2px"></div>
+                <input type="radio" name="answer" value="6" id="answer884352776" style="float: left" /><label for="answer884352776" style="float: left; width: 150px">html hive</label>
+                <div style="clear: both; height: 2px"></div>
+                <input type="radio" name="answer" value="7" id="answer884352777" style="float: left" /><label for="answer884352777" style="float: left; width: 150px">html haven</label>
+                <div style="clear: both; height: 2px"></div>
+                <input type="radio" name="answer" value="8" id="answer884352778" style="float: left" /><label for="answer884352778" style="float: left; width: 150px"
+                  >... something else, these all suck</label
                 >
                 <div style="clear: both; height: 2px"></div>
                 <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
@@ -298,7 +300,7 @@ noCache: "20250212"
             </li>
             <li aria-label="watching:">
               <img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank">Squid Game (s2), Lost</a>
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">Lost (s2)</a>
             </li>
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
@@ -346,8 +348,6 @@ noCache: "20250212"
         <!-- ----------------- CHATBOX ----------------- -->
         <div class="aside-stuff aside-chatbox">
           <div class="aside-stuff__heading" aria-hidden="true">Chatbox<img src="{{ nesting }}assets/img/layout/icon-chat.png" alt="" aria-hidden="true" /></div>
-          <a href="#afterchatbox" class="skiplink" aria-hidden="true">Skip chatbox iFrame</a>
-          <div id="beforechatbox"></div>
           <iframe
             src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk"
             width="100%"
@@ -359,9 +359,8 @@ noCache: "20250212"
             marginwidth="0"
             scrolling="auto"
             aria-label="Chatbox"
+            tabindex="-1"
           ></iframe>
-          <div id="afterchatbox"></div>
-          <a href="#beforechatbox" class="skiplink" aria-hidden="true">Skip to before chatbox iFrame</a>
         </div>
 
         <!-- ----------------- TIP JAR ----------------- -->

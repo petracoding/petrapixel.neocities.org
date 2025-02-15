@@ -147,6 +147,29 @@ toc: true
    &lt;/li&gt;
    &lt;li&gt;Level 1&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+
+  <h3>Commonly Used Attributes</h3>
+  <p>(This is not a <a href="https://www.w3schools.com/tags/ref_attributes.asp" target="_blank">complete list</a>, but has probably 80% of what you will often need.)</p>
+
+  <pre><code class="language-html">&lt;div class=&quot;my-element&quot;&gt;
+&lt;div id=&quot;my-element&quot;&gt; &lt;!-- must be unique on page --&gt;
+&lt;div style=&quot;color:red;font-size:12px&quot;&gt; &lt;!-- inline CSS  --&gt;
+&lt;div title=&quot;Tooltip shown on hover.&quot;&gt;
+&lt;div data-example=&quot;Attribute must start with 'data-'&quot;&gt; &lt;!-- for usage in JavaScript  --&gt;
+
+&lt;!-- Links: --&gt;
+&lt;a href=&quot;https://www.google.com/&quot;&gt;
+&lt;a target=&quot;_blank&quot;&gt; &lt;!-- opens links in new tab --&gt;
+
+&lt;!-- Images: --&gt;
+&lt;img src=&quot;https://www.example.com/image.png&quot;&gt;
+&lt;img alt=&quot;Alternative text&quot;&gt;
+&lt;img width=&quot;100&quot; height=&quot;100&quot;&gt;
+
+&lt;!-- Accessibility: --&gt;
+&lt;div aria-label=&quot;Guestbook&quot;&gt; &lt;!-- title of element for screen readers --&gt;
+&lt;div aria-hidden=&quot;true&quot;&gt; &lt;!-- hides element for screen readers --&gt;
+&lt;div z-index=&quot;-1&quot;&gt; &lt;!-- makes the element unfocusable in the keyboard navigation --&gt;</code></pre>
 </section>
 
 <script>
@@ -188,31 +211,36 @@ toc: true
 #id {…} /* elements with id 'id' */
 * {…} /* every/any element */
 
+/* OR vs AND */
 .elementA, .elementB {…} /* elements that have class 'elementA' OR 'elementB' */
 .elementA.elementB {…} /* elements that have classes 'elementA' AND 'elementB' */
 
+/* Children and Siblings */
 .parent .child {…} /* elements that are a descendant of another element */
 .parent > .direct-child {…} /* elements that are a direct child of another element */
 .element + .next-sibling {…} /* elements that are directly after another element (on the same level) */
 .element ~ .later-sibling {…} /* elements that are after another element (on the same level) */
 
+/* Attributes */
 a[title] {…} /* every &lt;a&gt; element with the attribute 'title' */
 a[title="Example"] {…} /* every &lt;a&gt; element with the attribute 'title' and value "Example" */
 
+/* States */
 .link:hover {…} /* elements that are being hovered over */
 .link:active {…} /* elements that are being clicked */
 .link:focus {…} /* elements that are in focus (keyboard navigation) */
 
+/* Pseudo Elements (two :!) */
 .element::before {…} /* creates a pseudo element before this element. requires 'content' property */
 .element::after {…} /* creates a pseudo element after this element. requires 'content' property */
 
+/* nth-child */
 .element:first-child {…} /* elements which are the first child of their parent */
 .element:last-child {…} /* elements which are the last child of their parent */
 .element:nth-child(odd) {…} /* elements which are the 1st, 3rd, … child of their parent */
 .element:nth-child(even) {…} /* elements which are the 2nd, 4th, … child of their parent */
 .element:nth-child(3) {…} /* element that is the 3rd child of their parent */
 .element:first-child:last-child {…} /* elements without siblings */
-
 .element > *:first-child {…} /* an element's first direct child */
 ...</code></pre>
 
