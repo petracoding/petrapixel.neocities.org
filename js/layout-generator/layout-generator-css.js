@@ -9,7 +9,11 @@ function getCSSCode(variables) {
 
   return `${fontImport(useCustomFont, variables.customFontUrl, variables.font, variables.headingFont)}
   
-/* SETTINGS */
+/* -------------------------------------------------------- */
+/* VARIABLES */
+/* -------------------------------------------------------- */
+
+/* Variables are used like this: var(--text-color) */
 :root {
   /* Background Colors: */
   --background-color: ${variables.pageBackgroundColor};
@@ -60,9 +64,18 @@ body {
 }
 
 ::selection {
+  /* (Text highlighted by the user) */
   background: rgba(0, 0, 0, 0.2);
 }
 
+mark {
+  /* Text highlighted by using the <mark> element */
+  text-shadow: 1px 1px 4px var(--link-color);
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+/* Links: */
 a {
   text-decoration: underline;
 }
@@ -83,9 +96,9 @@ a:focus {
 /* -------------------------------------------------------- */
 
 .layout {
+  ${variables.width == "small" ? "width: 1000px;" : variables.width == "wide" ? "width: 1200px;" : "width: 100%;"}
   display: grid;
   grid-gap: var(--margin);
-  ${variables.width == "small" ? "width: 1000px;" : variables.width == "wide" ? "width: 1200px;" : "width: 100%;"}
   grid-template: ${
     variables.sidebars == "left"
       ? '"header header" auto "leftSidebar main" auto "footer footer" auto / var(--sidebar-width) auto'
@@ -95,9 +108,21 @@ a:focus {
       ? '"header header header" auto "leftSidebar main rightSidebar" auto "footer footer footer" auto / var(--sidebar-width) auto var(--sidebar-width)'
       : '"header" auto "main" auto "footer" auto / auto'
   };
+  /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
 }
 
+main {
+  grid-area: main;
+  overflow-y: auto;
+  padding: var(--padding);
+  background: var(--content-background-color);
+  border: var(--border);
+  border-radius: var(--round-borders);
+}
+
+/* -------------------------------------------------------- */
 /* HEADER */
+/* -------------------------------------------------------- */
 
 header {
   grid-area: header;
@@ -122,7 +147,9 @@ header {
   height: auto;
 }
 
+/* -------------------------------------------------------- */
 /* SIDEBARS */
+/* -------------------------------------------------------- */
 
 aside {
   grid-area: aside;
@@ -161,6 +188,8 @@ aside {
   margin-top: 10px;
 }
 
+/* Sidebar Blockquote: */
+
 .sidebar-section blockquote {
   background: rgba(0, 0, 0, 0.1);
   padding: 15px;
@@ -177,6 +206,8 @@ aside {
   margin-bottom: 0;
 }
 
+/* Site Button: */
+
 .site-button {
   display: flex;
   flex-direction: column;
@@ -188,20 +219,11 @@ aside {
   font-size: 0.7em;
 }
 
-/* MAIN CONTENT AREA */
-
-main {
-  grid-area: main;
-  overflow-y: auto;
-  padding: var(--padding);
-  background: var(--content-background-color);
-  border: var(--border);
-  border-radius: var(--round-borders);
-}
-
 ${
   variables.footer != "none"
-    ? `/* FOOTER */
+    ? `/* -------------------------------------------------------- */
+/* FOOTER */
+/* -------------------------------------------------------- */
 
 footer {
   grid-area: footer;
@@ -299,6 +321,8 @@ header nav ul li:first-child > a {
 header nav ul li:last-child > a {
   padding-right: 0;
 }
+
+/* Subnavigation (Drop-Down): */
 
 header nav ul ul {
   background: ${variables.transparentBackground ? "var(--background-color)" : "var(--content-background-color)"};
@@ -400,6 +424,8 @@ main hr {
   margin: 1.5em 0;
 }
 
+/* HEADINGS: */
+
 main h1,
 main h2,
 main h3,
@@ -444,7 +470,7 @@ main h6 {
   font-size: 1em;
 }
 
-/* COLUMNS */
+/* COLUMNS: */
 
 .two-columns {
   display: flex;
@@ -499,6 +525,8 @@ main h6 {
 /* ACCESSIBILITY */
 /* -------------------------------------------------------- */
 
+/* please do not remove this. */
+
 #skip-to-content-link {
   position: fixed;
   top: 0;
@@ -523,6 +551,7 @@ main h6 {
 /* MOBILE RESPONSIVE */
 /* -------------------------------------------------------- */
 
+/* CSS Code for devices < 800px */
 @media (max-width: 800px) {
  ${getMobileCSSCode(variables)}
 }
@@ -563,6 +592,7 @@ function getMobileCSSCode(variables) {
   .layout {
     width: 100%;
     grid-template: "header" auto ${mobileLayout} "footer" auto / 1fr;
+    /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
   }
 
   ${
@@ -593,7 +623,6 @@ function getMobileCSSCode(variables) {
   }`
       : ""
   }
-
   nav {
     padding: 0;
   }

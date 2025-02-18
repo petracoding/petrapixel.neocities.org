@@ -65,6 +65,7 @@ body {
   ::selection {
     color: var(--textColor);
     background: var(--light);
+    text-shadow: 0px 0px 4px var(--textColor);
   }
 }
 

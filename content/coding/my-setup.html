@@ -1,7 +1,7 @@
 ---
 layout: coding.njk
-title: "my coding setup"
-description: "My coding setup in VSCode (Visual Studio Code), including VSCode plugin /extension suggestions and the settings that I use."
+title: "my vscode setup"
+description: "My coding setup in VSCode (Visual Studio Code), including VSCode plugin / extension suggestions and the settings that I use."
 nesting: "../"
 codeHighlight: false
 mainClass: coding-page
@@ -9,13 +9,14 @@ toc: true
 ---
 
 <section>
-  <h1>My Coding Setup</h1>
+  <h1>My VSCode Setup</h1>
+  <i class="fa-solid fa-toolbox"></i>
   <p>I use the software <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> to code and highly recommend it!</p>
 
   <div id="toc">
     <b>Table of Contents:</b>
     <ul>
-      <li><a href="#setup">Project Setup</a></li>
+      <!-- <li><a href="#setup">Project Setup</a></li> -->
       <li><a href="#vscode-themes">VSCode Themes</a></li>
       <li><a href="#vscode-shortcuts">VSCode Shortcuts</a></li>
       <li><a href="#vscode-settings">VSCode Settings</a></li>
@@ -24,7 +25,7 @@ toc: true
   </div>
 </section>
 
-<!-- ---------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------- 
 
 <section>
   <h2 id="setup">Project Setup</h2>
@@ -35,7 +36,6 @@ toc: true
         <li>For Neocities: GitHub Action <a href="/blog/neocities-automatic-deployment.html">"Deploy to Neocities"</a></li>
       </ul>
     </li>
-    <!-- <li><b>Composer</b></li> -->
     <li><b>Webpack</b> (javascript & (s)css & asset bundler)</li>
     <li><b>SCSS</b> (css preprocessor)</li>
   </ul>
@@ -43,27 +43,41 @@ toc: true
   <p>My project for this website is on Github and is a good example. <a href="https://github.com/petracoding/petrapixel.neocities.org">Browse the repository here.</a></p>
 </section>
 
+-->
+
 <!-- ---------------------------------------------------------------------------------------- -->
 
 <section>
   <h2 id="vscode-themes">VSCode Themes</h2>
   <blockquote class="tip"><b>Tip:</b> In the UI, right-click anything you never need to hide it. This will give you more space.</blockquote>
 
+  <h4>Font</h4>
+  <p>
+    You can use <a href="https://www.programmingfonts.org/">programmingfonts.org</a> or <a href="https://www.codingfont.com/">codingfont.com</a> to find a font you like for coding. I'm currently using
+    <b>Red Hat Mono</b>, which I downloaded from <a href="https://fonts.google.com/specimen/Red+Hat+Mono">Google Fonts</a>.
+  </p>
+  <p>To use a font, download the font file, install it on your computer, and then add it in the VSCode setting "Editor: Font Family".</p>
+
+  <hr />
+
   <h4>Theme</h4>
   <p>To change your theme, go to: <i>File -> Preferences -> Theme -> Color Theme</i> and choose one.</p>
-  <p>I currently use the theme <b>Kimbie Dark</b> which is one of the default themes available in VSCode. It's a dark theme with gentle brown colors. This is what it looks like:</p>
-  <img alt="" src="../assets/img/etc/kimbie-dark.png" width="400" style="max-width: 100%" />
-  <p>My monitor has some really bad contrast, so in the past I used the theme <b>Saturated Dark+</b> so I can see the colors better. You can install it like any other extension.</p>
+  <p>For a long time, I used the theme <b>Kimbie Dark</b> which is one of the default themes available in VSCode. It's a dark theme with gentle brown colors. This is what it looks like:</p>
+  <img alt="" src="../assets/img/coding/kimbie-dark.png" width="400" style="max-width: 100%" />
+  <p>I'm currently using the fun theme <b>SynthWave '84</b> (just search for it in the extensions.) It looks like this:</p>
+  <img alt="" src="../assets/img/coding/synthwave.png" width="400" style="max-width: 100%" />
+  <p>You can also visit <a href="https://vscodethemes.com/" target="_blank">vscodethemes.com</a> to choose a theme.</p>
 
   <hr />
 
   <h4>Terminal Theme</h4>
   <p>
-    To change the colors in your terminal (command line interface), search the settings for "Workbench Color Customizations" and click "Edit in settings.json". In
+    To change the font colors in your terminal (command line interface), search the VSCode settings for "Workbench Color Customizations" and click "Edit in settings.json". In
     <code>workbench.colorCustomizations</code> add a code form <a href="https://glitchbone.github.io/vscode-base16-term/#/unikitty-dark" target="_blank">this generator</a> (I use
     <b>Unikitty Dark</b>). You should see the change immediately.
   </p>
-  <img alt="" src="../assets/img/etc/unikitty-dark.png" width="400" style="max-width: 100%" />
+  <img alt="" src="../assets/img/coding/unikitty-dark.png" width="400" style="max-width: 100%" />
+  <p>Note that your terminal's background color depends on your VSCode theme, not your terminal theme.</p>
 </section>
 
 <!-- ---------------------------------------------------------------------------------------- -->
@@ -114,43 +128,127 @@ toc: true
 
   <blockquote class="tip"><b>Tip:</b> You can turn on setting sync to sync your settings across your devices.</blockquote>
 
-  <h4>My Settings:</h4>
+  <h4>My Settings: <span style="font-weight: normal">(Only those that do not have the default value.)</span></h4>
 
-  <!--
-  <table style="border: 1px solid">
+  <table class="vscode-settings-table">
     <thead>
       <tr>
         <th>Setting Name</th>
         <th>My Setting</th>
+        <th>Description</th>
         <th>settings.json</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Window: Title</td>
+        <td><b>Editor</b>: Cursor Blinking</td>
+        <td>phase</td>
+        <td>smoother cursor blinking</td>
+        <td><code>"editor.cursorBlinking": "phase"</code></td>
+      </tr>
+      <tr>
+        <td><b>Editor</b>: Cursor Smooth Caret Animation</td>
+        <td>on</td>
+        <td>smoother cursor movement</td>
+        <td><code>"editor.cursorSmoothCaretAnimation": "on"</code></td>
+      </tr>
+      <!-- Default 
+      <tr>
+        <td><b>Editor</b>: Detect Indentation</td>
+        <td>on</td>
+        <td><code>"editor.detectIndentation": true</code></td>
+      </tr>
+      -->
+      <tr>
+        <td><b>Editor</b>: Format On Save</td>
+        <td>on</td>
+        <td>automatically formats a file when saved</td>
+        <td><code>"editor.formatOnSave": true</code></td>
+      </tr>
+      <tr>
+        <td><b>Editor</b>: Format On Type</td>
+        <td>on</td>
+        <td>automatically formats code while typing</td>
+        <td><code>"editor.formatOnType": true</code></td>
+      </tr>
+      <tr>
+        <td><b>Editor</b>: Hover: Delay</td>
+        <td>800</td>
+        <td>increases time to open hover infos</td>
+        <td><code>"editor.hover.delay": 800</code></td>
+      </tr>
+      <tr>
+        <td><b>Editor</b>: Linked Editing</td>
+        <td>on</td>
+        <td>automatically rename matching closing HTML tags</td>
+        <td><code>"editor.linkedEditing": true</code></td>
+      </tr>
+      <tr>
+        <td><b>Editor</b>: Minimap: Autohide</td>
+        <td>on</td>
+        <td>hides minimap unless hovering over it</td>
+        <td><code>"editor.minimap.autohide": true</code></td>
+      </tr>
+      <tr>
+        <td><b>Editor</b>: Smooth Scrolling</td>
+        <td>on</td>
+        <td>smoother scrolling</td>
+        <td><code>"editor.smoothScrolling": true</code></td>
+      </tr>
+
+      <tr>
+        <td><b>Explorer</b>: Decorations: Badges</td>
+        <td>off</td>
+        <td>removes info about which files were edited, added, etc.</td>
+        <td><code>"explorer.decorations.badges": false</code></td>
+      </tr>
+      <tr>
+        <td><b>Explorer</b>: Compact Folders</td>
+        <td>off</td>
+        <td>does not collapse folders with just one subfolder/file</td>
+        <td><code>"explorer.compactFolders": false</code></td>
+      </tr>
+      <tr>
+        <td><b>SCM</b>: (Source Control) Count Badge</td>
+        <td>off</td>
+        <td>turn of number of changed files on git button in sidebar</td>
+        <td><code>"scm.countBadge": "off"</code></td>
+      </tr>
+
+      <tr>
+        <td><b>Window</b>: Title</td>
         <td>(empty)</td>
+        <td>text at the top of the program</td>
         <td><code>"window.title": " ‍ ‍"</code></td>
       </tr>
+      <tr>
+        <td><b>Window</b>: Zoom Level</td>
+        <td>0.3</td>
+        <td>UI scaling (0=default)</td>
+        <td><code>"window.zoomLevel": 0.3</code></td>
+      </tr>
+
+      <tr>
+        <td><b>Workbench</b>: List: Smooth Scrolling</td>
+        <td>on</td>
+        <td>smoother scrolling in the file tree</td>
+        <td><code>"workbench.list.smoothScrolling": true</code></td>
+      </tr>
+      <!--
+      <tr>
+        <td>TODO</td>
+        <td>TODO</td>
+        <td><code>TODO</code></td>
+      </tr>
+      -->
     </tbody>
   </table>
--->
 
-  <ul class="list-with-more-spacing">
-    <li>set editor hover delay to 800</li>
-    <li>turn off editor insert spaces (i want tab indents)</li>
-    <li>turn off explorer decoration badges</li>
-    <li>turn off source control count badge</li>
-    <li>turn on cursor blinking (style: phase)</li>
-    <li>turn on cursor smooth caret animation</li>
-    <li>turn on file auto save after focus change</li>
-    <li>turn on minimap autohide</li>
-    <li>turn on smooth scrolling</li>
-    <li>editor.linkedEditing: true</li>
-    <li>window title: i have it empty</li>
-    <li>zoom level: 0.3</li>
-    <li>"editor.linkedEditing": true</li>
-    <li>"editor.detectIndentation": true</li>
-  </ul>
+  <br />
+  <p>
+    You can get my full <code>settings.json</code> <a href="https://pastebin.com/raw/BGpgc5zT" target="_blank">here</a>. To open your own <code>settings.json</code>, open your VSCode settings and
+    click the small file icon in the top right ("Open Settings (JSON)"). The file is usually located here: <i>C:/Users/YOURNAME/AppData/Roaming/Code/User/settings.json</i>
+  </p>
 </section>
 
 <!-- ---------------------------------------------------------------------------------------- -->
@@ -181,6 +279,7 @@ toc: true
     <li><b>Stylelint</b>: checks for errors in your CSS, SCSS</li>
     <li><b>ESLint</b>: checks for errors in your JavaScript (See installation below)</li>
     <li><b>SCSS Intellisense</b>: code completion and quick info for SCSS</li>
+    <li><b>CSS Peek</b>: ctrl+click on html classes to peek/jump into the relevant CSS code</li>
 
     <li><b>Open in Default Browser</b>: shortcut for opening a current HTML file in your preferred browser (to use: right-click in file, choose 'open in default browser')</li>
     <li><b>Highlight Matching Tag</b>: highlights the matching closing HTML tag. (note: VSCode does this by default, but it's not very visible.)</li>
@@ -216,9 +315,18 @@ toc: true
     <li><b>Vibrancy Continued</b>: a neat "glassy" visual effect for the program</li>
     <li><b>Rainbow CSV</b>: better color formatting for .csv files</li>
     <li><b>SVG Viewer</b>: enabled previews of svg images in VSCode</li>
+    <li><b>GitLens</b>: inline git blame, and more</li>
   </ul>
 
   <hr />
+
+  <p>
+    I highly recommend this blog post: <a href="https://www.roboleary.net/vscode/2020/08/05/dont-need-extensions.html" target="_blank">You don't need that extension</a> (and
+    <a href="https://www.roboleary.net/2021/11/06/vscode-you-dont-need-that-extension2.html" target="_blank">Part 2</a>). For example, I used the extensions <b>Auto Rename Tag</b>,
+    <b>Auto Close Tag</b> and <b>Rainbow Brackets</b> in the past, but they're all not necessary because VSCode can do these things without extensions.
+  </p>
+
+  <br />
 
   <details>
     <summary>Show PHP Extensions</summary>
@@ -232,12 +340,4 @@ toc: true
       <li><b>PHP Intelephense</b> (to use for formatting: right-click in a php file and 'format document'. it will ask which formatter to use, select php intelephense)</li>
     </ul>
   </details>
-
-  <hr />
-
-  <p>
-    I highly recommend this blog post: <a href="https://www.roboleary.net/vscode/2020/08/05/dont-need-extensions.html" target="_blank">You don't need that extension</a> (and
-    <a href="https://www.roboleary.net/2021/11/06/vscode-you-dont-need-that-extension2.html" target="_blank">Part 2</a>). For example, I used the extensions <b>Auto Rename Tag</b>,
-    <b>Auto Close Tag</b> and <b>Rainbow Brackets</b> in the past, but they're all not necessary because VSCode can do these things without extensions.
-  </p>
 </section>

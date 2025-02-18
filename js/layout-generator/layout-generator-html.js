@@ -7,7 +7,7 @@ export function getHTML(variables, loadPerJs, isPreview, randomPicsumID) {
   const head = isPreview ? "" : getHead();
 
   if (loadPerJs) {
-    return head + getStart() + getLoadedPerJavascriptHint("Header") + getMainContent(variables) + getLoadedPerJavascriptHint("Footer") + getEnd(variables);
+    return head + getStart() + getLoadedPerJavascriptHint("Header (and Sidebars)") + getMainContent(variables) + getLoadedPerJavascriptHint("Footer") + getEnd(variables);
   }
   return head + getStart() + getBefore(variables) + getMainContent(variables) + getAfter(variables) + getEnd(variables);
 }
@@ -15,9 +15,9 @@ export function getHTML(variables, loadPerJs, isPreview, randomPicsumID) {
 function getLoadedPerJavascriptHint(str) {
   return `
       
-      <!-- ----------------------------------------------- -->
-      <!-- (${str} will be loaded per JavaScript.) -->
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
+      <!-- ${str} will be loaded per JavaScript! Edit layout.js to change. -->
+      <!-- =============================================== -->
 `;
 }
 
@@ -25,19 +25,28 @@ function getHead() {
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <!-- Change your site title: (It is shown in the tab) -->
     <title>TITLE</title>
-    <meta content="SHORT DESCRIPTION OF YOUR PAGE" name="description" />
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+    <!-- Change your site description: (It is shown in Google results) -->
+    <meta content="My personal website!" name="description" />
+
+    <!-- Setting character encoding and viewport size. Do not remove. -->
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FavIcon (small image in tab), change to any image you want: -->
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
 
     <!-- CSS: -->
+    <!-- You will have to change this to "../style.css" if this HTML file is in a subfolder, to "../../style.css" if this HTML file is in 2 subfolders, etc. -->
     <link href="./style.css" rel="stylesheet" />
     ${
       loadJs
         ? `
     <!-- JavaScript: -->
+    <!-- You will have to change this to "../layout.js" if this HTML file is in a subfolder, to "../../layout.js" if this HTML file is in 2 subfolders, etc. -->
     <script src="./layout.js"></script>`
         : ""
     }
@@ -63,9 +72,9 @@ function getStart() {
 export function getBefore(variables) {
   return `
   
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
       <!-- HEADER -->
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
 
       <header>
 ${
@@ -84,17 +93,17 @@ ${
 	        <nav>
 	          <ul>
 	            <li><a href="/">Home</a></li>
-	            <li><a href="/">Page 1</a></li>
-	            <li><a href="/">Page 2</a></li>
-	            <li><a href="/">Page 3</a></li>
+	            <li><a href="/page1">Page 1</a></li>
+	            <li><a href="/page2">Page 2</a></li>
+	            <li><a href="/page3">Page 3</a></li>
 	            <li>
 	                <strong>Submenu (hover to show)</strong>
 	                <ul>
-	                  <li><a href="/">Page A</a></li>
-	                  <li><a href="/">Page B</a></li>
-	                  <li><a href="/">Page C</a></li>
-	                  <li><a href="/">Page D</a></li>
-	                  <li><a href="/">Page E</a></li>
+	                  <li><a href="/page-a">Page A</a></li>
+	                  <li><a href="/page-b">Page B</a></li>
+	                  <li><a href="/page-c">Page C</a></li>
+	                  <li><a href="/page-d">Page D</a></li>
+	                  <li><a href="/page-e">Page E</a></li>
 	                </ul>
 	            </li>
 	          </ul>
@@ -109,9 +118,9 @@ ${
       variables.sidebars == "left" || variables.sidebars == "both"
         ? `
         
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
       <!-- LEFT SIDEBAR -->
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
 
       <aside class="left-sidebar">
 	  ${
@@ -123,19 +132,19 @@ ${
           <div class="sidebar-title">Navigation</div>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/">Page 1</a></li>
-            <li><a href="/">Page 2</a></li>
-            <li><a href="/">Page 3</a></li>
+            <li><a href="/page1">Page 1</a></li>
+            <li><a href="/page2">Page 2</a></li>
+            <li><a href="/page3">Page 3</a></li>
         	<li>
         	${variables.submenus == "alwaysOpen" ? "<strong>Submenu</strong>" : ""}
               	${variables.submenus == "openByDefault" ? '<details open="open">' : variables.submenus == "toggleOnClick" ? "<details>" : ""}
                 ${variables.submenus == "openByDefault" || variables.submenus == "toggleOnClick" ? "<summary>Submenu</summary>" : ""}
                 <ul>
-                  <li><a href="/">Page A</a></li>
-                  <li><a href="/">Page B</a></li>
-                  <li><a href="/">Page C</a></li>
-                  <li><a href="/">Page D</a></li>
-                  <li><a href="/">Page E</a></li>
+                  <li><a href="/page-a">Page A</a></li>
+                  <li><a href="/page-b">Page B</a></li>
+                  <li><a href="/page-c">Page C</a></li>
+                  <li><a href="/page-d">Page D</a></li>
+                  <li><a href="/page-e">Page E</a></li>
                 </ul>
                 ${variables.submenus == "openByDefault" || variables.submenus == "toggleOnClick" ? "</details>" : ""}
             </li>
@@ -197,9 +206,9 @@ ${
     variables.sidebars == "right" || variables.sidebars == "both"
       ? `
 	  
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
       <!-- RIGHT SIDEBAR -->
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
 
       <aside class="right-sidebar">
 	  ${
@@ -211,19 +220,19 @@ ${
           <div class="sidebar-title">Navigation</div>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/">Page 1</a></li>
-            <li><a href="/">Page 2</a></li>
-            <li><a href="/">Page 3</a></li>
+            <li><a href="/page1">Page 1</a></li>
+            <li><a href="/page2">Page 2</a></li>
+            <li><a href="/page3">Page 3</a></li>
         	<li>
         	${variables.submenus == "alwaysOpen" ? "<strong>Submenu</strong>" : ""}
               	${variables.submenus == "openByDefault" ? '<details open="open">' : variables.submenus == "toggleOnClick" ? "<details>" : ""}
                 ${variables.submenus == "openByDefault" || variables.submenus == "toggleOnClick" ? "<summary>Submenu</summary>" : ""}
                 <ul>
-                  <li><a href="/">Page A</a></li>
-                  <li><a href="/">Page B</a></li>
-                  <li><a href="/">Page C</a></li>
-                  <li><a href="/">Page D</a></li>
-                  <li><a href="/">Page E</a></li>
+                  <li><a href="/page-a">Page A</a></li>
+                  <li><a href="/page-b">Page B</a></li>
+                  <li><a href="/page-c">Page C</a></li>
+                  <li><a href="/page-d">Page D</a></li>
+                  <li><a href="/page-e">Page E</a></li>
                 </ul>
                 ${variables.submenus == "openByDefault" || variables.submenus == "toggleOnClick" ? "</details>" : ""}
             </li>
@@ -291,20 +300,31 @@ function getMainContent(variables) {
 
         ${loadJs ? `<noscript>Please enable JavaScript to view this website!</noscript>` : ""}
 
-        <!-- ----------------------------------------------- -->
+        <!-- =============================================== -->
         <!-- MAIN CONTENT -->
-        <!-- ----------------------------------------------- -->
+        <!-- =============================================== -->
 
 
         <section>
 
           <h1>Page Title (Heading 1)</h1>
-          <p>This is the preview of a layout generated with <a href="https://petrapixel.neocities.org/" target="_blank">petrapixel</a>'s layout generator. You may remove the credit in the footer, but please leave the credit in the code. Thank you!</p>
+          <p>This layout was generated with <a href="https://petrapixel.neocities.org/" target="_blank">petrapixel</a>'s layout generator. You may remove the credit in the footer, but please leave the credit in the code. Thank you!</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            <b>This is bold text.</b> <i>This is italic text.</i> <strike>This is strikethrough text.</strike> <u>This is underlined text.</u> <a href="/">This is a link.</a>
-            <code>This is code.</code> <abbr title="Example.">This is an abbreviation.</abbr>
+            I will now show you how to use the most common HTML text elements:
+            <b>This is bold text.</b> 
+            <strong>This is also bold text.</strong> 
+            <i>This is italic text.</i> 
+            <em>This is also italic text.</em> 
+            <strike>This is strikethrough text.</strike> 
+            <u>This is underlined text.</u> 
+            <a href="https://petrapixel.neocities.org/">This is a link.</a> 
+            <a href="https://petrapixel.neocities.org/" target="_blank">This is a link that will open in a new tab.</a> 
+            <code>This is code (displayed in a monospace font).</code>
+            <abbr title="Example.">This is an abbreviation (Try hovering over it).</abbr>
+            <mark>This is highlighted text.</mark>
+            This is a line break (The br stands for break.): <br />It's different from a paragraph because it does not add space inbetween the lines of text.
           </p>
+          <p>This is a paragraph. As you can see, there's a bit of space between it and the previous paragraph.</p>
 
           <blockquote>This is a blockquote. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</blockquote>
 
@@ -324,7 +344,8 @@ function getMainContent(variables) {
           </ol>
 
           <h3>Heading 3</h3>
-          <pre>This is preformatted text.</pre>
+          <pre>This is preformatted text, which means that     spaces    are preserved:
+          :D</pre>
 
           <p>This is preformatted code:</p>
           <pre><code>&lt;!DOCTYPE html&gt;
@@ -335,8 +356,8 @@ function getMainContent(variables) {
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-          <p>This is a separator line:</p>
-          <hr />
+          <p>This is a separator line / divider:</p>
+          <hr /> <!-- hr = horizontal rule -->
 
           <p>
             Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -387,9 +408,9 @@ export function getAfter(variables) {
   return `
 
 
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
       <!-- FOOTER -->
-      <!-- ----------------------------------------------- -->
+      <!-- =============================================== -->
 
       <footer>
             <div>Footer Text. <a href="/">Link.</a> Template generated with <a href="https://petrapixel.neocities.org/coding/layout-generator.html">petrapixel's layout generator</a>.</div>

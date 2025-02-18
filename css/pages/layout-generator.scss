@@ -432,17 +432,18 @@ body.layout-generator {
   }
 
   p code {
+    display: inline;
     height: auto !important;
     width: auto !important;
     max-width: none;
     max-height: none;
-    display: inline-block;
     margin: 0;
     border: 0;
     background: none;
-    line-height: 1;
-    color: black;
+    font-size: 12px;
+    color: rgb(45, 0, 42);
     resize: none;
+    font-weight: bold;
   }
 
   button {

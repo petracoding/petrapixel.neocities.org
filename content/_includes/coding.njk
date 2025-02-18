@@ -1,6 +1,6 @@
 ---
 testingOnLocalhost: false
-noCache: "20250215"
+noCache: "20250218"
 ---
 
 <!DOCTYPE html>
@@ -25,7 +25,13 @@ noCache: "20250215"
     <script>
       hljs.highlightAll();
     </script>
-    {% endif %} {% if not noSEO and not testingOnLocalhost %}
+    {% endif %}
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0328336a9e.js" crossorigin="anonymous"></script>
+
+    {% if not noSEO and not testingOnLocalhost %}
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>
     <script>
@@ -77,19 +83,19 @@ noCache: "20250215"
           <div class="coding-navigation-category__title">Tools</div>
           <ul>
             <li>
-              <a href="/coding/layout-generator">layout generator</a>
+              <a href="/coding/layout-generator"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Layout Generator</span></a>
             </li>
             <li>
-              <a href="/coding/widgets">widgets for free neocities accounts</a>
-            </li>
-            <li><a href="/coding/cheatsheet">cheatsheet</a></li>
-            <li>
-              <a href="/coding/bookmarks"
-                >bookmarks (helpful sites)<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-              ></a>
+              <a href="/coding/widgets"><i class="fa-solid fa-puzzle-piece"></i><span>Widgets for free Neocities Accounts</span></a>
             </li>
             <li>
-              <a href="/coding/checklist">self-study checklist</a>
+              <a href="/coding/cheatsheet"><i class="fa-solid fa-clipboard-list"></i><span>Cheatsheet</span></a>
+            </li>
+            <li>
+              <a href="/coding/bookmarks"><i class="fa-solid fa-link"></i><span>Helpful Sites</span></a>
+            </li>
+            <li>
+              <a href="/coding/checklist"><i class="fa-solid fa-list-check"></i><span>Self-study Checklist</span></a>
             </li>
           </ul>
         </div>
@@ -98,18 +104,21 @@ noCache: "20250215"
           <div class="coding-navigation-category__title">First Steps</div>
           <ul>
             <li>
-              <a href="/coding/how-to-make-a-website">how to make a website</a>
-            </li>
-            <li><a href="/coding/common-questions">common questions</a></li>
-            <li><a href="/coding/common-mistakes">common mistakes</a></li>
-            <li>
-              <a href="/coding/need-help">troubleshooting guide<small>(+ where/how to ask questions)</small></a>
+              <a href="/coding/how-to-make-a-website"><i class="fa-solid fa-laptop-code"></i><span>How to Make a Website</span></a>
             </li>
             <li>
-              <a href="/coding/code-quality">code quality guide</a>
+              <a href="/coding/common-questions"><i class="fa-regular fa-circle-question"></i><span>Common Questions</span></a>
             </li>
             <li>
-              <a href="/coding/now-what">i know html/css/js. ... now what?</a>
+              <a href="/coding/common-mistakes"><i class="fa-regular fa-circle-xmark"></i><span>Common Mistakes</span></a>
+            </li>
+            <li>
+              <a href="/coding/need-help"
+                ><i class="fa-solid fa-bug"></i><span>Troubleshooting Guide <small>(+ where/how to ask questions)</small></span></a
+              >
+            </li>
+            <li>
+              <a href="/coding/code-quality"><i class="fa-solid fa-broom"></i><span>Code Quality Guide</span></a>
             </li>
           </ul>
         </div>
@@ -117,9 +126,13 @@ noCache: "20250215"
         <div class="coding-navigation-category" aria-label="Beginner Tutorials">
           <div class="coding-navigation-category__title">Beginner Tutorials</div>
           <ul>
-            <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
             <li>
-              <a href="/coding/positioning-tutorial">positioning/layout tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></a>
+              <a href="/coding/layout-base-code"><i class="fa-solid fa-border-none"></i><span>How to Load the Same Layout on Every Page</span></a>
+            </li>
+            <li>
+              <a href="/coding/positioning-tutorial"
+                ><i class="fa-brands fa-css"></i><span>CSS Positioning/Layout Tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></span></a
+              >
             </li>
             <!--
             <li>
@@ -133,16 +146,18 @@ noCache: "20250215"
           <div class="coding-navigation-category__title">Advanced Tutorials</div>
           <ul>
             <li>
-              <a href="/coding/git-tutorial">git tutorial</a>
+              <a href="/coding/git-tutorial"><i class="fa-solid fa-code-branch"></i><span>Git Tutorial</span></a>
             </li>
             <li>
-              <a href="/coding/npm-tutorial">node/npm tutorial</a>
+              <a href="/coding/npm-tutorial"><i class="fa-brands fa-npm"></i><span>node/npm Tutorial</span></a>
             </li>
             <li>
-              <a href="/coding/webpack-tutorial">webpack tutorial</a>
+              <a href="/coding/webpack-tutorial"><i class="fa-solid fa-box"></i><span>Webpack Tutorial</span></a>
             </li>
             <li>
-              <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial<small>(static site generator)</small></a>
+              <a href="/coding/eleventy-tutorial"
+                ><i class="fa-solid fa-code"></i><span>Eleventy (11ty) Tutorial<small>(Static Site Generator)</small></span></a
+              >
             </li>
           </ul>
         </div>
@@ -150,10 +165,22 @@ noCache: "20250215"
         <div class="coding-navigation-category" aria-label="Miscellaneous">
           <div class="coding-navigation-category__title">Miscellaneous</div>
           <ul>
-            <li><a href="/coding/neocities">neocities tips</a></li>
-            <li><a href="/coding/snippets">code snippets</a></li>
             <li>
-              <a href="/coding/my-setup">my coding setup <small>(vscode settings + extensions)</small></a>
+              <a href="/coding/neocities"><i class="fa-solid fa-city"></i><span>Neocities Tips</span></a>
+            </li>
+            <li>
+              <a href="/coding/snippets"><i class="fa-solid fa-code"></i><span>Code Snippets</span></a>
+            </li>
+            <li>
+              <a href="/coding/my-setup"
+                ><i class="fa-solid fa-toolbox"></i
+                ><span
+                  >My VSCode Setup<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small> <small>(Settings + Extensions)</small></span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="/coding/now-what"><i class="fa-regular fa-lightbulb"></i><span>I know HTML, CSS, and JS. Now what?</span></a>
             </li>
           </ul>
         </div>
@@ -161,7 +188,7 @@ noCache: "20250215"
       <aside class="aside aside--left" data-nosnippet="true">
         <div class="coding-back-to-home">
           <a href="/"
-            ><span><span>⇠</span> go back home</span> <img src="{{ nesting }}assets/img/layout/pc.gif" alt="" aria-hidden="true"
+            ><span><span>⇠</span> home</span> <img src="{{ nesting }}assets/img/layout/pc.gif" alt="" aria-hidden="true"
           /></a>
         </div>
 

@@ -53,6 +53,8 @@
 		- 'No Header' option
 		- Dark Mode (and other JavaScript settings)
 		- More random templates
+    - Scroll to top button option
+    - "Hide all sidebar content except Menu" on Mobile option
 		- TEST! ALSO TEST IN CHROME EVEN THOUGH CHROME SUX!!!
 	--->
   </head>
@@ -349,8 +351,9 @@
           <div class="layout-generator-settings__section">
             <label class="layout-generator-setting" style="font-size: 1.2em"><input type="checkbox" name="jsLayout" />Load layout per JavaScript</label>
             <blockquote>
-              This option will load your layout (header, footer, menu, etc.) automatically on each page. You won't have to update its code in every HTML file, only once in the JavaScript file. Only
-              basic JavaScript knowledge required. <br /><a href="/coding/common-questions.html#layout">More info here</a>.
+              This option will load header, footer, menu, etc automatically on each page. This way, you won't have to make changes to them in every HTML file, only once in the JavaScript file.
+              Essentialy no JavaScript knowledge required. Not recommended if you plan on having a totally different layout on every page.
+              <a href="/coding/common-questions.html#layout">More info here</a>.
             </blockquote>
           </div>
           <hr />
@@ -364,30 +367,40 @@
         <div class="tabs__content layout-generator-codes" id="tab6" aria-hidden="true">
           <h2>Generated Code</h2>
           <blockquote>
-            If you need help please read the <a href="/coding/layout-generator#how" target="_blank">"How to Use"</a> section.
+            If you need more detailed help please read the <a href="/coding/layout-generator#how" target="_blank">"How to Use"</a> section.
             <br />
-            <b style="text-decoration: underline">Make sure to empty your browser's cache of <span style="text-decoration: underline double">your website</span> after making any changes!</b>
+            <br />
+            <b style="color: rgb(208, 0, 73)">Make sure to empty your cache after making any changes on your site!</b> (<a href="/coding/common-questions#cache">Don't know how?</a>)
           </blockquote>
           <!-- -->
           <strong>HTML: <small>(index.html, about.html, ...)</small></strong>
           <pre><code id="output-html"  class="language-html"></code></pre>
           <button id="copy-html">Copy HTML</button>
-          <p>I highly recommend using an <a href="https://www.freeformatter.com/html-formatter.html" target="_blank">Online HTML Formatter</a> if your editor doesn't format your code by default.</p>
+          <p>
+            This is your base for any page on your website. Paste the code into all of your page files (e.g. <code>index.html</code>, <code>about.html</code>, ...) and change the content however you
+            want.
+          </p>
           <p>
             Keep in mind that you will have to change the paths to the CSS (and JS) file if your html file is in a subfolder, e.g. <code>href="./style.css"</code> to <code>href="../style.css"</code>
           </p>
+          <p>I highly recommend using an <a href="https://www.freeformatter.com/html-formatter.html" target="_blank">Online HTML Formatter</a> if your editor doesn't format your code by default.</p>
 
           <!-- -->
           <strong>CSS: <small>(style.css)</small></strong>
           <pre><code id="output-css"  class="language-css"></code></pre>
           <button id="copy-css">Copy CSS</button>
-          <span>I highly recommend using an <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> for this code for better browser compatibility.</span>
+          <p>Copy this into your <code>style.css</code>. That CSS file will be loaded on every page.</p>
+          <span
+            >I highly recommend using an <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> for this code for better browser compatibility, ensuring that people who use older
+            browsers also see your website correctly.</span
+          >
           <!-- -->
           <div class="layout-generator-codes__js">
             <strong>JavaScript: <small>(layout.js)</small></strong>
             <pre><code id="output-js"  class="language-javascript"></code></pre>
             <button id="copy-js">Copy JavaScript</button>
-            <p>Edit your header/sidebar/footer etc in this file.</p>
+            <p>Create a file called <code>layout.js</code> in your main folder and paste the code into it. It will be loaded on every page.</p>
+            <p>Edit your header/sidebar/footer etc (= elements that are the same on every page) in this file.</p>
             <p>
               Use <code>${nesting}</code> in the JavaScript file to output a relative path, e.g. <code>&lt;img src=&quot;${nesting}img/logo.png&quot;&gt;</code> will output
               <code>&lt;img src=&quot;../img/logo.png&quot;&gt;</code> if the current page is in a subfolder, etc.
@@ -395,8 +408,9 @@
             <p>Active menu links will be given the class <i>active</i>, so you can style them in the CSS, <br />e.g. <code>nav a.active { ... }</code></p>
           </div>
           <div class="layout-generator-codes__no-js">
-            <strong>JavaScript</strong>
+            <strong>JavaScript:</strong>
             <p>Your selected settings do not require any JavaScript code.</p>
+            <p>If you ever change your mind about loading your layout per JavaScript, you can follow <a href="/coding/layout-base-code">this tutorial of mine</a> to achieve it.</p>
           </div>
         </div>
 

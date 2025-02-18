@@ -10,6 +10,7 @@ toc: true
 
 <section>
   <h1>Common Questions</h1>
+  <i class="fa-regular fa-circle-question"></i>
   <p>I sometimes try to help out over at the <a href="https://www.reddit.com/r/neocities" target="_blank">/r/Neocities</a> subreddit, and I've noticed that the same questions keep coming up.</p>
   <div id="toc">
     <b>Table of Contents:</b>
@@ -19,14 +20,16 @@ toc: true
       <li>
         <a href="#external-script">Why does my script/widget not work? <small>(Neocities)</small></a>
       </li>
+      <li><a href="#cache">I can't see any changes I'm making on my website</a></li>
       <li><a href="#viewport">My website doesn't show the mobile version on mobile</a></li>
     </ol>
   </div>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+
 <section>
   <h2 id="grid">How do I build a layout like this...?</h2>
   <p>
@@ -106,11 +109,12 @@ footer { grid-area: footer; }
       <li><a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">Flexbox on W3Schools</a></li>
     </ul>
   </div>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+
 <section>
   <h2 id="layout">What do I do so I don't have to change my layout in all HTML files for every change?</h2>
   <p>There's lots of things you could do. Here are 3 popular options:</p>
@@ -145,8 +149,9 @@ footer { grid-area: footer; }
       </ul>
     </li>
   </ul>
+</section>
 
-  <!--
+<!--
   <div class="learn">
     <strong>Outlinks:</strong>
     <ul>
@@ -156,10 +161,10 @@ footer { grid-area: footer; }
   </div>
   -->
 
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-</section>
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+
 <section>
   <h2 id="external-script">Why does my script/widget not work? <small>(Neocities)</small></h2>
   <p>
@@ -173,27 +178,67 @@ footer { grid-area: footer; }
   </p>
   <p>I have a list of commonly-used widgets (that work for free accounts) <a href="/coding/bookmarks#widgets">here</a>.</p>
   <p>I have also created some other iFrame widgets you can use with a free account, e.g. status.cafe and last.fm. <a href="/coding/widgets">Check them out here.</a></p>
-  <!-- <div class="learn">
-            <strong>Read more:</strong>
-            <ul>
-              <li></li>
-            </ul>
-          </div> -->
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- </section><section>
-
-          <h2 id="loading-times">How can I make my website load faster?</h2>
-          <p>FOO</p>
-          <div class="learn">
-            <strong>Outlinks:</strong>
-            <ul>
-              <li><a href="LINK" target="_blank">LINK</a></li>
-            </ul>
-          </div> -->
 </section>
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+
+<section>
+  <h2 id="cache">I can't see any changes I'm making on my website (Or: "How to empty your cache")</h2>
+  <p>If your website doesn't update after you've made changes, it's probably because of cache.</p>
+  <p>
+    <b>Cache</b> is the data about a website that your browser saves to reduce loading time the next time you open a website. It's generally a good thing, but can get annoying when editing a website,
+    because your browser will sometimes load an outdated version of your website. The same will happen to your website's visitors that visited it before. New visitors will always see the newest
+    version, as they do not have your site cached yet.
+  </p>
+  <p>
+    You can force your browser to load the current version, and therefore fix this problem and see your changes, by <b>clearing your browser's cache</b>. However, you don't need to clear your entire
+    browser's cache (that would log you out everywhere, super annoying), only the cache for your website specifically.
+  </p>
+  <details>
+    <summary>How to empty your cache in Chrome</summary>
+    <p>With your browser's development tools (F12) open, press <b>and hold</b> the refresh button, then click "Empty Cache and Hard Reload".</p>
+    <img src="../assets/img/coding/cache-clear-chrome.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <br />
+    <br />
+    <p><b>Alternatively:</b></p>
+    <p>Click on the settings icon to the left of the address bar and click "Cookies and site data".</p>
+    <img src="../assets/img/coding/cache-clear-chrome1.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <p>Then click "Manage on-device site data".</p>
+    <img src="../assets/img/coding/cache-clear-chrome2.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <p>In the pop-up that opens, click the trashbin icon next to your website's URL, then click "Done".</p>
+    <img src="../assets/img/coding/cache-clear-chrome3.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <p>Now reload the page.</p>
+    <img src="../assets/img/coding/cache-clear-chrome4.png" alt="" style="max-width: 100%; border: 1px dotted" />
+  </details>
+  <br />
+  <details>
+    <summary>How to empty your cache in Firefox</summary>
+    <p>Open your website, and on the left side of the address bar click the lock icon, then click "Clear cookies and site data...".</p>
+    <img src="../assets/img/coding/cache-clear-firefox.png" alt="" style="max-width: 100%; border: 1px dotted" />
+  </details>
+  <br />
+  <details>
+    <summary>How to empty your cache in Edge</summary>
+    <p>Open your browser's development tools (F12), navigate to the "Application" tab (it has an icon that looks like a website). There, on the left select "Storage". Now click "Clear site data".</p>
+    <img src="https://i.imgur.com/HxwPnU7.png" alt="" style="max-width: 100%; border: 1px dotted" />
+  </details>
+
+  <hr />
+
+  <p>
+    Clearing your own cache will make your website look good for you, but visitors who have visited your website before might have an old version of the CSS/JavaScript cached too, and you can't just
+    tell them to clear their cache. Therefore, it's better to <i>prevent</i> the browser from caching your CSS and JavaScript in the first place:
+  </p>
+  <p>To do this, simply add <code>?nocache=1</code> to your js/css file paths and increase the number every time you make a change.</p>
+  <pre><code>&lt;link href="./style.css<b>?nocache=123</b>" rel="stylesheet" /&gt;
+&lt;script src="./layout.js<b>?nocache=123</b>"&gt;&lt;/script&gt;</code></pre>
+  <p>I do this, too. Yes, it's annoying.</p>
+</section>
+
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
 
 <section>
   <h2 id="viewport">My website doesn't show the mobile version on mobile</h2>
@@ -201,6 +246,10 @@ footer { grid-area: footer; }
   <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</code></pre>
   <p>(Add it anywhere between &lt;head&gt; and &lt;/head&gt;)</p>
 </section>
+
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
 
 <section class="buy-me-a-coffee">
   <div>

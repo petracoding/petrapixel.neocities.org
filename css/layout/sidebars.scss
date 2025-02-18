@@ -935,7 +935,7 @@
       position: relative;
       padding: 2px 5px 4px;
       padding-right: 0;
-      color: asideTextColor;
+      // color: var(--asideTextColor);
       text-decoration: none;
       cursor: $cursorPointer;
       font-family: $font2, $font, sans-serif;

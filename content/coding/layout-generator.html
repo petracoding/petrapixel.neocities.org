@@ -1,7 +1,7 @@
 ---
 layout: coding.njk
 title: "layout generator"
-description: "petrapixel's layout builder for Neocities and coding beginners."
+description: "Petrapixel's theme maker for Neocities and coding beginners. Inspired by sadgrl's layout builder."
 nesting: "../"
 codeHighlight: true
 mainClass: coding-page
@@ -11,13 +11,14 @@ toc: true
 
 <section>
   <h1>Layout Generator</h1>
+  <i class="fa-solid fa-wand-magic-sparkles"></i>
   <p>
     You can use my layout builder to generate a code for your website. The generated code will include HTML, CSS and (optionally) basic JavaScript. The generated layout will be responsive for all
     screen sizes.
   </p>
   <p><b>Updated February 12th! NEW LOOK, NEW FEATURES, IMPROVEMENTS, ETC!</b> Please comment below if you spot any bugs.</p>
 
-  <center class="layout-generator-go" style="font-size: 2em">
+  <center class="layout-generator-go" style="font-size: 2.5em">
     <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" /> <a href="/layout-generator" aria-label="Go to layout generator">Start generating!</a>
     <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" />
   </center>
@@ -59,23 +60,23 @@ toc: true
   <h2>Examples</h2>
   <p>Here are some examples of layout generated with my tool: (Click to enlarge.)</p>
   <div class="multi-line-gallery multi-line-gallery--big lightbox-images">
-    <a data-fslightbox href="../assets/img/layout-generator/default.png" class="image">
-      <img src="../assets/img/layout-generator/default.png" alt="" />
+    <a data-fslightbox href="../assets/img/coding/layout-generator/default.png" class="image">
+      <img src="../assets/img/coding/layout-generator/default.png" alt="" />
     </a>
-    <a data-fslightbox href="../assets/img/layout-generator/cute.png" class="image">
-      <img src="../assets/img/layout-generator/cute.png" alt="" />
+    <a data-fslightbox href="../assets/img/coding/layout-generator/cute.png" class="image">
+      <img src="../assets/img/coding/layout-generator/cute.png" alt="" />
     </a>
-    <a data-fslightbox href="../assets/img/layout-generator/clouds.png" class="image">
-      <img src="../assets/img/layout-generator/clouds.png" alt="" />
+    <a data-fslightbox href="../assets/img/coding/layout-generator/clouds.png" class="image">
+      <img src="../assets/img/coding/layout-generator/clouds.png" alt="" />
     </a>
-    <a data-fslightbox href="../assets/img/layout-generator/space.png" class="image">
-      <img src="../assets/img/layout-generator/space.png" alt="" />
+    <a data-fslightbox href="../assets/img/coding/layout-generator/space.png" class="image">
+      <img src="../assets/img/coding/layout-generator/space.png" alt="" />
     </a>
-    <a data-fslightbox href="../assets/img/layout-generator/barebones.png" class="image">
-      <img src="../assets/img/layout-generator/barebones.png" alt="" />
+    <a data-fslightbox href="../assets/img/coding/layout-generator/barebones.png" class="image">
+      <img src="../assets/img/coding/layout-generator/barebones.png" alt="" />
     </a>
-    <a data-fslightbox href="../assets/img/layout-generator/puppy.png" class="image">
-      <img src="../assets/img/layout-generator/puppy.png" alt="" />
+    <a data-fslightbox href="../assets/img/coding/layout-generator/puppy.png" class="image">
+      <img src="../assets/img/coding/layout-generator/puppy.png" alt="" />
     </a>
   </div>
 
@@ -87,9 +88,11 @@ toc: true
 <section>
   <h2 id="how">How to use</h2>
   <p>
-    On the <a href="/layout-generator">generator page</a>, use the provided settings to choose a layout that fits the website you want to make. With every change, the preview (on the bottom half of
-    the screen) will update. Once you're happy, click the "Get Code" button to get the code.
+    On the <a href="/layout-generator">generator page</a>, use the provided settings to choose a layout that fits the website you want to make. With every change, the preview (on the right half of the
+    screen) will update. Once you're happy, click the "Get Code" button to get the code.
   </p>
+  <br />
+  <blockquote class="warning">This guide is still work-in-progress. I will add more details for complete beginners soon!</blockquote>
 
   <h3>HTML:</h3>
   <p>
@@ -134,22 +137,10 @@ toc: true
   </p>
   <hr />
 
-  <h3>Cache:</h3>
-  <blockquote class="warning">Not clearing your cache might result in you not seeing the changes on your page!</blockquote>
-
-  <p><b>Clear your site cache after making any changes!</b></p>
-  <p>
-    If you can't see the changes you're making in your layout your browser might be loading an old version of the CSS/JavaScript from the cache. If you've ever heard "Try clearing your browser's
-    cache" in response to a problem: This is why.
-  </p>
-
-  <p>
-    Clearing your own cache will make your website look good for you, but visitors who have visited your website before might have an old version of the CSS/JavaScript cached too, and you can't tell
-    them to clear their cache. Therefore, it's better to <i>prevent</i> the browser from caching your script in the first place:
-  </p>
-  <p>To do this, simply add <code>?nocache=1</code> to your js/css file paths and increase the number every time you make a change.</p>
-  <pre><code>&lt;link href="./style.css<b>?nocache=123</b>" rel="stylesheet" /&gt;
-&lt;script src="./layout.js<b>?nocache=123</b>"&gt;&lt;/script&gt;</code></pre>
+  <h3 id="cache">Cache:</h3>
+  <blockquote class="warning">
+    Not clearing your cache might result in you not seeing the changes on your page! <a href="/coding/common-questions#cache">Click here to learn how to empty your cache!</a>
+  </blockquote>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
