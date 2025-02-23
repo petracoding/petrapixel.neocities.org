@@ -195,8 +195,9 @@ footer { grid-area: footer; }
     You can force your browser to load the current version, and therefore fix this problem and see your changes, by <b>clearing your browser's cache</b>. However, you don't need to clear your entire
     browser's cache (that would log you out everywhere, super annoying), only the cache for your website specifically.
   </p>
+  <br />
   <details>
-    <summary>How to empty your cache in Chrome</summary>
+    <summary>How to empty your cache in&nbsp;<b>Chrome</b></summary>
     <p>With your browser's development tools (F12) open, press <b>and hold</b> the refresh button, then click "Empty Cache and Hard Reload".</p>
     <img src="../assets/img/coding/cache-clear-chrome.png" alt="" style="max-width: 100%; border: 1px dotted" />
     <br />
@@ -213,27 +214,34 @@ footer { grid-area: footer; }
   </details>
   <br />
   <details>
-    <summary>How to empty your cache in Firefox</summary>
-    <p>Open your website, and on the left side of the address bar click the lock icon, then click "Clear cookies and site data...".</p>
+    <summary>How to empty your cache in&nbsp;<b>Firefox</b></summary>
+    <p>Open your website, and on the left side of the address bar click the lock icon, then click "Clear cookies and site data...", and confirm.</p>
     <img src="../assets/img/coding/cache-clear-firefox.png" alt="" style="max-width: 100%; border: 1px dotted" />
   </details>
   <br />
   <details>
-    <summary>How to empty your cache in Edge</summary>
+    <summary>How to empty your cache in&nbsp;<b>Edge</b></summary>
     <p>Open your browser's development tools (F12), navigate to the "Application" tab (it has an icon that looks like a website). There, on the left select "Storage". Now click "Clear site data".</p>
     <img src="https://i.imgur.com/HxwPnU7.png" alt="" style="max-width: 100%; border: 1px dotted" />
   </details>
+  <br />
+  <details>
+    <summary>How to empty your cache in&nbsp;<b>Safari</b></summary>
+    <p>I don't have Safari so I couldn't try this myself, but <a href="https://www.macrumors.com/how-to/clear-safari-cache/" target="_blank">this guide</a> says this:</p>
+    <ol>
+      <li>Open the browser settings</li>
+      <li>Go to the "Privacy" tab</li>
+      <li>Click "Manage Website Data..."</li>
+      <li>Select your own website and click "Remove All"</li>
+    </ol>
+  </details>
 
-  <hr />
-
-  <p>
-    Clearing your own cache will make your website look good for you, but visitors who have visited your website before might have an old version of the CSS/JavaScript cached too, and you can't just
-    tell them to clear their cache. Therefore, it's better to <i>prevent</i> the browser from caching your CSS and JavaScript in the first place:
-  </p>
-  <p>To do this, simply add <code>?nocache=1</code> to your js/css file paths and increase the number every time you make a change.</p>
-  <pre><code>&lt;link href="./style.css<b>?nocache=123</b>" rel="stylesheet" /&gt;
-&lt;script src="./layout.js<b>?nocache=123</b>"&gt;&lt;/script&gt;</code></pre>
-  <p>I do this, too. Yes, it's annoying.</p>
+  <br />
+  <blockquote class="warning">
+    Clearing your own cache will make your website look good <b>for you</b>, but <b>visitors who have visited your website before might have an old version of the CSS/JavaScript</b> cached too, and
+    you can't just tell them to clear their cache. Therefore, it's better to <i>prevent</i> the browser from caching your CSS and JavaScript in the first place.
+    <a href="/coding/cachebusting">Read my Cachebusting guide to learn how.</a>
+  </blockquote>
 </section>
 
 <!-- ======================================================================= -->

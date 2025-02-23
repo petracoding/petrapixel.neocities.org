@@ -32,7 +32,7 @@ toc: true
 <section>
   <h2 id="html">HTML</h2>
 
-  <h3>Page Code</h3>
+  <h3>Page Basecode</h3>
   <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" /> Show explanatory comments</label>
   <pre id="hide-explanation"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -76,24 +76,61 @@ toc: true
 
   <h3>Basic Elements</h3>
   <p>(This is not a <a href="https://www.w3schools.com/tags/default.asp" target="_blank">complete list</a>.)</p>
-  <pre><code class="language-html">&lt;!-- Comment (is not rendered on page) --&gt;
+
+  <div class="two-columns">
+    <div>
+      <pre><code class="language-html">&lt;!-- Comment (is not rendered on page) --&gt;
 	
 &lt;div&gt;Div (All-purpose element that takes up entire line)&lt;/div&gt;
 &lt;span&gt;Span (All-purpose element that does not take up entire line)&lt;/span&gt;
 
-&lt;!-- Image --&gt;
+&lt;!-- Image: --&gt;
 &lt;img src=&quot;example.png&quot; width=&quot;500&quot; alt=&quot;Alternative text here. Useful for screenreaders or if image is broken.&quot; /&gt;
 
 &lt;!-- Horizontal Line / Divider: --&gt;
-&lt;hr /&gt;</code></pre>
+&lt;hr /&gt;
 
-  <p>Text:</p>
-  <pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;!-- Sections of the page: --&gt;
+&lt;main&gt;Main content of page&lt;/main&gt;
+&lt;aside&gt;Sidebar(s)&lt;/aside&gt;
+&lt;section&gt;Section&lt;/section&gt;
+&lt;article&gt;Article/Entry&lt;/article&gt;
+&lt;nav&gt;Navigation&lt;/nav&gt;
+&lt;header&gt;Header&lt;/header&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;</code></pre>
+
+      <p>Lists:</p>
+      <pre><code class="language-html">&lt;!-- Ordered List (1., 2., 3., ...): --&gt;
+&lt;ol&gt;
+&lt;li&gt;List Item&lt;/li&gt;
+&lt;li&gt;List Item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Unordered List (bullet points): --&gt;
+&lt;ul&gt;
+&lt;li&gt;List Item&lt;/li&gt;
+&lt;li&gt;List Item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Nested List: --&gt;
+&lt;ul&gt;
+&lt;li&gt;Level 1
+&lt;ul&gt;
+   &lt;li&gt;Level 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Level 1&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+    <div>
+      <p>Text:</p>
+      <pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h2&gt;
 &lt;h3&gt;Heading 3&lt;/h3&gt;
 &lt;h4&gt;Heading 4&lt;/h4&gt;
 &lt;h5&gt;Heading 5&lt;/h5&gt;
 &lt;h6&gt;Heading 6&lt;/h6&gt;
+
 &lt;p&gt;Paragraph/Text&lt;/p&gt;
 
 &lt;b&gt;Bold Text&lt;/b&gt;
@@ -116,38 +153,8 @@ toc: true
    &lt;summary&gt;Button/Summary Text&lt;/summary&gt;
    &lt;div&gt;Content&lt;/div&gt;
 &lt;/details&gt;</code></pre>
-
-  <p>Sections of the page:</p>
-  <pre><code class="language-html">&lt;main&gt;Main content of page&lt;/main&gt;
-&lt;aside&gt;Sidebar(s)&lt;/aside&gt;
-&lt;section&gt;Section&lt;/section&gt;
-&lt;article&gt;Article/Entry&lt;/article&gt;
-&lt;nav&gt;Navigation&lt;/nav&gt;
-&lt;header&gt;Header&lt;/header&gt;
-&lt;footer&gt;Footer&lt;/footer&gt;</code></pre>
-
-  <p>Lists:</p>
-  <pre><code class="language-html">&lt;!-- Ordered List (1., 2., 3., ...): --&gt;
-&lt;ol&gt;
-   &lt;li&gt;List Item&lt;/li&gt;
-   &lt;li&gt;List Item&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;!-- Unordered List (bullet points): --&gt;
-&lt;ul&gt;
-   &lt;li&gt;List Item&lt;/li&gt;
-   &lt;li&gt;List Item&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- Nested List: --&gt;
-&lt;ul&gt;
-   &lt;li&gt;Level 1
-      &lt;ul&gt;
-         &lt;li&gt;Level 2&lt;/li&gt;
-      &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;Level 1&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+    </div>
+  </div>
 
   <h3>Commonly Used Attributes</h3>
   <p>(This is not a <a href="https://www.w3schools.com/tags/ref_attributes.asp" target="_blank">complete list</a>, but has probably 80% of what you will often need.)</p>
@@ -268,6 +275,7 @@ font-weight: bold;
 text-decoration: underline;
 line-height: 1; /* also in px or em */
 text-align: center; /* left | center | right | justify */
+white-space: nowrap; /* disables wrapping of text (use sparingly!) */
 
 /* Size */
 width: 100px; /* px | % | auto */
@@ -291,37 +299,35 @@ border-top: 1px solid red;
 /* Effects */
 transition: 0.5s ease; /* linear | ease | ease-in | ease-out | ease-in-out */
 transform: scale(1.2) rotate(10deg); /* scale rotate translate (also scaleX, scaleY, etc.) */ 
-filter: brightness(1.2) grayscale(1); /* blur, brightness, contrast, grayscale, hue-rotate, invert, saturate */</code></pre>
+filter: brightness(1.2) grayscale(1); /* blur, brightness, contrast, grayscale, hue-rotate, invert, saturate */
 
-  <h3>Media Queries:</h3>
-  <p>These help you define CSS rules that are only applied on specific screen sizes.</p>
-  <pre><code class="language-scss">@media (min-width: 700px) {
-  .example { ... }
-}
+/* Interaction */
+cursor: pointer; /* changes cursor for this element, e.g. to pointer */
+pointer-events: none; /* disables pointer events such as hover */
+user-select: none; /* disables highlighting of text */</code></pre>
 
-@media (max-width: 700px) {
-  .example { ... }
-}</code></pre>
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>Media Queries:</h3>
+      <p>These help you define CSS rules that are only applied on specific screen sizes.</p>
+      <pre><code class="language-scss">@media (min-width: 700px) {
+    .example { ... }
+  }
+  
+  @media (max-width: 700px) {
+    .example { ... }
+  }</code></pre>
 
-  <h3>Absolute Positioning:</h3>
-  <pre><code class="language-scss">.parent {
-  position: relative;
-}
-
-.child {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}</code></pre>
-
-  <blockquote class="tip">For a more detailed explanation on how to position elements and create layouts check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.</blockquote>
-
-  <h3>Flexbox:</h3>
-  <pre><code class="language-scss">.container {
+      <h3>Flexbox:</h3>
+      <pre><code class="language-scss">.container {
   display: flex;
-  flex-wrap: wrap; /* allow items to wrap into the next line(s) */
-  justify-content: center; /* horizontal alignment of items */
-  align-items: center; /* vertical alignment of items */
+  /* allow items to wrap into the next line(s): */
+  flex-wrap: wrap; 
+  /* horizontal alignment of items: */
+  justify-content: center; 
+  /* vertical alignment of items: */
+  align-items: center; 
 }
 
 .item {
@@ -331,12 +337,28 @@ filter: brightness(1.2) grayscale(1); /* blur, brightness, contrast, grayscale, 
 
   /* or... */
 
-  flex: 1 0 100px; /* shortcut for flex-shrink, flex-grow, flex-basis */
+  flex: 1 0 100px;
+  /* shortcut for flex-shrink, flex-grow, flex-basis */
 }
 </code></pre>
+    </div>
 
-  <h3>Grid:</h3>
-  <pre><code class="language-scss">.container {
+    <div>
+      <h3>Absolute Positioning:</h3>
+      <pre><code class="language-scss">.parent {
+    position: relative;
+  }
+  
+  .child {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }</code></pre>
+
+      <p>(For a more detailed explanation on how to position elements and create layouts check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.)</p>
+
+      <h3>Grid:</h3>
+      <pre><code class="language-scss">.container {
   display: grid;
   grid-gap: 10px;
   grid-template:
@@ -350,6 +372,8 @@ filter: brightness(1.2) grayscale(1); /* blur, brightness, contrast, grayscale, 
 .mySidebar { grid-area: sidebar; }
 .myContent { grid-area: main; }
 .myFooter { grid-area: footer; }</code></pre>
+    </div>
+  </div>
 
   <h3>Animation:</h3>
   <pre><code>@keyframes floatyAnimation {
@@ -378,59 +402,69 @@ div {
 
 <section>
   <h2 id="js">JavaScript</h2>
-  <h3>Waiting for DOM:</h3>
-  <p>
-    If your JavaScript reads from the page content (e.g. <code>.querySelector()</code>) you should <b>always</b> make sure to wait until the page has finished loading before your JavaScript code is
-    executed. Otherwise, you might get 'Element not found' errors.
-  </p>
-  <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
+
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>Waiting for DOM:</h3>
+      <p>
+        If your JavaScript reads from the page content (e.g. <code>.querySelector()</code>) you should <b>always</b> make sure to wait until the page has finished loading before your JavaScript code
+        is executed. Otherwise, you might get 'Element not found' errors.
+      </p>
+      <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
   // code here...
-});
-</code></pre>
-  <h3>For-Each over Elements:</h3>
-  <p>For when you want to do something with every element in an array.</p>
-  <pre><code>const myElements = document.querySelectorAll(".element");
-[...myElements].forEach((el) => {
-  console.log(el);
 });</code></pre>
 
-  <h3>ECMAScript:</h3>
-  <pre><code class="language-javascript">import "./myStyles.scss";
+      <h3>ECMAScript:</h3>
+      <pre><code class="language-javascript">import "./myStyles.scss";
 import "./myFolder/myFile";
 import { doSomething } from "./myFolder/myFile";
 
 export function doSomething() {
-	...
-}
-</code></pre>
+  ...
+}</code></pre>
+    </div>
+    <div>
+      <h3>For-Each over Elements:</h3>
+      <p>For when you want to do something with every element in an array.</p>
+      <pre><code>const myElements = document.querySelectorAll(".element");
+[...myElements].forEach((el) => {
+  console.log(el);
+});</code></pre>
 
-  <h3><code>fetch</code>:</h3>
-  <pre><code>fetch("/example.json")
-  .then(response => {
-    // handle the response
-    if (res.ok) {
-      console.log("ok! (200)");
-    }
-    response.json();
-  })
-  .then(response => {
-    console.log(response); // e.g. response.json();
-  })
-  .catch(error => {
-    // handle the error. note: 404 errors do not land here.
-    console.log(error);
-  });</code></pre>
-  <p>
-    JSON -&gt; JS Object: <code>jsonData.json()</code><br />
-    JS Object -&gt; JSON: <code>JSON.stringify(obj)</code>
-  </p>
+      <h3>Fetch:</h3>
+      <pre><code>fetch("/example.json")
+.then(response => {
+  // handle the response
+  if (res.ok) {
+    console.log("ok! (200)");
+  }
+  response.json();
+})
+.then(response => {
+  console.log(response); // e.g. response.json();
+})
+.catch(error => {
+  // handle the error. note: 404 errors do not land here.
+  console.log(error);
+});</code></pre>
+      <p>
+        JSON -&gt; JS Object: <code>jsonData.json()</code><br />
+        JS Object -&gt; JSON: <code>JSON.stringify(obj)</code>
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>
   <h2 id="scss">SCSS</h2>
-  <pre><code class="language-scss">$font: Helvetica, Arial;
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>Basics:</h3>
+      <pre><code class="language-scss">$font: Helvetica, Arial;
 $textColor: black;
 $linkColor: #333333;
 
@@ -456,8 +490,10 @@ a {
   }
 }
 </code></pre>
-  <h3>Mixins:</h3>
-  <pre><code class="language-scss">@mixin theme($theme: black) {
+    </div>
+    <div>
+      <h3>Mixins:</h3>
+      <pre><code class="language-scss">@mixin theme($theme: black) {
   background: $theme;
   color: #fff;
 }
@@ -469,6 +505,8 @@ a {
   @include theme($theme: red);
 }
 </code></pre>
+    </div>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -477,48 +515,59 @@ a {
   <h2 id="git">Git / GitHub</h2>
   <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/git-tutorial">git tutorial</a>.</blockquote>
 
-  <h3>New Project:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git init <small>initalizes your current folder as a git repository</small>
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>New Project:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git init <small>initalizes your current folder as a git repository</small>
 git remote add origin &lt;https link&gt; <small>connects your local folder with the GitHub repository you have created on github.com</small>
 git add . <small>stages all your files</small>
 git commit -m "First Commit" <small>commits the staged files</small>
 git branch -M main <small>renames the branch to 'main'</small>
 git push --set-upstream origin main <small>pushes (= uploads) your local files to your GitHub repository</small>
 git pull --set-upstream origin main <small>pulls (= downloads) the files in your GitHub repository into your local folder</small></pre>
-  </blockquote>
-
-  <h3>Staging, Committing, Pushing:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git status <small>shows the status of every changed file</small>
+      </blockquote>
+    </div>
+    <div>
+      <h3>Staging, Committing, Pushing:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git status <small>shows the status of every changed file</small>
 git add &lt;file&gt; <small>stages a file</small>
 git add . <small>stages all changed files</small>
 git commit -m "Example message" <small>commits the staged files</small>
 git commit --amend -m "an updated commit message" <small>adds the staged files to the previous commit</small>
 git commit --amend --no-edit <small>adds the staged files to the previous commit, without changing the commit message</small>
 git push <small>pushes (= uploads) your local files to your GitHub repository</small></pre>
-  </blockquote>
+      </blockquote>
+    </div>
+  </div>
 
-  <h3>Undoing:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
+  <br />
+
+  <div class="two-columns">
+    <div>
+      <h3>Undoing:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
 git reset &lt;previous_commit_hash&gt; <small>revert a commit as if it never happened</small>
 git restore --staged &lt;file&gt; <small>unstages a file</small>
 git reset HEAD -- &lt;file&gt; <small>same as above (unstages a file)</small>
 git restore &lt;file&gt; <small>discards changes in an unstaged file</small>
 git restore . <small>discards all changes in all unstaged files</small></pre>
-  </blockquote>
+      </blockquote>
 
-  <h3>Branches:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git branch <small>shows branches</small>
+      <h3>Branches:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git branch <small>shows branches</small>
 git switch -c &lt;new-branch&gt; <small>makes a new branch and checks it out (currently changed files will be kept)</small>
 git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre>
-  </blockquote>
-
-  <h3>Misc.:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
+      </blockquote>
+    </div>
+    <div>
+      <h3>Misc.:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
 git log <small>show a log of all commits</small>
 git log --oneline <small>show a log of all commits (shorter)</small>
 git diff <small>shows all changes</small>
@@ -526,38 +575,33 @@ git diff &lt;a&gt; <small>shows all changes in a file/folder</small>
 git -v <small>shows the git version you are using</small>
 git remote -v <small>shows all remotes</small>
 git remote remove &lt;name&gt; <small>deletes a remote</small></pre>
-  </blockquote>
+      </blockquote>
+    </div>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>
   <h2 id="npm">npm</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote>
 
-  <h3>Installing Packages:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
+  <br />
+
+  <div class="two-columns">
+    <div>
+      <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote>
+
+      <h3>Installing Packages:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
 npm install --save-dev &lt;package&gt; <small>installs a package as a dev dependency</small>
 npm uninstall &lt;package&gt; <small>uninstalls a package</small>
 npm install <small>installs all dependencies</small>
 npm update <small>installs and updates all dependencies</small></pre>
-  </blockquote>
+      </blockquote>
 
-  <h3>Misc.:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
-node -v <small>shows node version</small>
-npm -v <small>shows npm version</small>
-npm init <small>created package.json for you</small>
-npm cache clean --force <small>clears cache</small>
-npm list -g --depth=0 <small>shows all installed packages</small>
-npmoutdated <small>shows all outdated packages</small>
-npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre>
-  </blockquote>
-
-  <h3>Example <code>package.json</code> :</h3>
-  <pre><code>{
+      <h3>Example <code>package.json</code> :</h3>
+      <pre><code>{
   "name": "project-name",
   "private": true,
   "devDependencies": {
@@ -569,16 +613,31 @@ npm view &lt;package&gt; version <small>shows the newest available version of a 
   }
 }
 </code></pre>
+    </div>
+    <div>
+      <h3>Misc.:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
+node -v <small>shows node version</small>
+npm -v <small>shows npm version</small>
+npm init <small>created package.json for you</small>
+npm cache clean --force <small>clears cache</small>
+npm list -g --depth=0 <small>shows all installed packages</small>
+npmoutdated <small>shows all outdated packages</small>
+npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre>
+      </blockquote>
 
-  <h3>Versions:</h3>
-  <ul>
-    <li><code>1.2.3</code>: only version 1.2.3, nothing else</li>
-    <li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li>
-    <li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li>
-    <li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li>
-    <li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li>
-    <li><code>*</code>: any version</li>
-  </ul>
+      <h3>Versions:</h3>
+      <ul>
+        <li><code>1.2.3</code>: only version 1.2.3, nothing else</li>
+        <li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li>
+        <li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li>
+        <li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li>
+        <li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li>
+        <li><code>*</code>: any version</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -587,19 +646,25 @@ npm view &lt;package&gt; version <small>shows the newest available version of a 
   <h2 id="webpack">Webpack</h2>
   <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/webpack-tutorial">webpack tutorial</a>.</blockquote>
 
-  <h3>Installation:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm install --save-dev webpack webpack-cli <small>installs webpack</small>
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>Installation:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npm install --save-dev webpack webpack-cli <small>installs webpack</small>
 npm install --save-dev style-loader css-loader sass-loader sass mini-css-extract-plugin <small>installs packages required for (s)css handling</small>
 npm list --depth=0 | findstr webpack  <small>shows webpack version</small></pre>
-  </blockquote>
-
-  <h3>Running:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npx webpack <small>builds your files</small>
+      </blockquote>
+    </div>
+    <div>
+      <h3>Running:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npx webpack <small>builds your files</small>
 npx webpack --watch <small>watches your files (and builds them when a change happens)</small>
 npx webpack --config webpack2.config.js <small>runs webpack using a specific configuration file</small></pre>
-  </blockquote>
+      </blockquote>
+    </div>
+  </div>
 
   <h3>Example <code>webpack.config.js</code> :</h3>
   <pre style="white-space: break-spaces"><code class="language-javascript">const path = require("path");
@@ -655,40 +720,51 @@ module.exports = {
 
   <p>(Replace <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code> to inject CSS into DOM.)</p>
 
-  <h3>SCSS:</h3>
-  <pre><code class="language-scss">@import "css/example";</code></pre>
+  <br />
+  <br />
 
-  <h3>JavaScript:</h3>
-  <pre style="white-space: break-spaces"><code class="language-javascript">import "./main.scss"; 
+  <div class="two-columns">
+    <div>
+      <h3>SCSS:</h3>
+      <pre><code class="language-scss">@import "css/example";</code></pre>
+    </div>
+    <div>
+      <h3>JavaScript:</h3>
+      <pre style="white-space: break-spaces"><code class="language-javascript">import "./main.scss"; 
 import { doExample } from "./js/example.js"; 
 
 document.addEventListener("DOMContentLoaded", () =&gt; {
   doExample();
-});
-</code></pre>
-  <pre><code>export function doExample() {
+});</code></pre>
+      <pre><code>export function doExample() {
   console.log("This example works too!");
-}
-</code></pre>
+}</code></pre>
+    </div>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>
   <h2 id="11ty">11ty (Eleventy)</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote>
-
-  <h3>Installation:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre>
-  </blockquote>
-
-  <h3>Running:</h3>
-  <blockquote class="cheatsheet-blockquote">
-    <pre>npx @11ty/eleventy <small>builds your files</small>
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>Installation:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre>
+      </blockquote>
+      <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote>
+    </div>
+    <div>
+      <h3>Running:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npx @11ty/eleventy <small>builds your files</small>
 npx @11ty/eleventy --watch <small>watches your files (and builds them when a change happens)</small>
 npx @11ty/eleventy --serve <small>watches your files (and builds them when a change happens), and stars a webserver on localhost</small></pre>
-  </blockquote>
+      </blockquote>
+    </div>
+  </div>
 
   <h3>Example <code>.eleventy.js</code> :</h3>
   <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {

@@ -168,6 +168,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 
   img {
     width: 110px;
@@ -212,6 +213,7 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 2em;
+  flex-shrink: 0;
 
   img {
     margin-bottom: 6px;

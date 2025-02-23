@@ -19,16 +19,20 @@ main {
     margin: 0.5em 0;
   }
 
+  mark {
+    text-shadow: 0px 0px 3px var(--linkColor);
+    background-color: inherit;
+    color: var(--textColor);
+  }
+
   strong {
     font-family: $font2, $font, sans-serif;
     // font-size: 1.1em;
     color: var(--textColorBold);
   }
 
-  .image {
-    img {
-      max-width: 100%;
-    }
+  img {
+    max-width: 100%;
   }
 
   ol,
@@ -86,7 +90,8 @@ main {
     font-weight: normal;
     background: rgba($purple, 0.1);
     padding: 1em;
-    border-radius: 10px;
+    border-radius: 0;
+    box-shadow: 0px 1px 4px rgba($purple, 0.1);
     font-size: 0.75em;
     line-height: 1.3;
     text-transform: none;

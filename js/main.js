@@ -10,7 +10,17 @@ import { initComprehensionQuestions } from "./pages/comprehension-questions";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 
-document.addEventListener("DOMContentLoaded", function () {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("✅ DOM is ready (via event listener)");
+    init();
+  });
+} else {
+  console.log("✅ DOM is already ready (executing immediately)");
+  init();
+}
+
+function init() {
   loadTheme();
   document.body.classList.add("-js");
 
@@ -35,12 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initProgressBar();
   initComprehensionQuestions();
 
-  // Localhost only:
-  localhostHelper();
-
-  // SNOW
-  //   initSnow();
-});
+  // SNOW;
+  // initSnow();
+}
 
 function prepareScrollToTop() {
   const el = document.querySelector("#back-to-top-link");
@@ -119,7 +126,6 @@ function initSidebarTableOfContents() {
       window.clearTimeout(debounce_timer);
     }
     debounce_timer = window.setTimeout(function () {
-      console.log("scroll");
       updateSidebarTableOfContentsPosition(el, allSections);
     }, 20);
   });
@@ -167,21 +173,6 @@ function initTooltips() {
       reference.removeAttribute("title");
       return title;
     },
-  });
-}
-
-function localhostHelper() {
-  if (!window.location.href.includes("http://localhost")) return;
-  const publicStr = window.location.href.includes("8080") ? "" : "/public";
-  const linkEls = document.querySelectorAll("a");
-  [...linkEls].forEach((linkEl) => {
-    const oldUrl = linkEl.getAttribute("href");
-    if (oldUrl == "/") {
-    } else if (oldUrl.includes(".xml")) {
-    } else if (oldUrl.charAt(0) == "/") {
-      const newUrl = publicStr + oldUrl + ".html";
-      linkEl.setAttribute("href", newUrl);
-    }
   });
 }
 

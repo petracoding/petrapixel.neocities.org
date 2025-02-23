@@ -102,7 +102,7 @@ toc: true
 </section>
 <section>
   <h2>Tutorial</h2>
-  <p><strong>Step 1: The JS code</strong></p>
+  <h3 data-step="1">The Script</h3>
 
   <p>Create a javascript file (e.g. <code>layout.js</code>) in the root of your project, and insert the following code:</p>
 
@@ -233,8 +233,8 @@ const footerEl = `
 `;</code></pre>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <br />
-  <br />
+
+  <h3 data-step="2">Loading the script</h3>
   <p><strong>Step 2: Load the JS</strong></p>
   <p>Load that javascript file on every page.</p>
   <details>
@@ -249,9 +249,8 @@ const footerEl = `
   </details>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <br />
-  <br />
-  <p><strong>Step 3: Paste your header/footer into the JavaScript file.</strong></p>
+
+  <h3 data-step="3">Insert your header/footer</h3>
   <p>Paste your header and footer inbetween the ticks (``) of the variables headerEl and footerEl.</p>
   <blockquote class="tip">
     <p>If you have a <b>sidebar</b>, either include it inside of your header element, or add it after the header element (but still in the headerEl JavaScript variable) (see code).</p>
@@ -268,9 +267,8 @@ const footerEl = `
   </ul>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <br />
-  <br />
-  <p><strong>Step 4: Prepare your pages.</strong></p>
+
+  <h3 data-step="4">Prepare your pages</h3>
   <p>
     Remove your header and footer from the html files of your pages - They will be added via JavaScript. Make sure all page content is in a wrapper, I suggest using
     <code>&lt;main&gt;</code> or <code>&lt;div&gt;</code>:
@@ -282,8 +280,8 @@ const footerEl = `
 &lt;/body&gt;</code></pre>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
-  <br />
-  <p><strong>Step 5: Style</strong></p>
+
+  <h3 data-step="5">Style</h3>
   <p>Now, style your layout with CSS like you would normally do.</p>
   <p>
     My code adds the class "active" to any links that are linked to the current page. This makes it easy to style active menu links. Just make a CSS rule that checks for the "active" class,
@@ -293,8 +291,10 @@ const footerEl = `
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <br />
   <br />
-  <p><strong>Done!</strong></p>
-  <p>If you have page on which your layout should not be loaded, give the <code>&lt;body&gt;</code> element the "no-layout" class.</p>
+  <blockquote class="success">
+    <p><strong>Done!</strong></p>
+    <p>If you have page on which your layout should not be loaded, give the <code>&lt;body&gt;</code> element the "no-layout" class.</p>
+  </blockquote>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->

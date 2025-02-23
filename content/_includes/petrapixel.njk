@@ -1,6 +1,5 @@
 ---
 testingOnLocalhost: false
-noCache: "20250218"
 ---
 
 <!DOCTYPE html>
@@ -13,8 +12,7 @@ noCache: "20250218"
       content="{{ description or 'Welcome to petrapixel! Here you can find many resources for Neocities, coding help, media recommendations and more in a cute Old Web aesthetic!' }}"
     />
     {% endif %}
-    <script src="{{ nesting }}assets/js/main.js?nocache={{ noCache }}"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ noCache }}" />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ nesting }}assets/img/favicon.ico" rel="icon" type="image/x-icon" />
@@ -45,6 +43,33 @@ noCache: "20250218"
       }
     </style>
     {% endif %}
+
+    <!-- CSS/JS + CACHEBUSTING -->
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Path to your CSS file (like usual), or empty ("") if you don't have one:
+        const CSS_FILE_PATH = "{{ nesting }}assets/main.css";
+
+        // Path to your JS file (like usual), or empty ("") if you don't have one:
+        const JS_FILE_PATH = "{{ nesting }}assets/js/main.js";
+
+        function loadScript(src) {
+          const script = document.createElement("script");
+          script.src = src + "?nocache=" + new Date().getTime();
+          script.async = true;
+          document.head.appendChild(script);
+        }
+        function loadCSS(href) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = href + "?nocache=" + new Date().getTime();
+          document.head.appendChild(link);
+        }
+        if (JS_FILE_PATH) loadScript(JS_FILE_PATH);
+        if (CSS_FILE_PATH) loadCSS(CSS_FILE_PATH);
+      });
+    </script>
   </head>
   <body class="{{ bodyClass }}" {% if freezeframe %}onload="new Freezeframe();" {% endif %}>
     <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript>
@@ -253,7 +278,7 @@ noCache: "20250218"
 		</div>
 		-->
           <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>visitors</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
+            <div class="aside-stuff__heading"><span>website hits</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
             <div class="aside-stats__stat-content">
               <center>
                 {% if not testingOnLocalhost %}<a href="https://www.free-website-hit-counter.com">

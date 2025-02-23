@@ -1435,7 +1435,7 @@ footer { grid-area: myFooter; }</code></pre>
 </code></pre>
   </details>
 
-  <h3 id="step1"><b>Step 1:</b> The HTML</h3>
+  <h3 id="step1" data-step="1">The HTML</h3>
   <p>The HTML for this project is very straightforward.</p>
   <p>All our items are a simple <code>div</code> with an image (<code>img</code>) and a caption (<code>span</code>).</p>
   <pre><code>&lt;div class=&quot;example-image-gallery&quot;&gt;
@@ -1451,7 +1451,7 @@ footer { grid-area: myFooter; }</code></pre>
     &lt;div&gt; &lt;img src=&quot;./img/example10.jpg&quot; /&gt; &lt;span&gt;Image 10&lt;/span&gt; &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-  <h3 id="step2"><b>Step 2:</b> Item Sizing</h3>
+  <h3 id="step2" data-step="2">Item Sizing</h3>
 
   <p>
     We're going to start our CSS with a simple code to make sure the images aren't bigger than they should be. We will give our items (the <code>div</code>s) a width of 25% because we want 4 images
@@ -1489,7 +1489,7 @@ footer { grid-area: myFooter; }</code></pre>
     <div><img src="../assets/img/me/likes1.jpg" /><span>Image 1</span></div>
   </div>
 
-  <h3 id="step3"><b>Step 3:</b> Flexbox</h3>
+  <h3 id="step3" data-step="3">Flexbox</h3>
 
   <p>Right now, all our items are underneath one another instead of next to each other.</p>
   <p>We will use flexbox to get them to display in a row, and automatically overflow to the next line.</p>
@@ -1582,7 +1582,7 @@ footer { grid-area: myFooter; }</code></pre>
     <div><img src="../assets/img/me/likes5.jpg" /><span>Image 10</span></div>
   </div>
 
-  <h3 id="step4"><b>Step 4:</b> Captions</h3>
+  <h3 id="step4" data-step="4">Captions</h3>
 
   <p>
     It's time to style our captions. We want them to be "in front of" the images, which means we have to use absolute positioning (<code>position: absolute</code>) and place the caption where we want
@@ -1650,7 +1650,7 @@ footer { grid-area: myFooter; }</code></pre>
 
   <p>We could be done now, but I want to show you how to add some hover effects!</p>
 
-  <h3 id="step5"><b>Step 5:</b> Captions on Hover</h3>
+  <h3 id="step5" data-step="5">Captions on Hover</h3>
 
   <p>First, we want the caption to show on hover only. We can do this by giving the captions <code>opacity: 0</code> by default and <code>opacity: 1</code> on hover.</p>
   <p>
@@ -1706,7 +1706,7 @@ footer { grid-area: myFooter; }</code></pre>
 
   <p>For now, you might see the captions being visible outside of the frames as they move up. We will fix this in the next step.</p>
 
-  <h3 id="step6"><b>Step 6:</b> Image Hover Effects</h3>
+  <h3 id="step6" data-step="6">Image Hover Effects</h3>
 
   <p>
     Finally, we're gonna add some image effects on hover. We want the images to become larger and rotate a bit, so we can use something like <code>transform: scale(1.35) rotate(10deg)</code>. We're

@@ -11,7 +11,10 @@ toc: true
 <section>
   <h1>My VSCode Setup</h1>
   <i class="fa-solid fa-toolbox"></i>
-  <p>I use the software <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> to code and highly recommend it!</p>
+  <p>
+    I use the free software <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> to code and highly recommend it! I think the basics are pretty self-explanatory, but if you're
+    overwhelmed, Bechnokid has <a href="https://bechnokid.neocities.org/tutorials/vscode/" target="_blank">a great tutorial on how to get started with VSCode</a>.
+  </p>
 
   <div id="toc">
     <b>Table of Contents:</b>
@@ -287,7 +290,7 @@ toc: true
   </ul>
 
   <blockquote class="tip">
-    <p>If the automatic formatting for a file is not working, it's probably because the file contains an error! Click the prettier button on the bottom right corner.</p>
+    <p>If you're using Prettier and the automatic formatting for a file is not working, it's probably because the file contains an error! Click the 'Prettier' button on the bottom right corner.</p>
   </blockquote>
 
   <br />
@@ -296,11 +299,20 @@ toc: true
     <summary>How to install ESLint</summary>
     <ol>
       <li>Install the extension in VSCode</li>
-      <li>Download a config file from <a href="https://eslint.org/dspano" target="_blank" rel="nofollow">here</a></li>
+      <li>Go to <code>C:\Users\{YOUR USERNAME}</code> on your PC and create a file with the exact name <code>.eslintrc.json</code> (with the period at the beginning!)</li>
+      <li>
+        In that file, paste <a href="https://pastebin.com/raw/QHyJkLj2" target="_blank">this content</a>. Just FYI, this already includes two important lines you would otherwise need to add manually:
+        <ul>
+          <li><code>"browser":true</code> in "env" (that's the list of environments)</li>
+          <li><code>"sourceType":"module"</code> in "parserOptions"</li>
+        </ul>
+      </li>
+      <!-- <li>Download a config file from <a href="https://eslint.org/dspano" target="_blank" rel="nofollow">here</a></li>
       <li>Put it into <code>C:\Users\{USERNAME}</code></li>
       <li>In the file, add <code>"browser":true</code> to the list of environments ("env" at the top of the file)</li>
-      <li>In the file, add <code>"sourceType":"module"</code> to "parserOptions".</li>
-      <li>In VSCode do ctrl+shift+p "eslint restart server".</li>
+      <li>In the file, add <code>"sourceType":"module"</code> to "parserOptions".</li> -->
+      <li>In VSCode do Ctrl+Shift+P and type/choose "eslint restart server".</li>
+      <li>It should work now!</li>
     </ol>
   </details>
 
@@ -314,7 +326,7 @@ toc: true
     <li><b>Todo Tree</b>: a list of all your TO DO comments</li>
     <li><b>Vibrancy Continued</b>: a neat "glassy" visual effect for the program</li>
     <li><b>Rainbow CSV</b>: better color formatting for .csv files</li>
-    <li><b>SVG Viewer</b>: enabled previews of svg images in VSCode</li>
+    <li><b>SVG Viewer</b>: enables previews of svg images in VSCode</li>
     <li><b>GitLens</b>: inline git blame, and more</li>
   </ul>
 

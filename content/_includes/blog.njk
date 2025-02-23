@@ -1,6 +1,5 @@
 ---
 testingOnLocalhost: false
-noCache: "20250218"
 ---
 
 <!DOCTYPE html>
@@ -13,9 +12,8 @@ noCache: "20250218"
       content="{{ description or 'Welcome to petrapixel! Here you can find many resources for Neocities, coding help, media recommendations and more in a cute Old Web aesthetic!' }}"
     />
     {% endif %}
-    <script src="{{ nesting }}assets/js/main.js?nocache={{ noCache }}"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ noCache }}" />
-    <meta charset="utf-8">
+
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ nesting }}assets/img/favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -37,6 +35,10 @@ noCache: "20250218"
       gtag("config", "G-J64TL8KVTJ");
     </script>
     {% endif %}
+
+    <!-- CSS/JS + CACHEBUSTING -->
+    <script src="{{ nesting }}assets/js/main.js?nocache={{ page.date | slugify }}"></script>
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ page.date | slugify }}" />
   </head>
   <body class="{{ bodyClass }} blog-page-layout">
     <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript>
@@ -68,10 +70,10 @@ noCache: "20250218"
           <nav>
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/blog{% if testingOnLocalhost %}/index{% endif %}" class="{% if title == "blog" %}active{% endif %}">All Blog Posts</a></li>
+              <li><a href="/blog{% if testingOnLocalhost %}/index{% endif %}" class="{% if title == 'blog' %}active{% endif %}">All Blog Posts</a></li>
               <li><a href="https://neocities.org/site/petrapixel" target="_blank">Follow on Neocities</a></li>
               <li>
-                <a href="/rss.xml" target="_blank" aria-label="RSS Feed" >RSS</a>
+                <a href="/rss.xml" target="_blank" aria-label="RSS Feed">RSS</a>
               </li>
             </ul>
           </nav>
@@ -91,16 +93,16 @@ noCache: "20250218"
 
         {% if dateCreated %}
         <div class="blog-page-date">Posted {{ dateCreated }}{% if dateUpdated != dateCreated %}, Updated {{ dateUpdated }}{% endif %}</div>
-        {% endif %}
-
-		{% if title !== "blog" %}
+        {% endif %} {% if title !== "blog" %}
         <section>
           <h2 style="height: 0px; overflow: hidden">Comments</h2>
-		  {% if commentsText %}<p>{{ commentsText | safe }}</p>{% endif %}
+          {% if commentsText %}
+          <p>{{ commentsText | safe }}</p>
+          {% endif %}
           <div id="c_widget">Comment Widget could not be loaded!</div>
           <script src="{{ nesting }}assets/js/comment-widget.js"></script>
         </section>
-		{% endif %}
+        {% endif %}
       </main>
 
       <!-- ------------------------------------------------ -->

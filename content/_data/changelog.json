@@ -1,5 +1,6 @@
 [
   { "date": "2025-02-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-02-23", "text": "Guide about cachebusting is up. It's still WIP though!", "link": "/coding/cachebusting" },
   { "date": "2025-02-18", "text": "Lots of small updates, and I expanded my 'VSCode Setup' page!", "link": "/coding/my-setup" },
   { "date": "2025-02-12", "text": "The layout generator was updated: New features, new looks, and other improvements!", "link": "/coding/layout-generator" },
   { "date": "2025-02-09", "text": "Coding bookmarks have moved to their own page and have been expanded!", "link": "/coding/bookmarks" },

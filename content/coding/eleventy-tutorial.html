@@ -349,8 +349,16 @@ For Loop:
     from page to page, such as page title, etc. (Like so: <code>&lt;title&gt;{% raw %}{{ title }}{% endraw %}&lt;/title&gt;</code>) We will define the values of those variables in the page files in
     the next step.
   </p>
+  <p id="cachebusting">Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
 
-  <p>Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
+  <blockquote class="tip">
+    <p><b>Tip:</b> For cachebusting, instead of manually updating the parameter, you can add the current date and time to your files like so:</p>
+    <pre><code class="language-html">&lt;script src=&quot;example.js?nocache={% raw %}{{ page.date | slugify }}{% endraw %}&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;example.css?nocache={% raw %}{{ page.date | slugify }}{% endraw %}&quot; /&gt;</code
+  ></pre>
+    <p>More info on cachebusting <a href="/coding/cachebusting">here</a>.</p>
+  </blockquote>
+
   <h3 id="page">Step 2: The page</h3>
   <p>Whether your page file is an <code>.html</code> or a <code>.njk</code> file doesn't matter - You can use templates in the same way.</p>
   <p>All we need to do is the so-called <b>"front matter"</b>. It's a section at the top of the file that looks like this:</p>
@@ -495,6 +503,7 @@ nesting: "../"
     <i><a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a></i
     >) the page will even refresh for you automatically.
   </p>
+  <p>Make sure to stop this command (Ctrl+C, confirm with Y) whenever you're done. If you close your IDE without stopping this command the port may stay open, which can lead to problems.</p>
   <hr />
   <h3 id="custom-command">Defining a custom command (Optional)</h3>
   <p>In your <code>package.json</code> file, you can define custom commands. Here is an example:</p>

@@ -202,6 +202,34 @@
 
 /**
  *
+ * HOME
+ *
+ */
+
+.about-me-pages__home-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  img {
+    display: inline-block;
+    padding: 10px;
+    max-width: 50%;
+    filter: hue-rotate(-5deg) contrast(0.95) brightness(1.1);
+    image-rendering: smooth;
+
+    &:hover {
+      image-rendering: auto;
+    }
+
+    @media (max-width: $md) {
+      max-width: 100%;
+    }
+  }
+}
+
+/**
+ *
  * GPOY
  *
  */
@@ -307,14 +335,14 @@
 
   a {
     display: inline-block;
-    height: 79px;
-    width: 79px;
+    height: 108px;
+    width: 108px;
     margin: 3px;
     // overflow: hidden;
 
     @media (max-width: $sm) {
-      width: 19vw;
-      height: 19vw;
+      width: 26vw;
+      height: 26vw;
     }
 
     &:hover,
