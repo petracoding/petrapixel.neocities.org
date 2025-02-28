@@ -5,7 +5,7 @@ description: "Some blinkies, stamps, buttons, userboxes for your Neocities websi
 nesting: "../"
 ---
 
-<!-- freezeframe.js -->
+<!-- freezeframe.js 
 <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
@@ -16,8 +16,9 @@ nesting: "../"
     document.getElementById("stop-gif").addEventListener("click", function () {
       e.stop();
     });
+    e.start();
   });
-</script>
+</script>-->
 <style>
   .ff-container.ff-responsive {
     width: auto !important;
@@ -31,22 +32,27 @@ nesting: "../"
     margin-right: 0.59em;
     margin-bottom: 0.59em;
   }
+
+  main h2 {
+    display: none;
+  }
 </style>
 
 <section>
   <h1>Blinkies, Buttons, Stamps, Userboxes!</h1>
-  <button id="play-gif">Play GIFs</button>
-  <button id="stop-gif">Stop GIFs</button>
+  <p>This is not an attempt at a complete collection, rather those that describe me or the ones I particularly like!</p>
+  <!-- <button id="play-gif">Play GIFs</button>
+  <button id="stop-gif">Stop GIFs</button>-->
   <hr />
   <h2>Blinkies</h2>
   <div class="blinkies freezeframe">{% include 'blinkies-blinkies.njk' %}</div>
   <div class="blinkies freezeframe">
     <!-- Larger blinkies: -->
-    <img height="20" src="../assets/img/blinkies/blinkies/b (28).gif" alt="Blinkie: I love my girlfriend" />
-    <img height="20" src="../assets/img/blinkies/blinkies/b (21).gif" alt="Blinkie: Minecraft squid" />
+    <div><img height="20" src="../assets/img/blinkies/blinkies/b (28).gif" alt="Blinkie: I love my girlfriend" /></div>
+    <div><img height="20" src="../assets/img/blinkies/blinkies/b (21).gif" alt="Blinkie: Minecraft squid" /></div>
     <!-- Smaller blinkies: -->
-    <img width="150" height="20" src="../assets/img/blinkies/blinkies/bad-driver.gif" alt="Blinkie: Bad Driver" />
-    <img height="20" src="../assets/img/blinkies/blinkies/b (20).gif" alt="Blinkie: smoking sucks" />
+    <div><img width="150" height="20" src="../assets/img/blinkies/blinkies/bad-driver.gif" alt="Blinkie: Bad Driver" /></div>
+    <div><img height="20" src="../assets/img/blinkies/blinkies/b (20).gif" alt="Blinkie: smoking sucks" /></div>
   </div>
   <hr />
   <h2>Buttons</h2>
@@ -107,7 +113,14 @@ nesting: "../"
     <div><img src="../assets/img/blinkies/stamps/minecraftdied.png" alt="Stamp: You died! (Minecraft)" /></div>
     <div><img src="../assets/img/blinkies/stamps/gore.gif" alt="Stamp: Gore" /></div>
     <div><img src="../assets/img/blinkies/stamps/gore3.png" alt="Stamp: Gore" /></div>
-    <!-- <div><img src="../assets/img/blinkies/stamps/error.png" alt="Stamp: Error" /></div> -->
+    <div><img src="../assets/img/blinkies/stamps/psychological-horror.gif" alt="Stamp: Psychological Horror" /></div>
+    <div><img src="../assets/img/blinkies/stamps/error.png" alt="Stamp: Error" /></div>
+    <div><img src="../assets/img/blinkies/stamps/aesthetic.png" alt="Stamp: do it for the aesthetic" /></div>
+    <div><img src="../assets/img/blinkies/stamps/space.png" alt="Stamp: Space" /></div>
+    <div><img src="../assets/img/blinkies/stamps/stars.png" alt="Stamp: the stars make me happy" /></div>
+    <div><img src="../assets/img/blinkies/stamps/gay-agenda.gif" alt="Stamp: I am poart of the gay agenda." /></div>
+    <!-- <div><img src="../assets/img/blinkies/stamps/TODO.png" alt="Stamp: TODO" /></div> -->
+
     <!-- Mine: -->
     <div><img src="../assets/img/blinkies/stamps/petrapixel-tumblr.png" alt="Stamp: Tumblr" /></div>
     <div><img src="../assets/img/blinkies/stamps/petrapixel-love.gif" alt="Stamp: Love is Love" /></div>
@@ -118,25 +131,29 @@ nesting: "../"
   <hr />
   <h2>Userboxes</h2>
   <div class="blinkies blinkies--userboxes">
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/cringe-culture-is-dead.jpg" alt="Userbox: This user thinks cringe culture is dumb, just enjoy yourself!" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/dinosaurs.jpg" alt="Userbox: This user loves dinosaurs" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/birds-are-dinosaurs.png" alt="Userbox: This user knows that birds are dinosaurs" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/non-fiction.png" alt="Userbox: This user enjoys reading non-fiction." /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/does bruno mars is gay.jpg" alt="Userbox: The Rumor Come Out: Does This User Is Gay?" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/fictional-characters.jpg" alt="Userbox: This user is emotionally attached to fictional characters" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/left-planet-earth.png" alt="Userbox: This user has left the planet Earth 0 times." /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/owo.png" alt="Userbox: t-this user is... h-hewwo?! owo" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/playlists.jpg" alt="Userbox: This user loves to make playlists." /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/nintendo-switch.jpg" alt="Userbox: This user has a Nintendo switch." /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/ao3.jpg" alt="Userbox: This user loves Ao3" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/png.png" alt="Userbox: This user loves PNGs. They are way better than the God forsaken JPEGs" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/portal.png" alt="Userbox: This user is thinking with Portals!" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/rude-people.png" alt="Userbox: This user hates rude people" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/slytherin.jpg" alt="Userbox: This user is a slytherin" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/stuffed-animals.jpg" alt="Userbox: This user sleeps with a stuffed animal" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/thunderstorms.png" alt="Userbox: This user loves thunderstorms" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/uwu.png" alt="Userbox: This user likes to make the :3 face" /></div>
-    <div><img width="235" height="50" src="../assets/img/blinkies/userboxes/writer.png" alt="Userbox: This user is a writer but never writes" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/cringe-culture-is-dead.jpg" alt="Userbox: This user thinks cringe culture is dumb, just enjoy yourself!" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/dinosaurs.jpg" alt="Userbox: This user loves dinosaurs" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/birds-are-dinosaurs.png" alt="Userbox: This user knows that birds are dinosaurs" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/non-fiction.png" alt="Userbox: This user enjoys reading non-fiction." /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/does bruno mars is gay.jpg" alt="Userbox: The Rumor Come Out: Does This User Is Gay?" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/fictional-characters.jpg" alt="Userbox: This user is emotionally attached to fictional characters" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/left-planet-earth.png" alt="Userbox: This user has left the planet Earth 0 times." /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/owo.png" alt="Userbox: t-this user is... h-hewwo?! owo" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/playlists.jpg" alt="Userbox: This user loves to make playlists." /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/nintendo-switch.jpg" alt="Userbox: This user has a Nintendo switch." /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/ao3.jpg" alt="Userbox: This user loves Ao3" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/png.png" alt="Userbox: This user loves PNGs. They are way better than the God forsaken JPEGs" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/portal.png" alt="Userbox: This user is thinking with Portals!" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/rude-people.png" alt="Userbox: This user hates rude people" /></div>
+    <div style="filter: none"><img width="230" height="48" src="../assets/img/blinkies/userboxes/slytherin.jpg" alt="Userbox: This user is a slytherin" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/stuffed-animals.jpg" alt="Userbox: This user sleeps with a stuffed animal" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/thunderstorms.png" alt="Userbox: This user loves thunderstorms" /></div>
+    <div style="filter: saturate(1.3)"><img width="230" height="48" src="../assets/img/blinkies/userboxes/uwu.png" alt="Userbox: This user likes to make the :3 face" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/writer.png" alt="Userbox: This user is a writer but never writes" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/graphic-design.png" alt="Userbox: this user's passion is graphic design" /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/trying-their-best.jpg" alt="Userbox: This user is trying their best." /></div>
+    <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/drew-gooden.png" alt="Userbox: Road work ahead? This user sure hopes it does" /></div>
+    <!-- <div><img width="230" height="48" src="../assets/img/blinkies/userboxes/TODO.png" alt="Userbox: TODO" /></div> -->
   </div>
 
   <hr />

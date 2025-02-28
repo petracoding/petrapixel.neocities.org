@@ -88,7 +88,7 @@
   }
 
   #clap-for-me img {
-    filter: brightness(0.8);
+    filter: brightness(0.9);
   }
 
   .aside-stats__stat-content iframe {
@@ -114,6 +114,16 @@
 
   .aside-nav__new {
     filter: invert(1) hue-rotate(180deg);
+  }
+
+  #current-visitors img {
+    filter: invert(1);
+    opacity: 1;
+  }
+
+  #corner-cat img {
+    opacity: 0.9;
+    filter: brightness(0.9);
   }
 
   /*

@@ -399,6 +399,7 @@ img[src*="inline/"]:not([class]) {
   &:visited {
     color: var(--textColor);
     cursor: zoom-in;
+    text-decoration: none;
   }
 
   .image {
@@ -417,6 +418,15 @@ img[src*="inline/"]:not([class]) {
       img {
         transform: scale(1.1);
       }
+    }
+
+    div {
+      margin-top: 2em;
+      text-align: center;
+      margin-bottom: 0.5em;
+      font-size: 1.2em;
+      z-index: 1;
+      position: relative;
     }
   }
 

@@ -126,9 +126,11 @@ toc: true
   </p>
   <p>Also avoid adding styles directly into an HTML page with <code>&lt;style&gt;</code> tags like this...:</p>
   <pre><code>&lt;style&gt;
+div {
   color: red;
   font-weight: bold;
-&lt;/style&gt;  </code></pre>
+}
+&lt;/style&gt;</code></pre>
 
   <p>... <b>unless they really are for that page only!</b></p>
   <p>In general, the more your CSS code is kept in one place (e.g. your CSS folder), the easier it will be to maintain (change) the code later.</p>
@@ -150,7 +152,8 @@ CSS:
 
 JavaScript:
 // This is a one-line comment.
-/* This is a multi-line comment. */
+/* This is a multi-line comment.
+   Awesome.  */
   </code></pre>
 
   <hr />

@@ -1,19 +1,46 @@
 [
   {
     "title": "EXAMPLE",
-    "month": "2025-01",
+    "month": "2025-03",
     "type": "TODOADDTYPE",
     "rating": "⭐⭐⭐⭐⭐ ½",
     "image": "IMAGEURL",
     "link": "LINKURL",
     "text": ""
   },
+  {
+    "title": "Viewfinder",
+    "month": "2025-02",
+    "type": "Game (PC/PS)",
+    "rating": "⭐⭐⭐ ½",
+    "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6m9m.jpg",
+    "link": "https://www.backloggd.com/games/viewfinder/",
+    "text": "This is a very clever mindfuck-y puzzle game similar to Portal (2) or Antichamber. You basically have to solve puzzles by bending reality with photographs. The concept and visuals were great, unfortunately the story (and some of the voice acting) was lackluster. It's also only about 5 hours long. I recommend it if you like non-euclidean puzzles and don't mind that it doesn't have a compelling story! Bonus: There's a cat."
+  },
+  {
+    "title": "Hello Kitty Island Adventure",
+    "month": "2025-02",
+    "type": "game (PC/Console)",
+    "rating": "⭐⭐⭐⭐",
+    "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6ohb.jpg",
+    "link": "https://www.backloggd.com/games/hello-kitty-island-adventure/",
+    "text": "I was waiting for this game to finally come out on the Switch and I wasn't disappointed! It really is very similar to Animal Crossing, so if you enjoy that you will enjoy this. I wasn't big into Sanrio when I started this but I might be now... The game looks and sounds great, the characters are cute. Some people say this game is grindy, but I highly disagree. In fact, unless you have some quests, there's really not much to do. That and the fact that the characters don't really speak to you (like Animal Crossing villagers do) are the only bad things about this game. Don't expect as much playtime out of it as out of Animal Crossing though, it's a game for young kids and it's very easy."
+  },  
+  {
+    "title": "Squid Game (Season 2)",
+    "month": "2025-02",
+    "type": "tv show",
+    "rating": "⭐⭐⭐⭐",
+    "image": "https://serializd-tmdb-images.b-cdn.net/t/p/w500/sXZhtWLo3fecavpDuOyJiayjt32.jpg",
+    "link": "https://www.serializd.com/show/Squid-Game-93405",
+    "text": "I watched Squid Game when it came out like the rest of world, and I enjoyed it, but wasn't obsessed, so I wasn't even sure if I was going to watch the second season. It didn't feel necessary and I had no high hopes for it. After a slow first episode, it really picked up though, and I was very invested. I might have even enjoyed it more than the first season. 001 was my favorite character. I will say no more because of spoilers. Basically, if you liked the first season you will also like this one! It ends in a cliffhanger though, time to wait for Season 3."
+  },
 
   {
     "title": "Subnautica",
     "month": "2025-01",
     "type": "game (PC/Console)",
-    "rating": "⭐⭐⭐⭐ ½",
+    "rating": "⭐⭐⭐⭐",
     "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1iqw.jpg",
     "link": "https://www.backloggd.com/games/subnautica/",
     "text": "I'm terrified of the ocean, and big things in the ocean, and fish... So this game is a bit like exposure therapy to me. Anyways. It's really good! The exploration aspect is really fun, and the survival aspect is good too (not too difficult, not too easy). This game came out in 2014 but the graphics aged wonderfully, there was not a single moment where I thought something didn't look good. Occasionally, this game has some great humor that reminded me of Portal 2. It's mostly possible to play without using guides/google, but sometimes I was stuck and had to look something up. Also, at around mid-game the difficulty really picks up unless you pick the right upgrades and locations and I almost gave up on the game. Overall, I enjoyed this game just as much as I thought I would, so if you think you might like it, you should try it!"
@@ -22,7 +49,7 @@
     "title": "My Secret Garden",
     "month": "2025-01",
     "type": "Book by Nancy Friday",
-    "rating": "⭐⭐⭐⭐",
+    "rating": "⭐⭐⭐ ½",
     "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387708704i/2997.jpg",
     "link": "https://www.goodreads.com/book/show/2997.My_Secret_Garden",
     "text": "'My Secret Garden' is a collection of sexual fantasies by real women in the 1970s. Some of the fantasies are quite normal, some very strange and even disgusting. It's a fascinating read about a topic that people (especially women) STILL don't really talk about. I was made aware of this book when I saw the book 'want' by Gillian Anderson on the shelves of a bookstore. 'want' is a modern version of 'My Secret Garden', and it's also an interesting read! Overall, I really liked the 'My Secret Garden', but it gets a bit tedious because some parts are very long, and I found myself skimming over them."

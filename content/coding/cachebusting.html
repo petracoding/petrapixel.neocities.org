@@ -29,6 +29,7 @@ toc: true
         <th>Method<br />Comparision</th>
         <th><u>Manual</u> Query String Versioning</th>
         <th><u>Automatic</u> Query String Versioning</th>
+        <th>Automatic Query String Versioning using a <u>Static Site Generator</u></th>
         <th>Service Worker <small>(with query string versioning fallback)</small></th>
       </tr>
     </thead>
@@ -37,43 +38,44 @@ toc: true
         <th>Set-Up Difficulty</th>
         <td>✅ very simple</td>
         <td>🆗 medium</td>
+        <td>✅ simple (if you're already using a static site generator)</td>
         <td>⚠️ complex</td>
       </tr>
       <tr>
         <th>Effort at every change</th>
         <td>⚠️ manual effort for every change</td>
-        <td>✅ you only have to set it up once</td>
+        <td colspan="2">✅ you only have to set it up once</td>
         <td>✅ you only have to set it up once</td>
       </tr>
       <tr>
         <th>Performance (Website Loading Speed)</th>
         <td>✅ good (CSS/JS files are only freshly loaded when you update the query string)</td>
         <td>⚠️ slow (CSS/JS files are always freshly loaded, even if they haven't changed)</td>
+        <td>✅ good (CSS/JS files are only freshly loaded when you update your website)</td>
         <td>✅ good (files are only freshly loaded if they have changed)</td>
       </tr>
+      <!--
       <tr>
         <th>Immediacy</th>
         <td colspan="2">✅ up-to-date content always shown immediately<br />(no page refresh necessary for visitor)</td>
         <td>✅ up-to-date content always almost immediately (no page refresh necessary for visitor) <b>or</b> (if you prefer) up-to-date content only shown after page refresh / next page visit</td>
       </tr>
+      -->
       <tr>
         <th>Affected files</th>
-        <td colspan="2">⚠️ only CSS and JS files</td>
+        <td colspan="3">⚠️ only CSS and JS files</td>
         <td>✅ all files, incl. HTML, images, ... or optionally just specific file types, e.g. just CSS and JS files</td>
       </tr>
       <tr>
         <th>Browser Compatibility</th>
-        <td colspan="2">✅ works in all browsers</td>
+        <td colspan="3">✅ works in all browsers</td>
         <td>✅ service worker works in all modern browsers; otherwise query string versioning is used, which works in all browsers but only supports CSS and JS files</td>
       </tr>
       <tr>
         <th>CSS loads for users with deactived Javascript</th>
         <td>✅ yes</td>
-        <td>
-          🆗 yes, if you use the fallback (which reduces performance)
-
-          <small>/ ✅ yes, if you're using a static site generator (no fallback necessary)</small>
-        </td>
+        <td>🆗 yes, if you use the fallback (which reduces performance)</td>
+        <td>✅ yes</td>
         <td>🆗 yes, if you use the fallback (which reduces performance)</td>
       </tr>
       <tr>
@@ -88,6 +90,11 @@ toc: true
           <ul>
             <li>you want a simple, low-effort solution to serve the newest version of your CSS/JS immediately</li>
             <li>you don't mind a small impact on your website's performance</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>you are using a static site generator (such as Eleventy)</li>
           </ul>
         </td>
         <td>
@@ -131,6 +138,7 @@ toc: true
     <img src="../assets/img/coding/cache-clear-chrome4.png" alt="" style="max-width: 100%; border: 1px dotted" />
   </details>
   <br />
+  <!-- ALSO UPDATE THE INFO ON THE COMMON QUESTIONS PAGE -->
   <details>
     <summary>How to empty your cache in&nbsp;<b>Firefox</b></summary>
     <p>Open your website, and on the left side of the address bar click the lock icon, then click "Clear cookies and site data...", and confirm.</p>
@@ -194,6 +202,7 @@ toc: true
     <p>How this is done depends on the static site generator you are using.</p>
     <p>If you're using <b>Eleventy</b> (11ty): I described an easy way of automating cachebusting <a href="/coding/eleventy-tutorial#cachebusting">in my Eleventy tutorial</a>.</p>
   </details>
+  <p>We will be using JavaScript to load a new version of the files automatically.</p>
 
   <h3 data-step="1">CSS Fallback</h3>
   <p><b>Load your CSS file like you would usually do</b> to ensure that users that have JavaScript disabled can still see your styling.</p>
@@ -257,6 +266,24 @@ document.addEventListener("DOMContentLoaded", function () {
   <p>into this...:</p>
   <pre><code>console.log("Hello World");
 // your code here...</code></pre>
+
+  <br />
+  <p>
+    If your main JavaScript code is only sometimes loaded with the code above but not always (e.g. if you only want to use the cachebusting solution on some but not all of your pages) you can do
+    something like this to catch both possibilities:
+  </p>
+  <pre><code>if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
+    init();
+  });
+} else {
+  init();
+}
+
+function init() {
+  console.log("Hello World");
+  // your code here...
+}</code></pre>
 
   <h3 data-step="4">Testing</h3>
   <p>Test your pages to see if your CSS and JavaScript are loaded correctly.</p>

@@ -45,6 +45,10 @@ testingOnLocalhost: false
     {% endif %}
 
     <!-- CSS/JS + CACHEBUSTING -->
+    <script src="{{ nesting }}assets/js/main.js?nocache={{ page.date | slugify }}"></script>
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ page.date | slugify }}" />
+
+    <!-- CSS/JS + CACHEBUSTING 
     <link rel="stylesheet" href="{{ nesting }}assets/main.css" />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -69,7 +73,7 @@ testingOnLocalhost: false
         if (JS_FILE_PATH) loadScript(JS_FILE_PATH);
         if (CSS_FILE_PATH) loadCSS(CSS_FILE_PATH);
       });
-    </script>
+    </script>-->
   </head>
   <body class="{{ bodyClass }}" {% if freezeframe %}onload="new Freezeframe();" {% endif %}>
     <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript>
@@ -91,6 +95,7 @@ testingOnLocalhost: false
           <span>toggle font</span>
         </button>
       </div>
+
       {% endif %}
       <header>
         <div class="header-heading">
@@ -115,7 +120,7 @@ testingOnLocalhost: false
 
           <a class="aside-contest" href="/contest">
             <img src="{{ nesting }}assets/img/layout/trophy.gif" width="80" height="85" alt="Trophy" />
-            <div><b>Indie Web Contest</b><small>Vote now!</small></div>
+            <div><b>Indie Web Contest</b><small>Winners announced soon!</small></div>
           </a>
 
           <!-- ----------------- CHANGELOG ----------------- -->
@@ -278,7 +283,7 @@ testingOnLocalhost: false
 		</div>
 		-->
           <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>website hits</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
+            <div class="aside-stuff__heading"><span>hits & visitors</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
             <div class="aside-stats__stat-content">
               <center>
                 {% if not testingOnLocalhost %}<a href="https://www.free-website-hit-counter.com">
@@ -286,6 +291,11 @@ testingOnLocalhost: false
                 >{% endif %}
               </center>
               <small style="font-size: 0.8em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
+            </div>
+            <div id="current-visitors">
+              <a href="http://www.snazzyspace.com/generators/viewer-counter/" target="_blank">
+                {% if not testingOnLocalhost %}<img src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png" />{% endif %}
+              </a>
             </div>
           </div>
           <div class="aside-stats__stat">
@@ -320,7 +330,7 @@ testingOnLocalhost: false
           <ul>
             <li aria-label="listening to:">
               <img src="{{ nesting }}assets/img/layout/icon-music.png" alt="" title="listening to:" aria-hidden="true" />
-              <a href="https://www.last.fm/user/Petra1999" target="_blank" id="song">various</a>
+              <a href="https://open.spotify.com/user/11123584461?si=6992a0d462dd4dcd" target="_blank" id="song">various</a>
               <img src="{{ nesting }}assets/img/layout/equalizer.gif" alt="" aria-hidden="true" />
             </li>
             <li aria-label="watching:">
@@ -404,6 +414,11 @@ testingOnLocalhost: false
 
       <!-- ----------------- BACK TO TOP ----------------- -->
       <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
+
+      <!-- ----------------- BACK TO TOP ----------------- -->
+      <a href="https://open.spotify.com/user/11123584461?si=0f566c7506474b8e" target="_blank" id="corner-cat" title="follow me on spotify!!!"
+        ><img src="{{ nesting }}assets/img/layout/music-cat.gif" alt="cat listening to music"
+      /></a>
 
       <!-- ----------------- PROGRESS BAR ----------------- -->
       {% if progressBar %}

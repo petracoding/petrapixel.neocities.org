@@ -6,22 +6,45 @@ nesting: "../"
 
 <section>
   <h1>My Media Log <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" /></h1>
-  <p style="margin-bottom: 0">You can also follow me on these tracker sites:</p>
-  <ul style="margin-top: 0.5em" class="list-with-less-spacing">
-    <li><a href="https://letterboxd.com/Petra1999/" target="_blank" rel="nofollow">letterboxd</a> (movies)</li>
-    <li><a href="https://app.tvtime.com/user/33116783" target="_blank" rel="nofollow">tvtime</a> (tv shows)</li>
-    <li><a href="https://www.serializd.com/user/Petra1999/profile" target="_blank" rel="nofollow">serializd</a> (tv shows)</li>
-    <li><a href="https://anilist.co/user/Petra1999/" target="_blank" rel="nofollow">anilist</a> (anime)</li>
-    <li><a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank" rel="nofollow">goodreads</a> (books)</li>
-    <li><a href="https://www.last.fm/user/Petra1999" target="_blank" rel="nofollow">last.fm</a> (music)</li>
-    <li><a href="https://www.backloggd.com/u/Petra1999/" target="_blank" rel="nofollow">backloggd</a> (games)</li>
-  </ul>
+  <p style="margin-bottom: 0">
+    You can also follow me on these tracker sites: <span><a href="https://letterboxd.com/Petra1999/" target="_blank" rel="nofollow">letterboxd</a> (movies)</span>,
+    <span><a href="https://app.tvtime.com/user/33116783" target="_blank" rel="nofollow">tvtime</a> (tv shows)</span>,
+    <span><a href="https://www.serialized.com/user/Petra1999/profile" target="_blank" rel="nofollow">serialized</a> (tv shows)</span>,
+    <span><a href="https://anilist.co/user/Petra1999/" target="_blank" rel="nofollow">anilist</a> (anime)</span>,
+    <span><a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank" rel="nofollow">goodreads</a> (books)</span>,
+    <span><a href="https://www.last.fm/user/Petra1999" target="_blank" rel="nofollow">last.fm</a> (music)</span>,
+    <span><a href="https://www.backloggd.com/u/Petra1999/" target="_blank" rel="nofollow">backloggd</a> (games)</span>
+  </p>
 </section>
 
 <section>
   <h2>Reviews</h2>
-  <p>In 2025, I started writing these small reviews here. Click on the image to go the page of the show/game/movie/book/whatever.</p>
+  <p>
+    In 2025, I started writing these small reviews here. Click on the image to go the page of the show/game/movie/book/whatever. Rating are subject to change, and as you might notice I really love
+    giving 4 stars. (Ratings are out of 5 stars btw.)
+  </p>
   <br />
+
+  <h3>February 2025</h3>
+  <div class="media-reviews">
+    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-02" %}
+    <div class="media-review">
+      <div class="media-review__content">
+        <div class="media-review__image">
+          <a href="{{ review.link }}"><img src="{{ review.image }}" loading="lazy" width="150" /></a>
+        </div>
+        <div class="media-review__text">
+          <div class="media-review__title"><span>{{ review.title }}</span><br /><small>{{ review.type }}</small></div>
+          <p>{{ review.text }}</p>
+          <div class="media-review__rating">
+            My Rating:
+            <span class="media-review__stars">{{ review.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
 
   <h3>January 2025</h3>
   <div class="media-reviews">
@@ -94,6 +117,15 @@ nesting: "../"
 
 <div aria-hidden="true" style="display: none" id="media-log-content">
   <div data-year="2025">
+    <p>— <em>february </em></p>
+    <ul>
+      <li>∷ <strong>lost</strong> <em>(s1-2)</em> <span class="gend-link"></span></li>
+      <li>∷ squid game <em>(s2)</em> <span class="gend-link"></span></li>
+      <li>❝ six of crows, <em>leigh bardugo</em> <span class="gend-link"></span></li>
+      <li>ϟ viewfinder <span class="gend-link"></span></li>
+      <li>ϟ <strong>hello kitty island adventure</strong> <span class="gend-link"></span></li>
+      <li>ϟ <strong>roblox: dress to impress</strong> <span class="gend-link"></span></li>
+    </ul>
     <p>‍ ‍ ‍ — <em>january</em></p>
     <ul>
       <li>∷ <strong>jurassic world: chaos theory</strong> <span class="gend-link"></span></li>
@@ -393,6 +425,7 @@ nesting: "../"
           </li>
         </ul>
         <p>‍ ‍ ‍ ‍ ‍</p>
+
         <p>— <em>jan.</em></p>
 
         <ul>

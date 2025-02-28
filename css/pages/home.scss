@@ -44,12 +44,18 @@
     img,
     canvas {
       display: block;
+      position: relative;
       transition: transform 0.2s ease;
 
       &:hover,
       &:focus {
-        transform: scale(1.07);
+        transform: scale(1.2);
       }
+    }
+
+    &:hover,
+    &:focus {
+      z-index: 1;
     }
 
     &::after {
@@ -80,8 +86,8 @@
   > div {
     // padding: 1px;
     // width: 235px;
-    margin-right: 0.4em;
-    margin-bottom: 0.4em;
+    margin-right: 4px;
+    margin-bottom: 4px;
     filter: contrast(1.1);
 
     &::after {

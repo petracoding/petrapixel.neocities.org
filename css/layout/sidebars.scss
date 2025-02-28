@@ -404,6 +404,11 @@
     transition: transform 0.3s ease;
   }
 
+  small {
+    display: block;
+    line-height: 1;
+  }
+
   &:hover,
   &:focus {
     b {

@@ -77,6 +77,17 @@
   }
 }
 
+#current-visitors {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: -14px;
+  margin-right: -14px;
+
+  img {
+    opacity: 0.8;
+  }
+}
+
 .only-show-in-dark-mode {
   display: none;
 }
@@ -119,6 +130,25 @@
       border-color: var(--white);
       background: var(--pink);
     }
+  }
+}
+
+#corner-cat {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  cursor: $cursorPointer;
+
+  @media (max-width: 1400px) {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
   }
 }
 

@@ -2,6 +2,7 @@
 layout: petrapixel.njk
 title: "about the site"
 nesting: "../"
+lightbox: true
 ---
 
 <style>
@@ -37,21 +38,22 @@ nesting: "../"
   </p>
   <p>
     The code for the page is <a href="https://github.com/petracoding/petrapixel.neocities.org" target="_blank">available on GitHub</a>. Feel free to browse around, but please don't steal large chunks
-    of code (or judge me for bad code quality...). For credits please visit the <a href="/about/credits.html">credits page</a>. My website was created using webpack (static module bundler) and
-    eleventy (static site generator).
+    of code (or judge me for bad code quality...). For credits please visit the <a href="/about/credits.html">credits page</a>. My website is created using webpack (static module bundler) and eleventy
+    (static site generator).
   </p>
   <p>
     <b>The purpose</b> of this site is to serve me as a creative project as well as a showcase of my work (such as art, playlists, and so on), and all my blathering.
     <img aria-hidden="true" src="../assets/img/inline/smirk.gif" /> Some of the content is taken straight from my <a href="https://listography.com/petra1999">listography profile</a>, because that's
-    where I keep most of my stuff online.
+    where I keep most of my stuff online. Additionally, I want to share my web dev knowledge with beginners, which is why I make so many tutorials and guides!
   </p>
   <p>
     <b>The design</b> of this site is a deliberate protest against modern web design trends, because I fricking hate them. <img aria-hidden="true" src="../assets/img/inline/quiet.gif" /> Let's make
-    the web fun again! (If the font is hard to read for you click the "toggle font" button on the top right!)
+    the web fun again!
   </p>
+  <p>(If the main font is hard to read for you click the "toggle font" button on the top right!)</p>
   <p>
     You can follow me on neocities <a href="https://neocities.org/site/petrapixel" target="_blank">here</a>. <img aria-hidden="true" src="../assets/img/inline/happy.gif" /> I also have an
-    <a href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed">RSS Feed <img src="{{ nesting }}assets/img/layout/rss.png" alt="RSS" /></a>
+    <a href="/rss.xml" target="_blank" aria-label="RSS Feed" title="RSS Feed">RSS Feed <img src="{{ nesting }}assets/img/layout/rss.png" alt="RSS" /></a> &nbsp; in case you're into that stuff.
   </p>
   <!-- <div class="website-carbon">
             <p>
@@ -145,9 +147,9 @@ nesting: "../"
   <p>You won't find any autoplay music/video on my website.</p>
 </section>
 <section>
-  <h2>Accessibility <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" /></h2>
+  <h2>Accessibility</h2>
   <p>This site should be usable on any screen size, desktop and mobile, and should work in all browsers.</p>
-  <p>I have made an effort to make the site as accessible as possible for anyone, with any disability. I've used the following resources (list incomplete):</p>
+  <p>I have made an effort to make the site as accessible as possible for anyone, with any disability. I've used the following resources (amongst others):</p>
   <ul>
     <li><a href="https://pinkvampyr.leprd.space/accessiblenet/resources.php" target="_blank" rel="nofollow">Resources from the Accessible Net Directory</a></li>
     <li><a href="https://wave.webaim.org/" target="_blank" rel="nofollow">Accessibility Evaluation Tool</a></li>
@@ -177,35 +179,32 @@ nesting: "../"
   <h2>To Do List</h2>
   <p>Here's some stuff that I might or might not add to this site at some point!</p>
   <ul>
-    <li>spooky month media?</li>
-    <li>more page speed optimization</li>
-    <li>blog articles</li>
-    <li>noscript tags</li>
+    <li>blog articles...</li>
+    <li>more page speed optimization!</li>
     <li>fandom/ship stuff</li>
     <li>picrews (on about me page)</li>
-    <li>personality quizzes? or quizzes for media recs?</li>
+    <li>quizzes</li>
     <li>moodboards</li>
-    <li>my (bad) poetry</li>
     <li>more shrines!!! game grumps/nsp, dinosaurs, ... <b>WIP</b></li>
     <li>book quotes i like</li>
     <li>"sticker" page (drag-n-drop)</li>
     <li>webring (+code) <b>WIP</b></li>
-    <li>photobook?</li>
-    <li>better SEO</li>
+    <li><s>photobook?</s> felt like glorified instagram</li>
+    <li>spooky month media?</li>
+    <li>backup tutorial</li>
   </ul>
   <br />
-  <p>Tutorials, guides and resources I want to make:</p>
+  <p>Coding tutorials, guides and resources I want to make:</p>
   <ul>
     <li>glossary <b>WIP</b></li>
     <li>improve layout generator (+tutorial) (dark mode)</li>
     <li>page speed optimization <b>WIP</b></li>
-    <li>backup tutorial</li>
     <li>search bar tutorial</li>
     <li>free widget for comment section</li>
     <li>free widget for google search</li>
-    <li>templates!</li>
     <li>comprehension questions in tutorials <b>WIP</b></li>
-    <li>"roter Faden" through all tutorials</li>
+    <li>"roter Faden" through all tutorials ?</li>
+    <li>prebuilt templates!</li>
   </ul>
 </section>
 
@@ -223,11 +222,36 @@ nesting: "../"
 </section>
 <section>
   <h2>Old Looks</h2>
-  <p>(<a href="https://web.archive.org/web/20240101000000*/https://petrapixel.neocities.org" target="_blank">Wayback Machine</a>)</p>
+  <p>
+    You can use the <a href="https://web.archive.org/web/20240101000000*/https://petrapixel.neocities.org" target="_blank">Wayback Machine</a> to browse old version of my website if you're interested!
+    Here's my old button, too - please don't use it though:
+  </p>
+  <p><img src="../assets/img/old-looks/oldbutton.gif" /></p>
 
-  <p>Old button: <img src="../assets/img/etc/oldbutton.gif" /> (Please don't use it.)</p>
-  <!-- <br /> -->
-  <!-- <a href="../assets/img/etc/petrapixel3b.png" target="_blank" class="full-width-image"><img src="../assets/img/etc/petrapixel3b.png" />july 2024 (about page)</a> -->
+  <div class="multi-line-gallery multi-line-gallery--big lightbox-images">
+    <a data-fslightbox href="../assets/img/old-looks/halloween theme light.png" class="image">
+      <div>Halloween 2024 (Light)</div>
+      <img src="../assets/img/old-looks/halloween theme light.png" alt="An old screenshot of my site." />
+    </a>
+    <a data-fslightbox href="../assets/img/old-looks/halloween theme dark.png" class="image">
+      <div>Halloween 2024 (Dark)</div>
+      <img src="../assets/img/old-looks/halloween theme dark.png" alt="An old screenshot of my site." />
+    </a>
+    <a data-fslightbox href="../assets/img/old-looks/petrapixel3.png" class="image">
+      <div>July 2024</div>
+      <img src="../assets/img/old-looks/petrapixel3.png" alt="An old screenshot of my site." />
+    </a>
+    <a data-fslightbox href="../assets/img/old-looks/petrapixel1.png" class="image">
+      <div>April 2024</div>
+      <img src="../assets/img/old-looks/petrapixel1.png" alt="An old screenshot of my site." />
+    </a>
+    <a data-fslightbox href="../assets/img/old-looks/petrapixel3b.png" class="image">
+      <div>July 2024 (About Me Page)</div>
+      <img src="../assets/img/old-looks/petrapixel3b.png" alt="An old screenshot of my site." />
+    </a>
+  </div>
+
+  <!-- <a href="../assets/img/etc/petrapixel3b.png" target="_blank" class="full-width-image"><img src="../assets/img/etc/petrapixel3b.png" />july 2024 (about page)</a> 
   <hr />
 
   <b>Halloween 2024:</b>
@@ -238,5 +262,5 @@ nesting: "../"
 
   <b>Old:</b>
   <a href="../assets/img/etc/petrapixel3.png" target="_blank" class="full-width-image"><img src="../assets/img/etc/petrapixel3.png" />july 2024</a>
-  <a href="../assets/img/etc/petrapixel1.png" target="_blank" class="full-width-image"><img src="../assets/img/etc/petrapixel1.png" />april 2024</a>
+  <a href="../assets/img/etc/petrapixel1.png" target="_blank" class="full-width-image"><img src="../assets/img/etc/petrapixel1.png" />april 2024</a>-->
 </section>

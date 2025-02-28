@@ -22,8 +22,19 @@ h3.media-log__item {
 /* 
 Reviews
 */
+
+h3 + .media-reviews + h3 {
+  margin-top: 1.5em;
+  padding-top: 1.5em;
+  border-top: 2px dotted var(--green);
+}
+
 .media-review {
   margin-top: 3em;
+
+  &:first-child {
+    margin-top: 1.5em;
+  }
 
   @media (min-width: $md) {
     &:nth-child(even) {
@@ -82,6 +93,7 @@ Reviews
 
 .media-review__image {
   margin-top: 10px;
+  flex-shrink: 0;
 
   img {
     width: 150px;

@@ -1,0 +1,45 @@
+.indie-web-contest-winners {
+  display: flex;
+}
+
+.indie-web-contest-winners__winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  flex-grow: 1;
+}
+
+.indie-web-contest-winners__place {
+  font-size: 2em;
+}
+
+.indie-web-contest-winners__link {
+  margin: 0.5em 0;
+  font-size: 1.5em;
+}
+
+.indie-web-contest-winners__screenshot {
+  overflow: hidden;
+  display: none; // TEMP
+
+  img {
+    position: relative;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .indie-web-contest-winners {
+    flex-direction: column;
+  }
+}
