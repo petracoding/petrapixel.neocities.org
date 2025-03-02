@@ -22,12 +22,12 @@
 
 .indie-web-contest-winners__screenshot {
   overflow: hidden;
-  display: none; // TEMP
 
   img {
     position: relative;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    border: 1px dotted;
   }
 
   &:hover,

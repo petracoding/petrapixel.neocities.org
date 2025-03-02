@@ -38,6 +38,7 @@ nesting: "../"
         <button class="rec-filters__button" data-filter=".neighbor--friend">friends</button>
         <button class="rec-filters__button" data-filter=".neighbor--neighbor">neighbors</button>
         <button class="rec-filters__button" data-filter=".neighbor--inspiration">inspiration</button>
+        <button class="rec-filters__button" data-filter=".neighbor--winner">contest winners</button>
         <!-- <button class="rec-filters__button" data-filter=".neighbor--resources">resources</button> -->
       </div>
     </div>
@@ -50,7 +51,7 @@ nesting: "../"
     <a
       href="{{ site.link }}"
       title="{{ site.title }}"
-      class="neighbor {% if site.friend %}neighbor--friend{% endif %} {% if site.neighbor %}neighbor--neighbor{% endif %} {% if site.resources %}neighbor--resources{% endif %} {% if site.inspiration %}neighbor--inspiration{% endif %}"
+      class="neighbor {% if site.friend %}neighbor--friend{% endif %} {% if site.neighbor %}neighbor--neighbor{% endif %} {% if site.resources %}neighbor--resources{% endif %} {% if site.inspiration %}neighbor--inspiration{% endif %} {% if site.winner %}neighbor--winner{% endif %}"
     >
       <img src="{{ site.image | prepareImageUrl }}" alt="{{ site.title }}" width="88" height="31" />
     </a>

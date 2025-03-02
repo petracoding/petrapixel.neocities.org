@@ -1,5 +1,14 @@
 [
   {
+    "title": "Tanja's Treehouse",
+    "link": "https://tanjas-treehouse.neocities.org/",
+    "image": "tanjas-treehouse.gif",
+    "linksBackToMe": true,
+    "neighbor": true,
+    "friend": true,
+    "hide": "WIP"
+  },
+  {
     "title": "Florrie's Garden",
     "link": "https://florrie.ichi.city/",
     "image": "florrie.gif",
@@ -99,8 +108,7 @@
     "title": "faintlymacabre",
     "image": "faintlymacabre.gif",
     "linksBackToMe": false,
-    "neighbor": true,
-    "hide": "CURRENTLY IN CONSTRUCTION"
+    "neighbor": true
   },
   {
     "link": "https://tthumbelina.neocities.org/",
@@ -317,5 +325,59 @@
     "neighbor": false,
     "inspiration": true,
     "linksBackToMe": false
+  },
+  {
+    "link": "https://abyssbloom.neocities.org/",
+    "title": "Abyss Bloom",
+    "image": "abyssbloom.png",
+    "neighbor": false,
+    "inspiration": false,
+    "linksBackToMe": false,
+    "winner": true
+  },
+  {
+    "link": "https://re-nata.neocities.org/",
+    "title": "Renata's Laboratory",
+    "image": "re-nata.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "linksBackToMe": false,
+    "winner": true
+  },
+  {
+    "link": "https://yatagarasu.nekoweb.org/",
+    "title": "Yatagarasu",
+    "image": "yatagarasu.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "linksBackToMe": false,
+    "winner": true
+  },
+  {
+    "link": "https://lockheartlove.netlify.app/",
+    "title": "Lockheart Love",
+    "image": "lockheartlove.png",
+    "neighbor": false,
+    "inspiration": false,
+    "linksBackToMe": false,
+    "winner": true
+  },
+  {
+    "link": "https://featherfae.neocities.org/",
+    "title": "Faerie Glen",
+    "image": "featherfae.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "linksBackToMe": false,
+    "winner": true
+  },
+  {
+    "link": "https://starry-knight.neocities.org/",
+    "title": "Starry's Grove",
+    "image": "starry-knight.png",
+    "neighbor": false,
+    "inspiration": false,
+    "linksBackToMe": false,
+    "winner": true
   }
 ]

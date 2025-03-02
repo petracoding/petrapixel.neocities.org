@@ -1,5 +1,6 @@
 [
-  { "date": "2025-02-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-03-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-03-02", "text": "Indie Web Contest Winners ANNOUNCED!", "link": "/contest" },
   { "date": "2025-02-27", "text": "Media reviews for February are up!", "link": "/about/media-log" },
   { "date": "2025-02-23", "text": "Guide about cachebusting is up. It's still WIP though!", "link": "/coding/cachebusting" },
   { "date": "2025-02-18", "text": "Lots of small updates, and I expanded my 'VSCode Setup' page!", "link": "/coding/my-setup" },
