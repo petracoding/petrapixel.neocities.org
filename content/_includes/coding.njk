@@ -51,8 +51,8 @@ testingOnLocalhost: false
     {% endif %}
 
     <!-- CSS/JS + CACHEBUSTING -->
-    <script src="{{ nesting }}assets/js/main.js?nocache={{ page.date | slugify }}"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ page.date | slugify }}" />
+    <script src="{{ nesting }}assets/js/main.js?nocache={{ page.date | slugify }}1"></script>
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ page.date | slugify }}1" />
   </head>
   <body class="{{ bodyClass }} coding-page-layout" {% if freezeframe %}onload="new Freezeframe();" {% endif %}>
     <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript>
