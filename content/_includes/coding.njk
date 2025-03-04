@@ -13,6 +13,10 @@ testingOnLocalhost: false
     />
     {% endif %}
 
+    <!-- CSS/JS + CACHEBUSTING -->
+    <script src="{{ nesting }}assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css{{ nocache }}" />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ nesting }}assets/img/favicon.ico" rel="icon" type="image/x-icon" />
@@ -49,10 +53,6 @@ testingOnLocalhost: false
       }
     </style>
     {% endif %}
-
-    <!-- CSS/JS + CACHEBUSTING -->
-    <script src="{{ nesting }}assets/js/main.js?nocache={{ page.date | slugify }}1"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ page.date | slugify }}1" />
   </head>
   <body class="{{ bodyClass }} coding-page-layout" {% if freezeframe %}onload="new Freezeframe();" {% endif %}>
     <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript>

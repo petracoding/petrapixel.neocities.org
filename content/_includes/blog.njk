@@ -13,6 +13,10 @@ testingOnLocalhost: false
     />
     {% endif %}
 
+    <!-- CSS/JS + CACHEBUSTING -->
+    <script src="{{ nesting }}assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css{{ nocache }}" />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ nesting }}assets/img/favicon.ico" rel="icon" type="image/x-icon" />
@@ -35,10 +39,6 @@ testingOnLocalhost: false
       gtag("config", "G-J64TL8KVTJ");
     </script>
     {% endif %}
-
-    <!-- CSS/JS + CACHEBUSTING -->
-    <script src="{{ nesting }}assets/js/main.js?nocache={{ page.date | slugify }}"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ page.date | slugify }}" />
   </head>
   <body class="{{ bodyClass }} blog-page-layout">
     <noscript id="no-js-warning">Please enable JavaScript to to be able to use all functions of this website!</noscript>

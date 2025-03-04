@@ -29,8 +29,8 @@
     "title": "Latte Lavanda",
     "image": "https://files.catbox.moe/8r80x1.png",
     "link": "https://latte-lavanda.neocities.org/",
-    "linksBackToMe": false,
-    "neighbor": false,
+    "linksBackToMe": true,
+    "neighbor": true,
     "friend": true,
     "inspiration": false
   },
@@ -330,18 +330,18 @@
     "link": "https://abyssbloom.neocities.org/",
     "title": "Abyss Bloom",
     "image": "abyssbloom.png",
-    "neighbor": false,
-    "inspiration": false,
-    "linksBackToMe": false,
+    "neighbor": true,
+    "inspiration": true,
+    "linksBackToMe": true,
     "winner": true
   },
   {
     "link": "https://re-nata.neocities.org/",
     "title": "Renata's Laboratory",
     "image": "re-nata.gif",
-    "neighbor": false,
+    "neighbor": true,
     "inspiration": false,
-    "linksBackToMe": false,
+    "linksBackToMe": true,
     "winner": true
   },
   {
@@ -357,9 +357,9 @@
     "link": "https://lockheartlove.netlify.app/",
     "title": "Lockheart Love",
     "image": "lockheartlove.png",
-    "neighbor": false,
-    "inspiration": false,
-    "linksBackToMe": false,
+    "neighbor": true,
+    "inspiration": true,
+    "linksBackToMe": true,
     "winner": true
   },
   {
@@ -375,9 +375,9 @@
     "link": "https://starry-knight.neocities.org/",
     "title": "Starry's Grove",
     "image": "starry-knight.png",
-    "neighbor": false,
+    "neighbor": true,
     "inspiration": false,
-    "linksBackToMe": false,
+    "linksBackToMe": true,
     "winner": true
   }
 ]

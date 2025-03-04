@@ -16,7 +16,7 @@ module.exports = function (eleventyConfig) {
   // This defines which files will be copied
   eleventyConfig.setTemplateFormats(["html", "njk", "txt", "js", "css", "xml", "json"]);
 
-  // Custom Filters
+  // Custom Filter
   eleventyConfig.addFilter("prepareImageUrl", function (str) {
     if (str.includes("://")) return str;
     return "../assets/img/links/websites/" + str;

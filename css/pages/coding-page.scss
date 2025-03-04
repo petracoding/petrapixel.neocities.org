@@ -169,6 +169,7 @@
           flex-grow: 0;
           min-width: 15px;
           text-align: center;
+          pointer-events: none;
 
           &.fa-code,
           &.fa-city,

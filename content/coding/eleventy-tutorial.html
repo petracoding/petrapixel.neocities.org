@@ -296,7 +296,7 @@ For Loop:
 </section>
 
 <section>
-  <h2 id="data">Using Data (Optional)</h2>
+  <h2 id="data">Using Data</h2>
   <p>The variables you use can come from several different data sources, such as:</p>
   <ul>
     <li>that very file (<code>{% raw %}{% set myText = "Hello World!" %}{% endraw %}</code>)</li>
@@ -312,7 +312,7 @@ For Loop:
   <blockquote class="help">
     If you don't know JSON syntax: don't worry. It's pretty much self-explanatory if you know JavaScript. As usual, <code>[]</code> are arrays and <code>{}</code> are objects.
   </blockquote>
-  <p>Example: <code>changelog.json</code></p>
+  <p>Example: <code>_data/changelog.json</code></p>
   <pre><code>[
   { "date": "2024-12-07", "text": "Created page" },
   { "date": "2024-12-08", "text": "Bugfixes" },
@@ -327,6 +327,18 @@ For Loop:
 </code></pre>
   <p>(This would output a list of all objects in the <code>changelog.json</code> file.)</p>
   <p>There are also other ways to get data. If you're interested read <a target="_blank" href="https://www.11ty.dev/docs/data/#sources-of-data">the documentation</a>.</p>
+
+  <hr />
+  <h3 id="cachebusting">Cachebusting</h3>
+
+  <p><b>Tip:</b> For cachebusting, instead of manually updating the <code>?nocache=</code> parameter, you can add the current date and time to your files like so:</p>
+  <pre><code class="language-html">&lt;script src=&quot;example.js{% raw %}{{ nocache }}{% endraw %}&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;example.css{% raw %}{{ nocache }}{% endraw %}&quot; /&gt;</code
+  ></pre>
+  <p><code>{% raw %}{{ nocache }}{% endraw %}</code> will render something like <code>?nocache=123</code>, 123 being the current timestamp.</p>
+  <p>For this to work you need to create a data file: <code>_data/nocache.js</code> only has one line:</p>
+  <pre><code>module.exports = () => "?nocache=" + Date.now();</code></pre>
+  <p>More info on cachebusting <a href="/coding/cachebusting">here</a>.</p>
 </section>
 
 <section>
@@ -350,14 +362,6 @@ For Loop:
     the next step.
   </p>
   <p id="cachebusting">Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
-
-  <blockquote class="tip">
-    <p><b>Tip:</b> For cachebusting, instead of manually updating the parameter, you can add the current date and time to your files like so:</p>
-    <pre><code class="language-html">&lt;script src=&quot;example.js?nocache={% raw %}{{ page.date | slugify }}{% endraw %}&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;example.css?nocache={% raw %}{{ page.date | slugify }}{% endraw %}&quot; /&gt;</code
-  ></pre>
-    <p>More info on cachebusting <a href="/coding/cachebusting">here</a>.</p>
-  </blockquote>
 
   <h3 id="page">Step 2: The page</h3>
   <p>Whether your page file is an <code>.html</code> or a <code>.njk</code> file doesn't matter - You can use templates in the same way.</p>

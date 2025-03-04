@@ -13,6 +13,10 @@ testingOnLocalhost: false
     />
     {% endif %}
 
+    <!-- CSS/JS + CACHEBUSTING  TO DO FIX-->
+    <script src="{{ nesting }}assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css{{ nocache }}" />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ nesting }}assets/img/favicon.ico" rel="icon" type="image/x-icon" />
@@ -43,10 +47,6 @@ testingOnLocalhost: false
       }
     </style>
     {% endif %}
-
-    <!-- CSS/JS + CACHEBUSTING  TO DO FIX-->
-    <script src="{{ nesting }}assets/js/main.js?nocache={{ page.date | slugify }}1"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css?nocache={{ page.date | slugify }}1" />
 
     <!-- CSS/JS + CACHEBUSTING 
     <link rel="stylesheet" href="{{ nesting }}assets/main.css" />
@@ -164,6 +164,7 @@ testingOnLocalhost: false
             <form method="post" action="https://poll.pollcode.com/88435277">
               <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
                 <div style="padding: 2px 0px 4px 2px"><strong>what should i call my webring for sites with indie web resources/tutorials/layouts/etc?</strong></div>
+
                 <input type="radio" name="answer" value="1" id="answer884352771" style="float: left" /><label for="answer884352771" style="float: left; width: 150px">dev den</label>
                 <div style="clear: both; height: 2px"></div>
                 <input type="radio" name="answer" value="2" id="answer884352772" style="float: left" /><label for="answer884352772" style="float: left; width: 150px">code collective</label>
@@ -351,7 +352,7 @@ testingOnLocalhost: false
             <li aria-label="obsessed with:">
               <img src="{{ nesting }}assets/img/layout/icon-heart.png" alt="" title="obsessed with:" aria-hidden="true" />
               <span
-                >-
+                >60s-90s rock music
                 <!--<span style="font-family:sans-serif;font-size:0.9em">♡</span>--></span
               >
             </li>
