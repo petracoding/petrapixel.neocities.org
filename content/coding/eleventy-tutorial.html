@@ -213,8 +213,9 @@ eleventyConfig.addTransform("htmlmin", function (content) {
   </p>
   <p>(Re-)start eleventy, and it should already work! (You should be able to see that the generated HTML files now have a smaller file size.)</p>
   <p>
-    If you get an error it might be because you have errors in your HTML code, such as spare &lt;s or &gt;s. Once you fix them all it should work. If you want a part of your code to be ignored by the
-    minifier completely, add <code>&lt;!-- htmlmin:ignore --&gt;</code> before and after it, like so:
+    If you get an error it might be because you have errors in your HTML code, such as spare &lt;s or &gt;s. Once you fix them all (e.g. by
+    <a href="https://emn178.github.io/online-tools/html_encode.html" target="_blank">encoding them</a>) it should work. If you want a part of your code to be ignored by the minifier completely, add
+    <code>&lt;!-- htmlmin:ignore --&gt;</code> before and after it, like so:
   </p>
   <pre><code>&lt;!-- htmlmin:ignore --&gt;
 	&lt;p&gt;Hewwoo  ⸜(｡&gt; ᵕ &lt; )⸝♡ &lt;/p&gt;

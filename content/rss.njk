@@ -21,7 +21,7 @@ permalink: "rss.xml"
 			<title>{{ changelogEntry.text }}</title>
 			<link>https://petrapixel.neocities.org{{ changelogEntry.link or "/" }}</link>
 			<guid>https://petrapixel.neocities.org{{ changelogEntry.link or "/" }}</guid>
-			<pubDate>{{ changelogEntry.date | dateToRFC822Format }}</pubDate>
+			<pubDate>{{ changelogEntry.date }}</pubDate>
 		</item>{% endif %}
 	{% endfor %}
 </channel>

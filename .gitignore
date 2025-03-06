@@ -1,7 +1,3 @@
-# Always ignore:
-/public/layout-generator/test
-notes.txt
-
 # WIP pages:
 /public/layouts
 /public/resources/templates.html
@@ -14,6 +10,12 @@ notes.txt
 # Ignore these files because neocities doesn't allow them:
 *.cur
 *.mp3
+
+# Always ignore:
+/public/layout-generator/test
+notes.txt
+img-Verknüpfung.lnk
+
 
 # -----------------------------------------------------------------
 # .gitignore
