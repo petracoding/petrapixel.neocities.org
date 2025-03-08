@@ -706,9 +706,11 @@
 
         small {
           font-weight: normal;
-          font-size: 0.7em;
-          letter-spacing: -0.7px;
-          opacity: 0.75;
+          font-size: 0.9em;
+          letter-spacing: -0.3px;
+          opacity: 0.8;
+          line-height: 1;
+          display: block;
         }
       }
     }
