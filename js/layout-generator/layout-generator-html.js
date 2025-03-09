@@ -33,7 +33,7 @@ function getHead() {
     <meta content="My personal website!" name="description" />
 
     <!-- Setting character encoding and viewport size. Do not remove. -->
-    <meta content="utf-8" http-equiv="encoding" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FavIcon (small image in tab), change to any image you want: -->
