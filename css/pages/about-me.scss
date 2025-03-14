@@ -243,9 +243,16 @@
     display: inline-block;
     padding: 10px;
     max-width: 50%;
+    transition: 0.3s ease-out;
 
     @media (max-width: $md) {
       max-width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.3);
+      z-index: 1;
+      border-radius: 30px;
     }
   }
 }
@@ -313,7 +320,7 @@
 }
 
 .about-me-page-sns-coding {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 /**
@@ -361,7 +368,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.2s linear, filter 0.2s linear;
-    filter: brightness(1.4) contrast(0.8) sepia(0.15) hue-rotate(-30deg);
+    filter: brightness(1.1) contrast(0.9) sepia(0.25) hue-rotate(-30deg);
   }
 }
 

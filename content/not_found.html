@@ -6,18 +6,36 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="assets/img/favicon.ico" rel="icon" type="image/x-icon" />
     <meta name="robots" content="noindex, nofollow" />
 
-    <!-- i know this terrible. i don't care.-->
-    <script src="assets/js/main.js?nocache=20241127"></script>
-    <link rel="stylesheet" href="assets/main.css?nocache=20241127" />
-    <script src="../assets/js/main.js?nocache=20241127"></script>
-    <link rel="stylesheet" href="../assets/main.css?nocache=20241127" />
-    <script src="../../assets/js/main.js?nocache=20241127"></script>
-    <link rel="stylesheet" href="../../assets/main.css?nocache=20241127" />
-    <script src="../../../assets/js/main.js?nocache=20241127"></script>
-    <link rel="stylesheet" href="../../../assets/main.css?nocache=20241127" />
+    <!-- the not_found page can be in any depth, so we use fixed URLs: -->
+    <link href="https://petrapixel.neocities.org/assets/img/favicon.ico" rel="icon" type="image/x-icon" />
+    <script src="https://petrapixel.neocities.org/assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="https://petrapixel.neocities.org/assets/main.css{{ nocache }}" />
+
+    <!-- also make sure the font is here: -->
+    <style>
+      @font-face {
+        font-family: "rainyhearts";
+        src: url("https://petrapixel.neocities.org/assets/css/fonts/rainyhearts.woff2") format("woff2"), url("https://petrapixel.neocities.org/assets/css/fonts/rainyhearts.woff") format("woff"),
+          url("https://petrapixel.neocities.org/assets/css/fonts/rainyhearts.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <!-- for local testing. i know this terrible. i don't care.-->
+    <!-- 
+    <script src="assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="assets/main.css{{ nocache }}" />
+    <script src="../assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="../assets/main.css{{ nocache }}" />
+    <script src="../../assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="../../assets/main.css{{ nocache }}" />
+    <script src="../../../assets/js/main.js{{ nocache }}"></script>
+    <link rel="stylesheet" href="../../../assets/main.css{{ nocache }}" />
+    -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"></script>

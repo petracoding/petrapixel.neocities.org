@@ -74,6 +74,7 @@ function initRandomFactAboutMe() {
         "I still have the Firefox bookmarks from when I was 11. I just always keep them when I switch devices.",
         "I've only broken a phone once. (And I'm still pissed about it.)",
         "I listen to a ton of comedy music, it always cheers me up!",
+        "I always wear socks with sandals!",
       ],
       currentItem
     );
@@ -95,8 +96,8 @@ function initRandomFavorite() {
         ["pokémon", "mew, oddish"],
         ["audio book narrator", "stephen fry"],
         ["animal", "cats, dogs, sloths, snakes, small bird"],
-        ["card game", "black stories, dixit, koi-koi"],
-        ["board games", "concept"],
+        ["card games", "black stories, dixit, koi-koi"],
+        ["board game", "concept"],
         ["snack", "potato chips with rosemary"],
         ["scent", "wooden furniture"],
         ["holiday", "new year's eve"],
