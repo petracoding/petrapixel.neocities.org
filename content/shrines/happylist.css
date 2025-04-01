@@ -1,0 +1,63 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #c85f5f;
+  animation: bgColor 50s infinite linear;
+}
+
+main {
+  color: black;
+  padding: 50px;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  display: none;
+}
+
+ul {
+  font-size: 70px;
+  list-style: none;
+  padding-left: 0;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 0;
+  line-height: 1;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+@keyframes bgColor {
+  10% {
+    background-color: #c85f5f;
+  }
+  20% {
+    background-color: #f2a154;
+  }
+  30% {
+    background-color: #ffff51;
+  }
+  40% {
+    background-color: #c1f989;
+  }
+  50% {
+    background-color: #93e3fd;
+  }
+  60% {
+    background-color: #6b6bfd;
+  }
+  70% {
+    background-color: #d281fa;
+  }
+  80% {
+    background-color: #f76db7;
+  }
+  90% {
+    background-color: #f3bbff;
+  }
+}

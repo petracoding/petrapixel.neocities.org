@@ -25,6 +25,27 @@ nesting: "../"
   </p>
   <br />
 
+  <h3>March 2025</h3>
+  <div class="media-reviews">
+    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-03" %}
+    <div class="media-review">
+      <div class="media-review__content">
+        <div class="media-review__image">
+          <a href="{{ review.link }}"><img src="{{ review.image }}" loading="lazy" width="150" /></a>
+        </div>
+        <div class="media-review__text">
+          <div class="media-review__title"><span>{{ review.title }}</span><br /><small>{{ review.type }}</small></div>
+          <p>{{ review.text }}</p>
+          <div class="media-review__rating">
+            My Rating:
+            <span class="media-review__stars">{{ review.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
+
   <h3>February 2025</h3>
   <div class="media-reviews">
     {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-02" %}
@@ -117,24 +138,42 @@ nesting: "../"
 
 <div aria-hidden="true" style="display: none" id="media-log-content">
   <div data-year="2025">
+    <p>— <em>march </em></p>
+    <ul>
+      <li>∷ <strong>lost</strong> <em>(s2-3)</em></li>
+      <li>⋆ alex strangelove</li>
+      <li>⋆ detective pikachu ↺</li>
+      <li>⋆ joy</li>
+      <li>⋆ mickey 17 ﾐ</li>
+      <li>⋆ scoop</li>
+      <li>⋆ the girl next door</li>
+      <li>▫ kam sandwich</li>
+      <li>❝ <strong>cloud atlas,</strong> <em>david mitchell</em></li>
+      <li>❝ <strong>six of crows,</strong> <em>leigh bardugo</em></li>
+      <li>❝ the bell jar, <em>slyvia plath</em></li>
+      <li>๑ <strong>alte bekannte</strong></li>
+      <li>ϟ hello kitty island adventure</li>
+      <li>ϟ legend of zelda: tears of the kingdom</li>
+      <li>ϟ plants vs zombies</li>
+    </ul>
     <p>— <em>february </em></p>
     <ul>
-      <li>∷ <strong>lost</strong> <em>(s1-2)</em> <span class="gend-link"></span></li>
-      <li>∷ squid game <em>(s2)</em> <span class="gend-link"></span></li>
-      <li>❝ six of crows, <em>leigh bardugo</em> <span class="gend-link"></span></li>
-      <li>ϟ viewfinder <span class="gend-link"></span></li>
-      <li>ϟ <strong>hello kitty island adventure</strong> <span class="gend-link"></span></li>
-      <li>ϟ <strong>roblox: dress to impress</strong> <span class="gend-link"></span></li>
+      <li>∷ <strong>lost</strong> <em>(s1-2)</em></li>
+      <li>∷ squid game <em>(s2)</em></li>
+      <li>❝ six of crows, <em>leigh bardugo</em></li>
+      <li>ϟ viewfinder</li>
+      <li>ϟ <strong>hello kitty island adventure</strong></li>
+      <li>ϟ <strong>roblox: dress to impress</strong></li>
     </ul>
     <p>‍ ‍ ‍ — <em>january</em></p>
     <ul>
-      <li>∷ <strong>jurassic world: chaos theory</strong> <span class="gend-link"></span></li>
-      <li>∷ ratched <span class="gend-link"></span></li>
-      <li>∷ squid game <em>(s2)</em> <span class="gend-link"></span></li>
-      <li>∷ <strong>abbott elementary</strong> <em>(s1-3)</em> <span class="gend-link"></span></li>
-      <li>⋆ nosferatu ﾐ <span class="gend-link"></span></li>
-      <li>❝ <strong>my secret garden,</strong> <em>nancy friday</em> <span class="gend-link"></span></li>
-      <li>ϟ <strong>subnautica</strong> <span class="gend-link"></span></li>
+      <li>∷ <strong>jurassic world: chaos theory</strong></li>
+      <li>∷ ratched</li>
+      <li>∷ squid game <em>(s2)</em></li>
+      <li>∷ <strong>abbott elementary</strong> <em>(s1-3)</em></li>
+      <li>⋆ nosferatu ﾐ</li>
+      <li>❝ <strong>my secret garden,</strong> <em>nancy friday</em></li>
+      <li>ϟ <strong>subnautica</strong></li>
     </ul>
   </div>
   <div data-year="2024">
