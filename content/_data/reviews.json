@@ -1,12 +1,30 @@
 [
   {
     "title": "EXAMPLE",
-    "month": "2025-03",
+    "month": "2025-05",
     "type": "TODOADDTYPE",
     "rating": "⭐⭐⭐⭐⭐ ½",
     "image": "IMAGEURL",
     "link": "LINKURL",
     "text": ""
+  },
+   {
+    "title": "Come as You Are",
+    "month": "2025-04",
+    "type": "Book by Emily Nagoski",
+    "rating": "⭐⭐⭐⭐",
+    "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421037685i/22609341.jpg",
+    "link": "https://www.goodreads.com/book/show/22609341-come-as-you-are",
+    "text": "A book about (mostly women's) sexuality. Not quite as... 'hands on' (so to speak) as I expected it to be, but it really was good! Definitely more a self-help book than science though, especially in the second half, which is mostly just the message 'you're normal, love yourself the way you are' repeated in different forms to really drive the point home. To me, where the book shines is the beginning, as it gives a general overview of anatomy and what is normal (spoiler: almost everything)."
+  },
+   {
+    "title": "To All the Boys I've Loved Before",
+    "month": "2025-04",
+    "type": "Movie(s)",
+    "rating": "⭐⭐⭐⭐ ½",
+    "image": "https://a.ltrbxd.com/resized/film-poster/3/9/7/9/4/2/397942-to-all-the-boys-i-ve-loved-before-0-2000-0-3000-crop.jpg?v=e623dcf4f3",
+    "link": "https://letterboxd.com/film/to-all-the-boys-ive-loved-before/",
+    "text": "I watched this because I desperately needed to turn off my brain and I thought this would be one of those shitty Netflix teen romance movies à la The Kissing Booth. I was positively surprised when I actually really enjoyed this movie! So much, in fact, that I watched both sequels in the next 24 hours. (The sequels are good, but not as good as the first one.) Basically, it's got a really good story, a likeable main character and love interest (even though I had a bit of prejudice against Noah Centineo I ended up really loving his performance and character!) and good acting. If you're looking for something light and sweet, and like the 'fake dating' trope, this one's for you!"
   },
    {
     "title": "The Bell Jar",

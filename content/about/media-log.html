@@ -25,6 +25,27 @@ nesting: "../"
   </p>
   <br />
 
+  <h3>April 2025</h3>
+  <div class="media-reviews">
+    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-04" %}
+    <div class="media-review">
+      <div class="media-review__content">
+        <div class="media-review__image">
+          <a href="{{ review.link }}"><img src="{{ review.image }}" loading="lazy" width="150" /></a>
+        </div>
+        <div class="media-review__text">
+          <div class="media-review__title"><span>{{ review.title }}</span><br /><small>{{ review.type }}</small></div>
+          <p>{{ review.text }}</p>
+          <div class="media-review__rating">
+            My Rating:
+            <span class="media-review__stars">{{ review.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
+
   <h3>March 2025</h3>
   <div class="media-reviews">
     {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-03" %}

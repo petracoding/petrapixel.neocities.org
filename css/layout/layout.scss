@@ -82,11 +82,12 @@
   margin-top: 1em;
   margin-bottom: -14px;
   margin-right: -14px;
+  transform: scale(1.1);
 
   // TEMP
-  height: 1px;
-  overflow: hidden;
-  pointer-events: none;
+  // height: 1px;
+  // overflow: hidden;
+  // pointer-events: none;
 
   img {
     opacity: 0.8;

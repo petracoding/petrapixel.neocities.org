@@ -95,6 +95,10 @@
     filter: brightness(10);
   }
 
+  .aside-stats__stat-content img[src*="websiteout"] {
+    filter: brightness(0.75) contrast(1.1) hue-rotate(10deg);
+  }
+
   .aside-chatbox iframe[src*="cbox"],
   iframe[src*="cbox.ws"] {
     filter: invert(1) hue-rotate(180deg) saturate(0.8);

@@ -1,5 +1,6 @@
 [
-  { "date": "2025-04-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-05-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-04-30", "text": "April's media reviews are here! Also: New hit counter because the old one broke!", "link": "/about/media-log" },
   { "date": "2025-04-01", "text": "March's media reviews are here!", "link": "/about/media-log" },
   { "date": "2025-03-06", "text": "New page: My Game Dev Journey - learning how to use Godot", "link": "/coding/game-dev-journey" },
   { "date": "2025-03-02", "text": "Indie Web Contest Winners ANNOUNCED!", "link": "/contest" },
