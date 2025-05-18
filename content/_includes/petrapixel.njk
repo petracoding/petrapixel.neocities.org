@@ -350,7 +350,7 @@ testingOnLocalhost: false
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
               <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank"
-                >"A Curious History of Sex" by Kate Lister
+                >"Polysecure" by Jessica Fern
                 <!--<span style="font-family:sans-serif;font-size:0.9em">↺</span>--></a
               >
             </li>
@@ -463,9 +463,14 @@ testingOnLocalhost: false
           <br />
           <center>
             <small>Visitors:</small>
-            {% if not testingOnLocalhost %}<a href="https://www.free-website-hit-counter.com">
-              <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" />
-            </a>
+            {% if not testingOnLocalhost %}
+
+            <!-- new -->
+            <script type="text/javascript" src="https://counter.websiteout.com/js/30/0/128970/0"></script>
+
+            <!-- old (broke at 128970 hits) -->
+            <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a>
+
             {% endif %}
           </center>
           <br />

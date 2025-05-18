@@ -252,9 +252,15 @@ testingOnLocalhost: false
           <div class="aside-stuff__heading"><span>hits & visitors</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
           <div class="aside-stats__stat-content">
             <center>
-              {% if not testingOnLocalhost %}<a href="https://www.free-website-hit-counter.com">
-                <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" /> </a
-              >{% endif %}
+              {% if not testingOnLocalhost %}
+
+              <!-- new -->
+              <script type="text/javascript" src="https://counter.websiteout.com/js/30/0/128970/0"></script>
+
+              <!-- old (broke at 128970 hits) -->
+              <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a>
+
+              {% endif %}
             </center>
             <small style="font-size: 0.8em; letter-spacing: -0.4px; text-align: center; display: block">(might not be entirely accurate)</small>
           </div>
