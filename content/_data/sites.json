@@ -379,5 +379,14 @@
     "inspiration": false,
     "linksBackToMe": true,
     "winner": true
+  },
+  {
+    "link": "https://angs-corner.nekoweb.org/",
+    "title": "ang's corner",
+    "image": "https://i.imgur.com/rd7l8WZ.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "linksBackToMe": true,
+    "winner": false
   }
 ]

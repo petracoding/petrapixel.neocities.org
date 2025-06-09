@@ -21,6 +21,20 @@
     section {
       margin-bottom: 2em;
     }
+
+    @media (max-width: $md) {
+      table {
+        display: block;
+        max-width: calc(100vw - 2em - 270px);
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: $sm) {
+      table {
+        max-width: calc(100vw - 2em - 23px);
+      }
+    }
   }
 
   .aside {
