@@ -82,7 +82,9 @@ testingOnLocalhost: false
       </header>
       <nav class="coding-navigation" data-nosnippet="true">
         <div class="coding-navigation-category" aria-label="Tools">
-          <div class="coding-navigation-category__title">Tools</div>
+          <div class="coding-navigation-category__title">
+            Tools <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+          </div>
           <ul>
             <li>
               <a href="/coding/layout-generator"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Layout Generator</span></a>
@@ -98,6 +100,12 @@ testingOnLocalhost: false
             </li>
             <li>
               <a href="/coding/checklist"><i class="fa-solid fa-list-check"></i><span>Self-study Checklist</span></a>
+            </li>
+            <li>
+              <a href="/coding/quizzes">
+                <i class="fa-solid fa-person-chalkboard"></i><span>Test your Knowledge!</span>
+                <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+              ></a>
             </li>
             <!--
             <li>
@@ -286,13 +294,16 @@ testingOnLocalhost: false
           <div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div>
         </a>
 
+        <!--
         <img src="{{ nesting }}assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
-        <!-- ----------------- CONTEST ----------------- -->
+       ----------------- CONTEST ----------------- 
 
         <a class="aside-contest" href="/contest">
           <img src="{{ nesting }}assets/img/layout/trophy.gif" width="80" height="85" />
           <div><b>Indie Web Contest</b><small>Winners announced!</small></div>
         </a>
+
+        -->
       </aside>
 
       <!-- ----------------- PROGRESS BAR ----------------- -->

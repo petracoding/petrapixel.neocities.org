@@ -29,11 +29,26 @@ function transformToAssocArray(prmstr) {
   return params;
 }
 
+function turnIntoMarquee() {
+  const marqueeHolderEl = document.getElementById("marquee-holder");
+  if (!marqueeHolderEl) return;
+
+  const marqueeEl = document.createElement("marquee");
+  marqueeEl.innerHTML = marqueeHolderEl.innerHTML;
+  marqueeHolderEl.parentNode.replaceChild(marqueeEl, marqueeHolderEl);
+
+  if (document.querySelector("main")) document.querySelector("main").style.width = "100%";
+}
+
 /**
  *  STATUS CAFE
  */
 function initStatuscafe(params) {
   if (!document.getElementById("statuscafe-username")) return;
+
+  if (params["marquee"]) {
+    if (params["marquee"] == "1") turnIntoMarquee();
+  }
 
   let username = params["username"];
   if (!username) {
@@ -48,7 +63,14 @@ function initStatuscafe(params) {
         document.getElementById("statuscafe-content").innerHTML = "No status yet.";
         return;
       }
-      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/' + username + '" target="_blank">' + r.author + "</a> " + r.face + " " + r.timeAgo;
+      let delimiter = "";
+      if (params["marquee"]) {
+        if (params["marquee"] == "1") {
+          delimiter = ": ";
+        }
+      }
+
+      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/' + username + '" target="_blank">' + r.author + "</a> " + r.face + " " + r.timeAgo + delimiter;
       document.getElementById("statuscafe-content").innerHTML = username == "petra1999" ? "this is an example status text!" : r.content;
 
       // Styling:
@@ -60,6 +82,16 @@ function initStatuscafe(params) {
       if (params["hideUsername"]) {
         if (params["hideUsername"] == "1") document.querySelector("#statuscafe-username a").style.display = "none";
       }
+      // if (params["marquee"]) {
+      //   if (params["marquee"] == "1") {
+      //     document.querySelector("main").style.width = "100%";
+      //     document.querySelector("marquee").style.display = "flex";
+      //     document.querySelector("marquee").style.alignItems = "end";
+      //     document.querySelector("#statuscafe-username").style.flexShrink = "0";
+      //     document.querySelector("#statuscafe-username").style.marginRight = "1em";
+      //     document.querySelector("#statuscafe-content").style.flexShrink = "0";
+      //   }
+      // }
     });
 }
 
@@ -69,11 +101,18 @@ function initStatuscafe(params) {
 function initLastFm(params) {
   if (!document.querySelector("#song")) return;
 
+  if (params["marquee"]) {
+    if (params["marquee"] == "1") turnIntoMarquee();
+  }
+
   // Styling:
   if (params["color"]) document.querySelector("#song").style.color = params["color"] == "black" || params["color"] == "white" ? params["color"] : "#" + params["color"];
   if (params["linkColor"]) document.querySelector("#song").style.color = params["linkColor"] == "black" || params["linkColor"] == "white" ? params["linkColor"] : "#" + params["linkColor"];
   if (params["underline"]) {
     if (params["underline"] == "0") document.querySelector("#song").style.textDecoration = "none";
+  }
+  if (params["marquee"]) {
+    if (params["marquee"] == "1") document.querySelector("#song").style.whiteSpace = "nowrap";
   }
 
   let username = params["username"];
