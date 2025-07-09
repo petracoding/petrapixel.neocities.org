@@ -104,8 +104,30 @@ function initBlinkies() {
   const wrapper = document.querySelector(".aside-blinkies");
   if (!wrapper) return;
 
+  // Randomize order
+  xah_randomize_children_f(document.querySelector(".aside-blinkies__buttons"));
+  xah_randomize_children_f(document.querySelector(".aside-blinkies__blinkies"));
+
   //   initMarquee(".aside-blinkies__buttons", 0.5);
   //   initMarquee(".aside-blinkies__blinkies", 0.5);
+}
+
+function xah_randomize_children_f(nodeX) {
+  // nodeX can be any html element
+  // randomize its children
+  // http://xahlee.info/js/js_dom_randomize_list.html
+  // version 2017-05-11
+
+  const newNode = nodeX.cloneNode(true);
+  const xChildren = newNode.children;
+  const newNodeFrag = document.createDocumentFragment();
+
+  while (xChildren.length > 0) {
+    newNodeFrag.appendChild(xChildren[Math.floor(Math.random() * xChildren.length)]);
+  }
+
+  nodeX.innerHTML = "";
+  nodeX.appendChild(newNodeFrag);
 }
 
 function initMarquee(selector, speed) {

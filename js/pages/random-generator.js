@@ -118,6 +118,7 @@ function initRandomFavorite() {
         ["programming language", "javascript (i'm serious)"],
         ["wikipedia article", "sailing ship"],
         ["perfume", "darling by brut parfums / fabergé "],
+        ["winx club girl", "tecna"],
       ],
       currentItem
     );
