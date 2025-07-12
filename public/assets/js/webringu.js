@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function doAction(action) {
-  const index = members.findIndex((member) => document.referrer.includes(member.url));
+  const index = members.findIndex((member) => document.referrer.replace("http://", "https://").includes(member.url.replace("http://", "https://")));
   if (index == -1) {
     console.error(document.referrer + " not found in webring member list.");
     return;
