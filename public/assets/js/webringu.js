@@ -58,7 +58,7 @@ function createMembersList(el) {
     <tbody>`;
 
   members.forEach((member) => {
-    let prettyUrl = member.url.replace("https://", "");
+    let prettyUrl = member.url.replace("https://", "").replace("http://", "");
     prettyUrl = prettyUrl.endsWith("/") ? prettyUrl.slice(0, -1) : prettyUrl;
     output += `<tr>
         <td>${member.title}</td>

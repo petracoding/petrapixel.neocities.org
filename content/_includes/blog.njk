@@ -98,9 +98,10 @@ testingOnLocalhost: false
           <h2 style="height: 0px; overflow: hidden">Comments</h2>
           {% if commentsText %}
           <p>{{ commentsText | safe }}</p>
-          {% endif %}
+          {% endif %} {% if commentsClosed %}Comments closed due to too many hate messages. :({% else %}
           <div id="c_widget">Comment Widget could not be loaded!</div>
           <script src="{{ nesting }}assets/js/comment-widget.js"></script>
+          {% endif %}
         </section>
         {% endif %}
       </main>
@@ -122,26 +123,23 @@ testingOnLocalhost: false
             <img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
             <small>click to clap for me!</small>
           </a>
-          <br />
-          <center>
-            <small>Visitors:</small>
-            {% if not testingOnLocalhost %}
-
-            <!-- new -->
-            <script type="text/javascript" src="https://counter.websiteout.com/js/30/0/128970/0"></script>
-
-            <!-- old (broke at 128970 hits) -->
-            <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a>
-
-            {% endif %}
-          </center>
         </div>
       </footer>
     </div>
 
-    {% if not testingOnLocalhost %}<a href="https://www.free-website-hit-counter.com">
-      <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" aria-hidden="true" alt="Free Website Hit Counter" style="height: 0; width: 0" /> </a
-    >{% endif %} {% if lightbox %}
+    <!-- Hit Counter  -->
+    {% if not testingOnLocalhost %}
+    <div class="blog-hitcounter">
+      <!-- new -->
+      <script type="text/javascript" src="https://counter.websiteout.com/js/30/0/128970/0"></script>
+
+      <!-- old (broke at 128970 hits) -->
+      <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a>
+    </div>
+    {% endif %}
+
+    <!-- Lightbox -->
+    {% if lightbox %}
     <script src="../assets/js/fslightbox.js"></script>
     {% endif %}
   </body>

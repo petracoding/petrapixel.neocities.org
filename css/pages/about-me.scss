@@ -107,6 +107,54 @@
 
 /**
  *
+ * BLINKIES
+ *
+ */
+
+.about-me-page__blinkies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: -10px 0;
+
+  > div {
+    margin: 10px 5px;
+    position: relative;
+
+    img {
+      display: block;
+      filter: brightness(1.1) contrast(1.3);
+      transition: 0.3s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: #c891bd;
+      opacity: 0.15;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    &:hover,
+    &:focus {
+      img {
+        filter: none;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/**
+ *
  * LISTS
  *
  */
@@ -135,10 +183,6 @@
 
   ul {
     padding-bottom: 1em;
-
-    li {
-      //   margin-bottom: 0.5em;
-    }
   }
 
   .custom-scrollbar {
@@ -200,6 +244,55 @@
   //   }
 }
 
+/**
+ *
+ * POKEMON
+ *
+ */
+
+.about-me-page__pokemon-heading {
+  margin-top: 0;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    margin: 0 1em;
+    font-size: 1.1em;
+    text-align: center;
+  }
+}
+
+.about-me-page__pokemon-team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-me-page__pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+
+  b,
+  img {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    b {
+      transform: scale(1.3);
+    }
+
+    img {
+      transform: scale(1.3) rotate(15deg) !important;
+    }
+  }
+}
 /**
  *
  * HOME

@@ -30,7 +30,6 @@ function initRandomFactAboutMe() {
       [
         "I started learning how to play the drums when I was a kid (but it never came to fruition).",
         "My dad once built a swingset for me and my sister that we still love to use!",
-        "Before she met me, my girlfriend regularly watched a video I had uploaded to YouTube (a video of our favorite band).",
         "I got my first tattoo right after passing my driving test!",
         "I'm the opposite of a procrastinator. I get stressed out when I don't do everything right away.",
         "I always go to sleep between 10:30 and 11:00pm.",
@@ -89,7 +88,7 @@ function initRandomFavorite() {
     const currentItem = factEl.innerHTML ? factEl.innerHTML : false;
     const rando = generateRandomItem(
       [
-        ["art", "campbell's soup cans, by andy warhol"],
+        ["artwork", "campbell's soup cans, by andy warhol"],
         ["pterosaur", "quetzalcoatlus"],
         ["food", "breakfast"],
         ["season", "summer"],

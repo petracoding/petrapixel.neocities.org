@@ -152,13 +152,7 @@ testingOnLocalhost: false
               >
             </li>
             <li>
-              <a href="/coding/cachebusting"
-                ><i class="fa-solid fa-bomb"></i
-                ><span
-                  >Cachebusting <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-                  ><small>(how to stop your website from being cached)</small>
-                </span></a
-              >
+              <a href="/coding/cachebusting"><i class="fa-solid fa-bomb"></i><span>Cachebusting </span></a>
             </li>
             <!--
             <li>
@@ -343,9 +337,12 @@ testingOnLocalhost: false
           <br />
           <center>
             <small>Visitors:</small>
-            {% if not testingOnLocalhost %}<a href="https://www.free-website-hit-counter.com">
-              <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="Free Website Hit Counter" />
-            </a>
+            {% if not testingOnLocalhost %}
+            <!-- new -->
+            <script type="text/javascript" src="https://counter.websiteout.com/js/30/0/128970/0"></script>
+
+            <!-- old (broke at 128970 hits) -->
+            <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a>
             {% endif %}
           </center>
           <br />

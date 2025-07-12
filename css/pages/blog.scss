@@ -3,15 +3,15 @@
 */
 
 .blog-page-layout {
-  font-size: 14px;
+  // font-size: 15px;
 
   #content {
-    width: 600px;
+    width: 700px;
     display: flex;
     flex-direction: column;
 
     @media (min-width: $xl) {
-      width: 700px;
+      width: 800px;
     }
   }
 
@@ -216,4 +216,11 @@
   &:visited {
     color: var(--textColor);
   }
+}
+
+.blog-hitcounter {
+  width: 0px;
+  height: 1px;
+  opacity: 0;
+  visibility: hidden;
 }
