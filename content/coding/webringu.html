@@ -22,9 +22,9 @@ codeHighlight: true
   <ul>
     <li>Webringu is super easy to use. It doesn't require any JavaScript knowledge beyond editing a simple members array.</li>
     <li>Webringu <b>will work for free Neocities accounts</b> (for both you and your members).</li>
-    <li>Webringu doesn't require your webring's members to include a bloaty script or CSS file on their site. Just simple links.</li>
-    <li>Webringu gives you complete freedom for how the webring widget looks.</li>
-    <li>Webringu provides you with <b>next</b>, <b>previous</b> and <b>random</b> links to use in your widgets.</li>
+    <li>Webringu doesn't require your webring's members to include a bloaty script or CSS file which would slow down their site. Just simple links.</li>
+    <li>Webringu gives you (and your members!) complete freedom for how the webring widget looks.</li>
+    <li>Webringu provides you with <i>next</i>, <i>previous</i> and <i>random</i> links to use in your widgets.</li>
     <li>You can edit Webringu's code to your liking if you know what you're doing.</li>
   </ul>
   <p>
@@ -33,7 +33,7 @@ codeHighlight: true
   </p>
 
   <br />
-  <p>
+  <p style="font-size: 1.1em">
     <b>Webringu vs <a href="https://garlic.garden/onionring/" target="_blank">Onionring</a>:</b>
   </p>
   <ul>
@@ -51,13 +51,13 @@ codeHighlight: true
       JavaScript is disabled.
     </li>
     <li>
-      <mark>Onionring</mark> shows a "Not a member yet" message instead of its widget if the member has not been added.<br /><mark>Webringu</mark> shows the widget, but it only links to the webring
-      page.
+      <mark>Onionring</mark> shows a "Not a member yet" message instead of its widget if the member has not been added.<br /><mark>Webringu</mark> does show the widget, but the "previous", "next" and
+      "random" links only linkends on your tas to the webring page.
     </li>
   </ul>
   <p>
     Onionring is not a bad script. In fact, it partially inspired Webringu. I just created Webringu because I wasn't entirely happy with Onionring; I wanted to create something that fit me better.
-    Which script is 'better' depends on your taste.
+    Which script is 'better' depends on your taste and use case.
   </p>
 </section>
 
@@ -90,22 +90,27 @@ codeHighlight: true
     member applications.
   </p>
 
+  <p>Make sure to use full urls in this list (e.g. <i>https://example1.com/</i>), not something like <i>example1.com</i>!</p>
+
   <blockquote class="warning">
     <p>
       <b>If you have a free Neocities account:</b> You won't be able to use an external script (last line of the code above). Instead,
       <a href="https://petrapixel.neocities.org/assets/js/webringu.js" target="_blank">download it</a>, name it <code>webringu.js</code>, upload it to your website and use it like so (this replaces
       the last line of the code above):
     </p>
-    <pre><code class="language-html">&lt;script src=&quot;/your-path-here/webringu.js&quot;&gt;&lt;/script&gt;</code></pre>
-    <p>The rest of Webringu will work like normal.</p>
+    <pre><code class="language-html">&lt;script src=&quot;/your-path-to-the-file-here/webringu.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <p>
+      The rest of Webringu will work like normal, but you won't get automatic bugfixes that I make. So if you notice anything not working you can try coming back to this page and re-downloading the
+      file to get any changes.
+    </p>
   </blockquote>
 
   <hr />
 
   <h3>Member's Code</h3>
-  <p>Now, assuming your webring page is <code>https://your-webring-page.neocities.org/webring</code> you can give the members of your webring a code that looks something like this:</p>
+  <p>Now you can give the members of your webring a code that looks something like this:</p>
 
-  <div class="my-webring-widget" style="margin: 30px 0 35px">
+  <div style="margin: 30px 0 35px">
     <a href="https://your-webring-page.neocities.org/webring"><b>Your Webring Name</b></a
     ><br />
     <a href="https://your-webring-page.neocities.org/webring?action=previous">previous</a>
@@ -113,8 +118,8 @@ codeHighlight: true
     <a href="https://your-webring-page.neocities.org/webring?action=next">next</a>
   </div>
 
-  <p>This is the code for the widget:</p>
-  <pre><code class="language-html">&lt;div class=&quot;my-webring-widget&quot;&gt;
+  <p>This is the code for the widget, assuming your webring page is <code>https://your-webring-page.neocities.org/webring</code>:</p>
+  <pre><code class="language-html">&lt;div&gt;
     &lt;a href=&quot;https://your-webring-page.neocities.org/webring&quot;&gt;&lt;b&gt;Your Webring Name&lt;/b&gt;&lt;/a&gt;&lt;br /&gt;
     &lt;a href=&quot;https://your-webring-page.neocities.org/webring?action=previous&quot;&gt;previous&lt;/a&gt;
     &lt;a href=&quot;https://your-webring-page.neocities.org/webring?action=random&quot;&gt;random&lt;/a&gt;
@@ -195,6 +200,8 @@ codeHighlight: true
   <p>To output the number of members in the webring, use <code>&lt;span id=&quot;webringucount&quot;&gt;&lt;/span&gt;</code>, e.g.:</p>
 
   <pre><code class="language-html">This webring has &lt;span id=&quot;webringucount&quot;&gt;&lt;/span&gt; members.</code></pre>
+
+  <p>will result in e.g. "This webring has 15 members."</p>
 
   <hr />
 

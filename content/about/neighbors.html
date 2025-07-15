@@ -26,11 +26,14 @@ nesting: "../"
 
 <section>
   <h2>Friends & Neighbors</h2>-->
-  <p>Here are some cool other personal websites you shoud check out!</p>
-  <p>Neighbors are friends of the site or, in the case of neocities site, neocities users I follow who follow me back <img aria-hidden="true" src="../assets/img/inline/happy.gif" /></p>
-  <p>You can view all sites I follow on <a href="https://neocities.org/site/petrapixel/follows" target="_blank">my neocities profile</a>.</p>
+  <p>
+    Here are some cool other personal websites you shoud check out! Neighbors are friends of the site or, in the case of neocities sites, users I follow who follow me back
+    <img aria-hidden="true" src="../assets/img/inline/happy.gif" />
+  </p>
+  <p>You can view all sites I follow (with a preview of each site!) on <a href="https://neocities.org/site/petrapixel/follows" target="_blank">my neocities profile</a>.</p>
 
   <br />
+  <strong class="rec-filters-title">Filter:</strong>
   <div class="rec-filters">
     <div class="rec-filters__group">
       <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
@@ -45,9 +48,9 @@ nesting: "../"
   </div>
 
   <br />
-  <div class="isotope-items cool-sites cool-sites--more-spacing freezeframeX">
+  <div class="isotope-items cool-sites freezeframeX">
     {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide %}
-    <!--  and site.linksBackToMe == false -->
+
     <a
       href="{{ site.link }}"
       title="{{ site.title }}"
@@ -59,7 +62,7 @@ nesting: "../"
   </div>
   <br />
 
-  <p>If we're mutuals but you're not here please shoot me a message!</p>
+  <p>If we're neighbors but you're not here (or you have a new button) please shoot me a message!</p>
 </section>
 
 <!--
@@ -67,7 +70,7 @@ nesting: "../"
   <h2>Other Cool Sites</h2>
 
   <br />
-  <div class="cool-sites cool-sites--more-spacing freezeframeX">
+  <div class="cool-sites freezeframeX">
     
   </div>
   <br />

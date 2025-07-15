@@ -13,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   width: 50%;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .about-me-page__fact-sheet {
@@ -79,7 +79,7 @@
 
   .about-me-page__list {
     flex: 0 0 50%;
-    margin-top: 20px;
+    margin-top: 15px;
 
     h2 {
       font-size: 1.5em;
@@ -187,7 +187,7 @@
 
   .custom-scrollbar {
     height: 40vh;
-    max-height: 243px;
+    max-height: 220px;
     overflow-y: auto;
     margin-right: 20px;
     padding-left: 24px;
@@ -204,8 +204,8 @@
   flex: 0 0 25%;
 
   h2 {
-    font-size: 1.1em;
-    font-family: $font;
+    font-size: 1.03em;
+    font-family: $fontHeadings;
 
     img {
       vertical-align: top;
@@ -252,7 +252,7 @@
 
 .about-me-page__pokemon-heading {
   margin-top: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,6 +276,10 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+
+  b {
+    margin-top: -5px;
+  }
 
   b,
   img {
@@ -329,17 +333,34 @@
 
 .about-me-pages__gpoy {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  max-height: 310px;
+  overflow-x: scroll;
+  overflow-y: clip;
   align-items: flex-start;
+  padding-bottom: 10px;
 
   img {
     display: inline-block;
-    padding: 10px;
-    max-width: 50%;
+    margin: 5px;
+    height: 300px;
     transition: 0.3s ease-out;
 
-    @media (max-width: $md) {
-      max-width: 100%;
+    &[src*="/d.png"],
+    &[src*="/d.png"] + img,
+    &[src*="/e.png"],
+    &[src*="/e.png"] + img,
+    &[src*="/may1.png"],
+    &[src*="/may1.png"] + img,
+    &[src*="/may4.jpg"],
+    &[src*="/may4.jpg"] + img,
+    &[src*="/may6.PNG"],
+    &[src*="/may6.PNG"] + img,
+    &[src*="/0.jpg"],
+    &[src*="/0.jpg"] + img {
+      height: 140px;
+      margin-bottom: 0;
     }
 
     &:hover {
@@ -429,8 +450,7 @@
 
   .about-me-page__aesthetic-title {
     margin: 3px;
-    font-size: 1.3em;
-    font-family: $font;
+    font-family: $fontHeadings;
   }
 
   a {

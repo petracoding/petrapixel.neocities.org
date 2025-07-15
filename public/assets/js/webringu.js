@@ -1,4 +1,6 @@
 // Webringu Webring Script by PetraPixel (https://petrapixel.neocities.org/coding/webringu)
+// Version: 1.0.1 (2025-07-12)
+// Press Ctrl+S to download this file.
 
 document.addEventListener("DOMContentLoaded", function () {
   const action = window.location.search.substr(1).replace("action=", "").replace(".html", "").toLowerCase();

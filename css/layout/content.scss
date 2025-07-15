@@ -140,7 +140,9 @@ main {
   h3 {
     margin-bottom: 0;
     line-height: 1.2;
-    font-family: $font3;
+    font-family: $fontHeadings;
+    font-weight: normal;
+    color: var(--headingsColor);
 
     code {
       font-size: 0.9em;
@@ -160,7 +162,7 @@ main {
     font-size: 30px;
 
     @media (min-width: $lg) {
-      font-size: 38px;
+      font-size: 36px;
     }
   }
 
@@ -168,7 +170,7 @@ main {
     font-size: 24px;
 
     @media (min-width: $lg) {
-      font-size: 30px;
+      font-size: 28px;
     }
   }
 
@@ -177,7 +179,7 @@ main {
     font-size: 22px;
 
     @media (min-width: $lg) {
-      font-size: 28px;
+      font-size: 24px;
     }
   }
 

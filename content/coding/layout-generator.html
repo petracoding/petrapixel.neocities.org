@@ -16,7 +16,6 @@ toc: true
     You can use my layout builder to generate a code for your website. The generated code will include HTML, CSS and (optionally) basic JavaScript. The generated layout will be responsive for all
     screen sizes.
   </p>
-  <p><b>Updated February 12th! NEW LOOK, NEW FEATURES, IMPROVEMENTS, ETC!</b> Please comment below if you spot any bugs.</p>
 
   <center class="layout-generator-go" style="font-size: 2.5em">
     <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" /> <a href="/layout-generator" aria-label="Go to layout generator">Start generating!</a>
@@ -50,11 +49,9 @@ toc: true
   </div>
 
   <!-- <div id="toc"></div> -->
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>
   <h2>Examples</h2>
@@ -79,11 +76,9 @@ toc: true
       <img src="../assets/img/coding/layout-generator/puppy.png" alt="" />
     </a>
   </div>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>
   <h2 id="how">How to use</h2>
@@ -97,20 +92,24 @@ toc: true
     This is your base for any page on your website. Paste the code into all of your page files (e.g. <code>index.html</code>, <code>about.html</code>, ...) and change the content however you want.
   </p>
   <p>I <b>highly</b> recommend using an <a href="https://www.freeformatter.com/html-formatter.html" target="_blank">Online HTML Formatter</a> if your editor doesn't format your code by default.</p>
-  <p>If a page file is in a subfolder (= not on the same folder level as the CSS and JavaScript files) you need to adjust the paths in the HTML code.</p>
-  <details>
-    <summary>Show me how</summary>
+  <br />
+  <b id="path">Adjusting File Paths:</b>
+  <p>
+    If a page file is in a subfolder (= not on the same folder level as the CSS and JavaScript files) you need to adjust the paths in the HTML code to make sure the files are loaded correctly. Here's
+    how:
+  </p>
+  <div style="padding-left: 1em">
     <p>Page file is in root folder (no subfolder):</p>
     <pre><code>&lt;link href="./style.css" rel="stylesheet" /&gt;
 &lt;script src="./layout.js"&gt;&lt;/script&gt;</code></pre>
-    <p>Page file is in 1 subfolder:</p>
+    <p>Page file is in 1 subfolder (e.g. <i>about/page.html</i>):</p>
     <pre><code>&lt;link href="../style.css" rel="stylesheet" /&gt;
 &lt;script src="../layout.js"&gt;&lt;/script&gt;</code></pre>
-    <p>Page file is in 2 subfolders:</p>
+    <p>Page file is in 2 subfolders (e.g. <i>about/old/page.html</i>):</p>
     <pre><code>&lt;link href="../../style.css" rel="stylesheet" /&gt;
 &lt;script src="../../layout.js"&gt;&lt;/script&gt;</code></pre>
-    <p>And so on.</p>
-  </details>
+    <p>And so on. (Add one <code>../</code> for every folder level)</p>
+  </div>
 
   <h3 data-step="2">CSS:</h3>
   <p>This goes into <code>style.css</code>.</p>
@@ -124,6 +123,10 @@ toc: true
     necessary to create this file once.
   </p>
   <p>The code should work as-is without making a change.</p>
+  <p>
+    Use <code>${nesting}</code> in the JavaScript file to output a relative path, e.g. <code>&lt;img src=&quot;${nesting}img/logo.png&quot;&gt;</code> will output
+    <code>&lt;img src=&quot;../img/logo.png&quot;&gt;</code> if the current page is in a subfolder, etc.
+  </p>
   <blockquote class="tip"><b>Tip: </b>Active menu links will be given the class <i>active</i>, so you can style them in the CSS, <br />e.g. <code>nav a.active { ... }</code></blockquote>
 
   <h3 data-step="4">Time to edit!</h3>
@@ -134,50 +137,105 @@ toc: true
 
   <h3 data-step="5" id="cache">Cache:</h3>
   <blockquote class="warning">
-    Not clearing your cache might result in you not seeing the changes on your page! <a href="/coding/common-questions#cache">Click here to learn how to empty your cache!</a>
+    <p>Not clearing your cache might result in you not seeing the changes on your page!</p>
+    <p><a href="/coding/common-questions#cache">Click here to learn how to empty your cache!</a></p>
   </blockquote>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
 </section>
 
-<section>
-  <h2>Credits</h2>
-  <p>
-    This generator was inspired by my own never-completed tumblr theme generator (rest in peace), as well as
-    <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/" target="_blank">Sadgrl's Layout Builder</a>, which you've probably heard of!
-  </p>
-  <p>The color pickers are <a href="https://jscolor.com/" target="_blank">jscolor</a>. I also used <a href="https://highlightjs.org/" target="_blank">highlightjs</a>.</p>
-  <p>
-    The background images in the examples / random layouts are from <a href="https://goblin-heart.net/sadgrl/webmastery/downloads/tiledbgs" target="_blank">sadgrl</a>. The example content images are
-    from <a href="https://picsum.photos/" target="_blank">picsum.photos</a>.
-  </p>
-</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>
-  <h2>Changelog</h2>
+  <h2>Common Issues</h2>
+  <p>
+    Generally, if something isn't looking the way you expect, try viewing your site in a different browser. If it looks right there, then it really is a cache issue. This means that your code/project
+    is correct, but your browser is loading an old version of (parts of) your website. To solve the issue, make sure to <a href="/coding/common-questions#cache">empty your cache</a>, which you should
+    generally do after every big change.
+  </p>
+
+  <hr />
+
+  <p>If your website looks like this:</p>
+  <div class="image"><img src="../assets/img/coding/layout-generator/css-not-loaded.png" alt="" /></div>
+  <p>the CSS (and JavaScript) isn't loaded correctly.</p>
+  <p>
+    <mark><b>Solution:</b></mark> Make sure that you have followed the tutorial above exactly. Specifically, make sure that:
+  </p>
   <ul>
-    <li>
-      <b>2025-02-12:</b>
-      <ul>
-        <li>+ New Look!</li>
-        <li>+ More font choices</li>
-        <li>+ Custom font (e.g. Google font) option</li>
-        <li>+ Better color pickers</li>
-        <li>+ Preview zoom options</li>
-        <li>+ Format of generated code is better</li>
-        <li>+ More code comments in the generated code (so it's easier to understand)</li>
-        <li>+ Bugfixes</li>
-      </ul>
-    </li>
-    <li><b>2024-08-20: </b>Layout Generator created (<a href="https://web.archive.org/web/20250116152341/https://petrapixel.neocities.org/layout-generator/" target="_blank">Wayback Machine</a>)</li>
+    <li>You have pasted the CSS code into the file <code>style.css</code></li>
+    <li>If the page you're viewing is not directly in the same folder as the <code>style.css</code>, you need to edit the path to it. <br />See <a href="#path">step 1</a> of the tutorial above.</li>
+    <li>All your file names are spelled correctly</li>
+    <li>You have saved all the changes you made in your files</li>
   </ul>
-
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------- -->
+  <p>Also make sure to <a href="/coding/common-questions#cache">empty your cache</a>!</p>
 </section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2>More Information</h2>
+  <br />
+
+  <details>
+    <summary>Rules</summary>
+    <ul>
+      <li>You don't need to ask before using any of the code generated by my layout generator.</li>
+      <li>Don't remove the credit in the code comment or the console.log statement.</li>
+      <li>You may remove the credit in the footer and main content of the page.</li>
+      <li>Don't claim the generated code as your own.</li>
+    </ul>
+  </details>
+
+  <br />
+
+  <details>
+    <summary>Credits</summary>
+    <p>
+      This generator was inspired by my own never-completed tumblr theme generator (rest in peace), as well as
+      <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/" target="_blank">Sadgrl's Layout Builder</a>, which you've probably heard of!
+    </p>
+    <p>The color pickers are <a href="https://jscolor.com/" target="_blank">jscolor</a>. I also used <a href="https://highlightjs.org/" target="_blank">highlightjs</a>.</p>
+    <p>
+      The background images in the examples / random layouts are from <a href="https://goblin-heart.net/sadgrl/webmastery/downloads/tiledbgs" target="_blank">sadgrl</a>. The example content images are
+      from <a href="https://picsum.photos/" target="_blank">picsum.photos</a>.
+    </p>
+  </details>
+
+  <br />
+
+  <details>
+    <summary>Changelog</summary>
+    <ul>
+      <li>
+        <b>2025-02-12:</b>
+        <ul>
+          <li>+ New Look!</li>
+          <li>+ More font choices</li>
+          <li>+ Custom font (e.g. Google font) option</li>
+          <li>+ Better color pickers</li>
+          <li>+ Preview zoom options</li>
+          <li>+ Format of generated code is better</li>
+          <li>+ More code comments in the generated code (so it's easier to understand)</li>
+          <li>+ Bugfixes</li>
+        </ul>
+      </li>
+      <li><b>2024-08-20: </b>Layout Generator created (<a href="https://web.archive.org/web/20250116152341/https://petrapixel.neocities.org/layout-generator/" target="_blank">Wayback Machine</a>)</li>
+    </ul>
+  </details>
+
+  <br />
+
+  <details>
+    <summary>Planned Features</summary>
+    <p>Here are some features I plan on eventually adding. It might take a while though.</p>
+    <ul>
+      <li>download function</li>
+      <li>dark mode</li>
+      <li>more widths</li>
+      <li>neighborhood buttons (example content)</li>
+    </ul>
+  </details>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
 
 <!--
 <section>
@@ -189,6 +247,8 @@ toc: true
   <p>I'm also happy to receive feature suggestions, but I can't promise anything because I'm quite busy!</p>
 </section>-->
 
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
 <section class="buy-me-a-coffee">
   <p>
     I spent <b>hours</b> of my free time creating this tool for free. If you'd like to say thanks, please share this tutorial with others and/or
@@ -197,6 +257,8 @@ toc: true
   <img src="{{ nesting }}assets/img/layout/coffee.gif" alt="coffee" width="80" />
 </section>
 
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
 <section id="comments">
   <h2>Comments</h2>
   <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
@@ -204,7 +266,7 @@ toc: true
     To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
     you don't hit the max character limit on comments.
   </p>
-  <p>Please <b>empty your cache</b> before asking questions. This will get rid of most problems.</p>
+  <p>Please <a href="#cache">empty your cache</a> before asking questions. This will get rid of most problems.</p>
   <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="{{ nesting }}assets/js/comment-widget.js"></script>
 </section>

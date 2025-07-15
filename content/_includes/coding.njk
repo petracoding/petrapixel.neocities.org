@@ -80,136 +80,33 @@ testingOnLocalhost: false
           <a href="/"><img src="{{ nesting }}assets/img/layout/petrapixel-coding.png" aria-label="petrapixel" height="100" width="300" /></a>
         </div>
       </header>
+
+      <!-- NAV: -->
       <nav class="coding-navigation" data-nosnippet="true">
-        <div class="coding-navigation-category" aria-label="Tools">
+        {% for allNavItem in nav %} {% if allNavItem.isCodeMenu %} {% for mainNavItem in allNavItem.items %}
+
+        <div class="coding-navigation-category" aria-label="{{ mainNavItem.label }}">
           <div class="coding-navigation-category__title">
-            Tools <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+            {{ mainNavItem.label }}{% if mainNavItem.new %} <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}
           </div>
           <ul>
+            {% for navItem in mainNavItem.items %}{% if not navItem.hide and not navItem.hideInCodingNav %}
             <li>
-              <a href="/coding/layout-generator"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Layout Generator</span></a>
-            </li>
-            <li>
-              <a href="/coding/widgets"><i class="fa-solid fa-puzzle-piece"></i><span>Widgets for free Neocities Accounts</span></a>
-            </li>
-            <li>
-              <a href="/coding/cheatsheet"><i class="fa-solid fa-clipboard-list"></i><span>Cheatsheet</span></a>
-            </li>
-            <li>
-              <a href="/coding/bookmarks"><i class="fa-solid fa-link"></i><span>Helpful Sites</span></a>
-            </li>
-            <li>
-              <a href="/coding/checklist"><i class="fa-solid fa-list-check"></i><span>Self-study Checklist</span></a>
-            </li>
-            <li>
-              <a href="/coding/quizzes">
-                <i class="fa-solid fa-person-chalkboard"></i><span>Test your Knowledge!</span>
-                <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-              ></a>
-            </li>
-            <!---->
-            <li>
-              <a href="/coding/webringu"
-                ><i class="fa-solid fa-ring"></i><span>Webringu<small>Easy Webring Script</small></span
-                ><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-              ></a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="coding-navigation-category" aria-label="First Steps">
-          <div class="coding-navigation-category__title">First Steps</div>
-          <ul>
-            <li>
-              <a href="/coding/how-to-make-a-website"><i class="fa-solid fa-laptop-code"></i><span>How to Make a Website</span></a>
-            </li>
-            <li>
-              <a href="/coding/common-questions"><i class="fa-regular fa-circle-question"></i><span>Common Questions</span></a>
-            </li>
-            <li>
-              <a href="/coding/common-mistakes"><i class="fa-regular fa-circle-xmark"></i><span>Common Mistakes</span></a>
-            </li>
-            <li>
-              <a href="/coding/need-help"
-                ><i class="fa-solid fa-bug"></i><span>Troubleshooting Guide <small>(+ where/how to ask questions)</small></span></a
-              >
-            </li>
-            <li>
-              <a href="/coding/code-quality"><i class="fa-solid fa-broom"></i><span>Code Quality Guide</span></a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="coding-navigation-category" aria-label="Beginner Tutorials">
-          <div class="coding-navigation-category__title">Beginner Tutorials</div>
-          <ul>
-            <li>
-              <a href="/coding/layout-base-code"><i class="fa-solid fa-border-none"></i><span>How to load the same layout on every page</span></a>
-            </li>
-            <li>
-              <a href="/coding/positioning-tutorial"
-                ><i class="fa-brands fa-css"></i><span>CSS Positioning/Layout Tutorial<small>(display, position, transform, z-index, flexbox, grid, ...)</small></span></a
-              >
-            </li>
-            <li>
-              <a href="/coding/cachebusting"><i class="fa-solid fa-bomb"></i><span>Cachebusting </span></a>
-            </li>
-            <!--
-            <li>
-              <a href="/coding/performance">how to make pages load faster<small>(performance optimization)</small></a>
-            </li>
-			-->
-          </ul>
-        </div>
-
-        <div class="coding-navigation-category" aria-label="Advanced Tutorials">
-          <div class="coding-navigation-category__title">Advanced Tutorials</div>
-          <ul>
-            <li>
-              <a href="/coding/git-tutorial"><i class="fa-solid fa-code-branch"></i><span>Git Tutorial</span></a>
-            </li>
-            <li>
-              <a href="/coding/npm-tutorial"><i class="fa-brands fa-npm"></i><span>node/npm Tutorial</span></a>
-            </li>
-            <li>
-              <a href="/coding/webpack-tutorial"><i class="fa-solid fa-box"></i><span>Webpack Tutorial</span></a>
-            </li>
-            <li>
-              <a href="/coding/eleventy-tutorial"
-                ><i class="fa-solid fa-code"></i><span>Eleventy (11ty) Tutorial<small>(Static Site Generator)</small></span></a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="coding-navigation-category" aria-label="Miscellaneous">
-          <div class="coding-navigation-category__title">Miscellaneous</div>
-          <ul>
-            <li>
-              <a href="/coding/my-setup"
-                ><i class="fa-solid fa-toolbox"></i><span>My VSCode Setup <small>(Settings + Extensions)</small></span></a
-              >
-            </li>
-            <li>
-              <a href="/coding/neocities"><i class="fa-solid fa-city"></i><span>Neocities Tips</span></a>
-            </li>
-            <li>
-              <a href="/coding/snippets"><i class="fa-solid fa-code"></i><span>Code Snippets</span></a>
-            </li>
-            <li>
-              <a href="/coding/now-what"><i class="fa-regular fa-lightbulb"></i><span>I know HTML, CSS, and JS. Now what?</span></a>
-            </li>
-            <!-- <li>
-              <a href="/coding/game-dev-journey"
-                ><i class="fa-solid fa-gamepad"></i
+              <a href="{{ navItem.link }}"
+                ><i class="{{ navItem.icon }}"></i
                 ><span
-                  >My Game Dev Journey<small
-                    >Learning how to use Godot<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small></small></span
-              ></a>
-            </li> -->
+                  >{{ navItem.label }}{% if navItem.sublabel %}<small>{{ navItem.sublabel }}</small
+                  >{% endif %}</span
+                >{% if navItem.new %} <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}</a
+              >
+            </li>
+            {% endif %}{% endfor %}
           </ul>
         </div>
+        {% endfor %} {% endif %}{% endfor %}
       </nav>
+
+      <!-- SIDEBAR: -->
       <aside class="aside aside--left" data-nosnippet="true">
         <div class="coding-back-to-home">
           <a href="/"

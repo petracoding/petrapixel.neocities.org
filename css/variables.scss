@@ -1,8 +1,8 @@
 // Fonts
 
-$font: "rainyhearts", monospace, sans-serif, "MS gothic"; // "MS gothic" see https://gist.github.com/prantlf/fbd12acc69a022edd589dea48dafe3f8
-$font2: "rainyhearts", monospace, sans-serif, "Share Tech Mono"; // strong, menu links
-$font3: "basiic", "rainyhearts", monospace, sans-serif;
+$font: "rainyhearts", monospace, sans-serif;
+$font2: $font; // strong, menu links
+$fontHeadings: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
 $readableFont: Arial, sans-serif;
 
 @font-face {
@@ -13,13 +13,26 @@ $readableFont: Arial, sans-serif;
   font-display: swap;
 }
 
+/* 
+  !IMPORTANT!
+  add files to css/fonts !!! (NOT in the public folder)
+*/
+
 /*
  @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 */
 
+// @font-face {
+//   font-family: "basiic";
+//   src: url(https://cinni.net/fonts/basiic.ttf);
+// }
+
 @font-face {
-  font-family: "basiic";
-  src: url(https://cinni.net/fonts/basiic.ttf);
+  font-family: "Alagard";
+  src: url("./fonts/Alagard.woff2") format("woff2"), url("./fonts/Alagard.woff") format("woff"), url("./fonts/Alagard.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 // Variables

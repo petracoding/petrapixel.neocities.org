@@ -38,9 +38,9 @@
   border: 2px dotted var(--white);
 
   strong {
-    font-weight: bold;
-    font-size: 0.9em;
-    font-family: "basiic", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: $fontHeadings;
     text-transform: lowercase;
 
     abbr {

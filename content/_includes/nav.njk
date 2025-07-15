@@ -1,222 +1,44 @@
 <nav class="aside-nav">
   <div class="aside-nav__heading" aria-hidden="true">Menu</div>
   <ul aria-label="Menu">
-    <li>
-      <a href="/"><img width="9" src="{{ nesting }}assets/img/layout/heart.png" alt="" aria-hidden="true" />home</a>
-    </li>
-    <li>
-      <details id="menu-aboutme">
-        <summary>about me <small>(3)</small></summary>
-        <ul>
-          <li>
-            <a href="/about/about-me">about me</a>
-          </li>
-          <li><a href="/about/media-log">media log & reviews</a></li>
-          <!-- <li>
-            <a href="/blog{% if testingOnLocalhost %}/index{% endif %}">blog <small style="letter-spacing: 1px">(WIP)</small></a>
-          </li> -->
-          <li>
-            <a href="/about/cats">
-              <sup aria-title="Cats">ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</sup><small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-            ></a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details id="menu-aboutsite">
-        <summary>about the site <small>(6)</small></summary>
-        <ul>
-          <li>
-            <a href="/about/about-the-site">about the site</a>
-          </li>
-          <li>
-            <a href="/about/manifesto">manifesto</a>
-          </li>
-          <li>
-            <a href="/about/faq">faq</a>
-          </li>
-          <li class="mobile-only"><a href="/zz/changelog">changelog</a></li>
-          <li><a href="/about/neighbors">neighbors</a></li>
-          <li><a href="/about/guestbook">guestbook</a></li>
-          <li><a href="/about/credits">credits</a></li>
-          <!-- <li><a href="/sitemap">sitemap</a></li> -->
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details id="menu-mycreations">
-        <summary>my creations <small>(6)</small></summary>
-        <ul>
-          <li><a href="/creations/art">my art</a></li>
-          <li><a href="/creations/coding">my coding</a></li>
-          <li>
-            <a href="/creations/playlists">my playlists</a>
-          </li>
-          <li><a href="/creations/video-edits">my video edits</a></li>
-          <li><a href="/creations/writing">my writing</a></li>
-          <li><a href="/creations/picmix">my picmixes</a></li>
-          <li>
-            <a href="/creations/fractals">my fractal art</a>
-          </li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details id="menu-mediarecs">
-        <summary>media recs <small>(5)</small></summary>
-        <ul>
-          <li>
-            <a href="/recs/youtube" aria-label="youtube recommendations">youtube<img src="{{ nesting }}assets/img/layout/icon-computer.png" alt="" aria-hidden="true" /></a>
-          </li>
-          <li>
-            <a href="/recs/tv-shows" aria-label="tv show recommendations">television<img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" aria-hidden="true" /></a>
-          </li>
-          <li>
-            <a href="/recs/movies" aria-label="movie recommendations">cinema<img src="{{ nesting }}assets/img/layout/icon-movie.png" alt="" aria-hidden="true" /></a>
-          </li>
-          <li>
-            <a href="/recs/books" aria-label="book recommendations">library<img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" aria-hidden="true" /></a>
-          </li>
-          <li>
-            <a href="/recs/games" aria-label="game recommendations">arcade<img src="{{ nesting }}assets/img/layout/icon-game.png" alt="" aria-hidden="true" /></a>
-          </li>
-          <li>
-            <a href="/recs/music" aria-label="music recommendations">record player<img src="{{ nesting }}assets/img/layout/icon-music.png" alt="" aria-hidden="true" /></a>
-          </li>
-        </ul>
-      </details>
-    </li>
+    {% for mainNavItem in nav %} {% if mainNavItem.link %}
 
     <li>
-      <details id="menu-resources">
-        <summary>resources for you <small>(5)</small></summary>
-        <ul>
-          <li><a href="/resources/bookmarks">bookmarks</a></li>
-          <li><a href="/resources/software-recs">software recs</a></li>
-          <li><a href="/resources/clipboard">clipboard</a></li>
-          <li><a href="/resources/notion">notion</a></li>
-          <!--
-                    <li><a href="/resources/google-spreadsheets-excel">spreadsheets</a></li>
-                   -->
-          <li><a href="/resources/vocabulary">vocabulary</a></li>
-        </ul>
-      </details>
+      <a href="{{ mainNavItem.link }}"><img width="9" src="{{ nesting }}assets/img/layout/heart.png" alt="" aria-hidden="true" />{{ mainNavItem.label }}</a>
     </li>
+
+    {% else %}
+
     <li>
-      <details id="menu-more">
+      <details>
         <summary>
-          fun stuff! <small>(8)</small> <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>
+          {{ mainNavItem.label }}{% if mainNavItem.new %}<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}
         </summary>
         <ul>
-          <li>
-            <a href="/shrines/index">shrines</a>
+          {% for navItem in mainNavItem.items %} {% if not navItem.hide %} {% if navItem.link %}
+
+          <li {% if navItem.mobileOnly %}class="mobile-only" {% endif %}>
+            <a href="{{ navItem.link }}"
+              >{{ navItem.label | safe }}{% if navItem.new %}<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}</a
+            >
           </li>
-          <li>
-            <a href="/cliques">cliques</a>
+
+          {% else %}
+
+          <b>{{ navItem.label }}</b>
+
+          {% for subNavItem in navItem.items %} {% if not subNavItem.hide %}
+          <li {% if subNavItem.mobileOnly %}class="mobile-only" {% endif %}>
+            <a href="{{ subNavItem.link }}"
+              >{{ subNavItem.label }}{% if subNavItem.new %}<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}</a
+            >
           </li>
-          <li>
-            <a href="/fun/polls">polls</a>
-          </li>
-          <li><a href="/about/blinkies">blinkies & more</a></li>
-          <li>
-            <a href="/fun/quizzes"
-              >personality quizzes <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-            ></a>
-          </li>
-          <li><a href="/fun/list-idea-generator">list idea generator</a></li>
-          <li><a href="/fun/bored-button">are you bored?</a></li>
-          <li><a href="/contest">indie web contest (results)</a></li>
+
+          {% endif %} {% endfor %} {% endif %} {% endif %} {% endfor %}
         </ul>
       </details>
     </li>
-    <li>
-      <details id="menu-codinghelp">
-        <summary>coding & webmastery <small>(19)</small></summary>
 
-        <div class="aside-scrollbox custom-scrollbar">
-          <strong>Tools:</strong>
-          <ul>
-            <li>
-              <a href="/coding/layout-generator">layout generator ★</a>
-            </li>
-            <li>
-              <a href="/coding/widgets">widgets ★</a>
-            </li>
-            <li><a href="/coding/cheatsheet">cheatsheet</a></li>
-            <li>
-              <a href="/coding/bookmarks">helpful sites </a>
-            </li>
-            <li>
-              <a href="/coding/checklist">self-study checklist</a>
-            </li>
-            <li>
-              <a href="/coding/quizzes"
-                >test your knowledge! <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-              ></a>
-            </li>
-          </ul>
-
-          <strong>First Steps:</strong>
-          <ul>
-            <li>
-              <a href="/coding/how-to-make-a-website">how to make a website</a>
-            </li>
-            <li><a href="/coding/common-questions">common questions</a></li>
-            <li><a href="/coding/common-mistakes">common mistakes</a></li>
-            <li><a href="/coding/need-help">need help? (+ troubleshooting guide)</a></li>
-            <li>
-              <a href="/coding/code-quality">code quality guide</a>
-            </li>
-          </ul>
-
-          <strong>Beginner Tutorials:</strong>
-          <ul>
-            <li><a href="/coding/layout-base-code">how to load the same layout on every page</a></li>
-            <li>
-              <a href="/coding/positioning-tutorial">positioning/layout tutorial (+ flexbox, grid)</a>
-            </li>
-            <li>
-              <a href="/coding/cachebusting">cachebusting</a>
-            </li>
-            <!-- <li>
-                        <a href="/coding/performance">how to make pages load faster</a>
-                      </li> -->
-          </ul>
-
-          <strong>Advanced Tutorials:</strong>
-          <ul>
-            <li>
-              <a href="/coding/git-tutorial">git tutorial</a>
-            </li>
-            <li>
-              <a href="/coding/npm-tutorial">node/npm tutorial</a>
-            </li>
-            <li>
-              <a href="/coding/webpack-tutorial">webpack tutorial</a>
-            </li>
-            <li>
-              <a href="/coding/eleventy-tutorial">eleventy (11ty) tutorial</a>
-            </li>
-          </ul>
-
-          <strong>Miscellaneous:</strong>
-          <ul>
-            <li><a href="/coding/my-setup">my vscode setup</a></li>
-            <li><a href="/coding/neocities">neocities tips</a></li>
-            <li><a href="/coding/snippets">code snippets</a></li>
-            <li>
-              <a href="/coding/now-what">i know html/css/js... now what?</a>
-            </li>
-            <li><a href="/webring">code collective webring</a></li>
-            <!-- <li>
-              <a href="/coding/game-dev-journey"
-                >my game dev journey <small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
-              ></a>
-            </li> -->
-          </ul>
-        </div>
-      </details>
-    </li>
+    {% endif %} {% endfor %}
   </ul>
 </nav>

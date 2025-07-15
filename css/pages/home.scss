@@ -145,10 +145,15 @@
 
 .welcome-to-the-site {
   display: flex;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
 }
 
 .welcome-to-the-site__buttons {
-  margin-top: 2em;
+  margin-top: 20px;
   justify-content: space-between;
 }
 
@@ -217,7 +222,7 @@
 .hello-its-me-facts {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   margin-left: 2em;
   flex-shrink: 0;
 
@@ -262,8 +267,12 @@
   border: 3px dotted rgba($pink, 0.5);
   padding: 1em;
   border-radius: 15px;
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: auto;
+
+  .two-columns & {
+    max-height: 246px;
+  }
 
   > *:first-child {
     margin-top: 0;
@@ -294,10 +303,6 @@
 
   > div a {
     text-decoration: none;
-  }
-
-  &.cool-sites--more-spacing > * {
-    margin: 7px;
   }
 
   &.cool-sites--webrings {

@@ -1,0 +1,513 @@
+[
+  {
+    "label": "home",
+    "link": "/"
+  },
+  {
+    "label": "about",
+    "new": false,
+    "items": [
+      {
+        "link": "/about/about-me",
+        "label": "about me",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/about/about-the-site",
+        "label": "about the site",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/blog",
+        "label": "blog",
+        "new": false,
+        "hide": true
+      },
+      {
+        "link": "/about/cats",
+        "label": "cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
+        "new": true,
+        "hide": false
+      },
+      {
+        "link": "/about/manifesto",
+        "label": "site manifesto",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/about/neighbors",
+        "label": "neighbors",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/about/guestbook",
+        "label": "guestbook",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/about/credits",
+        "label": "credits",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/about/faq",
+        "label": "faq",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/about/changelog",
+        "label": "changelog",
+        "new": false,
+        "hide": false,
+        "mobileOnly": true
+      }
+    ]
+  },
+  {
+    "label": "my creations",
+    "new": false,
+    "items": [
+      {
+        "link": "/creations/art",
+        "label": "my art",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/creations/coding",
+        "label": "my coding",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/creations/playlists",
+        "label": "my playlists",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/creations/video-edits",
+        "label": "my video edits",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/creations/writing",
+        "label": "my writing",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/creations/picmix",
+        "label": "my picmix",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/creations/fractals",
+        "label": "my fractal art",
+        "new": false,
+        "hide": false
+      }
+    ]
+  },
+  {
+    "label": "media recs",
+    "new": false,
+    "items": [
+      {
+        "link": "/about/media-log",
+        "label": "media log & reviews",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/recs/youtube",
+        "label": "youtube recs",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/recs/tv-shows",
+        "label": "tv show recs",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/recs/movies",
+        "label": "movie recs",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/recs/books",
+        "label": "book recs",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/recs/games",
+        "label": "game recs",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/recs/music",
+        "label": "song recs",
+        "new": false,
+        "hide": false
+      }
+    ]
+  },
+  {
+    "label": "resources for you",
+    "new": false,
+    "items": [
+      {
+        "link": "/resources/bookmarks",
+        "label": "bookmarks",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/resources/software-recs",
+        "label": "software recs",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/resources/clipboard",
+        "label": "clipboard",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/resources/notion",
+        "label": "notion templates",
+        "new": false,
+        "hide": true
+      },
+      {
+        "link": "/resources/google-spreadsheets-excel",
+        "label": "spreadsheets",
+        "new": false,
+        "hide": true
+      },
+      {
+        "link": "/resources/vocabulary",
+        "label": "vocabulary",
+        "new": false,
+        "hide": false
+      }
+    ]
+  },
+  {
+    "label": "fun stuff!",
+    "new": true,
+    "items": [
+      {
+        "link": "/about/blinkies",
+        "label": "blinkies & more",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/shrines/index",
+        "label": "shrines",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/cliques",
+        "label": "cliques",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/fun/polls",
+        "label": "polls",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/fun/quizzes",
+        "label": "personality quizzes",
+        "new": true,
+        "hide": false
+      },
+      {
+        "link": "/fun/list-idea-generator",
+        "label": "list idea generator",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/fun/bored-button",
+        "label": "are you bored?",
+        "new": false,
+        "hide": false
+      }
+    ]
+  },
+  {
+    "label": "coding & webmastery",
+    "new": false,
+    "isCodeMenu": true,
+    "items": [
+      {
+        "label": "Tools",
+        "new": true,
+        "items": [
+          {
+            "link": "/coding/layout-generator",
+            "label": "Layout Generator",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-wand-magic-sparkles"
+          },
+          {
+            "link": "/coding/widgets",
+            "label": "Widgets for free Neocities accounts",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-puzzle-piece"
+          },
+          {
+            "link": "/coding/cheatsheet",
+            "label": "Cheatsheet",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-clipboard-list"
+          },
+          {
+            "link": "/coding/bookmarks",
+            "label": "Helpful Sites",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-link"
+          },
+          {
+            "link": "/coding/checklist",
+            "label": "Self-study Checklist",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-list-check"
+          },
+          {
+            "link": "/coding/quizzes",
+            "label": "Test your Knowledge!",
+            "sublabel": "",
+            "new": true,
+            "hide": false,
+            "icon": "fa-solid fa-person-chalkboard"
+          },
+          {
+            "link": "/coding/webringu",
+            "label": "Webringu",
+            "sublabel": "Easy Webring Script",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-ring"
+          }
+        ]
+      },
+      {
+        "label": "First Steps",
+        "new": false,
+        "items": [
+          {
+            "link": "/coding/how-to-make-a-website",
+            "label": "How to Make A Website",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-laptop-code"
+          },
+          {
+            "link": "/coding/common-questions",
+            "label": "Common Questions",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-circle-question"
+          },
+          {
+            "link": "/coding/common-mistakes",
+            "label": "Common Mistakes",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-circle-xmark"
+          },
+          {
+            "link": "/coding/need-help",
+            "label": "Troubleshooting Guide",
+            "sublabel": "+ where/how to ask questions",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-bug"
+          },
+          {
+            "link": "/coding/code-quality",
+            "label": "Code Quality Guide",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-broom"
+          }
+        ]
+      },
+      {
+        "label": "Beginner Tutorials",
+        "new": false,
+        "items": [
+          {
+            "link": "/coding/layout-base-code",
+            "label": "How to load the same layout on every page",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-border-none"
+          },
+          {
+            "link": "/coding/positioning-tutorial",
+            "label": "CSS Positioning/Layout Tutorial",
+            "sublabel": "(display, position, transform, z-index, flexbox, grid, ...)",
+            "new": false,
+            "hide": false,
+            "icon": "fa-brands fa-css"
+          },
+          {
+            "link": "/coding/cachebusting",
+            "label": "Cachebusting",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-bomb"
+          },
+          {
+            "link": "/coding/performance",
+            "label": "How to make pages load faster",
+            "sublabel": "",
+            "new": false,
+            "hide": true,
+            "icon": ""
+          }
+        ]
+      },
+      {
+        "label": "Advanced Tutorials",
+        "new": false,
+        "items": [
+          {
+            "link": "/coding/git-tutorial",
+            "label": "Git Tutorial",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-code-branch"
+          },
+          {
+            "link": "/coding/npm-tutorial",
+            "label": "node/npm tutorial",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-brands fa-npm"
+          },
+          {
+            "link": "/coding/webpack-tutorial",
+            "label": "Webpack Tutorial",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-box"
+          },
+          {
+            "link": "/coding/eleventy-tutorial",
+            "label": "Eleventy (11ty) Tutorial",
+            "sublabel": "Static Site Generator",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-code"
+          }
+        ]
+      },
+      {
+        "label": "Miscellaneous",
+        "new": false,
+        "items": [
+          {
+            "link": "/coding/my-setup",
+            "label": "My VSCode Setup",
+            "sublabel": "Settings + Extensions",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-toolbox"
+          },
+          {
+            "link": "/coding/neocities",
+            "label": "Neocities Tips",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-city"
+          },
+          {
+            "link": "/coding/snippets",
+            "label": "Code Snippets",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-code"
+          },
+          {
+            "link": "/coding/now-what",
+            "label": "I know HTML, CSS, and JS. Now what?",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-regular fa-lightbulb"
+          },
+          {
+            "link": "/webring",
+            "label": "Code Collective Webring",
+            "sublabel": "",
+            "new": true,
+            "hide": false,
+            "icon": "fa-solid fa-ring",
+            "hideInCodingNav": true
+          },
+          {
+            "link": "/coding/game-dev-journey",
+            "label": "my game dev journey",
+            "sublabel": "",
+            "new": false,
+            "hide": true,
+            "icon": "fa-solid fa-gamepad"
+          },
+          {
+            "link": "/contest",
+            "label": "Indie Web Contest",
+            "sublabel": "Results",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-trophy"
+          }
+        ]
+      }
+    ]
+  }
+]

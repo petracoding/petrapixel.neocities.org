@@ -108,6 +108,8 @@ function initBlinkies() {
   xah_randomize_children_f(document.querySelector(".aside-blinkies__buttons"));
   xah_randomize_children_f(document.querySelector(".aside-blinkies__blinkies"));
 
+  xah_randomize_children_f(document.querySelector(".aside-mutuals__buttons"));
+
   //   initMarquee(".aside-blinkies__buttons", 0.5);
   //   initMarquee(".aside-blinkies__blinkies", 0.5);
 }

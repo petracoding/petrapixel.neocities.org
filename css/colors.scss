@@ -9,6 +9,7 @@ $dark: #9c595e;
 
 $textColor: #922a45;
 $textColorBold: #7e243c;
+$headingsColor: #a0435c;
 $linkColor: #c7555f;
 $linkColorHover: #f0b207;
 
@@ -44,6 +45,7 @@ body {
   --dark: #{$dark};
   --textColor: #{$textColor};
   --textColorBold: #{$textColorBold};
+  --headingsColor: #{$headingsColor};
   --linkColor: #{$linkColor};
   --linkColorHover: #{$linkColorHover};
   --green: #{$green};
@@ -67,6 +69,7 @@ body {
   $black: white;
   $textColor: #e8cfd3;
   $textColorBold: #e5cbcf;
+  $headingsColor: #c46c84;
   $pink: #a06674;
   $purple: #865360;
   $backgroundColor: #271e20;
@@ -92,6 +95,7 @@ body {
   --dark: #{$dark};
   --textColor: #{$textColor};
   --textColorBold: #{$textColorBold};
+  --headingsColor: #{$headingsColor};
   --linkColor: #{$linkColor};
   --linkColorHover: #{$linkColorHover};
   --green: #{$green};

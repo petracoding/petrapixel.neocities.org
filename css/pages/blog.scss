@@ -47,7 +47,10 @@
   border: var(--mainBorder);
   border-bottom: 0;
   background: var(--mainBackgroundColor);
-  padding: 0 1em;
+  padding: 0 30px;
+  margin-top: -30px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 
   ul {
     padding-left: 0;
@@ -148,7 +151,7 @@
 
   &:not(h2):not(h1) {
     font-size: 16px;
-    font-family: $font3;
+    font-family: $fontHeadings;
     margin-bottom: 0.1em;
 
     @media (min-width: $lg) {
@@ -185,7 +188,7 @@
 }
 
 .blog-entry__description {
-  margin: 1em 0 0.75em;
+  margin: 0.5em 0 0.75em;
 }
 
 .blog-entry__read {

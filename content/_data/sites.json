@@ -3,16 +3,14 @@
     "title": "Tanja's Treehouse",
     "link": "https://tanjas-treehouse.neocities.org/",
     "image": "tanjas-treehouse.gif",
-    "linksBackToMe": true,
     "neighbor": true,
     "friend": true,
-    "hide": "WIP"
+    "hide": "wip"
   },
   {
     "title": "Florrie's Garden",
     "link": "https://florrie.ichi.city/",
     "image": "florrie.gif",
-    "linksBackToMe": false,
     "neighbor": true,
     "friend": true
   },
@@ -20,16 +18,13 @@
     "title": "cinajimrollie",
     "link": "https://tinyhrts.neocities.org/",
     "image": "https://i.postimg.cc/hvr1jPrP/cinajimrollie.png",
-    "linksBackToMe": false,
     "neighbor": true,
     "friend": true
   },
-
   {
     "title": "Latte Lavanda",
     "image": "https://files.catbox.moe/8r80x1.png",
     "link": "https://latte-lavanda.neocities.org/",
-    "linksBackToMe": true,
     "neighbor": true,
     "friend": true,
     "inspiration": false
@@ -38,36 +33,24 @@
     "link": "https://lostletters.neocities.org/",
     "title": "lostletters",
     "image": "lostletters.gif",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "link": "https://strawberry-gashes.neocities.org",
     "title": "strawberry-gashes",
     "image": "https://i.imgur.com/V9sIpx6.gif",
-    "linksBackToMe": false,
     "neighbor": true
-  },
-  {
-    "link": "https://lexiqqq.com/",
-    "title": "lexiqqq",
-    "image": "lexiqqq.gif",
-    "linksBackToMe": false,
-    "neighbor": true,
-    "hide": "CURRENTLY IN CONSTRUCTION"
   },
   {
     "link": "https://cinni.net/",
     "title": "cinni.net",
     "image": "cinni.png",
-    "linksBackToMe": false,
     "neighbor": true,
     "inspiration": true
   },
   {
     "link": "https://comfort.kayla.care/",
     "title": "Comfort",
-    "linksBackToMe": true,
     "neighbor": true,
     "image": "https://64.media.tumblr.com/7e6e9b6d9030a392c9fe248c4994aa4e/9594f64d816b9c9e-94/s100x200/2bb06e351525682bf448afebfac361caffc248ce.gif"
   },
@@ -75,14 +58,12 @@
     "link": "https://sakuradreams.neocities.org/",
     "title": "sakuradreams",
     "image": "sakuradreams.gif",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "title": "hellomei",
     "image": "hellomei.gif",
     "link": "https://www.hellomei.dev/",
-    "linksBackToMe": true,
     "neighbor": true,
     "inspiration": true
   },
@@ -90,16 +71,13 @@
     "link": "https://doqmeat.com/",
     "title": "doqmeant",
     "image": "doqmeat.png",
-    "linksBackToMe": true,
     "neighbor": true,
     "inspiration": true
   },
-
   {
     "link": "https://vencake.neocities.org/",
     "title": "VenCake",
     "image": "vencake.png",
-    "linksBackToMe": true,
     "neighbor": true,
     "inspiration": true
   },
@@ -107,14 +85,12 @@
     "link": "https://faintlymacabre.neocities.org/",
     "title": "faintlymacabre",
     "image": "faintlymacabre.gif",
-    "linksBackToMe": false,
     "neighbor": true
   },
   {
     "link": "https://tthumbelina.neocities.org/",
     "title": "tthumbelina",
     "image": "tthumbelina.gif",
-    "linksBackToMe": false,
     "neighbor": true,
     "inspiration": true
   },
@@ -122,29 +98,24 @@
     "link": "https://chocolaterevel.neocities.org/",
     "title": "chocolaterevel",
     "image": "chocolaterevel.png",
-    "linksBackToMe": true,
     "neighbor": true
   },
-
   {
     "link": "https://digibun.neocities.org/",
     "title": "digibun",
     "image": "digibun.png",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "link": "https://yapi.lol/",
     "title": "yapi.lol",
     "image": "yapilol.gif",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "title": "Ballonlea",
     "image": "macaquemoe.png",
     "link": "https://ballonlea.net/",
-    "linksBackToMe": true,
     "neighbor": true,
     "inspiration": true
   },
@@ -152,7 +123,6 @@
     "link": "https://cyberstheb.neocities.org/",
     "title": "cyberstheb",
     "image": "cyberstheb.png",
-    "linksBackToMe": true,
     "neighbor": true,
     "inspiration": true
   },
@@ -160,15 +130,12 @@
     "link": "https://thegardenofmadeline.neocities.org/",
     "title": "thegardenofmadeline",
     "image": "gardenofmadeline.gif",
-    "linksBackToMe": false,
     "neighbor": true
   },
-
   {
     "link": "https://jeith.neocities.org/",
     "title": "jeith",
     "image": "https://jeith.com/jeith.gif",
-    "linksBackToMe": false,
     "neighbor": true,
     "inspiration": true
   },
@@ -176,28 +143,24 @@
     "link": "https://alexparozi.neocities.org/",
     "title": "cascade!",
     "image": "https://file.garden/ZnR0Oyc2xySzmhy2/button.png",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "link": "https://jeansgurl98.neocities.org/",
     "title": "jeansgurl98",
     "image": "jeansgurl98.png",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "link": "https://freaksaint.neocities.org/",
     "title": "freaksaint",
     "image": "https://i.imgur.com/0G6GQYJ.png",
-    "linksBackToMe": false,
     "neighbor": true
   },
   {
     "title": "itinerae",
     "image": "https://64.media.tumblr.com/c3c0e0b7e51f4b3c900b64e1b74aac7f/b431217ae8487553-86/s100x200/1e23f5f12bdf480bd07e3fc1ac78a3a186b29c79.pnj",
     "link": "https://itinerae.neocities.org/",
-    "linksBackToMe": true,
     "neighbor": true,
     "inspiration": true,
     "resources": true
@@ -206,35 +169,29 @@
     "link": "https://artwork.neocities.org/",
     "title": "artwork",
     "image": "artwork.gif",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "link": "https://metmoxie.com/",
     "title": "metmoxie",
     "image": "metmoxie.webp",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "link": "https://lavender-but-bread.neocities.org/",
     "title": "lavender-but-bread",
-    "linksBackToMe": true,
     "neighbor": true,
     "image": "https://lavender-but-bread.neocities.org/buttons/meow-button.gif"
   },
-
   {
     "link": "https://kubikill.neocities.org/",
     "title": "kubikill",
-    "linksBackToMe": true,
     "neighbor": true,
     "image": "https://kubikill.neocities.org/kubikill88x31static.png"
   },
   {
     "link": "https://alphacentauri.neocities.org/",
     "title": "alphacentauri",
-    "linksBackToMe": true,
     "neighbor": true,
     "image": "https://alphacentauri.neocities.org/_img/alphacentauri.gif"
   },
@@ -242,14 +199,12 @@
     "link": "https://solita.neocities.org/",
     "title": "Solita",
     "image": "solita.png",
-    "linksBackToMe": true,
     "neighbor": true
   },
   {
     "link": "https://daniele63.com/",
     "title": "Daniele's Website",
     "image": "danieles.jpg",
-    "linksBackToMe": false,
     "neighbor": true,
     "inspiration": true
   },
@@ -257,23 +212,18 @@
     "link": "https://wilburwilliams.uk/",
     "title": "Wilbur's Site",
     "image": "wilburwilliams.gif",
-    "linksBackToMe": true,
     "neighbor": true
   },
-
   {
     "link": "https://firozah.com/",
     "title": "firozah",
     "image": "firozah.gif",
-    "linksBackToMe": false,
     "neighbor": true
   },
-
   {
     "title": "TEMPLATE",
     "image": "IMAGE ------------------------------------------------------------------------------------",
     "link": "LINK",
-    "linksBackToMe": false,
     "neighbor": true,
     "inspiration": false
   },
@@ -282,32 +232,28 @@
     "title": "pomelo",
     "image": "https://i.imgur.com/TqJ5nX2.gif",
     "neighbor": false,
-    "inspiration": true,
-    "linksBackToMe": false
+    "inspiration": true
   },
   {
     "link": "https://moonview.neocities.org/",
     "title": "moonview",
     "image": "https://moonview.neocities.org/88x31/moonview88x31_NEW.gif",
     "neighbor": false,
-    "inspiration": true,
-    "linksBackToMe": false
+    "inspiration": true
   },
   {
     "link": "https://nyaa.neocities.org/",
     "title": "nyaa",
     "image": "nyaabanner.gif",
     "neighbor": false,
-    "inspiration": true,
-    "linksBackToMe": false
+    "inspiration": true
   },
   {
     "link": "https://pklucky.neocities.org/",
     "title": "pklucky",
     "image": "pklucky.gif",
     "neighbor": false,
-    "inspiration": true,
-    "linksBackToMe": false
+    "inspiration": true
   },
   {
     "link": "https://bechnokid.neocities.org/",
@@ -315,16 +261,14 @@
     "image": "bechnokid.jpg",
     "neighbor": false,
     "inspiration": false,
-    "resources": true,
-    "linksBackToMe": false
+    "resources": true
   },
   {
     "link": "https://catboo.neocities.org/",
     "title": "catboo",
     "image": "catboo.webp",
     "neighbor": false,
-    "inspiration": true,
-    "linksBackToMe": false
+    "inspiration": true
   },
   {
     "link": "https://abyssbloom.neocities.org/",
@@ -332,7 +276,6 @@
     "image": "abyssbloom.png",
     "neighbor": true,
     "inspiration": true,
-    "linksBackToMe": true,
     "winner": true
   },
   {
@@ -341,7 +284,6 @@
     "image": "re-nata.gif",
     "neighbor": true,
     "inspiration": false,
-    "linksBackToMe": true,
     "winner": true
   },
   {
@@ -350,7 +292,6 @@
     "image": "yatagarasu.gif",
     "neighbor": false,
     "inspiration": false,
-    "linksBackToMe": false,
     "winner": true
   },
   {
@@ -359,7 +300,6 @@
     "image": "lockheartlove.png",
     "neighbor": true,
     "inspiration": true,
-    "linksBackToMe": true,
     "winner": true
   },
   {
@@ -368,7 +308,6 @@
     "image": "featherfae.gif",
     "neighbor": false,
     "inspiration": false,
-    "linksBackToMe": false,
     "winner": true
   },
   {
@@ -377,7 +316,6 @@
     "image": "starry-knight.png",
     "neighbor": true,
     "inspiration": false,
-    "linksBackToMe": true,
     "winner": true
   },
   {
@@ -386,7 +324,90 @@
     "image": "https://i.imgur.com/rd7l8WZ.gif",
     "neighbor": false,
     "inspiration": false,
-    "linksBackToMe": true,
     "winner": false
+  },
+  {
+    "link": "https://hillhouse.neocities.org/",
+    "title": "hillhouse",
+    "image": "hillhouse.png",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://slushiecafe.neocities.org/",
+    "title": "SlushieCafe",
+    "image": "slushiecafe.gif",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://philia995.neocities.org/",
+    "title": "the ether personified",
+    "image": "philia995.png",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://maplebear.neocities.org/",
+    "title": "maplebear",
+    "image": "https://maplebear.neocities.org/images/I9cHT2L.png",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://zhongvie.neocities.org/",
+    "title": "zhongvie",
+    "image": "https://file.garden/Zq0xOX6Iv3i3b1te/Neocities/siteButton.png",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://dabric.xyz/",
+    "title": "dabric.xyz",
+    "image": "dabric.png",
+    "neighbor": true,
+    "inspiration": false
+  },
+  {
+    "link": "https://hitokage.neocities.org/",
+    "title": "hitokage",
+    "image": "hitokage.gif",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://dustbunnybedroom.neocities.org/",
+    "title": "dustbunnybedroom",
+    "image": "dustbunnybedroom.gif",
+    "neighbor": true,
+    "inspiration": false
+  },
+  {
+    "link": "https://planetaryinfluence.neocities.org/",
+    "title": "planetaryinfluence",
+    "image": "planetaryinfluence.gif",
+    "neighbor": true,
+    "inspiration": false
+  },
+  {
+    "link": "https://confetticake.neocities.org/",
+    "title": "confetticake",
+    "image": "confetticake.gif",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://claeiy.neocities.org/",
+    "title": "claeiy",
+    "image": "claeiy.gif",
+    "neighbor": true,
+    "inspiration": true
+  },
+  {
+    "link": "https://snails.town/",
+    "title": "snails",
+    "image": "snails.png",
+    "neighbor": true,
+    "inspiration": true
   }
 ]

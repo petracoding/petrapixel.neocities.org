@@ -166,7 +166,7 @@
 #clap-for-me {
   text-align: center;
   display: block;
-  margin-top: 2em;
+  margin-top: 25px;
   text-decoration: none;
 
   small {
@@ -395,7 +395,7 @@
     display: block;
     line-height: 1;
     font-size: 1.4em;
-    font-family: $font3;
+    font-family: $fontHeadings;
   }
 
   img {
@@ -758,7 +758,7 @@
     display: block;
     line-height: 1;
     font-size: 1.4em;
-    font-family: $font3;
+    font-family: $fontHeadings;
   }
 
   img {
@@ -868,7 +868,7 @@
    ************ */
 
 .aside-nav {
-  padding: 1em 0;
+  padding: 1em 0 0.5em;
   user-select: none;
 
   ul {
@@ -926,6 +926,7 @@
       list-style-position: outside;
       padding-left: 1em;
       margin-left: 20px;
+      padding: 4px 5px 7px;
 
       &::marker {
         color: var(--green);
@@ -944,10 +945,13 @@
       }
     }
 
+    a {
+      padding: 2px 5px 4px;
+    }
+
     a,
     summary {
       position: relative;
-      padding: 2px 5px 4px;
       padding-right: 0;
       // color: var(--asideTextColor);
       text-decoration: none;
@@ -996,16 +1000,35 @@
   ul ul {
     li {
       a {
-        padding-left: 25px;
+        padding-left: 20px;
         font-size: 18px;
+        margin-right: -6px;
 
         &::before {
           content: "*";
           position: absolute;
           top: 7px;
-          left: 11px;
+          left: 5px;
           font-size: 0.8em;
         }
+      }
+    }
+
+    /* Subheadings */
+    b {
+      display: block;
+      margin-top: 1em;
+      margin-left: 1em;
+      margin-bottom: 0.25em;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+
+      &::after {
+        content: ":";
+      }
+
+      & ~ li a {
+        text-transform: lowercase;
       }
     }
   }

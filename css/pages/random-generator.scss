@@ -1,5 +1,5 @@
 .random-generator {
-  margin-top: 3em;
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +11,21 @@
 
 .random-generator__button {
   font-size: 1.5em;
-  padding: 0.1em 0.5em;
+  border-radius: 7px;
+  padding: 0.25em 0.7em 0.2em;
+  color: var(--textColor);
+  background: var(--asideBackgroundColor);
+  font-family: $fontHeadings;
+  border: 1px solid var(--borderColor);
+  box-shadow: -3px 3px 0px 0px rgba(194, 120, 167, 0.1);
+  transition: 0.2s ease;
+
+  &:hover,
+  &:active {
+    box-shadow: -3px 3px 5px 0px rgba(194, 120, 167, 0.1);
+    transform: scale(1.05);
+    z-index: 1;
+  }
 }
 
 .random-generator__label {
