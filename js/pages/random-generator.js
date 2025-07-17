@@ -44,7 +44,6 @@ function initRandomFactAboutMe() {
         "I know someone who is friends with a rapper I like",
         "I know the blurb of a random old romance novel I've never read and will never read by heart.",
         "I'm really interested in etymology, prehistory, cannibalism, 18th century sailing ships, and dinosaurs.",
-        "I'm fluent in German and English, and am currently learning Spanish (level A2). I want to learn Yiddish at some point.",
         "My first phone was the Nokia 6020 in silver.",
         "I've reguarily been writing into my diary since 2011.",
         "When I build something in Sims it's usually a tiny house.",
