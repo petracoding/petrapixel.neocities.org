@@ -98,14 +98,18 @@ toc: true
     If a page file is in a subfolder (= not on the same folder level as the CSS and JavaScript files) you need to adjust the paths in the HTML code to make sure the files are loaded correctly. Here's
     how:
   </p>
-  <div style="padding-left: 1em">
-    <p>Page file is in root folder (no subfolder):</p>
+  <div style="padding-left: 1em; padding-top: 0.5em">
+    <p>Page file is in root folder (no subfolder): <b>(No adjustment needed)</b></p>
     <pre><code>&lt;link href="./style.css" rel="stylesheet" /&gt;
 &lt;script src="./layout.js"&gt;&lt;/script&gt;</code></pre>
-    <p>Page file is in 1 subfolder (e.g. <i>about/page.html</i>):</p>
+    <p>
+      Page file is in 1 subfolder (e.g. <i>about/page.html</i>): <b>(Change <code>./</code> to <code>../</code>)</b>
+    </p>
     <pre><code>&lt;link href="../style.css" rel="stylesheet" /&gt;
 &lt;script src="../layout.js"&gt;&lt;/script&gt;</code></pre>
-    <p>Page file is in 2 subfolders (e.g. <i>about/old/page.html</i>):</p>
+    <p>
+      Page file is in 2 subfolders (e.g. <i>about/old/page.html</i>): <b>(Change <code>./</code> to <code>../../</code>)</b>
+    </p>
     <pre><code>&lt;link href="../../style.css" rel="stylesheet" /&gt;
 &lt;script src="../../layout.js"&gt;&lt;/script&gt;</code></pre>
     <p>And so on. (Add one <code>../</code> for every folder level)</p>
@@ -186,13 +190,14 @@ toc: true
 
   <br />
 
-  <details>
+  <details id="credits">
     <summary>Credits</summary>
     <p>
       This generator was inspired by my own never-completed tumblr theme generator (rest in peace), as well as
       <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/" target="_blank">Sadgrl's Layout Builder</a>, which you've probably heard of!
     </p>
     <p>The color pickers are <a href="https://jscolor.com/" target="_blank">jscolor</a>. I also used <a href="https://highlightjs.org/" target="_blank">highlightjs</a>.</p>
+    <p>For the downloadable .zip I used <a href="https://stuk.github.io/jszip/" target="_blank">JSZip</a> and <a href="https://github.com/eligrey/FileSaver.js" target="_blank">FilerSaver.js</a>.</p>
     <p>
       The background images in the examples / random layouts are from <a href="https://goblin-heart.net/sadgrl/webmastery/downloads/tiledbgs" target="_blank">sadgrl</a>. The example content images are
       from <a href="https://picsum.photos/" target="_blank">picsum.photos</a>.
@@ -204,6 +209,12 @@ toc: true
   <details>
     <summary>Changelog</summary>
     <ul>
+      <li>
+        <b>2025-07-18:</b>
+        <ul>
+          <li>+ Download .zip feature</li>
+        </ul>
+      </li>
       <li>
         <b>2025-02-12:</b>
         <ul>
@@ -227,7 +238,6 @@ toc: true
     <summary>Planned Features</summary>
     <p>Here are some features I plan on eventually adding. It might take a while though.</p>
     <ul>
-      <li>download function</li>
       <li>dark mode</li>
       <li>more widths</li>
       <li>neighborhood buttons (example content)</li>

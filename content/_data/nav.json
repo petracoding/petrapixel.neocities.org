@@ -274,6 +274,14 @@
             "icon": "fa-solid fa-wand-magic-sparkles"
           },
           {
+            "link": "/coding/layouts",
+            "label": "F2U Layouts",
+            "sublabel": "",
+            "new": true,
+            "hide": true,
+            "icon": "fa-solid fa-window-restore"
+          },
+          {
             "link": "/coding/widgets",
             "label": "Widgets for free Neocities accounts",
             "sublabel": "",
@@ -307,7 +315,7 @@
           },
           {
             "link": "/coding/quizzes",
-            "label": "Test your Knowledge!",
+            "label": "Coding Quiz",
             "sublabel": "",
             "new": true,
             "hide": false,
@@ -316,7 +324,7 @@
           {
             "link": "/coding/webringu",
             "label": "Webringu",
-            "sublabel": "Easy Webring Script",
+            "sublabel": "Simple Webring Script",
             "new": false,
             "hide": false,
             "icon": "fa-solid fa-ring"
@@ -329,7 +337,7 @@
         "items": [
           {
             "link": "/coding/how-to-make-a-website",
-            "label": "How to Make A Website",
+            "label": "How to create your first website",
             "sublabel": "",
             "new": false,
             "hide": false,
@@ -352,20 +360,20 @@
             "icon": "fa-solid fa-circle-xmark"
           },
           {
-            "link": "/coding/need-help",
-            "label": "Troubleshooting Guide",
-            "sublabel": "+ where/how to ask questions",
-            "new": false,
-            "hide": false,
-            "icon": "fa-solid fa-bug"
-          },
-          {
             "link": "/coding/code-quality",
             "label": "Code Quality Guide",
             "sublabel": "",
             "new": false,
             "hide": false,
             "icon": "fa-solid fa-broom"
+          },
+          {
+            "link": "/coding/need-help",
+            "label": "Troubleshooting Guide",
+            "sublabel": "+ how to find support",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-bug"
           }
         ]
       },
@@ -384,7 +392,7 @@
           {
             "link": "/coding/positioning-tutorial",
             "label": "CSS Positioning/Layout Tutorial",
-            "sublabel": "(display, position, transform, z-index, flexbox, grid, ...)",
+            "sublabel": "(display, position, flexbox, grid, transform, z-index, ...)",
             "new": false,
             "hide": false,
             "icon": "fa-brands fa-css"
@@ -392,7 +400,7 @@
           {
             "link": "/coding/cachebusting",
             "label": "Cachebusting",
-            "sublabel": "",
+            "sublabel": "Stop that pesky caching",
             "new": false,
             "hide": false,
             "icon": "fa-solid fa-bomb"
@@ -414,7 +422,7 @@
           {
             "link": "/coding/git-tutorial",
             "label": "Git Tutorial",
-            "sublabel": "",
+            "sublabel": "Version Control",
             "new": false,
             "hide": false,
             "icon": "fa-solid fa-code-branch"
@@ -422,7 +430,7 @@
           {
             "link": "/coding/npm-tutorial",
             "label": "node/npm tutorial",
-            "sublabel": "",
+            "sublabel": "Package Manager",
             "new": false,
             "hide": false,
             "icon": "fa-brands fa-npm"
@@ -430,7 +438,7 @@
           {
             "link": "/coding/webpack-tutorial",
             "label": "Webpack Tutorial",
-            "sublabel": "",
+            "sublabel": "File Bundler",
             "new": false,
             "hide": false,
             "icon": "fa-solid fa-box"
@@ -450,14 +458,6 @@
         "new": false,
         "items": [
           {
-            "link": "/coding/my-setup",
-            "label": "My VSCode Setup",
-            "sublabel": "Settings + Extensions",
-            "new": false,
-            "hide": false,
-            "icon": "fa-solid fa-toolbox"
-          },
-          {
             "link": "/coding/neocities",
             "label": "Neocities Tips",
             "sublabel": "",
@@ -474,12 +474,12 @@
             "icon": "fa-solid fa-code"
           },
           {
-            "link": "/coding/now-what",
-            "label": "I know HTML, CSS, and JS. Now what?",
-            "sublabel": "",
+            "link": "/coding/my-setup",
+            "label": "My VSCode Setup",
+            "sublabel": "Settings + Extensions",
             "new": false,
             "hide": false,
-            "icon": "fa-regular fa-lightbulb"
+            "icon": "fa-solid fa-toolbox"
           },
           {
             "link": "/webring",
@@ -487,8 +487,15 @@
             "sublabel": "",
             "new": true,
             "hide": false,
-            "icon": "fa-solid fa-ring",
-            "hideInCodingNav": true
+            "icon": "fa-solid fa-ring"
+          },
+          {
+            "link": "/coding/now-what",
+            "label": "I know HTML, CSS, and JS. Now what?",
+            "sublabel": "",
+            "new": false,
+            "hide": false,
+            "icon": "fa-regular fa-lightbulb"
           },
           {
             "link": "/coding/game-dev-journey",
@@ -501,10 +508,19 @@
           {
             "link": "/contest",
             "label": "Indie Web Contest",
-            "sublabel": "Results",
+            "sublabel": "2024 Contest Results",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-trophy"
+            "icon": "fa-solid fa-trophy",
+            "hideInCodingNav": true
+          },
+            {
+            "link": "/coding/cliques",
+            "label": "List of Cliques",
+            "sublabel": "",
+            "new": true,
+            "hide": false,
+            "icon": "fa-solid fa-list-ul"
           }
         ]
       }

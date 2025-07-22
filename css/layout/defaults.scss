@@ -39,6 +39,20 @@ body {
       font-family: $readableFont;
       font-size: 14px;
     }
+
+    main {
+      h1,
+      h2,
+      h3 {
+        font-family: $readableFont;
+      }
+    }
+
+    .aside-nav li a,
+    .aside-nav li summary {
+      font-size: 15px;
+      letter-spacing: 0;
+    }
   }
 
   a {

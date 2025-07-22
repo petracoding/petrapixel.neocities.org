@@ -1,6 +1,6 @@
 # WIP pages:
 /public/layouts
-/public/resources/templates.html
+/public/coding/layouts.html
 /public/shrines/ggnsp.html
 /public/shrines/ggnsp.css
 /public/shrines/happylist.html
@@ -16,6 +16,7 @@
 /public/layout-generator/test
 notes.txt
 img-Verknüpfung.lnk
+public/assets/js/layoutGenerator.js.LICENSE.txt
 
 
 # -----------------------------------------------------------------

@@ -10,7 +10,6 @@ export function initChecklist() {
     checkbox.checked = localStorage.getItem(getIdentifierOfCheckbox(checkbox)) === "true" ? true : false;
 
     checkbox.addEventListener("change", () => {
-      console.log(getIdentifierOfCheckbox(checkbox));
       localStorage.setItem(getIdentifierOfCheckbox(checkbox), checkbox.checked);
     });
   });

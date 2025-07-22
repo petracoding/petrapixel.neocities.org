@@ -112,6 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Init 'Download' button
+  const downloadBtn = document.querySelector("#downloadBtn");
+  downloadBtn.addEventListener("click", startDownload);
+
   // Scroll to Top
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
@@ -365,6 +369,24 @@ function debounce(func, timeout = 300) {
       func.apply(this, args);
     }, timeout);
   };
+}
+
+function startDownload() {
+  var JSZip = require("jszip");
+  var zip = new JSZip();
+
+  html = getHTML(settings, settings.jsLayout, false, randomPicsumID);
+  css = getCSS(settings);
+  js = getJS(getBefore(settings), getAfter(settings));
+
+  zip.file("index.html", html);
+  zip.file("style.css", css);
+  if (settings.jsLayout) zip.file("layout.js", js);
+
+  zip.generateAsync({ type: "blob" }).then(function (blob) {
+    var FileSaver = require("file-saver");
+    FileSaver.saveAs(blob, "website.zip");
+  });
 }
 
 /*

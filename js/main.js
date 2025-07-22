@@ -7,18 +7,13 @@ import { initWritingChart } from "./pages/writing";
 import { initRandomGenerator } from "./pages/random-generator";
 import { initChecklist } from "./pages/checklist";
 import { initComprehensionQuestions } from "./pages/comprehension-questions";
+import { initGoogleSheets } from "./pages/google-sheets";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ DOM is ready (via event listener)");
-    init();
-  });
-} else {
-  console.log("✅ DOM is already ready (executing immediately)");
+document.addEventListener("DOMContentLoaded", function () {
   init();
-}
+});
 
 function init() {
   loadTheme();
@@ -39,22 +34,22 @@ function init() {
   initWritingChart();
   initRandomGenerator();
   initChecklist();
+  initGoogleSheets();
 
   // Misc.
   initTooltips();
   initProgressBar();
   initComprehensionQuestions();
-
-  // SNOW;
+  initAprilFools();
   // initSnow();
+}
 
-  // APRIL FOOLS:
+function initAprilFools() {
   const today = new Date();
   const offset = today.getTimezoneOffset();
   const today2 = new Date(today.getTime() - offset * 60 * 1000);
   const day = today2.toISOString().split("T")[0];
-  console.log(day);
-  if (day == "2025-04-01") {
+  if (day == "2026-04-01") {
     document.body.style.transform = "scaleY(-1)";
     document.title = "APRIL FOOLS !!!";
   }
@@ -197,7 +192,6 @@ function initProgressBar() {
   const commentSectionHeight = document.querySelector(".buy-me-a-coffee + section") ? document.querySelector(".buy-me-a-coffee + section").getBoundingClientRect().height : 0;
 
   window.addEventListener("scroll", function () {
-    // console.log(window.scrollY);
     if (window.scrollY > 800) {
       document.querySelector(".progress-bar-container").classList.add("show");
     } else {

@@ -54,8 +54,7 @@ function getHead() {
     <script>
       // Template generated with petrapixel's layout generator.
       // (Please do not remove this credit.)
-      console.log("%c Template generated with petrapixel's layout generator.", "font-size: 14pt;");
-      console.log("%c https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt;");
+      console.log("%cTemplate generated with petrapixel's layout generator: https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt; color: #922a45; background: #ffd3ef");
     </script>
   </head>
   <body>

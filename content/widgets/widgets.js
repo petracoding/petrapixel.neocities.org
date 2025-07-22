@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (params["center"]) document.body.style.textAlign = params["center"] == "1" ? "center" : "left";
   if (params["font"]) document.body.style.fontFamily = '"' + params["font"].replaceAll("%20", " ") + '"';
 
-  console.log(params);
+  if (params["center"]) {
+    if (params["center"] == "0") {
+      document.body.querySelector("main").style.margin = "0";
+    }
+  }
 
   initStatuscafe(params);
   initLastFm(params);

@@ -1,0 +1,199 @@
+---
+layout: coding.njk
+title: "free layouts"
+description: "petrapixel's free templates / themes for indie websites. Neocities"
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+lightbox: true
+toc: true
+---
+
+<section>
+  <h1>Free-to-use Layouts</h1>
+
+  <p><strong>Features of all my layouts:</strong></p>
+  <ul>
+    <li>✓ mobile responsive</li>
+    <li>✓ basic accessibility</li>
+    <li>✓ css variables for easy changes</li>
+    <li>✓ code comments for your comprehension</li>
+    <li>✓ header/footer/sidebar loaded by javascript (<a href="/coding/common-questions#layout">?</a>)</li>
+    <li>✓ fast & no unnecessary bloat</li>
+  </ul>
+
+  <hr />
+
+  <div id="toc"></div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section class="layout">
+  <div class="layout__description">
+    <h2 id="layout1">Layout 1: "Basic"</h2>
+    <p>This is a very simple base layout for a responsive website.</p>
+    <p>If you want even more power to customize a layout you should check out my <a href="/coding/layout-generator">layout generator</a>!</p>
+  </div>
+  <div class="layout__buttons">
+    <a class="layout__button" href="/layouts/1" target="_blank">Live Preview</a>
+    <a class="layout__button" href="https://ko-fi.com/s/3acfe086ff" target="_blank">Get Layout</a>
+  </div>
+  <div class="multi-line-gallery multi-line-gallery--big lightbox-images">
+    <a data-fslightbox href="../assets/img/coding/layouts/1.png" class="image">
+      <img src="../assets/img/coding/layouts/1.png" alt="" />
+    </a>
+    <a data-fslightbox href="../assets/img/coding/layouts/1d.png" class="image">
+      <img src="../assets/img/coding/layouts/1d.png" alt="" />
+    </a>
+  </div>
+</section>
+
+<section class="layout">
+  <div class="layout__description">
+    <h2 id="layout2">Layout 2: "Wiki"</h2>
+    <p>This is a layout inspired by oldschool fandom wikis, specifically <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page" target="_blank">Bulbapedia</a>!</p>
+  </div>
+  <div class="layout__buttons">
+    <a class="layout__button" href="/layouts/2" target="_blank">Live Preview</a>
+    <a class="layout__button" href="https://ko-fi.com/petrastipjar" target="_blank">Get Layout</a>
+  </div>
+  <div class="multi-line-gallery multi-line-gallery--big lightbox-images">
+    <a data-fslightbox href="../assets/img/coding/layouts/1.png" class="image">
+      <img src="../assets/img/coding/layouts/1.png" alt="" />
+    </a>
+    <a data-fslightbox href="../assets/img/coding/layouts/1.png" class="image">
+      <img src="../assets/img/coding/layouts/1.png" alt="" />
+    </a>
+  </div>
+</section>
+
+<section>
+  <center>
+    <p><b>More layouts coming at some point!</b></p>
+    <p>Got an idea/request? Use the comment section!</p>
+  </center>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="how">How to use</h2>
+  <p>
+    When you click the "Get Layout" button you will be redirected to my ko-fi page. There you can choose how much you want to pay - just enter 0 if you want the layout for free! You will receive a
+    .zip file containing an HTML, a CSS and a JavaScript file. Together, the files work out-of-the-box as a website. Of course, basic HTML and CSS knowledge is necessary for you to make it 'yours'.
+  </p>
+
+  <h3 data-step="1">HTML:</h3>
+  <p>
+    This is your base for any page on your website. Copy-paste the code of <code>index.html</code> to use on all other pages of your site (e.g. <code>guestbook.html</code>, <code>about.html</code>,
+    ...) and change the content however you want.
+  </p>
+
+  <p>I <b>highly</b> recommend using an <a href="https://www.freeformatter.com/html-formatter.html" target="_blank">Online HTML Formatter</a> if your editor doesn't format your code by default.</p>
+  <p>
+    Note that if you want to change the content of the layout (= every part of the website that is the same on every page, e.g. header, footer, sidebars) you need to do this in the JavaScript file.
+    Don't worry - it's still HTML code there.
+  </p>
+  <br />
+  <b id="path">Adjusting File Paths:</b>
+  <p>
+    If a page file is in a subfolder (= not on the same folder level as the CSS and JavaScript files) you need to adjust the paths in the HTML code to make sure the files are loaded correctly. Here's
+    how:
+  </p>
+  <div style="padding-left: 1em; padding-top: 0.5em">
+    <p>Page file is in root folder (no subfolder): <b>(No adjustment needed)</b></p>
+    <pre><code>&lt;link href="./style.css" rel="stylesheet" /&gt;
+&lt;script src="./layout.js"&gt;&lt;/script&gt;</code></pre>
+    <p>
+      Page file is in 1 subfolder (e.g. <i>about/page.html</i>): <b>(Change <code>./</code> to <code>../</code>)</b>
+    </p>
+    <pre><code>&lt;link href="../style.css" rel="stylesheet" /&gt;
+&lt;script src="../layout.js"&gt;&lt;/script&gt;</code></pre>
+    <p>
+      Page file is in 2 subfolders (e.g. <i>about/old/page.html</i>): <b>(Change <code>./</code> to <code>../../</code>)</b>
+    </p>
+    <pre><code>&lt;link href="../../style.css" rel="stylesheet" /&gt;
+&lt;script src="../../layout.js"&gt;&lt;/script&gt;</code></pre>
+    <p>And so on. (Add one <code>../</code> for every folder level)</p>
+  </div>
+
+  <h3 data-step="2">CSS:</h3>
+  <p>This is the styling for your website. I've included code comments to make it easier for you to understand and edit if you're a beginner.</p>
+  <p>Instructions for dark mode are in the code.</p>
+  <p>If you need help understanding the <i>grid</i> rules which make up the layout, read the <a href="/coding/positioning-tutorial.html#grid">grid section of my positioning/layout tutorial</a>!</p>
+
+  <h3 data-step="3">JavaScript:</h3>
+  <p>
+    The Javascript includes some basic scripting and the HTML for your layout (header, footer). That way, if you want to edit your header or footer, you only have to do it once (in the JavaScript
+    file) instead of in every single HTML file. Don't worry - it's still HTML code.
+  </p>
+  <p>The script should work as-is without making a change.</p>
+  <p>
+    Use <code>${nesting}</code> in the JavaScript file to output a relative path, e.g. <code>&lt;img src=&quot;${nesting}img/logo.png&quot;&gt;</code> will output
+    <code>&lt;img src=&quot;../img/logo.png&quot;&gt;</code> if the current page is in a subfolder, etc.
+  </p>
+
+  <h3 data-step="4">Time to edit!</h3>
+  <p>Now it's time to start editing the code however you like!</p>
+  <p>
+    <b>Don't remove the credit in the code comment or the console.log statement.</b> You may move the credit in the footer to a "credits" page or similar, but please
+    <b>do not remove the credit altogether</b>.
+  </p>
+
+  <h3 data-step="5" id="cache">Cache:</h3>
+  <blockquote class="warning">
+    <p>Not clearing your cache might result in you not seeing the changes on your page!</p>
+    <p><a href="/coding/common-questions#cache">Click here to learn how to empty your cache!</a></p>
+  </blockquote>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2>Common Issues</h2>
+  <p>
+    Generally, if something isn't looking the way you expect, try viewing your site in a different browser. If it looks right there, then it really is a cache issue. This means that your code/project
+    is correct, but your browser is loading an old version of (parts of) your website. To solve the issue, make sure to <a href="/coding/common-questions#cache">empty your cache</a>, which you should
+    generally do after every big change.
+  </p>
+
+  <hr />
+
+  <p>If your website looks like this:</p>
+  <div class="image"><img src="../assets/img/coding/layout-generator/css-not-loaded.png" alt="" /></div>
+  <p>the CSS (and JavaScript) isn't loaded correctly.</p>
+  <p>
+    <mark><b>Solution:</b></mark> Make sure that you have followed the tutorial above exactly. Specifically, make sure that:
+  </p>
+  <ul>
+    <li>
+      If the page you're viewing is not directly in the same folder as the <code>style.css</code>, you need to edit the path to it and <code>layout.js</code>. <br />See <a href="#path">step 1</a> of
+      the tutorial above.
+    </li>
+    <li>You have saved all the changes you made in your files</li>
+  </ul>
+  <p>Also make sure to <a href="/coding/common-questions#cache">empty your cache</a>!</p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section class="buy-me-a-coffee">
+  <p>
+    I spent <b>hours</b> of my free time creating these layouts and sharing them for free. If you'd like to say thanks, please share my layouts with others and/or
+    <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
+  </p>
+  <img src="{{ nesting }}assets/img/layout/coffee.gif" alt="coffee" width="80" />
+</section>
+
+<section id="comments">
+  <h2>Comments</h2>
+  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
+  <p>
+    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
+    you don't hit the max character limit on comments.
+  </p>
+  <p>Please read <a href="#how">the guide above</a> and <a href="/coding/common-questions#cache">empty your cache</a> before asking questions. This will get rid of most problems.</p>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
+  <script src="{{ nesting }}assets/js/comment-widget.js"></script>
+</section>

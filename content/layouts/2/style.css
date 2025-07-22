@@ -1,0 +1,591 @@
+/* -------------------------------------------------------- */
+/* VARIABLES */
+/* -------------------------------------------------------- */
+
+/* Variables are used like this: var(--text-color) */
+/* You can use Google to pick colors (copy the HEX code, including the #): 
+   https://www.google.com/search?q=color+picker
+*/
+:root {
+  /* Background Colors: */
+  --background-color: #eeeeee;
+  --content-background-color: #ffffff;
+  --sidebar-background-color: #ffffff;
+  --slight-background: rgba(0, 0, 0, 0.15);
+
+  /* Text Colors: */
+  --text-color: #000000;
+  --sidebar-text-color: #000000;
+  --link-color: #3026e8;
+  --link-color-hover: #7780ec;
+
+  /* Text: */
+  --font: Arial, sans-serif;
+  --heading-font: Georgia, serif;
+  --font-size: 14px;
+
+  /* Other Settings: */
+  --margin: 10px;
+  --padding: 20px;
+  --border: 2px solid #000000;
+  --round-borders: 0px;
+  --sidebar-width: 200px;
+}
+
+/* DARK MODE: Use the values below. */
+/* 
+:root {
+  --background-color: #0b0b0b;
+  --content-background-color: #181818;
+  --sidebar-background-color: #181818;
+  --slight-background: rgba(255, 255, 255, 0.15);
+
+  --text-color: #ffffff;
+  --sidebar-text-color: #ffffff;
+  --link-color: #6159f8;
+  --link-color-hover: #2532c4;
+
+  --font: Arial, sans-serif;
+  --heading-font: Georgia, serif;
+  --font-size: 14px;
+
+  --margin: 10px;
+  --padding: 20px;
+  --border: 2px solid #ffffff;
+  --round-borders: 0px;
+  --sidebar-width: 200px;
+}*/
+
+/* -------------------------------------------------------- */
+/* BASICS */
+/* -------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: var(--font-size);
+  margin: 0;
+  padding: var(--margin);
+  color: var(--text-color);
+  font-family: var(--font);
+  line-height: 1.2;
+  background: var(--background-color);
+  background-image: url("");
+}
+
+::selection {
+  /* (Text highlighted by the user) */
+  background: var(--slight-background);
+}
+
+mark {
+  /* Text highlighted by using the <mark> element */
+  text-shadow: 1px 1px 4px var(--link-color);
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+/* Links: */
+a {
+  text-decoration: underline;
+}
+
+a,
+a:visited {
+  color: var(--link-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-color-hover);
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------- */
+/* LAYOUT */
+/* -------------------------------------------------------- */
+
+.layout {
+  width: 1000px;
+  display: grid;
+  grid-gap: var(--margin);
+  grid-template: "header header" auto "aside main" auto "footer footer" auto / var(--sidebar-width) auto;
+  /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+  padding: var(--padding);
+  background: var(--content-background-color);
+  border: var(--border);
+  border-radius: var(--round-borders);
+}
+
+/* -------------------------------------------------------- */
+/* HEADER */
+/* -------------------------------------------------------- */
+
+header {
+  grid-area: header;
+  font-size: 1.2em;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  background: var(--content-background-color);
+}
+
+.header-content {
+  padding: var(--padding);
+}
+
+.header-title {
+  font-family: var(--heading-font);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------- */
+/* SIDEBARS */
+/* -------------------------------------------------------- */
+
+aside {
+  grid-area: aside;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  overflow: hidden;
+  background: var(--sidebar-background-color);
+  padding: var(--padding);
+  color: var(--sidebar-text-color);
+}
+
+.sidebar-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: var(--heading-font);
+}
+
+.sidebar-section:not(:last-child) {
+  margin-bottom: 3em;
+}
+
+.sidebar-section ul,
+.sidebar-section ol {
+  padding-left: 1.5em;
+}
+
+.sidebar-section > *:not(p):not(ul):not(ol):not(blockquote) {
+  margin-top: 10px;
+}
+
+/* Sidebar Blockquote: */
+
+.sidebar-section blockquote {
+  background: var(--slight-background);
+  padding: 15px;
+  margin: 1em 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sidebar-section blockquote > *:first-child {
+  margin-top: 0;
+}
+
+.sidebar-section blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Site Button: */
+
+.site-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-button textarea {
+  font-family: monospace;
+  font-size: 0.7em;
+}
+
+/* -------------------------------------------------------- */
+/* FOOTER */
+/* -------------------------------------------------------- */
+
+footer {
+  grid-area: footer;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  overflow: hidden;
+  font-size: 0.75em;
+  padding: 15px;
+  background: var(--content-background-color);
+  display: flex;
+  justify-content: center;
+}
+
+footer a,
+footer a:visited {
+  color: var(--link-color);
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--link-color-hover);
+}
+
+/* -------------------------------------------------------- */
+/* NAVIGATION */
+/* -------------------------------------------------------- */
+
+nav {
+  margin-bottom: 3em;
+}
+
+nav .sidebar-title {
+  margin-bottom: 0.5em;
+}
+
+nav ul {
+  margin: 0 -5px;
+  padding: 0;
+  list-style: none;
+  user-select: none;
+}
+
+nav ul li {
+  margin-bottom: 0;
+}
+
+nav > ul li > a,
+nav > ul li > strong {
+  display: inline-block;
+}
+
+nav > ul li > a,
+nav > ul li > details summary,
+nav > ul li > strong {
+  padding: 5px 10px;
+}
+
+nav > ul li > a.active,
+nav > ul li > details.active summary {
+  font-weight: bold;
+}
+
+nav ul summary {
+  cursor: pointer;
+}
+
+nav ul ul li > a {
+  padding-left: 30px;
+}
+
+/* NAVIGATION IN HEADER */
+
+header nav {
+  margin-bottom: 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li:first-child > a {
+  padding-left: 0;
+}
+
+header nav ul li:last-child > a {
+  padding-right: 0;
+}
+
+/* Subnavigation (Drop-Down): */
+
+header nav ul ul {
+  background: var(--content-background-color);
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  padding: 0.5em;
+  z-index: 1;
+  border: var(--border);
+  min-width: 100%;
+  box-shadow: 0px 1px 5px var(--slight-background);
+}
+
+header nav ul li:hover ul,
+header nav ul li:focus-within ul {
+  display: block;
+}
+
+header nav ul li strong {
+  color: var(--link-color);
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+header nav ul ul li a {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* -------------------------------------------------------- */
+/* CONTENT */
+/* -------------------------------------------------------- */
+
+main {
+  line-height: 1.5;
+}
+
+main a,
+main a:visited {
+  color: var(--link-color);
+}
+
+main a:hover,
+main a:focus {
+  color: var(--link-color-hover);
+  text-decoration-style: wavy;
+}
+
+main p,
+main .image,
+main .full-width-image,
+main .two-columns {
+  margin: 0.75em 0;
+}
+
+main ol,
+main ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+main ol li,
+main ul li {
+  margin-bottom: 0.2em;
+  line-height: 1.3;
+}
+
+main ol {
+  padding-left: 2em;
+}
+
+main blockquote {
+  background: var(--slight-background);
+  padding: 15px;
+  margin: 1em 0;
+  border-radius: 10px;
+}
+
+main pre {
+  margin: 1em 0 1.5em;
+}
+
+main code {
+  text-transform: none;
+}
+
+main center {
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+main hr {
+  border: 0;
+  border-top: var(--border);
+  margin: 1.5em 0;
+}
+
+/* HEADINGS: */
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  font-family: var(--heading-font);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+main h1:first-child,
+main h2:first-child,
+main h3:first-child,
+main h4:first-child,
+main h5:first-child,
+main h6:first-child {
+  margin-top: 0;
+}
+
+main h1 {
+  font-size: 1.5em;
+}
+
+main h2 {
+  font-size: 1.4em;
+}
+
+main h3 {
+  font-size: 1.3em;
+}
+
+main h4 {
+  font-size: 1.2em;
+}
+
+main h5 {
+  font-size: 1.1em;
+}
+
+main h6 {
+  font-size: 1em;
+}
+
+/* COLUMNS: */
+
+.two-columns {
+  display: flex;
+}
+
+.two-columns > * {
+  flex: 1 1 0;
+  margin: 0;
+}
+
+.two-columns > *:first-child {
+  padding-right: 0.75em;
+}
+
+.two-columns > *:last-child {
+  padding-left: 0.75em;
+}
+
+/* -------------------------------------------------------- */
+/* CONTENT IMAGES */
+/* -------------------------------------------------------- */
+
+.image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.full-width-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.images {
+  display: flex;
+  width: calc(100% + 5px + 5px);
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------- */
+/* ACCESSIBILITY */
+/* -------------------------------------------------------- */
+
+/* please do not remove this. */
+
+#skip-to-content-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  line-height: 1;
+  font-size: 1.25rem;
+  background-color: var(--content-background-color);
+  color: var(--text-color);
+  transform: translateY(-3rem);
+  transition: transform 0.1s ease-in;
+  z-index: 99999999999;
+}
+
+#skip-to-content-link:focus,
+#skip-to-content-link:focus-within {
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------- */
+/* MOBILE RESPONSIVE */
+/* -------------------------------------------------------- */
+
+/* CSS Code for devices < 800px */
+@media (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+
+  .layout {
+    width: 100%;
+    grid-template: "header" auto "aside" auto "main" auto "footer" auto / 1fr;
+    /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+  }
+
+  aside {
+    /* REMOVE "display: none;" HERE IF YOU WANT YOUR SIDEBAR CONTENT TO BE VISIBLE ON MOBILE. */
+    display: none;
+    border-bottom: 1px solid;
+    padding: 9px;
+    font-size: 0.9em;
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  nav > ul {
+    padding-top: 0.5em;
+  }
+
+  nav > ul li > a,
+  nav > ul li > details summary,
+  nav > ul li > strong {
+    padding: 0.5em;
+  }
+
+  main {
+    max-height: none;
+    padding: 15px;
+  }
+
+  .images {
+    flex-wrap: wrap;
+  }
+
+  .images img {
+    width: 100%;
+  }
+
+  #skip-to-content-link {
+    font-size: 1rem;
+  }
+}

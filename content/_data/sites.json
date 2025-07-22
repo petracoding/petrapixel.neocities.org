@@ -369,9 +369,9 @@
     "inspiration": false
   },
   {
-    "link": "https://hitokage.neocities.org/",
-    "title": "hitokage",
-    "image": "hitokage.gif",
+    "link": "https://nanacore.neocities.org/",
+    "title": "nanacore",
+    "image": "nanacore.png",
     "neighbor": true,
     "inspiration": true
   },
@@ -409,5 +409,12 @@
     "image": "snails.png",
     "neighbor": true,
     "inspiration": true
+  },
+   {
+    "link": "https://rainbowcrap.neocities.org/",
+    "title": "rainbowcrap",
+    "image": "rainbowcrap.png",
+    "neighbor": false,
+    "inspiration": false
   }
 ]

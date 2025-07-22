@@ -58,6 +58,11 @@
     color: rgb(253, 213, 215);
   }
 
+  .layout__button {
+    background: var(--textColor);
+    color: var(--asideBackgroundColor) !important;
+  }
+
   /*
   	FILTER
    */

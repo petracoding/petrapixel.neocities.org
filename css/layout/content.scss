@@ -16,7 +16,12 @@ main {
   }
 
   p {
-    margin: 0.5em 0;
+    margin: 0.75em 0;
+
+    > small:first-child:last-child {
+      line-height: 1.3;
+      display: block;
+    }
   }
 
   mark {
@@ -457,6 +462,10 @@ img[src*="inline/"]:not([class]) {
     pointer-events: none;
   }
 
+  &.multi-line-gallery--big .image {
+    border: none;
+  }
+
   @media (min-width: $sm) {
     .image {
       width: 25%;
@@ -464,7 +473,6 @@ img[src*="inline/"]:not([class]) {
 
     &.multi-line-gallery--big .image {
       width: 50%;
-      border: none;
     }
   }
 }
