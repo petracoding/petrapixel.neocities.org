@@ -7,38 +7,62 @@
       <a href="{{ mainNavItem.link }}"><img width="9" src="{{ nesting }}assets/img/layout/heart.png" alt="" aria-hidden="true" />{{ mainNavItem.label }}</a>
     </li>
 
-    {% else %}
+    {% else %} {% if mainNavItem.isCodeMenu %}
+  </ul>
+
+  <!-- CODING HEADER -->
+  <div class="aside-nav__heading" aria-hidden="true">Coding/Webmastery</div>
+
+  <ul aria-label="Coding Menu">
+    {% for codingCategory in mainNavItem.items %}
+
+    <!-- CODING DETAIL-ELEMENTS -->
+    <li>
+      <details data-id="{{ codingCategory.label }}">
+        <summary>
+          {{ codingCategory.label }}{% if codingCategory.new %}<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}
+        </summary>
+        <ul>
+          {% for navItem in codingCategory.items %} {% if not navItem.hide %}
+
+          <!-- CODING MENU ITEMS -->
+          <li {% if navItem.mobileOnly %}class="mobile-only" {% endif %}>
+            <a href="{{ navItem.link }}"
+              >{% if navItem.labelInMainMenu %}{{ navItem.labelInMainMenu | safe }}{% else %}{{ navItem.label | safe }}{% endif %}{% if navItem.new %}<small class="aside-nav__new"
+                ><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+              >{% endif %}</a
+            >
+          </li>
+
+          {% endif %} {% endfor %}
+        </ul>
+      </details>
+    </li>
+
+    {% endfor %} {% else %}
+
+    <!-- GENERAL DETAIL-ELEMENTS -->
 
     <li>
-      <details>
+      <details data-id="{{ mainNavItem.label }}">
         <summary>
           {{ mainNavItem.label }}{% if mainNavItem.new %}<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}
         </summary>
         <ul>
-          {% for navItem in mainNavItem.items %} {% if not navItem.hide %} {% if navItem.link %}
+          {% for navItem in mainNavItem.items %} {% if not navItem.hide %}
 
+          <!-- GENERAL MENU ITEMS -->
           <li {% if navItem.mobileOnly %}class="mobile-only" {% endif %}>
             <a href="{{ navItem.link }}"
               >{{ navItem.label | safe }}{% if navItem.new %}<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}</a
             >
           </li>
 
-          {% else %}
-
-          <b>{{ navItem.label }}</b>
-
-          {% for subNavItem in navItem.items %} {% if not subNavItem.hide %}
-          <li {% if subNavItem.mobileOnly %}class="mobile-only" {% endif %}>
-            <a href="{{ subNavItem.link }}"
-              >{{ subNavItem.label }}{% if subNavItem.new %}<small class="aside-nav__new"><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small>{% endif %}</a
-            >
-          </li>
-
-          {% endif %} {% endfor %} {% endif %} {% endif %} {% endfor %}
+          {% endif %} {% endfor %}
         </ul>
       </details>
     </li>
 
-    {% endif %} {% endfor %}
+    {% endif %} {% endif %} {% endfor %}
   </ul>
 </nav>

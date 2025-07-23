@@ -343,6 +343,16 @@
       &:last-child {
         margin-right: 0;
       }
+
+      // Fix ResourceRing Widget
+      &#resourceRing {
+        display: block;
+
+        > a:first-child {
+          margin-bottom: -27px;
+          display: block;
+        }
+      }
     }
   }
 
@@ -408,6 +418,42 @@
   td:not([class]) {
     font-size: 0.6em;
   }
+}
+
+#eggring {
+  background-color: white;
+  border-radius: 5px;
+  border: 4px double var(--dark);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+
+  a {
+    color: #c8b175;
+    display: flex;
+    justify-content: center;
+    margin: 0 5px;
+
+    &:hover {
+      color: #c69827;
+    }
+  }
+
+  img {
+    display: flex;
+    width: 40px;
+  }
+}
+
+.eggringName {
+  white-space: nowrap;
+  font-size: 1.2em;
+  margin-top: 5px !important;
+}
+
+.eggringNav {
+  display: flex;
+  justify-content: space-between;
 }
 
 // MOBILE

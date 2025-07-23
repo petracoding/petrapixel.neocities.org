@@ -185,11 +185,17 @@ main {
     margin-bottom: 1em;
     background: var(--mainBackgroundColor);
 
-    p:first-child {
+    p:first-child,
+    pre:first-child,
+    .image:first-child,
+    blockquote:first-child {
       margin-top: 0;
     }
 
-    p:last-child {
+    p:last-child,
+    pre:last-child,
+    .image:last-child,
+    blockquote:last-child {
       margin-bottom: 0;
     }
   }

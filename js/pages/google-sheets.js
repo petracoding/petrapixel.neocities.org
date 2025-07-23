@@ -117,7 +117,7 @@ function constructTableFromData(parentEl, tableHeadings, tableData) {
   const row = document.createElement("tr");
   tableHeadings.forEach((cell) => {
     const cellElement = document.createElement("th");
-    cellElement.textContent = cell;
+    cellElement.textContent = cell; // do NOT use .innerHTML if displaying unmoderated content
     row.appendChild(cellElement);
   });
   tableHead.appendChild(row);
@@ -128,7 +128,7 @@ function constructTableFromData(parentEl, tableHeadings, tableData) {
     tableData[i].forEach((cell) => {
       const cellElement = document.createElement("td");
       cellElement.textContent = cell;
-      row.appendChild(cellElement);
+      row.appendChild(cellElement); // do NOT use .innerHTML if displaying unmoderated content
     });
     tableBody.appendChild(row);
   }
@@ -137,3 +137,7 @@ function constructTableFromData(parentEl, tableHeadings, tableData) {
   tableEl.appendChild(tableBody);
   parentEl.appendChild(tableEl);
 }
+
+// API key:
+// Google Cloud Console
+// https://console.cloud.google.com/apis/credentials

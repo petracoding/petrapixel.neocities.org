@@ -1,5 +1,6 @@
 [
   { "date": "2025-07-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-07-23", "text": "New tutorial: Using the Google Sheets API", "link": "/coding/google-sheets-api-tutorial" },
   { "date": "2025-07-22", "text": "I now have a list of text cliques! Submit cliques now!", "link": "/coding/cliques" },
   { "date": "2025-07-18", "text": "The layout generator now has a download function", "link": "/coding/layout-generator" },
   { "date": "2025-07-17", "text": "Updated my age. Happy birthday to me!", "link": "" },

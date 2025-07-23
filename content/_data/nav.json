@@ -4,7 +4,7 @@
     "link": "/"
   },
   {
-    "label": "about",
+    "label": "About",
     "new": false,
     "items": [
       {
@@ -71,7 +71,7 @@
     ]
   },
   {
-    "label": "my creations",
+    "label": "My Creations",
     "new": false,
     "items": [
       {
@@ -119,7 +119,7 @@
     ]
   },
   {
-    "label": "media recs",
+    "label": "Media Recs",
     "new": false,
     "items": [
       {
@@ -167,7 +167,7 @@
     ]
   },
   {
-    "label": "resources for you",
+    "label": "Resources",
     "new": false,
     "items": [
       {
@@ -209,7 +209,7 @@
     ]
   },
   {
-    "label": "fun stuff!",
+    "label": "Fun Stuff!",
     "new": true,
     "items": [
       {
@@ -257,13 +257,13 @@
     ]
   },
   {
-    "label": "coding & webmastery",
+    "label": "Coding & Webmastery",
     "new": false,
     "isCodeMenu": true,
     "items": [
       {
         "label": "Tools",
-        "new": true,
+        "new": false,
         "items": [
           {
             "link": "/coding/layout-generator",
@@ -324,6 +324,7 @@
           {
             "link": "/coding/webringu",
             "label": "Webringu",
+            "labelInMainMenu": "Webring Script",
             "sublabel": "Simple Webring Script",
             "new": false,
             "hide": false,
@@ -450,12 +451,20 @@
             "new": false,
             "hide": false,
             "icon": "fa-solid fa-code"
+          },
+           {
+            "link": "/coding/google-sheets-api-tutorial",
+            "label": "Google Sheets API Tutorial",
+            "sublabel": "Read sheets data with JS",
+            "new": true,
+            "hide": false,
+            "icon": "fa-brands fa-google-drive"
           }
         ]
       },
       {
         "label": "Miscellaneous",
-        "new": false,
+        "new": true,
         "items": [
           {
             "link": "/coding/neocities",
@@ -480,14 +489,6 @@
             "new": false,
             "hide": false,
             "icon": "fa-solid fa-toolbox"
-          },
-          {
-            "link": "/webring",
-            "label": "Code Collective Webring",
-            "sublabel": "",
-            "new": true,
-            "hide": false,
-            "icon": "fa-solid fa-ring"
           },
           {
             "link": "/coding/now-what",
@@ -521,6 +522,16 @@
             "new": true,
             "hide": false,
             "icon": "fa-solid fa-list-ul"
+          },
+          
+          {
+            "link": "/webring",
+            "label": "Code Collective Webring",
+            "sublabel": "",
+            "new": true,
+            "hide": false,
+            "icon": "fa-solid fa-ring",
+            "hideInCodingNav": true
           }
         ]
       }

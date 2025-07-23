@@ -15,7 +15,7 @@ function initMenu() {
     summaryEl.addEventListener("click", () => {
       // close all others
       [...menuDetails].forEach((otherEl) => {
-        if (otherEl.getAttribute("id") != menuDetailEl.getAttribute("id")) otherEl.removeAttribute("open");
+        if (otherEl.getAttribute("data-id") != menuDetailEl.getAttribute("data-id")) otherEl.removeAttribute("open");
       });
     });
   });

@@ -54,64 +54,6 @@ function headerHTML() {
         	
         </div>
       </header>
-
-	  
-        
-      <!-- =============================================== -->
-      <!-- LEFT SIDEBAR -->
-      <!-- =============================================== -->
-
-      <aside class="left-sidebar">
-	  
-        
-        <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <p>Necessit atibus perferendis inventore tempore vel optio similique blanditiis quasi quam?</p>
-        </div>
-        
-        <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
-          <blockquote>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p>Necessit atibus perferendis inventore tempore vel optio similique blanditiis quasi quam?</p>
-          </blockquote>
-        </div>
-        
-        <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
-          <ul>
-            <li>List</li>
-            <li>List</li>
-            <li><a href="/example">List</a></li>
-            <li>List</li>
-          </ul>
-        </div>
-        
-        <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
-          <marquee>
-          	<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a>
-          	<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a>
-          	<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a>
-          	<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a>
-          </marquee>
-        </div>
-        
-        <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
-          <img class="full-width-image" src="https://picsum.photos/id/10/1000/400">
-        </div>
-        
-        <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
-          <div class="site-button">
-          	<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a>
-        	<textarea><a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a></textarea>
-          </div>
-        </div>
-      </aside>
-	
       `;
 }
 

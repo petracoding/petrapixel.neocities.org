@@ -117,7 +117,7 @@ toc: true
     etc.) We will then <b>commit</b> these chosen ("staged") files and give all of the changes a name, e.g. <i>"Update About-Me Page"</i>.
   </p>
   <p>I've tried to visualize it here: <span style="opacity: 0.5">(Behold my magnum opus)</span></p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/magnumopus.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/magnumopus.png" alt="" />
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -142,8 +142,8 @@ toc: true
   <p>
     If you're using <b>VSCode</b>, simply right-click the file tree on the left side of the program and choose "Open in Integrated Terminal". This will open the terminal on the bottom of the program:
   </p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/1.png" alt="" /></div>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/2.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/1.png" alt="" />
+  <img class="image" src="../assets/img/coding/git-tutorial/2.png" alt="" />
   <p>
     Other IDEs (= programs you code in) might also have integrated terminals. If you use Notepad++ or other simple editors to work on your code you can open a Windows terminal by
     <b>right-clicking in your folder in the Windows explorer and choosing "Open in Terminal"</b> (I'm using Windows 11 so it might be labelled differently for you). The Windows Powershell will open.
@@ -166,11 +166,11 @@ toc: true
   <h2 id="new-project">1. Creating a new project</h2>
 
   <p>Go to GitHub and create an empty repository. You could call it <i>my-website</i> or <i>example.neocities.org</i> or something like that. Do <b>not</b> include a .README file.</p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/0.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/0.png" alt="" />
   <p>On the repostiory page, copy the HTTPS (not SSH!) link. We will need this in a second.</p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/3b.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/3b.png" alt="" />
   <p>(If you want to find this link later, it will be in the "Code" menu:)</p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/3.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/3.png" alt="" />
   <p>Open a terminal in your project folder. (If you don't have a project folder yet create it now and add at least one file.)</p>
   <!-- <p>
             Choose whether you want to call your primary branch <em>main</em> or <em>master</em> . (It doesn't really matter. <em>master</em> used to be the default, and is still extremely common, but
@@ -246,7 +246,7 @@ git push --set-upstream origin main</code></pre>
 
   <p>To stage <em>every</em> changed file, you can simply do: <code>git add .</code></p>
   <p><strong>Or: </strong>When using the VSCode UI simply press the small "+" next any changed file to stage it:</p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/4.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/4.png" alt="" />
 
   <!-- <p>
             To stage only a <strong>part</strong> of a file, you can use: <code>git add -p &lt;filename&gt;</code> and define for every line what you want to do. (y=stage,n=not stage,q=not stage and
@@ -260,7 +260,7 @@ git push --set-upstream origin main</code></pre>
     <p>When unstaging files your changes will <b>not</b> be undone. The only thing that changes is the status of the file: It will change from staged to unstaged.</p>
     <p>To un-stage files/folders, execute <code>git restore --staged &lt;file&gt;</code> or <code>git reset HEAD -- &lt;file&gt;</code> (They do the same thing.)</p>
     <p><strong>Or: </strong>When using the VSCode UI simply press the small "-" next to any staged file to unstage it:</p>
-    <div class="image"><img src="../assets/img/coding/git-tutorial/5.png" alt="" /></div>
+    <img class="image" src="../assets/img/coding/git-tutorial/5.png" alt="" />
     <br />
   </details>
   <br />
@@ -284,7 +284,7 @@ git push --set-upstream origin main</code></pre>
     <pre><code>git commit -m "Example message"</code></pre>
   </div>
   <p><strong>Or: </strong>When using the VSCode UI simply type your message into the input box at the top and click 'Commit':</p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/6.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/6.png" alt="" />
   <p>Some <strong>good</strong> examples for commit messages:</p>
   <ul>
     <li>"BUGFIX: Fix order of gallery items"</li>
@@ -307,7 +307,7 @@ git push --set-upstream origin main</code></pre>
     <pre><code>git commit --amend --no-edit</code></pre>
     <p>This will add your changes to your most recent commit. The commit message will stay unchanged.</p>
     <p><strong>Or: </strong>If you're using VSCode you can open the submenu of the "Commit" button and click "Commit (Amend)":</p>
-    <div class="image"><img src="../assets/img/coding/git-tutorial/amend.png" alt="" /></div>
+    <img class="image" src="../assets/img/coding/git-tutorial/amend.png" alt="" />
   </details>
 
   <h3>Undoing commits</h3>
@@ -358,10 +358,10 @@ git push --set-upstream origin main</code></pre>
     <pre><code>git push</code></pre>
   </div>
   <p><strong>Or: </strong>When using the VSCode UI simply press "Sync Changes":</p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/7.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/7.png" alt="" />
   <p>Now, if you refresh your GitHub page, you should see the changes.</p>
   <p>If you click on the "Commits" button you can see a list of all your previous commits/changes.</p>
-  <div class="image"><img src="../assets/img/coding/git-tutorial/8.png" alt="" /></div>
+  <img class="image" src="../assets/img/coding/git-tutorial/8.png" alt="" />
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -392,12 +392,12 @@ git push --set-upstream origin main</code></pre>
     </li>
     <li>
       Get your API Key for your Neocities account. (It can be found in your Site Settings on Neocities under "<span style="text-transform: none">API</span>").<br />
-      <div class="image"><img src="../assets/img/coding/git-tutorial/api1.png" alt="" /></div>
+      <img class="image" src="../assets/img/coding/git-tutorial/api1.png" alt="" />
     </li>
     <li>
       Open your repository on GitHub, go to its "Settings", then "Secrets and Variables" -&gt; "Actions". Add a secret with the name
       <span style="text-transform: none">NEOCITIES_API_TOKEN</span> and set your Neocities API Key as the value.<br />
-      <div class="image"><img src="../assets/img/coding/git-tutorial/api2.png" alt="" /></div>
+      <img class="image" src="../assets/img/coding/git-tutorial/api2.png" alt="" />
     </li>
   </ol>
   <p>Done! Now whenever you push to your master/main branch, the changed/added files will automatically be uploaded to your Neocities site.</p>

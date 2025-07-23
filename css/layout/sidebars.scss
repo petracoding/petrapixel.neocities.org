@@ -781,6 +781,18 @@
   }
 }
 
+/*----------  Tamanotchi  ----------*/
+
+.aside-tamanotchi {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: calc(72px * 2);
+    image-rendering: pixelated;
+  }
+}
+
 /*----------  Image of the moment  ----------*/
 
 .image-of-the-moment {
@@ -907,7 +919,6 @@
     details[open] summary {
       font-weight: bold;
       font-style: italic;
-      //   background-color: rgba(black, 0.2);
 
       .aside-nav__new {
         display: none;
@@ -960,6 +971,7 @@
       letter-spacing: -0.04em;
       font-size: 19px;
       border-radius: 3px;
+      text-transform: lowercase;
 
       &:hover,
       &:not(summary):focus {
@@ -1034,7 +1046,7 @@
   }
 
   ul li:not(:last-child) ul {
-    margin-top: 5px;
+    // margin-top: 5px;
     margin-bottom: 15px;
   }
 }
@@ -1044,9 +1056,8 @@
   border: 1px dashed currentColor;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font-size: 1.1em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
   padding: 8px 10px 6px;
   line-height: 1;
   margin-bottom: 5px;
@@ -1054,6 +1065,11 @@
   margin-left: -1px;
   margin-right: -1px;
   background: var(--yellow);
+
+  &:not(:first-child) {
+    // Coding Heading
+    margin-top: 1em;
+  }
 }
 
 .aside-nav__new {
@@ -1189,7 +1205,7 @@
     }
   }
 
-  .aside-nav__heading {
+  .aside-nav__heading:first-child {
     display: none;
   }
 
