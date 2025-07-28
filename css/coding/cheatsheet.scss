@@ -1,0 +1,20 @@
+.cheatsheet-blockquote {
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.cheatsheet-blockquote pre {
+  margin: 0;
+}
+
+.cheatsheet-blockquote small {
+  font-size: 0.9em;
+  opacity: 0.7;
+  display: block;
+  margin-left: 1em;
+  font-weight: normal;
+  user-select: none;
+  font-family: sans-serif;
+  letter-spacing: 0.1px;
+}

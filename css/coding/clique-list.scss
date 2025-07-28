@@ -1,0 +1,79 @@
+#cliquelist {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr.inactive {
+    opacity: 0.5;
+  }
+
+  th,
+  td {
+    border: 1px dotted;
+    padding: 0.4em 0.5em;
+    text-align: left;
+  }
+
+  td:first-child {
+    font-size: 1.1em;
+  }
+
+  th {
+    position: relative;
+    background: var(--light);
+    font-size: 1.1em;
+    white-space: nowrap;
+    padding-right: 30px;
+    user-select: none;
+
+    &:last-child {
+      padding-right: 0.5em;
+    }
+  }
+
+  small {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--black);
+  }
+
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  #sorttable_sortfwdind,
+  #sorttable_sortrevind {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+
+  // Save space on mobile:
+  @media (max-width: $md) {
+    #sorttable_sortfwdind,
+    #sorttable_sortrevind {
+      position: static;
+    }
+
+    th {
+      padding-right: 0.5em;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3),
+    th:nth-child(4),
+    td:nth-child(4) {
+      display: none;
+    }
+  }
+}
+
+// Extra space on large screens:
+// @media (min-width: $lg) {
+//   .cliquelist-wrapper {
+//     margin-left: -35px;
+//     margin-right: -35px;
+//   }
+// }

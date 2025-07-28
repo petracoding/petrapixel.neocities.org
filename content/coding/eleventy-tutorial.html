@@ -19,12 +19,14 @@ toc: true
   <blockquote class="project">
     If you want to look at an example project that uses Eleventy, check out <a target="_blank" href="https://github.com/petracoding/petrapixel.neocities.org">my website's repository</a>!
   </blockquote>
+  <!--
   <blockquote class="contact">
     <p>
       If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
       and I'd love to help.
     </p>
   </blockquote>
+  -->
   <br />
 
   <div id="toc" data-two-levels="yeh">
@@ -47,12 +49,13 @@ toc: true
       </li>
       <li>
         <a href="#nunjucks">Nunjucks</a>
-        <ul>
-          <li><a href="#custom-filters">Custom Filters (Optional)</a></li>
-        </ul>
       </li>
+      <li><a href="#custom-filters">Custom Filters (Optional)</a></li>
       <li>
         <a href="#data">Using Data (Optional)</a>
+      </li>
+      <li>
+        <a href="#cachebusting">Cachebusting (Recommended)</a>
       </li>
       <li>
         <a href="#partials">Partials (Optional)</a>
@@ -79,6 +82,9 @@ toc: true
       </li>
       <li>
         <a href="#links">Links</a>
+      </li>
+      <li>
+        <a href="#cheatsheet">Cheatsheet</a>
       </li>
       <li>
         <a href="#comments">Comments</a>
@@ -112,8 +118,9 @@ toc: true
   <p>In your project, execute the following command to install eleventy as a dev dependency for your project:</p>
   <p><code>npm install --save-dev @11ty/eleventy</code></p>
   <p>You should now see <i>"@11ty/eleventy"</i> in the list of your dependencies in your <code>package.json</code> file.</p>
-  <br />
-  <p>If you're using VSCode, I highly recommend installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.</p>
+  <blockquote class="tip">
+    <p>If you're using VSCode, I highly recommend installing the Extension <i>"Better Nunjucks"</i> to get syntax highlighting for Nunjucks code.</p>
+  </blockquote>
 </section>
 
 <section>
@@ -218,9 +225,8 @@ eleventyConfig.addTransform("htmlmin", function (content) {
     <code>&lt;!-- htmlmin:ignore --&gt;</code> before and after it, like so:
   </p>
   <pre><code>&lt;!-- htmlmin:ignore --&gt;
-	&lt;p&gt;Hewwoo  ⸜(｡&gt; ᵕ &lt; )⸝♡ &lt;/p&gt;
-&lt;!-- htmlmin:ignore --&gt;
-  </code></pre>
+&lt;p&gt;Hewwoo  ⸜(｡&gt; ᵕ &lt; )⸝♡ &lt;/p&gt;
+&lt;!-- htmlmin:ignore --&gt;</code></pre>
 </section>
 
 <section>
@@ -279,8 +285,16 @@ For Loop:
 </code></pre>
   <p>Comparisions work the same as in JavaScript (e.g. <code>==</code>, <code>!=</code>, <code>&lt;=</code> ...)</p>
 
-  <hr />
-  <h3 id="custom-filters">Custom Filters (Optional)</h3>
+  <p>Here are some ways to debug:</p>
+  <pre><code>Output information of a variable:
+    {% raw %}{{ myVariable | dump }}{% endraw %}
+  
+Log information of a variable (for debugging):
+    {% raw %}{{ myVariable | log }}{% endraw %}</code></pre>
+</section>
+
+<section>
+  <h2 id="custom-filters">Custom Filters (Optional)</h2>
   <p>
     Filters are ways to change or use information in Nunjucks. You can write your own custom filters, which opens up a lot of possibilites. This is what the Nunjucks code looks like - the filter's
     name is added after a pipe (|):
@@ -291,9 +305,15 @@ For Loop:
     if (!value) return "";
     return value.toLowerCase() + " :)";
   });</code></pre>
-  <p>(This is just a simple example of course.)</p>
-  <blockquote class="warning"><p>If your eleventy watcher is running, make sure to restart it after making this or any other change in the configuration file.</p></blockquote>
   <p>Assuming <code>myVariable</code> has the value "Hello World", the output of <code>{% raw %}{{ myVariable | doSomethingWithIt }}{% endraw %}</code> will be: hello world :)</p>
+  <blockquote class="tip"><code>console.log</code> statements in the custom filters will output into your terminal, not the browser's console!</blockquote>
+  <blockquote class="warning"><p>If your eleventy watcher is running, make sure to restart it after making this or any other change in the configuration file.</p></blockquote>
+  <blockquote class="warning">
+    <p>
+      If your filter still does not work, and you're trying to use it in an HTML file, try adding <code>templateEngineOverride: njk</code> to the front matter of your file. (More about the front
+      matter later)
+    </p>
+  </blockquote>
 </section>
 
 <section>
@@ -328,16 +348,16 @@ For Loop:
 </code></pre>
   <p>(This would output a list of all objects in the <code>changelog.json</code> file.)</p>
   <p>There are also other ways to get data. If you're interested read <a target="_blank" href="https://www.11ty.dev/docs/data/#sources-of-data">the documentation</a>.</p>
+</section>
 
-  <hr />
-  <h3 id="cachebusting">Cachebusting</h3>
-
-  <p><b>Tip:</b> For cachebusting, instead of manually updating the <code>?nocache=</code> parameter, you can add the current date and time to your files like so:</p>
+<section>
+  <h2 id="cachebusting">Cachebusting (Recommended)</h2>
+  <p>For <a href="/coding/cachebusting">cachebusting</a>, instead of manually updating the <code>?nocache=</code> parameter, you can add the current date and time to your files like so:</p>
   <pre><code class="language-html">&lt;script src=&quot;example.js{% raw %}{{ nocache }}{% endraw %}&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;example.css{% raw %}{{ nocache }}{% endraw %}&quot; /&gt;</code
   ></pre>
   <p><code>{% raw %}{{ nocache }}{% endraw %}</code> will render something like <code>?nocache=123</code>, 123 being the current timestamp.</p>
-  <p>For this to work you need to create a data file: <code>_data/nocache.js</code> only has one line:</p>
+  <p>For this to work you need to create a data file, <code>_data/nocache.js</code>, which only has one line:</p>
   <pre><code>module.exports = () => "?nocache=" + Date.now();</code></pre>
   <p>More info on cachebusting <a href="/coding/cachebusting">here</a>.</p>
 </section>
@@ -355,7 +375,7 @@ For Loop:
 
 <section>
   <h2 id="templates">Templates</h2>
-  <h3 id="template">Step 1: The template</h3>
+  <h3 id="template" data-step="1">The Template</h3>
   <p>Template files must be located in a <code>_includes</code> folder in your input folder. (In my example this would be <code>content/_includes</code>.)</p>
   <p>
     A template file needs to have the file extension <code>.njk</code>, but besides that it can look like a totally normal HTML file. You can (and should) use Nunjucks code to output things that vary
@@ -364,7 +384,7 @@ For Loop:
   </p>
   <p id="cachebusting">Wherever you want the content of the page to be, type <code>{% raw %}{{ content | safe }}{% endraw %}</code></p>
 
-  <h3 id="page">Step 2: The page</h3>
+  <h3 id="page" data-step="2">The Page</h3>
   <p>Whether your page file is an <code>.html</code> or a <code>.njk</code> file doesn't matter - You can use templates in the same way.</p>
   <p>All we need to do is the so-called <b>"front matter"</b>. It's a section at the top of the file that looks like this:</p>
   <pre><code>---
@@ -388,7 +408,7 @@ showSelfie: true
       is a complete example on how to generate an RSS file with Eleventy using a data file.)
     </p>
   </blockquote>
-  <h3 id="example">Example</h3>
+  <h3 id="example" data-step="3">Example</h3>
   <p><code>content/_includes/myTemplate.njk</code>:</p>
   <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -583,6 +603,27 @@ public/				&lt;-- your output folder
     <li><a href="https://nodejs.org/en/download/prebuilt-installer" target="_blank">Node.js Download Page</a></li>
     <li><a href="https://medium.com/@tarngerine/how-the-heck-do-i-use-eleventy-the-intro-guide-i-wish-i-had-84d9b2689031" target="_blank">"How the heck do I use Eleventy?"</a></li>
   </ul>
+</section>
+
+<section>
+  <h2 id="cheatsheet">Cheatsheet</h2>
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>Installation:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre>
+      </blockquote>
+    </div>
+    <div>
+      <h3>Running:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npx @11ty/eleventy <small>builds your files</small>
+npx @11ty/eleventy --watch <small>watches your files (and builds them when a change happens)</small>
+npx @11ty/eleventy --serve <small>watches your files (and builds them when a change happens), and stars a webserver on localhost</small></pre>
+      </blockquote>
+    </div>
+  </div>
 </section>
 
 <section class="buy-me-a-coffee">

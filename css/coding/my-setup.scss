@@ -1,0 +1,25 @@
+.vscode-settings-table {
+  border-collapse: collapse;
+
+  th {
+    background: var(--light);
+    text-decoration: underline;
+  }
+
+  th,
+  td {
+    border: 1px dotted;
+    padding: 0.4em 0.5em;
+    text-align: left;
+  }
+
+  td:nth-child(3) {
+    font-size: 0.9em;
+  }
+
+  code {
+    font-size: 9px;
+    font-weight: normal;
+    display: block;
+  }
+}

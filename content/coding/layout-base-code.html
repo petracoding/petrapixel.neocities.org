@@ -9,34 +9,6 @@ progressBar: true
 toc: true
 ---
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const inputEl = document.querySelector("#explanation-toggle");
-    inputEl.checked = true;
-    inputEl.addEventListener("change", () => {
-      change(event.currentTarget.checked);
-    });
-  });
-
-  function change(isChecked) {
-    if (!isChecked) {
-      document.querySelector("#hide-explanation").style.display = "block";
-      document.querySelector("#show-explanation").style.display = "none";
-    } else {
-      document.querySelector("#hide-explanation").style.display = "none";
-      document.querySelector("#show-explanation").style.display = "block";
-    }
-  }
-</script>
-<style>
-  #show-explanation,
-  #hide-explanation {
-    height: 300px;
-    resize: vertical;
-    overflow-y: scroll;
-  }
-</style>
-
 <section>
   <h1>Layout Base Code</h1>
   <i class="fa-solid fa-border-none"></i>

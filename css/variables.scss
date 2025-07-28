@@ -1,9 +1,21 @@
-// Fonts
+$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor2.gif") 1 1, auto;
+$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5, pointer;
+
+$xs: 350px;
+$sm: 576px;
+$md: 992px;
+$lg: 1000px;
+$xl: 1200px;
 
 $font: "rainyhearts", monospace, sans-serif;
 $font2: $font; // strong, menu links
 $fontHeadings: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
 $readableFont: Arial, sans-serif;
+
+/* 
+  !IMPORTANT!
+  add files to css/fonts !!! (NOT in the public folder)
+*/
 
 @font-face {
   font-family: "rainyhearts";
@@ -13,10 +25,13 @@ $readableFont: Arial, sans-serif;
   font-display: swap;
 }
 
-/* 
-  !IMPORTANT!
-  add files to css/fonts !!! (NOT in the public folder)
-*/
+@font-face {
+  font-family: "Alagard";
+  src: url("./fonts/Alagard.woff2") format("woff2"), url("./fonts/Alagard.woff") format("woff"), url("./fonts/Alagard.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 /*
  @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
@@ -26,22 +41,3 @@ $readableFont: Arial, sans-serif;
 //   font-family: "basiic";
 //   src: url(https://cinni.net/fonts/basiic.ttf);
 // }
-
-@font-face {
-  font-family: "Alagard";
-  src: url("./fonts/Alagard.woff2") format("woff2"), url("./fonts/Alagard.woff") format("woff"), url("./fonts/Alagard.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-// Variables
-
-$cursorDefault: url("https://petrapixel.neocities.org/assets/img/cursor2.gif") 1 1, auto;
-$cursorPointer: url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5, pointer;
-
-$xs: 350px;
-$sm: 576px;
-$md: 992px;
-$lg: 1000px;
-$xl: 1200px;

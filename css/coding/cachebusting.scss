@@ -1,0 +1,58 @@
+.cachebusting-comparision {
+  border-collapse: collapse;
+  line-height: 1;
+
+  thead th:first-child {
+    font-size: 1.4em;
+    text-decoration: underline;
+  }
+
+  th,
+  td {
+    border: 1px dotted;
+    padding: 0.4em 0.5em;
+
+    small {
+      display: block;
+      margin-top: 0.25em;
+    }
+
+    &:first-child {
+      @media (max-width: $md) {
+        // save space by hiding first column
+        display: none;
+      }
+    }
+  }
+
+  th {
+    background: var(--light);
+
+    &:first-child {
+      max-width: 200px;
+    }
+  }
+
+  td {
+    text-align: center;
+  }
+
+  tbody tr:last-child td {
+    background: var(--light);
+    text-align: left;
+    vertical-align: top;
+
+    ul {
+      margin: 0;
+    }
+  }
+
+  // WIP
+
+  th,
+  td {
+    &:last-child {
+      display: none;
+    }
+  }
+}

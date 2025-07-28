@@ -9,21 +9,6 @@ mainClass: coding-page git-tutorial
 toc: true
 ---
 
-<style>
-  a.anchor,
-  .zeroclipboard-container {
-    display: none;
-  }
-
-  main code {
-    font-weight: normal;
-  }
-
-  main h3 {
-    margin-top: 1.5em;
-  }
-</style>
-
 <section>
   <h1>Git & GitHub Tutorial</h1>
   <i class="fa-solid fa-code-branch"></i>
@@ -49,14 +34,16 @@ toc: true
     <code>git -v</code>
   </blockquote>
 
+  <!--
   <blockquote class="contact">
     <p>
       If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
       and I'd love to help.
     </p>
   </blockquote>
-
+ -->
   <br />
+
   <!-- https://github.blog/developer-skills/programming-languages-and-frameworks/what-is-git-our-beginners-guide-to-version-control/ -->
 
   <!-- <center style="padding: 0.4em 0 0.6em"><b>This guide is still work-in-progress!</b></center> -->
@@ -74,6 +61,7 @@ toc: true
         <a href="#neocities">Connecting to Neocities <small>(Optional)</small></a>
       </li>
       <li><a href="#additional-commands">Additional Commands</a></li>
+      <li><a href="#cheatsheet">Cheatsheet</a></li>
       <li><a href="#comments">Comments</a></li>
     </ul>
   </div>
@@ -404,6 +392,7 @@ git push --set-upstream origin main</code></pre>
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------------------------------------- -->
+
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <section>
   <h2>Additional Commands</h2>
@@ -439,6 +428,73 @@ git push --set-upstream origin main</code></pre>
 			- branches
 			- how to work with others, + PRs
 		-->
+
+<section>
+  <h2 id="cheatsheet">Cheatsheet</h2>
+  <br />
+  <div class="two-columns">
+    <div>
+      <h3>New Project:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git init <small>initalizes your current folder as a git repository</small>
+git remote add origin &lt;https link&gt; <small>connects your local folder with the GitHub repository you have created on github.com</small>
+git add . <small>stages all your files</small>
+git commit -m "First Commit" <small>commits the staged files</small>
+git branch -M main <small>renames the branch to 'main'</small>
+git push --set-upstream origin main <small>pushes (= uploads) your local files to your GitHub repository</small>
+git pull --set-upstream origin main <small>pulls (= downloads) the files in your GitHub repository into your local folder</small></pre>
+      </blockquote>
+    </div>
+    <div>
+      <h3>Staging, Committing, Pushing:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git status <small>shows the status of every changed file</small>
+git add &lt;file&gt; <small>stages a file</small>
+git add . <small>stages all changed files</small>
+git commit -m "Example message" <small>commits the staged files</small>
+git commit --amend -m "an updated commit message" <small>adds the staged files to the previous commit</small>
+git commit --amend --no-edit <small>adds the staged files to the previous commit, without changing the commit message</small>
+git push <small>pushes (= uploads) your local files to your GitHub repository</small></pre>
+      </blockquote>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="two-columns">
+    <div>
+      <h3>Undoing:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git revert --no-edit &lt;commit_hash&gt; <small>revert a commit as if done by hand</small>
+git reset &lt;previous_commit_hash&gt; <small>revert a commit as if it never happened</small>
+git restore --staged &lt;file&gt; <small>unstages a file</small>
+git reset HEAD -- &lt;file&gt; <small>same as above (unstages a file)</small>
+git restore &lt;file&gt; <small>discards changes in an unstaged file</small>
+git restore . <small>discards all changes in all unstaged files</small></pre>
+      </blockquote>
+
+      <h3>Branches:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git branch <small>shows branches</small>
+git switch -c &lt;new-branch&gt; <small>makes a new branch and checks it out (currently changed files will be kept)</small>
+git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre>
+      </blockquote>
+    </div>
+    <div>
+      <h3>Misc.:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>git pull <small>pulls (= downloads) the files in your GitHub repository into your local folder</small>
+git log <small>show a log of all commits</small>
+git log --oneline <small>show a log of all commits (shorter)</small>
+git diff <small>shows all changes</small>
+git diff &lt;a&gt; <small>shows all changes in a file/folder</small>
+git -v <small>shows the git version you are using</small>
+git remote -v <small>shows all remotes</small>
+git remote remove &lt;name&gt; <small>deletes a remote</small></pre>
+      </blockquote>
+    </div>
+  </div>
+</section>
 
 <section class="buy-me-a-coffee">
   <p>

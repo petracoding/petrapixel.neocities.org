@@ -5,6 +5,7 @@ description: "A glossary for web development beginners and Neocities newbies."
 nesting: "../"
 codeHighlight: true
 mainClass: coding-page
+templateEngineOverride: njk
 ---
 
 <section>
@@ -16,7 +17,15 @@ mainClass: coding-page
   <br />
 
   <div class="glossary">
-    <ul>
+    <ul class="list-with-more-spacing">
+      {% for g in glossary | sortByTerm %}
+      <li id="term-{{ g.term | removeSpaces }}">
+        <b {% if g.meaning %}title="{{ g.meaning }}" {% endif %}>{{ g.term }}: </b>{{ g.text }} {% if g.learnMore %}<br /><i>Learn more: </i
+        ><a href="{{ g.learnMore }}" target="_blank">{{ g.learnMore }}</a>{% endif %} {% if g.seeAlso.length %}<br /><i>See also:</i> {% for s in g.seeAlso %}
+        <a href="#term-{{ s | removeSpaces }}">{{ s }}</a>{% endfor %}{% endif %}
+      </li>
+      {% endfor %}
+      <li><b>==========</b></li>
       <li><b>88x31 Button: </b>An image representing a website or an idea, usually 88 by 31 pixels in size.</li>
       <li><b>Accessability (A11y): </b>Making your website easily usable for everyone, including those with disabilities.</li>
       <li><b>Array: </b>(In Javascript or other programming languages.) A list of values.</li>

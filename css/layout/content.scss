@@ -173,10 +173,10 @@ main {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 26px;
 
     @media (min-width: $lg) {
-      font-size: 28px;
+      font-size: 32px;
     }
   }
 
@@ -222,6 +222,15 @@ main {
       }
     }
 
+    // first elements:
+    summary + h2,
+    summary + h3,
+    summary + h4,
+    summary + h5,
+    summary + h6 {
+      margin-top: 0.5em !important;
+    }
+
     @media (min-width: $lg) {
       border-left: 2px solid transparent;
       border-top-left-radius: 5px;
@@ -231,7 +240,7 @@ main {
         border-color: var(--green);
 
         summary ~ * {
-          margin-left: 1.5em;
+          margin-left: 25px;
         }
       }
     }

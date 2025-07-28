@@ -338,6 +338,10 @@
   }
 }
 
+/** ********************
+	CONTENT
+******************** **/
+
 main.coding-page {
   //   font-size: 14px;
 
@@ -473,77 +477,9 @@ main.coding-page {
   }
 }
 
-.learn {
-  border-left: 1px solid;
-  padding-left: 1em;
-  padding-top: 0.5em;
-  margin-top: 2em;
-
-  strong {
-    font-size: 1.1em;
-  }
-}
-
-.checklist-main {
-  h3 {
-    font-weight: bold;
-
-    @media (min-width: $lg) {
-      font-size: 21px;
-    }
-  }
-}
-
-.checklist {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 2.5em;
-  margin-top: 0.8em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  code {
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 0;
-  }
-
-  li {
-    a:nth-child(2) {
-      display: inline-block;
-      margin-right: 0.25em;
-
-      &[href="TODO"],
-      &[href="TODO"] ~ * {
-        // wip links
-        display: none;
-      }
-    }
-
-    span code {
-      font-weight: normal;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 0.75em;
-    }
-  }
-
-  input {
-    cursor: $cursorPointer;
-    transform: scale(1.3);
-    margin-right: 0.75em;
-    filter: hue-rotate(100deg);
-
-    &:checked ~ * {
-      opacity: 0.4;
-      text-decoration: line-through;
-      pointer-events: none;
-    }
-  }
-}
+/** ********************
+	TIP ME
+******************** **/
 
 .buy-me-a-coffee {
   margin-top: 1.5em;
@@ -583,6 +519,10 @@ main.coding-page {
 .buy-me-a-coffee + section {
   border: 3px dotted;
 }
+
+/** ********************
+	BLOCKQUOTES
+******************** **/
 
 blockquote.warning,
 blockquote.tip,
@@ -683,7 +623,9 @@ blockquote.contact::after {
   content: "💬";
 }
 
-// Progress Bar:
+/** ********************
+	PROGRESS BAR
+******************** **/
 
 .progress-bar-container {
   position: fixed;
@@ -727,7 +669,9 @@ blockquote.contact::after {
   }
 }
 
-// Comprehension Questions:
+/** ********************
+	Comprehension Questions
+******************** **/
 
 .comprehension {
   margin: 2em 0;
@@ -861,34 +805,20 @@ blockquote.contact::after {
   }
 }
 
-/*
-	CHEATSHEET
-*/
+.outlinks {
+  border-left: 1px solid;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  margin-top: 2em;
 
-.cheatsheet-blockquote {
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: bold;
+  strong {
+    font-size: 1.1em;
+  }
 }
 
-.cheatsheet-blockquote pre {
-  margin: 0;
-}
-
-.cheatsheet-blockquote small {
-  font-size: 0.9em;
-  opacity: 0.7;
-  display: block;
-  margin-left: 1em;
-  font-weight: normal;
-  user-select: none;
-  font-family: sans-serif;
-  letter-spacing: 0.1px;
-}
-
-/*
+/** ********************
 	POSITIONING TUTORIAL
-*/
+******************** **/
 
 .coding-page {
   .example0,
@@ -928,267 +858,13 @@ footer {
   grid-area: footer;
 }
 
-// WIDGETS
+/** ********************
+	MISC.
+******************** **/
 
-.widget-previews {
-  @media (min-width: $lg) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: -10px;
-  }
+#show-explanation,
+#hide-explanation {
+  height: 300px;
+  resize: vertical;
+  overflow-y: scroll;
 }
-
-.widget-preview {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1em;
-
-  @media (min-width: $lg) {
-    width: 50%;
-    padding: 0 10px;
-  }
-
-  textarea {
-    min-height: 65px;
-  }
-
-  > iframe {
-    // border: 1px solid currentColor;
-    height: 100px;
-    max-width: 450px;
-  }
-}
-
-// My Vscode Setup
-
-.vscode-settings-table {
-  border-collapse: collapse;
-
-  th {
-    background: var(--light);
-    text-decoration: underline;
-  }
-
-  th,
-  td {
-    border: 1px dotted;
-    padding: 0.4em 0.5em;
-    text-align: left;
-  }
-
-  td:nth-child(3) {
-    font-size: 0.9em;
-  }
-
-  code {
-    font-size: 9px;
-    font-weight: normal;
-    display: block;
-  }
-}
-
-// Cachebusting
-
-.cachebusting-comparision {
-  border-collapse: collapse;
-  line-height: 1;
-
-  thead th:first-child {
-    font-size: 1.4em;
-    text-decoration: underline;
-  }
-
-  th,
-  td {
-    border: 1px dotted;
-    padding: 0.4em 0.5em;
-
-    small {
-      display: block;
-      margin-top: 0.25em;
-    }
-
-    &:first-child {
-      @media (max-width: $md) {
-        // save space by hiding first column
-        display: none;
-      }
-    }
-  }
-
-  th {
-    background: var(--light);
-
-    &:first-child {
-      max-width: 200px;
-    }
-  }
-
-  td {
-    text-align: center;
-  }
-
-  tbody tr:last-child td {
-    background: var(--light);
-    text-align: left;
-    vertical-align: top;
-
-    ul {
-      margin: 0;
-    }
-  }
-
-  // WIP
-
-  th,
-  td {
-    &:last-child {
-      display: none;
-    }
-  }
-}
-
-// LAYOUTS
-
-.layout {
-  position: relative;
-}
-
-.layout__description {
-  margin-bottom: 10px;
-}
-
-.layout__buttons {
-  display: flex;
-  grid-gap: 15px;
-  margin: 10px 0 20px;
-}
-
-.layout__button {
-  display: block;
-  background: var(--asideBackgroundColor);
-  border: 2px solid var(--borderColor);
-  border-radius: 30px;
-  box-shadow: var(--borderColor) 4px 4px 0 0;
-  color: var(--textColor) !important;
-  font-style: normal !important;
-  display: inline-block;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 13px 18px;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  transition: transform 0.15s ease;
-  text-align: center;
-
-  &:hover,
-  &:active,
-  &:focus {
-    box-shadow: var(--borderColor) 2px 2px 0 0;
-    transform: translate(2px, 2px);
-  }
-
-  @media (max-width: $md) {
-    padding: 10px 15px;
-  }
-}
-
-@media (min-width: $xl) {
-  .layout__description {
-    padding-right: 300px;
-  }
-
-  .layout__buttons {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    margin: 0;
-  }
-}
-
-/* CLIQUES */
-
-#cliquelist {
-  width: 100%;
-  border-collapse: collapse;
-
-  tr.inactive {
-    opacity: 0.5;
-  }
-
-  th,
-  td {
-    border: 1px dotted;
-    padding: 0.4em 0.5em;
-    text-align: left;
-  }
-
-  td:first-child {
-    font-size: 1.1em;
-  }
-
-  th {
-    position: relative;
-    background: var(--light);
-    font-size: 1.1em;
-    white-space: nowrap;
-    padding-right: 30px;
-    user-select: none;
-
-    &:last-child {
-      padding-right: 0.5em;
-    }
-  }
-
-  small {
-    display: block;
-    margin-top: 5px;
-    text-align: center;
-    font-size: 0.9em;
-    color: var(--black);
-  }
-
-  img {
-    margin: 0 auto;
-    display: block;
-  }
-
-  #sorttable_sortfwdind,
-  #sorttable_sortrevind {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-  }
-
-  // Save space on mobile:
-  @media (max-width: $md) {
-    #sorttable_sortfwdind,
-    #sorttable_sortrevind {
-      position: static;
-    }
-
-    th {
-      padding-right: 0.5em;
-    }
-
-    th:nth-child(3),
-    td:nth-child(3),
-    th:nth-child(4),
-    td:nth-child(4) {
-      display: none;
-    }
-  }
-}
-
-// Extra space on large screens:
-// @media (min-width: $lg) {
-//   .cliquelist-wrapper {
-//     margin-left: -35px;
-//     margin-right: -35px;
-//   }
-// }

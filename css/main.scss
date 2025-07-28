@@ -1,36 +1,45 @@
 @import "./variables";
 @import "./colors";
-@import "./mixins";
 
 @import "./layout/defaults";
 @import "./layout/layout";
 @import "./layout/sidebars";
 @import "./layout/content";
 @import "./layout/comment-widget";
+@import "./layout/coding-page";
+@import "./layout/not-found";
 
 @import "./pages/about-me";
-@import "./pages/bookmarks";
 @import "./pages/blog";
+@import "./pages/bookmarks";
+@import "./pages/cats";
 @import "./pages/clipboard";
+@import "./pages/cliques";
+@import "./pages/contest";
+@import "./pages/fractal-art";
 @import "./pages/home";
+@import "./pages/media-log";
+@import "./pages/notion";
+@import "./pages/picmix";
 @import "./pages/playlists";
+@import "./pages/polls";
+@import "./pages/quizzes";
+@import "./pages/random-generator";
 @import "./pages/recs";
+@import "./pages/shrines";
 @import "./pages/video-edits";
 @import "./pages/writing";
-@import "./pages/notion";
-@import "./pages/cats";
-@import "./pages/shrines";
-@import "./pages/media-log";
-@import "./pages/cliques";
-@import "./pages/random-generator";
-@import "./pages/coding-page";
-@import "./pages/lists";
-@import "./pages/not-found";
-@import "./pages/polls";
 @import "./pages/webring";
-@import "./pages/contest";
 
-@import "./other-layouts/picmix";
+@import "./coding/cachebusting";
+@import "./coding/cheatsheet";
+@import "./coding/checklist";
+@import "./coding/clique-list";
+@import "./coding/glossary";
+@import "./coding/layouts";
+@import "./coding/my-setup";
+@import "./coding/widgets";
 
+// must be last:
 @import "./layout/dark-mode";
 // @import "./layout/halloween-theme";

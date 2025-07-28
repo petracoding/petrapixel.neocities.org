@@ -200,22 +200,12 @@
  *
  */
 
+.about-me-page__lists--favorites {
+  margin-top: 30px;
+}
+
 .about-me-page__lists--favorites .about-me-page__list {
   flex: 0 0 25%;
-
-  h2 {
-    font-size: 1.03em;
-    font-family: $fontHeadings;
-
-    img {
-      vertical-align: top;
-      animation: floatingImage 1s ease infinite;
-
-      @media (prefers-reduced-motion) {
-        animation: none;
-      }
-    }
-  }
 
   .custom-scrollbar {
     max-height: none;
@@ -242,6 +232,50 @@
   //   &:nth-child(3) ul {
   //     list-style-image: url("https://dl.glitter-graphics.com/pub/3133/3133881o30yprguhf.gif");
   //   }
+}
+
+.about-me-page__faves-heading,
+.about-me-page__lists--favorites h2 {
+  font-size: 1.03em;
+  font-family: $fontHeadings;
+
+  img {
+    vertical-align: top;
+    animation: floatingImage 1s ease infinite;
+
+    @media (prefers-reduced-motion) {
+      animation: none;
+    }
+  }
+}
+
+.about-me-page__faves-images {
+  display: flex;
+  align-items: stretch; // yes, actually stretch the images. it's unnoticable
+  margin-bottom: 10px;
+
+  @media (max-width: $lg) {
+    flex-wrap: wrap;
+  }
+
+  img {
+    min-width: 0;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin: 3px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.8);
+
+      @media (max-width: $md) {
+        transform: none;
+      }
+    }
+  }
 }
 
 /**

@@ -1,4 +1,4 @@
-import "../../css/pages/layout-generator.scss";
+import "../../css/coding/layout-generator.scss";
 import { getCSS } from "./layout-generator-css";
 import { getHTML, getBefore, getAfter } from "./layout-generator-html";
 import { getJS } from "./layout-generator-js";

@@ -18,19 +18,14 @@ $greenActive: #a8db9a;
 $red: #ab061d;
 $yellow: #ffba39;
 
-// -------------------------------------------
-
-// Christmas:
-
-// -------------------------------------------
-
 $backgroundColor: $veryLight;
 $mainBackgroundColor: $veryLight;
 $asideBackgroundColor: $light;
 $asideTextColor: $textColor;
 $borderColor: $purple;
-$mainBorder: 2px solid $borderColor;
+$mainBorder: 2px dotted $borderColor;
 
+// -------------------------------------------
 // -------------------------------------------
 
 // Light Mode:
@@ -60,6 +55,7 @@ body {
   --mainBorder: #{$mainBorder};
 }
 
+// -------------------------------------------
 // -------------------------------------------
 
 // Dark Mode:

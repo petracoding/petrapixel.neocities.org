@@ -1,10 +1,8 @@
-let checkboxes;
-
 export function initChecklist() {
   const checklistMain = document.querySelector(".checklist-main");
   if (!checklistMain) return;
 
-  checkboxes = checklistMain.querySelectorAll("input[type=checkbox]");
+  let checkboxes = checklistMain.querySelectorAll("input[type=checkbox]");
 
   [...checkboxes].forEach((checkbox) => {
     checkbox.checked = localStorage.getItem(getIdentifierOfCheckbox(checkbox)) === "true" ? true : false;

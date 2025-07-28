@@ -59,7 +59,7 @@
         "link": "/about/faq",
         "label": "faq",
         "new": false,
-        "hide": false
+        "hide": true
       },
       {
         "link": "/about/changelog",

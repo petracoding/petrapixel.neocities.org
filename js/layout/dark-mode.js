@@ -1,23 +1,3 @@
-const scriptEl = document.querySelector('head script[src*="main.js"]');
-
-function getCurrentTheme() {
-  // if there's a cookie, use cookie
-  const themeFromStorage = localStorage.getItem("theme");
-  if (themeFromStorage) return themeFromStorage;
-
-  // otherwise, use browser preference
-  /*
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-	    return "dark-mode";
-	   } else {
-	      return "light-mode";
-	 }
-	 */
-
-  // ... actually fuck that, default is light mode
-  return "light-mode";
-}
-
 export function loadTheme(theme) {
   if (!theme) theme = getCurrentTheme();
 
@@ -32,10 +12,10 @@ export function loadTheme(theme) {
 
   if (theme === "dark-mode") {
     if (themeTogglerBtn) themeTogglerBtn.querySelector("span").innerHTML = "switch to light theme";
-    if (favIcon.href.includes("favicon.ico")) favIcon.href = favIcon.href.replace("favicon", "favicon-moon");
+    // if (favIcon.href.includes("favicon.ico")) favIcon.href = favIcon.href.replace("favicon", "favicon-moon");
   } else {
     if (themeTogglerBtn) themeTogglerBtn.querySelector("span").innerHTML = "switch to dark theme";
-    if (favIcon.href.includes("favicon-moon.ico")) favIcon.href = favIcon.href.replace("favicon-moon", "favicon");
+    // if (favIcon.href.includes("favicon-moon.ico")) favIcon.href = favIcon.href.replace("favicon-moon", "favicon");
   }
 }
 
@@ -71,6 +51,24 @@ export function initThemeSwitcher() {
       }
     });
   }
+}
+
+function getCurrentTheme() {
+  // if there's a cookie, use cookie
+  const themeFromStorage = localStorage.getItem("theme");
+  if (themeFromStorage) return themeFromStorage;
+
+  // otherwise, use browser preference
+  /*
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+	    return "dark-mode";
+	   } else {
+	      return "light-mode";
+	 }
+	 */
+
+  // ... actually fuck that, default is light mode
+  return "light-mode";
 }
 
 function getCurrentFontTheme() {

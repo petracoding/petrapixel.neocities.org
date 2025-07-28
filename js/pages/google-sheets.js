@@ -1,3 +1,7 @@
+// API key:
+// Google Cloud Console
+// https://console.cloud.google.com/apis/credentials
+
 export function initGoogleSheets() {
   if (document.querySelector("#cliquelist")) {
     fetchGoogleSheetData("1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc", "Form responses 1", buildCliqueTable);
@@ -137,7 +141,3 @@ function constructTableFromData(parentEl, tableHeadings, tableData) {
   tableEl.appendChild(tableBody);
   parentEl.appendChild(tableEl);
 }
-
-// API key:
-// Google Cloud Console
-// https://console.cloud.google.com/apis/credentials

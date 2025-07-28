@@ -1,0 +1,29 @@
+.widget-previews {
+  @media (min-width: $lg) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -10px;
+  }
+}
+
+.widget-preview {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+
+  @media (min-width: $lg) {
+    width: 50%;
+    padding: 0 10px;
+  }
+
+  textarea {
+    min-height: 65px;
+  }
+
+  > iframe {
+    // border: 1px solid currentColor;
+    height: 100px;
+    max-width: 450px;
+  }
+}

@@ -13,8 +13,8 @@ toc: true
   <h1>Google Sheets API Tutorial</h1>
   <i class="fa-brands fa-google-drive"></i>
   <p>This tutorial will teach you how to read data from a <a href="https://workspace.google.com/products/sheets/" target="_blank">Google Sheets</a> document with JavaScript.</p>
-  <p><b>Intermediate JavaScript knowledge is required.</b></p>
   <p>Want to see it in action? I used the Google Sheets API to create my <a href="/coding/cliques">list of web cliques</a>.</p>
+  <blockquote class="tip">Intermediate JavaScript knowledge is required.</blockquote>
 
   <div id="toc"></div>
 </section>
@@ -129,24 +129,28 @@ toc: true
     API to read our data in JavaScript.
   </p>
   <p>For this, we need 3 values:</p>
-  <ol>
+  <ol class="list-with-more-spacing">
     <li>The <b>Google Sheets API key</b> we have created, looks like this: <code>AIazSyAkeZN1nT_waVBWKMbDy0F68lxe-fRKbOo</code></li>
     <li>
       The <b>ID of the Google Sheet document</b>. You can get this from the URL of the spreadsheet, after "/spreadsheets/d" and before "/edit?...", e.g. in
-      <i>https://docs.google.com/spreadsheets/d/1NhbWY2j-D2IMuOh2y7jP8wPL4oik8b-riaWOTxFD7Oc/edit?gid=1893245691</i> the ID is <code>1NhbWY2j-D2IMuOh2y7jP8wPL4oik8b-riaWOTxFD7Oc</code> (see screenshot
-      below)
+      <i>https://docs.google.com/spreadsheets/d/1NhbWY2j-D2IMuOh2y7jP8wPL4oik8b-riaWOTxFD7Oc/edit?gid=1893245691</i> the ID is <code>1NhbWY2j-D2IMuOh2y7jP8wPL4oik8b-riaWOTxFD7Oc</code> <br />
+      <img class="image" src="../assets/img/coding/google-api-tutorial/url.png" alt="A screenshot of the spreadsheet ID in the URL" />
     </li>
-    <li>The <b>name of the sheet</b> inside our document that we want to read, by default it is <code>Sheet1</code> or - for form responses - <code>Form responses 1</code></li>
+    <li>
+      The <b>name of the sheet</b> inside our document that we want to read, by default it is <code>Sheet1</code> or <code>Form responses 1</code> <br />
+      <img class="image" src="../assets/img/coding/google-api-tutorial/sheetname.png" alt="A screenshot of the sheet name" />
+      <br /><b>Look out: </b>If you're using Google in a different language, the default name of the sheet is different!
+    </li>
   </ol>
   <br />
-  <img class="image" src="../assets/img/coding/google-api-tutorial/url.png" alt="A screenshot of the spreadsheet ID in the URL" />
+
   <hr />
   <p>Here is the function we will be using:</p>
   <pre><code>async function fetchGoogleSheetData() {
   try {
     const apiKey = "YOUR_KEY_HERE";
     const spreadsheetId = "SPREADSHEET_ID_HERE";
-    const sheetName = "Sheet1";
+    const sheetName = "Sheet1"; // or "Form responses 1", or default name in other language
     const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`);
     const data = await response.json();
     const rows = data.values;
@@ -240,6 +244,10 @@ const tableData = rows.slice(1);</code></pre>
   </blockquote>
 
   <p>And that's it! Of course you don't need to display your data in a table - your imagination is the limit here!</p>
+</section>
+
+<section>
+  <p>Maybe one day I will add another part here where I teach you how to WRITE data. If you're interested, tell me in the comments!</p>
 </section>
 
 <section class="buy-me-a-coffee">

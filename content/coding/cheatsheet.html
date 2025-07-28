@@ -33,7 +33,7 @@ toc: true
   <h2 id="html">HTML</h2>
 
   <h3>Page Basecode</h3>
-  <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" /> Show explanatory comments</label>
+  <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" checked="true" /> Show explanatory comments</label>
   <pre id="hide-explanation"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
    &lt;head&gt;
@@ -180,33 +180,6 @@ toc: true
 &lt;div z-index=&quot;-1&quot;&gt; &lt;!-- makes the element unfocusable in the keyboard navigation --&gt;</code></pre>
 </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const inputEl = document.querySelector("#explanation-toggle");
-    inputEl.checked = false;
-    inputEl.addEventListener("change", () => {
-      change(event.currentTarget.checked);
-    });
-  });
-
-  function change(isChecked) {
-    if (!isChecked) {
-      document.querySelector("#hide-explanation").style.display = "block";
-      document.querySelector("#show-explanation").style.display = "none";
-    } else {
-      document.querySelector("#hide-explanation").style.display = "none";
-      document.querySelector("#show-explanation").style.display = "block";
-    }
-  }
-</script>
-<style>
-  #show-explanation,
-  #hide-explanation {
-    height: 300px;
-    resize: vertical;
-    overflow-y: scroll;
-  }
-</style>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
 <section>

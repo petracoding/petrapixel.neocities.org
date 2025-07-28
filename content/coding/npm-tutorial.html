@@ -13,12 +13,14 @@ toc: true
   <h1><i>Node.js</i> and <i>npm</i> Tutorial</h1>
   <i class="fa-brands fa-npm"></i>
   <p>Knowing how to use <b>npm</b> is a requirement for using many cool things such as webpack and eleventy, so here is a tutorial on everything you need to know!</p>
+  <!-- 
   <blockquote class="contact">
     <p>
       If you have questions or feedback regarding the tutorial, please use the <a href="#comments">comment section</a> at the end of the page! Don't be shy; I know it's frustrating when you're stuck,
       and I'd love to help.
     </p>
   </blockquote>
+  -->
   <br />
   <div id="toc" data-two-levels="yeh">
     <b>Table of Contents:</b>
@@ -65,11 +67,12 @@ toc: true
       </li>
       <li>
         <a href="#additional-commands">Additional Commands</a>
-        <ul></ul>
+      </li>
+      <li>
+        <a href="#cheatsheet">Cheatsheet</a>
       </li>
       <li>
         <a href="#comments">Comments</a>
-        <ul></ul>
       </li>
     </ol>
   </div>
@@ -386,7 +389,7 @@ dev <span class="hljs-keyword">package</span>-<span class="hljs-symbol">b@</span
   <h2 id="additional-commands">Additional Commands</h2>
   <ul>
     <li>Show all installed packages: <code>npm list -g --depth=0</code></li>
-    <li>Show all outdated packages: <code>npmoutdated</code></li>
+    <li>Show all outdated packages: <code>npm outdated</code></li>
     <li>Show the newest available version of a package: <code>npm view &lt;package&gt; version</code>, <br />e.g. <code>npm view webpack version</code></li>
   </ul>
 </section>
@@ -399,6 +402,61 @@ dev <span class="hljs-keyword">package</span>-<span class="hljs-symbol">b@</span
     <li><a href="https://nodejs.org/en/download/prebuilt-installer" target="_blank">Node.js Download Page</a></li>
   </ul>
 </section>-->
+
+<section>
+  <h2 id="cheatsheet">Cheatsheet</h2>
+  <br />
+
+  <div class="two-columns">
+    <div>
+      <h3>Installing Packages:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npm install &lt;package&gt; <small>installs a package as a dependency</small>
+npm install --save-dev &lt;package&gt; <small>installs a package as a dev dependency</small>
+npm uninstall &lt;package&gt; <small>uninstalls a package</small>
+npm install <small>installs all dependencies</small>
+npm update <small>installs and updates all dependencies</small></pre>
+      </blockquote>
+
+      <h3>Example <code>package.json</code> :</h3>
+      <pre><code>{
+  "name": "project-name",
+  "private": true,
+  "devDependencies": {
+    
+  },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  }
+}
+</code></pre>
+    </div>
+    <div>
+      <h3>Misc.:</h3>
+      <blockquote class="cheatsheet-blockquote">
+        <pre>npm run &lt;custom command name&gt; <small>runs custom command defined in package.json</small>
+node -v <small>shows node version</small>
+npm -v <small>shows npm version</small>
+npm init <small>created package.json for you</small>
+npm cache clean --force <small>clears cache</small>
+npm list -g --depth=0 <small>shows all installed packages</small>
+npmoutdated <small>shows all outdated packages</small>
+npm view &lt;package&gt; version <small>shows the newest available version of a package</small></pre>
+      </blockquote>
+
+      <h3>Versions:</h3>
+      <ul>
+        <li><code>1.2.3</code>: only version 1.2.3, nothing else</li>
+        <li><code>^1.2.3</code>: version 1.2.3 or higher, but below 2.0</li>
+        <li><code>~1.2.3</code>: version 1.2.3 or higher, but below 1.3</li>
+        <li><code>1.x.x</code>: version 1.0.0 or higher, but below 2.0</li>
+        <li><code>1.2.x</code>: version 1.2.0 or higher, but below 1.3</li>
+        <li><code>*</code>: any version</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <section class="buy-me-a-coffee">
   <p>

@@ -3,8 +3,6 @@ export function initSidebar() {
   initLastFmWidget();
   initStatusCafeWidget();
   initBlinkies();
-
-  //   initMarquee(".aside-mutuals__buttons", 0.5);
 }
 
 function initMenu() {
@@ -40,10 +38,12 @@ function initLastFmWidget() {
       return response.json();
     })
     .then(function (json) {
-      song.innerHTML = json["track"]["name"] + " – " + json["track"]["artist"]["#text"];
-      if (json["track"]["@attr"]) {
-        if (json["track"]["@attr"]["nowplaying"]) {
-          song.classList.add("nowplaying");
+      if (json["track"]) {
+        song.innerHTML = json["track"]["name"] + " – " + json["track"]["artist"]["#text"];
+        if (json["track"]["@attr"]) {
+          if (json["track"]["@attr"]["nowplaying"]) {
+            song.classList.add("nowplaying");
+          }
         }
       }
     });

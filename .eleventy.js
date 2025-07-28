@@ -37,6 +37,13 @@ module.exports = function (eleventyConfig) {
     if (year >= 1900) return "1900-49";
     return "1800s";
   });
+  eleventyConfig.addFilter("sortByTerm", function (arr) {
+    // console.log("Sort filter called with:", arr); // SHOWS IN CONSOLE
+    return arr.slice().sort((a, b) => a.term.localeCompare(b.term));
+  });
+  eleventyConfig.addFilter("removeSpaces", function (str) {
+    return str.replace(/\s+/g, "");
+  });
 
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content) {
