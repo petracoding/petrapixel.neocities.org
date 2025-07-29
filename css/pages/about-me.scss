@@ -270,6 +270,7 @@
     &:hover,
     &:focus {
       transform: scale(1.8);
+      z-index: 1;
 
       @media (max-width: $md) {
         transform: none;

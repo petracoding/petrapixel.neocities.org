@@ -21,3 +21,10 @@
 - [js/main.js](https://github.com/petracoding/petrapixel.neocities.org/blob/master/js/main.js): **javascript**
   - e.g. [js/layout/sidebar.js](https://github.com/petracoding/petrapixel.neocities.org/blob/master/js/layout/sidebar.js)
 - [public](https://github.com/petracoding/petrapixel.neocities.org/blob/master/public) folder: **generated files** for upload to neocities (minified)
+
+---
+
+**Wanna play around in my project?** You'll need to run these commands:
+
+- `npm run eleventy`: starts the eleventy server so you can look at the website on http://localhost:8080/
+- `npm run webpack`: starts the webpack watcher so that changes to the CSS and JS are recognized

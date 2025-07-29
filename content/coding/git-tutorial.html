@@ -60,6 +60,8 @@ toc: true
       <li>
         <a href="#neocities">Connecting to Neocities <small>(Optional)</small></a>
       </li>
+      <li><a href="#pr">Pull Requests</a></li>
+      <li><a href="#branches">Branches</a></li>
       <li><a href="#additional-commands">Additional Commands</a></li>
       <li><a href="#cheatsheet">Cheatsheet</a></li>
       <li><a href="#comments">Comments</a></li>
@@ -104,8 +106,25 @@ toc: true
     You will make changes in your project as usual. Once you've made a few changes you will choose ("<b>stage</b>") the changed files that belong together (for example a new feature, an edited page,
     etc.) We will then <b>commit</b> these chosen ("staged") files and give all of the changes a name, e.g. <i>"Update About-Me Page"</i>.
   </p>
-  <p>I've tried to visualize it here: <span style="opacity: 0.5">(Behold my magnum opus)</span></p>
-  <img class="image" src="../assets/img/coding/git-tutorial/magnumopus.png" alt="" />
+  <p>Here's a great visualization (taken from <a href="https://www.edureka.co/blog/git-tutorial/" target="_blank">here</a>):</p>
+  <img class="image" width="500" src="../assets/img/coding/git-tutorial/visualization.png" alt="Git visualization" />
+  <p>Explanation of graphic:</p>
+  <ul>
+    <li>The left 3 columns ("Local") represent the project on your computer.</li>
+    <li>The rightmost column ("Remote") represents the project on GitHub.</li>
+    <li>
+      The arrows represent commands you will use when working with git:
+      <ul>
+        <li><code>git add</code> "stages" a file (or multiple files)</li>
+        <li><code>git commit</code> "commits" all staged files (e.g. <i>"Update About-Me Page"</i>)</li>
+        <li><code>git push</code> uploads all new commits to the project on GitHub</li>
+        <li>
+          <code>git pull</code> downloads the current state of the project on GitHub to your computer. (This is not necessary if you are the only person working on your project, as there will never be
+          changes on GitHub that you haven't made yourself.)
+        </li>
+      </ul>
+    </li>
+  </ul>
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -391,35 +410,63 @@ git push --set-upstream origin main</code></pre>
   <p>Done! Now whenever you push to your master/main branch, the changed/added files will automatically be uploaded to your Neocities site.</p>
 </section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="pr">Pull Requests</h2>
+  <p>
+    <b>Pull Requests</b> (<b>PR</b> for short) are what you have to create if you want to suggest changes to <b>somebody else's</b> project. They are called pull requests because you are requesting
+    that they pull (= download/save) the changes you've made in their project.
+  </p>
+  <p>
+    If your change is really small you can make a PR on GitHub without even opening an code editor on your computer. Just open the file on GitHub that you want to change (e.g. README.md) and click the
+    edit button. GitHub will tell you that you need to create a <b>Fork</b> of the project. This means a copy of the entire project will be created in your GitHub Account. Once you do this, you can
+    edit the file and save it (commit it). Then, GitHub will tell you that you're now ready to create a pull request. Once you click the green button you can type in the PR information (title,
+    optional description) and post it. The whole process takes less than a minute - it's that easy!
+  </p>
+  <p>For larger changes, the process for creating a PR is as follows:</p>
+  <ol>
+    <li>Fork the repository by pressing the Fork button (a copy of the project will be created in your account)</li>
+    <li>Clone the repository (= download it to your computer so you can work on it, as usual)</li>
+    <li>Create a new branch for your change and switch into that branch. e.g. <code>git checkout -b my-change</code></li>
+    <li>Make your changes</li>
+    <li>Stage and commit your changes as usual</li>
+    <li>Push the changes on your branch (e.g. <code>git push origin my-change</code>)</li>
+    <li>Go to the repository in your account (= the fork) and you will see the green button to create a PR!</li>
+  </ol>
+  <p>Once you've created a PR, it's the project's team's job to look at your PR and either accept it (in which case your changes will be added to the project) or decline it.</p>
+</section>
 <!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="branches">Branches</h2>
+  <p>
+    Branches are ways to have multiple versions of your project at once. That way, you can work on a feature (on a seperate branch), and only once it's fully done merge the branch into your main
+    branch.
+  </p>
+  <p>I won't be going into detail here because there a hundreds of great tutorials on git branches out there.</p>
+  <p>The most important commands:</p>
+  <ul>
+    <li>Show branches: <code>git branch</code></li>
+    <li>Switch to a branch: <code>git checkout my-branch</code></li>
+    <li>
+      Make new branch and check it out: <code>git switch -c &lt;new-branch&gt;</code><br />(used to be <code>git checkout -b &lt;new-branch&gt;</code>. more info
+      <a href="https://stackoverflow.com/a/1394804/3187492" target="_blank">here</a>.)
+    </li>
+    <li>Add current changes to new branch: Do the above, your changes will be kept</li>
+  </ul>
+</section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 <section>
   <h2>Additional Commands</h2>
 
-  <p>Here are some additional commands I will offer you without much context. Google them if you want to know more.</p>
+  <p>Here are some additional commands that can be helpful.</p>
   <ul>
     <li>To show all files and their current state (e.g. not staged, staged): <code>git status</code></li>
     <li>To show a log of all commits: <code>git log --oneline</code> or <code>git log</code></li>
     <li>To show all changes: <code>git diff</code>, or just a specific file/folder: <code>git diff &lt;path&gt;</code></li>
     <li>To discard the changes in a (not-yet-staged) file: <code>git restore &lt;file&gt;</code> or all: <code>git restore .</code></li>
     <li>To show the git version you're using: <code>git -v</code></li>
-  </ul>
-
-  <h4>Remotes:</h4>
-  <ul>
-    <li>Show all remotes: <code>git remote -v</code></li>
-    <li>Delete a remote <code>git remote remove &lt;name&gt;</code></li>
-  </ul>
-
-  <h4>Branches:</h4>
-  <ul>
-    <li>Show branches: <code>git branch</code></li>
-    <li>
-      Make new branch and check it out: <code>git switch -c &lt;new-branch&gt;</code><br />(used to be <code>git checkout -b &lt;new-branch&gt;</code>. more info
-      <a href="https://stackoverflow.com/a/1394804/3187492" target="_blank">here</a>.)
-    </li>
-    <li>Add current changes to new branch: Do the above, your changes will be kept</li>
   </ul>
 </section>
 <!-- To add to tutorial:
@@ -476,6 +523,8 @@ git restore . <small>discards all changes in all unstaged files</small></pre>
       <h3>Branches:</h3>
       <blockquote class="cheatsheet-blockquote">
         <pre>git branch <small>shows branches</small>
+git checkout &lt;branch&gt; <small>switches to a branch</small>
+git checkout -<small>switches to the previous branch</small>
 git switch -c &lt;new-branch&gt; <small>makes a new branch and checks it out (currently changed files will be kept)</small>
 git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)</small></pre>
       </blockquote>
@@ -487,7 +536,7 @@ git checkout -b &lt;new-branch&gt; <small>same as above (old version of command)
 git log <small>show a log of all commits</small>
 git log --oneline <small>show a log of all commits (shorter)</small>
 git diff <small>shows all changes</small>
-git diff &lt;a&gt; <small>shows all changes in a file/folder</small>
+git diff &lt;path&gt; <small>shows all changes in a file/folder</small>
 git -v <small>shows the git version you are using</small>
 git remote -v <small>shows all remotes</small>
 git remote remove &lt;name&gt; <small>deletes a remote</small></pre>

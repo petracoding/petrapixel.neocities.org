@@ -1,5 +1,6 @@
 [
   { "date": "2025-07-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-07-29", "text": "Improved the git tutorial a bit", "link": "/coding/git-tutorial" },
   { "date": "2025-07-28", "text": "New personality quiz: Rate my 'Hear me out's!", "link": "/fun/quizzes" },
   { "date": "2025-07-24", "text": "Improved my credits page", "link": "/about/credits" },
   { "date": "2025-07-23", "text": "New tutorial: Using the Google Sheets API", "link": "/coding/google-sheets-api-tutorial" },
