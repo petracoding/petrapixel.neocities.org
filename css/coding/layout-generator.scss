@@ -8,7 +8,12 @@
   font-display: swap;
 }
 
-body.layout-generator {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
   padding: 0;
   padding-top: 50px;
   margin: 0;

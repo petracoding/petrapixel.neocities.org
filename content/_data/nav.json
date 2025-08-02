@@ -5,18 +5,20 @@
   },
   {
     "label": "About",
-    "new": false,
+    "new": true,
     "items": [
-      {
+     
+     
+       {
         "link": "/about/about-me",
         "label": "about me",
         "new": false,
         "hide": false
       },
-      {
-        "link": "/about/about-the-site",
-        "label": "about the site",
-        "new": false,
+       {
+        "link": "/about/my-online-childhood",
+        "label": "my online childhood",
+        "new": true,
         "hide": false
       },
       {
@@ -28,7 +30,13 @@
       {
         "link": "/about/cats",
         "label": "cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
-        "new": true,
+        "new": false,
+        "hide": false
+      },
+       {
+        "link": "/about/about-the-site",
+        "label": "about the site",
+        "new": false,
         "hide": false
       },
       {

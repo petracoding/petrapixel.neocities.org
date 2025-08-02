@@ -1,0 +1,53 @@
+.vocabulary-words textarea {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  background: none;
+  border: 1px solid var(--borderColor);
+  padding: 15px 20px;
+  font-size: 0.8em;
+}
+
+.vocabulary-phrases > ul {
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid var(--borderColor);
+  padding: 20px;
+  padding-left: 38px;
+
+  > li {
+    margin-bottom: 0.3em;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0.5em;
+    margin-top: 0;
+
+    li::before {
+      content: "= ";
+    }
+  }
+}
+
+.vocabulary-words textarea,
+.vocabulary-phrases > ul {
+  scrollbar-color: var(--pink) var(--veryLight);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: var(--veryLight);
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    background-color: var(--pink);
+  }
+}

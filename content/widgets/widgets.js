@@ -74,7 +74,13 @@ function initStatuscafe(params) {
         }
       }
 
-      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/' + username + '" target="_blank">' + r.author + "</a> " + r.face + " " + r.timeAgo + delimiter;
+      let emoji = r.face;
+      if (params["hideEmoji"]) {
+        if (params["hideEmoji"] == "1") emoji = "";
+      }
+
+      document.getElementById("statuscafe-username").innerHTML =
+        '<a href="https://status.cafe/users/' + username + '" target="_blank">' + r.author + "</a> " + emoji + " <span>" + r.timeAgo + delimiter + "</span>";
       document.getElementById("statuscafe-content").innerHTML = username == "petra1999" ? "this is an example status text!" : r.content;
 
       // Styling:
@@ -85,6 +91,12 @@ function initStatuscafe(params) {
       }
       if (params["hideUsername"]) {
         if (params["hideUsername"] == "1") document.querySelector("#statuscafe-username a").style.display = "none";
+      }
+      if (params["fip"]) {
+        if (params["fip"] == "1") {
+          document.querySelector("#marquee-holder").style.display = "flex";
+          document.querySelector("#marquee-holder").style.flexDirection = "column-reverse";
+        }
       }
       // if (params["marquee"]) {
       //   if (params["marquee"] == "1") {
