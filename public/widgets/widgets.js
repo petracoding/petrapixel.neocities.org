@@ -122,7 +122,7 @@ function initStatuscafe(params) {
       // Styling:
       if (params.get("linkColor"))
         document.querySelector("#statuscafe-username a").style.color =
-          params.get("linkColor") == "black" || params.get("linkColor") == "white" ? params.get("linkColor") : "#" + params.get("linkColor");
+          params.get("linkColor") == "black" || params.get("linkColor") == "white" || params.get("linkColor").includes("#") ? params.get("linkColor") : "#" + params.get("linkColor");
       if (params.get("hideUsernameAndTime")) {
         if (params.get("hideUsernameAndTime") == "1") document.querySelector("#statuscafe-username").style.display = "none";
       }
