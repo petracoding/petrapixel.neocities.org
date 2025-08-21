@@ -10,8 +10,8 @@ mainClass: coding-page
   <h1>Widgets</h1>
   <i class="fa-solid fa-puzzle-piece"></i>
   <p>
-    Neocities free accounts don't allow external scripts. This means you won't be able to use most widgets. But iFrames are allowed! So I have created this little tool that creates iFrames for the
-    most popular widgets.
+    Neocities free accounts don't allow external scripts. <a href="https://dabric.xyz/post/neocities-csp/" target="_blank">(More info here.)</a> This means you won't be able to use most widgets. But
+    iFrames are allowed! So I have created this little tool that creates iFrames for the most popular widgets.
   </p>
   <p>
     <b>I'd appreciate you linking back to me on your website if you enjoy these widgets!</b> However, be aware that I did not write the widgets themselves (I only packed them up nicely), so don't say
@@ -40,7 +40,7 @@ mainClass: coding-page
     Some parameters are required, e.g. your status.cafe username for the status.cafe widget. Not inputting it will result in the widget not displaying correctly. (Weird symbols in those parameters,
     e.g. in your status.cafe username, might also break the code, sorry! Comment below if you're experiencing with issues, I'll try to fix it.)
   </p>
-  <blockquote class="warning">Clear cookies for <b>my</b> website if you are experiencing issues! <a href="/coding/cachebusting#howto">Here's how.</a></blockquote>
+  <blockquote class="warning">Clear the cache for <b>my</b> website if you are experiencing issues! <a href="/coding/cachebusting#howto">Here's how.</a></blockquote>
 </section>
 
 <section>
@@ -54,6 +54,7 @@ mainClass: coding-page
     <li><code>hideEmoji</code>: set to 1 to hide the emoji</li>
     <li><code>hideUsernameAndTime</code>: set to 1 to hide the username, emoji and time</li>
     <li><code>linkColor</code>: use like <i>color</i></li>
+    <li><code>timeColor</code>: use like <i>color</i></li>
     <li><code>swapPositions</code>: put status text before username/emoji/time</li>
     <li><code>center</code>: set to 1 to center</li>
     <li><code>marquee</code>: set to 1 to make it move horizontally</li>
@@ -64,11 +65,11 @@ mainClass: coding-page
       <strong>Example 1</strong>
       <p>Code:</p>
       <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
-<iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=0&marquee=0&font-family=Times New Roman&font-size=14px&color=#565673&linkColor=#d92f2f&username=Petra1999&hideUsername=0" frameborder="0" title="Status.Cafe Status"></iframe></textarea
+<iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=0&marquee=0&font-family=Times New Roman&font-size=14px&color=#565673&linkColor=#d92f2f&username=Petra1999&hideUsername=0&timeColor=#6d0fba" frameborder="0" title="Status.Cafe Status"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
-        src="/widgets/statuscafe?center=0&marquee=0&font-family=Times New Roman&font-size=14px&color=#565673&linkColor=#d92f2f&username=Petra1999&hideUsername=0"
+        src="/widgets/statuscafe?center=0&marquee=0&font-family=Times New Roman&font-size=14px&color=#565673&linkColor=#d92f2f&username=Petra1999&hideUsername=0&timeColor=#6d0fba"
         frameborder="0"
         title="Status.Cafe Status"></iframe>
     </div>
@@ -185,6 +186,52 @@ mainClass: coding-page
   </div>
 </section>
 
+<section id="pollcode">
+  <h2>Pollcode</h2>
+  <p>
+    Original Widget Source: <a href="https://pollcode.com/" target="_blank">pollcode.com</a>. All styling options from Pollcode itself should work, <i>except</i> the background image and fixed width!
+  </p>
+  <p>Settings:</p>
+  <ul>
+    <li>any valid CSS e.g. <code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>line-height</code>, etc.</li>
+    <li>
+      <code>pollcode</code>: the entirety of your <a href="https://pollcode.com/" target="_blank">pollcode</a> code, <b>encoded</b> by using
+      <a href="https://emn178.github.io/online-tools/html_encode.html" target="_blank">this tool</a> or any other HTML escape/encode tool. <b>It will not work if the code is not encoded!</b> (Encoding
+      means that special characters are escaped, e.g. " becomes <code>&amp;quot;</code>, &lt; and &gt; become <code>&amp;lt;</code> and <code>&amp;gt;</code> etc.)
+    </li>
+    <li><code>ignorePollcodeStyling</code>: set to 1 to disable the styling you defined on the Pollcode website. this is necessary if you want to define styling via my widget</li>
+    <li><code>viewButtonAsLink</code>: set to 1 to render the "View" button not as a button but a link</li>
+    <li><code>spacing</code>: the spacing you want inbetween the elements (question, options, buttons), e.g. 10px</li>
+  </ul>
+
+  <div class="widget-previews">
+    <div class="widget-preview">
+      <strong>Example 1</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+<iframe src="https://petrapixel.neocities.org/widgets/pollcode?pollcode=&lt;form method=&quot;post&quot; action=&quot;https://poll.pollcode.com/11545499&quot;&gt;&lt;div style=&quot;background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;&quot;&gt;&lt;div style=&quot;padding:2px 0px 4px 2px;&quot;&gt;&lt;strong&gt;Isn&#39;t this widget awesome?&lt;/strong&gt;&lt;/div&gt;&lt;input type=&quot;radio&quot; name=&quot;answer&quot; value=&quot;1&quot; id=&quot;answer115454991&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer115454991&quot; style=&quot;float:left;width:150px;&quot;&gt;yeah!&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;input type=&quot;radio&quot; name=&quot;answer&quot; value=&quot;2&quot; id=&quot;answer115454992&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer115454992&quot; style=&quot;float:left;width:150px;&quot;&gt;hell yeah!&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;div align=&quot;center&quot; style=&quot;padding:3px;&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot; Vote &quot;&gt;&amp;nbsp;&lt;input type=&quot;submit&quot; name=&quot;view&quot; value=&quot; View &quot;&gt;&lt;/div&gt;&lt;div align=&quot;right&quot; style=&quot;font-size:10px&quot;&gt;pollcode.com &lt;a href=&quot;https://pollcode.com/&quot;&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;" frameborder="0" title="Last.Fm Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe
+        src='/widgets/pollcode?pollcode=&lt;form method="post" action="https://poll.pollcode.com/11545499"&gt;&lt;div style="background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;"&gt;&lt;div style="padding:2px 0px 4px 2px;"&gt;&lt;strong&gt;Isn&#39;t this widget awesome?&lt;/strong&gt;&lt;/div&gt;&lt;input type="radio" name="answer" value="1" id="answer115454991" style="float:left;" /&gt;&lt;label for="answer115454991" style="float:left;width:150px;"&gt;yeah!&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;input type="radio" name="answer" value="2" id="answer115454992" style="float:left;" /&gt;&lt;label for="answer115454992" style="float:left;width:150px;"&gt;hell yeah!&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;div align="center" style="padding:3px;"&gt;&lt;input type="submit" value=" Vote "&gt;&amp;nbsp;&lt;input type="submit" name="view" value=" View "&gt;&lt;/div&gt;&lt;div align="right" style="font-size:10px"&gt;pollcode.com &lt;a href="https://pollcode.com/"&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;'
+        frameborder="0"
+        title="Last.Fm Status"></iframe>
+    </div>
+    <div class="widget-preview">
+      <strong>Example 2</strong>
+      <p>Code:</p>
+      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 2">
+<iframe src="https://petrapixel.neocities.org/widgets/pollcode?spacing=10px&color=#a02ed9&font-family=Arial&font-size=16px&ignorePollcodeStyling=1&pollcode=&lt;form method=&quot;post&quot; action=&quot;https://poll.pollcode.com/22397719&quot;&gt;&lt;div style=&quot;background-color:#57EE39;padding:2px;width:264px;font-family:Comic Sans MS;font-size:medium;color:#FFFFFF;background-image: url(&#39;https://images.boardhost.com/bg/leather&#39;);box-shadow: 0px 0px 5px #888;&quot;&gt;&lt;div style=&quot;padding:2px 0px 4px 2px;&quot;&gt;&lt;strong&gt;isn&#39;t this widget even better?&lt;/strong&gt;&lt;/div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;answer&quot; value=&quot;1&quot; id=&quot;answer223977191&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer223977191&quot; style=&quot;float:left;width:239px;&quot;&gt;so true bestie&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;answer&quot; value=&quot;2&quot; id=&quot;answer223977192&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer223977192&quot; style=&quot;float:left;width:239px;&quot;&gt;you&#39;re so right&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;div align=&quot;center&quot; style=&quot;padding:3px;&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot; Vote &quot;&gt;&lt;/div&gt;&lt;div align=&quot;right&quot; style=&quot;font-size:10px&quot;&gt;pollcode.com &lt;a href=&quot;https://pollcode.com/&quot;&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;" frameborder="0" title="Last.Fm Status"></iframe></textarea
+      >
+      <p>Preview:</p>
+      <iframe
+        src='/widgets/pollcode?spacing=10px&color=#a02ed9&font-family=Arial&font-size=16px&ignorePollcodeStyling=1&pollcode=&lt;form method="post" action="https://poll.pollcode.com/22397719"&gt;&lt;div style="background-color:#57EE39;padding:2px;width:264px;font-family:Comic Sans MS;font-size:medium;color:#FFFFFF;background-image: url(&#39;https://images.boardhost.com/bg/leather&#39;);box-shadow: 0px 0px 5px #888;"&gt;&lt;div style="padding:2px 0px 4px 2px;"&gt;&lt;strong&gt;isn&#39;t this widget even better?&lt;/strong&gt;&lt;/div&gt;&lt;input type="checkbox" name="answer" value="1" id="answer223977191" style="float:left;" /&gt;&lt;label for="answer223977191" style="float:left;width:239px;"&gt;so true bestie&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;input type="checkbox" name="answer" value="2" id="answer223977192" style="float:left;" /&gt;&lt;label for="answer223977192" style="float:left;width:239px;"&gt;you&#39;re so right&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;div align="center" style="padding:3px;"&gt;&lt;input type="submit" value=" Vote "&gt;&lt;/div&gt;&lt;div align="right" style="font-size:10px"&gt;pollcode.com &lt;a href="https://pollcode.com/"&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;'
+        frameborder="0"
+        title="Last.Fm Status"></iframe>
+    </div>
+  </div>
+</section>
+
 <section id="more">
   <h2>...more?</h2>
   <!-- <p>I plan on making widgets for <a href="https://virtualobserver.moe/ayano/comment-widget" target="_blank">virtualobserver's comment widget</a> and a Google search bar widget.</p> -->
@@ -195,7 +242,6 @@ mainClass: coding-page
     <li>CBox</li>
     <li>FC2 Clap</li>
     <li>Guestbooks</li>
-    <li>Pollcode</li>
     <li>imood</li>
     <li>free-website-hit-counter</li>
     <li>timeanddate.com</li>
@@ -219,7 +265,7 @@ mainClass: coding-page
 <section id="comments">
   <h2>Comments</h2>
   <p><b>Leave your questions, problems, suggestions, requests and thanks here! </b> Please don't request widgets that already work for free accounts (see list above).</p>
-  <blockquote class="warning">Clear cookies for <b>my</b> website if you are experiencing issues! <a href="/coding/cachebusting#howto">Here's how.</a></blockquote>
+  <blockquote class="warning">Clear the cache for <b>my</b> website if you are experiencing issues! <a href="/coding/cachebusting#howto">Here's how.</a></blockquote>
   <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="{{ nesting }}assets/js/comment-widget.js"></script>
 </section>

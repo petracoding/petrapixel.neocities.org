@@ -1,21 +1,43 @@
-const knownParams = ["fontSize", "center", "font", "marquee", "linkColor", "username", "hideUsername", "hideEmoji", "hideUsernameAndTime", "swapPositions", "delimiter", "underline"];
+const knownParams = [
+  "fontSize",
+  "center",
+  "font",
+  "marquee",
+  "linkColor",
+  "timeColor",
+  "username",
+  "hideUsername",
+  "hideEmoji",
+  "hideUsernameAndTime",
+  "swapPositions",
+  "delimiter",
+  "underline",
+  "pollcode",
+  "ignorePollcodeStyling",
+  "viewButtonAsLink",
+  "spacing",
+];
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("%c Widget provided by petrapixel", "font-size: 16pt;");
-  console.log("%c Get yours: https://petrapixel.neocities.org/coding/widgets", "font-size: 14pt;");
+  console.log("%cWidget provided by petrapixel. Get yours: https://petrapixel.neocities.org/coding/widgets", "font-size: 14pt;", "font-size: 16pt;");
 
   const params = getParameters();
+  console.log("%cParameters:", "font-size: 13pt;");
+  console.log(params);
   doCSS(params);
 
   initStatuscafe(params);
   initLastFm(params);
+  initPollcode(params);
 });
 
 function getParameters() {
   let queryString = window.location.search.substr(1).replaceAll(";", "&");
   let hashString = window.location.hash || ""; // in case of color codes with "#"
   if (!queryString) return [];
-  return new URLSearchParams(queryString + hashString);
+  const fullString = queryString + hashString;
+  const fullStringFixed = fullString.replaceAll("&nbsp;", " "); // Fix for encoding (Pollcode)
+  return new URLSearchParams(fullStringFixed);
 }
 
 function doCSS(params) {
@@ -49,7 +71,7 @@ function doCSS(params) {
     if (p[0] == "color" || p[0] == "background-color") {
       // deal with colors
       const hasHash = p[1].includes("#");
-      const needsHash = p[1] !== "black" && p[1] !== "white" && !hasHash;
+      const needsHash = !hasHash && p[1].length == 6;
       cssCode += p[0] + ":" + (needsHash ? "#" : "") + p[1] + ";";
     } else {
       cssCode += p[0] + ":" + p[1].replaceAll("%20", " ") + ";";
@@ -78,6 +100,12 @@ function turnIntoMarquee() {
   marqueeHolderEl.parentNode.replaceChild(marqueeEl, marqueeHolderEl);
 
   if (document.querySelector("main")) document.querySelector("main").style.width = "100%";
+}
+
+function decodeHtml(html) {
+  var txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
 }
 
 /**
@@ -120,9 +148,15 @@ function initStatuscafe(params) {
       document.getElementById("statuscafe-content").innerHTML = username == "petra1999" ? "this is an example status text!" : r.content;
 
       // Styling:
-      if (params.get("linkColor"))
+      if (params.get("linkColor")) {
         document.querySelector("#statuscafe-username a").style.color =
           params.get("linkColor") == "black" || params.get("linkColor") == "white" || params.get("linkColor").includes("#") ? params.get("linkColor") : "#" + params.get("linkColor");
+      }
+
+      if (params.get("timeColor")) {
+        document.querySelector("#statuscafe-username span").style.color =
+          params.get("timeColor") == "black" || params.get("timeColor") == "white" || params.get("timeColor").includes("#") ? params.get("timeColor") : "#" + params.get("timeColor");
+      }
       if (params.get("hideUsernameAndTime")) {
         if (params.get("hideUsernameAndTime") == "1") document.querySelector("#statuscafe-username").style.display = "none";
       }
@@ -213,4 +247,62 @@ function initLastFm(params) {
         song.innerHTML = `<span span class="name" > ${songTitle}</span>${delimiter}<span class="artist">${artist}</span>`;
       }
     });
+}
+
+/**
+ *   POLLCODE
+ */
+function initPollcode(params) {
+  const wrapper = document.querySelector("#pollcode");
+  if (!wrapper) return;
+
+  if (params.get("pollcode")) {
+    if (!params.get("pollcode").includes("poll.pollcode.com")) {
+      wrapper.innerHTML = "This doesn't seem to be a Pollcode code.";
+      return;
+    }
+    const encodedCode = params.get("pollcode");
+    const decodedCode = decodeHtml(encodedCode);
+    wrapper.innerHTML = decodedCode;
+  }
+
+  if (params.get("ignorePollcodeStyling")) {
+    if (params.get("ignorePollcodeStyling") == "1") {
+      const allStyledPollcodeElements = document.querySelectorAll("#pollcode [style]");
+      [...allStyledPollcodeElements].forEach((el) => {
+        el.setAttribute("style", "");
+      });
+    }
+  }
+
+  if (params.get("viewButtonAsLink")) {
+    if (params.get("viewButtonAsLink") == "1") {
+      const viewBtn = document.querySelector("input[name='view']");
+      if (viewBtn) {
+        const parentEl = viewBtn.closest("div");
+        viewBtn.remove();
+        const pollId = document.querySelector("#pollcode form").getAttribute("action").replace("https://poll.pollcode.com/", "");
+        const viewLink = "https://poll.pollcode.com/" + pollId + "_result?v";
+        const viewLinkEl = document.createElement("a");
+        viewLinkEl.innerHTML = "View";
+        viewLinkEl.setAttribute("href", viewLink);
+        viewLinkEl.setAttribute("target", "_blank");
+        viewLinkEl.setAttribute("style", "color: inherit;");
+        parentEl.appendChild(viewLinkEl);
+      }
+    }
+  }
+
+  if (params.get("spacing")) {
+    document.head.insertAdjacentHTML("beforeend", "<style>form > div > * {margin: " + params.get("spacing") + "}</style>");
+  }
+
+  // make sure the pollcode "voted" website opens in new tab, not the iframe:
+  document.querySelector("#pollcode form").setAttribute("target", "_blank");
+
+  // hide "pollcode.com free polls" text:
+  const creditText = document.querySelector("#pollcode form > div > div:last-child");
+  if (creditText) {
+    creditText.remove();
+  }
 }

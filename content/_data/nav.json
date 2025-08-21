@@ -218,7 +218,7 @@
   },
   {
     "label": "Fun Stuff!",
-    "new": true,
+    "new": false,
     "items": [
       {
         "link": "/about/blinkies",
@@ -247,7 +247,7 @@
       {
         "link": "/fun/quizzes",
         "label": "personality quizzes",
-        "new": true,
+        "new": false,
         "hide": false
       },
       {
@@ -261,7 +261,16 @@
         "label": "are you bored?",
         "new": false,
         "hide": false
-      }
+      },
+          {
+            "link": "/contest",
+            "label": "Indie Web Contest",
+            "sublabel": "2024 Contest Results",
+            "new": false,
+            "hide": false,
+            "icon": "fa-solid fa-trophy",
+            "hideInCodingNav": true
+          }
     ]
   },
   {
@@ -513,15 +522,6 @@
             "new": false,
             "hide": true,
             "icon": "fa-solid fa-gamepad"
-          },
-          {
-            "link": "/contest",
-            "label": "Indie Web Contest",
-            "sublabel": "2024 Contest Results",
-            "new": false,
-            "hide": false,
-            "icon": "fa-solid fa-trophy",
-            "hideInCodingNav": true
           },
             {
             "link": "/coding/cliques",
