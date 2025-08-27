@@ -218,8 +218,17 @@
   },
   {
     "label": "Fun Stuff!",
-    "new": false,
+    "new": true,
     "items": [
+      
+      {
+        "link": "/contest",
+        "label": "Indie Web Contest",
+        "sublabel": "2024 Contest Results",
+        "new": true,
+        "hide": false,
+        "icon": "fa-solid fa-trophy"
+      },
       {
         "link": "/about/blinkies",
         "label": "blinkies & more",
@@ -261,16 +270,7 @@
         "label": "are you bored?",
         "new": false,
         "hide": false
-      },
-          {
-            "link": "/contest",
-            "label": "Indie Web Contest",
-            "sublabel": "2024 Contest Results",
-            "new": false,
-            "hide": false,
-            "icon": "fa-solid fa-trophy",
-            "hideInCodingNav": true
-          }
+      }
     ]
   },
   {
@@ -288,7 +288,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-wand-magic-sparkles"
+            "icon": "layout-line"
           },
           {
             "link": "/coding/layouts",
@@ -296,7 +296,7 @@
             "sublabel": "",
             "new": true,
             "hide": true,
-            "icon": "fa-solid fa-window-restore"
+            "icon": "layout-2-line"
           },
           {
             "link": "/coding/widgets",
@@ -304,7 +304,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-puzzle-piece"
+            "icon": "bard-line"
           },
           {
             "link": "/coding/cheatsheet",
@@ -312,7 +312,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-clipboard-list"
+            "icon": "file-text-line"
           },
           {
             "link": "/coding/bookmarks",
@@ -320,7 +320,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-link"
+            "icon": "bookmark-line"
           },
           {
             "link": "/coding/checklist",
@@ -328,7 +328,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-list-check"
+            "icon": "list-check-3"
           },
           {
             "link": "/coding/quizzes",
@@ -336,7 +336,7 @@
             "sublabel": "",
             "new": true,
             "hide": false,
-            "icon": "fa-solid fa-person-chalkboard"
+            "icon": "lightbulb-line"
           },
           {
             "link": "/coding/webringu",
@@ -345,7 +345,7 @@
             "sublabel": "Simple Webring Script",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-ring"
+            "icon": "diamond-ring-line"
           }
         ]
       },
@@ -359,7 +359,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-laptop-code"
+            "icon": "pages-line"
           },
           {
             "link": "/coding/common-questions",
@@ -367,7 +367,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-circle-question"
+            "icon": "questionnaire-line"
           },
           {
             "link": "/coding/common-mistakes",
@@ -375,7 +375,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-circle-xmark"
+            "icon": "error-warning-line"
           },
           {
             "link": "/coding/code-quality",
@@ -383,7 +383,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-broom"
+            "icon": "code-ai-line"
           },
           {
             "link": "/coding/need-help",
@@ -391,7 +391,7 @@
             "sublabel": "+ how to find support",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-bug"
+            "icon": "bug-line"
           }
         ]
       },
@@ -405,7 +405,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-border-none"
+            "icon": "layout-5-line"
           },
           {
             "link": "/coding/positioning-tutorial",
@@ -413,7 +413,7 @@
             "sublabel": "(display, position, flexbox, grid, transform, z-index, ...)",
             "new": false,
             "hide": false,
-            "icon": "fa-brands fa-css"
+            "icon": "layout-masonry-line"
           },
           {
             "link": "/coding/cachebusting",
@@ -421,7 +421,7 @@
             "sublabel": "Stop that pesky caching",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-bomb"
+            "icon": "delete-bin-6-line"
           },
           {
             "link": "/coding/performance",
@@ -429,7 +429,7 @@
             "sublabel": "",
             "new": false,
             "hide": true,
-            "icon": ""
+            "icon": "speed-up-line"
           }
         ]
       },
@@ -443,7 +443,7 @@
             "sublabel": "Version Control",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-code-branch"
+            "icon": "github-line"
           },
           {
             "link": "/coding/npm-tutorial",
@@ -451,7 +451,7 @@
             "sublabel": "Package Manager",
             "new": false,
             "hide": false,
-            "icon": "fa-brands fa-npm"
+            "icon": "npmjs-line"
           },
           {
             "link": "/coding/webpack-tutorial",
@@ -459,7 +459,7 @@
             "sublabel": "File Bundler",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-box"
+            "icon": "box-3-line"
           },
           {
             "link": "/coding/eleventy-tutorial",
@@ -467,7 +467,7 @@
             "sublabel": "Static Site Generator",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-code"
+            "icon": "magic-line"
           },
            {
             "link": "/coding/google-sheets-api-tutorial",
@@ -475,7 +475,7 @@
             "sublabel": "Read sheets data with JS",
             "new": true,
             "hide": false,
-            "icon": "fa-brands fa-google-drive"
+            "icon": "drive-line"
           }
         ]
       },
@@ -489,7 +489,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-city"
+            "icon": "building-line"
           },
           {
             "link": "/coding/snippets",
@@ -497,7 +497,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-code"
+            "icon": "code-s-slash-line"
           },
           {
             "link": "/coding/my-setup",
@@ -505,7 +505,7 @@
             "sublabel": "Settings + Extensions",
             "new": false,
             "hide": false,
-            "icon": "fa-solid fa-toolbox"
+            "icon": "tools-line"
           },
           {
             "link": "/coding/now-what",
@@ -513,7 +513,7 @@
             "sublabel": "",
             "new": false,
             "hide": false,
-            "icon": "fa-regular fa-lightbulb"
+            "icon": "rocket-line"
           },
           {
             "link": "/coding/game-dev-journey",
@@ -521,7 +521,7 @@
             "sublabel": "",
             "new": false,
             "hide": true,
-            "icon": "fa-solid fa-gamepad"
+            "icon": "gamepad-line"
           },
             {
             "link": "/coding/cliques",
@@ -529,7 +529,7 @@
             "sublabel": "",
             "new": true,
             "hide": false,
-            "icon": "fa-solid fa-list-ul"
+            "icon": "user-community-line"
           },
           
           {
@@ -538,7 +538,7 @@
             "sublabel": "",
             "new": true,
             "hide": false,
-            "icon": "fa-solid fa-ring",
+            "icon": "diamond-ring-line",
             "hideInCodingNav": true
           }
         ]

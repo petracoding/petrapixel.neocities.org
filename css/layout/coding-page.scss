@@ -138,7 +138,7 @@
     min-width: 100%;
     margin: 0;
     list-style: none;
-    padding: 0.75em;
+    padding: 0.5em;
     z-index: 1;
     background: var(--mainBackgroundColor);
     border-radius: 10px;
@@ -172,6 +172,20 @@
           transform: translateY(5px);
         }
 
+        // Remix Icon
+        i[class^="ri-"] {
+          font-size: 1em;
+          margin-top: 1px;
+          margin-right: 10px;
+          transition: transform 0.3s ease;
+          flex-shrink: 0;
+          flex-grow: 0;
+          min-width: 15px;
+          text-align: center;
+          pointer-events: none;
+        }
+
+        // FontAwesome (old)
         .fa-solid,
         .fa-brands,
         .fa-regular {
@@ -211,6 +225,7 @@
           color: var(--white);
           background-color: var(--purple);
 
+          i[class^="ri-"],
           .fa-solid,
           .fa-brands,
           .fa-regular {

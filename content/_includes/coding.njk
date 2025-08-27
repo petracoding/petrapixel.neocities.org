@@ -92,7 +92,7 @@ testingOnLocalhost: false
             {% for navItem in mainNavItem.items %}{% if not navItem.hide and not navItem.hideInCodingNav %}
             <li>
               <a href="{{ navItem.link }}"
-                ><i class="{{ navItem.icon }}"></i
+                ><i class="ri-{{ navItem.icon }}"></i
                 ><span
                   >{{ navItem.label }}{% if navItem.sublabel %}<small>{{ navItem.sublabel }}</small
                   >{% endif %}</span

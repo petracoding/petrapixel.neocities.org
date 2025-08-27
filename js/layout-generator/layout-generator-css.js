@@ -49,7 +49,7 @@ function getCSSCode(variables) {
 
 body {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
   font-size: var(--font-size);

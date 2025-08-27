@@ -1,4 +1,5 @@
 import "../css/main.scss";
+import "remixicon/fonts/remixicon.css";
 import { loadTheme, initThemeSwitcher } from "./layout/dark-mode";
 import { initScrollToTop, initTableOfContents, initTooltips, initProgressBar, initActiveLinks, initToggleExplanationComments } from "./layout/layout";
 import { initSidebar } from "./layout/sidebar";

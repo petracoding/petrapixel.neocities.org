@@ -786,9 +786,10 @@
 .aside-tamanotchi {
   display: flex;
   justify-content: center;
+  margin-top: 20px !important;
 
   img {
-    width: calc(72px * 2);
+    width: calc(72px * 1);
     image-rendering: pixelated;
   }
 }
