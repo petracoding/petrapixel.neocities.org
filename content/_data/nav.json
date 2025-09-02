@@ -45,6 +45,12 @@
         "new": false,
         "hide": false
       },
+        {
+        "link": "/about/webrings",
+        "label": "webrings",
+        "new": true,
+        "hide": false
+      },
       {
         "link": "/about/neighbors",
         "label": "neighbors",

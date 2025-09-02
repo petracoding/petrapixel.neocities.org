@@ -420,6 +420,7 @@ main.coding-page {
   h1 + .fa-solid,
   h1 + .fa-brands,
   h1 + .fa-regular {
+    display: none; // BC THEY DONT WORK ANYMORE
     position: absolute;
     top: 10px;
     left: 10px;

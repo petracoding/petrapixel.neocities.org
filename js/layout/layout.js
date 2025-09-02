@@ -183,6 +183,7 @@ export function initActiveLinks() {
       }
     } else {
       if (window.location.href.includes(href)) {
+        // TODO FIX (/about/webrings page)
         el.classList.add("active");
         if (el.closest(".aside-nav details, .coding-navigation-category")) {
           el.closest(".aside-nav details, .coding-navigation-category").setAttribute("open", "open");
