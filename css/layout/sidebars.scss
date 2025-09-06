@@ -705,6 +705,14 @@
         line-height: 1.2;
         margin-bottom: 0.5em;
 
+        a {
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            font-style: italic;
+          }
+        }
+
         small {
           font-weight: normal;
           font-size: 0.9em;

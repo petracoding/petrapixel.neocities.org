@@ -169,26 +169,16 @@ export function initProgressBar() {
 
 export function initActiveLinks() {
   const pathname = window.location.pathname.replace("/public", "");
+
   const els = document.querySelectorAll(".aside-nav li a, .coding-navigation li a");
   [...els].forEach((el) => {
     const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
 
-    if (href == "/" || href == "/index.html") {
-      if (pathname == "/") {
-        el.classList.add("active");
-        if (el.closest(".aside-nav details, .coding-navigation-category")) {
-          el.closest(".aside-nav details, .coding-navigation-category").setAttribute("open", "open");
-          el.closest(".aside-nav details, .coding-navigation-category").classList.add("active");
-        }
-      }
-    } else {
-      if (window.location.href.includes(href)) {
-        // TODO FIX (/about/webrings page)
-        el.classList.add("active");
-        if (el.closest(".aside-nav details, .coding-navigation-category")) {
-          el.closest(".aside-nav details, .coding-navigation-category").setAttribute("open", "open");
-          el.closest(".aside-nav details, .coding-navigation-category").classList.add("active");
-        }
+    if (href == pathname) {
+      el.classList.add("active");
+      if (el.closest(".aside-nav details, .coding-navigation-category")) {
+        el.closest(".aside-nav details, .coding-navigation-category").setAttribute("open", "open");
+        el.closest(".aside-nav details, .coding-navigation-category").classList.add("active");
       }
     }
   });

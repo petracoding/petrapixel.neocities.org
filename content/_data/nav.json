@@ -5,7 +5,7 @@
   },
   {
     "label": "About",
-    "new": true,
+    "new": false,
     "items": [
      
      
@@ -18,7 +18,7 @@
        {
         "link": "/about/my-online-childhood",
         "label": "my online childhood",
-        "new": true,
+        "new": false,
         "hide": false
       },
       {
@@ -230,7 +230,6 @@
       {
         "link": "/contest",
         "label": "Indie Web Contest",
-        "sublabel": "2024 Contest Results",
         "new": true,
         "hide": false,
         "icon": "fa-solid fa-trophy"
@@ -338,9 +337,9 @@
           },
           {
             "link": "/coding/quizzes",
-            "label": "Coding Quiz",
+            "label": "Coding Quizzes",
             "sublabel": "",
-            "new": true,
+            "new": false,
             "hide": false,
             "icon": "lightbulb-line"
           },
@@ -351,7 +350,7 @@
             "sublabel": "Simple Webring Script",
             "new": false,
             "hide": false,
-            "icon": "diamond-ring-line"
+            "icon": "user-community-line"
           }
         ]
       },
@@ -479,7 +478,7 @@
             "link": "/coding/google-sheets-api-tutorial",
             "label": "Google Sheets API Tutorial",
             "sublabel": "Read sheets data with JS",
-            "new": true,
+            "new": false,
             "hide": false,
             "icon": "drive-line"
           }
@@ -487,7 +486,7 @@
       },
       {
         "label": "Miscellaneous",
-        "new": true,
+        "new": false,
         "items": [
           {
             "link": "/coding/neocities",
@@ -533,7 +532,7 @@
             "link": "/coding/cliques",
             "label": "List of Cliques",
             "sublabel": "",
-            "new": true,
+            "new": false,
             "hide": false,
             "icon": "user-community-line"
           },
@@ -542,7 +541,7 @@
             "link": "/webring",
             "label": "Code Collective Webring",
             "sublabel": "",
-            "new": true,
+            "new": false,
             "hide": false,
             "icon": "diamond-ring-line",
             "hideInCodingNav": true
