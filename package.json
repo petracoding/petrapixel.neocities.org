@@ -19,8 +19,5 @@
     "webpack": "webpack --watch",
     "eleventy": "npx @11ty/eleventy --serve --port=8080",
     "build": "npx @11ty/eleventy & webpack"
-  },
-  "dependencies": {
-    "remixicon": "^4.6.0"
   }
 }
