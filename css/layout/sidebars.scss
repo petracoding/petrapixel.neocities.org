@@ -799,6 +799,7 @@
   img {
     width: calc(72px * 1);
     image-rendering: pixelated;
+    filter: hue-rotate(250deg);
   }
 }
 
