@@ -6,7 +6,7 @@ nesting: "../"
 ---
 
 <section>
-  <h1>Game Recs</h1>
+  <h1>Video Game Recs</h1>
   <p>Here are some games I've enjoyed and would definitely recommend!</p>
   <p>You can also seem them on <a href="https://www.backloggd.com/u/Petra1999/games/user-rating/" target="_blank">my backloggd profile</a>!</p>
   <strong class="rec-filters-title">Filter:</strong>
@@ -51,8 +51,7 @@ nesting: "../"
   <div class="isotope-items isotope-items--games">
     {% for rec in recs['games'] %} {% if rec.title != "EXAMPLE" %}
     <div
-      class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.price | recTurnToClasses }} {{ rec.genres | recTurnToClasses }} {{ rec.platform | recTurnToClasses }} {{ rec.gameType | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}"
-    >
+      class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.price | recTurnToClasses }} {{ rec.genres | recTurnToClasses }} {{ rec.platform | recTurnToClasses }} {{ rec.gameType | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}">
       <div class="rec__inner">
         <div class="rec__image"><img src="{{ rec.image }}" /></div>
         <div class="rec__info">

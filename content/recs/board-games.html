@@ -1,0 +1,91 @@
+---
+layout: petrapixel.njk
+title: "game recs"
+description: "Here's my Neocities page for game recommendations! All my favorite games in one page!"
+nesting: "../"
+---
+
+<section>
+  <h1>Board/Card Game Recs</h1>
+  <p>Here are some games I've enjoyed and would definitely recommend!</p>
+  <center>Page is WIP!</center>
+  <p>
+    You can also seem them on
+    <a
+      href="https://boardgamegeek.com/collection/user/Petra1999?gallery=large&rankobjecttype=subtype&rankobjectid=1&columns=title%7Cstatus%7Cversion%7Crating%7Cbggrating%7Cplays%7Ccomment%7Ccommands&geekranks=Board%20Game%20Rank&objecttype=thing&ff=1&subtype=boardgame"
+      target="_blank"
+      >my BoardGameGeek profile</a
+    >!
+  </p>
+
+  <strong class="rec-filters-title">Filter:</strong>
+  <div class="rec-filters">
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="type">
+        <button class="rec-filters__button is-checked" data-filter="">any type</button>
+        <button class="rec-filters__button" data-filter=".board">board game</button>
+        <button class="rec-filters__button" data-filter=".card">card game</button>
+      </div>
+    </div>
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="player-count">
+        <button class="rec-filters__button is-checked" data-filter="">any player count</button>
+        <button class="rec-filters__button" data-filter=".two">exactly 2 players</button>
+        <button class="rec-filters__button" data-filter=".two-or-more">2+ players</button>
+        <button class="rec-filters__button" data-filter=".three-or-more">3+ players</button>
+      </div>
+    </div>
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="difficulty">
+        <button class="rec-filters__button is-checked" data-filter="">any difficulty</button>
+        <button class="rec-filters__button" data-filter=".easy">easy</button>
+        <button class="rec-filters__button" data-filter=".medium">medium</button>
+        <button class="rec-filters__button" data-filter=".complicated">complicated</button>
+      </div>
+    </div>
+    <div class="rec-filters__group">
+      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="rating">
+        <button class="rec-filters__button is-checked" data-filter="">any rating</button>
+        <button class="rec-filters__button" data-filter=".r1">★★★★</button>
+        <button class="rec-filters__button" data-filter=".r2">★★★★<small>½</small></button>
+        <button class="rec-filters__button" data-filter=".r3">★★★★★</button>
+      </div>
+    </div>
+  </div>
+  <div class="isotope-items isotope-items--boardgames">
+    {% for rec in recs['boardgames'] %} {% if rec.title != "EXAMPLE" %}
+    <div class="rec r{{ rec.rating }} {{ rec.playerCount | recTurnToClasses }} {{ rec.difficulty | recTurnToClasses }} {{ rec.gameType | recTurnToClasses }}">
+      <div class="rec__inner">
+        <div class="rec__image"><img src="{{ rec.image }}" /></div>
+        <div class="rec__info">
+          <div class="rec__title">{{ rec.title }}</div>
+          <div class="rec__desc">
+            <p><strong>My rating:</strong> <span class="rec__stars">★★★★{% if rec.rating == "2" %}<small>½</small>{% elsif rec.rating == "3" %}★{% endif %}</span></p>
+            <p><strong>Player Count:</strong> {% if rec.playerCount == "two" %}2{% elsif rec.playerCount == "two-or-more" %}2+{% else %}3+{% endif %}</p>
+            <p><strong>Difficulty:</strong> {{ rec.difficulty }}</p>
+            {% if rec.cw %}
+            <p><strong>Content Warnings:</strong> <abbr title="{{ rec.cw }}">hover to reveal (spoilers!)</abbr></p>
+            {% endif %}
+          </div>
+          <div class="rec__link"><a href="{{ rec.link }}" target="_blank">BoardGameGeek</a></div>
+        </div>
+      </div>
+      <div class="rec__outer">
+        {% if rec.description %}
+        <div class="rec__description">{{ rec.description }}</div>
+        {% else %}
+        <div class="rec__description">I think this game is really cool and you should totally play it if you think you might like it!</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
+</section>
+<!-- Isotope: -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="recs.js"></script>
+<script>
+  initIsotope();
+</script>
