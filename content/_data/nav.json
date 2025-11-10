@@ -5,7 +5,7 @@
   },
   {
     "label": "About",
-    "new": true,
+    "new": false,
     "items": [
      
      
@@ -230,13 +230,13 @@
   },
   {
     "label": "Fun Stuff!",
-    "new": false,
+    "new": true,
     "items": [
       
       {
         "link": "/contest",
         "label": "Indie Web Contest",
-        "new": false,
+        "new": true,
         "hide": false,
         "icon": "fa-solid fa-trophy"
       },

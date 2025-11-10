@@ -1,5 +1,6 @@
 [
-  { "date": "2025-09-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-11-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2025-11-10", "text": "Indie Web Contest voting has started!", "link": "/contest" },
   { "date": "2025-09-07", "text": "Indie Web Contest participation form is open!", "link": "/contest" },
   { "date": "2025-08-21", "text": "New free widget: Pollcode", "link": "/coding/widgets" },
   { "date": "2025-08-07", "text": "More styling options for my widgets!", "link": "/coding/widgets" },
