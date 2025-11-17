@@ -38,7 +38,7 @@
   {
     "link": "https://strawberry-gashes.neocities.org",
     "title": "strawberry-gashes",
-    "image": "https://i.imgur.com/V9sIpx6.gif",
+    "image": "strawberry-gashes.gif",
     "neighbor": true
   },
   {
@@ -154,7 +154,7 @@
   {
     "link": "https://freaksaint.neocities.org/",
     "title": "freaksaint",
-    "image": "https://i.imgur.com/0G6GQYJ.png",
+    "image": "freaksaint.png",
     "neighbor": true
   },
   {
@@ -230,7 +230,7 @@
   {
     "link": "https://pomelo.neocities.org/",
     "title": "pomelo",
-    "image": "https://i.imgur.com/TqJ5nX2.gif",
+    "image": "pomelo.gif",
     "neighbor": false,
     "inspiration": true
   },
@@ -321,7 +321,7 @@
   {
     "link": "https://angs-corner.nekoweb.org/",
     "title": "ang's corner",
-    "image": "https://i.imgur.com/rd7l8WZ.gif",
+    "image": "angs-corner.gif",
     "neighbor": false,
     "inspiration": false,
     "winner": false
