@@ -240,6 +240,12 @@
         "hide": false,
         "icon": "fa-solid fa-trophy"
       },
+           {
+        "link": "/about/advent-calendar-2025",
+        "label": "advent calendar!",
+        "new": false,
+        "hide": false
+      },
       {
         "link": "/about/blinkies",
         "label": "blinkies & more",

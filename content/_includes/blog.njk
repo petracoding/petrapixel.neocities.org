@@ -9,8 +9,7 @@ testingOnLocalhost: false
     {% if not noSEO %}
     <meta
       name="description"
-      content="{{ description or 'Welcome to petrapixel! Here you can find many resources for Neocities, coding help, media recommendations and more in a cute Old Web aesthetic!' }}"
-    />
+      content="{{ description or 'Welcome to petrapixel! Here you can find many resources for Neocities, coding help, media recommendations and more in a cute Old Web aesthetic!' }}" />
     {% endif %}
 
     <!-- CSS/JS + CACHEBUSTING -->
@@ -98,7 +97,8 @@ testingOnLocalhost: false
           <h2 style="height: 0px; overflow: hidden">Comments</h2>
           {% if commentsText %}
           <p>{{ commentsText | safe }}</p>
-          {% endif %} {% if commentsClosed %}Comments closed due to too many hate messages. :({% else %}
+          {% endif %} {% if commentsClosed %}Comments closed due to too many hate messages. :(<br />If you have something (nice) to say you can post it on my
+          <a href="https://neocities.org/site/petrapixel" target="_blank">Neocities profile</a>.{% else %}
           <div id="c_widget">Comment Widget could not be loaded!</div>
           <script src="{{ nesting }}assets/js/comment-widget.js"></script>
           {% endif %}
