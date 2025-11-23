@@ -1,6 +1,6 @@
 import "../css/main.scss";
 import { loadTheme, initThemeSwitcher } from "./layout/dark-mode";
-import { initScrollToTop, initTableOfContents, initTooltips, initProgressBar, initActiveLinks, initToggleExplanationComments } from "./layout/layout";
+import { initScrollToTop, initTableOfContents, initTooltips, initProgressBar, initActiveLinks, initToggleExplanationComments, initChristmas } from "./layout/layout";
 import { initSidebar } from "./layout/sidebar";
 import { initClipboard } from "./pages/clipboard";
 import { initPlaylists } from "./pages/playlists";
@@ -44,5 +44,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* SPECIAL: */
   //initAprilFools();
-  //initSnow();
+  initChristmas();
 });

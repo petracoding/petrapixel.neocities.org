@@ -241,9 +241,9 @@
         "icon": "fa-solid fa-trophy"
       },
            {
-        "link": "/about/advent-calendar-2025",
+        "link": "/fun/advent-calendar-2025",
         "label": "advent calendar!",
-        "new": false,
+        "new": true,
         "hide": false
       },
       {

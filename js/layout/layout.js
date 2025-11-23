@@ -214,7 +214,55 @@ export function initToggleExplanationComments() {
   SPECIAL
 */
 
-export function initSnow() {
+export function initChristmas() {
+  const currentMonth = new Date().getMonth() + 1;
+  const isAdventCalendarPage = document.querySelector("#advent-calendar");
+  if (!isAdventCalendarPage && currentMonth != 12) return; // only in december
+
+  // CSS
+  document.head.appendChild(document.createElement("style")).innerHTML = `
+#santa-hat {
+  position: absolute;
+  transform: scaleX(-1) scale(0.6);
+  top: -40px;
+  left: -10px;
+  filter: contrast(0.95) saturate(0.8);
+
+
+}
+
+@media (max-width: 1105px) {
+  #santa-hat {
+    display: none;
+  }
+}
+
+@media (max-width: $sm) {
+  #santa-hat {
+    display: inline;
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  height: 50px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+body.dark-mode::after {
+  display: none;
+}
+
+`;
+
+  // FALLING SNOW
   /* https://embed.im/snow */
   var embedimSnow = document.getElementById("embedim--snow");
   if (!embedimSnow) {
