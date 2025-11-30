@@ -76,7 +76,7 @@
         "hide": false
       },
       {
-        "link": "/about/changelog",
+        "link": "/zz/changelog",
         "label": "changelog",
         "new": false,
         "hide": false,
@@ -188,7 +188,7 @@
   },
   {
     "label": "Resources",
-    "new": false,
+    "new": true,
     "items": [
       {
         "link": "/resources/bookmarks",
@@ -225,12 +225,19 @@
         "label": "vocabulary",
         "new": false,
         "hide": false
+      },
+       {
+        "link": "/resources/backup-tutorial",
+        "label": "how to backup files",
+        "new": true,
+        "hide": false
       }
     ]
   },
+        
   {
     "label": "Fun Stuff!",
-    "new": true,
+    "new": false,
     "items": [
       
       {
@@ -240,12 +247,7 @@
         "hide": false,
         "icon": "fa-solid fa-trophy"
       },
-           {
-        "link": "/fun/advent-calendar-2025",
-        "label": "advent calendar!",
-        "new": true,
-        "hide": false
-      },
+     
       {
         "link": "/about/blinkies",
         "label": "blinkies & more",
@@ -290,6 +292,12 @@
       }
     ]
   },
+  {
+        "link": "/fun/advent-calendar-2025",
+        "label": "advent calendar!",
+        "new": true,
+        "hide": false
+      },
   {
     "label": "Coding & Webmastery",
     "new": false,

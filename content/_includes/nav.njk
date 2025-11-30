@@ -4,7 +4,11 @@
     {% for mainNavItem in nav %} {% if mainNavItem.link %}
 
     <li>
-      <a href="{{ mainNavItem.link }}"><img width="9" src="{{ nesting }}assets/img/layout/heart.png" alt="" aria-hidden="true" />{{ mainNavItem.label }}</a>
+      <a href="{{ mainNavItem.link }}"
+        ><img width="9" src="{{ nesting }}assets/img/layout/heart.png" alt="" aria-hidden="true" />{{ mainNavItem.label }}{% if mainNavItem.new %}<small class="aside-nav__new"
+          ><img src="{{ nesting }}assets/img/layout/new.gif" alt="" aria-hidden="true" /></small
+        >{% endif %}</a
+      >
     </li>
 
     {% else %} {% if mainNavItem.isCodeMenu %}

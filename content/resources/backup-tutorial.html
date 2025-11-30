@@ -1,0 +1,91 @@
+---
+layout: petrapixel.njk
+title: "how to backup"
+description: "A tutorial on how you properly and quickly backup your files. Neocities."
+nesting: "../"
+---
+
+<section>
+  <h1>Backup Tutorial</h1>
+  <p>
+    In our digital age, backing up your files is pretty much a security requirement like locking your front door. But I know a lot of people don't do it, either because they're lazy, or because they
+    don't know how. So here. I will show you the easiest and <b>fastest</b> way of backing up files.
+  </p>
+</section>
+
+<section>
+  <h2>What you need</h2>
+  <ul>
+    <li>Some way to transfer your files from your mobile devices to your pc (e.g. a usb-c to usb cable)</li>
+    <li>
+      An external hard drive (or usb drive) with enough free space for all of your files. (You can get a
+      <a href="https://www.google.com/search?q=ssd+1tb" target="_blank" rel="nofollow">1TB SSD</a> for under 80 bucks now!)
+    </li>
+    <li>The free software <a href="https://www.jam-software.de/treesize_free" target="_blank" rel="nofollow">TreeSize Free</a> (optional, but highly recommended)</li>
+    <li>The free software <a href="https://freefilesync.org/" target="_blank" rel="nofollow">FreeFileSync</a></li>
+    <li>A way to zip files (e.g. 7zip, winrar, built-in, ...)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Preparation</h2>
+  <ol>
+    <li>Organize and name all your files and folders, on all your devices. Yeah, do it now. Thank me later.</li>
+    <li>Delete everything you don't need (and then empty your trash bin to clear up space on your device)</li>
+    <li>Transfer all your files from mobile devices (phone, tablet, ...) to your computer (e.g. in a folder "mobile files")</li>
+    <li></li>
+    <li>Zip up folders that include lots (200+) of small files (many files, even if they are tiny, take long to backup)</li>
+    <li>Zip up folders that include big files (like large video files)</li>
+  </ol>
+  <p>
+    <strong>Tip:</strong> To find big files or folders with many files you can use the software <a href="https://www.jam-software.de/treesize_free" target="_blank" rel="nofollow">TreeSize Free</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Backing up</h2>
+  <ol>
+    <li>Open the free software <a href="https://freefilesync.org/" target="_blank" rel="nofollow">FreeFileSync</a></li>
+    <li>On the left column, select the folder(s) containing all your files on your pc</li>
+    <li>On the right column, select the folder you want to put the backup into (on your hard drive)</li>
+    <li>Press the "Compare" button to list all files and see which changes a backup would do</li>
+    <li>
+      Customize the filter to exclude folders you don't want to backup (for example movies, games, ...). You can do this manually (click the filter icon at the top in the middle) or add folders by
+      right-clicking on them and choosing "exclude via filter".
+    </li>
+    <li>Press "compare" again to check your changes.</li>
+    <li>Select the synchronisation mode "mirror" (or customize it however you need)</li>
+    <li>
+      Start the backup by pressing the "Synchronize" button on the top right.
+      <b>This will take a long while for the first time, but each backup after the first one only copies new/changed files, and therefore will only take a few minutes.</b>
+    </li>
+  </ol>
+  <hr />
+  <img src="../assets/img/etc/freefilesync.png" alt="A screenshot of the software." />
+  <hr />
+  <p>Here are some example filters:</p>
+  <ul>
+    <li><code>Petra\Movies\</code> will exclude everything in the folder "Petra/Movies"</li>
+    <li><code>Petra\**\old</code> will exclude everything in subfolders called "old"</li>
+    <li><code>*\.mp4</code> will exclude <i>all</i> mp4 files</li>
+    <li><code>Petra\image.png</code> will exclude the file image.png</li>
+  </ul>
+  <hr />
+  <p>After the backup, store your hard drive in a different house. This way a physical disaster (like a fire) doesn't destroy your device <i>and</i> your backup!</p>
+</section>
+
+<section class="buy-me-a-coffee">
+  <div>
+    <p>
+      I spend <b>hours</b> of my free time writing pages like these that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
+      <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
+    </p>
+    <p>
+      <small
+        >If you have questions about this page feel free to contact me via my <a href="/about/guestbook">guestbook</a> or my
+        <a href="https://neocities.org/site/petrapixel" target="_blank">neocities profile</a>. I promise I don't bite!</small
+      >
+    </p>
+  </div>
+  <img src="{{ nesting }}assets/img/layout/coffee.gif" alt="coffee" width="80" />
+</section>

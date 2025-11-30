@@ -1,9 +1,13 @@
 .advent-calendar {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
   background-image: url("https://petrapixel.neocities.org/assets/img/etc/christmas/adventcalendar-bg.jpg");
   background-repeat: repeat;
+
+  @media (max-width: $sm) {
+    padding: 15px;
+  }
 }
 
 .advent-calendar__door {
@@ -11,13 +15,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 174px;
-  height: 174px;
-  margin: 30px;
+  width: 130px;
+  height: 130px;
+  margin: 20px;
   background: $pink; // don't use variable: no dark mode
   font-size: 30px;
   cursor: url(https://cur.cursors-4u.net/holidays/hol-5/hol453.cur), not-allowed;
   transition: 0.3s ease;
+
+  @media (max-width: $sm) {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    font-size: 27px;
+  }
+
+  @media (min-width: $xl) {
+    width: 174px;
+    height: 174px;
+    margin: 30px;
+  }
 
   &::after {
     content: "";
@@ -49,6 +66,14 @@
     z-index: 1;
     // https://codepen.io/am_eu/pen/EgedaQ
   }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    &::after {
+      transform: perspective(1200px) rotateY(-115deg) !important;
+    }
+  }
 }
 
 .advent-calendar__door--open,
@@ -69,15 +94,11 @@
 .advent-calendar__door--openable {
   transition-delay: 0.5s;
 
-  // strong {
-  //   transition-delay: 0.5s;
-  // }
-
   &:hover,
   &:focus,
   &:focus-within {
     &::after {
-      transform: perspective(1200px) rotateY(-35deg);
+      transform: perspective(1200px) rotateY(-45deg);
     }
   }
 }
@@ -89,7 +110,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.6);
   align-items: center;
   justify-content: center;
   z-index: 9999999;
@@ -97,28 +118,55 @@
   .advent-calendar__door--clicked + & {
     display: flex;
   }
+
+  @media (min-width: $md) {
+    background: rgba(255, 255, 255, 0.4);
+  }
 }
 
 .advent-calendar__content {
   background: var(--mainBackgroundColor);
   padding: 30px 15px;
   max-height: 75vh;
-  overflow-y: scroll;
   text-align: center;
   box-shadow: 0px 0px 20px white;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   strong {
     font-weight: bold;
     font-size: 50px;
+    line-height: 1;
+    margin-bottom: 0.2em;
+    display: block;
+  }
+
+  h3 {
+    margin-bottom: 1em;
+    font-weight: bold;
+    font-size: 30px;
   }
 
   @media (min-width: $md) {
-    max-width: 60vw;
-    padding: 50px 55px;
+    max-width: 700px;
+    width: 50vw;
+    padding: 40px 55px;
     max-height: 100vh;
 
     strong {
       font-size: 70px;
+    }
+  }
+
+  @media (max-width: $sm) {
+    width: 100%;
+    padding: 20px 10px;
+
+    // save some space
+    strong,
+    hr,
+    p:last-child {
+      display: none;
     }
   }
 }
