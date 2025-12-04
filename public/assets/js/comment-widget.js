@@ -34,7 +34,7 @@ const s_dstStart = ["March", "Sunday", 2, 2]; // Example shown is the second Sun
 const s_dstEnd = ["November", "Sunday", 1, 2]; // Example shown is the first Sunday of November at 2:00 am
 
 // Misc - Other random settings
-const s_commentsPerPage = 5; // The max amount of comments that can be displayed on one page, any number >= 1 (Replies not counted)
+const s_commentsPerPage = 10; // The max amount of comments that can be displayed on one page, any number >= 1 (Replies not counted)
 const s_maxLength = 10000; // The max character length of a comment
 const s_maxLengthName = 50; // The max character length of a name
 const s_commentsOpen = true; // Change to false if you'd like to close your comment section site-wide (Turn it off on Google Forms too!)
@@ -65,8 +65,8 @@ const s_websiteText = "Website"; // The links to websites left by users on their
 const s_replyButtonText = "Reply"; // The button for replying to someone
 const s_replyingText = "Replying to"; // The text that displays while the user is typing a reply
 const s_expandRepliesText = "Show Replies";
-const s_leftButtonText = "<<";
-const s_rightButtonText = ">>";
+const s_leftButtonText = "<< newer";
+const s_rightButtonText = "older >>";
 
 /*
     DO NOT edit below this point unless you are confident you know what you're doing!
