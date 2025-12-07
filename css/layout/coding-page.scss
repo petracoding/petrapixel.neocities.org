@@ -502,15 +502,16 @@ main.coding-page {
   text-align: center;
   font-size: 1.2em;
   border: 3px dotted;
+  justify-content: center;
 
-  small {
+  p:last-child {
     max-width: 480px;
     display: block;
     margin: 0 auto;
   }
 
   @media (prefers-reduced-motion) {
-    img {
+    img[src*="gif"] {
       display: none;
     }
   }
@@ -522,12 +523,22 @@ main.coding-page {
     padding-bottom: 1em;
 
     p {
-      line-height: 1.6;
+      line-height: 1.3;
     }
 
-    img {
+    div:last-child {
       margin-left: 2em;
       margin-right: 1em;
+      flex-shrink: 0;
+    }
+  }
+
+  // TEMP
+  .image {
+    display: block;
+
+    img {
+      border-radius: 10px;
     }
   }
 }

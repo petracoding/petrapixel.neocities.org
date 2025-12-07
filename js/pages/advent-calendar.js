@@ -147,7 +147,7 @@ const doors = [
     day: 23,
     title: "The web is yours",
     easy: "Install the <a href='https://addons.mozilla.org/de/firefox/addon/greasemonkey/' href='_blank'>Greasemonkey</a> extension for Firefox (or <a href='https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de' href='_blank'>Tampermonkey</a> if you're using Google Chrome) so you can install userscripts. You can find userscripts to install on <a href='https://greasyfork.org/en' href='_blank'>GreasyFork</a>. You can also install the <a href='https://addons.mozilla.org/en-US/firefox/addon/styl-us/' href='_blank'>Stylus</a> extension to install userstyles.",
-    hard: "Install <a href='https://greasyfork.org/en/users/354138-petracoding' href='_blank'>my Universal Content Filter script</a>.", // TODO ADD BETTER LINK
+    hard: "Install <a href='https://greasyfork.org/en/scripts/558141-universal-content-filter' href='_blank'>my Universal Content Filter script</a>.", // TODO ADD BETTER LINK?
   },
   {
     day: 24,

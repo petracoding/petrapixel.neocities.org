@@ -85,18 +85,12 @@
     ]
   },
   {
-    "label": "My Creations",
+    "label": "Creativity",
     "new": false,
     "items": [
       {
         "link": "/creations/art",
         "label": "my art",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/creations/coding",
-        "label": "my coding",
         "new": false,
         "hide": false
       },
@@ -186,54 +180,7 @@
       }
     ]
   },
-  {
-    "label": "Resources",
-    "new": true,
-    "items": [
-      {
-        "link": "/resources/bookmarks",
-        "label": "bookmarks",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/software-recs",
-        "label": "software recs",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/clipboard",
-        "label": "clipboard",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/notion",
-        "label": "notion templates",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/resources/google-spreadsheets-excel",
-        "label": "spreadsheets",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/resources/vocabulary",
-        "label": "vocabulary",
-        "new": false,
-        "hide": false
-      },
-       {
-        "link": "/resources/backup-tutorial",
-        "label": "how to backup files",
-        "new": true,
-        "hide": false
-      }
-    ]
-  },
+  
         
   {
     "label": "Fun Stuff!",
@@ -287,6 +234,59 @@
       {
         "link": "/fun/bored-button",
         "label": "are you bored?",
+        "new": false,
+        "hide": false
+      }
+    ]
+  },
+  {
+    "label": "Resources",
+    "new": true,
+    "items": [
+      {
+        "link": "/resources/bookmarks",
+        "label": "bookmarks",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/resources/software-recs",
+        "label": "software recs",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/resources/clipboard",
+        "label": "clipboard",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/resources/notion",
+        "label": "notion templates",
+        "new": false,
+        "hide": true
+      },
+      {
+        "link": "/resources/google-spreadsheets-excel",
+        "label": "spreadsheets",
+        "new": false,
+        "hide": true
+      },
+      {
+        "link": "/resources/vocabulary",
+        "label": "vocabulary",
+        "new": false,
+        "hide": false
+      },
+       {
+        "link": "/resources/backup-tutorial",
+        "label": "how to backup files",
+        "new": true,
+        "hide": false
+      }, {
+        "link": "/creations/coding",
+        "label": "my userscripts & tools",
         "new": false,
         "hide": false
       }

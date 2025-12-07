@@ -7,6 +7,7 @@ codeHighlight: true
 progressBar: true
 mainClass: coding-page
 toc: true
+tipType: "tutorial"
 ---
 
 <section>
@@ -451,13 +452,7 @@ self.addEventListener("activate", (event) => {
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
-<section class="buy-me-a-coffee">
-  <p>
-    I spend <b>hours</b> of my free time writing tutorials like this one that I publish for free. If you'd like to say thanks, please share this tutorial with others and/or
-    <a href="https://ko-fi.com/petrastipjar" target="_blank">buy me a coffee</a>! <img aria-hidden="true" src="../assets/img/inline/laughing.gif" />
-  </p>
-  <img src="{{ nesting }}assets/img/layout/coffee.gif" alt="coffee" width="80" />
-</section>
+{% include 'tip-me.njk' %}
 
 <section>
   <h2>Comments</h2>
