@@ -1,0 +1,94 @@
+---
+layout: petrapixel.njk
+title: "userscript tutorial"
+description: "A tutorial on how to install and use userscripts with Greasemonkey or Tampermonkey. Neocities."
+nesting: "../"
+lightbox: true
+tipType: "tutorial"
+---
+
+<section>
+  <h1>Userscript Tutorials</h1>
+  <blockquote class="tip">
+    <b>What is a userscript? </b>A userscript is some javascript code that gets in injected into certain websites (depending on the script). This can be used to add features, change the appearance of
+    the site, hide elements, or otherwise enhance your experience. They can be installed using browser extensions such as
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/" target="_blank">Greasemonkey</a> or <a href="https://www.tampermonkey.net/index.php" target="_blank">Tampermonkey</a>, which
+    are available for all popular browsers and also work on mobile devices. Also, it's 100% free, <i>and</i> you can even write your own! You can find userscripts on sites such as
+    <a href="https://greasyfork.org/en/users/354138-petracoding" target="_blank">Greasyfork</a> or <a href="https://openuserjs.org/users/petracoding" target="_blank">OpenUserJS</a>.
+  </blockquote>
+</section>
+
+<section id="install">
+  <h2>Installing userscripts</h2>
+  <h3>1. Installing the browser extension:</h3>
+  <p>
+    To use userscripts you first need to install a browser extension with which you can install the userscripts. There are several available, but I recommend
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/" target="_blank">Greasemonkey</a> for Firefox, or
+    <a href="https://www.tampermonkey.net/index.php" target="_blank">Tampermonkey</a> for Chrome. They also work in the app versions. Just install these extensions like any other, and make sure the
+    extension shortcut is somewhere you can find it (because you will need the menu.)
+  </p>
+
+  <blockquote class="warning">
+    <b>Chrome:</b> In Google Chrome you need a few additional steps for the extension to work. Open the 'Manage Extension' page and enable "Developer mode" in the top right corner. Then, in the
+    settings of the extension you just installed, enable "Allow User Scripts". (See screenshots.)
+  </blockquote>
+  <div class="two-columns">
+    <div>
+      <a data-fslightbox href="{{nesting}}assets/img/coding/userscripts/chrome-settings1.png">
+        <img src="{{nesting}}assets/img/coding/userscripts/chrome-settings1.png" alt="A screenshot of Chrome." />
+      </a>
+    </div>
+    <div>
+      <a data-fslightbox href="{{nesting}}assets/img/coding/userscripts/chrome-settings2.png">
+        <img src="{{nesting}}assets/img/coding/userscripts/chrome-settings2.png" alt="A screenshot of Chrome." />
+      </a>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>2. Installing the userscript:</h3>
+  <p>
+    Now you can use sites like <a href="https://greasyfork.org/en/users/354138-petracoding" target="_blank">Greasyfork</a> or
+    <a href="https://openuserjs.org/users/petracoding" target="_blank">OpenUserJS</a> to find userscripts you want to install. There, just click the "install" button of the script you've chosen.
+  </p>
+  <a data-fslightbox href="{{nesting}}assets/img/coding/userscripts/greasyfork.png">
+    <img src="{{nesting}}assets/img/coding/userscripts/greasyfork.png" alt="A screenshot of the Install button." />
+  </a>
+  <p>
+    Your extension's (Greasemonkey/Tampermonkey) info might pop up and ask you whether you really want to install the script. Once you confirm the script should already work! Keep in mind that most
+    userscripts are created for specific websites (e.g. a YouTube ad blocker) and therefore only work on these websites.
+  </p>
+  <p><i>Please rate the userscript / give feedback to the creator!</i></p>
+</section>
+
+<section id="settings">
+  <h2>Changing userscript settings</h2>
+  <p>
+    Some (not all!) userscripts have settings you can change to customize the script's behaviour. If there is an UI for this it can be opened through the extension (Greasemonkey/Tampermonkey) menu:
+  </p>
+  <div class="two-columns">
+    <div>
+      <p><b>Greasemonkey:</b> Select "User script commands..." to see a list of all possible options of installed scripts.</p>
+      <a data-fslightbox href="{{nesting}}assets/img/coding/userscripts/greasemonkey-settings.png">
+        <img src="{{nesting}}assets/img/coding/userscripts/greasemonkey-settings.png" alt="A screenshot of the settings button." />
+      </a>
+    </div>
+    <div>
+      <p><b>Tampermonkey:</b> The "Settings" button will be placed right under the script name.</p>
+      <a data-fslightbox href="{{nesting}}assets/img/coding/userscripts/tampermonkey-settings.png">
+        <img src="{{nesting}}assets/img/coding/userscripts/tampermonkey-settings.png" alt="A screenshot of the settings button." />
+      </a>
+    </div>
+  </div>
+  <p>If a script has settings but not UI you will have to edit the script's code to set variables etc. You can also do this over the extensions.</p>
+</section>
+
+<!-- 
+<section>
+  <h2>Making your own userscript</h2>
+  <p>Tutorial coming soon, maybe... Tell me if you're interested!</p>
+</section>
+-->
+
+{% include 'tip-me.njk' %}

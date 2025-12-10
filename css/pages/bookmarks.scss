@@ -69,6 +69,11 @@
   //   font-weight: bold;
   padding: 0 0.25em;
   flex: 1 0 0;
+
+  .bookmarks--userscripts & small {
+    display: block;
+    font-weight: bold;
+  }
 }
 
 .bookmark__description {
