@@ -370,6 +370,22 @@ footer {
   left: 10em;
 }
 
+.email-svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 160px;
+  height: 23px;
+
+  a text {
+    fill: var(--textColor);
+    cursor: $cursorPointer;
+  }
+
+  a:focus text {
+    text-decoration: underline 1px solid;
+  }
+}
+
 /**
  *
  * TABLET

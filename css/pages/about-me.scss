@@ -366,6 +366,10 @@
   align-items: flex-start;
   padding-bottom: 10px;
 
+  @media (max-width: $md) {
+    max-height: 500px;
+  }
+
   img {
     display: inline-block;
     margin: 5px;
@@ -376,21 +380,18 @@
     }
 
     &[src*="/d.png"],
-    &[src*="/d.png"] + img,
     &[src*="/e.png"],
-    &[src*="/e.png"] + img,
     &[src*="/may1.png"],
-    &[src*="/may1.png"] + img,
     &[src*="/may4.jpg"],
-    &[src*="/may4.jpg"] + img,
     &[src*="/may6.PNG"],
-    &[src*="/may6.PNG"] + img,
     &[src*="/0.jpg"],
-    &[src*="/0.jpg"] + img,
-    &[src*="/dan the man.jpg"],
-    &[src*="/dan the man.jpg"] + img {
-      height: 140px;
-      margin-bottom: 0;
+    &[src*="/7.jpg"],
+    &[src*="/dan the man.jpg"] {
+      &,
+      & + img {
+        height: 140px;
+        margin-bottom: 0;
+      }
     }
 
     &:hover {
