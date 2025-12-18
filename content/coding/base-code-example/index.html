@@ -8,13 +8,30 @@
     <script src="layout.js"></script>
     <link href="../../favicon.ico" rel="icon" type="image/x-icon" />
     <style>
+      body {
+        margin: 5px;
+        background: white;
+      }
+
       header,
       footer {
+        padding: 1.75em 3em;
         background: lightgray;
       }
 
+      nav {
+        margin-top: 0.5em;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+
       main {
-        margin: 3em 0;
+        margin: 10px 0;
+        padding: 3em;
+        border: 1px dashed gray;
       }
 
       a {
@@ -28,10 +45,8 @@
   </head>
   <body class="load-layout">
     <main>
-      <p>This is the page content.</p>
-      <br />
-      <p>The image in the footer was inserted using the following code:</p>
-      <code>&lt;img src="${nesting}/assets/img/layout/divider1.gif" alt="" aria-hidden="true"/&gt;</code>
+      This is the page content, and the only element in the HTML file! The header and footer are both added via JavaScript, which means that the HTML code for them is in a singular JavaScript file
+      instead of every HTML file.
     </main>
   </body>
 </html>

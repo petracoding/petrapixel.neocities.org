@@ -7,10 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.insertAdjacentHTML("afterbegin", headerEl);
   document.body.insertAdjacentHTML("beforeend", footerEl);
 
+  // To insert something inside another element:
+  const wrapperElement = document.querySelector(".my-wrapper"); // <- your selector here
+  if (wrapperElement) wrapperElement.insertAdjacentHTML("afterbegin", `<b>Element at beginning of wrapper element.</b>`);
+  if (wrapperElement) wrapperElement.insertAdjacentHTML("beforeend", `<b>Element at the end of wrapper element.</b>`);
+
   // Other initializations:
   initActiveLinks();
 
-  // your code here...
+  // your javascript code here...
 });
 
 /* ********************************* */
@@ -70,10 +75,12 @@ const nesting = getNestingString();
 // You don't need to use the <header> element, but I recommend it.
 const headerEl = `
 	<header>
-		Header...
+		Header. Example of how to use the 'active' class to style active links (here: bold):
 		<nav>
-			<a href="/coding/layout-base-code.html">some link</a>
-			<a href="/coding/base-code-example/index.html">active link</a>
+			<a href="/coding/layout-base-code">homepage</a>
+			<a href="/coding/base-code-example/">this page</a>
+			<a href="/coding/layout-base-code">other page</a>
+			<a href="/coding/layout-base-code">other page</a>
 		</nav>
 	</header>
 `;
@@ -82,7 +89,7 @@ const headerEl = `
 // You don't need to use the <footer> element, but I recommend it.
 const footerEl = `
 	<footer>
-		Footer...
+		Footer. Example of how to add an image: 
 		<img src="${nesting}/assets/img/layout/divider1.gif" alt="" aria-hidden="true"/>
 	</footer>
 `;
