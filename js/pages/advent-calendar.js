@@ -146,14 +146,14 @@ const doors = [
   {
     day: 23,
     title: "The web is yours",
-    easy: "Install the <a href='https://addons.mozilla.org/de/firefox/addon/greasemonkey/' href='_blank'>Greasemonkey</a> extension for Firefox (or <a href='https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de' href='_blank'>Tampermonkey</a> if you're using Google Chrome) so you can install userscripts. You can find userscripts to install on <a href='https://greasyfork.org/en' href='_blank'>GreasyFork</a>. You can also install the <a href='https://addons.mozilla.org/en-US/firefox/addon/styl-us/' href='_blank'>Stylus</a> extension to install userstyles.",
-    hard: "Install <a href='https://greasyfork.org/en/scripts/558141-universal-content-filter' href='_blank'>my Universal Content Filter script</a>.", // TODO ADD BETTER LINK?
+    easy: "Install the <a href='https://addons.mozilla.org/de/firefox/addon/greasemonkey/' href='_blank'>Greasemonkey</a> extension for Firefox (or <a href='https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de' href='_blank'>Tampermonkey</a> if you're using Google Chrome) so you can install userscripts. You can find userscripts to install on <a href='https://greasyfork.org/en' href='_blank'>GreasyFork</a>. Check out my userscripts on <a href='/creations/coding'>this page</a> - new huge userscript coming SOON!",
+    hard: "You can also install the <a href='https://addons.mozilla.org/en-US/firefox/addon/styl-us/' href='_blank'>Stylus</a> extension to install userstyles.",
   },
   {
     day: 24,
     title: "Bye, bye!",
     easy: "Uninstall TikTok. Yep, that's it. If you don't have TikTok, then uninstall your doomscrolling app of choice. Just do it, don't think about it too long! You can do it! <b>Merry Christmas!</b>",
-    hard: "Also delete your account. It's okay, you will be alright without it.",
+    hard: "For a challenge: Also delete your account. It's okay, you will be alright without it.",
   },
 ];
 
