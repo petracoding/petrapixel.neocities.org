@@ -437,7 +437,7 @@
 }
 
 .changelog {
-  max-height: 110px;
+  max-height: 150px;
   overflow-y: scroll;
   overflow-x: clip;
   margin-top: 0.5em;
@@ -859,6 +859,12 @@
     right: -4px;
   }
 
+  > p {
+    padding: 1em;
+    line-height: 1;
+    border: 1px dashed;
+  }
+
   iframe[src*="cbox"] {
     z-index: 1;
     position: relative;
@@ -868,6 +874,7 @@
   }
 
   &::after {
+    display: none; // GONE
     content: "";
     position: absolute;
     top: calc(100% - 17px);

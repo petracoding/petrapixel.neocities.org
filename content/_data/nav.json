@@ -236,12 +236,18 @@
         "label": "are you bored?",
         "new": false,
         "hide": false
+      },
+       {
+        "link": "/fun/advent-calendar-2025",
+        "label": "advent calendar!",
+        "new": false,
+        "hide": false
       }
     ]
   },
   {
     "label": "Resources",
-    "new": true,
+    "new": false,
     "items": [
       {
         "link": "/resources/bookmarks",
@@ -282,7 +288,7 @@
        {
         "link": "/resources/backup-tutorial",
         "label": "how to backup files",
-        "new": true,
+        "new": false,
         "hide": false
       }, {
         "link": "/creations/coding",
@@ -292,12 +298,7 @@
       }
     ]
   },
-  {
-        "link": "/fun/advent-calendar-2025",
-        "label": "advent calendar!",
-        "new": true,
-        "hide": false
-      },
+ 
   {
     "label": "Coding & Webmastery",
     "new": false,
