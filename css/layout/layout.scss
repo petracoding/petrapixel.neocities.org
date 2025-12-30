@@ -373,17 +373,7 @@ footer {
 .email-svg {
   display: inline-block;
   vertical-align: middle;
-  width: 180px;
-  height: 23px;
-
-  a text {
-    fill: var(--textColor);
-    cursor: $cursorPointer;
-  }
-
-  a:focus text {
-    text-decoration: underline 1px solid;
-  }
+  width: 130px;
 }
 
 /**
