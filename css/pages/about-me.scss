@@ -357,28 +357,29 @@
  */
 
 .about-me-pages__gpoy {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 310px;
-  overflow-x: scroll;
-  // overflow-y: clip;
-  align-items: flex-start;
-  padding-bottom: 10px;
+  .gpoy {
+    width: 100%;
+    margin: 5px 0;
 
-  @media (max-width: $md) {
-    max-height: 500px;
+    @media (min-width: $md) {
+      width: calc(50% - 14px);
+      margin: 7px;
+    }
   }
 
   img {
-    display: inline-block;
-    margin: 5px;
     transition: 0.3s ease-out;
 
-    @media (min-width: $md) {
-      height: 300px;
+    &:hover {
+      z-index: 1;
+
+      @media (min-width: $md) {
+        transform: scale(1.1);
+        filter: saturate(1.05);
+      }
     }
 
+    /*
     &[src*="/d.png"],
     &[src*="/e.png"],
     &[src*="/may1.png"],
@@ -386,6 +387,9 @@
     &[src*="/may6.PNG"],
     &[src*="/0.jpg"],
     &[src*="/7.jpg"],
+    &[src*="/dec1.jpg"],
+    &[src*="/dec3.jpg"],
+    &[src*="/dec8.jpg"],
     &[src*="/dan the man.jpg"] {
       &,
       & + img {
@@ -393,15 +397,7 @@
         margin-bottom: 0;
       }
     }
-
-    &:hover {
-      z-index: 1;
-
-      @media (min-width: $md) {
-        border-radius: 30px;
-        transform: scale(1.3);
-      }
-    }
+*/
   }
 }
 

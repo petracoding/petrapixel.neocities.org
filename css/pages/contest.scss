@@ -18,6 +18,11 @@
 .indie-web-contest-winners__link {
   margin: 0.5em 0;
   font-size: 1.5em;
+
+  small {
+    font-size: 17px;
+    font-weight: normal;
+  }
 }
 
 .indie-web-contest-winners__screenshot {
