@@ -3,7 +3,7 @@
   border-collapse: collapse;
 
   tr.inactive {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   th,
@@ -40,7 +40,16 @@
 
   img {
     margin: 0 auto;
-    display: block;
+    display: inline-block;
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+
+    &[src*="reef.kingdra"] {
+      max-height: 20px;
+      image-rendering: pixelated;
+    }
   }
 
   #sorttable_sortfwdind,

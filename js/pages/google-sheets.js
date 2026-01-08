@@ -25,15 +25,21 @@ function buildCliqueTable(tableHeadings, tableData) {
       // make sure cliques with same name AND link are not added twice
       const key = (td[1] + "|" + td[2]).toLowerCase();
       if (!keysAlreadyIn.includes(key) && !(td[7] == "fanlisting")) {
-        cliques.push({
-          nameAndLink: `<a href="${td[2]}" target="_blank">${escapeHtml(cleanUpInput(td[1]))}</a>${td[7] == "closed" ? " <b>CLOSED</b>" : ""}${td[7] == "hiatus" ? " <b>ON HIATUS</b>" : ""}`,
+        const clique = {
+          nameAndLink: `<a href="${td[2]}" target="_blank">${escapeHtml(cleanUpInput(td[1]))}</a>`,
           description: escapeHtml(cleanUpInput(td[3])),
-          example: td[6] == "Pixel clique" ? "" : escapeHtml(cleanUpInput(td[4])),
+          example: td[6] == "Pixel clique" ? "[IMAGE]" : escapeHtml(cleanUpInput(td[4])),
           hasMembersList: td[5],
-          inactive: td[7] == "closed" || td[7] == "hiatus",
+          inactive: td[7],
           category: td[6],
-          image: td[6] == "Pixel clique" ? td[8] : null,
-        });
+        };
+
+        const hasImage = isValidHttpUrl(td[8]);
+        if (hasImage) {
+          clique.example = clique.example.trim().replace("[IMAGE]", `<img src="${td[8]}" />`).replaceAll("[IMAGE]", "");
+        }
+
+        cliques.push(clique);
         keysAlreadyIn.push(key);
       }
     });
@@ -44,7 +50,7 @@ function buildCliqueTable(tableHeadings, tableData) {
 
     row.innerHTML = `
 	  <td>${clique.nameAndLink || ""}</td>
-	  <td>${clique.description || ""}<small>${clique.example || ""}</small>${isValidHttpUrl(clique.image) ? `<img src="${clique.image}" />` : ""}</td>
+	  <td>${clique.description || ""}<small>${clique.example || ""}</small></td>
 	  <td>${clique.category || ""}</td>
 	  <td>${clique.hasMembersList || ""}</td>
 	  `;

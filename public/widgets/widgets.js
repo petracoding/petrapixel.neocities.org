@@ -16,6 +16,7 @@ const knownParams = [
   "ignorePollcodeStyling",
   "viewButtonAsLink",
   "spacing",
+  "showAlbumCover",
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -224,8 +225,8 @@ function initLastFm(params) {
     if (params.get("swapPositions") == "1") swapPositions = true;
   }
 
-  let url = "https://lastfm-last-played.biancarosa.com.br/" + username + "/latest-song";
-  let song = document.querySelector("#song");
+  const url = "https://lastfm-last-played.biancarosa.com.br/" + username + "/latest-song";
+  const song = document.querySelector("#song");
   fetch(url)
     .then(function (response) {
       return response.json();
@@ -235,16 +236,27 @@ function initLastFm(params) {
 
       let artist = json["track"]["artist"]["#text"];
       let songTitle = json["track"]["name"];
+      let albumCoverUrl = json["track"]["image"] ? json["track"]["image"][2]["#text"] : null; // 0=small, 1=medium, 2=large, 3=extralarge
 
       if (username == "Petra1999") {
+        // Preview data
         artist = "Taylor Swift";
         songTitle = "Love Story";
+        albumCoverUrl = "https://lastfm.freetls.fastly.net/i/u/300x300/acdd1489ea27beb10b07c58ffdb99a83.jpg";
+      }
+
+      let albumCoverHTML = "";
+      if (params.get("showAlbumCover") && albumCoverUrl) {
+        if (params.get("showAlbumCover") != "0") {
+          const size = params.get("showAlbumCover") < 10 ? 10 : params.get("showAlbumCover");
+          albumCoverHTML = `<img src="${albumCoverUrl}" height="${size}" width="${size}" />`;
+        }
       }
 
       if (swapPositions) {
-        song.innerHTML = `<span class="artist">${artist}</span>${delimiter}<span class="name">${songTitle}</span>`;
+        song.innerHTML = `<span class="artist">${artist}</span>${delimiter}<span class="name">${songTitle}</span>` + albumCoverHTML;
       } else {
-        song.innerHTML = `<span span class="name" > ${songTitle}</span>${delimiter}<span class="artist">${artist}</span>`;
+        song.innerHTML = `<span class="name" > ${songTitle}</span>${delimiter}<span class="artist">${artist}</span>` + albumCoverHTML;
       }
     });
 }
