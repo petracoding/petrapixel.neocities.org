@@ -35,8 +35,7 @@ toc: true
   <p>for example, changing "about me" in the browser tab to "about me | your site name"</p>
   <details>
     <summary>Show/Hide</summary>
-    <pre><code>
-const tabTitle = document.title; 
+    <pre><code>const tabTitle = document.title; 
 if (tabTitle !== "YOUR HOME TITLE") { 
 	document.title = tabTitle + " | some text"; 
 }
@@ -50,8 +49,7 @@ if (tabTitle !== "YOUR HOME TITLE") {
   <p>You can give the class "active" to any active navigation links automatically</p>
   <details>
     <summary>Show/Hide</summary>
-    <pre><code>
-const linkElements = document.querySelectorAll("nav a");
+    <pre><code>const linkElements = document.querySelectorAll("nav a");
 [...linkElements].forEach((el) => {
   const href = el.getAttribute("href").replace(".html", "").replace("/public", "");
 
@@ -80,29 +78,32 @@ const linkElements = document.querySelectorAll("nav a");
     <pre><code>&lt;div id="toc"&gt;&lt;/div&gt;
 </code></pre>
     <p>The JavaScript:</p>
-    <pre><code>
-const container = document.querySelector("#toc");
-if (!container) return;
-const allHeadings = document.querySelectorAll("h2");
-if (allHeadings.length &lt; 2) return;
-let output = "&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;";
-[...allHeadings].forEach((headingEl) =&gt; {
-	const title = headingEl.innerHTML;
-	const link =
-	      headingEl.getAttribute("id") ||
-	      encodeURI(
-	        title
-	          .replaceAll(" ", "-")
-	          .replaceAll("#", "")
-          	  .replaceAll("&amp;", "")
-	          .replaceAll(/&lt;[^&gt;]*&gt;?/gm, "")
-          	  .replaceAll("--", "-")
-	      ).toLowerCase();
-	headingEl.setAttribute("id", link);
-	output += `&lt;li&gt;&lt;a href="#${link}"&gt;${title}&lt;/a&gt;&lt;/li&gt;`;
-});
-container.innerHTML = output + "&lt;/ol&gt;";
-</code></pre>
+    <pre><code>initTableOfContents();
+
+function initTableOfContents() {
+	const container = document.querySelector(&quot;#toc&quot;);
+	if (!container) return;
+
+	const allHeadings = document.querySelectorAll(&quot;h2&quot;);
+	if (allHeadings.length &lt; 2) return;
+	let output = &quot;&lt;b&gt;Table of Contents:&lt;/b&gt;&lt;ol&gt;&quot;;
+	[...allHeadings].forEach((headingEl) =&gt; {
+		const title = headingEl.innerHTML;
+		const link =
+			headingEl.getAttribute(&quot;id&quot;) ||
+			encodeURI(
+				title
+					.replaceAll(&quot; &quot;, &quot;-&quot;)
+					.replaceAll(&quot;#&quot;, &quot;&quot;)
+					.replaceAll(&quot;&amp;&quot;, &quot;&quot;)
+					.replaceAll(/&lt;[^&gt;]*&gt;?/gm, &quot;&quot;)
+					.replaceAll(&quot;--&quot;, &quot;-&quot;)
+			).toLowerCase();
+		headingEl.setAttribute(&quot;id&quot;, link);
+		output += `&lt;li&gt;&lt;a href=&quot;#${link}&quot;&gt;${title}&lt;/a&gt;&lt;/li&gt;`;
+	});
+	container.innerHTML = output + &quot;&lt;/ol&gt;&quot;;
+}</code></pre>
     <p>Change the selector (default: "h2") to any selector that targets the headings you want to turn into the table of contents.</p>
     <p>You can override the automatically generated ID of a heading by simply setting a custom one in the HTML.</p>
   </details>
