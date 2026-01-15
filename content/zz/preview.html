@@ -4,6 +4,7 @@
     <title>petrapixel updated!</title>
     <meta charset="utf-8" />
     <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/main.css{{ nocache }}" />
     <style>
       body {
         min-height: 100vh;
@@ -13,6 +14,7 @@
 
       body > a {
         display: block;
+        width: 100%;
       }
 
       iframe {
@@ -24,20 +26,7 @@
         /* filter: blur(1px); */
       }
 
-      aside {
-        position: fixed;
-        top: 2%;
-        left: 2%;
-        z-index: 999998;
-        pointer-events: none;
-        text-align: center;
-        font-size: 220px;
-        line-height: 1;
-        margin-top: 30px;
-        text-shadow: #fff 8px 8px, #fff -8px -8px;
-      }
-
-      main {
+      #preview-text {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -47,17 +36,17 @@
         text-align: center;
       }
 
-      main b {
+      #preview-text b {
         font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
         letter-spacing: 0.01em;
         line-height: 1;
         color: #922a45;
-        font-size: 220px;
+        font-size: 180px;
         text-shadow: #fff 8px 8px, #fff -8px -8px;
         white-space: nowrap;
       }
 
-      main div {
+      #preview-text div {
         display: inline-block;
         font-size: 40px;
         font-family: "rainyhearts", monospace, sans-serif;
@@ -75,12 +64,10 @@
     <a href="{{ changelog[1].link }}" title="Click to view changelog">
       <iframe src="/"></iframe>
     </a>
-    <!-- 
-    <aside>✨</aside>-->
-    <main>
+    <div id="preview-text">
       <b>updated!</b>
       <!-- <div>{{ changelog[1].text }}</div>
       <div>check changelog for details!</div>-->
-    </main>
+    </div>
   </body>
 </html>
