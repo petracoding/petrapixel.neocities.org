@@ -18,6 +18,13 @@
     height: auto;
     margin: 1em 0;
   }
+
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 #mobile-nav {
@@ -760,8 +767,12 @@
   text-align: center;
   text-decoration: none;
   margin-top: 35px;
+  margin-bottom: 35px;
   border-top: 1px Dashed currentColor;
+  border-bottom: 1px Dashed currentColor;
+  padding-bottom: 20px;
   padding-top: 20px;
+  line-height: 1;
 
   b {
     display: block;
@@ -776,6 +787,10 @@
     transition: transform 0.3s ease;
   }
 
+  small {
+    display: block;
+  }
+
   &:hover,
   &:focus {
     b {
@@ -786,6 +801,19 @@
     img {
       transform: scale(1.2);
     }
+  }
+}
+
+/*----------  Tumblr  ----------*/
+
+.aside-tumblr {
+  text-align: center;
+  font-size: 0.91em;
+  padding: 0 1em;
+  margin-bottom: 30px;
+
+  a {
+    text-decoration-style: dotted;
   }
 }
 

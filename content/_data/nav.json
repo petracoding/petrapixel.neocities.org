@@ -5,7 +5,7 @@
   },
   {
     "label": "About",
-    "new": false,
+    "new": true,
     "items": [
      
      
@@ -42,7 +42,7 @@
       {
         "link": "/about/manifesto",
         "label": "site manifesto",
-        "new": false,
+        "new": true,
         "hide": false
       },
         {
@@ -190,7 +190,7 @@
       {
         "link": "/contest",
         "label": "Indie Web Contest",
-        "new": true,
+        "new": false,
         "hide": false,
         "icon": "fa-solid fa-trophy"
       },

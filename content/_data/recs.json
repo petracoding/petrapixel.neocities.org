@@ -444,6 +444,16 @@
     }
   ],
   "games": [
+     {
+      "title": "Balatro",
+      "platform": "pc, switch, mobile",
+      "gameType": "singleplayer",
+      "rating": "3",
+      "price": "€",
+      "link": "https://backloggd.com/games/balatro/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9f4g.jpg",
+      "description": "Balatro is an incredibly addicting, well-made and gorgeous poker-like roguelike. Don't worry though, it's really nothing like poker. It just costs a few bucks, but you'll get at least 50 hours of playtime out of it. (I'm at 100 hours.)"
+    },
     {
       "title": "Portal 2",
       "platform": "pc, switch, other",
