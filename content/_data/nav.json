@@ -74,13 +74,6 @@
         "label": "faq",
         "new": false,
         "hide": false
-      },
-      {
-        "link": "/zz/changelog",
-        "label": "changelog",
-        "new": false,
-        "hide": false,
-        "mobileOnly": true
       }
     ]
   },

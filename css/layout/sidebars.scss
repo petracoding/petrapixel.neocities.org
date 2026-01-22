@@ -108,16 +108,19 @@
   }
 }
 
-.aside-stuff {
+.aside-box {
   position: relative;
   line-height: 1.5;
+  border: 1px dashed;
+  padding: 1em;
+  padding-top: 1.2em;
 
   &:not(:first-child) {
     margin-top: 30px;
   }
 }
 
-.aside-stuff__heading {
+.aside-box__heading {
   text-align: right;
   position: absolute;
   top: -10px;
@@ -148,6 +151,11 @@
     display: inline-block;
     margin-left: 0.5em;
     animation: floatingImage 1s ease infinite;
+    vertical-align: middle;
+
+    &[src*="happy"] {
+      vertical-align: bottom;
+    }
 
     @media (prefers-reduced-motion) {
       animation: none;
@@ -156,102 +164,8 @@
 }
 
 // --------------------------------------------------------------------
+// ------------------------------- LEFT -------------------------------
 // --------------------------------------------------------------------
-// --------------------------------------------------------------------
-
-/* ************
-	LEFT COL.
-   ************ */
-
-.aside-clap-kirby {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1em 0 2em;
-}
-
-#clap-for-me {
-  text-align: center;
-  display: block;
-  margin-top: 20px;
-  text-decoration: none;
-
-  small {
-    display: block;
-    line-height: 1;
-    font-size: 0.8em;
-    letter-spacing: -0.2px;
-    margin-top: -5px;
-  }
-
-  img {
-    transition: transform 0.3s ease;
-    transform-origin: center center;
-  }
-
-  &:hover,
-  &:focus {
-    img {
-      transform: scale(1.1);
-    }
-  }
-}
-
-.aside-stuff__guestbook {
-  display: inherit;
-  transition: transform 0.2s ease;
-
-  img {
-    width: 145px;
-    height: auto;
-    // image-rendering: pixelated;
-  }
-
-  &:hover,
-  &:focus {
-    transform: scale(1.05);
-  }
-}
-
-.aside-navlinkads {
-  width: 170px;
-  height: 170px;
-}
-
-.aside-link-back {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  border: 1px dashed;
-  padding: 1em;
-
-  p {
-    font-size: 0.8em;
-    margin: 0.4em 0 0.9em;
-    line-height: 1.2;
-    text-align: center;
-  }
-
-  a img {
-    transition: transform 0.2s ease;
-
-    &:hover,
-    &:focus {
-      transform: scale(1.07);
-    }
-  }
-
-  .code-textarea {
-    width: 100%;
-  }
-
-  .aside-stuff__heading {
-    img {
-      vertical-align: bottom;
-    }
-  }
-}
 
 /*----------  Google Search  ----------*/
 
@@ -397,13 +311,17 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
-  margin-top: 20px;
+  margin-left: -20px;
 
   b {
     display: block;
-    line-height: 1;
-    font-size: 1.4em;
+    line-height: 1.1;
+    font-size: 1.3em;
     font-family: $fontHeadings;
+  }
+
+  > div {
+    padding-left: 10px;
   }
 
   img {
@@ -430,28 +348,51 @@
   }
 }
 
+/*----------  My Button  ----------*/
+
+.aside-link-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 1em;
+
+  p {
+    font-size: 0.8em;
+    margin: 0.4em 0 0.9em;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  a img {
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.07);
+    }
+  }
+
+  .code-textarea {
+    width: 100%;
+  }
+}
+
 /*----------  Changelog  ----------*/
 
 .aside-changelog {
   position: relative;
   margin-top: 3em;
-
-  .aside-stuff__heading {
-    img {
-      vertical-align: bottom;
-    }
-  }
 }
 
 .changelog {
   max-height: 150px;
   overflow-y: scroll;
   overflow-x: clip;
-  margin-top: 0.5em;
   font-size: 0.95em;
-  border: 1px dashed;
-  padding: 1em;
   list-style: none;
+  padding: 0;
+  margin: 0;
 
   ul {
     margin: 0;
@@ -496,35 +437,104 @@
   }
 }
 
+/*----------  Blinkies  ----------*/
+
+.aside-blinkies {
+  display: block;
+  padding-bottom: 8px;
+  margin-top: 1.5em !important;
+
+  .marquee > * > * {
+    margin-right: 0.5em;
+  }
+}
+
+/*----------  Nav Link Ads  ----------*/
+
+.aside-navlinkads {
+  width: 170px;
+  height: 170px;
+}
+
+/*----------  Tamanotchi  ----------*/
+
+.aside-tamanotchi {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px !important;
+
+  img {
+    width: calc(72px * 1);
+    image-rendering: pixelated;
+    filter: hue-rotate(250deg);
+  }
+}
+
 // --------------------------------------------------------------------
-// --------------------------------------------------------------------
+// ------------------------------- RIGHT -------------------------------
 // --------------------------------------------------------------------
 
-/* ************
-	RIGHT COL.
-   ************ */
+/*----------  Follow, Guestbook, Clap  ----------*/
+
+.aside-clap-kirby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0 2em;
+}
+
+.aside-box__guestbook {
+  display: inherit;
+  transition: transform 0.2s ease;
+
+  img {
+    width: 145px;
+    height: auto;
+    // image-rendering: pixelated;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+#clap-for-me {
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+
+  small {
+    display: block;
+    line-height: 1;
+    font-size: 0.8em;
+    letter-spacing: -0.2px;
+    margin-top: -5px;
+  }
+
+  img {
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
 
 /*----------  Stats  ----------*/
 
 .aside-stats__stat {
   position: relative;
-  border: 1px dashed;
-  padding: 1em;
   padding-top: 1.2em;
   margin-top: 1em;
 
   &:not(:last-child) {
     margin-bottom: 1.5em;
-  }
-
-  .aside-stuff__heading {
-    img {
-      vertical-align: middle;
-
-      &[src*="happy"] {
-        vertical-align: bottom;
-      }
-    }
   }
 }
 
@@ -549,6 +559,8 @@
   letter-spacing: 0.1em;
   text-align: center;
 }
+
+/*----------  Status  ----------*/
 
 #statuscafe-username {
   font-size: 0.8em;
@@ -588,14 +600,8 @@
   position: relative;
   line-height: 1.2;
   font-size: 0.9em;
-  border: 1px dashed;
-  padding: 1em;
   padding-top: 1.2em;
   padding-bottom: 0.5em;
-
-  .aside-stuff__heading {
-    top: -7px;
-  }
 
   img[src*="equalizer"] {
     filter: brightness(0.8) contrast(1.5) saturate(1.5);
@@ -631,25 +637,9 @@
   }
 }
 
-/*----------  Blinkies  ----------*/
-
-.aside-blinkies {
-  display: block;
-  border: 1px dashed;
-  padding: 1em;
-  padding-bottom: 8px;
-  margin-top: 1.5em !important;
-
-  .marquee > * > * {
-    margin-right: 0.5em;
-  }
-}
-
 /*----------  Neighbors  ----------*/
 
 .aside-mutuals {
-  border: 1px dashed;
-  padding: 1em;
   padding-top: 1.2em;
   padding-bottom: 0.5em;
 
@@ -677,20 +667,39 @@
   }
 }
 
+/*----------  Chatbox  ----------*/
+
+.aside-chatbox {
+  position: relative;
+  line-height: 1;
+
+  iframe[src*="cbox"] {
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &::after {
+    display: none; // GONE
+    content: "";
+    position: absolute;
+    top: calc(100% - 17px);
+    width: 100%;
+    left: 0;
+    background-image: url("https://petrapixel.neocities.org/assets/img/layout/lace.gif");
+    background-repeat: repeat-x;
+    height: 32px;
+    filter: saturate(2);
+  }
+}
+
 /*----------  Poll  ----------*/
 
 .aside-poll {
-  border: 1px dashed;
-  padding-top: 1.2em;
-  padding-bottom: 0.5em;
-  padding-right: 0.5em;
+  padding-right: 0.75em;
   padding-left: 0.75em;
-
-  .aside-stuff__heading {
-    top: -14px;
-    padding: 0.2em 0.5em;
-    right: -4px;
-  }
 
   form > div {
     background-color: transparent !important;
@@ -766,13 +775,8 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-top: 1px Dashed currentColor;
-  border-bottom: 1px Dashed currentColor;
-  padding-bottom: 20px;
-  padding-top: 20px;
   line-height: 1;
+  margin: -16px -6px;
 
   b {
     display: block;
@@ -809,109 +813,11 @@
 .aside-tumblr {
   text-align: center;
   font-size: 0.91em;
-  padding: 0 1em;
   margin-bottom: 30px;
+  line-height: 1.2;
 
   a {
     text-decoration-style: dotted;
-  }
-}
-
-/*----------  Tamanotchi  ----------*/
-
-.aside-tamanotchi {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px !important;
-
-  img {
-    width: calc(72px * 1);
-    image-rendering: pixelated;
-    filter: hue-rotate(250deg);
-  }
-}
-
-/*----------  Image of the moment  ----------*/
-
-.image-of-the-moment {
-  position: relative;
-  display: block;
-
-  img {
-    width: 100%;
-    height: auto;
-    filter: brightness(1.1) contrast(1.1);
-    image-rendering: pixelated;
-    transition: filter 0.3s ease, border-radius 0.5s ease, transform 0.5s ease;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background: #c891bd;
-    opacity: 0.1;
-    pointer-events: none;
-    transition: opacity 0.2s linear;
-  }
-
-  &:hover {
-    img {
-      //   border-radius: 15px;
-      filter: none;
-      image-rendering: auto;
-      transform: skew(3deg, 3deg) rotate(0deg);
-
-      @media (prefers-reduced-motion) {
-        transform: none;
-      }
-    }
-
-    &::after {
-      opacity: 0;
-    }
-  }
-}
-
-/*----------  Chatbox  ----------*/
-
-.aside-chatbox {
-  position: relative;
-
-  .aside-stuff__heading {
-    top: -14px;
-    padding: 0.2em 0.5em;
-    right: -4px;
-  }
-
-  > p {
-    padding: 1em;
-    line-height: 1;
-    border: 1px dashed;
-  }
-
-  iframe[src*="cbox"] {
-    z-index: 1;
-    position: relative;
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  &::after {
-    display: none; // GONE
-    content: "";
-    position: absolute;
-    top: calc(100% - 17px);
-    width: 100%;
-    left: 0;
-    background-image: url("https://petrapixel.neocities.org/assets/img/layout/lace.gif");
-    background-repeat: repeat-x;
-    height: 32px;
-    filter: saturate(2);
   }
 }
 
@@ -1172,14 +1078,14 @@
     padding: 10px 5px;
   }
 
-  .aside-stuff__guestbook {
+  .aside-box__guestbook {
     img {
       width: 110px;
       image-rendering: auto;
     }
   }
 
-  .aside-stuff:not(:first-child) {
+  .aside-box:not(:first-child) {
     margin-top: 15px;
   }
 

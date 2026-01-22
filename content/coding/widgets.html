@@ -11,52 +11,100 @@ tipType: "resource"
   <h1>Widgets</h1>
   <i class="fa-solid fa-puzzle-piece"></i>
   <p>
-    Neocities free accounts don't allow external scripts. <a href="https://dabric.xyz/post/neocities-csp/" target="_blank">(More info here.)</a> This means you won't be able to use most widgets. But
-    iFrames are allowed! So I have created this little tool that creates iFrames for the most popular widgets.
+    Neocities free accounts don't allow external scripts.
+    <a href="https://dabric.xyz/post/neocities-csp/" target="_blank"
+      >(More info here.)</a
+    >
+    This means you won't be able to use most widgets. But iFrames are allowed!
+    So I have created this little tool that creates iFrames for the most popular
+    widgets.
   </p>
   <p>
-    <b>I'd appreciate you linking back to me on your website if you enjoy these widgets!</b> However, be aware that I did not write the widgets themselves (I only packed them up nicely), so don't say
-    I did!
+    <b
+      >I'd appreciate you linking back to me on your website if you enjoy these
+      widgets!</b
+    >
+    However, be aware that I did not write the widgets themselves (I only packed
+    them up nicely), so don't say I did!
   </p>
   <hr />
   <p><strong>How to use:</strong></p>
   <p>
-    Just copy the code and paste it in your HTML file. The iframe will show the widget, you can position and size it just like any other element. The background of the iframe is transparent, so it
-    will look good on any background. Keep in mind that you can't change the styling
-    <i>inside</i> the iframe with your own CSS code, only over the parameters I offer.
+    Just copy the code and paste it in your HTML file. The iframe will show the
+    widget, you can position and size it just like any other element. The
+    background of the iframe is transparent, so it will look good on any
+    background. Keep in mind that you can't change the styling
+    <i>inside</i> the iframe with your own CSS code, only over the parameters I
+    offer.
   </p>
   <p>
-    To set parameters such as usernames and to style the element, just change the parameters in the iframe's 'src' attribute. For example, change <code>center=0</code> to <code>center=1</code> to
-    center the text. Change <code>marquee=0</code> to <code>marquee=1</code> make the text scroll horizontally. There is no parameter for the background color because the widget's background is
-    transparent. To set a background color, wrap the widget in an element and set the background yourself as usual.
+    To set parameters such as usernames and to style the element, just change
+    the parameters in the iframe's 'src' attribute. For example, change
+    <code>center=0</code> to <code>center=1</code> to center the text. Change
+    <code>marquee=0</code> to <code>marquee=1</code> make the text scroll
+    horizontally. There is no parameter for the background color because the
+    widget's background is transparent. To set a background color, wrap the
+    widget in an element and set the background yourself as usual.
   </p>
   <p>
-    You can also use any valid CSS parameter. Usage is like normal CSS code, except with a <code>=</code> instead of a <code>:</code>, and seperated by <code>&</code>. For example, you can add this:
-    <code>font-size=12px&line-height=2</code>. For colors you should provide a hex value (e.g. <code>#d92f2f</code>).
-    <a href="https://www.google.com/search?client=firefox-b-d&q=color+picker" target="_blank">You can use this color picker.</a> For fonts, just type the name of any
-    <a href="https://www.w3schools.com/cssref/css_websafe_fonts.php" target="_blank">web-safe font</a> with spaces as usual, e.g. <code>font-family=Times New Roman</code>. Other fonts (e.g. Google
-    fonts) won't work.
+    You can also use any valid CSS parameter. Usage is like normal CSS code,
+    except with a <code>=</code> instead of a <code>:</code>, and seperated by
+    <code>&</code>. For example, you can add this:
+    <code>font-size=12px&line-height=2</code>. For colors you should provide a
+    hex value (e.g. <code>#d92f2f</code>).
+    <a
+      href="https://www.google.com/search?client=firefox-b-d&q=color+picker"
+      target="_blank"
+      >You can use this color picker.</a
+    >
+    For fonts, just type the name of any
+    <a
+      href="https://www.w3schools.com/cssref/css_websafe_fonts.php"
+      target="_blank"
+      >web-safe font</a
+    >
+    with spaces as usual, e.g. <code>font-family=Times New Roman</code>. Other
+    fonts (e.g. Google fonts) won't work.
   </p>
   <p>
-    Some parameters are required, e.g. your status.cafe username for the status.cafe widget. Not inputting it will result in the widget not displaying correctly. (Weird symbols in those parameters,
-    e.g. in your status.cafe username, might also break the code, sorry! Comment below if you're experiencing with issues, I'll try to fix it.)
+    Some parameters are required, e.g. your status.cafe username for the
+    status.cafe widget. Not inputting it will result in the widget not
+    displaying correctly. (Weird symbols in those parameters, e.g. in your
+    status.cafe username, might also break the code, sorry! Comment below if
+    you're experiencing with issues, I'll try to fix it.)
   </p>
-  <blockquote class="warning">Clear the cache for <b>my</b> website if you are experiencing issues! <a href="/coding/cachebusting#howto">Here's how.</a></blockquote>
+  <blockquote class="warning">
+    Clear the cache for <b>my</b> website if you are experiencing issues!
+    <a href="/coding/cachebusting#howto">Here's how.</a>
+  </blockquote>
+  <hr />
+  <div id="toc"></div>
 </section>
 
 <section>
   <h2 id="statuscafe">Status.Cafe Status</h2>
-  <p>Original Widget Source: <a href="https://status.cafe/current-status" target="_blank">status.cafe</a></p>
+  <p>
+    Original Widget Source:
+    <a href="https://status.cafe/current-status" target="_blank">status.cafe</a>
+  </p>
   <p>Settings:</p>
   <ul>
-    <li>any valid CSS e.g. <code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>line-height</code>, etc.</li>
+    <li>
+      any valid CSS e.g. <code>color</code>, <code>font-family</code>,
+      <code>font-size</code>, <code>line-height</code>, etc.
+    </li>
     <li><code>username</code>: your status.cafe username</li>
     <li><code>hideUsername</code>: set to 1 to hide the username</li>
     <li><code>hideEmoji</code>: set to 1 to hide the emoji</li>
-    <li><code>hideUsernameAndTime</code>: set to 1 to hide the username, emoji and time</li>
+    <li>
+      <code>hideUsernameAndTime</code>: set to 1 to hide the username, emoji and
+      time
+    </li>
     <li><code>linkColor</code>: use like <i>color</i></li>
     <li><code>timeColor</code>: use like <i>color</i></li>
-    <li><code>swapPositions</code>: put status text before username/emoji/time</li>
+    <li>
+      <code>swapPositions</code>: put status text before username/emoji/time
+    </li>
     <li><code>center</code>: set to 1 to center</li>
     <li><code>marquee</code>: set to 1 to make it move horizontally</li>
   </ul>
@@ -65,43 +113,70 @@ tipType: "resource"
     <div class="widget-preview">
       <strong>Example 1</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 1"
+      >
 <iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=0&marquee=0&font-family=Times New Roman&font-size=14px&color=#565673&linkColor=#d92f2f&username=Petra1999&hideUsername=0&timeColor=#6d0fba" frameborder="0" title="Status.Cafe Status"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src="/widgets/statuscafe?center=0&marquee=0&font-family=Times New Roman&font-size=14px&color=#565673&linkColor=#d92f2f&username=Petra1999&hideUsername=0&timeColor=#6d0fba"
         frameborder="0"
-        title="Status.Cafe Status"></iframe>
+        title="Status.Cafe Status"
+      ></iframe>
     </div>
     <div class="widget-preview">
       <strong>Example 2</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 2">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 2"
+      >
 <iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=1&marquee=0&font-family=Arial&font-size=18px&color=#d92f2f&linkColor=#d92f2f&username=Petra1999&hideUsernameAndTime=1" frameborder="0" title="Status.Cafe Status"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src="/widgets/statuscafe?center=1&marquee=0&font-family=Arial&font-size=18px&color=#d92f2f&linkColor=#d92f2f&username=Petra1999&hideUsernameAndTime=1"
         frameborder="0"
-        title="Status.Cafe Status"></iframe>
+        title="Status.Cafe Status"
+      ></iframe>
     </div>
     <div class="widget-preview">
       <strong>Example 3</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 3">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 3"
+      >
 <iframe src="https://petrapixel.neocities.org/widgets/statuscafe?center=1&marquee=0&font-family=Courier New&font-size=13px&color=#157f15&linkColor=#086e08&username=Petra1999&hideUsername=1&hideEmoji=1&swapPositions=1&line-height=2em" frameborder="0" title="Status.Cafe Status"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src="/widgets/statuscafe?center=1&marquee=0&font-family=Courier New&font-size=13px&color=#157f15&linkColor=#086e08&username=Petra1999&hideUsername=1&hideEmoji=1&swapPositions=1&line-height=2em"
         frameborder="0"
-        title="Status.Cafe Status"></iframe>
+        title="Status.Cafe Status"
+      ></iframe>
     </div>
     <div class="widget-preview">
       <strong>Example 4</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 4">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 4"
+      >
 <iframe
         src="/widgets/statuscafe?center=1&marquee=1&font-family=Georgia&font-size=16px&color=#d92f87&linkColor=#086e08&username=Petra1999&hideUsername=1"
         frameborder="0"
@@ -112,67 +187,108 @@ tipType: "resource"
       <iframe
         src="/widgets/statuscafe?center=1&marquee=1&font-family=Georgia&font-size=16px&color=#d92f87&linkColor=#086e08&username=Petra1999&hideUsername=1"
         frameborder="0"
-        title="Status.Cafe Status"></iframe>
+        title="Status.Cafe Status"
+      ></iframe>
     </div>
   </div>
 </section>
 
 <section id="lastfm">
   <h2>Last.Fm Currently Listening / Last Song</h2>
-  <p>Original Widget Source: <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank">biancarosa</a></p>
+  <p>
+    Original Widget Source:
+    <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank"
+      >biancarosa</a
+    >
+  </p>
   <p>Settings:</p>
   <ul>
-    <li>any valid CSS e.g. <code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>line-height</code>, etc.</li>
+    <li>
+      any valid CSS e.g. <code>color</code>, <code>font-family</code>,
+      <code>font-size</code>, <code>line-height</code>, etc.
+    </li>
     <li><code>username</code>: your last.fm username</li>
     <li><code>swapPositions</code>: set to 1 to display the artist first</li>
-    <li><code>delimiter</code>: text for between title and artist, default: –</li>
+    <li>
+      <code>delimiter</code>: text for between title and artist, default: –
+    </li>
     <li><code>underline</code>: set to 0 to remove the link underline</li>
     <li><code>center</code>: set to 1 to center</li>
     <li><code>marquee</code>: set to 1 to make it move horizontally</li>
-    <li><code>showAlbumCover</code>: set to any number to output the albumCover as an image of that size (px)</li>
+    <li>
+      <code>showAlbumCover</code>: set to any number to output the albumCover as
+      an image of that size (px)
+    </li>
   </ul>
 
   <div class="widget-previews">
     <div class="widget-preview">
       <strong>Example 1</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 1"
+      >
 <iframe src="https://petrapixel.neocities.org/widgets/lastfm?center=0&marquee=0&font-family=Arial&font-size=16px&color=#0d7d0d&username=Petra1999&swapPositions=1&delimiter=~&underline=1" frameborder="0" title="Last.Fm Status"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src="/widgets/lastfm?center=0&marquee=0&font-family=Arial&font-size=16px&color=#0d7d0d&username=Petra1999&swapPositions=1&delimiter=~&underline=1"
         frameborder="0"
-        title="Last.Fm Status"></iframe>
+        title="Last.Fm Status"
+      ></iframe>
     </div>
     <div class="widget-preview">
       <strong>Example 2</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 2">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 2"
+      >
 <iframe src="https://petrapixel.neocities.org/widgets/lastfm?center=1&marquee=0&font-family=Times New Roman&font-size=14px&color=#9e5461&username=Petra1999&swapPositions=0&delimiter=by&underline=0" frameborder="0" title="Last.Fm Status"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src="/widgets/lastfm?center=1&marquee=0&font-family=Times New Roman&font-size=14px&color=#9e5461&username=Petra1999&swapPositions=0&delimiter=by&underline=0"
         frameborder="0"
-        title="Last.Fm Status"></iframe>
+        title="Last.Fm Status"
+      ></iframe>
     </div>
     <div class="widget-preview">
       <strong>Example 3</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 3">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 3"
+      >
 <iframe src="https://petrapixel.neocities.org/widgets/lastfm?center=1&font-family=Garamond&font-size=13px&color=#3b3b3b&username=Petra1999&swapPositions=1&delimiter=:&underline=0&showAlbumCover=50" frameborder="0" title="Last.Fm Status"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src="/widgets/lastfm?center=1&marquee=0&font-family=Garamond&font-size=13px&color=#3b3b3b&username=Petra1999&swapPositions=1&delimiter=:&underline=0&showAlbumCover=50"
         frameborder="0"
-        title="Last.Fm Status"></iframe>
+        title="Last.Fm Status"
+      ></iframe>
     </div>
     <div class="widget-preview">
       <strong>Example 4</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 4">
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 4"
+      >
 <iframe
         src="/widgets/lastfm?center=1&marquee=1&font-family=Trebuchet MS&font-size=18px&color=#d92f87&username=Petra1999&swapPositions=1&delimiter=**&underline=0"
         frameborder="0"
@@ -183,7 +299,8 @@ tipType: "resource"
       <iframe
         src="/widgets/lastfm?center=1&marquee=1&font-family=Trebuchet MS&font-size=18px&color=#d92f87&username=Petra1999&swapPositions=1&delimiter=**&underline=0"
         frameborder="0"
-        title="Last.Fm Status"></iframe>
+        title="Last.Fm Status"
+      ></iframe>
     </div>
   </div>
 </section>
@@ -191,55 +308,110 @@ tipType: "resource"
 <section id="pollcode">
   <h2>Pollcode</h2>
   <p>
-    Original Widget Source: <a href="https://pollcode.com/" target="_blank">pollcode.com</a>. All styling options from Pollcode itself should work, <i>except</i> the background image and fixed width!
+    Original Widget Source:
+    <a href="https://pollcode.com/" target="_blank">pollcode.com</a>. All
+    styling options from Pollcode itself should work, <i>except</i> the
+    background image and fixed width!
+  </p>
+  <p>
+    Make sure to give your iFrame a tall enough height so that all your poll
+    options and the submit buttons are visible!
   </p>
   <p>Settings:</p>
   <ul>
-    <li>any valid CSS e.g. <code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>line-height</code>, etc.</li>
     <li>
-      <code>pollcode</code>: the entirety of your <a href="https://pollcode.com/" target="_blank">pollcode</a> code, <b>encoded</b> by using
-      <a href="https://emn178.github.io/online-tools/html_encode.html" target="_blank">this tool</a> or any other HTML escape/encode tool. <b>It will not work if the code is not encoded!</b> (Encoding
-      means that special characters are escaped, e.g. " becomes <code>&amp;quot;</code>, &lt; and &gt; become <code>&amp;lt;</code> and <code>&amp;gt;</code> etc.)
+      any valid CSS e.g. <code>color</code>, <code>font-family</code>,
+      <code>font-size</code>, <code>line-height</code>, etc.
     </li>
-    <li><code>ignorePollcodeStyling</code>: set to 1 to disable the styling you defined on the Pollcode website. this is necessary if you want to define styling via my widget</li>
-    <li><code>viewButtonAsLink</code>: set to 1 to render the "View" button not as a button but a link</li>
-    <li><code>spacing</code>: the spacing you want inbetween the elements (question, options, buttons), e.g. 10px</li>
+    <li>
+      <code>pollcode</code>: the entirety of your
+      <a href="https://pollcode.com/" target="_blank">pollcode</a> code,
+      <b>encoded</b> by using
+      <a
+        href="https://emn178.github.io/online-tools/html_encode.html"
+        target="_blank"
+        >this tool</a
+      >
+      or any other HTML escape/encode tool.
+      <b>It will not work if the code is not encoded!</b> (Encoding means that
+      special characters are escaped, e.g. " becomes <code>&amp;quot;</code>,
+      &lt; and &gt; become <code>&amp;lt;</code> and <code>&amp;gt;</code> etc.)
+    </li>
+    <li>
+      <code>ignorePollcodeStyling</code>: set to 1 to disable the styling you
+      defined on the Pollcode website. this is necessary if you want to define
+      styling via my widget
+    </li>
+    <li>
+      <code>viewButtonAsLink</code>: set to 1 to render the "View" button not as
+      a button but a link
+    </li>
+    <li>
+      <code>spacing</code>: the spacing you want inbetween the elements
+      (question, options, buttons), e.g. 10px
+    </li>
   </ul>
 
   <div class="widget-previews">
     <div class="widget-preview">
       <strong>Example 1</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 1">
-<iframe src="https://petrapixel.neocities.org/widgets/pollcode?pollcode=&lt;form method=&quot;post&quot; action=&quot;https://poll.pollcode.com/11545499&quot;&gt;&lt;div style=&quot;background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;&quot;&gt;&lt;div style=&quot;padding:2px 0px 4px 2px;&quot;&gt;&lt;strong&gt;Isn&#39;t this widget awesome?&lt;/strong&gt;&lt;/div&gt;&lt;input type=&quot;radio&quot; name=&quot;answer&quot; value=&quot;1&quot; id=&quot;answer115454991&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer115454991&quot; style=&quot;float:left;width:150px;&quot;&gt;yeah!&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;input type=&quot;radio&quot; name=&quot;answer&quot; value=&quot;2&quot; id=&quot;answer115454992&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer115454992&quot; style=&quot;float:left;width:150px;&quot;&gt;hell yeah!&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;div align=&quot;center&quot; style=&quot;padding:3px;&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot; Vote &quot;&gt;&amp;nbsp;&lt;input type=&quot;submit&quot; name=&quot;view&quot; value=&quot; View &quot;&gt;&lt;/div&gt;&lt;div align=&quot;right&quot; style=&quot;font-size:10px&quot;&gt;pollcode.com &lt;a href=&quot;https://pollcode.com/&quot;&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;" frameborder="0" title="Poll"></iframe></textarea
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 1"
+      >
+<iframe src="https://petrapixel.neocities.org/widgets/pollcode?pollcode=&amp;lt;form method=&amp;quot;post&amp;quot; action=&amp;quot;https://poll.pollcode.com/11545499&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;padding:2px 0px 4px 2px;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;Isn&amp;#39;t this widget awesome?&amp;lt;/strong&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;answer&amp;quot; value=&amp;quot;1&amp;quot; id=&amp;quot;answer115454991&amp;quot; style=&amp;quot;float:left;&amp;quot; /&amp;gt;&amp;lt;label for=&amp;quot;answer115454991&amp;quot; style=&amp;quot;float:left;width:150px;&amp;quot;&amp;gt;yeah!&amp;lt;/label&amp;gt;&amp;lt;div style=&amp;quot;clear:both;height:2px;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;answer&amp;quot; value=&amp;quot;2&amp;quot; id=&amp;quot;answer115454992&amp;quot; style=&amp;quot;float:left;&amp;quot; /&amp;gt;&amp;lt;label for=&amp;quot;answer115454992&amp;quot; style=&amp;quot;float:left;width:150px;&amp;quot;&amp;gt;hell yeah!&amp;lt;/label&amp;gt;&amp;lt;div style=&amp;quot;clear:both;height:2px;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div align=&amp;quot;center&amp;quot; style=&amp;quot;padding:3px;&amp;quot;&amp;gt;&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot; Vote &amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;input type=&amp;quot;submit&amp;quot; name=&amp;quot;view&amp;quot; value=&amp;quot; View &amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div align=&amp;quot;right&amp;quot; style=&amp;quot;font-size:10px&amp;quot;&amp;gt;pollcode.com &amp;lt;a href=&amp;quot;https://pollcode.com/&amp;quot;&amp;gt;free polls&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/form&amp;gt;" frameborder="0" title="Poll" height="300"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src='/widgets/pollcode?pollcode=&lt;form method="post" action="https://poll.pollcode.com/11545499"&gt;&lt;div style="background-color:#EEEEEE;padding:2px;width:175px;font-family:Arial;font-size:small;color:#000000;"&gt;&lt;div style="padding:2px 0px 4px 2px;"&gt;&lt;strong&gt;Isn&#39;t this widget awesome?&lt;/strong&gt;&lt;/div&gt;&lt;input type="radio" name="answer" value="1" id="answer115454991" style="float:left;" /&gt;&lt;label for="answer115454991" style="float:left;width:150px;"&gt;yeah!&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;input type="radio" name="answer" value="2" id="answer115454992" style="float:left;" /&gt;&lt;label for="answer115454992" style="float:left;width:150px;"&gt;hell yeah!&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;div align="center" style="padding:3px;"&gt;&lt;input type="submit" value=" Vote "&gt;&amp;nbsp;&lt;input type="submit" name="view" value=" View "&gt;&lt;/div&gt;&lt;div align="right" style="font-size:10px"&gt;pollcode.com &lt;a href="https://pollcode.com/"&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;'
         frameborder="0"
-        title="Poll"></iframe>
+        title="Poll"
+        height="300"
+      ></iframe>
     </div>
     <div class="widget-preview">
       <strong>Example 2</strong>
       <p>Code:</p>
-      <textarea class="code-textarea" name="" id="" rows="10" aria-label="Code for Example 2">
-<iframe src="https://petrapixel.neocities.org/widgets/pollcode?spacing=10px&color=#a02ed9&font-family=Arial&font-size=16px&ignorePollcodeStyling=1&pollcode=&lt;form method=&quot;post&quot; action=&quot;https://poll.pollcode.com/22397719&quot;&gt;&lt;div style=&quot;background-color:#57EE39;padding:2px;width:264px;font-family:Comic Sans MS;font-size:medium;color:#FFFFFF;background-image: url(&#39;https://images.boardhost.com/bg/leather&#39;);box-shadow: 0px 0px 5px #888;&quot;&gt;&lt;div style=&quot;padding:2px 0px 4px 2px;&quot;&gt;&lt;strong&gt;isn&#39;t this widget even better?&lt;/strong&gt;&lt;/div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;answer&quot; value=&quot;1&quot; id=&quot;answer223977191&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer223977191&quot; style=&quot;float:left;width:239px;&quot;&gt;so true bestie&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;answer&quot; value=&quot;2&quot; id=&quot;answer223977192&quot; style=&quot;float:left;&quot; /&gt;&lt;label for=&quot;answer223977192&quot; style=&quot;float:left;width:239px;&quot;&gt;you&#39;re so right&lt;/label&gt;&lt;div style=&quot;clear:both;height:2px;&quot;&gt;&lt;/div&gt;&lt;div align=&quot;center&quot; style=&quot;padding:3px;&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot; Vote &quot;&gt;&lt;/div&gt;&lt;div align=&quot;right&quot; style=&quot;font-size:10px&quot;&gt;pollcode.com &lt;a href=&quot;https://pollcode.com/&quot;&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;" frameborder="0" title="Poll"></iframe></textarea
+      <textarea
+        class="code-textarea"
+        name=""
+        id=""
+        rows="10"
+        aria-label="Code for Example 2"
+      >
+<iframe src="https://petrapixel.neocities.org/widgets/pollcode?spacing=10px&color=#a02ed9&font-family=Arial&font-size=16px&ignorePollcodeStyling=1&pollcode=&amp;lt;form method=&amp;quot;post&amp;quot; action=&amp;quot;https://poll.pollcode.com/22397719&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;background-color:#57EE39;padding:2px;width:264px;font-family:Comic Sans MS;font-size:medium;color:#FFFFFF;background-image: url(&amp;#39;https://images.boardhost.com/bg/leather&amp;#39;);box-shadow: 0px 0px 5px #888;&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;padding:2px 0px 4px 2px;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;isn&amp;#39;t this widget even better?&amp;lt;/strong&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;answer&amp;quot; value=&amp;quot;1&amp;quot; id=&amp;quot;answer223977191&amp;quot; style=&amp;quot;float:left;&amp;quot; /&amp;gt;&amp;lt;label for=&amp;quot;answer223977191&amp;quot; style=&amp;quot;float:left;width:239px;&amp;quot;&amp;gt;so true bestie&amp;lt;/label&amp;gt;&amp;lt;div style=&amp;quot;clear:both;height:2px;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;answer&amp;quot; value=&amp;quot;2&amp;quot; id=&amp;quot;answer223977192&amp;quot; style=&amp;quot;float:left;&amp;quot; /&amp;gt;&amp;lt;label for=&amp;quot;answer223977192&amp;quot; style=&amp;quot;float:left;width:239px;&amp;quot;&amp;gt;you&amp;#39;re so right&amp;lt;/label&amp;gt;&amp;lt;div style=&amp;quot;clear:both;height:2px;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div align=&amp;quot;center&amp;quot; style=&amp;quot;padding:3px;&amp;quot;&amp;gt;&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot; Vote &amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div align=&amp;quot;right&amp;quot; style=&amp;quot;font-size:10px&amp;quot;&amp;gt;pollcode.com &amp;lt;a href=&amp;quot;https://pollcode.com/&amp;quot;&amp;gt;free polls&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/form&amp;gt;" frameborder="0" title="Poll" height="300"></iframe></textarea
       >
       <p>Preview:</p>
       <iframe
         src='/widgets/pollcode?spacing=10px&color=#a02ed9&font-family=Arial&font-size=16px&ignorePollcodeStyling=1&pollcode=&lt;form method="post" action="https://poll.pollcode.com/22397719"&gt;&lt;div style="background-color:#57EE39;padding:2px;width:264px;font-family:Comic Sans MS;font-size:medium;color:#FFFFFF;background-image: url(&#39;https://images.boardhost.com/bg/leather&#39;);box-shadow: 0px 0px 5px #888;"&gt;&lt;div style="padding:2px 0px 4px 2px;"&gt;&lt;strong&gt;isn&#39;t this widget even better?&lt;/strong&gt;&lt;/div&gt;&lt;input type="checkbox" name="answer" value="1" id="answer223977191" style="float:left;" /&gt;&lt;label for="answer223977191" style="float:left;width:239px;"&gt;so true bestie&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;input type="checkbox" name="answer" value="2" id="answer223977192" style="float:left;" /&gt;&lt;label for="answer223977192" style="float:left;width:239px;"&gt;you&#39;re so right&lt;/label&gt;&lt;div style="clear:both;height:2px;"&gt;&lt;/div&gt;&lt;div align="center" style="padding:3px;"&gt;&lt;input type="submit" value=" Vote "&gt;&lt;/div&gt;&lt;div align="right" style="font-size:10px"&gt;pollcode.com &lt;a href="https://pollcode.com/"&gt;free polls&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;'
         frameborder="0"
-        title="Poll"></iframe>
+        title="Poll"
+        height="300"
+      ></iframe>
     </div>
   </div>
 </section>
 
-<section id="more">
-  <h2>...more?</h2>
-  <!-- <p>I plan on making widgets for <a href="https://virtualobserver.moe/ayano/comment-widget" target="_blank">virtualobserver's comment widget</a> and a Google search bar widget.</p> -->
-  <p>You can request a widget in the comments!</p>
+<!-- ----------------------------------------------------------------------------------------------------- -->
 
-  <p>Please <b>don't</b> request widgets that already work for free accounts. These are e.g.:</p>
+{% include 'tip-me.njk' %}
+
+<section id="comments">
+  <h2>Comments</h2>
+  <p>
+    <b
+      >Leave your questions, problems, suggestions, requests and thanks here!
+    </b>
+  </p>
+
+  <p>
+    Please <b>don't</b> request widgets that already work for free accounts.
+    These are e.g.:
+  </p>
   <ul>
     <li>CBox</li>
     <li>FC2 Clap</li>
@@ -252,16 +424,11 @@ tipType: "resource"
     <li>Dimden's NavLink ads</li>
   </ul>
   <p>... and anything that works via an iframe.</p>
-</section>
 
-<!-- ----------------------------------------------------------------------------------------------------- -->
-
-{% include 'tip-me.njk' %}
-
-<section id="comments">
-  <h2>Comments</h2>
-  <p><b>Leave your questions, problems, suggestions, requests and thanks here! </b> Please don't request widgets that already work for free accounts (see list above).</p>
-  <blockquote class="warning">Clear the cache for <b>my</b> website if you are experiencing issues! <a href="/coding/cachebusting#howto">Here's how.</a></blockquote>
+  <blockquote class="warning">
+    Clear the cache for <b>my</b> website if you are experiencing issues!
+    <a href="/coding/cachebusting#howto">Here's how.</a>
+  </blockquote>
   <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="{{ nesting }}assets/js/comment-widget.js"></script>
 </section>

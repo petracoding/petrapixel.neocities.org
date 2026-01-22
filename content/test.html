@@ -1,0 +1,136 @@
+---
+layout: petrapixel.njk
+title: TEST
+formId: "1FAIpQLSeLNKzEA9LYmTl-3Vz1-O_AQi0N_nZ6sJlX1ccqt1WZI0PEhA"
+---
+
+<form
+  id="c_form"
+  onsubmit="
+    c_submitButton.disabled = true;
+    v_submitted = true;
+  "
+  method="post"
+  target="c_hiddenIframe"
+  action="https://docs.google.com/forms/d/e/{{ formId }}/formResponse"
+>
+  <div id="c_widgetTitle">Leave a comment!</div>
+
+  <div id="c_nameWrapper" class="c-inputWrapper">
+    <label class="c-label c-nameLabel" for="entry.1481026605">Your Name</label>
+    <input
+      class="c-input c-nameInput"
+      name="entry.1481026605"
+      id="entry.1481026605"
+      type="text"
+      maxlength="50"
+      required=""
+    />
+  </div>
+
+  <div id="c_websiteWrapper" class="c-inputWrapper">
+    <label class="c-label c-websiteLabel" for="entry.528195876"
+      >Your Website (Optional)</label
+    >
+    <input
+      class="c-input c-websiteInput"
+      name="entry.528195876"
+      id="entry.528195876"
+      type="url"
+      pattern="https://.*"
+    />
+  </div>
+
+  <div id="c_textWrapper" class="c-inputWrapper">
+    <label class="c-label c-textLabel" for="entry.197515224"></label>
+    <textarea
+      class="c-input c-textInput"
+      name="entry.197515224"
+      id="entry.197515224"
+      rows="4"
+      cols="50"
+      maxlength="10000"
+      placeholder="your comment..."
+      required=""
+    ></textarea>
+  </div>
+
+  <input
+    id="c_submitButton"
+    name="c_submitButton"
+    type="submit"
+    value="Submit"
+  />
+  <input
+    type="text"
+    style="display: none"
+    id="entry.666920126"
+    name="entry.666920126"
+  /><span style="display: none" id="c_replyingText"></span
+  ><input
+    type="text"
+    style="display: none"
+    id="entry.394318007"
+    name="entry.394318007"
+  /><iframe
+    id="c_hiddenIframe"
+    name="c_hiddenIframe"
+    style="display: none"
+    onload="
+      if (v_submitted) {
+        fixFrame();
+      }
+    "
+  ></iframe>
+</form>
+
+<form
+  onsubmit="
+    c_submitButton.disabled = true;
+    v_submitted = true;
+  "
+  method="post"
+  target="c_hiddenIframe"
+  action="https://docs.google.com/forms/d/e/{{ formId }}/formResponse"
+>
+  <div id="c_nameWrapper" class="c-inputWrapper">
+    <label class="c-label c-nameLabel" for="entry.1481026605">Your Name</label>
+    <input
+      class="c-input c-nameInput"
+      name="entry.1481026605"
+      id="entry.1481026605"
+      type="text"
+      maxlength="50"
+      required=""
+    />
+  </div>
+
+  <div id="c_websiteWrapper" class="c-inputWrapper">
+    <label class="c-label c-websiteLabel" for="entry.528195876"
+      >Your Website (Optional)</label
+    >
+    <input
+      class="c-input c-websiteInput"
+      name="entry.528195876"
+      id="entry.528195876"
+      type="url"
+      pattern="https://.*"
+    />
+  </div>
+
+  <div id="c_textWrapper" class="c-inputWrapper">
+    <label class="c-label c-textLabel" for="entry.197515224"></label>
+    <textarea
+      class="c-input c-textInput"
+      name="entry.197515224"
+      id="entry.197515224"
+      rows="4"
+      cols="50"
+      maxlength="10000"
+      placeholder="your comment..."
+      required=""
+    ></textarea>
+  </div>
+
+  <input type="submit" value="Submit" />
+</form>

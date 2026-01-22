@@ -1,5 +1,6 @@
 [
   { "date": "2026-01-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2026-01-22", "text": "I don't answer coding questions in my guestbook anymore. Please use the comment sections of my resources instead.", "link": "/about/guestbook" },
   { "date": "2026-01-16", "text": "Updated my manifesto.", "link": "/about/manifesto" },
   { "date": "2026-01-08", "text": "Improvements to clique list", "link": "/coding/cliques" },
   { "date": "2026-01-03", "text": "Indie Web Contest winners announced!", "link": "/contest" },

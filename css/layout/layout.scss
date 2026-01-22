@@ -25,7 +25,11 @@
     border: 1px solid var(--dark);
     color: var(--black);
     background: var(--purple);
-    background-image: linear-gradient(to top, var(--purple) 16%, var(--pink) 79%);
+    background-image: linear-gradient(
+      to top,
+      var(--purple) 16%,
+      var(--pink) 79%
+    );
     border-radius: 10px;
     padding: 2px 5px;
     font-size: 15px;
@@ -61,7 +65,11 @@
     border: 1px solid var(--dark);
     color: var(--black);
     background: var(--purple);
-    background-image: linear-gradient(to top, var(--purple) 16%, var(--pink) 79%);
+    background-image: linear-gradient(
+      to top,
+      var(--purple) 16%,
+      var(--pink) 79%
+    );
     border-radius: 10px;
     padding: 2px 5px;
     font-size: 15px;
@@ -139,13 +147,14 @@
   }
 }
 
-#corner-cat {
+#corner-image {
   display: block;
   position: fixed;
   bottom: 10px;
   right: 20px;
   z-index: 1;
   transition: transform 0.3s ease;
+  transform-origin: bottom right;
   cursor: $cursorPointer;
 
   @media (max-width: 1400px) {

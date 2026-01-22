@@ -2,6 +2,7 @@
 testingOnLocalhost: false
 ---
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -109,25 +110,40 @@ testingOnLocalhost: false
         {% include "nav.njk" %}
 
         <div class="aside-dreamland desktop-only">
+
+       <!-- ----------------------------------------- -->
+       <!-- ----------------- LEFT ----------------- -->
+       <!-- ----------------------------------------- -->
+
+
+
           <!-- ----------------- SEARCHBAR ----------------- -->
+
           <script async src="https://cse.google.com/cse.js?cx=d0371551e40124126"></script>
           <div class="gcse-search"></div>
 
           <img src="{{ nesting }}assets/img/layout/divider1.gif" alt="" aria-hidden="true" />
 
+
+
           <!-- ----------------- CONTEST -----------------     -->
 
+           <div class="aside-box aside-indie-web-contest" aria-hidden="true">
+          <div class="aside-box__heading" aria-hidden="true">Contest<img src="{{ nesting }}assets/img/layout/icon-medal.png" alt="" aria-hidden="true" /></div>
+            
           <a class="aside-contest" href="/contest">
             <img src="{{ nesting }}assets/img/layout/trophy.gif" width="80" height="85" alt="Trophy" />
             <div><b>Indie Web Contest</b><small>Winners announced!</small></div>
           </a>
+        </div>
+
 
           <!-- ----------------- LINK BACK ----------------- -->
-          <div class="aside-stuff aside-link-back">
-            <div class="aside-stuff__heading">Link back!<img src="{{ nesting }}assets/img/layout/icon-copy.png" alt="" aria-hidden="true" /></div>
+
+          <div class="aside-box aside-link-back">
+            <div class="aside-box__heading">Link back!<img src="{{ nesting }}assets/img/layout/icon-copy.png" alt="" aria-hidden="true" /></div>
             <p>
               Hotlinking is a-okay!
-              <!-- <br><small style="line-height: 1;display: block;">You can change the .webp to .gif if you want.</small> -->
             </p>
             <a href="https://petrapixel.neocities.org/" target="_blank" tabindex="-1"
               ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp" alt="petrapixel" width="88" height="31"
@@ -137,9 +153,12 @@ testingOnLocalhost: false
             >
           </div>
 
+
+
           <!-- ----------------- CHANGELOG ----------------- -->
-          <div class="aside-stuff aside-changelog">
-            <div class="aside-stuff__heading" aria-hidden="true">Changelog<img src="{{ nesting }}assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
+
+          <div class="aside-box aside-changelog">
+            <div class="aside-box__heading" aria-hidden="true">Changelog<img src="{{ nesting }}assets/img/layout/icon-code.png" alt="" aria-hidden="true" /></div>
             <ul class="changelog custom-scrollbar" aria-label="Changelog">
               {% for changelogEntry in changelog %} {% if changelogEntry.text != "TEMPLATE" %}
               <li class="changelog__entry">
@@ -156,8 +175,10 @@ testingOnLocalhost: false
 
           <img src="{{ nesting }}assets/img/layout/divider8.gif" alt="" aria-hidden="true" style="padding-top: 5px" />
 
+
           <!-- ----------------- BLINKIES ----------------- -->
-          <div class="aside-stuff aside-blinkies" aria-hidden="true">
+
+          <div class="aside-box aside-blinkies" aria-hidden="true">
             <marquee class="marquee aside-blinkies__buttons" scrollamount="5">{% include 'blinkies-blinkies.njk' %}</marquee>
             <marquee class="marquee aside-blinkies__blinkies" scrollamount="4">{% include 'blinkies-buttons.njk' %}</marquee>
             <div id="afterneighbours">Click <a href="/about/blinkies">here</a> to view them all.</div>
@@ -167,18 +188,11 @@ testingOnLocalhost: false
 
           <img src="{{ nesting }}assets/img/layout/divider7.gif" alt="" aria-hidden="true" style="padding-top: 10px" />
 
-          <!-- ----------------- IMAGE OF THE MOMENT ----------------- 
-            <div class="aside-stuff aside-poll">
-              <div class="aside-stuff__heading" aria-hidden="true">Image of the Moment<img src="{{ nesting }}assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
-              <a href="https://at.pinterest.com/pin/357402920447991964/" target="_blank" class="image-of-the-moment">
-                <img src="https://i.pinimg.com/564x/cc/0c/f9/cc0cf91f9390dc6abfce564c02c23dd8.jpg" alt="Bella and Edward" title="Bella and Edward" />
-              </a>
-            </div>
-            -->
-
+          
           <!-- ----------------- NAV LINK ----------------- -->
-          <div class="aside-stuff aside-poll">
-            <div class="aside-stuff__heading" aria-hidden="true">Other Sites<img src="{{ nesting }}assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
+
+          <div class="aside-box aside-poll">
+            <div class="aside-box__heading" aria-hidden="true">Other Sites<img src="{{ nesting }}assets/img/layout/icon-hearts.png" alt="" aria-hidden="true" /></div>
             <iframe class="aside-navlinkads" width="170" height="170" style="border: none" src="https://dimden.neocities.org/navlink/" name="neolink" aria-label="Navlink"></iframe>
             <center>
               <p style="line-height: 1"><small>These are "ads" to other indie web sites. You should check them out :)</small></p>
@@ -187,46 +201,30 @@ testingOnLocalhost: false
             <center><iframe width="88" height="31" style="border: none" src="https://melonsoda.nekoweb.org/button.html" name="buttonlink"></iframe></center>
           </div>
 
+
           <!-- ----------------- TAMANOTCHI ----------------- -->
 
-          <div class="aside-stuff aside-tamanotchi">
+          <div class="aside-tamanotchi">
             <a href="https://tamanotchi.world/25005c"><img src="https://tamanotchi.world/i2/25005" alt="It's tamaNOTchi! Click to feed!" /></a>
           </div>
 
-          <!-- ----------------- COMING SOON ----------------- -->
-          <!--
-		<div class="aside-stuff aside-changelog">
-          <div class="aside__heading aside__heading--comingsoon" aria-hidden="true">Coming Soon</div>
-          <div class="changelog custom-scrollbar">
-			  <ul aria-label="Coming Soon">
-			 	<li>loading screen</li>
-			 	<li>blog post about polyamory</li>
-			 	<li>dinosaur shrine</li> 
-			 	<li>more shrines</li> 
-			 	<li>advanced coding tutorials</li> 
-				<li>self-made blinkies/buttons/stamps</li>
-			  </ul>
-		  </div>
-        </div>
-		-->
         </div>
       </aside>
+
+       <!-- ----------------------------------------- -->
+       <!-- ----------------- RIGHT ----------------- -->
+       <!-- ----------------------------------------- -->
+           
       <aside class="aside aside--right desktop-only" data-nosnippet="true">
-        <!-- ----------------- CLAP, KIRBY ----------------- -->
-        <div class="aside-stuff aside-clap-kirby">
-          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook">
+
+        <!-- ----------------- FOLLOW, GUESTBOOK, CLAP ----------------- -->
+        <div class="aside-clap-kirby">
+          <a class="aside-box__guestbook" aria-hidden="true" href="/about/guestbook">
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby1light.png" alt="sign my guestbook" class="only-show-in-light-mode" />
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby1.png" alt="sign my guestbook" class="only-show-in-dark-mode" />
           </a>
-          <!--
-          <a class="aside-stuff__guestbook" aria-hidden="true" href="/about/guestbook">
-            <img src="{{ nesting }}assets/img/glitter-graphics/guestbook.gif" alt="sign my guestbook" />
-          </a>
-          <a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
-            <img src="{{ nesting }}assets/img/glitter-graphics/profile.gif" alt="follow me on neocities" />
-          </a>
-		  -->
-          <a class="aside-stuff__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
+
+          <a class="aside-box__guestbook" aria-label="follow me on neocities" href="https://neocities.org/site/petrapixel" target="_blank">
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby2light.png" alt="follow me on neocities" class="only-show-in-light-mode" />
             <img width="145" height="56" src="{{ nesting }}assets/img/layout/kirby2.png" alt="follow me on neocities" class="only-show-in-dark-mode" />
           </a>
@@ -236,23 +234,18 @@ testingOnLocalhost: false
             <img width="80" height="18" src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en" alt="clap for me on clap.fc2.com" />
             <small>click to clap for me!</small>
           </a>
-          <!--
-          <a href="https://petrapixel.nekoweb.org/" target="_blank">Follow on Nekoweb</a>
-		  -->
+		 
         </div>
+
 
         <img src="{{ nesting }}assets/img/layout/divider2.gif" alt="" aria-hidden="true" style="image-rendering: pixelated" />
 
+
         <!-- ----------------- STATS / STATUS ----------------- -->
-        <div class="aside-stuff aside-stats">
-          <!--
-		<div class="aside-stats__stat">
-			<div class="aside-stuff__heading"><span>visitors</span><img src="{{nesting}}assets/img/layout/icon-stats.png" alt="" aria-hidden="true"/></div>
-			<div class="aside-stats__stat-content"><a href="https://neocities.org/site/petrapixel/stats" target="_blank" id="hitcount"></a></div>
-		</div>
-		-->
-          <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>hits & visitors</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
+
+        <div class="aside-stats">
+          <div class="aside-box">
+            <div class="aside-box__heading"><span>hits & visitors</span><img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
             <div class="aside-stats__stat-content">
               <center>
                 {% if not testingOnLocalhost %}
@@ -273,8 +266,8 @@ testingOnLocalhost: false
               </a>
             </div>
           </div>
-          <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>my time</span><img src="{{ nesting }}assets/img/layout/icon-clock.png" alt="" aria-hidden="true" /></div>
+          <div class="aside-box">
+            <div class="aside-box__heading"><span>my time</span><img src="{{ nesting }}assets/img/layout/icon-clock.png" alt="" aria-hidden="true" /></div>
             <div class="aside-stats__stat-content">
               <div style="text-align: center">
                 <iframe
@@ -287,8 +280,8 @@ testingOnLocalhost: false
               </div>
             </div>
           </div>
-          <div class="aside-stats__stat">
-            <div class="aside-stuff__heading"><span>my status</span><img src="{{ nesting }}assets/img/layout/icon-happy.png" alt="" aria-hidden="true" /></div>
+          <div class="aside-box">
+            <div class="aside-box__heading"><span>my status</span><img src="{{ nesting }}assets/img/layout/icon-happy.png" alt="" aria-hidden="true" /></div>
             <div class="aside-stats__stat-content" id="statuscafe">
               <div id="statuscafe-username"></div>
               <div id="statuscafe-content"></div>
@@ -298,9 +291,14 @@ testingOnLocalhost: false
 
         <img src="{{ nesting }}assets/img/layout/divider3.gif" alt="" aria-hidden="true" style="margin-top: -2px" />
 
+
+
+   
+
         <!-- ----------------- CURRENTLY ----------------- -->
-        <div class="aside-stuff aside-currently">
-          <div class="aside-stuff__heading">Currently</div>
+
+        <div class="aside-box aside-currently">
+          <div class="aside-box__heading">Currently</div>
           <ul>
             <li aria-label="listening to:">
               <img src="{{ nesting }}assets/img/layout/icon-music.png" alt="" title="listening to:" aria-hidden="true" />
@@ -309,10 +307,7 @@ testingOnLocalhost: false
             </li>
             <li aria-label="watching:">
               <img src="{{ nesting }}assets/img/layout/icon-tv.png" alt="" title="watching:" aria-hidden="true" />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank"
-                >WWDITS <span style="font-family: sans-serif; font-size: 0.9em">↺</span
-                ><!----></a
-              >
+              <a href="https://app.tvtime.com/user/33116783" target="_blank">Gravity Falls <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span>--></a>
             </li>
             <li aria-label="reading:">
               <img src="{{ nesting }}assets/img/layout/icon-book.png" alt="" title="reading:" aria-hidden="true" />
@@ -336,11 +331,25 @@ testingOnLocalhost: false
           </ul>
         </div>
 
+     <!-- ----------------- TIP JAR ----------------- -->
+
+         <div class="aside-box aside-support" aria-hidden="true">
+          <div class="aside-box__heading" aria-hidden="true">Support<img src="{{ nesting }}assets/img/layout/icon-piggy-bank.png" alt="" aria-hidden="true" /></div>
+
+        <a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank" >
+          <img src="{{ nesting }}assets/img/layout/coffee.gif" width="50" alt="Coffee Gif" />
+          <div><b>Tip Jar</b><small>Buy me a coffee? I appreciate your support!! &lt;3</small></div>
+        </a>
+
+        </div>
+        
         <img src="{{ nesting }}assets/img/layout/divider4.gif" alt="" aria-hidden="true" style="padding-top: 5px" />
 
+
         <!-- ----------------- NEIGHBORS ----------------- -->
-        <div class="aside-stuff aside-mutuals" data-nesting="{{ nesting }}" aria-hidden="true">
-          <div class="aside-stuff__heading">
+
+        <div class="aside-box aside-mutuals" data-nesting="{{ nesting }}" aria-hidden="true">
+          <div class="aside-box__heading">
             <a href="/about/neighbors">Neighbors<img src="{{ nesting }}assets/img/layout/icon-building.png" alt="" aria-hidden="true" /></a>
           </div>
           <a href="#afterneighbours" class="skiplink" aria-hidden="true">Skip neighbours</a>
@@ -358,10 +367,50 @@ testingOnLocalhost: false
 
         <img src="{{ nesting }}assets/img/layout/divider6.gif" alt="" aria-hidden="true" style="margin-top: -5px" />
 
-        <!-- ----------------- CHATBOX ----------------- -->
-        <div class="aside-stuff aside-chatbox">
-          <div class="aside-stuff__heading" aria-hidden="true" style="z-index: 2">Chatbox<img src="{{ nesting }}assets/img/layout/icon-chat.png" alt="" aria-hidden="true" /></div>
-          <p>Closed due to spam :[ Please use the <a href="/about/guestbook">guestbook</a> instead.</p>
+
+
+        <img src="{{ nesting }}assets/img/layout/divider5.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
+
+
+        <!-- ----------------- POLL ----------------- -->
+
+        <div class="aside-box aside-poll" aria-hidden="true">
+          <div class="aside-box__heading" aria-hidden="true">Poll<img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
+
+            <form method="post" action="https://poll.pollcode.com/51651257">
+            <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
+              <div style="padding: 2px 0px 4px 2px"><strong>would you say my website (in light mode) is pink or purple?</strong></div>
+              <input type="radio" name="answer" value="1" id="answer516512571" style="float: left" /><label for="answer516512571" style="float: left; width: 150px">pink</label>
+              <div style="clear: both; height: 2px"></div>
+              <input type="radio" name="answer" value="2" id="answer516512572" style="float: left" /><label for="answer516512572" style="float: left; width: 150px">purple</label>
+              <div style="clear: both; height: 2px"></div>
+              <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
+              <div align="right" style="font-size: 10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div>
+            </div>
+          </form>
+          <center>
+            <small>(all polls <a href="/fun/polls">here</a>)</small>
+          </center>
+        </div>
+
+      
+
+      <!-- ----------------- TUMBLR ----------------- -->
+
+        <div class="aside-box aside-tumblr" aria-hidden="true">
+          <div class="aside-box__heading" aria-hidden="true">Tumblr<img src="{{ nesting }}assets/img/layout/icon-redo.png" alt="" aria-hidden="true" /></div>
+            <div>
+            <b>Got tumblr?</b> Reblog my <a href="https://www.tumblr.com/petrapixel/801488583310606336" target="_blank">indie web masterpost</a>!
+            <img aria-hidden="true" src="{{ nesting }}assets/img/inline/small-heart.gif" />
+          </div>
+        </div>
+
+
+   <!-- ----------------- CHATBOX ----------------- -->
+
+        <div class="aside-box aside-chatbox">
+          <div class="aside-box__heading" aria-hidden="true" style="z-index: 2">Chatbox<img src="{{ nesting }}assets/img/layout/icon-chat.png" alt="" aria-hidden="true" /></div>
+          <div>Closed due to spam :[ Please use the <a href="/about/guestbook">guestbook</a> instead.</div>
           <!--<iframe
             src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk"
             width="100%"
@@ -376,66 +425,22 @@ testingOnLocalhost: false
             tabindex="-1"></iframe>-->
         </div>
 
-        <img src="{{ nesting }}assets/img/layout/divider5.gif" alt="" aria-hidden="true" style="margin-top: 2em" />
-
-        <!-- ----------------- POLL ----------------- -->
-        <div class="aside-stuff aside-poll" aria-hidden="true">
-          <div class="aside-stuff__heading" aria-hidden="true">Poll<img src="{{ nesting }}assets/img/layout/icon-stats.png" alt="" aria-hidden="true" /></div>
-
-          <form method="post" action="https://poll.pollcode.com/19689655">
-            <div style="background-color: #eeeeee; padding: 2px; width: 175px; font-family: Arial; font-size: small; color: #000000">
-              <div style="padding: 2px 0px 4px 2px"><strong>what's the best revenge?</strong></div>
-              <input type="radio" name="answer" value="1" id="answer196896551" style="float: left" /><label for="answer196896551" style="float: left; width: 150px">violence</label>
-              <div style="clear: both; height: 2px"></div>
-              <input type="radio" name="answer" value="2" id="answer196896552" style="float: left" /><label for="answer196896552" style="float: left; width: 150px">getting hotter</label>
-              <div style="clear: both; height: 2px"></div>
-              <input type="radio" name="answer" value="3" id="answer196896553" style="float: left" /><label for="answer196896553" style="float: left; width: 150px">making money</label>
-              <div style="clear: both; height: 2px"></div>
-              <input type="radio" name="answer" value="4" id="answer196896554" style="float: left" /><label for="answer196896554" style="float: left; width: 150px">calling them out</label>
-              <div style="clear: both; height: 2px"></div>
-              <input type="radio" name="answer" value="5" id="answer196896555" style="float: left" /><label for="answer196896555" style="float: left; width: 150px">unsolicited forgiveness</label>
-              <div style="clear: both; height: 2px"></div>
-              <input type="radio" name="answer" value="6" id="answer196896556" style="float: left" /><label for="answer196896556" style="float: left; width: 150px">not caring about revenge</label>
-              <div style="clear: both; height: 2px"></div>
-              <div align="center" style="padding: 3px"><input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " /></div>
-              <div align="right" style="font-size: 10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div>
-            </div>
-          </form>
-
-          <center>
-            <small>(all polls <a href="/fun/polls">here</a>)</small>
-          </center>
-        </div>
-
-        <!-- ----------------- TIP JAR ----------------- -->
-
-        <a class="aside-tip-jar" href="https://ko-fi.com/petrastipjar" target="_blank">
-          <img src="{{ nesting }}assets/img/layout/coffee.gif" width="70" alt="Coffee Gif" />
-          <div><b>Tip Jar</b><small>Buy me a coffee? :3 I really appreciate every support! &lt;3</small></div>
-        </a>
-
-        <div class="aside-tumblr">
-          <p>
-            <b>Got tumblr?</b> Reblog my <a href="https://www.tumblr.com/petrapixel/801488583310606336" target="_blank">indie web masterpost</a>!
-            <img aria-hidden="true" src="{{ nesting }}assets/img/inline/small-heart.gif" />
-          </p>
-        </div>
-
         <img src="{{ nesting }}assets/img/layout/divider1.gif" alt="" aria-hidden="true" />
 
-        <!-- ----------------- FLAG COUNTER ----------------- -->
-        <!--
-		<a class="aside__flag-counter" aria-hidden="true" href="/about/flag-counter"
-        ><img alt="Flag Counter" src="https://s11.flagcounter.com/count2/wNh/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_0/pageviews_0/flags_0/percent_1/" border="0"/></a>
-	  -->
+       
+
+        <!-- ------------------------------------------------ -->
+        <!-- ------------------------------------------------ -->
+        <!-- ------------------------------------------------ -->
       </aside>
+
 
       <!-- ----------------- BACK TO TOP ----------------- -->
       <div id="back-to-top-link" aria-hidden="true"><a href="#" tabindex="-1">scroll to top</a></div>
 
-      <!-- ----------------- BACK TO TOP ----------------- -->
-      <a href="https://tidal.com/@petrasxbng" target="_blank" id="corner-cat" title="follow me on tidal!!! (i don't use spotify anymore)"
-        ><img src="{{ nesting }}assets/img/layout/music-cat.gif" alt="cat listening to music"
+      <!-- ----------------- CORNER IMAGE ----------------- -->
+      <a href="https://ko-fi.com/petrastipjar" target="_blank" id="corner-image" title="please consider supporting me! :)"
+        ><img src="{{ nesting }}assets/img/layout/jar.gif" alt="jar of candies" width="70"
       /></a>
 
       <!-- ----------------- PROGRESS BAR ----------------- -->
@@ -482,6 +487,17 @@ testingOnLocalhost: false
             {% endif %}
           </center>
           <br />
+              <div>
+          <a
+            class="aside-tip-jar"
+            href="https://ko-fi.com/petrastipjar"
+            target="_blank"
+          >
+            <img src="{{ nesting }}assets/img/layout/coffee.gif" width="70" />
+            <div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div>
+          </a>
+        </div>
+          <br />
           <center>
             <a href="#" tabindex="-1" style="font-size: 1.5em">go to top</a>
           </center>
@@ -490,6 +506,8 @@ testingOnLocalhost: false
     </div>
     {% if lightbox %}
     <script src="../assets/js/fslightbox.js"></script>
+
     {% endif %}
+
   </body>
 </html>

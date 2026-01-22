@@ -2,9 +2,23 @@
 // Google Cloud Console
 // https://console.cloud.google.com/apis/credentials
 
+class GoogleSpreadSheet {
+  constructor(spreadsheetId, sheetName, apiKey) {
+    this.spreadsheetId = spreadsheetId;
+    this.sheetName = sheetName;
+    this.apiKey = apiKey;
+  }
+}
+
 export function initGoogleSheets() {
+  const apiKey = "AIzaSyAkeZN8mT_waQBWUMbCy0F68ixe-fRKaOo";
+  const gss = new GoogleSpreadSheet(
+    "1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc",
+    "Form responses 1",
+    apiKey,
+  );
   if (document.querySelector("#cliquelist")) {
-    fetchGoogleSheetData("1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc", "Form responses 1", buildCliqueTable);
+    fetchGoogleSheetData(gss, buildCliqueTable);
   }
 }
 
@@ -28,7 +42,10 @@ function buildCliqueTable(tableHeadings, tableData) {
         const clique = {
           nameAndLink: `<a href="${td[2]}" target="_blank">${escapeHtml(cleanUpInput(td[1]))}</a>`,
           description: escapeHtml(cleanUpInput(td[3])),
-          example: td[6] == "Pixel clique" ? "[IMAGE]" : escapeHtml(cleanUpInput(td[4])),
+          example:
+            td[6] == "Pixel clique"
+              ? "[IMAGE]"
+              : escapeHtml(cleanUpInput(td[4])),
           hasMembersList: td[5],
           inactive: td[7],
           category: td[6],
@@ -36,7 +53,10 @@ function buildCliqueTable(tableHeadings, tableData) {
 
         const hasImage = isValidHttpUrl(td[8]);
         if (hasImage) {
-          clique.example = clique.example.trim().replace("[IMAGE]", `<img src="${td[8]}" />`).replaceAll("[IMAGE]", "");
+          clique.example = clique.example
+            .trim()
+            .replace("[IMAGE]", `<img src="${td[8]}" />`)
+            .replaceAll("[IMAGE]", "");
         }
 
         cliques.push(clique);
@@ -69,10 +89,15 @@ function cleanUpInput(string) {
   // TODO: add more bad words
 
   badWords.forEach((badWord) => {
-    cleanedString = cleanedString.replaceAll(badWord, "***").replaceAll(badWord.toUpperCase(), "***").replaceAll(badWord.toLowerCase(), "***");
+    cleanedString = cleanedString
+      .replaceAll(badWord, "***")
+      .replaceAll(badWord.toUpperCase(), "***")
+      .replaceAll(badWord.toLowerCase(), "***");
   });
   return cleanedString.replaceAll("http://", "").replaceAll("https://", "");
 }
+
+// ----------
 
 function isValidHttpUrl(string) {
   // https://stackoverflow.com/a/43467144/3187492
@@ -88,19 +113,28 @@ function isValidHttpUrl(string) {
 
 function escapeHtml(unsafe) {
   if (!unsafe) return "";
-  return unsafe.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+  return unsafe
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
-async function fetchGoogleSheetData(spreadsheetId, sheetName = "Form responses 1", funcToDo) {
+// ----------
+
+async function fetchGoogleSheetData(getoogleSpreadSheet, functionToExecute) {
   try {
-    // Fetch data from Google Sheets API
-    const apiKey = "AIzaSyAkeZN8mT_waQBWUMbCy0F68ixe-fRKaOo";
-    const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`);
+    // Fetch data with Google Sheets API
+    // https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/get
+    const response = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${getoogleSpreadSheet.spreadsheetId}/values/${getoogleSpreadSheet.sheetName}?key=${getoogleSpreadSheet.apiKey}`,
+    );
     const data = await response.json();
     const tableHeadings = data.values[0];
     const tableData = data.values.slice(1);
     try {
-      funcToDo(tableHeadings, tableData);
+      functionToExecute(tableHeadings, tableData);
     } catch (error) {
       console.error(error);
     }
@@ -109,6 +143,7 @@ async function fetchGoogleSheetData(spreadsheetId, sheetName = "Form responses 1
   }
 }
 
+// UNUSED
 function constructTableFromData(parentEl, tableHeadings, tableData) {
   if (!parentEl) {
     console.error("Parent element for Google Sheets data table not found.");
@@ -146,4 +181,65 @@ function constructTableFromData(parentEl, tableHeadings, tableData) {
   tableEl.appendChild(tableHead);
   tableEl.appendChild(tableBody);
   parentEl.appendChild(tableEl);
+}
+
+// TODO
+
+const commentWidgetSettings = {
+  formId: "1FAIpQLSeLNKzEA9LYmTl-3Vz1-O_AQi0N_nZ6sJlX1ccqt1WZI0PEhA",
+  submitLabel: "Comment",
+  inputs: [
+    {
+      id: "1481026605",
+      label: "Name",
+      placeholder: "",
+      type: "input",
+    },
+    {
+      id: "528195876",
+      label: "Website URL",
+      placeholder: "",
+      type: "url",
+    },
+    {
+      id: "197515224",
+      label: "Text",
+      placeholder: "",
+      type: "textarea",
+    },
+    {
+      id: "TODO",
+      label: "Checkbox",
+      placeholder: "",
+      type: "checkbox",
+    },
+    {
+      id: "TODO",
+      label: "Radio Button",
+      placeholder: "",
+      type: "radio",
+      options: ["option1", "option2", "option3"],
+    },
+    {
+      id: "TODO",
+      label: "Select Box",
+      placeholder: "",
+      type: "select",
+      options: ["option1", "option2", "option3"],
+    },
+  ],
+};
+
+function buildCommentWidgetForm(settings) {
+  const wrapper = document.querySelector("#commentWidget");
+  if (!wrapper) return;
+
+  let inputs = ``;
+
+  settings.inputs.forEach((i) => {
+    inputs += ``;
+  });
+
+  wrapper.innerHTML = `
+  `;
 }
