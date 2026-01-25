@@ -3,36 +3,10 @@
     "label": "home",
     "link": "/"
   },
-  {
-    "label": "About",
-    "new": true,
+    {
+    "label": "Website",
+    "new": false,
     "items": [
-     
-     
-       {
-        "link": "/about/about-me",
-        "label": "about me",
-        "new": false,
-        "hide": false
-      },
-       {
-        "link": "/about/my-online-childhood",
-        "label": "my online childhood",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/blog",
-        "label": "blog",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/about/cats",
-        "label": "cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
-        "new": false,
-        "hide": false
-      },
        {
         "link": "/about/about-the-site",
         "label": "about the site",
@@ -42,7 +16,7 @@
       {
         "link": "/about/manifesto",
         "label": "site manifesto",
-        "new": true,
+        "new": false,
         "hide": false
       },
         {
@@ -76,9 +50,48 @@
         "hide": false
       }
     ]
+    },
+  {
+    "label": "Webmistress",
+    "new": false,
+    "items": [
+     
+     
+       {
+        "link": "/about/about-me",
+        "label": "about me",
+        "new": false,
+        "hide": false
+      },
+       {
+        "link": "/about/my-online-childhood",
+        "label": "my online childhood",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/blog",
+        "label": "blog",
+        "new": false,
+        "hide": true
+      },
+      {
+        "link": "/about/cats",
+        "label": "cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
+        "new": false,
+        "hide": false
+      },
+        {
+        "link": "/about/media-log",
+        "label": "media log",
+        "new": false,
+        "hide": false
+      }
+      
+    ]
   },
   {
-    "label": "Creativity",
+    "label": "Creations",
     "new": false,
     "items": [
       {
@@ -123,12 +136,7 @@
     "label": "Media Recs",
     "new": false,
     "items": [
-      {
-        "link": "/about/media-log",
-        "label": "media log & reviews",
-        "new": false,
-        "hide": false
-      },
+    
       {
         "link": "/recs/youtube",
         "label": "youtube recs",
@@ -232,7 +240,7 @@
       },
        {
         "link": "/fun/advent-calendar-2025",
-        "label": "advent calendar!",
+        "label": "advent calendar 2025",
         "new": false,
         "hide": false
       }

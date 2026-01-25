@@ -5,38 +5,112 @@ nesting: "../"
 ---
 
 <section>
-  <h1>My Media Log <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" /></h1>
+  <h1>
+    My Media Log
+    <img alt="" aria-hidden="true" src="../assets/img/inline/stars.gif" />
+  </h1>
   <p style="margin-bottom: 0">
-    You can also follow me on these tracker sites: <span><a href="https://letterboxd.com/Petra1999/" target="_blank" rel="nofollow">letterboxd</a> (movies)</span>,
-    <span><a href="https://app.tvtime.com/user/33116783" target="_blank" rel="nofollow">tvtime</a> (tv shows)</span>,
-    <span><a href="https://www.serializd.com/user/Petra1999/profile" target="_blank" rel="nofollow">serializd</a> (tv shows)</span>,
-    <span><a href="https://anilist.co/user/Petra1999/" target="_blank" rel="nofollow">anilist</a> (anime)</span>,
-    <span><a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank" rel="nofollow">goodreads</a> (books)</span>,
-    <span><a href="https://www.last.fm/user/Petra1999" target="_blank" rel="nofollow">last.fm</a> (music)</span>,
-    <span><a href="https://www.backloggd.com/u/Petra1999/" target="_blank" rel="nofollow">backloggd</a> (games)</span>
+    You can also follow me on these tracker sites:
+    <span
+      ><a
+        href="https://letterboxd.com/Petra1999/"
+        target="_blank"
+        rel="nofollow"
+        >letterboxd</a
+      >
+      (movies)</span
+    >,
+    <span
+      ><a
+        href="https://app.tvtime.com/user/33116783"
+        target="_blank"
+        rel="nofollow"
+        >tvtime</a
+      >
+      (tv shows)</span
+    >,
+    <span
+      ><a
+        href="https://www.serializd.com/user/Petra1999/profile"
+        target="_blank"
+        rel="nofollow"
+        >serializd</a
+      >
+      (tv shows)</span
+    >,
+    <span
+      ><a
+        href="https://anilist.co/user/Petra1999/"
+        target="_blank"
+        rel="nofollow"
+        >anilist</a
+      >
+      (anime)</span
+    >,
+    <span
+      ><a
+        href="https://www.goodreads.com/user/show/62158941-petra"
+        target="_blank"
+        rel="nofollow"
+        >goodreads</a
+      >
+      (books)</span
+    >,
+    <span
+      ><a
+        href="https://www.last.fm/user/Petra1999"
+        target="_blank"
+        rel="nofollow"
+        >last.fm</a
+      >
+      (music)</span
+    >,
+    <span
+      ><a
+        href="https://www.backloggd.com/u/Petra1999/"
+        target="_blank"
+        rel="nofollow"
+        >backloggd</a
+      >
+      (games)</span
+    >
   </p>
 </section>
 
+<!--
 <section>
   <h2>Reviews</h2>
   <p>
-    In 2025, I started writing these small reviews here. Click on the image to go the page of the show/game/movie/book/whatever. Rating are subject to change, and as you might notice I really love
-    giving 4 stars. (Ratings are out of 5 stars btw.)
+    In 2025, I started writing these small reviews here. Click on the image to
+    go the page of the show/game/movie/book/whatever. Rating are subject to
+    change, and as you might notice I really love giving 4 stars. (Ratings are
+    out of 5 stars btw.)
   </p>
   <br />
 
-  <p><em>I'm kind of behind... Oops! Reviews will come at some point, I swear!</em></p>
+  <p>
+    <em
+      >I'm kind of behind... Oops! Reviews will come at some point, I swear!</em
+    >
+  </p>
 
   <h3>April 2025</h3>
   <div class="media-reviews">
-    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-04" %}
+    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month
+    == "2025-04" %}
     <div class="media-review">
       <div class="media-review__content">
         <div class="media-review__image">
-          <a href="{{ review.link }}"><img src="{{ review.image }}" loading="lazy" width="150" /></a>
+          <a href="{{ review.link }}"
+            ><img src="{{ review.image }}" loading="lazy" width="150"
+          /></a>
         </div>
         <div class="media-review__text">
-          <div class="media-review__title"><span>{{ review.title }}</span><br /><small>{{ review.type }}</small></div>
+          <div class="media-review__title">
+            <span>{{ review.title }}</span><br /><small
+              >{{ review.type }}</small
+            >
+          </div>
           <p>{{ review.text }}</p>
           <div class="media-review__rating">
             My Rating:
@@ -50,14 +124,21 @@ nesting: "../"
 
   <h3>March 2025</h3>
   <div class="media-reviews">
-    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-03" %}
+    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month
+    == "2025-03" %}
     <div class="media-review">
       <div class="media-review__content">
         <div class="media-review__image">
-          <a href="{{ review.link }}"><img src="{{ review.image }}" loading="lazy" width="150" /></a>
+          <a href="{{ review.link }}"
+            ><img src="{{ review.image }}" loading="lazy" width="150"
+          /></a>
         </div>
         <div class="media-review__text">
-          <div class="media-review__title"><span>{{ review.title }}</span><br /><small>{{ review.type }}</small></div>
+          <div class="media-review__title">
+            <span>{{ review.title }}</span><br /><small
+              >{{ review.type }}</small
+            >
+          </div>
           <p>{{ review.text }}</p>
           <div class="media-review__rating">
             My Rating:
@@ -71,14 +152,21 @@ nesting: "../"
 
   <h3>February 2025</h3>
   <div class="media-reviews">
-    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-02" %}
+    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month
+    == "2025-02" %}
     <div class="media-review">
       <div class="media-review__content">
         <div class="media-review__image">
-          <a href="{{ review.link }}"><img src="{{ review.image }}" loading="lazy" width="150" /></a>
+          <a href="{{ review.link }}"
+            ><img src="{{ review.image }}" loading="lazy" width="150"
+          /></a>
         </div>
         <div class="media-review__text">
-          <div class="media-review__title"><span>{{ review.title }}</span><br /><small>{{ review.type }}</small></div>
+          <div class="media-review__title">
+            <span>{{ review.title }}</span><br /><small
+              >{{ review.type }}</small
+            >
+          </div>
           <p>{{ review.text }}</p>
           <div class="media-review__rating">
             My Rating:
@@ -92,14 +180,21 @@ nesting: "../"
 
   <h3>January 2025</h3>
   <div class="media-reviews">
-    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month == "2025-01" %}
+    {% for review in reviews %} {% if review.title != "EXAMPLE" and review.month
+    == "2025-01" %}
     <div class="media-review">
       <div class="media-review__content">
         <div class="media-review__image">
-          <a href="{{ review.link }}"><img src="{{ review.image }}" loading="lazy" width="150" /></a>
+          <a href="{{ review.link }}"
+            ><img src="{{ review.image }}" loading="lazy" width="150"
+          /></a>
         </div>
         <div class="media-review__text">
-          <div class="media-review__title"><span>{{ review.title }}</span><br /><small>{{ review.type }}</small></div>
+          <div class="media-review__title">
+            <span>{{ review.title }}</span><br /><small
+              >{{ review.type }}</small
+            >
+          </div>
           <p>{{ review.text }}</p>
           <div class="media-review__rating">
             My Rating:
@@ -111,18 +206,31 @@ nesting: "../"
     {% endif %}{% endfor %}
   </div>
 </section>
+-->
 
 <section>
   <h2>Full Log</h2>
-  <p>Here's my full media log! It contains pretty much everything I've watched, played, read, and listened to since August 2018! Updated sporadically.</p>
-  <p><b>Total entries:</b> <span id="total-entries">loading...</span> (not unique)</p>
+  <p>
+    Here's my full media log! It contains pretty much everything I've watched,
+    played, read, and listened to since August 2018! Updated sporadically.
+  </p>
+  <p>
+    <b>Total entries:</b> <span id="total-entries">loading...</span> (not
+    unique)
+  </p>
   <br />
   <noscript><b>This section requires JavaScript to run!</b></noscript>
   <strong class="rec-filters-title">Filter:</strong>
   <div class="rec-filters">
     <div class="rec-filters__group">
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="year">
-        <button class="rec-filters__button is-checked" data-filter="">any year</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="year"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          any year
+        </button>
+        <button class="rec-filters__button" data-filter=".2026">2026</button>
         <button class="rec-filters__button" data-filter=".2025">2025</button>
         <button class="rec-filters__button" data-filter=".2024">2024</button>
         <button class="rec-filters__button" data-filter=".2023">2023</button>
@@ -132,26 +240,53 @@ nesting: "../"
         <button class="rec-filters__button" data-filter=".2019">2019</button>
         <button class="rec-filters__button" data-filter=".2018">2018</button>
       </div>
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="type">
-        <button class="rec-filters__button is-checked" data-filter="">any type</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="type"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          any type
+        </button>
         <button class="rec-filters__button" data-filter=".tv">tv</button>
         <button class="rec-filters__button" data-filter=".movie">movie</button>
-        <button class="rec-filters__button" data-filter=".cinema">cinema</button>
+        <button class="rec-filters__button" data-filter=".cinema">
+          cinema
+        </button>
         <button class="rec-filters__button" data-filter=".video">video</button>
         <button class="rec-filters__button" data-filter=".book">book</button>
-        <button class="rec-filters__button" data-filter=".audiobook">audiobook</button>
-        <button class="rec-filters__button" data-filter=".podcast">podcast</button>
+        <button class="rec-filters__button" data-filter=".audiobook">
+          audiobook
+        </button>
+        <button class="rec-filters__button" data-filter=".podcast">
+          podcast
+        </button>
         <button class="rec-filters__button" data-filter=".game">game</button>
         <button class="rec-filters__button" data-filter=".music">music</button>
       </div>
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="bolded">
-        <button class="rec-filters__button is-checked" data-filter="">show all</button>
-        <button class="rec-filters__button" data-filter=".bolded">most important only</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="bolded"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          show all
+        </button>
+        <button class="rec-filters__button" data-filter=".bolded">
+          most important only
+        </button>
       </div>
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="re">
-        <button class="rec-filters__button is-checked" data-filter="">show all</button>
-        <button class="rec-filters__button" data-filter=".notre">first time only</button>
-        <button class="rec-filters__button" data-filter=".re">re-watch/read/play/listen only</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="re"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          show all
+        </button>
+        <button class="rec-filters__button" data-filter=".notre">
+          first time only
+        </button>
+        <button class="rec-filters__button" data-filter=".re">
+          re-watch/read/play/listen only
+        </button>
       </div>
     </div>
   </div>
@@ -160,19 +295,107 @@ nesting: "../"
 </section>
 
 <div aria-hidden="true" style="display: none" id="media-log-content">
+  <div data-year="2026"></div>
   <div data-year="2025">
-    <p>— <em>august </em></p>
+    <p>‍ — <em>december</em></p>
+
     <ul>
-      <li>∷ <strong>stranger things</strong> ↺ <span class="gend-link"></span></li>
+      <li>
+        ∷ <strong>stranger things</strong> (s5) <span class="gend-link"></span>
+      </li>
+      <li>
+        ∷ <strong>what we do in the shadows</strong> ↺
+        <span class="gend-link"></span>
+      </li>
+      <li>⋆ eddie the eagle ↺ <span class="gend-link"></span></li>
+      <li>❝ animal farm ↺ <span class="gend-link"></span></li>
+      <li>⧖ wir hören uns alle gegenseitig <span class="gend-link"></span></li>
+      <li>ϟ <strong>balatro</strong> <span class="gend-link"></span></li>
+    </ul>
+    <p>‍‍‍‍ ‍ — <em>november</em></p>
+
+    <ul>
+      <li>
+        ∷ <strong>stranger things</strong> (s5) <span class="gend-link"></span>
+      </li>
+      <li>
+        ∷ <strong>what we do in the shadows</strong> ↺
+        <span class="gend-link"></span>
+      </li>
+      <li>⋆ now you see me, now you don't ﾐ <span class="gend-link"></span></li>
+      <li>⋆ wicked 2 ﾐ <span class="gend-link"></span></li>
+      <li>
+        ❝
+        <strong
+          >how we got to know: six innovations that made the modern
+          world</strong
+        >
+        <span class="gend-link"></span>
+      </li>
+      <li>ϟ <strong>balatro</strong> <span class="gend-link"></span></li>
+    </ul>
+    <p>‍ — <em>october</em></p>
+
+    <ul>
+      <li>∷ what we do in the shadows ↺ <span class="gend-link"></span></li>
+      <li>⋆ 28 days later <span class="gend-link"></span></li>
+      <li>⋆ companion <span class="gend-link"></span></li>
+      <li>⋆ hokus pokus <span class="gend-link"></span></li>
+      <li>⋆ m3gan 2.0 <span class="gend-link"></span></li>
+      <li>⋆ scary movie ↺ <span class="gend-link"></span></li>
+      <li>⋆ scream 2 <span class="gend-link"></span></li>
+      <li>⋆ silent hill <span class="gend-link"></span></li>
+      <li>⋆ the amityville horror <span class="gend-link"></span></li>
+      <li>⋆ the craft <span class="gend-link"></span></li>
+      <li>⋆ the lost boys <span class="gend-link"></span></li>
+      <li>⋆ the sixth sense <span class="gend-link"></span></li>
+      <li>⋆ the substance <span class="gend-link"></span></li>
+      <li>⋆ us <span class="gend-link"></span></li>
+      <li>▫ buzzfeed unsolved: true crime ↺ <span class="gend-link"></span></li>
+      <li>▫ watcher's mystery files <span class="gend-link"></span></li>
+      <li>ϟ <strong>balatro</strong> <span class="gend-link"></span></li>
+    </ul>
+    <p>‍‍ ‍ — <em>september</em></p>
+
+    <ul>
+      <li>
+        ∷ <strong>stranger things</strong> ↺ <span class="gend-link"></span>
+      </li>
+      <li>⋆ a nice indian boy <span class="gend-link"></span></li>
+      <li>⋆ certain women <span class="gend-link"></span></li>
+      <li>⋆ legally blonde ↺ ﾐ <span class="gend-link"></span></li>
+      <li>⋆ thelma &amp; lousie ﾐ <span class="gend-link"></span></li>
+      <li>⋆ wall-e ↺ ﾐ <span class="gend-link"></span></li>
+      <li>▫ danny gonzalez ↺ <span class="gend-link"></span></li>
+      <li>❝ cbt for dummies ↺ <span class="gend-link"></span></li>
+      <li>❝ midnight sun <span class="gend-link"></span></li>
+      <li>๑ breach - twenty one pilots <span class="gend-link"></span></li>
+      <li>ϟ <strong>gosupermodel</strong> <span class="gend-link"></span></li>
+      <li>ϟ mario kart <span class="gend-link"></span></li>
+    </ul>
+    <p>‍ — <em>august</em></p>
+
+    <ul>
+      <li>
+        ∷ <strong>stranger things</strong> ↺ <span class="gend-link"></span>
+      </li>
       <li>∷ wednesday <em>(s2)</em> <span class="gend-link"></span></li>
       <li>⋆ das kanu des manitu ﾐ <span class="gend-link"></span></li>
       <li>⋆ snow white <span class="gend-link"></span></li>
       <li>⋆ the adam project <span class="gend-link"></span></li>
-      <li>▫ <strong>good mythical morning</strong> <em>(s5-6)</em> (↺) <span class="gend-link"></span></li>
-      <li>❝ <strong>wir kinder vom bahnhof zoo</strong> <span class="gend-link"></span></li>
+      <li>
+        ▫ <strong>good mythical morning</strong> <em>(s5-6)</em> (↺)
+        <span class="gend-link"></span>
+      </li>
+      <li>
+        ❝ <strong>wir kinder vom bahnhof zoo</strong>
+        <span class="gend-link"></span>
+      </li>
       <li>❝ watership down ↺ <span class="gend-link"></span></li>
+      <li>
+        ϟ <strong>date everything</strong> <span class="gend-link"></span>
+      </li>
       <li>ϟ <strong>gosupermodel</strong> <span class="gend-link"></span></li>
-      <li>ϟ date everything <span class="gend-link"></span></li>
     </ul>
     <p>— <em>july </em></p>
     <ul>
@@ -200,7 +423,9 @@ nesting: "../"
       <li>⋆ star wars episode iii: revenge of the sith</li>
       <li>⋆ star wars episode vii: the force awakens</li>
       <li>⋆ star wars episode viii: the last jedi</li>
-      <li>❝ paranormality: why we see what isn't there, <em>richard wiseman</em></li>
+      <li>
+        ❝ paranormality: why we see what isn't there, <em>richard wiseman</em>
+      </li>
       <li>ϟ <strong>minecraft</strong></li>
     </ul>
     <p>— <em>may </em></p>
@@ -349,7 +574,15 @@ nesting: "../"
       <li>♡ <strong>deadpool/wolverine ('poolverine')</strong></li>
       <li>❝ <strong>the code book,</strong> <em>simon singh</em></li>
       <li>❝ <strong>the secret history,</strong> <em>donna tartt</em></li>
-      <li>❝ <em>lots of x-men comics</em> <a href="https://listography.com/action/list?uid=0440224482&amp;lid=3294910354" target="_blank" rel="nofollow">♡</a></li>
+      <li>
+        ❝ <em>lots of x-men comics</em>
+        <a
+          href="https://listography.com/action/list?uid=0440224482&amp;lid=3294910354"
+          target="_blank"
+          rel="nofollow"
+          >♡</a
+        >
+      </li>
       <li>❝ the haunting of hill house, <em>shirley jackson</em></li>
     </ul>
     <p>‍ ‍ ‍ — <em>august</em></p>
@@ -414,7 +647,14 @@ nesting: "../"
       <li>∷ doctor who (s14)</li>
       <li>⋆ inside out 2 ﾐ</li>
       <li>⋆ the truman show ↺</li>
-      <li>▫ jan misali / how many super mario games are there now<a href="https://www.youtube.com/watch?v=-Ddmjcy3lEs" target="_blank" rel="nofollow">?</a></li>
+      <li>
+        ▫ jan misali / how many super mario games are there now<a
+          href="https://www.youtube.com/watch?v=-Ddmjcy3lEs"
+          target="_blank"
+          rel="nofollow"
+          >?</a
+        >
+      </li>
       <li>ϟ minecraft ↺</li>
       <li>ϟ skyrim ↺</li>
       <li>ϟ breath of the wild ↺</li>
@@ -469,7 +709,9 @@ nesting: "../"
       <li>❝ the metamorphosis, <em>franz kafka</em></li>
       <li>❝ the picture of dorian gray, <em>oscar wilde</em></li>
       <li>๑ twenty one pilots</li>
-      <li>ϟ <strong>legend of zelda: breath of the wild</strong> <em>(+dlc)</em></li>
+      <li>
+        ϟ <strong>legend of zelda: breath of the wild</strong> <em>(+dlc)</em>
+      </li>
       <li>ϟ super mario bros. wonder</li>
     </ul>
     <p>‍ ‍ ‍ — <em>february</em></p>
@@ -492,8 +734,16 @@ nesting: "../"
       <li>⋆ three billboards outside ebbing, missouri</li>
       <li>⋆ yesterday</li>
       <li>♡ twelfth doctor &amp; clara <em>(doctor who)</em></li>
-      <li>❝ <strong>aristotle and dante discover the secrets of the universe,</strong> <em>benjamin alire sáenz</em></li>
-      <li>❝ <strong>the picture of dorian gray,</strong> <em>oscar wilde</em></li>
+      <li>
+        ❝
+        <strong
+          >aristotle and dante discover the secrets of the universe,</strong
+        >
+        <em>benjamin alire sáenz</em>
+      </li>
+      <li>
+        ❝ <strong>the picture of dorian gray,</strong> <em>oscar wilde</em>
+      </li>
       <li>ϟ die große schatzsuche (i spy: treasure hunt)</li>
       <li>ϟ kirby's dream course <em>(SNES)</em> ↺</li>
       <li>ϟ legend of zelda: breath of the wild ↺</li>
@@ -519,7 +769,10 @@ nesting: "../"
       <li>⋆ zombieland 2: double tap</li>
       <li>♡ eleventh doctor &amp; clara</li>
       <li>♡ fleabag &amp; the hot priest</li>
-      <li>❝ aristotle and dante discover the secrets of the universe, <em>benjamin alire sáenz</em></li>
+      <li>
+        ❝ aristotle and dante discover the secrets of the universe,
+        <em>benjamin alire sáenz</em>
+      </li>
       <li>❝ homo deus, <em>yuval noah harari</em></li>
       <li>❝ the princess bride, <em>william goldman</em></li>
       <li>ϟ <strong>papers, please</strong></li>
@@ -530,10 +783,34 @@ nesting: "../"
     <div class="listbox-content">
       <div class="text_content font_Times">
         <p>
-          ↪ <a href="https://listography.com/petra1999/2023/%E2%89%A1" target="_blank" rel="nofollow">2023</a> |
-          <a href="https://listography.com/petra1999/2023/diary" target="_blank" rel="nofollow">diary</a> | <strong>media</strong> ‍|
-          <a href="https://listography.com/petra1999/2023/resolutions" target="_blank" rel="nofollow">resolutions</a> |
-          <a href="https://listography.com/petra1999/2023/to_do" target="_blank" rel="nofollow">to do</a>
+          ↪
+          <a
+            href="https://listography.com/petra1999/2023/%E2%89%A1"
+            target="_blank"
+            rel="nofollow"
+            >2023</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2023/diary"
+            target="_blank"
+            rel="nofollow"
+            >diary</a
+          >
+          | <strong>media</strong> ‍|
+          <a
+            href="https://listography.com/petra1999/2023/resolutions"
+            target="_blank"
+            rel="nofollow"
+            >resolutions</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2023/to_do"
+            target="_blank"
+            rel="nofollow"
+            >to do</a
+          >
         </p>
 
         <ul>
@@ -541,17 +818,76 @@ nesting: "../"
             ᴋᴇʏ
             <ul>
               <li>
-                ↺ <a href="https://listography.com/petra1999/2022/media" target="_blank" rel="nofollow">re-</a> ┊ ∷
-                <a href="https://listography.com/petra1999/tv/watched" target="_blank" rel="nofollow">tv</a> ┊ ⋆
-                <a href="https://letterboxd.com/petra1999/films/diary/for/2023/" target="_blank" rel="nofollow">movie</a> .. (ﾐ
-                <a href="https://letterboxd.com/petra1999/tag/in-cinema/diary/for/2023/" target="_blank" rel="nofollow">cinema</a>) ┊ ▫
-                <a href="https://listography.com/petra1999/index?v=a&amp;cat=youtube" target="_blank" rel="nofollow">video/stream</a>
+                ↺
+                <a
+                  href="https://listography.com/petra1999/2022/media"
+                  target="_blank"
+                  rel="nofollow"
+                  >re-</a
+                >
+                ┊ ∷
+                <a
+                  href="https://listography.com/petra1999/tv/watched"
+                  target="_blank"
+                  rel="nofollow"
+                  >tv</a
+                >
+                ┊ ⋆
+                <a
+                  href="https://letterboxd.com/petra1999/films/diary/for/2023/"
+                  target="_blank"
+                  rel="nofollow"
+                  >movie</a
+                >
+                .. (ﾐ
+                <a
+                  href="https://letterboxd.com/petra1999/tag/in-cinema/diary/for/2023/"
+                  target="_blank"
+                  rel="nofollow"
+                  >cinema</a
+                >) ┊ ▫
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=youtube"
+                  target="_blank"
+                  rel="nofollow"
+                  >video/stream</a
+                >
               </li>
               <li>
-                ❝ <a href="https://listography.com/petra1999/books/read" target="_blank" rel="nofollow">book</a> .. (♪
-                <a href="https://listography.com/petra1999/books/audiobooks" target="_blank" rel="nofollow">audiob.</a>) ┊ ⧖
-                <a href="https://listography.com/petra1999/media/podcasts" target="_blank" rel="nofollow">podcast</a> ┊ ϟ
-                <a href="https://www.backloggd.com/u/Petra1999/" target="_blank" rel="nofollow">game</a> ┊ ๑ <a href="https://www.last.fm/user/Petra1999" target="_blank" rel="nofollow">music</a>
+                ❝
+                <a
+                  href="https://listography.com/petra1999/books/read"
+                  target="_blank"
+                  rel="nofollow"
+                  >book</a
+                >
+                .. (♪
+                <a
+                  href="https://listography.com/petra1999/books/audiobooks"
+                  target="_blank"
+                  rel="nofollow"
+                  >audiob.</a
+                >) ┊ ⧖
+                <a
+                  href="https://listography.com/petra1999/media/podcasts"
+                  target="_blank"
+                  rel="nofollow"
+                  >podcast</a
+                >
+                ┊ ϟ
+                <a
+                  href="https://www.backloggd.com/u/Petra1999/"
+                  target="_blank"
+                  rel="nofollow"
+                  >game</a
+                >
+                ┊ ๑
+                <a
+                  href="https://www.last.fm/user/Petra1999"
+                  target="_blank"
+                  rel="nofollow"
+                  >music</a
+                >
               </li>
             </ul>
           </li>
@@ -628,7 +964,9 @@ nesting: "../"
           <li>⋆ the wonder</li>
           <li>⋆ there will be blood</li>
           <li>▫ squid craft (~12hrs)</li>
-          <li>❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em></li>
+          <li>
+            ❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em>
+          </li>
           <li>❝ the scarlet letter, <em>nathanial hawthorne</em></li>
           <li>ϟ board/card games (on switch)</li>
           <li>ϟ minecraft</li>
@@ -692,7 +1030,9 @@ nesting: "../"
           <li>▫ eurovision 2023</li>
           <li>▫ good mythical morning</li>
           <li>❝ beloved, <em>toni morrison</em></li>
-          <li>❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em></li>
+          <li>
+            ❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em>
+          </li>
           <li>๑ flight of the conchords / jemaine clement ↺</li>
           <li>ϟ mario kart</li>
           <li>ϟ sims 4</li>
@@ -718,8 +1058,12 @@ nesting: "../"
           <li>⋆ still alice</li>
           <li>⋆ superbad</li>
           <li>❝ angels in america, <em>tony kushner</em></li>
-          <li>❝ dinosaurs: a concise natural history, <em>david e. fastovsky</em></li>
-          <li>❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em></li>
+          <li>
+            ❝ dinosaurs: a concise natural history, <em>david e. fastovsky</em>
+          </li>
+          <li>
+            ❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em>
+          </li>
           <li>๑ flight of the conchords / jemaine clement ↺</li>
           <li>ϟ <strong>legend of zelda: breath of the wild</strong> ↺</li>
         </ul>
@@ -739,16 +1083,26 @@ nesting: "../"
           <li>⋆ men in black 3</li>
           <li>⋆ spider-man: across the spiderverse ﾐ</li>
           <li>⋆ tall girl</li>
-          <li>❝ <strong>flowers in the attic</strong> (dollanganger #1), <em>v.c. andrews</em> ↺</li>
-          <li>❝ <strong>good omens,</strong> <em>terry pratchett &amp; neil gaiman</em> ♪</li>
-          <li>❝ <strong>the screenwriting bible,</strong> <em>david trottier</em></li>
+          <li>
+            ❝ <strong>flowers in the attic</strong> (dollanganger #1),
+            <em>v.c. andrews</em> ↺
+          </li>
+          <li>
+            ❝ <strong>good omens,</strong>
+            <em>terry pratchett &amp; neil gaiman</em> ♪
+          </li>
+          <li>
+            ❝ <strong>the screenwriting bible,</strong> <em>david trottier</em>
+          </li>
           <li>❝ 4 short stories</li>
           <li>❝ a raisin in the sun, <em>lorraine hansberry</em></li>
           <li>❝ daisy miller, <em>henry james</em> ♪</li>
           <li>❝ passing, <em>nella larsen</em> ♪</li>
           <li>❝ petals on the wind (dollanganger #2), <em>v.c. andrews</em></li>
           <li>❝ the glass menagerie, <em>tennessee williams</em></li>
-          <li>❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em></li>
+          <li>
+            ❝ the rise and fall of the dinosaurs, <em>stephen brusatte</em>
+          </li>
           <li>ϟ <strong>new pokémon snap</strong></li>
           <li>ϟ dragon cave</li>
           <li>ϟ legend of zelda: breath of the wild ↺</li>
@@ -783,10 +1137,21 @@ nesting: "../"
           <li>⋆ the stag ↺</li>
           <li>⋆ we need to talk about kevin</li>
           <li>⋆ willy wonka &amp; the chocolate factory</li>
-          <li>❝ <strong>good omens,</strong> <em>terry pratchett &amp; neil gaiman</em> ♪</li>
-          <li>❝ <strong>petals on the wind</strong> (dollanganger #2), <em>v.c. andrews</em></li>
-          <li>❝ <strong>the song of achilles,</strong> <em>madeline miller</em> ♪</li>
-          <li>❝ <strong>twenty thousand leagues under the sea,</strong> <em>jules verne</em></li>
+          <li>
+            ❝ <strong>good omens,</strong>
+            <em>terry pratchett &amp; neil gaiman</em> ♪
+          </li>
+          <li>
+            ❝ <strong>petals on the wind</strong> (dollanganger #2),
+            <em>v.c. andrews</em>
+          </li>
+          <li>
+            ❝ <strong>the song of achilles,</strong> <em>madeline miller</em> ♪
+          </li>
+          <li>
+            ❝ <strong>twenty thousand leagues under the sea,</strong>
+            <em>jules verne</em>
+          </li>
           <li>❝ alice's adventures in wonderland, <em>lewis carroll</em></li>
           <li>❝ around the world in eighty days, <em>jules verne</em></li>
           <li>❝ dr. jekyll and mr. hyde, <em>robert louis stevenson</em></li>
@@ -818,7 +1183,9 @@ nesting: "../"
           <li>⋆ the wonderful story of henry sugar <em>(short film)</em></li>
           <li>⋆ watership down</li>
           <li>▫ game grumps: <strong>danganronpa</strong> (36ep)</li>
-          <li>❝ <strong>the song of achilles,</strong> <em>madeline miller</em> ♪</li>
+          <li>
+            ❝ <strong>the song of achilles,</strong> <em>madeline miller</em> ♪
+          </li>
           <li>❝ <strong>watership down,</strong> <em>richard adams</em></li>
           <li>❝ around the world in eighty days, <em>jules verne</em></li>
           <li>❝ journey to the center of the earth, <em>jules verne</em></li>
@@ -850,13 +1217,19 @@ nesting: "../"
           <li>⋆ the witch</li>
           <li>▫ game grumps: <strong>danganronpa 1</strong> (37ep)</li>
           <li>▫ game grumps: <strong>danganronpa 2</strong> (19ep)</li>
-          <li>❝ <strong>sex at dawn,</strong> <em>christophern ryan and cacilda jethá</em></li>
+          <li>
+            ❝ <strong>sex at dawn,</strong>
+            <em>christophern ryan and cacilda jethá</em>
+          </li>
           <li>❝ <strong>watership down,</strong> <em>richard adams</em></li>
           <li>❝ interview with the vampire, <em>anne rice</em> (♪)</li>
           <li>❝ jane eyre, <em>charlotte brontë</em></li>
           <li>❝ romeo and juliet, <em>william shakespeare</em> ♪</li>
           <li>❝ scary stories to tell in the dark, <em>alvin schwartz</em></li>
-          <li>❝ things have gotten worse since we last spoke, <em>eric larocca</em></li>
+          <li>
+            ❝ things have gotten worse since we last spoke,
+            <em>eric larocca</em>
+          </li>
           <li>ϟ hide and shriek ↺</li>
           <li>ϟ hunie cam studio ↺</li>
           <li>ϟ tetris 99 ↺</li>
@@ -917,10 +1290,34 @@ nesting: "../"
         </ul>
         <p>‍ ‍ ‍ ‍ ‍</p>
         <p>
-          ↪ <a href="https://listography.com/petra1999/2020/media" target="_blank" rel="nofollow">2020</a> |
-          <a href="https://listography.com/petra1999/2021/media" target="_blank" rel="nofollow">2021</a> |
-          <a href="https://listography.com/petra1999/2022/media" target="_blank" rel="nofollow">2022</a> | <strong>2023</strong> |
-          <a href="https://listography.com/petra1999/2024/media" target="_blank" rel="nofollow">2024</a>
+          ↪
+          <a
+            href="https://listography.com/petra1999/2020/media"
+            target="_blank"
+            rel="nofollow"
+            >2020</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2021/media"
+            target="_blank"
+            rel="nofollow"
+            >2021</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2022/media"
+            target="_blank"
+            rel="nofollow"
+            >2022</a
+          >
+          | <strong>2023</strong> |
+          <a
+            href="https://listography.com/petra1999/2024/media"
+            target="_blank"
+            rel="nofollow"
+            >2024</a
+          >
         </p>
       </div>
       <!-- text div -->
@@ -931,7 +1328,17 @@ nesting: "../"
         <button
           class="copy-permalink-btn"
           title="https://listography.com/action/list?uid=0440224482&amp;lid=7108017965"
-          style="background: none; border: none; font-size: 1em; color: inherit; font-weight: bold; display: block; padding: 0; cursor: pointer">
+          style="
+            background: none;
+            border: none;
+            font-size: 1em;
+            color: inherit;
+            font-weight: bold;
+            display: block;
+            padding: 0;
+            cursor: pointer;
+          "
+        >
           copy link
         </button>
       </div>
@@ -942,9 +1349,27 @@ nesting: "../"
     <div class="listbox-content">
       <div class="text_content font_Times">
         <p>
-          ↪ <a href="https://listography.com/petra1999/2022/%E2%89%A1" target="_blank" rel="nofollow">2022</a> |
-          <a href="https://listography.com/petra1999/2022/diary" target="_blank" rel="nofollow">diary</a> | <strong>media</strong> ‍|
-          <a href="https://listography.com/petra1999/2022/resolutions" target="_blank" rel="nofollow">resolutions</a>
+          ↪
+          <a
+            href="https://listography.com/petra1999/2022/%E2%89%A1"
+            target="_blank"
+            rel="nofollow"
+            >2022</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2022/diary"
+            target="_blank"
+            rel="nofollow"
+            >diary</a
+          >
+          | <strong>media</strong> ‍|
+          <a
+            href="https://listography.com/petra1999/2022/resolutions"
+            target="_blank"
+            rel="nofollow"
+            >resolutions</a
+          >
         </p>
 
         <ul>
@@ -952,18 +1377,76 @@ nesting: "../"
             <strong>∷</strong> ᴋᴇʏ
             <ul>
               <li>
-                ↺ <a href="https://listography.com/petra1999/2021/media" target="_blank" rel="nofollow">re-</a> | ⧖
-                <a href="https://listography.com/petra1999/media/podcasts" target="_blank" rel="nofollow">podcast</a> | ❝
-                <a href="https://listography.com/petra1999/books/read" target="_blank" rel="nofollow">book</a> .. (♪
-                <a href="https://listography.com/petra1999/books/audiobooks" target="_blank" rel="nofollow">audiobook</a>) | ▫
-                <a href="https://listography.com/petra1999/index?v=a&amp;cat=media" target="_blank" rel="nofollow">youtube</a>
+                ↺
+                <a
+                  href="https://listography.com/petra1999/2021/media"
+                  target="_blank"
+                  rel="nofollow"
+                  >re-</a
+                >
+                | ⧖
+                <a
+                  href="https://listography.com/petra1999/media/podcasts"
+                  target="_blank"
+                  rel="nofollow"
+                  >podcast</a
+                >
+                | ❝
+                <a
+                  href="https://listography.com/petra1999/books/read"
+                  target="_blank"
+                  rel="nofollow"
+                  >book</a
+                >
+                .. (♪
+                <a
+                  href="https://listography.com/petra1999/books/audiobooks"
+                  target="_blank"
+                  rel="nofollow"
+                  >audiobook</a
+                >) | ▫
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=media"
+                  target="_blank"
+                  rel="nofollow"
+                  >youtube</a
+                >
               </li>
               <li>
-                ∷ <a href="https://listography.com/petra1999/tv/watched" target="_blank" rel="nofollow">tv</a> | ⋆
-                <a href="https://letterboxd.com/petra1999/films/diary/for/2022/" target="_blank" rel="nofollow">movie</a> .. (ﾐ
-                <a href="https://listography.com/petra1999/movies/seen_in_cinema" target="_blank" rel="nofollow">cinema</a>) | ϟ
-                <a href="https://listography.com/petra1999/index?v=a&amp;cat=games" target="_blank" rel="nofollow">game</a> | ๑
-                <a href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ" target="_blank" rel="nofollow">music</a>
+                ∷
+                <a
+                  href="https://listography.com/petra1999/tv/watched"
+                  target="_blank"
+                  rel="nofollow"
+                  >tv</a
+                >
+                | ⋆
+                <a
+                  href="https://letterboxd.com/petra1999/films/diary/for/2022/"
+                  target="_blank"
+                  rel="nofollow"
+                  >movie</a
+                >
+                .. (ﾐ
+                <a
+                  href="https://listography.com/petra1999/movies/seen_in_cinema"
+                  target="_blank"
+                  rel="nofollow"
+                  >cinema</a
+                >) | ϟ
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=games"
+                  target="_blank"
+                  rel="nofollow"
+                  >game</a
+                >
+                | ๑
+                <a
+                  href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ"
+                  target="_blank"
+                  rel="nofollow"
+                  >music</a
+                >
               </li>
             </ul>
           </li>
@@ -1172,11 +1655,40 @@ nesting: "../"
         </ul>
         <p>‍ ‍ ‍ ‍ ‍</p>
         <p>
-          ↪ ‍<a href="https://listography.com/petra1999/2018/media" target="_blank" rel="nofollow">2018</a> |
-          <a href="https://listography.com/petra1999/2019/media" target="_blank" rel="nofollow">2019</a> |
-          <a href="https://listography.com/petra1999/2020/media" target="_blank" rel="nofollow">2020</a> |
-          <a href="https://listography.com/petra1999/2021/media" target="_blank" rel="nofollow">2021</a> | <strong>2022</strong> |
-          <a href="https://listography.com/petra1999/2023/media" target="_blank" rel="nofollow">2023</a>
+          ↪ ‍<a
+            href="https://listography.com/petra1999/2018/media"
+            target="_blank"
+            rel="nofollow"
+            >2018</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2019/media"
+            target="_blank"
+            rel="nofollow"
+            >2019</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2020/media"
+            target="_blank"
+            rel="nofollow"
+            >2020</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2021/media"
+            target="_blank"
+            rel="nofollow"
+            >2021</a
+          >
+          | <strong>2022</strong> |
+          <a
+            href="https://listography.com/petra1999/2023/media"
+            target="_blank"
+            rel="nofollow"
+            >2023</a
+          >
         </p>
       </div>
       <!-- text div -->
@@ -1187,7 +1699,17 @@ nesting: "../"
         <button
           class="copy-permalink-btn"
           title="https://listography.com/action/list?uid=0440224482&amp;lid=6328514684"
-          style="background: none; border: none; font-size: 1em; color: inherit; font-weight: bold; display: block; padding: 0; cursor: pointer">
+          style="
+            background: none;
+            border: none;
+            font-size: 1em;
+            color: inherit;
+            font-weight: bold;
+            display: block;
+            padding: 0;
+            cursor: pointer;
+          "
+        >
           copy link
         </button>
       </div>
@@ -1198,29 +1720,119 @@ nesting: "../"
     <div class="listbox-content">
       <div class="text_content font_Times">
         <p>
-          ↪ <a href="https://listography.com/petra1999/2021/%E2%89%A1" target="_blank" rel="nofollow">2021</a> |
-          <a href="https://listography.com/petra1999/2021/diary" target="_blank" rel="nofollow">diary</a> | <strong>media</strong> ‍|
-          <a href="https://listography.com/petra1999/2021/resolutions" target="_blank" rel="nofollow">resolutions</a>
+          ↪
+          <a
+            href="https://listography.com/petra1999/2021/%E2%89%A1"
+            target="_blank"
+            rel="nofollow"
+            >2021</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2021/diary"
+            target="_blank"
+            rel="nofollow"
+            >diary</a
+          >
+          | <strong>media</strong> ‍|
+          <a
+            href="https://listography.com/petra1999/2021/resolutions"
+            target="_blank"
+            rel="nofollow"
+            >resolutions</a
+          >
         </p>
 
         <ul>
           <li>
             <strong>∷</strong> ᴋᴇʏ
             <ul>
-              <li>↺ <a href="https://listography.com/petra1999/2020/media" target="_blank" rel="nofollow">re-</a></li>
-              <li>∷ <a href="https://listography.com/petra1999/tv/watched" target="_blank" rel="nofollow">tv</a></li>
               <li>
-                ⋆ <a href="https://letterboxd.com/petra1999/films/diary/for/2021/" target="_blank" rel="nofollow">movie</a> .. (ﾐ
-                <a href="https://listography.com/petra1999/movies/seen_in_cinema" target="_blank" rel="nofollow">cinema</a>)
+                ↺
+                <a
+                  href="https://listography.com/petra1999/2020/media"
+                  target="_blank"
+                  rel="nofollow"
+                  >re-</a
+                >
               </li>
-              <li>▫ <a href="https://listography.com/petra1999/index?v=a&amp;cat=media" target="_blank" rel="nofollow">youtube</a></li>
               <li>
-                ❝ <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank" rel="nofollow">book</a> .. (♪
-                <a href="https://listography.com/petra1999/books/audiobooks" target="_blank" rel="nofollow">audiobook</a>)
+                ∷
+                <a
+                  href="https://listography.com/petra1999/tv/watched"
+                  target="_blank"
+                  rel="nofollow"
+                  >tv</a
+                >
               </li>
-              <li>⧖ <a href="https://listography.com/petra1999/media/podcasts" target="_blank" rel="nofollow">podcast</a></li>
-              <li>๑ <a href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ" target="_blank" rel="nofollow">music</a></li>
-              <li>ϟ <a href="https://listography.com/petra1999/index?v=a&amp;cat=games" target="_blank" rel="nofollow">game</a></li>
+              <li>
+                ⋆
+                <a
+                  href="https://letterboxd.com/petra1999/films/diary/for/2021/"
+                  target="_blank"
+                  rel="nofollow"
+                  >movie</a
+                >
+                .. (ﾐ
+                <a
+                  href="https://listography.com/petra1999/movies/seen_in_cinema"
+                  target="_blank"
+                  rel="nofollow"
+                  >cinema</a
+                >)
+              </li>
+              <li>
+                ▫
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=media"
+                  target="_blank"
+                  rel="nofollow"
+                  >youtube</a
+                >
+              </li>
+              <li>
+                ❝
+                <a
+                  href="https://www.goodreads.com/user/show/62158941-petra"
+                  target="_blank"
+                  rel="nofollow"
+                  >book</a
+                >
+                .. (♪
+                <a
+                  href="https://listography.com/petra1999/books/audiobooks"
+                  target="_blank"
+                  rel="nofollow"
+                  >audiobook</a
+                >)
+              </li>
+              <li>
+                ⧖
+                <a
+                  href="https://listography.com/petra1999/media/podcasts"
+                  target="_blank"
+                  rel="nofollow"
+                  >podcast</a
+                >
+              </li>
+              <li>
+                ๑
+                <a
+                  href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ"
+                  target="_blank"
+                  rel="nofollow"
+                  >music</a
+                >
+              </li>
+              <li>
+                ϟ
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=games"
+                  target="_blank"
+                  rel="nofollow"
+                  >game</a
+                >
+              </li>
             </ul>
           </li>
         </ul>
@@ -1299,7 +1911,9 @@ nesting: "../"
           <li>⋆ the lion king (2019)</li>
 
           <li>▫ good mythical morning</li>
-          <li>❝ simon vs the homo sapiens agenda, <em>becky albertalli</em> ♪</li>
+          <li>
+            ❝ simon vs the homo sapiens agenda, <em>becky albertalli</em> ♪
+          </li>
           <li>❝ tschick, <em>wolfgang herrndorf</em> ♪</li>
         </ul>
         <p>— <em>jul.</em></p>
@@ -1329,7 +1943,9 @@ nesting: "../"
           <li>⋆ soul</li>
 
           <li>▫ kurtis conner ↺</li>
-          <li>❝ <strong>the anthropocene reviewed,</strong> <em>john green</em> ♪</li>
+          <li>
+            ❝ <strong>the anthropocene reviewed,</strong> <em>john green</em> ♪
+          </li>
           <li>⧖ very really good (kurtis conner)</li>
         </ul>
         <p>— <em>sept.</em></p>
@@ -1396,11 +2012,40 @@ nesting: "../"
         </ul>
         <p>‍ ‍ ‍ ‍ ‍</p>
         <p>
-          ↪ ‍<a href="https://listography.com/petra1999/2018/media" target="_blank" rel="nofollow">2018</a> |
-          <a href="https://listography.com/petra1999/2019/media" target="_blank" rel="nofollow">2019</a> |
-          <a href="https://listography.com/petra1999/2020/media" target="_blank" rel="nofollow">2020</a> | <strong>2021</strong> |
-          <a href="https://listography.com/petra1999/2022/media" target="_blank" rel="nofollow">2022</a> |
-          <a href="https://listography.com/petra1999/2023/media" target="_blank" rel="nofollow">2023</a>
+          ↪ ‍<a
+            href="https://listography.com/petra1999/2018/media"
+            target="_blank"
+            rel="nofollow"
+            >2018</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2019/media"
+            target="_blank"
+            rel="nofollow"
+            >2019</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2020/media"
+            target="_blank"
+            rel="nofollow"
+            >2020</a
+          >
+          | <strong>2021</strong> |
+          <a
+            href="https://listography.com/petra1999/2022/media"
+            target="_blank"
+            rel="nofollow"
+            >2022</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2023/media"
+            target="_blank"
+            rel="nofollow"
+            >2023</a
+          >
         </p>
       </div>
       <!-- text div -->
@@ -1411,7 +2056,17 @@ nesting: "../"
         <button
           class="copy-permalink-btn"
           title="https://listography.com/action/list?uid=0440224482&amp;lid=8359317158"
-          style="background: none; border: none; font-size: 1em; color: inherit; font-weight: bold; display: block; padding: 0; cursor: pointer">
+          style="
+            background: none;
+            border: none;
+            font-size: 1em;
+            color: inherit;
+            font-weight: bold;
+            display: block;
+            padding: 0;
+            cursor: pointer;
+          "
+        >
           copy link
         </button>
       </div>
@@ -1422,29 +2077,119 @@ nesting: "../"
     <div class="listbox-content">
       <div class="text_content font_Times">
         <p>
-          ↪ <a href="https://listography.com/petra1999/2020/%E2%89%A1" target="_blank" rel="nofollow">2020</a> |
-          <a href="https://listography.com/petra1999/2020/diary" target="_blank" rel="nofollow">diary</a> | <strong>media</strong> ‍|
-          <a href="https://listography.com/petra1999/2020/resolutions" target="_blank" rel="nofollow">resolutions</a>
+          ↪
+          <a
+            href="https://listography.com/petra1999/2020/%E2%89%A1"
+            target="_blank"
+            rel="nofollow"
+            >2020</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2020/diary"
+            target="_blank"
+            rel="nofollow"
+            >diary</a
+          >
+          | <strong>media</strong> ‍|
+          <a
+            href="https://listography.com/petra1999/2020/resolutions"
+            target="_blank"
+            rel="nofollow"
+            >resolutions</a
+          >
         </p>
 
         <ul>
           <li>
             <strong>∷</strong> ᴋᴇʏ
             <ul>
-              <li>↺ <a href="https://listography.com/petra1999/2019/media" target="_blank" rel="nofollow">re-</a></li>
-              <li>∷ <a href="https://listography.com/petra1999/tv/watched" target="_blank" rel="nofollow">tv</a></li>
               <li>
-                ⋆ <a href="https://letterboxd.com/petra1999/films/diary/for/2020/" target="_blank" rel="nofollow">movie</a> .. (ﾐ
-                <a href="https://listography.com/petra1999/movies/seen_in_cinema" target="_blank" rel="nofollow">cinema</a>)
+                ↺
+                <a
+                  href="https://listography.com/petra1999/2019/media"
+                  target="_blank"
+                  rel="nofollow"
+                  >re-</a
+                >
               </li>
-              <li>▫ <a href="https://listography.com/petra1999/index?v=a&amp;cat=media" target="_blank" rel="nofollow">youtube</a></li>
               <li>
-                ❝ <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank" rel="nofollow">book</a> .. (♪
-                <a href="https://listography.com/petra1999/books/audiobooks" target="_blank" rel="nofollow">audiobook</a>)
+                ∷
+                <a
+                  href="https://listography.com/petra1999/tv/watched"
+                  target="_blank"
+                  rel="nofollow"
+                  >tv</a
+                >
               </li>
-              <li>⧖ <a href="https://listography.com/petra1999/media/podcasts" target="_blank" rel="nofollow">podcast</a></li>
-              <li>๑ <a href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ" target="_blank" rel="nofollow">music</a></li>
-              <li>ϟ <a href="https://listography.com/petra1999/index?v=a&amp;cat=games" target="_blank" rel="nofollow">game</a></li>
+              <li>
+                ⋆
+                <a
+                  href="https://letterboxd.com/petra1999/films/diary/for/2020/"
+                  target="_blank"
+                  rel="nofollow"
+                  >movie</a
+                >
+                .. (ﾐ
+                <a
+                  href="https://listography.com/petra1999/movies/seen_in_cinema"
+                  target="_blank"
+                  rel="nofollow"
+                  >cinema</a
+                >)
+              </li>
+              <li>
+                ▫
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=media"
+                  target="_blank"
+                  rel="nofollow"
+                  >youtube</a
+                >
+              </li>
+              <li>
+                ❝
+                <a
+                  href="https://www.goodreads.com/user/show/62158941-petra"
+                  target="_blank"
+                  rel="nofollow"
+                  >book</a
+                >
+                .. (♪
+                <a
+                  href="https://listography.com/petra1999/books/audiobooks"
+                  target="_blank"
+                  rel="nofollow"
+                  >audiobook</a
+                >)
+              </li>
+              <li>
+                ⧖
+                <a
+                  href="https://listography.com/petra1999/media/podcasts"
+                  target="_blank"
+                  rel="nofollow"
+                  >podcast</a
+                >
+              </li>
+              <li>
+                ๑
+                <a
+                  href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ"
+                  target="_blank"
+                  rel="nofollow"
+                  >music</a
+                >
+              </li>
+              <li>
+                ϟ
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=games"
+                  target="_blank"
+                  rel="nofollow"
+                  >game</a
+                >
+              </li>
             </ul>
           </li>
         </ul>
@@ -1461,7 +2206,10 @@ nesting: "../"
           <li>⋆ zodiac</li>
           <li>▫ danny gonzalez</li>
           <li>▫ mental_floss</li>
-          <li>❝ <strong>a brief history in time,</strong> <em>stephen hawking</em> ♪</li>
+          <li>
+            ❝ <strong>a brief history in time,</strong>
+            <em>stephen hawking</em> ♪
+          </li>
           <li>❝ the lost causes of bleak creek, <em>rhett and link</em> ♪</li>
           <li>ϟ slime rancher</li>
         </ul>
@@ -1473,7 +2221,9 @@ nesting: "../"
           <li>⋆ pokemon: mewtwo strikes back: evolution</li>
           <li>▫ <strong>mental_floss</strong></li>
           <li>❝ a brief history in time, <em>stephen hawking</em> ♪</li>
-          <li>❝ brief answers to to the big questions, <em>stephen hawking</em> ♪</li>
+          <li>
+            ❝ brief answers to to the big questions, <em>stephen hawking</em> ♪
+          </li>
         </ul>
         <p>— <em>mar.</em></p>
 
@@ -1520,7 +2270,10 @@ nesting: "../"
           <li>∷ <strong>star trek</strong> tos (s1-2) ♡</li>
           <li>∷ elite (s3) ↺</li>
           <li>▫ good mythical morning</li>
-          <li>❝ star trek psychology: the mental frontier, <em>travis langley</em> ♪</li>
+          <li>
+            ❝ star trek psychology: the mental frontier,
+            <em>travis langley</em> ♪
+          </li>
           <li>ϟ animal crossing: new horizons</li>
         </ul>
         <p>— <em>jul.</em></p>
@@ -1537,8 +2290,13 @@ nesting: "../"
           <li>▫ karolina żebrowska</li>
           <li>▫ kurtis conner</li>
           <li>▫ tom scott</li>
-          <li>❝ star trek psychology: the mental frontier, <em>travis langley</em> ♪</li>
-          <li>❝ star trek: legacies: 1: captain to captain, <em>greg cox</em> ♪</li>
+          <li>
+            ❝ star trek psychology: the mental frontier,
+            <em>travis langley</em> ♪
+          </li>
+          <li>
+            ❝ star trek: legacies: 1: captain to captain, <em>greg cox</em> ♪
+          </li>
           <li>❝ star trek: legacies: 2: best defense, <em>greg cox</em> ♪</li>
         </ul>
         <p>— <em>aug.</em></p>
@@ -1614,11 +2372,40 @@ nesting: "../"
         </ul>
         <p>‍ ‍ ‍ ‍ ‍</p>
         <p>
-          ↪ ‍<a href="https://listography.com/petra1999/2018/media" target="_blank" rel="nofollow">2018</a> |
-          <a href="https://listography.com/petra1999/2019/media" target="_blank" rel="nofollow">2019</a> | <strong>2020</strong> |
-          <a href="https://listography.com/petra1999/2021/media" target="_blank" rel="nofollow">2021</a> |
-          <a href="https://listography.com/petra1999/2022/media" target="_blank" rel="nofollow">2022</a> |
-          <a href="https://listography.com/petra1999/2023/media" target="_blank" rel="nofollow">2023</a>
+          ↪ ‍<a
+            href="https://listography.com/petra1999/2018/media"
+            target="_blank"
+            rel="nofollow"
+            >2018</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2019/media"
+            target="_blank"
+            rel="nofollow"
+            >2019</a
+          >
+          | <strong>2020</strong> |
+          <a
+            href="https://listography.com/petra1999/2021/media"
+            target="_blank"
+            rel="nofollow"
+            >2021</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2022/media"
+            target="_blank"
+            rel="nofollow"
+            >2022</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2023/media"
+            target="_blank"
+            rel="nofollow"
+            >2023</a
+          >
         </p>
       </div>
       <!-- text div -->
@@ -1629,7 +2416,17 @@ nesting: "../"
         <button
           class="copy-permalink-btn"
           title="https://listography.com/action/list?uid=0440224482&amp;lid=6362417851"
-          style="background: none; border: none; font-size: 1em; color: inherit; font-weight: bold; display: block; padding: 0; cursor: pointer">
+          style="
+            background: none;
+            border: none;
+            font-size: 1em;
+            color: inherit;
+            font-weight: bold;
+            display: block;
+            padding: 0;
+            cursor: pointer;
+          "
+        >
           copy link
         </button>
       </div>
@@ -1639,28 +2436,110 @@ nesting: "../"
   <div data-year="2019">
     <div class="text_content font_Times">
       <p>
-        ↪ <a href="https://listography.com/petra1999/2019/%E2%89%A1" target="_blank" rel="nofollow">2019</a> |
-        <a href="https://listography.com/petra1999/2019/diary" target="_blank" rel="nofollow">diary</a> | <strong>media</strong> ‍|
-        <a href="https://listography.com/petra1999/2019/obsessions" target="_blank" rel="nofollow">obsessions</a>
+        ↪
+        <a
+          href="https://listography.com/petra1999/2019/%E2%89%A1"
+          target="_blank"
+          rel="nofollow"
+          >2019</a
+        >
+        |
+        <a
+          href="https://listography.com/petra1999/2019/diary"
+          target="_blank"
+          rel="nofollow"
+          >diary</a
+        >
+        | <strong>media</strong> ‍|
+        <a
+          href="https://listography.com/petra1999/2019/obsessions"
+          target="_blank"
+          rel="nofollow"
+          >obsessions</a
+        >
       </p>
 
       <ul>
         <li>
           <strong>∷</strong> ᴋᴇʏ
           <ul>
-            <li>↺ <a href="https://listography.com/petra1999/2018/media" target="_blank" rel="nofollow">re-</a></li>
-            <li>∷ <a href="https://listography.com/petra1999/tv/watched" target="_blank" rel="nofollow">tv</a></li>
             <li>
-              ⋆ <a href="https://letterboxd.com/petra1999/films/diary/for/2019/" target="_blank" rel="nofollow">movie</a> .. (ﾐ
-              <a href="https://listography.com/petra1999/movies/seen_in_cinema" target="_blank" rel="nofollow">cinema</a>)
+              ↺
+              <a
+                href="https://listography.com/petra1999/2018/media"
+                target="_blank"
+                rel="nofollow"
+                >re-</a
+              >
             </li>
-            <li>▫ <a href="https://listography.com/petra1999/index?v=a&amp;cat=media" target="_blank" rel="nofollow">youtube</a></li>
             <li>
-              ❝ <a href="https://www.goodreads.com/user/show/62158941-petra" target="_blank" rel="nofollow">book</a> .. (♪
-              <a href="https://listography.com/petra1999/books/audiobooks" target="_blank" rel="nofollow">audiobook</a>)
+              ∷
+              <a
+                href="https://listography.com/petra1999/tv/watched"
+                target="_blank"
+                rel="nofollow"
+                >tv</a
+              >
             </li>
-            <li>๑ <a href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ" target="_blank" rel="nofollow">music</a></li>
-            <li>ϟ <a href="https://listography.com/petra1999/index?v=a&amp;cat=games" target="_blank" rel="nofollow">game</a></li>
+            <li>
+              ⋆
+              <a
+                href="https://letterboxd.com/petra1999/films/diary/for/2019/"
+                target="_blank"
+                rel="nofollow"
+                >movie</a
+              >
+              .. (ﾐ
+              <a
+                href="https://listography.com/petra1999/movies/seen_in_cinema"
+                target="_blank"
+                rel="nofollow"
+                >cinema</a
+              >)
+            </li>
+            <li>
+              ▫
+              <a
+                href="https://listography.com/petra1999/index?v=a&amp;cat=media"
+                target="_blank"
+                rel="nofollow"
+                >youtube</a
+              >
+            </li>
+            <li>
+              ❝
+              <a
+                href="https://www.goodreads.com/user/show/62158941-petra"
+                target="_blank"
+                rel="nofollow"
+                >book</a
+              >
+              .. (♪
+              <a
+                href="https://listography.com/petra1999/books/audiobooks"
+                target="_blank"
+                rel="nofollow"
+                >audiobook</a
+              >)
+            </li>
+            <li>
+              ๑
+              <a
+                href="https://open.spotify.com/user/11123584461?si=X0xOewl_TkKyu5RHBjqAtQ"
+                target="_blank"
+                rel="nofollow"
+                >music</a
+              >
+            </li>
+            <li>
+              ϟ
+              <a
+                href="https://listography.com/petra1999/index?v=a&amp;cat=games"
+                target="_blank"
+                rel="nofollow"
+                >game</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
@@ -1728,7 +2607,9 @@ nesting: "../"
         <li>⋆ four rooms (½)</li>
         <li>⋆ harry potter 1</li>
         <li>⋆ harry potter 2 (½) ↺</li>
-        <li>❝ <strong>game of thrones 1,</strong> <em>george r.r. martin</em> ♪</li>
+        <li>
+          ❝ <strong>game of thrones 1,</strong> <em>george r.r. martin</em> ♪
+        </li>
         <li>❝ harry potter 7 ♪</li>
         <li>ϟ <strong>stardew valley</strong></li>
         <li>ϟ hearthstone</li>
@@ -1742,7 +2623,9 @@ nesting: "../"
         <li>⋆ <strong>pokemon: detective pikachu</strong></li>
         <li>⋆ finding dory (½) ↺</li>
         <li>⋆ finding nemo (½) ↺</li>
-        <li>❝ <strong>game of thrones 1,</strong> <em>george r.r. martin</em> ♪</li>
+        <li>
+          ❝ <strong>game of thrones 1,</strong> <em>george r.r. martin</em> ♪
+        </li>
         <li>❝ <strong>sapiens,</strong> <em>yuval noah harari</em></li>
         <li>ϟ <strong>loz: breath of the wild</strong></li>
       </ul>
@@ -1816,7 +2699,9 @@ nesting: "../"
         <li>⋆ twilight ↺</li>
         <li>❝ jurassic park, <em>michael chrichton</em> ♪</li>
         <li>❝ mythos, <em>stephen fry</em> ♪</li>
-        <li>❝ the restaurant at the end of the universe, <em>douglas adams</em> ♪</li>
+        <li>
+          ❝ the restaurant at the end of the universe, <em>douglas adams</em> ♪
+        </li>
         <li>ϟ <strong>pokémon shield</strong></li>
       </ul>
       <p>— <em>dec.</em></p>
@@ -1842,11 +2727,40 @@ nesting: "../"
       </ul>
       <p>‍ ‍ ‍ ‍ ‍</p>
       <p>
-        ↪ ‍<a href="https://listography.com/petra1999/2018/media" target="_blank" rel="nofollow">2018</a> | <strong>2019</strong> |
-        <a href="https://listography.com/petra1999/2020/media" target="_blank" rel="nofollow">2020</a> |
-        <a href="https://listography.com/petra1999/2021/media" target="_blank" rel="nofollow">2021</a> |
-        <a href="https://listography.com/petra1999/2022/media" target="_blank" rel="nofollow">2022</a> |
-        <a href="https://listography.com/petra1999/2023/media" target="_blank" rel="nofollow">2023</a>
+        ↪ ‍<a
+          href="https://listography.com/petra1999/2018/media"
+          target="_blank"
+          rel="nofollow"
+          >2018</a
+        >
+        | <strong>2019</strong> |
+        <a
+          href="https://listography.com/petra1999/2020/media"
+          target="_blank"
+          rel="nofollow"
+          >2020</a
+        >
+        |
+        <a
+          href="https://listography.com/petra1999/2021/media"
+          target="_blank"
+          rel="nofollow"
+          >2021</a
+        >
+        |
+        <a
+          href="https://listography.com/petra1999/2022/media"
+          target="_blank"
+          rel="nofollow"
+          >2022</a
+        >
+        |
+        <a
+          href="https://listography.com/petra1999/2023/media"
+          target="_blank"
+          rel="nofollow"
+          >2023</a
+        >
       </p>
     </div>
   </div>
@@ -1854,19 +2768,60 @@ nesting: "../"
     <div class="listbox-content">
       <div class="text_content font_Times">
         <p>
-          ↪ <a href="https://listography.com/petra1999/2018/%E2%89%A1" target="_blank" rel="nofollow">2018</a> |
-          <a href="https://listography.com/petra1999/2018/diary" target="_blank" rel="nofollow">diary</a> | <strong>media</strong>
+          ↪
+          <a
+            href="https://listography.com/petra1999/2018/%E2%89%A1"
+            target="_blank"
+            rel="nofollow"
+            >2018</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2018/diary"
+            target="_blank"
+            rel="nofollow"
+            >diary</a
+          >
+          | <strong>media</strong>
         </p>
 
         <ul>
           <li>
             <strong>∷</strong> ᴋᴇʏ
             <ul>
-              <li>↺ <a href="https://listography.com/petra1999/index?v=a&amp;cat=media" target="_blank" rel="nofollow">re-</a></li>
-              <li>∷ <a href="https://listography.com/petra1999/tv/watched" target="_blank" rel="nofollow">tv</a></li>
               <li>
-                ⋆ <a href="https://letterboxd.com/petra1999" target="_blank" rel="nofollow">movie</a> .. (ﾐ
-                <a href="https://listography.com/petra1999/movies/seen_in_cinema" target="_blank" rel="nofollow">cinema</a>)
+                ↺
+                <a
+                  href="https://listography.com/petra1999/index?v=a&amp;cat=media"
+                  target="_blank"
+                  rel="nofollow"
+                  >re-</a
+                >
+              </li>
+              <li>
+                ∷
+                <a
+                  href="https://listography.com/petra1999/tv/watched"
+                  target="_blank"
+                  rel="nofollow"
+                  >tv</a
+                >
+              </li>
+              <li>
+                ⋆
+                <a
+                  href="https://letterboxd.com/petra1999"
+                  target="_blank"
+                  rel="nofollow"
+                  >movie</a
+                >
+                .. (ﾐ
+                <a
+                  href="https://listography.com/petra1999/movies/seen_in_cinema"
+                  target="_blank"
+                  rel="nofollow"
+                  >cinema</a
+                >)
               </li>
             </ul>
           </li>
@@ -1953,11 +2908,41 @@ nesting: "../"
         </ul>
         <p>‍ ‍ ‍ ‍ ‍</p>
         <p>
-          ↪ ‍ <strong>2018</strong> | <a href="https://listography.com/petra1999/2019/media" target="_blank" rel="nofollow">2019</a> |
-          <a href="https://listography.com/petra1999/2020/media" target="_blank" rel="nofollow">2020</a> |
-          <a href="https://listography.com/petra1999/2021/media" target="_blank" rel="nofollow">2021</a> |
-          <a href="https://listography.com/petra1999/2022/media" target="_blank" rel="nofollow">2022</a> |
-          <a href="https://listography.com/petra1999/2023/media" target="_blank" rel="nofollow">2023</a>
+          ↪ ‍ <strong>2018</strong> |
+          <a
+            href="https://listography.com/petra1999/2019/media"
+            target="_blank"
+            rel="nofollow"
+            >2019</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2020/media"
+            target="_blank"
+            rel="nofollow"
+            >2020</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2021/media"
+            target="_blank"
+            rel="nofollow"
+            >2021</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2022/media"
+            target="_blank"
+            rel="nofollow"
+            >2022</a
+          >
+          |
+          <a
+            href="https://listography.com/petra1999/2023/media"
+            target="_blank"
+            rel="nofollow"
+            >2023</a
+          >
         </p>
       </div>
       <!-- text div -->
@@ -1968,7 +2953,17 @@ nesting: "../"
         <button
           class="copy-permalink-btn"
           title="https://listography.com/action/list?uid=0440224482&amp;lid=6746914684"
-          style="background: none; border: none; font-size: 1em; color: inherit; font-weight: bold; display: block; padding: 0; cursor: pointer">
+          style="
+            background: none;
+            border: none;
+            font-size: 1em;
+            color: inherit;
+            font-weight: bold;
+            display: block;
+            padding: 0;
+            cursor: pointer;
+          "
+        >
           copy link
         </button>
       </div>

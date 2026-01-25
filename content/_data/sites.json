@@ -124,7 +124,8 @@
     "title": "cyberstheb",
     "image": "cyberstheb.png",
     "neighbor": true,
-    "inspiration": true
+    "inspiration": true,
+    "winner": true
   },
   {
     "link": "https://thegardenofmadeline.neocities.org/",
@@ -338,7 +339,8 @@
     "title": "SlushieCafe",
     "image": "slushiecafe.gif",
     "neighbor": true,
-    "inspiration": true
+    "inspiration": true,
+    "winner": true
   },
   {
     "link": "https://philia995.neocities.org/",
@@ -416,5 +418,53 @@
     "image": "rainbowcrap.png",
     "neighbor": false,
     "inspiration": false
+  },
+    {
+    "link": "https://thenamelessarchiv3.neocities.org/",
+    "title": "thenamelessarchiv3",
+    "image": "https://file.garden/aNIRkiNjtzNrWers/images/my%20buttons/button2.png",
+    "neighbor": false,
+    "inspiration": true,
+    "winner": true
+  },
+     {
+    "link": "https://avantgoblin.com/",
+    "title": "avantgoblin",
+    "image": "https://avantgoblin.com/site-buttons/neocities/goblin-post.png",
+    "neighbor": false,
+    "inspiration": false,
+    "winner": true
+  },
+     {
+    "link": "https://iloush.neocities.org/main_page",
+    "title": "iloush",
+    "image": "https://cdn.jsdelivr.net/gh/iloush-web/iloush-garden@latest/public/images/button_iloush_garden.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "winner": true
+  },
+   {
+    "link": "https://cloudlandco.com/",
+    "title": "ilcloudlandcooush",
+    "image": "https://cloudlandco.com/assets/imgs/buttons/cloudlandbtn.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "winner": true
+  },
+    {
+    "link": "https://sunnypeach.neocities.org/",
+    "title": "sunnypeach",
+    "image": "sunnypeach.png",
+    "neighbor": false,
+    "inspiration": false,
+    "winner": true
+  },
+   {
+    "link": "https://astersarchive.neocities.org/",
+    "title": "astersarchive",
+    "image": "astersarchive.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "winner": true
   }
 ]

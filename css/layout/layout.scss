@@ -147,7 +147,7 @@
   }
 }
 
-#corner-image {
+.corner-image {
   display: block;
   position: fixed;
   bottom: 10px;
@@ -164,6 +164,11 @@
   &:hover,
   &:focus {
     transform: scale(1.2);
+  }
+
+  &--left {
+    right: auto;
+    left: 10px;
   }
 }
 

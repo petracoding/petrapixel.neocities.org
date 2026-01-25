@@ -11,6 +11,10 @@ class GoogleSpreadSheet {
 }
 
 export function initGoogleSheets() {
+  if (document.querySelector("#commentWidget")) {
+    initCommentWidget();
+  }
+
   const apiKey = "AIzaSyAkeZN8mT_waQBWUMbCy0F68ixe-fRKaOo";
   const gss = new GoogleSpreadSheet(
     "1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc",
@@ -38,7 +42,12 @@ function buildCliqueTable(tableHeadings, tableData) {
     .forEach((td) => {
       // make sure cliques with same name AND link are not added twice
       const key = (td[1] + "|" + td[2]).toLowerCase();
-      if (!keysAlreadyIn.includes(key) && !(td[7] == "fanlisting")) {
+      if (!keysAlreadyIn.includes(key) && !(td[7] == "fanlisting") && td[1]) {
+        const dateStr = td[0].split(" ")[0].split("/");
+        const year = dateStr[2];
+        const month = dateStr[1];
+        const day = dateStr[0];
+
         const clique = {
           nameAndLink: `<a href="${td[2]}" target="_blank">${escapeHtml(cleanUpInput(td[1]))}</a>`,
           description: escapeHtml(cleanUpInput(td[3])),
@@ -46,9 +55,10 @@ function buildCliqueTable(tableHeadings, tableData) {
             td[6] == "Pixel clique"
               ? "[IMAGE]"
               : escapeHtml(cleanUpInput(td[4])),
-          hasMembersList: td[5],
+          hasMembersList: td[5] == "yes" ? true : false,
           inactive: td[7],
           category: td[6],
+          date: year + "/" + month + "/" + day,
         };
 
         const hasImage = isValidHttpUrl(td[8]);
@@ -69,10 +79,10 @@ function buildCliqueTable(tableHeadings, tableData) {
     if (clique.inactive) row.classList.add("inactive");
 
     row.innerHTML = `
-	  <td>${clique.nameAndLink || ""}</td>
+	  <td>${clique.nameAndLink || ""}${clique.hasMembersList ? " <abbr title='has list of members'>≣</abbr>" : ""}</td>
 	  <td>${clique.description || ""}<small>${clique.example || ""}</small></td>
 	  <td>${clique.category || ""}</td>
-	  <td>${clique.hasMembersList || ""}</td>
+	  <td>${clique.date || ""}</td>
 	  `;
 
     tableBody.appendChild(row);
@@ -192,54 +202,155 @@ const commentWidgetSettings = {
     {
       id: "1481026605",
       label: "Name",
-      placeholder: "",
+      placeholder: "Your name...",
       type: "input",
+      required: true,
     },
     {
       id: "528195876",
       label: "Website URL",
-      placeholder: "",
+      placeholder: "Your website...",
       type: "url",
     },
     {
       id: "197515224",
       label: "Text",
-      placeholder: "",
+      placeholder: "Your message...",
       type: "textarea",
+      required: true,
+    },
+    /*
+    {
+      id: "123TODO4560",
+      label: "Number",
+      type: "number",
     },
     {
-      id: "TODO",
+      id: "123TODO4561",
       label: "Checkbox",
-      placeholder: "",
       type: "checkbox",
     },
     {
-      id: "TODO",
+      id: "123TODO4562",
       label: "Radio Button",
-      placeholder: "",
       type: "radio",
       options: ["option1", "option2", "option3"],
     },
     {
-      id: "TODO",
+      id: "123TODO4563",
       label: "Select Box",
-      placeholder: "",
       type: "select",
       options: ["option1", "option2", "option3"],
     },
+    {
+      id: "123TODO4564",
+      label: "Replying to",
+      type: "hidden",
+      value: "test",
+    },
+    */
   ],
 };
 
+function initCommentWidget() {
+  buildCommentWidgetForm(commentWidgetSettings);
+}
+
 function buildCommentWidgetForm(settings) {
   const wrapper = document.querySelector("#commentWidget");
+  console.log(wrapper);
   if (!wrapper) return;
 
-  let inputs = ``;
+  let inputsHTML = ``;
+  let i = 1;
 
-  settings.inputs.forEach((i) => {
-    inputs += ``;
+  settings.inputs.forEach((input) => {
+    inputsHTML += `<div>`;
+
+    if (input.type !== "hidden") {
+      inputsHTML += `<label for="entry.${input.id}">${input.label}${input.required ? "*" : ""}</label>`;
+    }
+
+    switch (input.type) {
+      //
+      case "radio":
+        let isFirst = true;
+        input.options.forEach((option) => {
+          inputsHTML += `<label><input
+      name="entry.${input.id}"
+      id="entry.${input.id}"
+      type="${input.type}"
+      value="${option}"
+      ${isFirst ? `selected="selected"` : ""}
+    />${option}</label>`;
+          isFirst = false;
+        });
+        break;
+
+      //
+
+      case "checkbox":
+        inputsHTML += `<input
+      name="entry.${input.id}"
+      id="entry.${input.id}"
+      type="${input.type}"
+      ${input.required ? 'required="required"' : ""}
+      ${input.value ? 'checked="checked"' : ""}
+    />`;
+        break;
+
+      //
+
+      case "select":
+        inputsHTML += `<select
+        name="entry.${input.id}"
+        id="entry.${input.id}"
+        >`;
+        input.options.forEach((option) => {
+          inputsHTML += `<option value="${option}">${option}</option>`;
+        });
+        inputsHTML += `</select>`;
+        break;
+
+      case "textarea":
+        inputsHTML += `<br /><textarea
+      name="entry.${input.id}"
+      id="entry.${input.id}"
+      type="${input.type}"
+      maxlength="20000"
+      ${input.placeholder ? "placeholder='" + input.placeholder + "'" : ""}
+      ${input.required ? 'required="required"' : ""}
+    >${input.value ? input.value : ""}</textarea>`;
+        break;
+
+      //
+      default:
+        inputsHTML += `<input
+      name="entry.${input.id}"
+      id="entry.${input.id}"
+      type="${input.type}"
+      maxlength=""
+      ${input.placeholder ? "placeholder='" + input.placeholder + "'" : ""}
+      ${input.value ? "value='" + input.value + "'" : ""}
+      ${input.required ? 'required="required"' : ""}
+    />`;
+    }
+    inputsHTML += `</div>`;
+    i++;
   });
 
   wrapper.innerHTML = `
+<form method="post" action="https://docs.google.com/forms/d/e/${settings.formId}/formResponse" target="commentWidgetDummy">
+  ${inputsHTML}
+  <input type="submit" value="${settings.submitLabel}" />
+  <iframe name="commentWidgetDummy" style="display: none"></iframe>
+</form>
   `;
+
+  const formEl = wrapper.querySelector("form");
+  if (!formEl) return;
+
+  formEl.addEventListener("submit", (event) => {
+    formEl.querySelector('input[type="submit"]').disabled = true;
+  });
 }
