@@ -1,0 +1,136 @@
+---
+layout: petrapixel.njk
+title: "how to save space on your device"
+description: "A tutorial on how you can save or free up storage space on your device by compressing files. Neocities."
+nesting: "../"
+tipType: "tutorial"
+---
+
+<section>
+  <h1>Compression Tutorial</h1>
+  <p>Compressing files is a great way to save storage space on your device.</p>
+  <p>
+    By following this guide you can saving many GBs of space without deleting a
+    single thing!
+  </p>
+
+  <blockquote class="warning">
+    <p>
+      I highly recommend backing up your files before going through this
+      tutorial. <a href="/resources/backup-tutorial">Here's how.</a>
+    </p>
+  </blockquote>
+
+  <blockquote class="tip">
+    <strong>Tip:</strong> To find out which folders on your PC use the most
+    space you can use the free software
+    <a
+      href="https://www.jam-software.de/treesize_free"
+      target="_blank"
+      rel="nofollow"
+      >TreeSize Free</a
+    >. It's very simple to use.
+  </blockquote>
+</section>
+
+<section>
+  <h2>Compressing Images</h2>
+  <ol>
+    <li>
+      Download and install the free software
+      <a href="https://saerasoft.com/caesium/" target="_blank">Caesium</a>.
+      (They also have an
+      <a href="https://caesium.app/" target="_blank">online image compressor</a>
+      by the way, but we won't be using this.)
+    </li>
+    <li>
+      Open Caesium and click the settings icon to open your preferences. There,
+      make sure "Import files in subfolders when opening a directory" is
+      checked.
+    </li>
+    <li>
+      Add the files/folders you want to compress (e.g. your "Photos" folder) by
+      using the green buttons.
+    </li>
+    <li>
+      Change the compression settings (on the right side) to whatever you like.
+      The Default quality settings are absolutely fine.
+    </li>
+    <li>
+      In the "Output" settings, make sure to check the following settings so
+      that the compressed images automatically replace the original ones:
+
+      <ul>
+        <li>Same folder as input</li>
+        <li>Keep folder structure</li>
+        <li>Skip if output size is bigger than the original</li>
+        <li>Keep file dates</li>
+      </ul>
+      <img
+        src="../assets/img/etc/caesium.png"
+        alt="A screenshot of the software."
+      />
+    </li>
+    <li>
+      Click the "Compress" button and wait. This might take a few minutes or
+      even hours, depending on how many files you're compressing.
+    </li>
+    <li>Done! It will now show you how much space you've saved.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Compressing Videos</h2>
+  <p>
+    If you have many or large video files it can save a lot of space to compress
+    these too. We need a different program for that.
+  </p>
+  <ol>
+    <li>
+      Download and install the free software
+      <a href="https://handbrake.fr/" target="_blank">HandBrake</a>.
+    </li>
+    <li>Open HandBrake and select your video files / folders.</li>
+    <li>
+      Open the settings by clicking "Tools" in the menu and selecting
+      "Preferences". Here, switch to the "Output Files" tab and change the
+      following settings:
+      <ul>
+        <li>Automatically name output files: yes</li>
+        <li>Default Path: <code>{source_path}/compressed</code></li>
+        <li>File Format: <code>{source}</code></li>
+      </ul>
+    </li>
+    <li>Close the preferences window.</li>
+    <li>
+      For the rendering settings, select these:
+      <ul>
+        <li>(Summary tab:) <b>Format: MP4</b></li>
+        <li>
+          (Video tab:) <b>Video Encoder: H.26<u>5</u></b> (NOT H.26<u>4</u>!)
+        </li>
+        <li>Leave everything else as-is.</li>
+      </ul>
+    </li>
+    <li>
+      You can save these settings as a new present, name it "Save file size" or
+      something like that. Make sure it's the selected preset.
+    </li>
+    <li>
+      Click the little arrow next to the "Add to Queue" button and select "Add
+      All" to add all your selected videos to the rendering queue.
+    </li>
+    <li>
+      Start the rendering process by clicking the "Start Encode" button. You can
+      view progress details if you click the "Queue" button to view the queue.
+    </li>
+    <li>
+      Now wait! It'll take a while, maybe several hours, depending on how many
+      videos you are rendering and how large they are. If you want to, you can
+      select something to do "When Done", this way you can make your PC
+      automatically shutdown when the rendering is finished.
+    </li>
+  </ol>
+</section>
+
+{% include 'tip-me.njk' %}

@@ -248,7 +248,7 @@
   },
   {
     "label": "Resources",
-    "new": false,
+    "new": true,
     "items": [
       {
         "link": "/resources/bookmarks",
@@ -291,7 +291,14 @@
         "label": "how to backup files",
         "new": false,
         "hide": false
-      }, {
+      }, 
+        {
+        "link": "/resources/compression-tutorial",
+        "label": "how to compress files",
+        "new": true,
+        "hide": false
+      }, 
+      {
         "link": "/creations/coding",
         "label": "my userscripts & tools",
         "new": false,

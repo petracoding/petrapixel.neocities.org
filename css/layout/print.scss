@@ -1,0 +1,35 @@
+@media print {
+  body {
+    min-height: 0 !important;
+    background: none !important;
+    color: black;
+  }
+
+  header,
+  aside,
+  footer,
+  [aria-hidden="true"],
+  .buy-me-a-coffee,
+  #c_widget,
+  .coding-navigation {
+    display: none !important;
+  }
+
+  #content {
+    display: block !important;
+  }
+
+  #content,
+  #main {
+    width: 100% !important;
+  }
+
+  #main {
+    padding: 0 !important;
+  }
+
+  main,
+  main section {
+    background: none !important;
+  }
+}
