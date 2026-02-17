@@ -212,7 +212,7 @@
         "link": "/cliques",
         "label": "cliques",
         "new": false,
-        "hide": false
+        "hide": true
       },
       {
         "link": "/fun/polls",

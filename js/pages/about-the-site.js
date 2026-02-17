@@ -10,7 +10,7 @@ export function initWebsiteAgeCounter() {
   days = days - years * 365;
   let output = "";
   if (years > 0) {
-    output = "(" + years + " year and " + days + " days ago) ";
+    output = "(" + years + " years and " + days + " days ago) ";
   } else {
     output = "(" + days + " days ago) ";
   }

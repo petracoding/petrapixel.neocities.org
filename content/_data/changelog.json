@@ -1,5 +1,6 @@
 [
   { "date": "2026-02-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2026-02-17", "text": "Updated the cats page a bit. More updates soon!", "link": "/about/cats" },
   { "date": "2026-02-05", "text": "New personality quiz", "link": "/fun/quizzes" },
   { "date": "2026-01-31", "text": "File compression tutorial is up!", "link": "/resources/compression-tutorial" },
   { "date": "2026-01-25", "text": "Improvements to clique list", "link": "/coding/cliques"},
