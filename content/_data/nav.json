@@ -88,6 +88,7 @@
         "hide": false
       }
       
+        
     ]
   },
   {
@@ -248,7 +249,7 @@
   },
   {
     "label": "Resources",
-    "new": true,
+    "new": false,
     "items": [
       {
         "link": "/resources/bookmarks",
@@ -295,7 +296,7 @@
         {
         "link": "/resources/compression-tutorial",
         "label": "how to compress files",
-        "new": true,
+        "new": false,
         "hide": false
       }, 
       {
@@ -306,7 +307,38 @@
       }
     ]
   },
- 
+
+  {
+    "label": "Offsite",
+    "new": true,
+    "items": [  {
+        "link": "https://neocities.org/site/petrapixel",
+        "label": "my neocities profile ➚",
+        "new": false,
+        "hide": false
+      },
+        {
+        "link": "https://ko-fi.com/petrastipjar",
+        "label": "my tipjar (ko-fi) ➚",
+        "new": false,
+        "hide": false
+      },
+       {
+        "link": "/youtube",
+        "label": "my youtube channel ➚",
+        "new": false,
+        "hide": false
+      },
+       {
+        "link": "/bearblog",
+        "label": "my bearblog ➚",
+        "new": true,
+        "hide": false
+      }      
+    
+    ]
+  }
+ ,
   {
     "label": "Coding & Webmastery",
     "new": false,

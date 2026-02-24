@@ -269,6 +269,59 @@ testingOnLocalhost: false
           >
         </div>
 
+        <!-- ----------------- SUPPORTERS ----------------- -->
+
+        <div
+          class="aside-box aside-mutuals"
+          data-nesting="{{ nesting }}"
+          aria-hidden="true"
+        >
+          <div class="aside-box__heading">
+            <a href="/about/neighbors"
+              >Supporters<img
+                src="{{ nesting }}assets/img/layout/icon-supporter.png"
+                alt=""
+                aria-hidden="true"
+            /></a>
+          </div>
+          <a href="#aftersupporters" class="skiplink" aria-hidden="true"
+            >Skip supporters</a
+          >
+          <div id="beforesupporters"></div>
+          <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
+            {% for site in sites %} {% if site.title != "TEMPLATE" and
+            site.supporter and not site.hide %}
+            <a href="{{ site.link }}" title="{{ site.title }}">
+              <img
+                src="{{ site.image | prepareImageUrl }}"
+                alt="{{ site.title }}"
+                width="88"
+                height="31"
+                loading="lazy"
+              />
+            </a>
+            {% endif %} {% endfor %}
+          </marquee>
+          <div><center>None yet!</center></div>
+          <div id="aftersupporters">
+            Click
+            <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
+              >here</a
+            >
+            to become a supporter.
+          </div>
+          <a href="#beforesupporters" class="skiplink" aria-hidden="true"
+            >Skip to before neighbours</a
+          >
+        </div>
+
+        <img
+          src="{{ nesting }}assets/img/layout/divider6.gif"
+          alt=""
+          aria-hidden="true"
+          style="margin-top: -5px"
+        />
+
         <!-- ----------------- Visitors ----------------- -->
         <div
           class="aside-box side-stats__stat"

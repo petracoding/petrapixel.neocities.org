@@ -1,0 +1,25 @@
+---
+layout: petrapixel.njk
+title: "redirecting..."
+---
+
+<section>
+  <h1>Blog</h1>
+
+  <p>Redirecting now...</p>
+
+  <noscript>Please enable Javascript to be redirected.</noscript>
+</section>
+
+<script>
+  function isFromHere() {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return timezone == "Europe/Berlin" || timezone == "Europe/Vienna";
+  }
+
+  if (!isFromHere()) {
+    window.location.replace("https://icantbearit.bearblog.dev/");
+  } else {
+    // window.location.replace("https://petrapixel.neocities.org/blog/");
+  }
+</script>

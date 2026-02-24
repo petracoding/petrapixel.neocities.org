@@ -193,7 +193,46 @@ freezeframe: true
     The Site's Neighborhood
     <img aria-hidden="true" alt="" src="assets/img/inline/stars.gif" />
   </h2>
+
+  <!-- -------------------------------------------------------- -->
+  <!-- -------------------------------------------------------- -->
+
+  <!-- -->
+  <div class="neighborhood__scroll-box custom-scrollbar" id="#supporters">
+    <div class="cool-sites home-neighbors">
+      <p>
+        <strong>my supporters:</strong>
+      </p>
+      <div>
+        {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
+        and site.supporter %}
+        <a href="{{ site.link }}" title="{{ site.title }}">
+          <img
+            src="{{ site.image | prepareImageUrl }}"
+            alt="{{ site.title }}"
+            width="88"
+            height="31"
+            loading="lazy"
+          />
+        </a>
+        {% endif %} {% endfor %}
+      </div>
+      <p>None yet!</p>
+      <p>
+        <!-- Huge thanks to these lovely people!  -->
+        (You can
+        <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
+          >become a supporter here</a
+        >
+        to be featured!)
+      </p>
+    </div>
+  </div>
+  <br />
+
   <div class="neighborhood__scroll-box custom-scrollbar">
+    <p><strong>webrings:</strong></p>
+
     <!-- <p style="margin-bottom: 0"><strong>webrings / weblistings / directories:</strong></p> -->
 
     <!-- Code Collective -->
@@ -218,14 +257,6 @@ freezeframe: true
       <a href="/about/webrings">to their own page</a> to reduce loading time.)
     </center>
 
-    <center>
-      <p>
-        This site was awarded the
-        <a href="https://ballonlea.net/contesting" target="_blank"
-          >Clever Ribbon</a
-        >! <img src="assets/img/links/clever-ribbon.png" alt="" />
-      </p>
-    </center>
     <!-- -------------------------------------------------------- -->
     <!-- <details style="text-align: center" aria-hidden="true" alt="">
               <summary>show more</summary>
@@ -237,37 +268,6 @@ freezeframe: true
             </details> -->
   </div>
   <br />
-  <!-- <hr /> -->
-  <!-- -------------------------------------------------------- -->
-  <!-- -------------------------------------------------------- -->
-
-  <!-- 
-  <div class="neighborhood__scroll-box custom-scrollbar" id="#supporters">
-    <div class="cool-sites home-neighbors">
-      <p>
-        <strong>my supporters:</strong>
-      </p>
-      <div>
-        {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
-        and site.friend %}
-        <a href="{{ site.link }}" title="{{ site.title }}">
-          <img
-            src="{{ site.image | prepareImageUrl }}"
-            alt="{{ site.title }}"
-            width="88"
-            height="31"
-            loading="lazy"
-          />
-        </a>
-        {% endif %} {% endfor %}
-      </div>
-      <p>
-        Huge thanks to these lovely people! (Btw, you can become a supporter
-        <a href="https://ko-fi.com/petrastipjar" target="_blank">here</a>!)
-      </p>
-    </div>
-  </div>
-  <br />-->
 
   <div class="two-columns">
     <div class="neighborhood__scroll-box custom-scrollbar">

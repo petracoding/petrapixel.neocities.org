@@ -163,6 +163,59 @@ testingOnLocalhost: false
             aria-hidden="true"
           />
 
+          <!-- ----------------- SUPPORTERS ----------------- -->
+
+          <div
+            class="aside-box aside-mutuals"
+            data-nesting="{{ nesting }}"
+            aria-hidden="true"
+          >
+            <div class="aside-box__heading">
+              <a href="/about/neighbors"
+                >Supporters<img
+                  src="{{ nesting }}assets/img/layout/icon-supporter.png"
+                  alt=""
+                  aria-hidden="true"
+              /></a>
+            </div>
+            <a href="#aftersupporters" class="skiplink" aria-hidden="true"
+              >Skip supporters</a
+            >
+            <div id="beforesupporters"></div>
+            <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
+              {% for site in sites %} {% if site.title != "TEMPLATE" and
+              site.supporter and not site.hide %}
+              <a href="{{ site.link }}" title="{{ site.title }}">
+                <img
+                  src="{{ site.image | prepareImageUrl }}"
+                  alt="{{ site.title }}"
+                  width="88"
+                  height="31"
+                  loading="lazy"
+                />
+              </a>
+              {% endif %} {% endfor %}
+            </marquee>
+            <div><center>None yet!</center></div>
+            <div id="aftersupporters">
+              Click
+              <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
+                >here</a
+              >
+              to become a supporter.
+            </div>
+            <a href="#beforesupporters" class="skiplink" aria-hidden="true"
+              >Skip to before neighbours</a
+            >
+          </div>
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider6.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: -5px"
+          />
+
           <!-- ----------------- CONTEST -----------------     -->
 
           <div class="aside-box aside-indie-web-contest" aria-hidden="true">
@@ -181,9 +234,7 @@ testingOnLocalhost: false
                 height="85"
                 alt="Trophy"
               />
-              <div>
-                <b>Indie Web Contest</b><small>Winners announced!</small>
-              </div>
+              <div><b>Indie Web Contest</b><small>View Winners</small></div>
             </a>
           </div>
 
@@ -532,7 +583,7 @@ testingOnLocalhost: false
                 aria-hidden="true"
               />
               <a href="https://app.tvtime.com/user/33116783" target="_blank"
-                >Gravity Falls, Bridgerton
+                >Gravity Falls
                 <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span>--></a
               >
             </li>
@@ -546,7 +597,7 @@ testingOnLocalhost: false
               <a
                 href="https://www.goodreads.com/user/show/62158941-petra"
                 target="_blank"
-                >Mind Magic
+                >Shady Characters
                 <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span
                 >--></a
               >
@@ -559,7 +610,7 @@ testingOnLocalhost: false
                 aria-hidden="true"
               />
               <a href="https://www.backloggd.com/u/Petra1999/" target="_blank"
-                >Super Mario Wonder</a
+                >Balatro</a
               >
             </li>
             <li aria-label="obsessed with:">
@@ -680,7 +731,7 @@ testingOnLocalhost: false
 
           <!-- -->
 
-          <form method="post" action="https://poll.pollcode.com/66879483">
+          <form method="post" action="https://poll.pollcode.com/13962324">
             <div
               style="
                 background-color: #eeeeee;
@@ -692,36 +743,116 @@ testingOnLocalhost: false
               "
             >
               <div style="padding: 2px 0px 4px 2px">
-                <strong>do you like recordings of yourself?</strong>
+                <strong>how old are you?</strong>
               </div>
               <input
                 type="radio"
                 name="answer"
                 value="1"
-                id="answer668794831"
+                id="answer139623241"
                 style="float: left"
-              /><label for="answer668794831" style="float: left; width: 150px"
-                >no, pretty much never</label
+              /><label for="answer139623241" style="float: left; width: 150px"
+                >10 or younger</label
               >
               <div style="clear: both; height: 2px"></div>
               <input
                 type="radio"
                 name="answer"
                 value="2"
-                id="answer668794832"
+                id="answer139623242"
                 style="float: left"
-              /><label for="answer668794832" style="float: left; width: 150px"
-                >it really depends</label
+              /><label for="answer139623242" style="float: left; width: 150px"
+                >11-12</label
               >
               <div style="clear: both; height: 2px"></div>
               <input
                 type="radio"
                 name="answer"
                 value="3"
-                id="answer668794833"
+                id="answer139623243"
                 style="float: left"
-              /><label for="answer668794833" style="float: left; width: 150px"
-                >i don't mind them, actually</label
+              /><label for="answer139623243" style="float: left; width: 150px"
+                >13-14</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="4"
+                id="answer139623244"
+                style="float: left"
+              /><label for="answer139623244" style="float: left; width: 150px"
+                >15-16</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="5"
+                id="answer139623245"
+                style="float: left"
+              /><label for="answer139623245" style="float: left; width: 150px"
+                >17-18</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="6"
+                id="answer139623246"
+                style="float: left"
+              /><label for="answer139623246" style="float: left; width: 150px"
+                >19-20</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="7"
+                id="answer139623247"
+                style="float: left"
+              /><label for="answer139623247" style="float: left; width: 150px"
+                >21-25</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="8"
+                id="answer139623248"
+                style="float: left"
+              /><label for="answer139623248" style="float: left; width: 150px"
+                >26-29</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="9"
+                id="answer139623249"
+                style="float: left"
+              /><label for="answer139623249" style="float: left; width: 150px"
+                >30-35</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="10"
+                id="answer1396232410"
+                style="float: left"
+              /><label for="answer1396232410" style="float: left; width: 150px"
+                >36-39</label
+              >
+              <div style="clear: both; height: 2px"></div>
+              <input
+                type="radio"
+                name="answer"
+                value="11"
+                id="answer1396232411"
+                style="float: left"
+              /><label for="answer1396232411" style="float: left; width: 150px"
+                >40 or older</label
               >
               <div style="clear: both; height: 2px"></div>
               <div align="center" style="padding: 3px">
