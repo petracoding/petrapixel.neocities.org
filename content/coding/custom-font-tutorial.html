@@ -1,0 +1,155 @@
+---
+layout: coding.njk
+title: "custom font tutorial"
+description: "A tutorial on how to use custom fonts and where to find them. Neocities."
+nesting: "../"
+codeHighlight: true
+progressBar: true
+mainClass: coding-page
+toc: true
+tipType: "tutorial"
+---
+
+<section>
+  <h1>Custom Font Tutorial</h1>
+  <i class="fa-solid fa-code"></i>
+  <p>
+    Loads of beginners have trouble using custom fonts, so here's a short
+    tutorial on it. I swear it's super easy!
+  </p>
+
+  <div id="toc"></div>
+</section>
+
+<section>
+  <h2 id="custom">Custom Fonts</h2>
+
+  <h3 data-step="1">Fantastic Fonts and Where To Find Them</h3>
+  <p>
+    You can find free fonts on many places on the internet. My favorite by far
+    is <a href="https://www.dafont.com/" target="_blank">dafont.com</a>. Use the
+    download button to download the font files. You should have at least one of
+    these file types: <b>.woff, .woff2, .ttf</b>.
+  </p>
+  <p>
+    If you don't already have all these file types, you can use the amazing tool
+    <a href="https://transfonter.org/" target="_blank">transfonter</a> to
+    generate the other file types. Just make sure to check TTF, WOFF and WOFF2
+    in the settings. You can leave the other settings as they are.
+  </p>
+  <p>
+    (Having all of these three font file types makes sure that your font will be
+    loaded correctly on every device.)
+  </p>
+
+  <h3 data-step="2">Using the Font</h3>
+
+  <p>
+    Place the font files somewhere in your project, for example a folder called
+    "fonts". Now, at the beginning of your CSS code, paste this code and adjust
+    the font-family name (here <code>Example Font Name</code>) and file paths
+    and names (here <code>./fonts/examplefontname</code>).
+  </p>
+
+  <pre><code>@font-face { 
+	font-family: "Example Font Name"; 
+	src: url("./fonts/examplefontname.woff2") format("woff2"), 
+		url("./fonts/examplefontname.woff") format("woff"), 
+		url("./fonts/examplefontname.ttf") format("truetype"); 
+	font-weight: normal;
+	font-style: normal; 
+	font-display: swap; 
+}</code></pre>
+
+  <p>
+    Voilà, you can now use the font in the CSS. Make sure to type the font
+    <i>exactly</i> as you did in the font-family property in the above code.
+  </p>
+
+  <pre><code>.example {
+	font-family: "Example Font Name", serif;
+}</code></pre>
+
+  <p>
+    The second font listed (here: <code>serif</code>) is the fallback font
+    should the first font not work. It's always recommended to have a fallback
+    font.
+  </p>
+</section>
+
+<section>
+  <h2 id="google">Google Fonts</h2>
+
+  <h3 data-step="1">Using Google Fonts</h3>
+
+  <p>
+    Another easy way of getting custom fonts on your website is using the Google
+    Fonts site:
+    <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a>.
+  </p>
+  <p>
+    Once you've found a font that you like, click the "Get font" button at the
+    top right. (Tip: You can also select multiple fonts.)
+  </p>
+  <p>
+    Then press the "Get embed code" button to be shown the code. There are two
+    types of using a font: with <code>&lt;link&gt;</code> element (placed inside
+    the head of your HTML file) or the <code>@import</code> rule in your CSS. I
+    recommend the CSS version because you can paste the code once in your CSS
+    and the font will be loaded on all your pages. So, switch to the
+    <code>@import</code> version. The code you're shown might look like this:
+  </p>
+
+  <pre><code>&lt;style&gt;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+&lt;/style&gt;</code></pre>
+  <pre><code>.roboto-condensed-&lt;uniquifier&gt; {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: &lt;weight&gt;;
+  font-style: normal;
+}</code></pre>
+
+  <h3 data-step="2">Using the Font</h3>
+
+  <p>
+    We only need the first of the above code snippets. Add the
+    <code>@import</code> rule at the beginning of your CSS file. It should
+    simply look like this:
+  </p>
+  <pre><code>@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');</code></pre>
+  <p>
+    Now you can use the font by refering to its name according to the second
+    piece of code the page gives you. Here, the font name is
+    <code>Roboto Condensed</code>. So we would use it like this:
+  </p>
+
+  <pre><code>.example {
+	font-family: "Roboto Condensed", serif;
+}</code></pre>
+
+  <p>
+    Again, the second font listed (here: <code>serif</code>) is the fallback
+    font should the first font not work. It's always recommended to have a
+    fallback font.
+  </p>
+</section>
+
+{% include 'tip-me.njk' %}
+
+<section>
+  <h2>Comments</h2>
+  <p>
+    <b
+      >Leave your questions, problems, suggestions, requests and thanks here!</b
+    >
+  </p>
+  <p>
+    To share very long code or error messages with me, please upload it to
+    <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar
+    site) and include the link. This is to make sure you don't hit the max
+    character limit on comments.
+  </p>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
+  <script src="{{ nesting }}assets/js/comment-widget.js"></script>
+</section>

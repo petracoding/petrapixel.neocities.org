@@ -8,8 +8,6 @@
 
 - :fire: feel free to be inspired, but please don't steal large chunks of code
 
-- :musical_note: commit messages are lyrics of songs i was listening to while coding
-
 ---
 
 **Don't know where to start browsing?** Check out these:

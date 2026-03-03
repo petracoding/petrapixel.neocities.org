@@ -14,11 +14,19 @@ tipType: "resource"
   <h1>Layout Base Code</h1>
   <i class="fa-solid fa-border-none"></i>
   <p>
-    Tired of <a href="/coding/common-questions.html#layout">having to update all of you HTML files every time you update your layout</a>? Here's an easy solution. We'll be using JavaScript to load a
-    header and footer on every page. We'll also take care of active links and relative paths.
+    Tired of
+    <a href="/coding/common-questions.html#layout"
+      >having to update all of you HTML files every time you update your
+      layout</a
+    >? Here's an easy solution. We'll be using JavaScript to load a header and
+    footer on every page. We'll also take care of active links and relative
+    paths.
   </p>
 
-  <blockquote class="warning">Keep in mind that users who have deactivated JavaScript in their browser will not be able to navigate your site!</blockquote>
+  <blockquote class="warning">
+    Keep in mind that users who have deactivated JavaScript in their browser
+    will not be able to navigate your site!
+  </blockquote>
   <!--
 
   <blockquote class="contact">
@@ -34,8 +42,11 @@ tipType: "resource"
   </blockquote>
 -->
   <blockquote class="tip">
-    Alternatively to this you could also use a static site generator such as Eleventy (11ty). See <a href="/coding/eleventy-tutorial">my tutorial here</a>. It's much more difficult to set up but the
-    result is better, and works for those who have deactivated JavaScript too!
+    Alternatively to this you could also use a static site generator such as
+    Eleventy (11ty). See
+    <a href="/coding/eleventy-tutorial">my tutorial here</a>. It's much more
+    difficult to set up but the result is better, and works for those who have
+    deactivated JavaScript too!
   </blockquote>
 
   <div id="toc" data-two-levels="true">
@@ -50,7 +61,11 @@ tipType: "resource"
         <ol>
           <li><a href="#the-script">The Script</a></li>
           <li><a href="#loading-the-script">Loading the script</a></li>
-          <li><a href="#insert-your-layout-code-in-the-javascript">Insert your layout code in the JavaScript</a></li>
+          <li>
+            <a href="#insert-your-layout-code-in-the-javascript"
+              >Insert your layout code in the JavaScript</a
+            >
+          </li>
           <li><a href="#prepare-your-pages">Prepare your pages</a></li>
           <li><a href="#style">Style</a></li>
         </ol>
@@ -68,7 +83,10 @@ tipType: "resource"
 </section>
 <section>
   <h2>What it will do</h2>
-  <p>Your header and footer HTML will be in a single JavaScript file, so you'll only need to update it once.</p>
+  <p>
+    Your header and footer HTML will be in a single JavaScript file, so you'll
+    only need to update it once.
+  </p>
   <hr />
 
   <div class="two-columns">
@@ -95,12 +113,22 @@ tipType: "resource"
   </div>
 
   <hr />
-  <p>You can see the code in action here (this is an iFrame of the <a href="/coding/base-code-example" target="_blank">example page</a>):</p>
-  <iframe src="/coding/base-code-example" style="width: 100%; border: 1px solid currentColor; min-height: 342px" frameborder="0"></iframe>
+  <p>
+    You can see the code in action here (this is an iFrame of the
+    <a href="/coding/base-code-example" target="_blank">example page</a>):
+  </p>
+  <iframe
+    src="/coding/base-code-example"
+    style="width: 100%; border: 1px solid currentColor; min-height: 342px"
+    frameborder="0"
+  ></iframe>
 
   <hr />
 
-  <p>You can even add elements inside of your wrapper element which contains your content, e.g. for a sidebar:</p>
+  <p>
+    You can even add elements inside of your wrapper element which contains your
+    content, e.g. for a sidebar:
+  </p>
   <div class="two-columns">
     <div>
       <p><b>HTML in your .html file:</b></p>
@@ -109,7 +137,9 @@ tipType: "resource"
     &lt;p&gt;your page here...&lt;/p&gt;
   &lt;/main&gt;
 &lt;/body&gt;</code></pre>
-      <p>(The code for the other elements is in the JavaScript file as well.)</p>
+      <p>
+        (The code for the other elements is in the JavaScript file as well.)
+      </p>
     </div>
     <div>
       <p><b>HTML rendered in the browser:</b></p>
@@ -133,9 +163,15 @@ tipType: "resource"
   <h2>Tutorial</h2>
   <h3 data-step="1">The Script</h3>
 
-  <p>Create a javascript file (e.g. <code>layout.js</code>) in the root of your project, and insert the following code:</p>
+  <p>
+    Create a javascript file (e.g. <code>layout.js</code>) in the root of your
+    project, and insert the following code:
+  </p>
 
-  <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" checked="true" /> Show explanatory comments</label>
+  <label style="display: block; text-align: right"
+    ><input type="checkbox" id="explanation-toggle" checked="true" /> Show
+    explanatory comments</label
+  >
 
   <pre id="hide-explanation" style="display: none">
 <code>document.addEventListener("DOMContentLoaded", function () {
@@ -278,37 +314,73 @@ const footerEl = `
   <p>Load that javascript file on every page.</p>
 
   <ul>
-    <li>For your index file, or any other page that is not in a folder: <code>&lt;script src="layout.js"&gt;&lt;/script&gt;</code></li>
-    <li>For any file that is in a folder: <code>&lt;script src="../layout.js"&gt;&lt;/script&gt;</code></li>
-    <li>For files that are in a subfolder use <code>&lt;script src="../../layout.js"&gt;&lt;/script&gt;</code> , and so on. (add another ../ for every subfolder)</li>
+    <li>
+      For your index file, or any other page that is not in a folder:
+      <code>&lt;script src="layout.js"&gt;&lt;/script&gt;</code>
+    </li>
+    <li>
+      For any file that is in a folder:
+      <code>&lt;script src="../layout.js"&gt;&lt;/script&gt;</code>
+    </li>
+    <li>
+      For files that are in a subfolder use
+      <code>&lt;script src="../../layout.js"&gt;&lt;/script&gt;</code> , and so
+      on. (add another ../ for every subfolder)
+    </li>
   </ul>
-  <p>(This line should be inserted into the head of your HTML file (= inbetween &lt;head&gt; and &lt;/head&gt;).)</p>
+  <p>
+    (This line should be inserted into the head of your HTML file (= inbetween
+    &lt;head&gt; and &lt;/head&gt;).)
+  </p>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
 
   <h3 data-step="3">Insert your layout code in the JavaScript</h3>
-  <p>In the javascript file, paste your header and footer inbetween the ticks (``) of the variables <i>headerEl</i> and <i>footerEl</i>.</p>
+  <p>
+    In the javascript file, paste your header and footer inbetween the ticks
+    (``) of the variables <i>headerEl</i> and <i>footerEl</i>.
+  </p>
 
   <h4>Sidebars</h4>
 
-  <p>If you have a <b>sidebar</b>, you have three options. Choose the best depending on how your original layout was structured:</p>
+  <p>
+    If you have a <b>sidebar</b>, you have three options. Choose the best
+    depending on how your original layout was structured:
+  </p>
   <ul>
     <li>Include it inside of your header element</li>
-    <li>or: Add it after the header element (but still in the <i>headerEl</i> variable) like shown in the code above.</li>
-    <li>or: Use the <i>wrapperEl</i> variable (make sure to adjust the CSS selector!) to get your element in the HTML file and add additional elements inside it.</li>
+    <li>
+      or: Add it after the header element (but still in the
+      <i>headerEl</i> variable) like shown in the code above.
+    </li>
+    <li>
+      or: Use the <i>wrapperEl</i> variable (make sure to adjust the CSS
+      selector!) to get your element in the HTML file and add additional
+      elements inside it.
+    </li>
   </ul>
 
   <h4>Images</h4>
   <p>
-    Use <code>${nesting}</code> to output <code>.</code> or <code>..</code> or <code>../..</code> etc according to the current page's folder depth. This is helpful when you want to use relative paths
-    to images. For Example:
+    Use <code>${nesting}</code> to output <code>.</code> or <code>..</code> or
+    <code>../..</code> etc according to the current page's folder depth. This is
+    helpful when you want to use relative paths to images. For Example:
   </p>
   <pre><code>const headerEl = `&lt;img src="${nesting}/images/example.jpg" /&gt;`;</code></pre>
   <p>... will output:</p>
   <ul>
-    <li><code>&lt;img src="./images/example.jpg" /&gt;</code> on a page that isn't in any folder</li>
-    <li><code>&lt;img src="../images/example.jpg" /&gt;</code> on a page that is in a folder</li>
-    <li><code>&lt;img src="../../images/example.jpg" /&gt;</code> on a page that is in a sub-folder.</li>
+    <li>
+      <code>&lt;img src="./images/example.jpg" /&gt;</code> on a page that isn't
+      in any folder
+    </li>
+    <li>
+      <code>&lt;img src="../images/example.jpg" /&gt;</code> on a page that is
+      in a folder
+    </li>
+    <li>
+      <code>&lt;img src="../../images/example.jpg" /&gt;</code> on a page that
+      is in a sub-folder.
+    </li>
     <li>etc.</li>
   </ul>
 
@@ -316,7 +388,9 @@ const footerEl = `
 
   <h3 data-step="4">Prepare your pages</h3>
   <p>
-    Remove your header and footer from the html files of your pages - They will be added via JavaScript. Make sure all page content is in a wrapper, I suggest using
+    Remove your header and footer from the html files of your pages - They will
+    be added via JavaScript. Make sure all page content is in a wrapper, I
+    suggest using
     <code>&lt;main&gt;</code> or <code>&lt;div&gt;</code>:
   </p>
   <pre><code>&lt;body&gt;
@@ -325,15 +399,20 @@ const footerEl = `
   &lt;/main&gt;
 &lt;/body&gt;</code></pre>
 
-  <p>If you have page on which your layout should not be loaded, give the <code>&lt;body&gt;</code> element the "no-layout" class.</p>
+  <p>
+    If you have page on which your layout should not be loaded, give the
+    <code>&lt;body&gt;</code> element the "no-layout" class.
+  </p>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
 
   <h3 data-step="5">Style</h3>
   <p>You don't need to make any changes in the CSS.</p>
   <p>
-    <b>Tip: </b>My code adds the class "active" to any links that are linked to the current page. This makes it easy to style active menu links. Just make a CSS rule that checks for the "active"
-    class, e.g. <code>.active { font-weight:bold; }</code>
+    <b>Tip: </b>My code adds the class "active" to any links that are linked to
+    the current page. This makes it easy to style active menu links. Just make a
+    CSS rule that checks for the "active" class, e.g.
+    <code>.active { font-weight:bold; }</code>
   </p>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -345,14 +424,24 @@ const footerEl = `
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
+<section>
+  <div class="roadmap"></div>
+</section>
+
 {% include 'tip-me.njk' %}
 
 <section>
   <h2>Comments</h2>
-  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
   <p>
-    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
-    you don't hit the max character limit on comments.
+    <b
+      >Leave your questions, problems, suggestions, requests and thanks here!</b
+    >
+  </p>
+  <p>
+    To share very long code or error messages with me, please upload it to
+    <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar
+    site) and include the link. This is to make sure you don't hit the max
+    character limit on comments.
   </p>
   <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="{{ nesting }}assets/js/comment-widget.js"></script>

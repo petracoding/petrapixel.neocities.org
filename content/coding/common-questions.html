@@ -12,17 +12,36 @@ tipType: "guide"
 <section>
   <h1>Common Questions</h1>
   <i class="fa-regular fa-circle-question"></i>
-  <p>I sometimes try to help out over at the <a href="https://www.reddit.com/r/neocities" target="_blank">/r/Neocities</a> subreddit, and I've noticed that the same questions keep coming up.</p>
+  <p>
+    I sometimes try to help out over at the
+    <a href="https://www.reddit.com/r/neocities" target="_blank"
+      >/r/Neocities</a
+    >
+    subreddit, and I've noticed that the same questions keep coming up.
+  </p>
   <div id="toc">
     <b>Table of Contents:</b>
     <ol>
       <li><a href="#grid">How do I build a layout like this...?</a></li>
-      <li><a href="#layout">What do I do so I don't have to change my layout in all HTML files for every change?</a></li>
       <li>
-        <a href="#external-script">Why does my script/widget not work? <small>(Neocities)</small></a>
+        <a href="#layout"
+          >What do I do so I don't have to change my layout in all HTML files
+          for every change?</a
+        >
       </li>
-      <li><a href="#cache">I can't see any changes I'm making on my website</a></li>
-      <li><a href="#viewport">My website doesn't show the mobile version on mobile</a></li>
+      <li>
+        <a href="#external-script"
+          >Why does my script/widget not work? <small>(Neocities)</small></a
+        >
+      </li>
+      <li>
+        <a href="#cache">I can't see any changes I'm making on my website</a>
+      </li>
+      <li>
+        <a href="#viewport"
+          >My website doesn't show the mobile version on mobile</a
+        >
+      </li>
     </ol>
   </div>
 </section>
@@ -34,11 +53,22 @@ tipType: "guide"
 <section>
   <h2 id="grid">How do I build a layout like this...?</h2>
   <p>
-    Firstly, <b class="cw">don't</b> use tables and floats, like some people want to tell you; it's what web developers did decades ago. We don't have to torture ourselves like that anymore. It's
-    difficult to do, and not very accessible since the elements are not semantic. (This means that screen readers (and search engines) don't know what's what.)
+    Firstly, <b class="cw">don't</b> use tables and floats, like some people
+    want to tell you; it's what web developers did decades ago. We don't have to
+    torture ourselves like that anymore. It's difficult to do, and not very
+    accessible since the elements are not semantic. (This means that screen
+    readers (and search engines) don't know what's what.)
   </p>
-  <p><b>Use CSS grid rules.</b> It's a great and easy solution for modern layouts, and it's very simple to make them responsive (by changing the <code>grid-template</code> for smaller screens).</p>
-  <p>Here's what it could look like: (This example uses <a href="#semantic-elements">semantic elements</a> to make the site more accessible.)</p>
+  <p>
+    <b>Use CSS grid rules.</b> It's a great and easy solution for modern
+    layouts, and it's very simple to make them responsive (by changing the
+    <code>grid-template</code> for smaller screens).
+  </p>
+  <p>
+    Here's what it could look like: (This example uses
+    <a href="#semantic-elements">semantic elements</a> to make the site more
+    accessible.)
+  </p>
   <pre><code>
 .container {
   display: grid;
@@ -56,7 +86,10 @@ aside { grid-area: sidebar; }
 main { grid-area: main; }
 footer { grid-area: footer; }
 			</code></pre>
-  <blockquote class="warning">Make sure <b>not</b> to use quotation marks (") when using the <code>grid-area</code> rules. It won't work.</blockquote>
+  <blockquote class="warning">
+    Make sure <b>not</b> to use quotation marks (") when using the
+    <code>grid-area</code> rules. It won't work.
+  </blockquote>
   <p>Here is a working example of a grid layout:</p>
   <div id="gridexample">
     <div class="item1">Header</div>
@@ -93,21 +126,51 @@ footer { grid-area: footer; }
     }
   </style>
   <br />
-  <p>Very simple layouts can also easily be made using <b>flexbox</b>. I highly recommend learning how to use flexbox because it makes a ton of things easier, it's probably my favorite CSS rule.</p>
+  <p>
+    Very simple layouts can also easily be made using <b>flexbox</b>. I highly
+    recommend learning how to use flexbox because it makes a ton of things
+    easier, it's probably my favorite CSS rule.
+  </p>
   <div class="outlinks">
     <strong>Outlinks:</strong>
     <p>Grid:</p>
     <ul>
-      <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">A Complete Guide to CSS Grid</a></li>
-      <li><a href="https://www.w3schools.com/cssref/pr_grid-template.php" target="_blank">grid-template on W3Schools</a></li>
       <li>
-        <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_grid-template3" target="_blank">Another code example</a>
+        <a
+          href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+          target="_blank"
+          >A Complete Guide to CSS Grid</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.w3schools.com/cssref/pr_grid-template.php"
+          target="_blank"
+          >grid-template on W3Schools</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_grid-template3"
+          target="_blank"
+          >Another code example</a
+        >
       </li>
     </ul>
     <p>Flexbox:</p>
     <ul>
-      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to CSS Flexbox</a></li>
-      <li><a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">Flexbox on W3Schools</a></li>
+      <li>
+        <a
+          href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+          target="_blank"
+          >A Complete Guide to CSS Flexbox</a
+        >
+      </li>
+      <li>
+        <a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank"
+          >Flexbox on W3Schools</a
+        >
+      </li>
     </ul>
   </div>
 </section>
@@ -117,35 +180,62 @@ footer { grid-area: footer; }
 <!-- ======================================================================= -->
 
 <section>
-  <h2 id="layout">What do I do so I don't have to change my layout in all HTML files for every change?</h2>
+  <h2 id="layout">
+    What do I do so I don't have to change my layout in all HTML files for every
+    change?
+  </h2>
   <p>There's lots of things you could do. Here are 3 popular options:</p>
   <ul class="list-with-more-spacing">
     <li>
       Load your pages as iframes.
-      <span class="cw">Not recommended <span style="font-weight: normal">(though prevalent on Neocities)</span>, more info see <a href="/coding/common-mistakes.html#iframes">here</a>.</span>
-    </li>
-    <li>
-      Load everything that stays the same on every page per <b>JavaScript</b>. This is what I recommend for beginners. I have a tutorial and ready-to-paste code
-      <a href="/coding/layout-base-code.html">on my layout base code page</a>.
-      <small
-        >Note: Rarely - but sometimes, users have Javascript completely deactivated. Those users won't be able to browse your site, so make sure to include a
-        <a href="https://www.w3schools.com/tags/tag_noscript.asp" target="_blank">noscript tag</a> on every page.</small
+      <span class="cw"
+        >Not recommended
+        <span style="font-weight: normal">(though prevalent on Neocities)</span
+        >, more info see
+        <a href="/coding/common-mistakes.html#iframes">here</a>.</span
       >
     </li>
     <li>
-      Use a <b>static site generator</b>. This has the best result, but it's much more difficult than the JavaScript solution mentioned above, so you should already be comfortable with coding. There
-      are many static site generators to choose from, for example:
+      Load everything that stays the same on every page per <b>JavaScript</b>.
+      This is what I recommend for beginners. I have a tutorial and
+      ready-to-paste code
+      <a href="/coding/layout-base-code.html">on my layout base code page</a>.
+      <small
+        >Note: Rarely - but sometimes, users have Javascript completely
+        deactivated. Those users won't be able to browse your site, so make sure
+        to include a
+        <a
+          href="https://www.w3schools.com/tags/tag_noscript.asp"
+          target="_blank"
+          >noscript tag</a
+        >
+        on every page.</small
+      >
+    </li>
+    <li>
+      Use a <b>static site generator</b>. This has the best result, but it's
+      much more difficult than the JavaScript solution mentioned above, so you
+      should already be comfortable with coding. There are many static site
+      generators to choose from, for example:
       <ul>
         <li>
-          <a href="https://www.11ty.dev/" target="_blank"><b>11ty (Eleventy)</b></a
-          >. I highly recommend 11ty because it is very simple to use. I have a tutorial <a href="/coding/eleventy-tutorial">here</a>!
+          <a href="https://www.11ty.dev/" target="_blank"
+            ><b>11ty (Eleventy)</b></a
+          >. I highly recommend 11ty because it is very simple to use. I have a
+          tutorial <a href="/coding/eleventy-tutorial">here</a>!
         </li>
         <li>
-          <a href="https://jekyllrb.com/" target="_blank"><b>Jekyll</b></a> (requires Ruby). I don't recommend this honestly, but if you're interested in using Jekyll I recommend
-          <a href="https://lostletters.neocities.org/2022/11/02/jekyll">lostletters' tutorial</a>.
+          <a href="https://jekyllrb.com/" target="_blank"><b>Jekyll</b></a>
+          (requires Ruby). I don't recommend this honestly, but if you're
+          interested in using Jekyll I recommend
+          <a href="https://lostletters.neocities.org/2022/11/02/jekyll"
+            >lostletters' tutorial</a
+          >.
         </li>
         <li>
-          <a href="https://spike.readme.io/docs/quick-start" target="_blank"><b>Spike</b></a>
+          <a href="https://spike.readme.io/docs/quick-start" target="_blank"
+            ><b>Spike</b></a
+          >
         </li>
       </ul>
     </li>
@@ -167,70 +257,155 @@ footer { grid-area: footer; }
 <!-- ======================================================================= -->
 
 <section>
-  <h2 id="external-script">Why does my script/widget not work? <small>(Neocities)</small></h2>
+  <h2 id="external-script">
+    Why does my script/widget not work? <small>(Neocities)</small>
+  </h2>
   <p>
-    Are you trying to use an external script (= a script that isn't hosted on your own website)? Unfortunately, if you have a free website on Neocities created after ~2022 you are not allowed to use
-    external scripts, such as guestbooks, shoutboxes, status/mood widgets, and even hit counters <b>unless</b> they are iFrames:
+    Are you trying to use an external script (= a script that isn't hosted on
+    your own website)? Unfortunately, if you have a free website on Neocities
+    created after ~2022 you are not allowed to use external scripts, such as
+    guestbooks, shoutboxes, status/mood widgets, and even hit counters
+    <b>unless</b> they are iFrames:
   </p>
   <p>
-    iFrames, and any widgets that use them, <b>do</b> work. For guestbooks I recommend using <a href="https://www.smartgb.com/" target="_blank">smartgb</a> (which is what I use for
-    <a href="/guestbook.html">my guestbook</a> iframe) because it is very customizable and looks good in an iframe. For a chatbox you can use <a href="https://www.cbox.ws/" target="_blank">cbox</a>,
-    because it works via an iframe.
+    iFrames, and any widgets that use them, <b>do</b> work. For guestbooks I
+    recommend using
+    <a href="https://www.smartgb.com/" target="_blank">smartgb</a> (which is
+    what I use for <a href="/guestbook.html">my guestbook</a> iframe) because it
+    is very customizable and looks good in an iframe. For a chatbox you can use
+    <a href="https://www.cbox.ws/" target="_blank">cbox</a>, because it works
+    via an iframe.
   </p>
-  <p>I have a list of commonly-used widgets (that work for free accounts) <a href="/coding/bookmarks#widgets">here</a>.</p>
-  <p>I have also created some other iFrame widgets you can use with a free account, e.g. status.cafe and last.fm. <a href="/coding/widgets">Check them out here.</a></p>
+  <p>
+    I have a list of commonly-used widgets (that work for free accounts)
+    <a href="/coding/bookmarks#widgets">here</a>.
+  </p>
+  <p>
+    I have also created some other iFrame widgets you can use with a free
+    account, e.g. status.cafe and last.fm.
+    <a href="/coding/widgets">Check them out here.</a>
+  </p>
 </section>
 <!-- ======================================================================= -->
 <!-- ======================================================================= -->
 <!-- ======================================================================= -->
 
 <section>
-  <h2 id="cache">I can't see any changes I'm making on my website (Or: "How to empty your cache")</h2>
-  <p>If your website doesn't update after you've made changes, it's probably because of cache.</p>
+  <h2 id="cache">
+    I can't see any changes I'm making on my website (Or: "How to empty your
+    cache")
+  </h2>
   <p>
-    <b>Cache</b> is the data about a website that your browser saves to reduce loading time the next time you open a website. It's generally a good thing, but can get annoying when editing a website,
-    because your browser will sometimes load an outdated version of your website. The same will happen to your website's visitors that visited it before. New visitors will always see the newest
-    version, as they do not have your site cached yet.
+    If your website doesn't update after you've made changes, it's probably
+    because of cache.
   </p>
   <p>
-    You can force your browser to load the current version, and therefore fix this problem and see your changes, by <b>clearing your browser's cache</b>. However, you don't need to clear your entire
-    browser's cache (that would log you out everywhere, super annoying), only the cache for your website specifically.
+    <b>Cache</b> is the data about a website that your browser saves to reduce
+    loading time the next time you open a website. It's generally a good thing,
+    but can get annoying when editing a website, because your browser will
+    sometimes load an outdated version of your website. The same will happen to
+    your website's visitors that visited it before. New visitors will always see
+    the newest version, as they do not have your site cached yet.
   </p>
-  <p>Please note, if your website is a subdomain of your hoster (e.g. mywebsite.neocities.org), you'll be logged out of the hoster (e.g. Neocities) when you clear your cache!</p>
+  <p>
+    You can force your browser to load the current version, and therefore fix
+    this problem and see your changes, by <b>clearing your browser's cache</b>.
+    However, you don't need to clear your entire browser's cache (that would log
+    you out everywhere, super annoying), only the cache for your website
+    specifically.
+  </p>
+  <p>
+    Please note, if your website is a subdomain of your hoster (e.g.
+    mywebsite.neocities.org), you'll be logged out of the hoster (e.g.
+    Neocities) when you clear your cache!
+  </p>
   <br />
   <details>
     <summary>How to empty your cache in&nbsp;<b>Chrome</b></summary>
-    <p>With your browser's development tools (F12) open, press <b>and hold</b> the refresh button, then click "Empty Cache and Hard Reload".</p>
-    <img src="../assets/img/coding/cache-clear-chrome.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <p>
+      With your browser's development tools (F12) open, press
+      <b>and hold</b> the refresh button, then click "Empty Cache and Hard
+      Reload".
+    </p>
+    <img
+      src="../assets/img/coding/cache-clear-chrome.png"
+      alt=""
+      style="max-width: 100%; border: 1px dotted"
+    />
     <br />
     <br />
     <p><b>Alternatively:</b></p>
-    <p>Click on the settings icon to the left of the address bar and click "Cookies and site data".</p>
-    <img src="../assets/img/coding/cache-clear-chrome1.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <p>
+      Click on the settings icon to the left of the address bar and click
+      "Cookies and site data".
+    </p>
+    <img
+      src="../assets/img/coding/cache-clear-chrome1.png"
+      alt=""
+      style="max-width: 100%; border: 1px dotted"
+    />
     <p>Then click "Manage on-device site data".</p>
-    <img src="../assets/img/coding/cache-clear-chrome2.png" alt="" style="max-width: 100%; border: 1px dotted" />
-    <p>In the pop-up that opens, click the trashbin icon next to your website's URL, then click "Done".</p>
-    <img src="../assets/img/coding/cache-clear-chrome3.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <img
+      src="../assets/img/coding/cache-clear-chrome2.png"
+      alt=""
+      style="max-width: 100%; border: 1px dotted"
+    />
+    <p>
+      In the pop-up that opens, click the trashbin icon next to your website's
+      URL, then click "Done".
+    </p>
+    <img
+      src="../assets/img/coding/cache-clear-chrome3.png"
+      alt=""
+      style="max-width: 100%; border: 1px dotted"
+    />
     <p>Now reload the page.</p>
-    <img src="../assets/img/coding/cache-clear-chrome4.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <img
+      src="../assets/img/coding/cache-clear-chrome4.png"
+      alt=""
+      style="max-width: 100%; border: 1px dotted"
+    />
   </details>
   <br />
   <!-- ALSO UPDATE THE INFO ON THE CACHEBUSTING PAGE -->
   <details>
     <summary>How to empty your cache in&nbsp;<b>Firefox</b></summary>
-    <p>Open your website, and on the left side of the address bar click the lock icon, then click "Clear cookies and site data...", and confirm.</p>
-    <img src="../assets/img/coding/cache-clear-firefox.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <p>
+      Open your website, and on the left side of the address bar click the lock
+      icon, then click "Clear cookies and site data...", and confirm.
+    </p>
+    <img
+      src="../assets/img/coding/cache-clear-firefox.png"
+      alt=""
+      style="max-width: 100%; border: 1px dotted"
+    />
   </details>
   <br />
   <details>
     <summary>How to empty your cache in&nbsp;<b>Edge</b></summary>
-    <p>Open your browser's development tools (F12), navigate to the "Application" tab (it has an icon that looks like a website). There, on the left select "Storage". Now click "Clear site data".</p>
-    <img src="../assets/img/coding/cache-clear-edge.png" alt="" style="max-width: 100%; border: 1px dotted" />
+    <p>
+      Open your browser's development tools (F12), navigate to the "Application"
+      tab (it has an icon that looks like a website). There, on the left select
+      "Storage". Now click "Clear site data".
+    </p>
+    <img
+      src="../assets/img/coding/cache-clear-edge.png"
+      alt=""
+      style="max-width: 100%; border: 1px dotted"
+    />
   </details>
   <br />
   <details>
     <summary>How to empty your cache in&nbsp;<b>Safari</b></summary>
-    <p>I don't have Safari so I couldn't try this myself, but <a href="https://www.macrumors.com/how-to/clear-safari-cache/" target="_blank">this guide</a> says this:</p>
+    <p>
+      I don't have Safari so I couldn't try this myself, but
+      <a
+        href="https://www.macrumors.com/how-to/clear-safari-cache/"
+        target="_blank"
+        >this guide</a
+      >
+      says this:
+    </p>
     <ol>
       <li>Open the browser settings</li>
       <li>Go to the "Privacy" tab</li>
@@ -241,8 +416,14 @@ footer { grid-area: footer; }
 
   <br />
   <blockquote class="warning">
-    Clearing your own cache will make your website look good <b>for you</b>, but <b>visitors who have visited your website before might have an old version of the CSS/JavaScript</b> cached too, and
-    you can't just tell them to clear their cache. Therefore, it's better to <i>prevent</i> the browser from caching your CSS and JavaScript in the first place.
+    Clearing your own cache will make your website look good <b>for you</b>, but
+    <b
+      >visitors who have visited your website before might have an old version
+      of the CSS/JavaScript</b
+    >
+    cached too, and you can't just tell them to clear their cache. Therefore,
+    it's better to <i>prevent</i> the browser from caching your CSS and
+    JavaScript in the first place.
     <a href="/coding/cachebusting">Read my Cachebusting guide to learn how.</a>
   </blockquote>
 </section>
@@ -261,5 +442,9 @@ footer { grid-area: footer; }
 <!-- ======================================================================= -->
 <!-- ======================================================================= -->
 <!-- ======================================================================= -->
+
+<section>
+  <div class="roadmap"></div>
+</section>
 
 {% include 'tip-me.njk' %}

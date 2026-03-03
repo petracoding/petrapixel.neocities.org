@@ -1,0 +1,51 @@
+.roadmap {
+  display: flex;
+  background: rgba($pink, 0.2);
+  padding: 2em;
+  border-radius: 10px;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.roadmap__info {
+  flex: 0 0 40%;
+
+  strong {
+    font-size: 1.5em;
+    font-weight: normal;
+    color: var(--headingsColor);
+    font-family: $fontHeadings;
+  }
+
+  p:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  iframe {
+    width: 280px;
+    height: 150px;
+  }
+}
+
+.roadmap__list {
+  flex: 0 0 60%;
+  margin-left: 2em;
+  font-size: 1.1em;
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  li::marker {
+    font-weight: bold;
+  }
+}
+
+.roadmap__current {
+  span::after {
+    content: " ⬅ you are here";
+    font-weight: bold;
+  }
+}

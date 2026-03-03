@@ -327,7 +327,7 @@
         "link": "/youtube",
         "label": "my youtube channel ➚",
         "new": false,
-        "hide": false
+        "hide": true
       },
        {
         "link": "/bearblog",
@@ -463,7 +463,7 @@
       },
       {
         "label": "Beginner Tutorials",
-        "new": false,
+        "new": true,
         "items": [
           {
             "link": "/coding/layout-base-code",
@@ -480,6 +480,13 @@
             "new": false,
             "hide": false,
             "icon": "layout-masonry-line"
+          },
+           {
+            "link": "/coding/custom-font-tutorial",
+            "label": "Custom Font Tutorial",
+            "new": true,
+            "hide": false,
+            "icon": "font-size"
           },
           {
             "link": "/coding/cachebusting",
