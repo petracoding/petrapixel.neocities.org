@@ -149,14 +149,14 @@ testingOnLocalhost: false
           <!-- ----------------- LEFT ----------------- -->
           <!-- ----------------------------------------- -->
 
-          <!-- ----------------- SEARCHBAR ----------------- -->
+          <!-- ----------------- SEARCHBAR ----------------- 
 
           <script
             async
             src="https://cse.google.com/cse.js?cx=d0371551e40124126"
           ></script>
           <div class="gcse-search"></div>
-
+-->
           <img
             src="{{ nesting }}assets/img/layout/divider1.gif"
             alt=""
@@ -196,7 +196,6 @@ testingOnLocalhost: false
               </a>
               {% endif %} {% endfor %}
             </marquee>
-            <div><center>None yet!</center></div>
             <div id="aftersupporters">
               Click
               <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
@@ -216,7 +215,7 @@ testingOnLocalhost: false
             style="margin-top: -5px"
           />
 
-          <!-- ----------------- CONTEST -----------------     -->
+          <!-- ----------------- CONTEST -----------------     
 
           <div class="aside-box aside-indie-web-contest" aria-hidden="true">
             <div class="aside-box__heading" aria-hidden="true">
@@ -237,6 +236,8 @@ testingOnLocalhost: false
               <div><b>Indie Web Contest</b><small>View Winners</small></div>
             </a>
           </div>
+
+          -->
 
           <!-- ----------------- LINK BACK ----------------- -->
 
@@ -370,16 +371,6 @@ testingOnLocalhost: false
               ></iframe>
             </center>
           </div>
-
-          <!-- ----------------- TAMANOTCHI ----------------- -->
-
-          <div class="aside-tamanotchi">
-            <a href="https://tamanotchi.world/25005c"
-              ><img
-                src="https://tamanotchi.world/i2/25005"
-                alt="It's tamaNOTchi! Click to feed!"
-            /></a>
-          </div>
         </div>
       </aside>
 
@@ -506,6 +497,7 @@ testingOnLocalhost: false
               </a>
             </div>
           </div>
+
           <div class="aside-box">
             <div class="aside-box__heading">
               <span>my time</span
@@ -528,9 +520,10 @@ testingOnLocalhost: false
               </div>
             </div>
           </div>
+
           <div class="aside-box">
             <div class="aside-box__heading">
-              <span>my status</span
+              <span>currently</span
               ><img
                 src="{{ nesting }}assets/img/layout/icon-happy.png"
                 alt=""
@@ -541,6 +534,80 @@ testingOnLocalhost: false
               <div id="statuscafe-username"></div>
               <div id="statuscafe-content"></div>
             </div>
+
+            <ul class="aside-currently-list">
+              <li aria-label="listening to:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-music.png"
+                  alt=""
+                  title="listening to:"
+                  aria-hidden="true"
+                />
+                <a
+                  href="https://www.last.fm/user/Petra1999"
+                  target="_blank"
+                  id="song"
+                  >various</a
+                >
+                <img
+                  src="{{ nesting }}assets/img/layout/equalizer.gif"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </li>
+              <li aria-label="watching:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-tv.png"
+                  alt=""
+                  title="watching:"
+                  aria-hidden="true"
+                />
+                <a href="https://app.tvtime.com/user/33116783" target="_blank"
+                  >Gravity Falls
+                  <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span>--></a
+                >
+              </li>
+              <li aria-label="reading:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-book.png"
+                  alt=""
+                  title="reading:"
+                  aria-hidden="true"
+                />
+                <a
+                  href="https://www.goodreads.com/user/show/62158941-petra"
+                  target="_blank"
+                  >Heated Rivalry
+                  <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span
+                >--></a
+                >
+              </li>
+              <li aria-label="playing:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-game.png"
+                  alt=""
+                  title="playing:"
+                  aria-hidden="true"
+                />
+                <a href="https://www.backloggd.com/u/Petra1999/" target="_blank"
+                  >Balatro</a
+                >
+              </li>
+
+              <!--
+            <li aria-label="obsessed with:">
+              <img
+                src="{{ nesting }}assets/img/layout/icon-heart.png"
+                alt=""
+                title="obsessed with:"
+                aria-hidden="true"
+              />
+              <span
+                >My cat, Holly</span
+              >
+            </li>
+             -->
+            </ul>
           </div>
         </div>
 
@@ -550,83 +617,6 @@ testingOnLocalhost: false
           aria-hidden="true"
           style="margin-top: -2px"
         />
-
-        <!-- ----------------- CURRENTLY ----------------- -->
-
-        <div class="aside-box aside-currently">
-          <div class="aside-box__heading">Currently</div>
-          <ul>
-            <li aria-label="listening to:">
-              <img
-                src="{{ nesting }}assets/img/layout/icon-music.png"
-                alt=""
-                title="listening to:"
-                aria-hidden="true"
-              />
-              <a
-                href="https://www.last.fm/user/Petra1999"
-                target="_blank"
-                id="song"
-                >various</a
-              >
-              <img
-                src="{{ nesting }}assets/img/layout/equalizer.gif"
-                alt=""
-                aria-hidden="true"
-              />
-            </li>
-            <li aria-label="watching:">
-              <img
-                src="{{ nesting }}assets/img/layout/icon-tv.png"
-                alt=""
-                title="watching:"
-                aria-hidden="true"
-              />
-              <a href="https://app.tvtime.com/user/33116783" target="_blank"
-                >Gravity Falls, Heated Rivalry
-                <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span>--></a
-              >
-            </li>
-            <li aria-label="reading:">
-              <img
-                src="{{ nesting }}assets/img/layout/icon-book.png"
-                alt=""
-                title="reading:"
-                aria-hidden="true"
-              />
-              <a
-                href="https://www.goodreads.com/user/show/62158941-petra"
-                target="_blank"
-                >Shady Characters
-                <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span
-                >--></a
-              >
-            </li>
-            <li aria-label="playing:">
-              <img
-                src="{{ nesting }}assets/img/layout/icon-game.png"
-                alt=""
-                title="playing:"
-                aria-hidden="true"
-              />
-              <a href="https://www.backloggd.com/u/Petra1999/" target="_blank"
-                >Balatro</a
-              >
-            </li>
-            <li aria-label="obsessed with:">
-              <img
-                src="{{ nesting }}assets/img/layout/icon-heart.png"
-                alt=""
-                title="obsessed with:"
-                aria-hidden="true"
-              />
-              <span
-                >My cat, Holly<!-- <span style="font-family: sans-serif; font-size: 0.9em">♡</span
-                >--></span
-              >
-            </li>
-          </ul>
-        </div>
 
         <!-- ----------------- TIP JAR ----------------- -->
 
@@ -716,6 +706,36 @@ testingOnLocalhost: false
           alt=""
           aria-hidden="true"
           style="margin-top: 2em"
+        />
+
+        <!-- ----------------- TUMBLR ----------------- -->
+
+        <div class="aside-box aside-tumblr" aria-hidden="true">
+          <div class="aside-box__heading" aria-hidden="true">
+            Tumblr<img
+              src="{{ nesting }}assets/img/layout/icon-redo.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div>
+            <b>Got tumblr?</b> Reblog my
+            <a
+              href="https://www.tumblr.com/petrapixel/801488583310606336"
+              target="_blank"
+              >indie web masterpost</a
+            >!
+            <img
+              aria-hidden="true"
+              src="{{ nesting }}assets/img/inline/small-heart.gif"
+            />
+          </div>
+        </div>
+
+        <img
+          src="{{ nesting }}assets/img/layout/divider1.gif"
+          alt=""
+          aria-hidden="true"
         />
 
         <!-- ----------------- POLL ----------------- -->
@@ -875,33 +895,19 @@ testingOnLocalhost: false
           </center>
         </div>
 
-        <!-- ----------------- TUMBLR ----------------- -->
+        <!-- ----------------- TAMANOTCHI ----------------- -->
 
-        <div class="aside-box aside-tumblr" aria-hidden="true">
-          <div class="aside-box__heading" aria-hidden="true">
-            Tumblr<img
-              src="{{ nesting }}assets/img/layout/icon-redo.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-          <div>
-            <b>Got tumblr?</b> Reblog my
-            <a
-              href="https://www.tumblr.com/petrapixel/801488583310606336"
-              target="_blank"
-              >indie web masterpost</a
-            >!
-            <img
-              aria-hidden="true"
-              src="{{ nesting }}assets/img/inline/small-heart.gif"
-            />
-          </div>
+        <div class="aside-tamanotchi">
+          <a href="https://tamanotchi.world/25005c"
+            ><img
+              src="https://tamanotchi.world/i2/25005"
+              alt="It's tamaNOTchi! Click to feed!"
+          /></a>
         </div>
 
         <!-- ----------------- CHATBOX ----------------- -->
 
-        <div class="aside-box aside-chatbox">
+        <!--<div class="aside-box aside-chatbox">
           <div class="aside-box__heading" aria-hidden="true" style="z-index: 2">
             Chatbox<img
               src="{{ nesting }}assets/img/layout/icon-chat.png"
@@ -913,7 +919,7 @@ testingOnLocalhost: false
             Closed due to spam :[ Please use the
             <a href="/about/guestbook">guestbook</a> instead.
           </div>
-          <!--<iframe
+         <iframe
             src="https://www5.cbox.ws/box/?boxid=949361&boxtag=Asuhlk"
             width="100%"
             height="300"
@@ -924,14 +930,9 @@ testingOnLocalhost: false
             marginwidth="0"
             scrolling="auto"
             aria-label="Chatbox"
-            tabindex="-1"></iframe>-->
+            tabindex="-1"></iframe>
         </div>
-
-        <img
-          src="{{ nesting }}assets/img/layout/divider1.gif"
-          alt=""
-          aria-hidden="true"
-        />
+-->
 
         <!-- ------------------------------------------------ -->
         <!-- ------------------------------------------------ -->

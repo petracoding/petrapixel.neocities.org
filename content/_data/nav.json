@@ -310,7 +310,7 @@
 
   {
     "label": "Offsite",
-    "new": true,
+    "new": false,
     "items": [  {
         "link": "https://neocities.org/site/petrapixel",
         "label": "my neocities profile ➚",

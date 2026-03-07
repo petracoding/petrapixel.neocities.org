@@ -1,5 +1,6 @@
 [
   { "date": "2026-03-XX", "text": "TEMPLATE", "link": "" },
+  { "date": "2026-03-07", "text": "Cleaned up the sidebars a bit because it was getting a bit too cluttered", "link": "" },
   { "date": "2026-03-03", "text": "Custom font tutorial is up!", "link": "/coding/custom-font-tutorial" },
   { "date": "2026-02-24", "text": "I have a new blog now.", "link": "/bearblog" },
   { "date": "2026-02-17", "text": "Updated the cats page a bit. More updates soon!", "link": "/about/cats" },

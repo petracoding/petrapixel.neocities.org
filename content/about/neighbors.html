@@ -27,21 +27,47 @@ nesting: "../"
 <section>
   <h2>Friends & Neighbors</h2>-->
   <p>
-    Here are some cool other personal websites you shoud check out! Neighbors are friends of the site or, in the case of neocities sites, users I follow who follow me back
+    Here are some cool other personal websites you shoud check out! Neighbors
+    are friends of the site or, in the case of neocities sites, users I follow
+    who follow me back
     <img aria-hidden="true" src="../assets/img/inline/happy.gif" />
   </p>
-  <p>You can view all sites I follow (with a preview of each site!) on <a href="https://neocities.org/site/petrapixel/follows" target="_blank">my neocities profile</a>.</p>
+  <p>
+    You can view all sites I follow (with a preview of each site!) on
+    <a href="https://neocities.org/site/petrapixel/follows" target="_blank"
+      >my neocities profile</a
+    >.
+  </p>
 
   <br />
   <strong class="rec-filters-title">Filter:</strong>
   <div class="rec-filters">
     <div class="rec-filters__group">
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
-        <button class="rec-filters__button is-checked" data-filter="">show all</button>
-        <button class="rec-filters__button" data-filter=".neighbor--friend">friends</button>
-        <button class="rec-filters__button" data-filter=".neighbor--neighbor">neighbors</button>
-        <button class="rec-filters__button" data-filter=".neighbor--inspiration">very inspiring to me</button>
-        <button class="rec-filters__button" data-filter=".neighbor--winner">contest winners</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="color"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          show all
+        </button>
+        <button class="rec-filters__button" data-filter=".neighbor--friend">
+          friends
+        </button>
+        <button class="rec-filters__button" data-filter=".neighbor--neighbor">
+          neighbors
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".neighbor--inspiration"
+        >
+          inspiration
+        </button>
+        <button class="rec-filters__button" data-filter=".neighbor--winner">
+          contest winners
+        </button>
+        <button class="rec-filters__button" data-filter=".neighbor--supporter">
+          supporters
+        </button>
         <!-- <button class="rec-filters__button" data-filter=".neighbor--resources">resources</button> -->
       </div>
     </div>
@@ -54,15 +80,23 @@ nesting: "../"
     <a
       href="{{ site.link }}"
       title="{{ site.title }}"
-      class="neighbor {% if site.friend %}neighbor--friend{% endif %} {% if site.neighbor %}neighbor--neighbor{% endif %} {% if site.resources %}neighbor--resources{% endif %} {% if site.inspiration %}neighbor--inspiration{% endif %} {% if site.winner %}neighbor--winner{% endif %}"
+      class="neighbor {% if site.friend %}neighbor--friend{% endif %} {% if site.neighbor %}neighbor--neighbor{% endif %} {% if site.resources %}neighbor--resources{% endif %} {% if site.inspiration %}neighbor--inspiration{% endif %} {% if site.winner %}neighbor--winner{% endif %} {% if site.supporter %}neighbor--supporter{% endif %}"
     >
-      <img src="{{ site.image | prepareImageUrl }}" alt="{{ site.title }}" width="88" height="31" />
+      <img
+        src="{{ site.image | prepareImageUrl }}"
+        alt="{{ site.title }}"
+        width="88"
+        height="31"
+      />
     </a>
     {% endif %} {% endfor %}
   </div>
   <br />
 
-  <p>If we're neighbors but you're not here (or you have a new button) please shoot me a message!</p>
+  <p>
+    If we're neighbors but you're not here (or you have a new button) please
+    shoot me a message!
+  </p>
 </section>
 
 <!--
@@ -85,12 +119,24 @@ nesting: "../"
 
 <section>
   <h2>Link back to me!</h2>
-  <p>Hotlinking is a-okay! <img aria-hidden="true" src="../assets/img/inline/happy.gif" /></p>
+  <p>
+    Hotlinking is a-okay!
+    <img aria-hidden="true" src="../assets/img/inline/happy.gif" />
+  </p>
   <div class="link-back">
     <a href="https://petrapixel.neocities.org/" target="_blank"
-      ><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"
+      ><img
+        src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif"
+        alt="petrapixel"
     /></a>
-    <textarea name="" id="" cols="30" rows="10" aria-label="link-back code" class="code-textarea">
+    <textarea
+      name=""
+      id=""
+      cols="30"
+      rows="10"
+      aria-label="link-back code"
+      class="code-textarea"
+    >
 <a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
     >
   </div>

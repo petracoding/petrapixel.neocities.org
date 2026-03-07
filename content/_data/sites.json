@@ -466,5 +466,21 @@
     "neighbor": false,
     "inspiration": false,
     "winner": true
+  },
+  {
+    "link": "https://aroceu.com/",
+    "title": "aroceu",
+    "image": "aroceu.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true
+  },
+  {
+    "link": "https://icirr.us/",
+    "title": "Masterball",
+    "image": "masterball.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true
   }
 ]

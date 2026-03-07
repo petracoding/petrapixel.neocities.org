@@ -594,28 +594,19 @@
   }
 }
 
+.aside-stats {
+  margin-top: 30px;
+}
+
 /*----------  Currently  ----------*/
 
-.aside-currently {
-  position: relative;
+.aside-currently-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
   line-height: 1.2;
   font-size: 0.9em;
-  padding-top: 1.2em;
-  padding-bottom: 0.5em;
-
-  img[src*="equalizer"] {
-    filter: brightness(0.8) contrast(1.5) saturate(1.5);
-  }
-
-  #song:not(.nowplaying) + img[src*="equalizer"] {
-    display: none;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
 
   li {
     margin-bottom: 10px;
@@ -634,6 +625,14 @@
   img {
     height: 13px;
     width: auto;
+  }
+
+  img[src*="equalizer"] {
+    filter: brightness(0.8) contrast(1.5) saturate(1.5);
+  }
+
+  #song:not(.nowplaying) + img[src*="equalizer"] {
+    display: none;
   }
 }
 
@@ -1030,7 +1029,7 @@
   font-size: 9px;
   pointer-events: none;
   line-height: 1;
-  margin-left: 9px;
+  margin-left: 8px;
   vertical-align: middle;
 
   &.aside-nav__new--small {
