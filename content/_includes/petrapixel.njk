@@ -185,7 +185,11 @@ testingOnLocalhost: false
             <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
               {% for site in sites %} {% if site.title != "TEMPLATE" and
               site.supporter and not site.hide %}
-              <a href="{{ site.link }}" title="{{ site.title }}">
+              <a
+                href="{{ site.link }}"
+                title="{{ site.title }}"
+                target="_blank"
+              >
                 <img
                   src="{{ site.image | prepareImageUrl }}"
                   alt="{{ site.title }}"
@@ -675,7 +679,7 @@ testingOnLocalhost: false
           <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
             {% for site in sites %} {% if site.title != "TEMPLATE" and
             site.neighbor and not site.hide %}
-            <a href="{{ site.link }}" title="{{ site.title }}">
+            <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
               <img
                 src="{{ site.image | prepareImageUrl }}"
                 alt="{{ site.title }}"

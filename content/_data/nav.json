@@ -249,7 +249,7 @@
   },
   {
     "label": "Resources",
-    "new": false,
+    "new": true,
     "items": [
       {
         "link": "/resources/bookmarks",
@@ -302,7 +302,7 @@
       {
         "link": "/creations/coding",
         "label": "my userscripts & tools",
-        "new": false,
+        "new": true,
         "hide": false
       }
     ]

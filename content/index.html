@@ -206,7 +206,7 @@ freezeframe: true
       <div>
         {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
         and site.supporter %}
-        <a href="{{ site.link }}" title="{{ site.title }}">
+        <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
           <img
             src="{{ site.image | prepareImageUrl }}"
             alt="{{ site.title }}"
@@ -972,7 +972,7 @@ freezeframe: true
       <div>
         {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
         and site.neighbor or site.friend %}
-        <a href="{{ site.link }}" title="{{ site.title }}">
+        <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
           <img
             src="{{ site.image | prepareImageUrl }}"
             alt="{{ site.title }}"

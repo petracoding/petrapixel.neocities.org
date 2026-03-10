@@ -482,5 +482,13 @@
     "neighbor": false,
     "inspiration": false,
     "supporter": true
+  },
+    {
+    "link": "https://sinproexe.net/",
+    "title": "sinproexe",
+    "image": "sinproexe.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true
   }
 ]
