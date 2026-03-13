@@ -8,6 +8,7 @@ import {
   initActiveLinks,
   initToggleExplanationComments,
   initChristmas,
+  initLinkPreviews,
 } from "./layout/layout";
 import { initSidebar } from "./layout/sidebar";
 import { initClipboard } from "./pages/clipboard";
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollToTop();
   initTooltips();
   initProgressBar();
+  initLinkPreviews();
 
   /* CONTENT: */
   initTableOfContents();

@@ -490,5 +490,13 @@
     "neighbor": false,
     "inspiration": false,
     "supporter": true
+  },
+    {
+    "link": "https://ghostk.id/",
+    "title": "ghostk.id",
+    "image": "ghostkid.gif",
+    "neighbor": false,
+    "inspiration": true,
+    "supporter": true
   }
 ]

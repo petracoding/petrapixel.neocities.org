@@ -391,6 +391,78 @@ footer {
   width: 150px;
 }
 
+.preview-frame {
+  position: absolute;
+  top: calc(100% + 30px + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0;
+  box-shadow: 0 0 10px rgba(84, 17, 64, 0.25);
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  display: none;
+
+  iframe {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.1);
+    transform-origin: top left;
+    pointer-events: none;
+  }
+
+  &.preview-frame--visible {
+    display: block;
+    width: 192px;
+    height: 108px;
+  }
+
+  &.preview-frame--loading::before {
+    content: "Loading...";
+  }
+
+  @media (max-width: $md) {
+    display: none !important;
+  }
+}
+
+.preview-frame {
+  box-sizing: content-box;
+  border: 2px solid var(--pink);
+  background: var(--mainBackgroundColor);
+
+  &::before {
+    content: "Preview.html";
+    font-style: normal;
+    position: absolute;
+    bottom: 100%;
+    left: -2px;
+    right: -2px;
+    background: var(--pink);
+    height: 30px;
+    color: var(--mainBackgroundColor);
+    font-size: 1.1em;
+    padding-left: 10px;
+    border: 2px solid var(--pink);
+    border-bottom: 0;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    padding-bottom: 1px;
+    font-weight: bold;
+  }
+
+  &::after {
+    content: "";
+    width: 59px;
+    height: 15px;
+    background-image: url("https://petrapixel.neocities.org/assets/img/layout/windowbtns.png");
+    position: absolute;
+    bottom: calc(100% + 9px);
+    right: 8px;
+  }
+}
+
 /**
  *
  * TABLET

@@ -290,7 +290,7 @@
   border: 3px dotted rgba($pink, 0.5);
   padding: 1em;
   border-radius: 15px;
-  max-height: 350px;
+  // max-height: 350px;
   overflow-y: auto;
 
   .two-columns & {
@@ -322,11 +322,13 @@
 
   > * {
     margin: 2px;
+    position: relative;
     // min-width: 100%;
   }
 
   > div a {
     text-decoration: none;
+    position: relative;
   }
 
   &.cool-sites--webrings {

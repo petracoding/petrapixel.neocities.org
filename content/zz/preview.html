@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>petrapixel updated!</title>
@@ -42,7 +42,9 @@
         line-height: 1;
         color: #922a45;
         font-size: 200px;
-        text-shadow: #fff 8px 8px, #fff -8px -8px;
+        text-shadow:
+          #fff 8px 8px,
+          #fff -8px -8px;
         white-space: nowrap;
       }
 
@@ -51,7 +53,9 @@
         font-size: 40px;
         font-family: "rainyhearts", monospace, sans-serif;
         line-height: 1;
-        text-shadow: #fff 2px 2px, #fff -2px -2px;
+        text-shadow:
+          #fff 2px 2px,
+          #fff -2px -2px;
         color: black;
         background: rgba(255, 255, 255, 0.5);
         padding: 7px 20px;
@@ -61,7 +65,10 @@
     </style>
   </head>
   <body>
-    <a href="{{ changelog[1].link }}" title="Click to enter!">
+    <a
+      href="{% if changelog[1].link %}{{ changelog[1].link }}{% else %}/{% endif %}"
+      title="Click to enter!"
+    >
       <iframe src="/"></iframe>
     </a>
     <div id="preview-text">

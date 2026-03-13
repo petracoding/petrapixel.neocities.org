@@ -198,7 +198,11 @@ freezeframe: true
   <!-- -------------------------------------------------------- -->
 
   <!-- -->
-  <div class="neighborhood__scroll-box custom-scrollbar" id="#supporters">
+  <div
+    class="neighborhood__scroll-box custom-scrollbar"
+    id="#supporters"
+    style="overflow: initial"
+  >
     <div class="cool-sites home-neighbors">
       <p style="width: 100%">
         <strong>my supporters:</strong>
@@ -206,7 +210,12 @@ freezeframe: true
       <div>
         {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
         and site.supporter %}
-        <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
+        <a
+          href="{{ site.link }}"
+          title="{{ site.title }}"
+          target="_blank"
+          class="activate-preview"
+        >
           <img
             src="{{ site.image | prepareImageUrl }}"
             alt="{{ site.title }}"
@@ -963,7 +972,11 @@ freezeframe: true
   </div>
 
   <br />
-  <div class="neighborhood__scroll-box custom-scrollbar" id="#neighbors">
+  <div
+    class="neighborhood__scroll-box custom-scrollbar"
+    id="#neighbors"
+    style="overflow: initial"
+  >
     <!-- <p style="margin-bottom: 0; text-align: center">Please visit my <a href="/about/neighbors.html">neighbors</a> page for a list of all my mutuals!</p> -->
     <div class="cool-sites home-neighbors">
       <p>
@@ -972,7 +985,12 @@ freezeframe: true
       <div>
         {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
         and site.neighbor or site.friend %}
-        <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
+        <a
+          href="{{ site.link }}"
+          title="{{ site.title }}"
+          target="_blank"
+          class="activate-preview"
+        >
           <img
             src="{{ site.image | prepareImageUrl }}"
             alt="{{ site.title }}"

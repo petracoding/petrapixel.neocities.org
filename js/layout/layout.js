@@ -263,6 +263,49 @@ export function initToggleExplanationComments() {
   });
 }
 
+export function initLinkPreviews() {
+  if (screen.width < 500) return;
+  const linkEls = document.querySelectorAll("a[href].activate-preview");
+  linkEls.forEach((linkEl) => {
+    // if (!linkEl.style.position || linkEl.style.position == "static")
+    //   linkEl.style.position = "relative";
+    let previewEl = document.createElement("div");
+    previewEl.classList.add("preview-frame");
+    previewEl.innerHTML = `<iframe></iframe>`;
+
+    linkEl.addEventListener("mouseenter", () => {
+      const thisPreviewEl = linkEl.querySelector(".preview-frame");
+      if (!thisPreviewEl) {
+        linkEl.appendChild(previewEl);
+        const iFrameEl = previewEl.querySelector("iframe");
+        iFrameEl.setAttribute("src", linkEl.getAttribute("href"));
+        previewEl.classList.add("preview-frame--visible");
+        previewEl.classList.add("preview-frame--loading");
+
+        setTimeout(() => {
+          previewEl.classList.remove("preview-frame--loading");
+        }, 2000);
+        iFrameEl.onload = () => {
+          previewEl.classList.remove("preview-frame--loading");
+        };
+
+        iFrameEl.onerror = () => {
+          iFrameEl.setAttribute("src", "");
+          previewEl.classList.remove("preview-frame--visible");
+        };
+      } else {
+        thisPreviewEl.classList.add("preview-frame--visible");
+      }
+    });
+
+    linkEl.addEventListener("mouseleave", () => {
+      const thisPreviewEl = linkEl.querySelector(".preview-frame");
+      if (thisPreviewEl)
+        thisPreviewEl.classList.remove("preview-frame--visible");
+    });
+  });
+}
+
 /*
   SPECIAL
 */

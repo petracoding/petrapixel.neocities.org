@@ -656,6 +656,17 @@
   }
 }
 
+.aside-supporters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -11px;
+
+  a,
+  img {
+    display: block;
+  }
+}
+
 #afterneighbours,
 #aftersupporters {
   font-size: 0.7em;
