@@ -1,5 +1,5 @@
 import "../css/main.scss";
-import { loadTheme, initThemeSwitcher } from "./layout/dark-mode";
+import { initToggleButtons, initSounds } from "./layout/settings";
 import {
   initScrollToTop,
   initTableOfContents,
@@ -35,14 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   /* LAYOUT: */
-  loadTheme();
+  initToggleButtons();
   initSidebar();
   initActiveLinks();
-  initThemeSwitcher();
   initScrollToTop();
   initTooltips();
   initProgressBar();
   initLinkPreviews();
+  initSounds();
 
   /* CONTENT: */
   initTableOfContents();

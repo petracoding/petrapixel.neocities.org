@@ -1,5 +1,6 @@
 [
   { "date": "2026-03-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-03-17", "text": "Dream diary page and a few layout updates", "link": "/about/dream-diary" },
   { "date": "2026-03-13", "text": "Supporters and neighbors now have previews when hovered over!", "link": "/about/neighbors" },
   { "date": "2026-03-07", "text": "Cleaned up the sidebars a bit because it was getting a bit too cluttered", "link": "/" },
   { "date": "2026-03-03", "text": "Custom font tutorial is up!", "link": "/coding/custom-font-tutorial" },

@@ -1,0 +1,52 @@
+.recurring-dreams:not(.recurring-dreams--nightmares) {
+  list-style-image: url("https://dl.glitter-graphics.com/pub/3133/3133880xodori2yuq.gif");
+}
+
+.recurring-dreams--nightmares {
+  list-style-image: url("https://dl.glitter-graphics.com/pub/3133/3133881o30yprguhf.gif");
+}
+
+.dream-diary {
+  h2 + p {
+    margin-top: 0;
+  }
+
+  p {
+    margin-top: 2em;
+    margin-bottom: 0;
+
+    strong {
+      font-size: 1.7em;
+      margin-bottom: 1em;
+      text-align: center;
+      display: block;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin: 1.5em 0;
+    padding: 2em;
+    border-radius: 7px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      background: rgba($pink, 0.2);
+    }
+
+    &:nth-child(odd) {
+      border: 1px dotted $pink;
+    }
+  }
+}

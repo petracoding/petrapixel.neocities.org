@@ -1,71 +1,79 @@
 [
   {
     "label": "home",
-    "link": "/"
+    "link": "/",
+    "image": "https://i.imgur.com/0R4rEUM.gif"
   },
-    {
+  {
     "label": "Website",
     "new": false,
     "items": [
-       {
+      {
         "link": "/about/about-the-site",
         "label": "about the site",
+        "image": "https://i.imgur.com/zcFh0SK.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/manifesto",
         "label": "site manifesto",
+        "image": "https://i.imgur.com/04LvY0B.gif",
         "new": false,
         "hide": false
       },
-        {
+      {
         "link": "/about/webrings",
         "label": "webrings",
+        "image": "https://i.imgur.com/x9fu47V.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/neighbors",
         "label": "neighbors",
+        "image": "https://i.imgur.com/PxspC1V.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/guestbook",
         "label": "guestbook",
+        "image": "https://i.imgur.com/oEYba29.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/credits",
         "label": "credits",
+        "image": "https://i.imgur.com/11cAPuy.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/faq",
         "label": "faq",
+        "image": "https://i.imgur.com/q4AN64Z.gif",
         "new": false,
         "hide": false
       }
     ]
-    },
+  },
   {
     "label": "Webmistress",
-    "new": false,
+    "new": true,
     "items": [
-     
-     
-       {
+      {
         "link": "/about/about-me",
         "label": "about me",
+        "image": "https://i.imgur.com/l3MStv2.gif",
         "new": false,
         "hide": false
       },
-       {
+      {
         "link": "/about/my-online-childhood",
         "label": "my online childhood",
+        "image": "https://i.imgur.com/ut9XPLG.gif",
         "new": false,
         "hide": false
       },
@@ -78,17 +86,24 @@
       {
         "link": "/about/cats",
         "label": "cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
+        "image": "https://i.imgur.com/US8KWIQ.gif",
         "new": false,
         "hide": false
       },
-        {
+      {
         "link": "/about/media-log",
         "label": "media log",
+        "image": "https://i.imgur.com/hWQK1oD.gif",
         "new": false,
         "hide": false
+      },
+      {
+        "link": "/about/dream-diary",
+        "label": "dream diary",
+        "image": "https://i.imgur.com/Olwt3AI.gif",
+        "new": true,
+        "hide": false
       }
-      
-        
     ]
   },
   {
@@ -98,36 +113,42 @@
       {
         "link": "/creations/art",
         "label": "my art",
+        "image": "https://i.imgur.com/AczziyS.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/playlists",
         "label": "my playlists",
+        "image": "https://i.imgur.com/A7o51F0.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/video-edits",
         "label": "my video edits",
+        "image": "https://i.imgur.com/E3xxLeq.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/writing",
         "label": "my writing",
+        "image": "https://i.imgur.com/WemqKbs.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/picmix",
         "label": "my picmix",
+        "image": "https://i.imgur.com/79P8MMo.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/fractals",
         "label": "my fractal art",
+        "image": "https://i.imgur.com/14DUeFe.gif",
         "new": false,
         "hide": false
       }
@@ -137,75 +158,80 @@
     "label": "Media Recs",
     "new": false,
     "items": [
-    
       {
         "link": "/recs/youtube",
         "label": "youtube recs",
+        "image": "https://i.imgur.com/MKw7Ts0.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/tv-shows",
         "label": "tv show recs",
+        "image": "https://i.imgur.com/knXWw43.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/movies",
         "label": "movie recs",
+        "image": "https://i.imgur.com/goA2JSK.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/books",
         "label": "book recs",
+        "image": "https://i.imgur.com/Xq773u8.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/games",
         "label": "video game recs",
+        "image": "https://i.imgur.com/ZKogrD1.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/board-games",
         "label": "board/card game recs",
+        "image": "https://i.imgur.com/f68iHcF.gif",
         "new": true,
         "hide": true
       },
       {
         "link": "/recs/music",
         "label": "song recs",
+        "image": "https://i.imgur.com/HAXW8LV.gif",
         "new": false,
         "hide": false
       }
     ]
   },
-  
-        
   {
     "label": "Fun Stuff!",
     "new": false,
     "items": [
-      
       {
         "link": "/contest",
         "label": "Indie Web Contest",
+        "image": "https://i.imgur.com/yRDUz1y.gif",
         "new": false,
         "hide": false,
         "icon": "fa-solid fa-trophy"
       },
-     
       {
         "link": "/about/blinkies",
         "label": "blinkies & more",
+        "image": "https://i.imgur.com/RwrqznD.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/shrines/index",
         "label": "shrines",
+        "image": "https://i.imgur.com/XU8WpKV.gif",
         "new": false,
         "hide": false
       },
@@ -218,30 +244,35 @@
       {
         "link": "/fun/polls",
         "label": "polls",
+        "image": "https://i.imgur.com/o9c1kAD.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/fun/quizzes",
         "label": "personality quizzes",
+        "image": "https://i.imgur.com/LsjYhJb.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/fun/list-idea-generator",
         "label": "list idea generator",
+        "image": "https://i.imgur.com/MVyt3ws.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/fun/bored-button",
         "label": "are you bored?",
+        "image": "https://i.imgur.com/o88sX7W.gif",
         "new": false,
         "hide": false
       },
-       {
+      {
         "link": "/fun/advent-calendar-2025",
         "label": "advent calendar 2025",
+        "image": "https://i.imgur.com/O8L14EV.gif",
         "new": false,
         "hide": false
       }
@@ -254,18 +285,21 @@
       {
         "link": "/resources/bookmarks",
         "label": "bookmarks",
+        "image": "https://i.imgur.com/ALMPpt1.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/resources/software-recs",
         "label": "software recs",
+        "image": "https://i.imgur.com/D0YJB9M.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/resources/clipboard",
         "label": "clipboard",
+        "image": "https://i.imgur.com/goiBexo.gif",
         "new": false,
         "hide": false
       },
@@ -284,61 +318,74 @@
       {
         "link": "/resources/vocabulary",
         "label": "vocabulary",
+        "image": "https://i.imgur.com/UsTjc3j.gif",
         "new": false,
         "hide": false
       },
-       {
+      {
         "link": "/resources/backup-tutorial",
         "label": "how to backup files",
+        "image": "https://i.imgur.com/J99GcgI.gif",
         "new": false,
         "hide": false
-      }, 
-        {
+      },
+      {
         "link": "/resources/compression-tutorial",
         "label": "how to compress files",
+        "image": "https://i.imgur.com/et5llyF.gif",
         "new": false,
         "hide": false
-      }, 
+      },
       {
         "link": "/creations/coding",
         "label": "my userscripts & tools",
+        "image": "https://i.imgur.com/bamwARA.gif",
+        "new": true,
+        "hide": false
+      },
+      {
+        "link": "/resources/stop-using-social-media",
+        "label": "how to stop using social media & doomscrolling",
+        "image": "https://i.imgur.com/Id47pJv.gif",
+        "new": true,
+        "hide": true
+      }
+    ]
+  },
+  {
+    "label": "Offsite",
+    "new": false,
+    "items": [
+      {
+        "link": "https://neocities.org/site/petrapixel",
+        "label": "my neocities profile ➚",
+        "image": "https://i.imgur.com/mC4Fztt.gif",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "https://ko-fi.com/petrastipjar",
+        "label": "my tipjar (ko-fi) ➚",
+        "image": "https://i.imgur.com/phcDjmW.gif",
+        "new": false,
+        "hide": false
+      },
+      {
+        "link": "/youtube",
+        "label": "my youtube channel ➚",
+        "image": "https://i.imgur.com/V4mjYKz.gif",
+        "new": false,
+        "hide": true
+      },
+      {
+        "link": "/bearblog",
+        "label": "my bearblog ➚",
+        "image": "https://i.imgur.com/i5dgJWB.gif",
         "new": true,
         "hide": false
       }
     ]
   },
-
-  {
-    "label": "Offsite",
-    "new": false,
-    "items": [  {
-        "link": "https://neocities.org/site/petrapixel",
-        "label": "my neocities profile ➚",
-        "new": false,
-        "hide": false
-      },
-        {
-        "link": "https://ko-fi.com/petrastipjar",
-        "label": "my tipjar (ko-fi) ➚",
-        "new": false,
-        "hide": false
-      },
-       {
-        "link": "/youtube",
-        "label": "my youtube channel ➚",
-        "new": false,
-        "hide": true
-      },
-       {
-        "link": "/bearblog",
-        "label": "my bearblog ➚",
-        "new": true,
-        "hide": false
-      }      
-    
-    ]
-  }
- ,
   {
     "label": "Coding & Webmastery",
     "new": false,
@@ -463,7 +510,7 @@
       },
       {
         "label": "Beginner Tutorials",
-        "new": true,
+        "new": false,
         "items": [
           {
             "link": "/coding/layout-base-code",
@@ -481,10 +528,10 @@
             "hide": false,
             "icon": "layout-masonry-line"
           },
-           {
+          {
             "link": "/coding/custom-font-tutorial",
             "label": "Custom Font Tutorial",
-            "new": true,
+            "new": false,
             "hide": false,
             "icon": "font-size"
           },
@@ -542,7 +589,7 @@
             "hide": false,
             "icon": "magic-line"
           },
-           {
+          {
             "link": "/coding/google-sheets-api-tutorial",
             "label": "Google Sheets API Tutorial",
             "sublabel": "Read sheets data with JS",
@@ -596,7 +643,7 @@
             "hide": true,
             "icon": "gamepad-line"
           },
-            {
+          {
             "link": "/coding/cliques",
             "label": "List of Cliques",
             "sublabel": "",
@@ -604,7 +651,6 @@
             "hide": false,
             "icon": "user-community-line"
           },
-          
           {
             "link": "/webring",
             "label": "Code Collective Webring",

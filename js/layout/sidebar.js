@@ -13,7 +13,11 @@ function initMenu() {
     summaryEl.addEventListener("click", () => {
       // close all others
       [...menuDetails].forEach((otherEl) => {
-        if (otherEl.getAttribute("data-id") != menuDetailEl.getAttribute("data-id")) otherEl.removeAttribute("open");
+        if (
+          otherEl.getAttribute("data-id") !=
+          menuDetailEl.getAttribute("data-id")
+        )
+          otherEl.removeAttribute("open");
       });
     });
   });
@@ -31,7 +35,8 @@ function initMenu() {
 function initLastFmWidget() {
   if (!document.querySelector("#song")) return;
   let user = "Petra1999";
-  let url = "https://lastfm-last-played.biancarosa.com.br/" + user + "/latest-song";
+  let url =
+    "https://lastfm-last-played.biancarosa.com.br/" + user + "/latest-song";
   let song = document.querySelector("#song");
   fetch(url)
     .then(function (response) {
@@ -39,7 +44,8 @@ function initLastFmWidget() {
     })
     .then(function (json) {
       if (json["track"]) {
-        song.innerHTML = json["track"]["name"] + " – " + json["track"]["artist"]["#text"];
+        song.innerHTML =
+          json["track"]["name"] + " – " + json["track"]["artist"]["#text"];
         if (json["track"]["@attr"]) {
           if (json["track"]["@attr"]["nowplaying"]) {
             song.classList.add("nowplaying");
@@ -92,10 +98,17 @@ function initStatusCafeWidget() {
     .then((r) => r.json())
     .then((r) => {
       if (!r.content.length) {
-        document.getElementById("statuscafe-content").innerHTML = "No status yet.";
+        document.getElementById("statuscafe-content").innerHTML =
+          "No status yet.";
         return;
       }
-      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/petra1999" target="_blank">' + r.author + "</a> " + r.face + " " + r.timeAgo;
+      document.getElementById("statuscafe-username").innerHTML =
+        '<a href="https://status.cafe/users/petra1999" target="_blank">' +
+        r.author +
+        "</a> " +
+        r.face +
+        " " +
+        r.timeAgo;
       document.getElementById("statuscafe-content").innerHTML = r.content;
     });
 }
@@ -108,7 +121,9 @@ function initBlinkies() {
   xah_randomize_children_f(document.querySelector(".aside-blinkies__buttons"));
   xah_randomize_children_f(document.querySelector(".aside-blinkies__blinkies"));
 
-  xah_randomize_children_f(document.querySelector(".aside-mutuals__buttons"));
+  xah_randomize_children_f(
+    document.querySelector(".aside-mutuals__buttons:not(.aside-supporters)"),
+  );
 
   //   initMarquee(".aside-blinkies__buttons", 0.5);
   //   initMarquee(".aside-blinkies__blinkies", 0.5);
@@ -125,7 +140,9 @@ function xah_randomize_children_f(nodeX) {
   const newNodeFrag = document.createDocumentFragment();
 
   while (xChildren.length > 0) {
-    newNodeFrag.appendChild(xChildren[Math.floor(Math.random() * xChildren.length)]);
+    newNodeFrag.appendChild(
+      xChildren[Math.floor(Math.random() * xChildren.length)],
+    );
   }
 
   nodeX.innerHTML = "";

@@ -103,53 +103,74 @@ testingOnLocalhost: false
     >
     <a href="#main" id="skip-to-content-link">Skip to content</a>
     <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
-    <div id="content">
-      <!-- ------------------------------------------------ -->
-      <!-- --------------------- HEADER ------------------- -->
-      <!-- ------------------------------------------------ -->
-      {% if not noThemeSwichter %}
-      <div id="theme-toggler" aria-hidden="true">
-        <button type="button">
-          <img
-            src="{{ nesting }}assets/img/layout/moon.gif"
-            width="20"
-            style="height: 20px; image-rendering: pixelated"
-            alt=""
-          />
-          <span>toggle theme</span>
-        </button>
-      </div>
-      <div id="font-toggler" aria-hidden="true">
-        <button type="button">
-          <span>toggle font</span>
-        </button>
-      </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      "
+    >
+      <div id="content">
+        <!-- ------------------------------------------------ -->
+        <!-- -------------------- BUTTONS ------------------- -->
+        <!-- ------------------------------------------------ -->
 
-      {% endif %}
-      <header>
-        <div class="header-heading">
-          <a href="/"
-            ><img
-              src="{{ nesting }}assets/img/layout/petrapixel.png"
-              aria-label="petrapixel"
-              height="100"
-              width="300"
-          /></a>
+        <div class="toggle-buttons">
+          <button
+            type="button"
+            title="toggle dark mode"
+            class="toggle-buttons__button toggle-buttons__button--theme"
+            aria-hidden="true"
+          >
+            <img src="https://i.imgur.com/pEic4vl.gif" alt="toggle dark mode" />
+          </button>
+          <button
+            type="button"
+            title="toggle font"
+            class="toggle-buttons__button toggle-buttons__button--font"
+            aria-hidden="true"
+          >
+            <img src="https://i.imgur.com/1D2VdVh.gif" alt="toggle font" />
+          </button>
+          <button
+            type="button"
+            title="toggle sounds"
+            class="toggle-buttons__button toggle-buttons__button--sound"
+            aria-hidden="true"
+          >
+            <img src="https://i.imgur.com/XjYjgGK.gif" alt="toggle sounds" />
+          </button>
         </div>
-      </header>
-      <aside class="aside aside--left" data-nosnippet="true">
-        <details id="mobile-nav">
-          <summary id="mobile-nav-toggle">Open Navigation</summary>
+
+        <!-- ------------------------------------------------ -->
+        <!-- --------------------- HEADER ------------------- -->
+        <!-- ------------------------------------------------ -->
+
+        <header>
+          <div class="header-heading">
+            <a href="/"
+              ><img
+                src="{{ nesting }}assets/img/layout/petrapixel.png"
+                aria-label="petrapixel"
+                height="100"
+                width="300"
+            /></a>
+          </div>
+        </header>
+        <aside class="aside aside--left" data-nosnippet="true">
+          <details id="mobile-nav">
+            <summary id="mobile-nav-toggle">Open Navigation</summary>
+            {% include "nav.njk" %}
+          </details>
           {% include "nav.njk" %}
-        </details>
-        {% include "nav.njk" %}
 
-        <div class="aside-dreamland desktop-only">
-          <!-- ----------------------------------------- -->
-          <!-- ----------------- LEFT ----------------- -->
-          <!-- ----------------------------------------- -->
+          <div class="aside-dreamland desktop-only">
+            <!-- ----------------------------------------- -->
+            <!-- ----------------- LEFT ----------------- -->
+            <!-- ----------------------------------------- -->
 
-          <!-- ----------------- SEARCHBAR ----------------- 
+            <!-- ----------------- SEARCHBAR ----------------- 
 
           <script
             async
@@ -157,72 +178,73 @@ testingOnLocalhost: false
           ></script>
           <div class="gcse-search"></div>
 -->
-          <img
-            src="{{ nesting }}assets/img/layout/divider1.gif"
-            alt=""
-            aria-hidden="true"
-          />
+            <img
+              src="{{ nesting }}assets/img/layout/divider1.gif"
+              alt=""
+              aria-hidden="true"
+            />
 
-          <!-- ----------------- SUPPORTERS ----------------- -->
+            <!-- ----------------- SUPPORTERS ----------------- -->
 
-          <div
-            class="aside-box aside-mutuals"
-            data-nesting="{{ nesting }}"
-            aria-hidden="true"
-          >
-            <div class="aside-box__heading">
-              <a href="/about/neighbors"
-                >Supporters<img
-                  src="{{ nesting }}assets/img/layout/icon-supporter.png"
-                  alt=""
-                  aria-hidden="true"
-              /></a>
-            </div>
-            <a href="#aftersupporters" class="skiplink" aria-hidden="true"
-              >Skip supporters</a
-            >
-            <div id="beforesupporters"></div>
             <div
-              class="aside-supporters aside-mutuals__buttons"
-              scrollamount="5"
+              class="aside-box aside-mutuals"
+              data-nesting="{{ nesting }}"
+              aria-hidden="true"
             >
-              {% for site in sites %} {% if site.title != "TEMPLATE" and
-              site.supporter and not site.hide %}
-              <a
-                href="{{ site.link }}"
-                title="{{ site.title }}"
-                target="_blank"
+              <div class="aside-box__heading">
+                <a href="/about/neighbors"
+                  >Supporters<img
+                    src="{{ nesting }}assets/img/layout/icon-supporter.png"
+                    alt=""
+                    aria-hidden="true"
+                /></a>
+              </div>
+              <a href="#aftersupporters" class="skiplink" aria-hidden="true"
+                >Skip supporters</a
               >
-                <img
-                  src="{{ site.image | prepareImageUrl }}"
-                  alt="{{ site.title }}"
-                  width="88"
-                  height="31"
-                  loading="lazy"
-                />
-              </a>
-              {% endif %} {% endfor %}
-            </div>
-            <div id="aftersupporters">
-              Click
-              <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
-                >here</a
+              <div id="beforesupporters"></div>
+              <div
+                class="aside-supporters aside-mutuals__buttons"
+                scrollamount="5"
               >
-              to become a supporter.
+                {% for site in sites %} {% if site.title != "TEMPLATE" and
+                site.supporter and not site.hide %}
+                <a
+                  href="{{ site.link }}"
+                  title="{{ site.title }}"
+                  target="_blank"
+                  class="activate-preview"
+                >
+                  <img
+                    src="{{ site.image | prepareImageUrl }}"
+                    alt="{{ site.title }}"
+                    width="88"
+                    height="31"
+                    loading="lazy"
+                  />
+                </a>
+                {% endif %} {% endfor %}
+              </div>
+              <div id="aftersupporters">
+                Click
+                <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
+                  >here</a
+                >
+                to become a supporter.
+              </div>
+              <a href="#beforesupporters" class="skiplink" aria-hidden="true"
+                >Skip to before neighbours</a
+              >
             </div>
-            <a href="#beforesupporters" class="skiplink" aria-hidden="true"
-              >Skip to before neighbours</a
-            >
-          </div>
 
-          <img
-            src="{{ nesting }}assets/img/layout/divider6.gif"
-            alt=""
-            aria-hidden="true"
-            style="margin-top: -5px"
-          />
+            <img
+              src="{{ nesting }}assets/img/layout/divider6.gif"
+              alt=""
+              aria-hidden="true"
+              style="margin-top: -5px"
+            />
 
-          <!-- ----------------- CONTEST -----------------     
+            <!-- ----------------- CONTEST -----------------     
 
           <div class="aside-box aside-indie-web-contest" aria-hidden="true">
             <div class="aside-box__heading" aria-hidden="true">
@@ -246,362 +268,380 @@ testingOnLocalhost: false
 
           -->
 
-          <!-- ----------------- LINK BACK ----------------- -->
+            <!-- ----------------- LINK BACK ----------------- -->
 
-          <div class="aside-box aside-link-back">
-            <div class="aside-box__heading">
-              Link back!<img
-                src="{{ nesting }}assets/img/layout/icon-copy.png"
-                alt=""
-                aria-hidden="true"
-              />
-            </div>
-            <p>Hotlinking is a-okay!</p>
-            <a
-              href="https://petrapixel.neocities.org/"
-              target="_blank"
-              tabindex="-1"
-              ><img
-                src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp"
-                alt="petrapixel"
-                width="88"
-                height="31"
-            /></a>
-            <textarea
-              class="code-textarea"
-              name=""
-              id=""
-              rows="10"
-              aria-label="link-back code"
-            >
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
-            >
-          </div>
-
-          <!-- ----------------- CHANGELOG ----------------- -->
-
-          <div class="aside-box aside-changelog">
-            <div class="aside-box__heading" aria-hidden="true">
-              Changelog<img
-                src="{{ nesting }}assets/img/layout/icon-code.png"
-                alt=""
-                aria-hidden="true"
-              />
-            </div>
-            <ul class="changelog custom-scrollbar" aria-label="Changelog">
-              {% for changelogEntry in changelog %} {% if changelogEntry.text !=
-              "TEMPLATE" %}
-              <li class="changelog__entry">
-                <strong>{{ changelogEntry.date }}</strong>
-                {% if changelogEntry.link == "" %}
-                <span>{{ changelogEntry.text }}</span>
-                {% else %}
-                <a href="{{ changelogEntry.link }}" tabindex="-1"
-                  >{{ changelogEntry.text }}</a
-                >
-                {% endif %}
-              </li>
-              {% endif %} {% endfor %}
-            </ul>
-          </div>
-
-          <img
-            src="{{ nesting }}assets/img/layout/divider8.gif"
-            alt=""
-            aria-hidden="true"
-            style="padding-top: 5px"
-          />
-
-          <!-- ----------------- BLINKIES ----------------- -->
-
-          <div class="aside-box aside-blinkies" aria-hidden="true">
-            <marquee class="marquee aside-blinkies__buttons" scrollamount="5">
-              {% include 'blinkies-blinkies.njk' %}
-            </marquee>
-            <marquee class="marquee aside-blinkies__blinkies" scrollamount="4">
-              {% include 'blinkies-buttons.njk' %}
-            </marquee>
-            <div id="afterneighbours">
-              Click <a href="/about/blinkies">here</a> to view them all.
-            </div>
-          </div>
-
-          <img
-            src="{{ nesting }}assets/img/layout/divider6.gif"
-            alt=""
-            aria-hidden="true"
-            style="margin-top: -5px"
-          />
-
-          <img
-            src="{{ nesting }}assets/img/layout/divider7.gif"
-            alt=""
-            aria-hidden="true"
-            style="padding-top: 10px"
-          />
-
-          <!-- ----------------- NAV LINK ----------------- -->
-
-          <div class="aside-box aside-poll">
-            <div class="aside-box__heading" aria-hidden="true">
-              Other Sites<img
-                src="{{ nesting }}assets/img/layout/icon-hearts.png"
-                alt=""
-                aria-hidden="true"
-              />
-            </div>
-            <iframe
-              class="aside-navlinkads"
-              width="170"
-              height="170"
-              style="border: none"
-              src="https://dimden.neocities.org/navlink/"
-              name="neolink"
-              aria-label="Navlink"
-            ></iframe>
-            <center>
-              <p style="line-height: 1">
-                <small
-                  >These are "ads" to other indie web sites. You should check
-                  them out :)</small
-                >
-              </p>
-            </center>
-
-            <center>
-              <iframe
-                width="88"
-                height="31"
-                style="border: none"
-                src="https://melonsoda.nekoweb.org/button.html"
-                name="buttonlink"
-              ></iframe>
-            </center>
-          </div>
-        </div>
-      </aside>
-
-      <!-- ----------------------------------------- -->
-      <!-- ----------------- RIGHT ----------------- -->
-      <!-- ----------------------------------------- -->
-
-      <aside class="aside aside--right desktop-only" data-nosnippet="true">
-        <!-- ----------------- FOLLOW, GUESTBOOK, CLAP ----------------- -->
-        <div class="aside-clap-kirby">
-          <a
-            class="aside-box__guestbook"
-            aria-hidden="true"
-            href="/about/guestbook"
-          >
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby1light.png"
-              alt="sign my guestbook"
-              class="only-show-in-light-mode"
-            />
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby1.png"
-              alt="sign my guestbook"
-              class="only-show-in-dark-mode"
-            />
-          </a>
-
-          <a
-            class="aside-box__guestbook"
-            aria-label="follow me on neocities"
-            href="https://neocities.org/site/petrapixel"
-            target="_blank"
-          >
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby2light.png"
-              alt="follow me on neocities"
-              class="only-show-in-light-mode"
-            />
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby2.png"
-              alt="follow me on neocities"
-              class="only-show-in-dark-mode"
-            />
-          </a>
-          <center style="margin-top: 5px">
-            <small>(thanks for 2000 followers!)</small>
-          </center>
-
-          <a
-            id="clap-for-me"
-            href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel"
-            target="_blank"
-          >
-            <img
-              width="80"
-              height="18"
-              src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en"
-              alt="clap for me on clap.fc2.com"
-            />
-            <small>click to clap for me!</small>
-          </a>
-        </div>
-
-        <img
-          src="{{ nesting }}assets/img/layout/divider2.gif"
-          alt=""
-          aria-hidden="true"
-          style="image-rendering: pixelated"
-        />
-
-        <!-- ----------------- STATS / STATUS ----------------- -->
-
-        <div class="aside-stats">
-          <div class="aside-box">
-            <div class="aside-box__heading">
-              <span>hits & visitors</span
-              ><img
-                src="{{ nesting }}assets/img/layout/icon-stats.png"
-                alt=""
-                aria-hidden="true"
-              />
-            </div>
-            <div class="aside-stats__stat-content">
-              <center style="filter: hue-rotate(15deg) brightness(1.05)">
-                {% if not testingOnLocalhost %}
-
-                <!-- new -->
-                <script
-                  type="text/javascript"
-                  src="https://counter.websiteout.com/js/30/0/128970/0"
-                ></script>
-
-                <!-- old (broke at 128970 hits)
-                <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a> -->
-
-                {% endif %}
-              </center>
-              <small
-                style="
-                  font-size: 0.8em;
-                  letter-spacing: -0.4px;
-                  text-align: center;
-                  display: block;
-                "
-                >(this counts hits, not visitors)</small
-              >
-            </div>
-            <div id="current-visitors">
+            <div class="aside-box aside-link-back">
+              <div class="aside-box__heading">
+                Link back!<img
+                  src="{{ nesting }}assets/img/layout/icon-copy.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+              <p>Hotlinking is a-okay!</p>
               <a
-                href="http://www.snazzyspace.com/generators/viewer-counter/"
+                href="https://petrapixel.neocities.org/"
                 target="_blank"
+                tabindex="-1"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp"
+                  alt="petrapixel"
+                  width="88"
+                  height="31"
+              /></a>
+              <textarea
+                class="code-textarea"
+                name=""
+                id=""
+                rows="10"
+                aria-label="link-back code"
               >
-                {% if not testingOnLocalhost %}<img
-                  src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png"
-                />{% endif %}
-              </a>
+<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
+              >
             </div>
-          </div>
 
-          <div class="aside-box">
-            <div class="aside-box__heading">
-              <span>my time</span
-              ><img
-                src="{{ nesting }}assets/img/layout/icon-clock.png"
-                alt=""
-                aria-hidden="true"
-              />
+            <!-- ----------------- CHANGELOG ----------------- -->
+
+            <div class="aside-box aside-changelog">
+              <div class="aside-box__heading" aria-hidden="true">
+                Changelog<img
+                  src="{{ nesting }}assets/img/layout/icon-code.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+              <ul class="changelog custom-scrollbar" aria-label="Changelog">
+                {% for changelogEntry in changelog %} {% if changelogEntry.text
+                != "TEMPLATE" %}
+                <li class="changelog__entry">
+                  <strong>{{ changelogEntry.date }}</strong>
+                  {% if changelogEntry.link == "" %}
+                  <span>{{ changelogEntry.text }}</span>
+                  {% else %}
+                  <a href="{{ changelogEntry.link }}" tabindex="-1"
+                    >{{ changelogEntry.text }}</a
+                  >
+                  {% endif %}
+                </li>
+                {% endif %} {% endfor %}
+              </ul>
             </div>
-            <div class="aside-stats__stat-content">
-              <div style="text-align: center">
-                <iframe
-                  title="my time"
-                  src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1"
-                  frameborder="0"
-                  width="150"
-                  height="17"
-                  allowtransparency="true"
-                ></iframe>
+
+            <img
+              src="{{ nesting }}assets/img/layout/divider8.gif"
+              alt=""
+              aria-hidden="true"
+              style="padding-top: 5px"
+            />
+
+            <!-- ----------------- BLINKIES ----------------- -->
+
+            <div class="aside-box aside-blinkies" aria-hidden="true">
+              <marquee class="marquee aside-blinkies__buttons" scrollamount="5">
+                {% include 'blinkies-blinkies.njk' %}
+              </marquee>
+              <marquee
+                class="marquee aside-blinkies__blinkies"
+                scrollamount="4"
+              >
+                {% include 'blinkies-buttons.njk' %}
+              </marquee>
+              <div id="afterneighbours">
+                Click <a href="/about/blinkies">here</a> to view them all.
               </div>
             </div>
+
+            <img
+              src="{{ nesting }}assets/img/layout/divider6.gif"
+              alt=""
+              aria-hidden="true"
+              style="margin-top: -5px"
+            />
+
+            <img
+              src="{{ nesting }}assets/img/layout/divider7.gif"
+              alt=""
+              aria-hidden="true"
+              style="padding-top: 10px"
+            />
+
+            <!-- ----------------- NAV LINK ----------------- -->
+
+            <div class="aside-box aside-poll">
+              <div class="aside-box__heading" aria-hidden="true">
+                Other Sites<img
+                  src="{{ nesting }}assets/img/layout/icon-hearts.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+              <iframe
+                class="aside-navlinkads"
+                width="170"
+                height="170"
+                style="border: none"
+                src="https://dimden.neocities.org/navlink/"
+                name="neolink"
+                aria-label="Navlink"
+              ></iframe>
+              <center>
+                <p style="line-height: 1">
+                  <small
+                    >These are "ads" to other indie web sites. You should check
+                    them out :)</small
+                  >
+                </p>
+              </center>
+
+              <center>
+                <iframe
+                  width="88"
+                  height="31"
+                  style="border: none"
+                  src="https://melonsoda.nekoweb.org/button.html"
+                  name="buttonlink"
+                ></iframe>
+              </center>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ----------------------------------------- -->
+        <!-- ----------------- RIGHT ----------------- -->
+        <!-- ----------------------------------------- -->
+
+        <aside class="aside aside--right desktop-only" data-nosnippet="true">
+          <!-- DINOS -->
+          <div class="aside__dinos">
+            <img src="https://i.imgur.com/YacomnE.gif" alt="" />
+            <img src="https://i.imgur.com/ZugGYNr.gif" alt="" />
+            <img src="https://i.imgur.com/YUmwKM1.gif" alt="" />
+            <img src="https://i.imgur.com/5SsQizU.gif" alt="" />
           </div>
 
-          <div class="aside-box">
-            <div class="aside-box__heading">
-              <span>currently</span
-              ><img
-                src="{{ nesting }}assets/img/layout/icon-happy.png"
-                alt=""
-                aria-hidden="true"
+          <!-- ----------------- FOLLOW, GUESTBOOK, CLAP ----------------- -->
+          <div class="aside-clap-kirby">
+            <a
+              class="aside-box__guestbook"
+              aria-hidden="true"
+              href="/about/guestbook"
+            >
+              <img
+                width="145"
+                height="56"
+                src="{{ nesting }}assets/img/layout/kirby1light.png"
+                alt="sign my guestbook"
+                class="only-show-in-light-mode"
               />
-            </div>
-            <div class="aside-stats__stat-content" id="statuscafe">
-              <div id="statuscafe-username"></div>
-              <div id="statuscafe-content"></div>
+              <img
+                width="145"
+                height="56"
+                src="{{ nesting }}assets/img/layout/kirby1.png"
+                alt="sign my guestbook"
+                class="only-show-in-dark-mode"
+              />
+            </a>
+
+            <a
+              class="aside-box__guestbook"
+              aria-label="follow me on neocities"
+              href="https://neocities.org/site/petrapixel"
+              target="_blank"
+            >
+              <img
+                width="145"
+                height="56"
+                src="{{ nesting }}assets/img/layout/kirby2light.png"
+                alt="follow me on neocities"
+                class="only-show-in-light-mode"
+              />
+              <img
+                width="145"
+                height="56"
+                src="{{ nesting }}assets/img/layout/kirby2.png"
+                alt="follow me on neocities"
+                class="only-show-in-dark-mode"
+              />
+            </a>
+            <!-- -->
+            <center style="margin-top: 5px">
+              <small>(thanks for 2000 followers!)</small>
+            </center>
+
+            <a
+              id="clap-for-me"
+              href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel"
+              target="_blank"
+            >
+              <img
+                width="80"
+                height="18"
+                src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en"
+                alt="clap for me on clap.fc2.com"
+              />
+              <small>click to clap for me!</small>
+            </a>
+          </div>
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider2.gif"
+            alt=""
+            aria-hidden="true"
+            style="image-rendering: pixelated"
+          />
+
+          <!-- ----------------- STATS / STATUS ----------------- -->
+
+          <div class="aside-stats">
+            <div class="aside-box">
+              <div class="aside-box__heading">
+                <span>hits & visitors</span
+                ><img
+                  src="{{ nesting }}assets/img/layout/icon-stats.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+              <div class="aside-stats__stat-content">
+                <center style="filter: hue-rotate(15deg) brightness(1.05)">
+                  {% if not testingOnLocalhost %}
+
+                  <!-- new -->
+                  <script
+                    type="text/javascript"
+                    src="https://counter.websiteout.com/js/30/0/128970/0"
+                  ></script>
+
+                  <!-- old (broke at 128970 hits)
+                <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a> -->
+
+                  {% endif %}
+                </center>
+                <small
+                  style="
+                    font-size: 0.8em;
+                    letter-spacing: -0.4px;
+                    text-align: center;
+                    display: block;
+                  "
+                  >(this counts hits, not visitors)</small
+                >
+              </div>
+              <div id="current-visitors">
+                <a
+                  href="http://www.snazzyspace.com/generators/viewer-counter/"
+                  target="_blank"
+                >
+                  {% if not testingOnLocalhost %}<img
+                    src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png"
+                  />{% endif %}
+                </a>
+              </div>
             </div>
 
-            <ul class="aside-currently-list">
-              <li aria-label="listening to:">
-                <img
-                  src="{{ nesting }}assets/img/layout/icon-music.png"
-                  alt=""
-                  title="listening to:"
-                  aria-hidden="true"
-                />
-                <a
-                  href="https://www.last.fm/user/Petra1999"
-                  target="_blank"
-                  id="song"
-                  >various</a
-                >
-                <img
-                  src="{{ nesting }}assets/img/layout/equalizer.gif"
+            <!-- 
+            <div class="aside-box">
+              <div class="aside-box__heading">
+                <span>my time</span
+                ><img
+                  src="{{ nesting }}assets/img/layout/icon-clock.png"
                   alt=""
                   aria-hidden="true"
                 />
-              </li>
-              <li aria-label="watching:">
-                <img
-                  src="{{ nesting }}assets/img/layout/icon-tv.png"
+              </div>
+              <div class="aside-stats__stat-content">
+                <div style="text-align: center">
+                  <iframe
+                    title="my time"
+                    src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1"
+                    frameborder="0"
+                    width="150"
+                    height="17"
+                    allowtransparency="true"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+-->
+
+            <div class="aside-box">
+              <div class="aside-box__heading">
+                <span>currently</span
+                ><img
+                  src="{{ nesting }}assets/img/layout/icon-happy.png"
                   alt=""
-                  title="watching:"
                   aria-hidden="true"
                 />
-                <a href="https://app.tvtime.com/user/33116783" target="_blank"
-                  >Gravity Falls
-                  <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span>--></a
-                >
-              </li>
-              <li aria-label="reading:">
-                <img
-                  src="{{ nesting }}assets/img/layout/icon-book.png"
-                  alt=""
-                  title="reading:"
-                  aria-hidden="true"
-                />
-                <a
-                  href="https://www.goodreads.com/user/show/62158941-petra"
-                  target="_blank"
-                  >Heated Rivalry
-                  <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span
+              </div>
+              <div class="aside-stats__stat-content" id="statuscafe">
+                <div id="statuscafe-username"></div>
+                <div id="statuscafe-content"></div>
+              </div>
+
+              <ul class="aside-currently-list">
+                <li aria-label="listening to:">
+                  <img
+                    src="{{ nesting }}assets/img/layout/icon-music.png"
+                    alt=""
+                    title="listening to:"
+                    aria-hidden="true"
+                  />
+                  <a
+                    href="https://www.last.fm/user/Petra1999"
+                    target="_blank"
+                    id="song"
+                    >various</a
+                  >
+                  <img
+                    src="{{ nesting }}assets/img/layout/equalizer.gif"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </li>
+                <li aria-label="watching:">
+                  <img
+                    src="{{ nesting }}assets/img/layout/icon-tv.png"
+                    alt=""
+                    title="watching:"
+                    aria-hidden="true"
+                  />
+                  <a href="https://app.tvtime.com/user/33116783" target="_blank"
+                    >Gravity Falls, OFMD
+                    <span style="font-family: sans-serif; font-size: 0.9em"
+                      >↺</span
+                    >, House of the Dragon<!----></a
+                  >
+                </li>
+                <li aria-label="reading:">
+                  <img
+                    src="{{ nesting }}assets/img/layout/icon-book.png"
+                    alt=""
+                    title="reading:"
+                    aria-hidden="true"
+                  />
+                  <a
+                    href="https://www.goodreads.com/user/show/62158941-petra"
+                    target="_blank"
+                    >The Anxious Generation
+                    <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span
                 >--></a
-                >
-              </li>
-              <li aria-label="playing:">
-                <img
-                  src="{{ nesting }}assets/img/layout/icon-game.png"
-                  alt=""
-                  title="playing:"
-                  aria-hidden="true"
-                />
-                <a href="https://www.backloggd.com/u/Petra1999/" target="_blank"
-                  >Balatro</a
-                >
-              </li>
+                  >
+                </li>
+                <li aria-label="playing:">
+                  <img
+                    src="{{ nesting }}assets/img/layout/icon-game.png"
+                    alt=""
+                    title="playing:"
+                    aria-hidden="true"
+                  />
+                  <a
+                    href="https://www.backloggd.com/u/Petra1999/"
+                    target="_blank"
+                    >Balatro</a
+                  >
+                </li>
 
-              <!--
+                <!--
             <li aria-label="obsessed with:">
               <img
                 src="{{ nesting }}assets/img/layout/icon-heart.png"
@@ -614,307 +654,317 @@ testingOnLocalhost: false
               >
             </li>
              -->
-            </ul>
-          </div>
-        </div>
-
-        <img
-          src="{{ nesting }}assets/img/layout/divider3.gif"
-          alt=""
-          aria-hidden="true"
-          style="margin-top: -2px"
-        />
-
-        <!-- ----------------- TIP JAR ----------------- -->
-
-        <div class="aside-box aside-support" aria-hidden="true">
-          <div class="aside-box__heading" aria-hidden="true">
-            Support<img
-              src="{{ nesting }}assets/img/layout/icon-piggy-bank.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-
-          <a
-            class="aside-tip-jar"
-            href="https://ko-fi.com/petrastipjar"
-            target="_blank"
-          >
-            <img
-              src="{{ nesting }}assets/img/layout/coffee.gif"
-              width="50"
-              alt="Coffee Gif"
-            />
-            <div>
-              <b>Tip Jar</b
-              ><small>Buy me a coffee? I appreciate your support!! &lt;3</small>
+              </ul>
             </div>
-          </a>
-        </div>
+          </div>
 
-        <img
-          src="{{ nesting }}assets/img/layout/divider4.gif"
-          alt=""
-          aria-hidden="true"
-          style="padding-top: 5px"
-        />
+          <img
+            src="{{ nesting }}assets/img/layout/divider3.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: -2px"
+          />
 
-        <!-- ----------------- NEIGHBORS ----------------- -->
+          <!-- ----------------- TIP JAR ----------------- -->
 
-        <div
-          class="aside-box aside-mutuals"
-          data-nesting="{{ nesting }}"
-          aria-hidden="true"
-        >
-          <div class="aside-box__heading">
-            <a href="/about/neighbors"
-              >Neighbors<img
-                src="{{ nesting }}assets/img/layout/icon-building.png"
+          <div class="aside-box aside-support" aria-hidden="true">
+            <div class="aside-box__heading" aria-hidden="true">
+              Support<img
+                src="{{ nesting }}assets/img/layout/icon-piggy-bank.png"
                 alt=""
                 aria-hidden="true"
+              />
+            </div>
+
+            <a
+              class="aside-tip-jar"
+              href="https://ko-fi.com/petrastipjar"
+              target="_blank"
+            >
+              <img
+                src="{{ nesting }}assets/img/layout/coffee.gif"
+                width="50"
+                alt="Coffee Gif"
+              />
+              <div>
+                <b>Tip Jar</b
+                ><small
+                  >Buy me a coffee? I appreciate your support!! &lt;3</small
+                >
+              </div>
+            </a>
+          </div>
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider4.gif"
+            alt=""
+            aria-hidden="true"
+            style="padding-top: 5px"
+          />
+
+          <!-- ----------------- NEIGHBORS ----------------- -->
+
+          <div
+            class="aside-box aside-mutuals"
+            data-nesting="{{ nesting }}"
+            aria-hidden="true"
+          >
+            <div class="aside-box__heading">
+              <a href="/about/neighbors"
+                >Neighbors<img
+                  src="{{ nesting }}assets/img/layout/icon-building.png"
+                  alt=""
+                  aria-hidden="true"
+              /></a>
+            </div>
+            <a href="#afterneighbours" class="skiplink" aria-hidden="true"
+              >Skip neighbours</a
+            >
+            <div id="beforeneighbours"></div>
+            <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
+              {% for site in sites %} {% if site.title != "TEMPLATE" and
+              site.neighbor and not site.hide %}
+              <a
+                href="{{ site.link }}"
+                title="{{ site.title }}"
+                target="_blank"
+              >
+                <img
+                  src="{{ site.image | prepareImageUrl }}"
+                  alt="{{ site.title }}"
+                  width="88"
+                  height="31"
+                  loading="lazy"
+                />
+              </a>
+              {% endif %} {% endfor %}
+            </marquee>
+            <div id="afterneighbours">
+              Click <a href="/about/neighbors">here</a> to view them all.
+            </div>
+            <a href="#beforeneighbours" class="skiplink" aria-hidden="true"
+              >Skip to before neighbours</a
+            >
+          </div>
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider6.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: -5px"
+          />
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider5.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: 2em"
+          />
+
+          <!-- ----------------- TUMBLR ----------------- -->
+
+          <div class="aside-box aside-tumblr" aria-hidden="true">
+            <div class="aside-box__heading" aria-hidden="true">
+              Tumblr<img
+                src="{{ nesting }}assets/img/layout/icon-redo.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div>
+              <b>Got tumblr?</b> Reblog my
+              <a
+                href="https://www.tumblr.com/petrapixel/801488583310606336"
+                target="_blank"
+                >indie web masterpost</a
+              >!
+              <img
+                aria-hidden="true"
+                src="{{ nesting }}assets/img/inline/small-heart.gif"
+              />
+            </div>
+          </div>
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider1.gif"
+            alt=""
+            aria-hidden="true"
+          />
+
+          <!-- ----------------- POLL ----------------- -->
+
+          <div class="aside-box aside-poll" aria-hidden="true">
+            <div class="aside-box__heading" aria-hidden="true">
+              Poll<img
+                src="{{ nesting }}assets/img/layout/icon-stats.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+
+            <!-- -->
+
+            <form method="post" action="https://poll.pollcode.com/13962324">
+              <div
+                style="
+                  background-color: #eeeeee;
+                  padding: 2px;
+                  width: 175px;
+                  font-family: Arial;
+                  font-size: small;
+                  color: #000000;
+                "
+              >
+                <div style="padding: 2px 0px 4px 2px">
+                  <strong>how old are you?</strong>
+                </div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="1"
+                  id="answer139623241"
+                  style="float: left"
+                /><label for="answer139623241" style="float: left; width: 150px"
+                  >10 or younger</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="2"
+                  id="answer139623242"
+                  style="float: left"
+                /><label for="answer139623242" style="float: left; width: 150px"
+                  >11-12</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="3"
+                  id="answer139623243"
+                  style="float: left"
+                /><label for="answer139623243" style="float: left; width: 150px"
+                  >13-14</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="4"
+                  id="answer139623244"
+                  style="float: left"
+                /><label for="answer139623244" style="float: left; width: 150px"
+                  >15-16</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="5"
+                  id="answer139623245"
+                  style="float: left"
+                /><label for="answer139623245" style="float: left; width: 150px"
+                  >17-18</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="6"
+                  id="answer139623246"
+                  style="float: left"
+                /><label for="answer139623246" style="float: left; width: 150px"
+                  >19-20</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="7"
+                  id="answer139623247"
+                  style="float: left"
+                /><label for="answer139623247" style="float: left; width: 150px"
+                  >21-25</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="8"
+                  id="answer139623248"
+                  style="float: left"
+                /><label for="answer139623248" style="float: left; width: 150px"
+                  >26-29</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="9"
+                  id="answer139623249"
+                  style="float: left"
+                /><label for="answer139623249" style="float: left; width: 150px"
+                  >30-35</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="10"
+                  id="answer1396232410"
+                  style="float: left"
+                /><label
+                  for="answer1396232410"
+                  style="float: left; width: 150px"
+                  >36-39</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <input
+                  type="radio"
+                  name="answer"
+                  value="11"
+                  id="answer1396232411"
+                  style="float: left"
+                /><label
+                  for="answer1396232411"
+                  style="float: left; width: 150px"
+                  >40 or older</label
+                >
+                <div style="clear: both; height: 2px"></div>
+                <div align="center" style="padding: 3px">
+                  <input type="submit" value=" Vote " />&nbsp;<input
+                    type="submit"
+                    name="view"
+                    value=" View "
+                  />
+                </div>
+                <div align="right" style="font-size: 10px">
+                  pollcode.com <a href="https://pollcode.com/">free polls</a>
+                </div>
+              </div>
+            </form>
+
+            <!-- -->
+
+            <center>
+              <small>(all polls <a href="/fun/polls">here</a>)</small>
+            </center>
+          </div>
+
+          <!-- ----------------- TAMANOTCHI ----------------- -->
+
+          <div class="aside-tamanotchi">
+            <a href="https://tamanotchi.world/25005c"
+              ><img
+                src="https://tamanotchi.world/i2/25005"
+                alt="It's tamaNOTchi! Click to feed!"
             /></a>
           </div>
-          <a href="#afterneighbours" class="skiplink" aria-hidden="true"
-            >Skip neighbours</a
-          >
-          <div id="beforeneighbours"></div>
-          <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
-            {% for site in sites %} {% if site.title != "TEMPLATE" and
-            site.neighbor and not site.hide %}
-            <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
-              <img
-                src="{{ site.image | prepareImageUrl }}"
-                alt="{{ site.title }}"
-                width="88"
-                height="31"
-                loading="lazy"
-              />
-            </a>
-            {% endif %} {% endfor %}
-          </marquee>
-          <div id="afterneighbours">
-            Click <a href="/about/neighbors">here</a> to view them all.
-          </div>
-          <a href="#beforeneighbours" class="skiplink" aria-hidden="true"
-            >Skip to before neighbours</a
-          >
-        </div>
 
-        <img
-          src="{{ nesting }}assets/img/layout/divider6.gif"
-          alt=""
-          aria-hidden="true"
-          style="margin-top: -5px"
-        />
+          <!-- ----------------- CHATBOX ----------------- -->
 
-        <img
-          src="{{ nesting }}assets/img/layout/divider5.gif"
-          alt=""
-          aria-hidden="true"
-          style="margin-top: 2em"
-        />
-
-        <!-- ----------------- TUMBLR ----------------- -->
-
-        <div class="aside-box aside-tumblr" aria-hidden="true">
-          <div class="aside-box__heading" aria-hidden="true">
-            Tumblr<img
-              src="{{ nesting }}assets/img/layout/icon-redo.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-          <div>
-            <b>Got tumblr?</b> Reblog my
-            <a
-              href="https://www.tumblr.com/petrapixel/801488583310606336"
-              target="_blank"
-              >indie web masterpost</a
-            >!
-            <img
-              aria-hidden="true"
-              src="{{ nesting }}assets/img/inline/small-heart.gif"
-            />
-          </div>
-        </div>
-
-        <img
-          src="{{ nesting }}assets/img/layout/divider1.gif"
-          alt=""
-          aria-hidden="true"
-        />
-
-        <!-- ----------------- POLL ----------------- -->
-
-        <div class="aside-box aside-poll" aria-hidden="true">
-          <div class="aside-box__heading" aria-hidden="true">
-            Poll<img
-              src="{{ nesting }}assets/img/layout/icon-stats.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-
-          <!-- -->
-
-          <form method="post" action="https://poll.pollcode.com/13962324">
-            <div
-              style="
-                background-color: #eeeeee;
-                padding: 2px;
-                width: 175px;
-                font-family: Arial;
-                font-size: small;
-                color: #000000;
-              "
-            >
-              <div style="padding: 2px 0px 4px 2px">
-                <strong>how old are you?</strong>
-              </div>
-              <input
-                type="radio"
-                name="answer"
-                value="1"
-                id="answer139623241"
-                style="float: left"
-              /><label for="answer139623241" style="float: left; width: 150px"
-                >10 or younger</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="2"
-                id="answer139623242"
-                style="float: left"
-              /><label for="answer139623242" style="float: left; width: 150px"
-                >11-12</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="3"
-                id="answer139623243"
-                style="float: left"
-              /><label for="answer139623243" style="float: left; width: 150px"
-                >13-14</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="4"
-                id="answer139623244"
-                style="float: left"
-              /><label for="answer139623244" style="float: left; width: 150px"
-                >15-16</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="5"
-                id="answer139623245"
-                style="float: left"
-              /><label for="answer139623245" style="float: left; width: 150px"
-                >17-18</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="6"
-                id="answer139623246"
-                style="float: left"
-              /><label for="answer139623246" style="float: left; width: 150px"
-                >19-20</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="7"
-                id="answer139623247"
-                style="float: left"
-              /><label for="answer139623247" style="float: left; width: 150px"
-                >21-25</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="8"
-                id="answer139623248"
-                style="float: left"
-              /><label for="answer139623248" style="float: left; width: 150px"
-                >26-29</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="9"
-                id="answer139623249"
-                style="float: left"
-              /><label for="answer139623249" style="float: left; width: 150px"
-                >30-35</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="10"
-                id="answer1396232410"
-                style="float: left"
-              /><label for="answer1396232410" style="float: left; width: 150px"
-                >36-39</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <input
-                type="radio"
-                name="answer"
-                value="11"
-                id="answer1396232411"
-                style="float: left"
-              /><label for="answer1396232411" style="float: left; width: 150px"
-                >40 or older</label
-              >
-              <div style="clear: both; height: 2px"></div>
-              <div align="center" style="padding: 3px">
-                <input type="submit" value=" Vote " />&nbsp;<input
-                  type="submit"
-                  name="view"
-                  value=" View "
-                />
-              </div>
-              <div align="right" style="font-size: 10px">
-                pollcode.com <a href="https://pollcode.com/">free polls</a>
-              </div>
-            </div>
-          </form>
-
-          <!-- -->
-
-          <center>
-            <small>(all polls <a href="/fun/polls">here</a>)</small>
-          </center>
-        </div>
-
-        <!-- ----------------- TAMANOTCHI ----------------- -->
-
-        <div class="aside-tamanotchi">
-          <a href="https://tamanotchi.world/25005c"
-            ><img
-              src="https://tamanotchi.world/i2/25005"
-              alt="It's tamaNOTchi! Click to feed!"
-          /></a>
-        </div>
-
-        <!-- ----------------- CHATBOX ----------------- -->
-
-        <!--<div class="aside-box aside-chatbox">
+          <!--<div class="aside-box aside-chatbox">
           <div class="aside-box__heading" aria-hidden="true" style="z-index: 2">
             Chatbox<img
               src="{{ nesting }}assets/img/layout/icon-chat.png"
@@ -941,28 +991,28 @@ testingOnLocalhost: false
         </div>
 -->
 
-        <!-- ------------------------------------------------ -->
-        <!-- ------------------------------------------------ -->
-        <!-- ------------------------------------------------ -->
-      </aside>
+          <!-- ------------------------------------------------ -->
+          <!-- ------------------------------------------------ -->
+          <!-- ------------------------------------------------ -->
+        </aside>
 
-      <!-- ----------------- BACK TO TOP ----------------- -->
-      <div id="back-to-top-link" aria-hidden="true">
-        <a href="#" tabindex="-1">scroll to top</a>
-      </div>
+        <!-- ----------------- BACK TO TOP ----------------- -->
+        <div id="back-to-top-link" aria-hidden="true">
+          <a href="#" tabindex="-1">scroll to top</a>
+        </div>
 
-      <!-- ----------------- CORNER IMAGES ----------------- -->
-      <a
-        href="https://ko-fi.com/petrastipjar"
-        target="_blank"
-        class="corner-image"
-        title="please consider supporting me! :)"
-        ><img
-          src="{{ nesting }}assets/img/layout/jar.gif"
-          alt="jar of candies"
-          width="70"
-      /></a>
-      <!--
+        <!-- ----------------- CORNER IMAGES ----------------- 
+        <a
+          href="https://ko-fi.com/petrastipjar"
+          target="_blank"
+          class="corner-image"
+          title="please consider supporting me! :)"
+          ><img
+            src="{{ nesting }}assets/img/layout/jar.gif"
+            alt="jar of candies"
+            width="70"
+        /></a>-->
+        <!--
       <a
         href="/youtube"
         class="corner-image corner-image--left"
@@ -974,101 +1024,101 @@ testingOnLocalhost: false
           style="image-rendering: pixelated"
       /></a>
       -->
-      <!-- ----------------- PROGRESS BAR ----------------- -->
-      {% if progressBar %}
-      <div class="progress-bar-container">
-        <div>
-          You're <span class="progress-bar-percent">0</span>% done reading!
+        <!-- ----------------- PROGRESS BAR ----------------- -->
+        {% if progressBar %}
+        <div class="progress-bar-container">
+          <div>
+            You're <span class="progress-bar-percent">0</span>% done reading!
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar"></div>
+          </div>
         </div>
-        <div class="progress-bar-wrapper"><div class="progress-bar"></div></div>
-      </div>
-      {% endif %}
+        {% endif %}
 
-      <!-- ------------------------------------------------ -->
-      <!-- ----------------- MAIN CONTENT ----------------- -->
-      <!-- ------------------------------------------------ -->
-      <main id="main" class="{{ mainClass }}">{{ content | safe }}</main>
+        <!-- ------------------------------------------------ -->
+        <!-- ----------------- MAIN CONTENT ----------------- -->
+        <!-- ------------------------------------------------ -->
+        <main id="main" class="{{ mainClass }}">{{ content | safe }}</main>
+      </div>
 
       <!-- ------------------------------------------------ -->
       <!-- ----------------- FOOTER ----------------- -->
       <!-- ------------------------------------------------ -->
-      <footer>
-        <div class="footer-content">
-          <a
-            class="footer-rss"
-            href="/rss.xml"
-            target="_blank"
-            aria-label="RSS Feed"
-            title="RSS Feed"
-            ><img src="{{ nesting }}assets/img/layout/rss.png" alt="RSS"
-          /></a>
-          <i>┊</i> <span class="desktop-only">©</span> petrapixel 2024 -
-          <span>∞</span> <i>┊</i>
-          <a href="https://neocities.org/site/petrapixel" target="_blank"
-            >neocities profile</a
-          >
-          <span class="desktop-only">
-            <i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i>
+      <footer class="footer">
+        <div class="footer__left">
+          <div class="footer__rss">
+            <a
+              class="footer-rss"
+              href="/rss.xml"
+              target="_blank"
+              aria-label="RSS Feed"
+              title="RSS Feed"
+              ><img
+                src="{{ nesting }}assets/img/layout/rss.png"
+                alt="RSS"
+                width="32"
+                height="32"
+            /></a>
+          </div>
+
+          <div class="footer__links">
+            <a href="https://neocities.org/site/petrapixel" target="_blank"
+              >neocities profile</a
+            >
+            <a href="/sitemap">sitemap</a>
             <a
               href="https://github.com/petracoding/petrapixel.neocities.org"
               target="_blank"
               >github</a
-            ></span
-          >
-          <i>┊</i>
-          <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a>
+            >
+            <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a>
+            <a href="#" tabindex="-1">scroll to top</a>
+          </div>
         </div>
-        <div class="footer-content mobile-only">
-          <a
-            id="clap-for-me"
-            href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel"
-            target="_blank"
-          >
-            <img
-              width="80"
-              height="18"
-              src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en"
-              alt="clap for me on clap.fc2.com"
-            />
-            <small>click to clap for me!</small>
-          </a>
-          <br />
-          <center>
-            <small>Visitors:</small>
-            {% if not testingOnLocalhost %}
-
-            <!-- new -->
+        <div class="footer__right">
+          <!-- 
+          <div class="footer__item" title="Hit Counter">
+            <b>Visitors:</b>
             <script
               type="text/javascript"
-              src="https://counter.websiteout.com/js/30/0/128970/0"
+              src="https://counter.websiteout.com/js/36/0/665298/0"
             ></script>
-
-            <!-- old (broke at 128970 hits)
-            <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a> -->
-
-            {% endif %}
-          </center>
-          <br />
-          <div>
+          </div>
+          -->
+          <div class="footer__item" title="Currently Online">
             <a
-              class="aside-tip-jar"
-              href="https://ko-fi.com/petrastipjar"
+              href="http://www.snazzyspace.com/generators/viewer-counter/"
               target="_blank"
             >
-              <img src="{{ nesting }}assets/img/layout/coffee.gif" width="70" />
-              <div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div>
+              {% if not testingOnLocalhost %}<img
+                src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png"
+              />{% endif %}
             </a>
           </div>
-          <br />
-          <center>
-            <a href="#" tabindex="-1" style="font-size: 1.5em">go to top</a>
-          </center>
+          <div class="footer__item" title="My time and date">
+            <iframe
+              src="https://free.timeanddate.com/clock/iabr8y8u/n259/fn8/tct/pct/tt0/tw0/tm1/td2/ts1/ta1/tb4"
+              frameborder="0"
+              width="103"
+              height="34"
+              allowtransparency="true"
+            ></iframe>
+          </div>
         </div>
       </footer>
     </div>
+    <!-- Audios -->
+    <audio id="audio1" style="display: none">
+      <source src="/assets/audio/click1.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audio2" style="display: none">
+      <source src="/assets/audio/click2.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Scripts -->
     {% if lightbox %}
     <script src="../assets/js/fslightbox.js"></script>
-
     {% endif %}
   </body>
 </html>

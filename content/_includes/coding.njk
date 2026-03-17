@@ -84,26 +84,40 @@ testingOnLocalhost: false
     <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
     <div id="content">
       <!-- ------------------------------------------------ -->
+      <!-- -------------------- BUTTONS ------------------- -->
+      <!-- ------------------------------------------------ -->
+
+      <div class="toggle-buttons">
+        <button
+          type="button"
+          title="toggle dark mode"
+          class="toggle-buttons__button toggle-buttons__button--theme"
+          aria-hidden="true"
+        >
+          <img src="https://i.imgur.com/pEic4vl.gif" alt="toggle dark mode" />
+        </button>
+        <button
+          type="button"
+          title="toggle font"
+          class="toggle-buttons__button toggle-buttons__button--font"
+          aria-hidden="true"
+        >
+          <img src="https://i.imgur.com/1D2VdVh.gif" alt="toggle font" />
+        </button>
+        <button
+          type="button"
+          title="toggle sounds"
+          class="toggle-buttons__button toggle-buttons__button--sound"
+          aria-hidden="true"
+        >
+          <img src="https://i.imgur.com/XjYjgGK.gif" alt="toggle sounds" />
+        </button>
+      </div>
+
+      <!-- ------------------------------------------------ -->
       <!-- --------------------- HEADER ------------------- -->
       <!-- ------------------------------------------------ -->
-      {% if not noThemeSwichter %}
-      <div id="theme-toggler" aria-hidden="true">
-        <button type="button">
-          <img
-            src="{{ nesting }}assets/img/layout/moon.gif"
-            width="20"
-            style="height: 20px; image-rendering: pixelated"
-            alt=""
-          />
-          <span>toggle theme</span>
-        </button>
-      </div>
-      <div id="font-toggler" aria-hidden="true">
-        <button type="button">
-          <span>toggle font</span>
-        </button>
-      </div>
-      {% endif %}
+
       <header>
         <div class="header-heading">
           <a href="/"
@@ -288,7 +302,7 @@ testingOnLocalhost: false
             >Skip supporters</a
           >
           <div id="beforesupporters"></div>
-          <marquee class="marquee aside-mutuals__buttons" scrollamount="5">
+          <div class="aside-supporters aside-mutuals__buttons" scrollamount="5">
             {% for site in sites %} {% if site.title != "TEMPLATE" and
             site.supporter and not site.hide %}
             <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
@@ -301,8 +315,7 @@ testingOnLocalhost: false
               />
             </a>
             {% endif %} {% endfor %}
-          </marquee>
-          <div><center>None yet!</center></div>
+          </div>
           <div id="aftersupporters">
             Click
             <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
@@ -540,6 +553,16 @@ testingOnLocalhost: false
         </div>
       </footer>
     </div>
+
+    <!-- Audios -->
+    <audio id="audio1" style="display: none">
+      <source src="/assets/audio/click1.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audio2" style="display: none">
+      <source src="/assets/audio/click2.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Scripts -->
     {% if lightbox %}
     <script src="../assets/js/fslightbox.js"></script>
     {% endif %}

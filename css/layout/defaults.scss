@@ -10,19 +10,13 @@ body {
   line-height: 1.25;
   display: flex;
   justify-content: center;
-  background: var(--backgroundColor);
-  background-image: url("https://petrapixel.neocities.org/assets/img/layout/bg.jpg");
-
+  background: var(--mainBackgroundColor);
+  background-image: url("/assets/img/layout/bg2.png");
   background-repeat: repeat;
   color: var(--textColor);
   cursor: $cursorDefault;
   margin: 0;
-  padding: 5px;
-
-  // ?
-  //   font-family: "ms gothic";
-  //   font-size: 12px;
-  //   line-height: 1.5;
+  padding: 0;
 
   &.readable-font {
     font-family: $readableFont;
@@ -158,6 +152,10 @@ body {
   &[data-placement^="right"] > .tippy-arrow::before {
     border-right-color: var(--mainBackgroundColor);
   }
+}
+
+.tippy-content.tippy-content.tippy-content {
+  padding: 0 5px;
 }
 
 @media (prefers-reduced-motion) {

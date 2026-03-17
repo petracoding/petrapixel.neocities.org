@@ -31,7 +31,7 @@ function buildMonths(yearEl, year) {
       const monthHeadingText = monthHeading.querySelector("em").innerHTML;
       const monthEntries = monthHeading.nextElementSibling;
       const entries = buildLines(monthEntries, year);
-      monthOutput += `<h3 class="media-log__item ${year} ${Array.from(currentMonthTags).join(" ")}">${monthHeadingText}</h3>`;
+      monthOutput += `<h3 class='media-log__item ${year} ${Array.from(currentMonthTags).join(" ")}'>${monthHeadingText}</h3>`;
       monthOutput += entries;
     }
   });
@@ -42,13 +42,25 @@ function buildLines(markup, year) {
   let entriesOutput = "";
   const entries = markup.querySelectorAll("li");
   [...entries].forEach((entry) => {
-    const markup = entry.innerHTML.replaceAll('<span class="gend-link"></span>', "").replaceAll(" ♡", "");
+    const markup = entry.innerHTML
+      .replaceAll('<span class="gend-link"></span>', "")
+      .replaceAll(" ♡", "");
     const strongEl = entry.querySelector("strong");
 
     const types = getTypes(markup);
-    const info = entry.querySelector("em") ? entry.querySelector("em").innerHTML : getInfo(markup);
+    const info = entry.querySelector("em")
+      ? entry.querySelector("em").innerHTML
+      : getInfo(markup);
     let title = strongEl ? strongEl.innerHTML : getTitle(markup, info);
-    title = title.replace(info, "").trim().replace("(↺)", "").replace("↺", "").replace("ﾐ", "").replace("♪", "").replace(/,$/, "").trim();
+    title = title
+      .replace(info, "")
+      .trim()
+      .replace("(↺)", "")
+      .replace("↺", "")
+      .replace("ﾐ", "")
+      .replace("♪", "")
+      .replace(/,$/, "")
+      .trim();
     const re = markup.includes("↺");
     const bolded = strongEl ? true : false;
 
@@ -58,13 +70,15 @@ function buildLines(markup, year) {
 }
 
 function getInfo(markup) {
-  if (markup.includes("(") && markup.includes(")")) return markup.substring(markup.indexOf("("), markup.indexOf(")") + 1);
+  if (markup.includes("(") && markup.includes(")"))
+    return markup.substring(markup.indexOf("("), markup.indexOf(")") + 1);
   return null;
 }
 
 function getTitle(markup, hasInfo) {
   if (markup.includes("ﾐ")) return markup.substr(2, markup.indexOf("ﾐ"));
-  if (hasInfo && markup.includes(",")) return markup.substr(2, markup.lastIndexOf(","));
+  if (hasInfo && markup.includes(","))
+    return markup.substr(2, markup.lastIndexOf(","));
   if (markup.includes("↺")) return markup.substr(2, markup.indexOf("↺"));
   return markup.substr(2);
 }
@@ -85,7 +99,9 @@ function getTypes(markup) {
 function buildLine(types, title, info, re, bolded, year) {
   count++;
   //   const titleStr = bolded ? `<strong>${title}</strong>` : title;
-  const infoStr = info ? `<span class="media-log__entry-info">${info}</span>` : "";
+  const infoStr = info
+    ? `<span class="media-log__entry-info">${info}</span>`
+    : "";
   const tags = `${types.join(" ")} ${re ? "re" : "notre"} ${bolded ? "bolded" : ""}`;
   tags.split(" ").forEach((tag) => {
     currentMonthTags.add(tag);

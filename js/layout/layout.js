@@ -1,6 +1,7 @@
 import tippy, { followCursor } from "tippy.js";
 import "tippy.js/dist/tippy.css";
-import "tippy.js/animations/scale.css";
+import "tippy.js/animations/perspective.css";
+// import "tippy.js/animations/scale.css";
 
 export function initScrollToTop() {
   const el = document.querySelector("#back-to-top-link");
@@ -127,14 +128,15 @@ export function initTooltips() {
     arrow: true,
     placement: "top", // top, right, bottom, left
     delay: 5, //ms
-    distance: 15, //px or string
+    distance: 25, //px or string
     maxWidth: 300, //px or string
     followCursor: true,
     allowHTML: true,
     theme: "custom",
     ignoreAttributes: true,
-    animation: "scale",
-    inertia: true,
+    animation: "perspective",
+    // animation: "scale",
+    // inertia: true,
     content(reference) {
       const title = reference.getAttribute("title");
       reference.removeAttribute("title");

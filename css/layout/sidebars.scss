@@ -34,29 +34,17 @@
 .aside--left {
   border: var(--mainBorder);
   border-right: none;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
   grid-area: asideLeft;
 }
 
 .aside--right {
   border: var(--mainBorder);
   border-left: none;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
   grid-area: asideRight;
-}
-
-@media (min-width: $lg) {
-  .aside--left {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-  }
-
-  .aside--right {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-  }
 }
 
 .aside-nav .aside-scrollbox {
@@ -474,6 +462,20 @@
 // ------------------------------- RIGHT -------------------------------
 // --------------------------------------------------------------------
 
+/*--- Dinos ---*/
+
+.aside__dinos {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: -20px;
+  filter: hue-rotate(70deg);
+
+  img:nth-child(2) {
+    margin-right: 5px;
+  }
+}
+
 /*----------  Follow, Guestbook, Clap  ----------*/
 
 .aside-clap-kirby {
@@ -661,7 +663,10 @@
   flex-wrap: wrap;
   margin: 0 -11px;
 
-  a,
+  a {
+    position: relative;
+  }
+
   img {
     display: block;
   }
@@ -972,16 +977,28 @@
   ul ul {
     li {
       a {
-        padding-left: 20px;
+        // padding-left: 20px;
+        padding-left: 0;
         font-size: 18px;
         margin-right: -6px;
+        display: flex;
+        align-items: center;
 
-        &::before {
-          content: "*";
-          position: absolute;
-          top: 7px;
-          left: 5px;
-          font-size: 0.8em;
+        // &::before {
+        //   content: "*";
+        //   position: absolute;
+        //   top: 7px;
+        //   left: 5px;
+        //   font-size: 0.8em;
+        // }
+
+        [class^="ri-"],
+        [class*=" ri-"] {
+          display: inline-block;
+          margin-right: 7px;
+          opacity: 0.8;
+          font-size: 18px;
+          text-decoration: none !important;
         }
       }
     }
@@ -1182,5 +1199,11 @@
     border-bottom-right-radius: 5px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  .footer__left,
+  .footer__right {
+    width: 100%;
+    justify-content: center;
   }
 }
