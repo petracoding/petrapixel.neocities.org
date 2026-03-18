@@ -2,7 +2,7 @@
   {
     "label": "home",
     "link": "/",
-    "image": "https://i.imgur.com/0R4rEUM.gif"
+    "image": "0R4rEUM.gif"
   },
   {
     "label": "Website",
@@ -11,49 +11,49 @@
       {
         "link": "/about/about-the-site",
         "label": "about the site",
-        "image": "https://i.imgur.com/zcFh0SK.gif",
+        "image": "zcFh0SK.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/manifesto",
         "label": "site manifesto",
-        "image": "https://i.imgur.com/04LvY0B.gif",
+        "image": "04LvY0B.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/webrings",
         "label": "webrings",
-        "image": "https://i.imgur.com/x9fu47V.gif",
+        "image": "x9fu47V.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/neighbors",
         "label": "neighbors",
-        "image": "https://i.imgur.com/PxspC1V.gif",
+        "image": "PxspC1V.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/guestbook",
         "label": "guestbook",
-        "image": "https://i.imgur.com/oEYba29.gif",
+        "image": "oEYba29.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/credits",
         "label": "credits",
-        "image": "https://i.imgur.com/11cAPuy.gif",
+        "image": "11cAPuy.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/faq",
         "label": "faq",
-        "image": "https://i.imgur.com/q4AN64Z.gif",
+        "image": "q4AN64Z.gif",
         "new": false,
         "hide": false
       }
@@ -66,14 +66,14 @@
       {
         "link": "/about/about-me",
         "label": "about me",
-        "image": "https://i.imgur.com/l3MStv2.gif",
+        "image": "l3MStv2.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/my-online-childhood",
         "label": "my online childhood",
-        "image": "https://i.imgur.com/ut9XPLG.gif",
+        "image": "ut9XPLG.gif",
         "new": false,
         "hide": false
       },
@@ -86,21 +86,21 @@
       {
         "link": "/about/cats",
         "label": "cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
-        "image": "https://i.imgur.com/US8KWIQ.gif",
+        "image": "US8KWIQ.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/media-log",
         "label": "media log",
-        "image": "https://i.imgur.com/hWQK1oD.gif",
+        "image": "hWQK1oD.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/about/dream-diary",
         "label": "dream diary",
-        "image": "https://i.imgur.com/Olwt3AI.gif",
+        "image": "Olwt3AI.gif",
         "new": true,
         "hide": false
       }
@@ -113,42 +113,42 @@
       {
         "link": "/creations/art",
         "label": "my art",
-        "image": "https://i.imgur.com/AczziyS.gif",
+        "image": "AczziyS.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/playlists",
         "label": "my playlists",
-        "image": "https://i.imgur.com/A7o51F0.gif",
+        "image": "A7o51F0.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/video-edits",
         "label": "my video edits",
-        "image": "https://i.imgur.com/E3xxLeq.gif",
+        "image": "E3xxLeq.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/writing",
         "label": "my writing",
-        "image": "https://i.imgur.com/WemqKbs.gif",
+        "image": "WemqKbs.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/picmix",
         "label": "my picmix",
-        "image": "https://i.imgur.com/79P8MMo.gif",
+        "image": "79P8MMo.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/fractals",
         "label": "my fractal art",
-        "image": "https://i.imgur.com/14DUeFe.gif",
+        "image": "14DUeFe.gif",
         "new": false,
         "hide": false
       }
@@ -161,49 +161,49 @@
       {
         "link": "/recs/youtube",
         "label": "youtube recs",
-        "image": "https://i.imgur.com/MKw7Ts0.gif",
+        "image": "MKw7Ts0.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/tv-shows",
         "label": "tv show recs",
-        "image": "https://i.imgur.com/knXWw43.gif",
+        "image": "knXWw43.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/movies",
         "label": "movie recs",
-        "image": "https://i.imgur.com/goA2JSK.gif",
+        "image": "goA2JSK.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/books",
         "label": "book recs",
-        "image": "https://i.imgur.com/Xq773u8.gif",
+        "image": "Xq773u8.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/games",
         "label": "video game recs",
-        "image": "https://i.imgur.com/ZKogrD1.gif",
+        "image": "ZKogrD1.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/recs/board-games",
         "label": "board/card game recs",
-        "image": "https://i.imgur.com/f68iHcF.gif",
+        "image": "f68iHcF.gif",
         "new": true,
         "hide": true
       },
       {
         "link": "/recs/music",
         "label": "song recs",
-        "image": "https://i.imgur.com/HAXW8LV.gif",
+        "image": "HAXW8LV.gif",
         "new": false,
         "hide": false
       }
@@ -216,7 +216,7 @@
       {
         "link": "/contest",
         "label": "Indie Web Contest",
-        "image": "https://i.imgur.com/yRDUz1y.gif",
+        "image": "yRDUz1y.gif",
         "new": false,
         "hide": false,
         "icon": "fa-solid fa-trophy"
@@ -224,14 +224,14 @@
       {
         "link": "/about/blinkies",
         "label": "blinkies & more",
-        "image": "https://i.imgur.com/RwrqznD.gif",
+        "image": "RwrqznD.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/shrines/index",
         "label": "shrines",
-        "image": "https://i.imgur.com/XU8WpKV.gif",
+        "image": "XU8WpKV.gif",
         "new": false,
         "hide": false
       },
@@ -244,35 +244,35 @@
       {
         "link": "/fun/polls",
         "label": "polls",
-        "image": "https://i.imgur.com/o9c1kAD.gif",
+        "image": "o9c1kAD.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/fun/quizzes",
         "label": "personality quizzes",
-        "image": "https://i.imgur.com/LsjYhJb.gif",
+        "image": "LsjYhJb.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/fun/list-idea-generator",
         "label": "list idea generator",
-        "image": "https://i.imgur.com/MVyt3ws.gif",
+        "image": "MVyt3ws.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/fun/bored-button",
         "label": "are you bored?",
-        "image": "https://i.imgur.com/o88sX7W.gif",
+        "image": "o88sX7W.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/fun/advent-calendar-2025",
         "label": "advent calendar 2025",
-        "image": "https://i.imgur.com/O8L14EV.gif",
+        "image": "O8L14EV.gif",
         "new": false,
         "hide": false
       }
@@ -285,21 +285,21 @@
       {
         "link": "/resources/bookmarks",
         "label": "bookmarks",
-        "image": "https://i.imgur.com/ALMPpt1.gif",
+        "image": "ALMPpt1.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/resources/software-recs",
         "label": "software recs",
-        "image": "https://i.imgur.com/D0YJB9M.gif",
+        "image": "D0YJB9M.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/resources/clipboard",
         "label": "clipboard",
-        "image": "https://i.imgur.com/goiBexo.gif",
+        "image": "goiBexo.gif",
         "new": false,
         "hide": false
       },
@@ -318,35 +318,35 @@
       {
         "link": "/resources/vocabulary",
         "label": "vocabulary",
-        "image": "https://i.imgur.com/UsTjc3j.gif",
+        "image": "UsTjc3j.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/resources/backup-tutorial",
         "label": "how to backup files",
-        "image": "https://i.imgur.com/J99GcgI.gif",
+        "image": "J99GcgI.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/resources/compression-tutorial",
         "label": "how to compress files",
-        "image": "https://i.imgur.com/et5llyF.gif",
+        "image": "et5llyF.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/creations/coding",
         "label": "my userscripts & tools",
-        "image": "https://i.imgur.com/bamwARA.gif",
+        "image": "bamwARA.gif",
         "new": true,
         "hide": false
       },
       {
         "link": "/resources/stop-using-social-media",
         "label": "how to stop using social media & doomscrolling",
-        "image": "https://i.imgur.com/Id47pJv.gif",
+        "image": "Id47pJv.gif",
         "new": true,
         "hide": true
       }
@@ -359,28 +359,28 @@
       {
         "link": "https://neocities.org/site/petrapixel",
         "label": "my neocities profile ➚",
-        "image": "https://i.imgur.com/mC4Fztt.gif",
+        "image": "mC4Fztt.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "https://ko-fi.com/petrastipjar",
         "label": "my tipjar (ko-fi) ➚",
-        "image": "https://i.imgur.com/phcDjmW.gif",
+        "image": "phcDjmW.gif",
         "new": false,
         "hide": false
       },
       {
         "link": "/youtube",
         "label": "my youtube channel ➚",
-        "image": "https://i.imgur.com/V4mjYKz.gif",
+        "image": "V4mjYKz.gif",
         "new": false,
         "hide": true
       },
       {
         "link": "/bearblog",
         "label": "my bearblog ➚",
-        "image": "https://i.imgur.com/i5dgJWB.gif",
+        "image": "i5dgJWB.gif",
         "new": true,
         "hide": false
       }

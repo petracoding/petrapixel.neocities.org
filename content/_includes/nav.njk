@@ -89,7 +89,7 @@
           <li {% if navItem.mobileOnly %}class="mobile-only" {% endif %}>
             <a href="{{ navItem.link }}"
               >{% if navItem.image %}<img
-                src="{{ navItem.image }}"
+                src="{{ nesting }}assets/img/layout/nav/{{ navItem.image }}"
                 alt=""
                 aria-hidden="true"
               />{% endif %}<span

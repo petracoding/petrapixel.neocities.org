@@ -473,7 +473,13 @@ img[src*="inline/"]:not([class]) {
     padding: 0.5em 0.1em 0.3em;
     text-align: center;
     background: rgba($veryLight, 0.5);
-    background: linear-gradient(0deg, rgba($veryLight, 0.8) 0%, rgba($veryLight, 0.8) 10%, rgba($veryLight, 0.3) 80%, rgba($veryLight, 0) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba($veryLight, 0.8) 0%,
+      rgba($veryLight, 0.8) 10%,
+      rgba($veryLight, 0.3) 80%,
+      rgba($veryLight, 0) 100%
+    );
     opacity: 0;
     transition: opacity 0.2s ease;
     z-index: 1;
@@ -557,6 +563,11 @@ img[src*="inline/"]:not([class]) {
 /*=============================================
 =            MISC.            =
 =============================================*/
+
+// IMGUR DOESN'T WORK SO...:
+img[src*="i.imgur.com"] {
+  display: none !important;
+}
 
 .fslightbox-toolbar-button[title="Enter fullscreen"] {
   display: none;
