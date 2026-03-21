@@ -5,66 +5,7 @@ testingOnLocalhost: false
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      {{ title }}{% if title !== "petrapixel" %} | petrapixel{% endif %}
-    </title>
-    {% if not noSEO %}
-    <meta
-      name="description"
-      content="{{ description or 'Welcome to petrapixel! Here you can find many resources for Neocities and the Indie Web, coding help, media recommendations and more in a Old Web aesthetic!' }}"
-    />
-    {% endif %}
-
-    <!-- CSS/JS + CACHEBUSTING -->
-    <script src="{{ nesting }}assets/js/main.js{{ nocache }}"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css{{ nocache }}" />
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="{{ nesting }}assets/img/favicon.ico"
-      rel="icon"
-      type="image/x-icon"
-    />
-
-    {% if codeHighlight %}
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-      hljs.highlightAll();
-    </script>
-    {% endif %}
-
-    <!-- Font Awesome 
-    <script src="https://kit.fontawesome.com/0328336a9e.js" crossorigin="anonymous"></script>-->
-
-    {% if not noSEO and not testingOnLocalhost %}
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-J64TL8KVTJ");
-    </script>
-    {% endif %} {% if freezeframe %}
-    <!-- freezeframe.js -->
-    <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
-    <style>
-      #main .ff-container {
-        display: block;
-      }
-    </style>
-    {% endif %}
+    {% include "layout/head.njk" %}
   </head>
   <body
     class="{{ bodyClass }} coding-page-layout"
@@ -82,494 +23,174 @@ testingOnLocalhost: false
     >
     <a href="#main" id="skip-to-content-link">Skip to content</a>
     <a href="/sitemap" id="skip-to-content-link2">Go to Sitemap</a>
-    <div id="content">
-      <!-- ------------------------------------------------ -->
-      <!-- -------------------- BUTTONS ------------------- -->
-      <!-- ------------------------------------------------ -->
 
-      <div class="toggle-buttons">
-        <button
-          type="button"
-          title="toggle dark mode"
-          class="toggle-buttons__button toggle-buttons__button--theme"
-          aria-hidden="true"
-        >
-          <img
-            src="{{ nesting }}assets/img/layout/nav/pEic4vl.gif"
-            alt="toggle dark mode"
-          />
-        </button>
-        <button
-          type="button"
-          title="toggle font"
-          class="toggle-buttons__button toggle-buttons__button--font"
-          aria-hidden="true"
-        >
-          <img
-            src="{{ nesting }}assets/img/layout/nav/1D2VdVh.gif"
-            alt="toggle font"
-          />
-        </button>
-        <button
-          type="button"
-          title="toggle sounds"
-          class="toggle-buttons__button toggle-buttons__button--sound"
-          aria-hidden="true"
-        >
-          <img
-            src="{{ nesting }}assets/img/layout/nav/XjYjgGK.gif"
-            alt="toggle sounds"
-          />
-        </button>
-      </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      "
+    >
+      <div id="content">
+        <!-- ------------------------------------------------ -->
+        <!-- -------------------- BUTTONS ------------------- -->
+        <!-- ------------------------------------------------ -->
+        {% include "layout/setting-buttons.njk" %}
 
-      <!-- ------------------------------------------------ -->
-      <!-- --------------------- HEADER ------------------- -->
-      <!-- ------------------------------------------------ -->
-
-      <header>
-        <div class="header-heading">
-          <a href="/"
-            ><img
-              src="{{ nesting }}assets/img/layout/petrapixel-coding.png"
-              aria-label="petrapixel"
-              height="100"
-              width="300"
-          /></a>
-        </div>
-      </header>
-
-      <!-- NAV: -->
-      <nav class="coding-navigation" data-nosnippet="true">
-        {% for allNavItem in nav %} {% if allNavItem.isCodeMenu %} {% for
-        mainNavItem in allNavItem.items %}
-
-        <div
-          class="coding-navigation-category"
-          aria-label="{{ mainNavItem.label }}"
-        >
-          <div class="coding-navigation-category__title">
-            {{ mainNavItem.label }}{% if mainNavItem.new %}
-            <small class="aside-nav__new"
+        <!-- ------------------------------------------------ -->
+        <!-- --------------------- HEADER ------------------- -->
+        <!-- ------------------------------------------------ -->
+        <header>
+          <div class="header-heading">
+            <a href="/"
               ><img
-                src="{{ nesting }}assets/img/layout/new.gif"
-                alt=""
-                aria-hidden="true" /></small
-            >{% endif %}
+                src="{{ nesting }}assets/img/layout/petrapixel-coding.png"
+                aria-label="petrapixel"
+                height="100"
+                width="300"
+            /></a>
           </div>
-          <ul>
-            {% for navItem in mainNavItem.items %}{% if not navItem.hide and not
-            navItem.hideInCodingNav %}
-            <li>
-              <a href="{{ navItem.link }}"
-                ><i class="ri-{{ navItem.icon }}"></i
-                ><span
-                  >{{ navItem.label }}{% if navItem.sublabel %}<small
-                    >{{ navItem.sublabel }}</small
-                  >{% endif %}</span
-                >{% if navItem.new %}
-                <small class="aside-nav__new"
-                  ><img
-                    src="{{ nesting }}assets/img/layout/new.gif"
-                    alt=""
-                    aria-hidden="true" /></small
-                >{% endif %}</a
-              >
-            </li>
-            {% endif %}{% endfor %}
-          </ul>
-        </div>
-        {% endfor %} {% endif %}{% endfor %}
-      </nav>
+        </header>
 
-      <!-- SIDEBAR: -->
-      <aside class="aside aside--left" data-nosnippet="true">
-        <div class="coding-back-to-home">
-          <a href="/"
-            ><span><span>⇠</span> home</span>
-            <img
-              src="{{ nesting }}assets/img/layout/pc.gif"
-              alt=""
-              aria-hidden="true"
-          /></a>
-        </div>
+        <!-- ------------------------------------------------- -->
+        <!-- ---------------- CODING NAVIGATION --------------- -->
+        <!-- -------------------------------------------------- -->
+        <nav class="coding-navigation" data-nosnippet="true">
+          {% for allNavItem in nav %} {% if allNavItem.isCodeMenu %} {% for
+          mainNavItem in allNavItem.items %}
 
-        <img
-          src="{{ nesting }}assets/img/layout/divider4.gif"
-          alt=""
-          aria-hidden="true"
-        />
-
-        <!-- ----------------- CLAP, KIRBY ----------------- -->
-        <div class="aside-clap-kirby" style="margin-top: 20px">
-          <a
-            class="aside-box__guestbook"
-            aria-hidden="true"
-            href="/about/guestbook"
+          <div
+            class="coding-navigation-category"
+            aria-label="{{ mainNavItem.label }}"
           >
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby1light.png"
-              alt="sign my guestbook"
-              class="only-show-in-light-mode"
-            />
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby1.png"
-              alt="sign my guestbook"
-              class="only-show-in-dark-mode"
-            />
-          </a>
-          <a
-            class="aside-box__guestbook"
-            aria-label="follow me on neocities"
-            href="https://neocities.org/site/petrapixel"
-            target="_blank"
-          >
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby2light.png"
-              alt="follow me on neocities"
-              class="only-show-in-light-mode"
-            />
-            <img
-              width="145"
-              height="56"
-              src="{{ nesting }}assets/img/layout/kirby2.png"
-              alt="follow me on neocities"
-              class="only-show-in-dark-mode"
-            />
-          </a>
-          <a
-            id="clap-for-me"
-            href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel"
-            target="_blank"
-          >
-            <img
-              width="80"
-              height="18"
-              src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en"
-              alt="clap for me on clap.fc2.com"
-            />
-            <small>click to clap for me!</small>
-          </a>
-        </div>
-
-        <!-- ----------------- LINK BACK ----------------- -->
-        <div class="aside-box aside-link-back">
-          <div class="aside-box__heading">
-            Link back!<img
-              src="{{ nesting }}assets/img/layout/icon-copy.png"
-              alt=""
-              aria-hidden="true"
-            />
+            <div class="coding-navigation-category__title">
+              {{ mainNavItem.label }}{% if mainNavItem.new %}
+              <small class="aside-nav__new"
+                ><img
+                  src="{{ nesting }}assets/img/layout/new.gif"
+                  alt=""
+                  aria-hidden="true" /></small
+              >{% endif %}
+            </div>
+            <ul>
+              {% for navItem in mainNavItem.items %}{% if not navItem.hide and
+              not navItem.hideInCodingNav %}
+              <li>
+                <a href="{{ navItem.link }}"
+                  ><i class="ri-{{ navItem.icon }}"></i
+                  ><span
+                    >{{ navItem.label }}{% if navItem.sublabel %}<small
+                      >{{ navItem.sublabel }}</small
+                    >{% endif %}</span
+                  >{% if navItem.new %}
+                  <small class="aside-nav__new"
+                    ><img
+                      src="{{ nesting }}assets/img/layout/new.gif"
+                      alt=""
+                      aria-hidden="true" /></small
+                  >{% endif %}</a
+                >
+              </li>
+              {% endif %}{% endfor %}
+            </ul>
           </div>
-          <p>
-            Hotlinking is a-okay!
-            <!-- <br><small style="line-height: 1;display: block;">You can change the .webp to .gif if you want.</small> -->
-          </p>
-          <a
-            href="https://petrapixel.neocities.org/"
-            target="_blank"
-            tabindex="-1"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp"
-              alt="petrapixel"
-              width="88"
-              height="31"
-          /></a>
-          <textarea
-            class="code-textarea"
-            name=""
-            id=""
-            rows="10"
-            aria-label="link-back code"
-          >
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
-          >
-        </div>
+          {% endfor %} {% endif %}{% endfor %}
+        </nav>
 
-        <!-- ----------------- SUPPORTERS ----------------- -->
-
-        <div
-          class="aside-box aside-mutuals"
-          data-nesting="{{ nesting }}"
-          aria-hidden="true"
-        >
-          <div class="aside-box__heading">
-            <a href="/about/neighbors"
-              >Supporters<img
-                src="{{ nesting }}assets/img/layout/icon-supporter.png"
+        <!-- ------------------------------------------------ -->
+        <!-- --------------------- SIDEBAR ------------------ -->
+        <!-- ------------------------------------------------ -->
+        <aside class="aside aside--left" data-nosnippet="true">
+          <div class="coding-back-to-home">
+            <a href="/"
+              ><span><span>⇠</span> home</span>
+              <img
+                src="{{ nesting }}assets/img/layout/pc.gif"
                 alt=""
                 aria-hidden="true"
             /></a>
           </div>
-          <a href="#aftersupporters" class="skiplink" aria-hidden="true"
-            >Skip supporters</a
-          >
-          <div id="beforesupporters"></div>
-          <div class="aside-supporters aside-mutuals__buttons" scrollamount="5">
-            {% for site in sites %} {% if site.title != "TEMPLATE" and
-            site.supporter and not site.hide %}
-            <a href="{{ site.link }}" title="{{ site.title }}" target="_blank">
-              <img
-                src="{{ site.image | prepareImageUrl }}"
-                alt="{{ site.title }}"
-                width="88"
-                height="31"
-                loading="lazy"
-              />
-            </a>
-            {% endif %} {% endfor %}
-          </div>
-          <div id="aftersupporters">
-            Click
-            <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
-              >here</a
-            >
-            to become a supporter.
-          </div>
-          <a href="#beforesupporters" class="skiplink" aria-hidden="true"
-            >Skip to before neighbours</a
-          >
-        </div>
 
-        <img
-          src="{{ nesting }}assets/img/layout/divider6.gif"
-          alt=""
-          aria-hidden="true"
-          style="margin-top: -5px"
-        />
-
-        <!-- ----------------- Visitors ----------------- -->
-        <div
-          class="aside-box side-stats__stat"
-          style="margin-bottom: 0; margin-top: 2em"
-        >
-          <div class="aside-box__heading">
-            <span>hits & visitors</span
-            ><img
-              src="{{ nesting }}assets/img/layout/icon-stats.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-          <div class="aside-stats__stat-content">
-            <center>
-              {% if not testingOnLocalhost %}
-
-              <!-- new -->
-              <script
-                type="text/javascript"
-                src="https://counter.websiteout.com/js/30/0/128970/0"
-              ></script>
-
-              <!-- old (broke at 128970 hits) 
-              <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a>-->
-
-              {% endif %}
-            </center>
-            <small
-              style="
-                font-size: 0.8em;
-                letter-spacing: -0.4px;
-                text-align: center;
-                display: block;
-              "
-              >(might not be entirely accurate)</small
-            >
-          </div>
-          <div id="current-visitors">
-            <a
-              href="http://www.snazzyspace.com/generators/viewer-counter/"
-              target="_blank"
-            >
-              {% if not testingOnLocalhost %}<img
-                src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png"
-              />{% endif %}
-            </a>
-          </div>
-        </div>
-
-        <img
-          src="{{ nesting }}assets/img/layout/divider6.gif"
-          alt=""
-          aria-hidden="true"
-          style="margin-top: -5px"
-        />
-
-        <!-- ----------------- TOC ----------------- -->
-        {% if toc %}
-        <img
-          src="{{ nesting }}assets/img/layout/divider8.gif"
-          alt=""
-          aria-hidden="true"
-          style="margin-top: 2em"
-        />
-        <div id="toc-position"></div>
-        <div id="toc"></div>
-        {% endif %}
-
-        <img
-          src="{{ nesting }}assets/img/layout/divider2.gif"
-          alt=""
-          aria-hidden="true"
-          style="image-rendering: pixelated; display: block; margin: 40px 0"
-        />
-
-        <!-- ----------------- TIP JAR ----------------- -->
-        <div>
-          <a
-            class="aside-tip-jar"
-            href="https://ko-fi.com/petrastipjar"
-            target="_blank"
-          >
-            <img src="{{ nesting }}assets/img/layout/coffee.gif" width="70" />
-            <div><b>Tip Jar</b><small>Buy me a coffee? :3</small></div>
-          </a>
-        </div>
-        <!--
- 
-       ----------------- CONTEST ----------------- 
-
-        <a class="aside-contest" href="/contest">
-          <img src="{{ nesting }}assets/img/layout/trophy.gif" width="80" height="85" />
-          <div><b>Indie Web Contest</b><small>Winners announced!</small></div>
-        </a>
-
-        -->
-
-        <!-- ----------------- CONTEST -----------------   
-      
-        <a class="aside-contest" href="/contest">
           <img
-            src="{{ nesting }}assets/img/layout/trophy.gif"
-            width="80"
-            height="85"
-            alt="Trophy"
+            src="{{ nesting }}assets/img/layout/divider4.gif"
+            alt=""
+            aria-hidden="true"
           />
-          <div><b>Indie Web Contest</b><small>Winners announced!</small></div>
-        </a>  -->
-      </aside>
 
-      <!-- ----------------- PROGRESS BAR ----------------- -->
-      {% if progressBar %}
-      <div class="progress-bar-container">
-        <div>
-          You're <span class="progress-bar-percent">0</span>% done reading!
+          {% include "layout/sidebars/kirby.njk" %} {% include
+          "layout/sidebars/link-back.njk" %} {% include
+          "layout/sidebars/supporters.njk" %}
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider6.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: -5px"
+          />
+
+          {% include "layout/sidebars/hits-visitors.njk" %}
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider6.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: -5px"
+          />
+
+          <!-- ----------------- TIP JAR ----------------- -->
+
+          {% include "layout/sidebars/tip-jar.njk" %}
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider2.gif"
+            alt=""
+            aria-hidden="true"
+            style="image-rendering: pixelated; display: block; margin: 40px 0"
+          />
+
+          <!-- ----------------- TOC ----------------- -->
+          {% if toc %}
+          <img
+            src="{{ nesting }}assets/img/layout/divider8.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: 2em"
+          />
+          <div id="toc-position"></div>
+          <div id="toc"></div>
+          {% endif %}
+
+          <!-- don't add anything in the sidebar below the TOC! -->
+        </aside>
+
+        <!-- ----------------- PROGRESS BAR ----------------- -->
+        {% if progressBar %}
+        <div class="progress-bar-container">
+          <div>
+            You're <span class="progress-bar-percent">0</span>% done reading!
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar"></div>
+          </div>
         </div>
-        <div class="progress-bar-wrapper"><div class="progress-bar"></div></div>
+        {% endif %} {% include "layout/back-to-top.njk" %} {% include
+        "layout/corner-images.njk" %}
+
+        <!-- ------------------------------------------------ -->
+        <!-- ----------------- MAIN CONTENT ----------------- -->
+        <!-- ------------------------------------------------ -->
+        <main id="main" class="{{ mainClass }}">{{ content | safe }}</main>
       </div>
-      {% endif %}
-
-      <!-- ----------------- BACK TO TOP ----------------- -->
-      <div id="back-to-top-link" aria-hidden="true">
-        <a href="#" tabindex="-1">scroll to top</a>
-      </div>
-
-      <!-- ----------------- CORNER IMAGES ----------------- -->
-      <a
-        href="https://ko-fi.com/petrastipjar"
-        target="_blank"
-        class="corner-image"
-        title="please consider supporting me! :)"
-        ><img
-          src="{{ nesting }}assets/img/layout/jar.gif"
-          alt="jar of candies"
-          width="70"
-      /></a>
-
-      <!-- 
-      <a
-        href="/youtube"
-        class="corner-image corner-image--left"
-        title="check out my youtube channel!"
-        ><img
-          src="{{ nesting }}assets/img/layout/camera.gif"
-          alt="camera"
-          width="86"
-          style="image-rendering: pixelated"
-      /></a>
--->
-      <!-- ------------------------------------------------ -->
-      <!-- ----------------- MAIN CONTENT ----------------- -->
-      <!-- ------------------------------------------------ -->
-      <main id="main" class="{{ mainClass }}">{{ content | safe }}</main>
 
       <!-- ------------------------------------------------ -->
       <!-- ----------------- FOOTER ----------------- -->
       <!-- ------------------------------------------------ -->
-      <footer>
-        <div class="footer-content">
-          <a
-            class="footer-rss"
-            href="/rss.xml"
-            target="_blank"
-            aria-label="RSS Feed"
-            title="RSS Feed"
-            ><img src="{{ nesting }}assets/img/layout/rss.png" alt="RSS"
-          /></a>
-          <i>┊</i> created by petrapixel 2024 - <span>∞</span> <i>┊</i>
-          <a href="https://neocities.org/site/petrapixel" target="_blank"
-            >my neocities profile</a
-          >
-          <span class="desktop-only">
-            <i>┊</i> <a href="/sitemap">sitemap</a> <i>┊</i>
-            <a
-              href="https://github.com/petracoding/petrapixel.neocities.org"
-              target="_blank"
-              >github</a
-            ></span
-          >
-          <i>┊</i>
-          <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a>
-        </div>
-        <div class="footer-content mobile-only">
-          <a
-            id="clap-for-me"
-            href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel"
-            target="_blank"
-          >
-            <img
-              width="80"
-              height="18"
-              src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en"
-              alt="clap for me on clap.fc2.com"
-            />
-            <small>click to clap for me!</small>
-          </a>
-          <br />
-          <center>
-            <small>Visitors:</small>
-            {% if not testingOnLocalhost %}
-            <!-- new -->
-            <script
-              type="text/javascript"
-              src="https://counter.websiteout.com/js/30/0/128970/0"
-            ></script>
-
-            <!-- old (broke at 128970 hits) 
-            <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a>-->
-            {% endif %}
-          </center>
-          <br />
-          <center>
-            <a href="#" tabindex="-1" style="font-size: 1.5em">go to top</a>
-          </center>
-        </div>
-      </footer>
+      {% include "layout/footer.njk" %}
     </div>
 
     <!-- Audios -->
-    <audio id="audio1" style="display: none">
-      <source src="/assets/audio/click1.mp3" type="audio/mpeg" />
-    </audio>
-    <audio id="audio2" style="display: none">
-      <source src="/assets/audio/click2.mp3" type="audio/mpeg" />
-    </audio>
+    {% include "layout/audios.njk" %}
 
     <!-- Scripts -->
     {% if lightbox %}

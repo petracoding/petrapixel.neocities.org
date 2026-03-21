@@ -15,6 +15,45 @@ export function initScrollToTop() {
   });
 }
 
+export function initTabs() {
+  if (!document.querySelector(".tabs")) return;
+  const tabBtns = document.querySelectorAll(".tabs__tab");
+  tabBtns.forEach((tabBtn) => {
+    tabBtn.addEventListener("click", () => {
+      openTab(tabBtn.getAttribute("data-tab"));
+    });
+  });
+
+  /*
+
+  <div class="tabs">
+    <div class="tabs__tabs">
+      <button class="tabs__tab active-tab" data-tab="1">Tab1</button>
+      <button class="tabs__tab" data-tab="2">Tab2</button>
+      <button class="tabs__tab" data-tab="3">Tab3</button>
+    </div>
+    <div class="tabs__content">
+      <div class="tabs__tab-content active-tab" data-tab="1">Content1</div>
+      <div class="tabs__tab-content" data-tab="2">Content2</div>
+      <div class="tabs__tab-content" data-tab="3">Content3</div>
+    </div>
+  </div>
+  
+  */
+}
+
+function openTab(tabName) {
+  [...document.querySelectorAll(".active-tab")].forEach((el) => {
+    el.classList.remove("active-tab");
+  });
+
+  [...document.querySelectorAll("[data-tab='" + tabName + "']")].forEach(
+    (el) => {
+      el.classList.add("active-tab");
+    },
+  );
+}
+
 export function initTableOfContents() {
   const containers = document.querySelectorAll("#toc");
 

@@ -9,12 +9,12 @@
 * Date: 2024-12-17
 */
 @font-face {font-family: "remixicon";
-  src: url('./fonts/remixicon.eot?t=1734404658139'); /* IE9*/
-  src: url('./fonts/remixicon.eot?t=1734404658139#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url("./fonts/remixicon.woff2?t=1734404658139") format("woff2"),
-  url("./fonts/remixicon.woff?t=1734404658139") format("woff"),
-  url('./fonts/remixicon.ttf?t=1734404658139') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('./fonts/remixicon.svg?t=1734404658139#remixicon') format('svg'); /* iOS 4.1- */
+  src: url('/assets/css/fonts/remixicon.eot?t=1734404658139'); /* IE9*/
+  src: url('/assets/css/fonts/remixicon.eot?t=1734404658139#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("/assets/css/fonts/remixicon.woff2?t=1734404658139") format("woff2"),
+  url("/assets/css/fonts/remixicon.woff?t=1734404658139") format("woff"),
+  url('/assets/css/fonts/remixicon.ttf?t=1734404658139') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('/assets/css/fonts/remixicon.svg?t=1734404658139#remixicon') format('svg'); /* iOS 4.1- */
 }
 
 [class^="ri-"], [class*=" ri-"] {

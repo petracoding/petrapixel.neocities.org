@@ -1,0 +1,81 @@
+<title>
+  {{ title }}{% if title !== "petrapixel" %} | petrapixel{% endif %}
+</title>
+{% if not noSEO %}
+<meta
+  name="description"
+  content="{{ description or 'Welcome to petrapixel! Here you can find many resources for Neocities and the Indie Web, coding help, media recommendations and more in an Old Web aesthetic!' }}"
+/>
+{% endif %}
+
+<!-- CSS/JS + CACHEBUSTING  TO DO FIX-->
+<script src="{{ nesting }}assets/js/main.js{{ nocache }}"></script>
+<link rel="stylesheet" href="{{ nesting }}assets/main.css{{ nocache }}" />
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  href="{{ nesting }}assets/img/favicon.ico"
+  rel="icon"
+  type="image/x-icon"
+/>
+
+{% if codeHighlight %}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
+{% endif %} {% if not noSEO and not testingOnLocalhost %}
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-J64TL8KVTJ");
+</script>
+{% endif %} {% if freezeframe %}
+<!-- freezeframe.js -->
+<script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+<style>
+  #main .ff-container {
+    display: block;
+  }
+</style>
+{% endif %}
+
+<!-- CSS/JS + CACHEBUSTING 
+    <link rel="stylesheet" href="{{ nesting }}assets/main.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Path to your CSS file (like usual), or empty ("") if you don't have one:
+        const CSS_FILE_PATH = "{{ nesting }}assets/main.css";
+
+        // Path to your JS file (like usual), or empty ("") if you don't have one:
+        const JS_FILE_PATH = "{{ nesting }}assets/js/main.js";
+
+        function loadScript(src) {
+          const script = document.createElement("script");
+          script.src = src + "?nocache=" + new Date().getTime();
+          script.async = true;
+          document.head.appendChild(script);
+        }
+        function loadCSS(href) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = href + "?nocache=" + new Date().getTime();
+          document.head.appendChild(link);
+        }
+        if (JS_FILE_PATH) loadScript(JS_FILE_PATH);
+        if (CSS_FILE_PATH) loadCSS(CSS_FILE_PATH);
+      });
+    </script>-->

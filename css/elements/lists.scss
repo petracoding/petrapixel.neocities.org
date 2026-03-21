@@ -1,0 +1,42 @@
+.listography {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  grid-gap: 5px;
+}
+
+.listbox {
+  border: 1px dotted;
+  padding: 1.5em;
+
+  @media (min-width: $md) {
+    width: calc(50% - 10px);
+  }
+
+  .box-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    display: block;
+    line-height: 1;
+
+    a {
+      color: var(--textColor);
+      text-decoration: none;
+      pointer-events: none;
+    }
+  }
+
+  ul {
+    padding-left: 1em;
+    list-style-image: url(https://i10.glitter-graphics.org/pub/2206/2206590dfsxiz48it.gif);
+  }
+
+  .icon,
+  .gend-link,
+  .dates,
+  [id*="listbox-status"],
+  [id*="list_footer"] {
+    display: none;
+  }
+}

@@ -16,8 +16,20 @@ nesting: "../"
     >.
   </p>
   <p>
-    For business/collaboration inquiries, send me an email: {% include
-    'email.njk' %}
+    For business/collaboration inquiries, send me an email:<span
+      class="email-svg"
+    >
+      <img
+        src="{{ nesting }}assets/img/email.png"
+        alt="my email address"
+        class="only-show-in-light-mode"
+      />
+      <img
+        src="{{ nesting }}assets/img/email-dark.png"
+        alt="my email address"
+        class="only-show-in-dark-mode"
+      />
+    </span>
   </p>
   <iframe
     aria-label="Guestbook"

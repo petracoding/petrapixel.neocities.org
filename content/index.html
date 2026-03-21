@@ -194,811 +194,922 @@ freezeframe: true
     <img aria-hidden="true" alt="" src="assets/img/inline/stars.gif" />
   </h2>
 
-  <!-- -------------------------------------------------------- -->
-  <!-- -------------------------------------------------------- -->
-
-  <!-- -->
-  <div
-    class="neighborhood__scroll-box custom-scrollbar"
-    id="#supporters"
-    style="overflow: initial"
-  >
-    <div class="cool-sites home-neighbors">
-      <p style="width: 100%">
-        <strong>my supporters:</strong>
-      </p>
-      <div>
-        {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
-        and site.supporter %}
-        <a
-          href="{{ site.link }}"
-          title="{{ site.title }}"
-          target="_blank"
-          class="activate-preview"
-        >
-          <img
-            src="{{ site.image | prepareImageUrl }}"
-            alt="{{ site.title }}"
-            width="88"
-            height="31"
-            loading="lazy"
-          />
-        </a>
-        {% endif %} {% endfor %}
-      </div>
-      <p>
-        Huge thanks to my supporters! (You can
-        <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
-          >become a supporter here</a
-        >
-        to be featured!)
-      </p>
+  <div class="tabs">
+    <div class="tabs__tabs">
+      <button class="tabs__tab active-tab" data-tab="neighbors">
+        Neighbors
+      </button>
+      <button class="tabs__tab" data-tab="webrings">Webrings</button>
+      <button class="tabs__tab" data-tab="cliques">Cliques</button>
+      <button class="tabs__tab" data-tab="fanlistings">Fanlistings</button>
+      <button class="tabs__tab" data-tab="awards">Awards</button>
+      <button class="tabs__tab" data-tab="ads">Ads</button>
     </div>
-  </div>
-  <br />
+    <div class="tabs__content">
+      <div class="tabs__tab-content active-tab" data-tab="neighbors">
+        <div class="cool-sites home-neighbors">
+          <p style="width: 100%">
+            <strong>my supporters:</strong>
+          </p>
+          <div>
+            {% for site in sites %} {% if site.title != "TEMPLATE" and not
+            site.hide and site.supporter %}
+            <a
+              href="{{ site.link }}"
+              title="{{ site.title }}"
+              target="_blank"
+              class="activate-preview"
+            >
+              <img
+                src="{{ site.image | prepareImageUrl }}"
+                alt="{{ site.title }}"
+                width="88"
+                height="31"
+                loading="lazy"
+              />
+            </a>
+            {% endif %} {% endfor %}
+          </div>
+          <p>
+            Huge thanks to my supporters! (You can
+            <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
+              >become a supporter here</a
+            >
+            to be featured!)
+          </p>
+        </div>
+        <br /><br />
+        <div class="cool-sites home-neighbors">
+          <p style="width: 100%">
+            <strong>my neighbors:</strong>
+          </p>
+          <div>
+            {% for site in sites %} {% if site.title != "TEMPLATE" and not
+            site.hide and site.neighbor or site.friend %}
+            <a
+              href="{{ site.link }}"
+              title="{{ site.title }}"
+              target="_blank"
+              class="activate-preview"
+            >
+              <img
+                src="{{ site.image | prepareImageUrl }}"
+                alt="{{ site.title }}"
+                width="88"
+                height="31"
+                loading="lazy"
+              />
+            </a>
+            {% endif %} {% endfor %}
+          </div>
+          <p>
+            You can view them all and more <a href="/about/neighbors">here</a>!
+          </p>
+        </div>
+      </div>
+      <div class="tabs__tab-content" data-tab="webrings">
+        <!-- Code Collective -->
+        <center id="code-collective" style="font-size: 1.1em">
+          <span>This site is part of the</span>
+          <a href="/webring"><b>Code Collective</b></a
+          >,<br />
+          <span>a webring for coding resources!</span><br />
+          <a href="/webring?action=previous" style="text-decoration: none"
+            >&lt;prev&gt;</a
+          >
+          <a href="/webring?action=random" style="text-decoration: none"
+            >&lt;random&gt;</a
+          >
+          <a href="/webring?action=next" style="text-decoration: none"
+            >&lt;next&gt;</a
+          >
+        </center>
 
-  <div class="neighborhood__scroll-box custom-scrollbar">
-    <p><strong>webrings:</strong></p>
+        <center style="font-size: 1.2em">
+          (Other webrings have moved
+          <a href="/about/webrings">to their own page</a> to reduce loading
+          time.)
+        </center>
+      </div>
+      <div class="tabs__tab-content" data-tab="cliques">
+        <div class="neighborhood__cliques">
+          <!-- Images -->
+          <div class="neighborhood__cliques-images">
+            <a
+              href="https://transequality.org/trans-101"
+              target="_blank"
+              title="Protect the Dolls clique. (Click for Trans 101)"
+              ><img src="https://file.garden/ZkEY3dxjtja0xEri/tfc/tr-ally.png"
+            /></a>
+            <a href="https://oodlecat.neocities.org/"
+              ><img
+                src="assets/img/links/cliques/nintendogs.png"
+                title="nintendogs fan :: labrador"
+            /></a>
+            <a href="https://oodlecat.neocities.org/"
+              ><img
+                src="assets/img/links/cliques/nds.png"
+                title="the touch generation :: DS & DSi"
+            /></a>
+            {{ ' ' }}<a href="http://deathbusters.org/kirby" target="_blank"
+              ><img
+                src="assets/img/links/cliques/kirby.png"
+                title="Petra's Dreamland!"
+                alt=""
+            /></a>
+            <br />
+            <a href="https://angel.valentinely.cc/"
+              ><img
+                src="assets/img/links/cliques/777.png"
+                title="angel numbers: 777 (luck)"
+                style="
+                  vertical-align: top;
+                  padding-top: 10px;
+                  padding-right: 5px;
+                "
+            /></a>
+            <a href="https://lovesick.cafe/grrrl" aria-label="Made by a girl"
+              ><img
+                src="assets/img/links/cliques/madebyagirl.png"
+                alt="Made by a girl"
+                title="Made by a girl"
+            /></a>
+            <br />
 
-    <!-- <p style="margin-bottom: 0"><strong>webrings / weblistings / directories:</strong></p> -->
+            <a
+              href="https://cliques.shadow-lord.com/cats/buttons.php"
+              target="_blank"
+              ><img
+                src="assets/img/links/cliques/cat.png"
+                title="I have a cat soul"
+                alt=""
+            /></a>
+            <a
+              href="https://cliques.shadow-lord.com/hogwarts/codes.php"
+              title="This Slytherin says 'Trans rights!'"
+              ><img
+                src="assets/img/links/cliques/slytherin.png"
+                alt=""
+                style="
+                  image-rendering: pixelated;
+                  width: 50px;
+                  vertical-align: top;
+                "
+            /></a>
+          </div>
 
-    <!-- Code Collective -->
-    <center id="code-collective" style="font-size: 1.1em">
-      <span>This site is part of the</span>
-      <a href="/webring"><b>Code Collective</b></a
-      >,<br />
-      <span>a webring for coding resources!</span><br />
-      <a href="/webring?action=previous" style="text-decoration: none"
-        >&lt;prev&gt;</a
-      >
-      <a href="/webring?action=random" style="text-decoration: none"
-        >&lt;random&gt;</a
-      >
-      <a href="/webring?action=next" style="text-decoration: none"
-        >&lt;next&gt;</a
-      >
-    </center>
+          <div class="two-columns">
+            <div>
+              <!-- With Images -->
+              <p>
+                <a href="https://emocowboy.neocities.org/home/cliques/pokemon"
+                  >favorite</a
+                >
+                <img
+                  src="assets/img/links/cliques/pokeball.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                Mew
+              </p>
+              <p>
+                <a href="http://cliqued.wings.nu/"
+                  ><font color="#FF0000">r</font><font color="#FF8000">a</font
+                  ><font color="#FFFF00">i</font><font color="#008000">n</font
+                  ><font color="#0000FF">b</font><font color="#8000FF">o</font
+                  ><font color="#800080">w</font></a
+                >
+                &#x1F308; <font color="ed7ed3/webcolour">pink</font>
+              </p>
+              <p style="margin-bottom: 0.25em">
+                <a href="http://cliqued.wings.nu/">rock me</a>
+                <img
+                  src="assets/img/links/cliques/rockme.png"
+                  style="height: 1em"
+                  alt=""
+                  aria-hidden="true"
+                  alt=""
+                />
+                ninja sex party
+              </p>
+              <p>
+                <a
+                  href="https://jubiland.neocities.org/cliques#swiftie"
+                  target="_blank"
+                  >swiftie</a
+                >
+                // <span style="color: #4f7599">midnights</span>
+              </p>
+              <p style="margin: 0">
+                <a
+                  href="https://pkmn.aquarel.nu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="
+                    display: inline-block;
+                    border: 0px none;
+                    background: transparent;
+                  "
+                  >I Choose You!</a
+                >
+                ::
+                <img
+                  src="assets/img/links/cliques/oddish.png"
+                  alt="Pixel sprite of the Pokémon Oddish"
+                  style="margin: auto -15px"
+                />
+              </p>
+              <p style="margin: 0">
+                <a href="https://ac.kuchiki.net/" target="new">pixel friends</a>
+                ::
+                <img
+                  style="height: 2em"
+                  src="assets/img/links/cliques/celeste.gif"
+                  alt="Pixel sprite of Celeste,a pink owl from Animal Crossing"
+                />
+              </p>
+              <p>
+                <a href="https://callmemanatee.neocities.org/who_clique"
+                  >Companions</a
+                >
+                <img
+                  src="assets/img/links/cliques/two_hearts.png"
+                  style="height: 1em"
+                  alt=""
+                  aria-hidden="true"
+                  alt=""
+                />
+                petra is a companion of the 10th doctor.
+              </p>
+              <p>
+                <a
+                  href="https://ballonlea.net/trickyfox/"
+                  aria-hidden="true"
+                  alt=""
+                  ><img
+                    src="assets/img/links/cliques/gravestone.png"
+                    alt=""
+                    aria-hidden="true"
+                    alt="" /></a
+                >&nbsp;I will remember Izzy Hands forever
+              </p>
 
-    <center>
-      (Other webrings have moved
-      <a href="/about/webrings">to their own page</a> to reduce loading time.)
-    </center>
+              <p>
+                Stardew Spouse
+                <a
+                  href="https://evilperson.neocities.org/public/cliques"
+                  target="_blank"
+                  ><img src="assets/img/links/cliques/stardew.png" /></a
+                >&nbsp;Haley
+              </p>
+            </div>
+            <div>
+              <!-- Without Images -->
+              <p>
+                My Deadly Sin is
+                <a
+                  href="http://daughter-of-anubis.pw/deadlysins"
+                  target="_blank"
+                  >Lust</a
+                >
+              </p>
+              <p>
+                <a href="http://aromatic.wings.nu/">aromatic</a> // new books
+              </p>
+              <p>
+                <a href="https://sanguineroyal.com/com/nobility">Nobility</a> //
+                Queen of her website!
+              </p>
 
-    <!-- -------------------------------------------------------- -->
-    <!-- <details style="text-align: center" aria-hidden="true" alt="">
-              <summary>show more</summary>
-              <link rel="stylesheet" href="https://vampring.neocities.org/vampring/onionring.css" />
-              <div id="vampirewebring" style="font-size: 0.5em !important">
-                <script defer="true" type="text/javascript" src="https://vampring.neocities.org/vampring/onionring-variables.js"></script>
-                <script defer="true" type="text/javascript" src="https://vampring.neocities.org/vampring/onionring-widget.js"></script>
-              </div>
-            </details> -->
-  </div>
-  <br />
+              <p>
+                <a href="https://lockheart.love/collections/cliques"
+                  >Cringe is Dead</a
+                >
+                // Twilight Saga
+              </p>
 
-  <div class="two-columns">
-    <div class="neighborhood__scroll-box custom-scrollbar">
-      <p><strong>cliques:</strong></p>
-      <div class="neighborhood__cliques">
-        <!-- Images -->
-        <div
-          style="position: absolute; top: -35px; right: 0; text-align: right"
-        >
+              <p><a href="/cliques">youtube</a> // game grumps</p>
+              <p><a href="/cliques">rawr!</a> // quetzalcoatlus</p>
+              <p><a href="/cliques">gore</a> // blood, bruises</p>
+              <p>
+                <a href="/cliques">love tropes</a> // can't live with you, can't
+                live without you
+              </p>
+
+              <p>
+                <a href="https://fan.sanguineroyal.com/cli/barbieland/"
+                  >Barbieland</a
+                >
+                // This Barbie has too many hobbies and too little time!
+              </p>
+            </div>
+          </div>
+
+          <center style="font-size: 1.2em">
+            <p style="margin-top: 1.25em">
+              <b>Do you love cliques?</b> Check out my
+              <a href="/coding/cliques">list of 190+ cliques</a>!
+            </p>
+          </center>
+        </div>
+      </div>
+      <div class="tabs__tab-content" data-tab="fanlistings">
+        <div class="neighborhood__fanlistings">
+          <!-- Fandoms -->
+          <a href="https://go.wings.nu/list.php?country=all" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/goodomens.png"
+              title="Good Omens"
+              alt="Good Omens"
+          /></a>
           <a
-            href="https://transequality.org/trans-101"
+            href="http://lectersgirl.altervista.org/htv//list.php"
             target="_blank"
-            title="Protect the Dolls clique. (Click for Trans 101)"
-            ><img src="https://file.garden/ZkEY3dxjtja0xEri/tfc/tr-ally.png"
-          /></a>
-          <a href="https://oodlecat.neocities.org/"
             ><img
-              src="assets/img/links/cliques/nintendogs.png"
-              title="nintendogs fan :: labrador"
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/hannibal.jpg"
+              title="Hannibal"
+              alt="Hannibal"
           /></a>
-          <a href="https://oodlecat.neocities.org/"
-            ><img
-              src="assets/img/links/cliques/nds.png"
-              title="the touch generation :: DS & DSi"
-          /></a>
-          {{ ' ' }}<a href="http://deathbusters.org/kirby" target="_blank"
-            ><img
-              src="assets/img/links/cliques/kirby.png"
-              title="Petra's Dreamland!"
-              alt=""
-          /></a>
-          <br />
-          <a href="https://angel.valentinely.cc/"
-            ><img
-              src="assets/img/links/cliques/777.png"
-              title="angel numbers: 777 (luck)"
-              style="
-                vertical-align: top;
-                padding-top: 10px;
-                padding-right: 5px;
-              "
-          /></a>
-          <a href="https://lovesick.cafe/grrrl" aria-label="Made by a girl"
-            ><img
-              src="assets/img/links/cliques/madebyagirl.png"
-              alt="Made by a girl"
-              title="Made by a girl"
-          /></a>
-          <br />
-
           <a
-            href="https://cliques.shadow-lord.com/cats/buttons.php"
+            href="https://tardis.i-heart-you.net/doctorwho/fans.php"
             target="_blank"
             ><img
-              src="assets/img/links/cliques/cat.png"
-              title="I have a cat soul"
-              alt=""
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/doctorwho.gif"
+              title="Doctor Who"
+              alt="Doctor Who"
           /></a>
           <a
-            href="https://cliques.shadow-lord.com/hogwarts/codes.php"
-            title="This Slytherin says 'Trans rights!'"
+            href="http://www.into-a-dream.com.ar/wwstv/list.php"
+            target="_blank"
             ><img
-              src="assets/img/links/cliques/slytherin.png"
-              alt=""
-              style="
-                image-rendering: pixelated;
-                width: 50px;
-                vertical-align: top;
-              "
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/wwdits.png"
+              title="What We Do In The Shadows"
+              alt="What We Do In The Shadows"
+          /></a>
+          <a href="https://fannish.net/hp/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/harrypotter.png"
+              title="Harry Potter (Trans rights!)"
+              alt="Harry Potter"
+          /></a>
+          <a href="https://lindseyonline.us/slytherin/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/slytherin.png"
+              title="Slytherin"
+              alt="Slytherin"
+          /></a>
+          <a
+            href="http://contradiction.altervista.org/supernatural/list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/supernatural.png"
+              title="Supernatural"
+              alt="Supernatural"
+          /></a>
+          <a href="http://impala.dead-ish.net/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/impala.jpg"
+              title="The Impala (from Supernatural)"
+              alt="The Impala (from Supernatural)"
+          /></a>
+          <a href="https://movieloverfls.org/21pilots/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/twentyonepilots.png"
+              title="Twenty One Pilots"
+              alt="Twenty One Pilots"
+          /></a>
+          <a
+            href="https://movieloverfls.org/blurryface/list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/blurryface.png"
+              title="Blurryface"
+              alt="Blurryface"
+          /></a>
+
+          <a href="https://fan.drinkingsouls.com/ts/fans" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/taylorswift.jpg"
+              title="Taylor Swift"
+              alt="Taylor Swift"
+          /></a>
+          <a href="https://imaginary.nu/scrubs/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/scrubs.png"
+              title="Scrubs"
+              alt="Scrubs"
+          /></a>
+          <a href="https://moudoku.com/tos/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/startrek.png"
+              title="Star Trek: TOS"
+              alt="Star Trek: TOS"
+          /></a>
+          <a
+            href="https://162candles.com/strangerthings/list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/strangerthings.png"
+              title="Stranger Things"
+              alt="Stranger Things"
+          /></a>
+          <a href="https://fan.redcrown.net/bride/fan/countries" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/princessbride.png"
+              title="Princess Bride"
+              alt="Princess Bride"
+          /></a>
+          <a href="https://avengers.imora.net/?fans" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/avengers.jpg"
+              title="Avengers"
+              alt="Avengers"
+          /></a>
+          <a href="https://yaten.net/xmenfilms/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/xmen.png"
+              title="X-Men"
+              alt="X-Men"
+          /></a>
+          <a
+            href="https://beatngu.altervista.org/twilight/list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/twilight.gif"
+              title="Twilight"
+              alt="Twilight"
+          /></a>
+          <a href="https://fan.robotess.net/david-tennant/fans" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/davidtennant.jpeg"
+              title="David Tennant"
+              alt="David Tennant"
+          /></a>
+          <a href="https://fan.yerfej.org/hugh/members.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/hughjackman.png"
+              title="Hugh Jackman"
+              alt="Hugh Jackman"
+          /></a>
+          <a
+            href="https://artistic-shadow.net/FL/Parsons/list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/jim-parsons.gif"
+              title="Jim Parsons"
+              alt="Jim Parsons"
+          /></a>
+          <a href="https://mikh.net/jeff/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/jeff-goldblum.gif"
+              title="Jeff Goldblum"
+              alt="Jeff Goldblum"
+          /></a>
+          <a href="https://10-31.net/megan/jurassic/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/jurassicpark.png"
+              title="Jurassic Park"
+              alt="Jurassic Park"
+          /></a>
+          <a href="http://nosastra.com/dinos/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/dinos.png"
+              title="Dinosaurs"
+              alt="Dinosaurs"
+          /></a>
+          <a href="https://fl.hrzblt.eu/minecraft/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/minecraft.png"
+              title="Minecraft"
+              alt="Minecraft"
+          /></a>
+          <a
+            href="https://fan.surlybutterfly.net/stardewvalley/#fans"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/stardewvalley.png"
+              title="Stardew Valley"
+              alt="Stardew Valley"
+          /></a>
+          <a
+            href="http://fan.shattered-memories.org/botw/countries.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/botw.png"
+              title="Breath of the Wild"
+              alt="Breath of the Wild"
+          /></a>
+          <a href="https://fan.glast-heim.net/glados/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/glados.png"
+              title="GLaDOS (Portal)"
+              alt="GLaDOS (Portal)"
+          /></a>
+          <a
+            href="http://vca.ravenbeauty.net/flowers/book/list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/flowersintheattic.gif"
+              title="Flowers in the Attic"
+              alt="Flowers in the Attic"
+          /></a>
+          <!-- Hobbies. -->
+          <a href="https://theatregirl.net/fanfics/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/fanfiction.png"
+              title="Fanfiction"
+              alt="Fanfiction"
+          /></a>
+          <a href="https://10-31.net/chelsea/words/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/words.png"
+              title="Words"
+              alt="Words"
+          /></a>
+          <a href="http://www.into-a-dream.com.ar/wri/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/writing.png"
+              title="Writing"
+              alt="Writing"
+          /></a>
+          <a href="http://in-blue-rain.org/reading//fans.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/reading.png"
+              title="Reading"
+              alt="Reading"
+          /></a>
+          <a href="http://silent.am/pixelart/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/pixelart.gif"
+              title="Pixel Art"
+              alt="Pixel Art"
+          /></a>
+          <!-- Misc. -->
+          <a href="https://beatngu.altervista.org/bi/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/bisexuality.png"
+              title="Bisexuality"
+              alt="Bisexuality"
+          /></a>
+          <a href="https://fans.thislove.nu/mozilla/#list" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/firefox.png"
+              title="Firefox"
+              alt="Firefox"
+          /></a>
+          <a href="https://glitterskies.org/summer/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/summer.gif"
+              title="Summer"
+              alt="Summer"
+          /></a>
+          <a href="https://thunder.fanfreak.net/" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/thunder.png"
+              title="Thunder"
+              alt="Thunder"
+          /></a>
+          <a href="https://10-31.net/halloween/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/halloween.png"
+              title="Halloween"
+              alt="Halloween"
+          /></a>
+          <a href="https://theatregirl.net/newyears/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/newyears.png"
+              title="New Year's"
+              alt="New Year's"
+          /></a>
+          <a href="https://10-31.net/megan/garlic/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/garlicbread.png"
+              title="Garlic Bread"
+              alt="Garlic Bread"
+          /></a>
+          <a href="https://mikh.net/cheese/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/cheese.png"
+              title="Cheese"
+              alt="Cheese"
+          /></a>
+          <a
+            href="http://fanique.altervista.org/tomatoes//list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/tomatoes.png"
+              title="tomatoes"
+              alt="tomatoes"
+          /></a>
+          <a href="http://silent.am/playlists/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/playlists.png"
+              title="Playlists"
+              alt="Playlists"
+          /></a>
+
+          <a href="https://fans.thislove.nu/telly/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/tv.png"
+              title="Watching TV"
+              alt="Watching TV"
+          /></a>
+          <a href="https://gryffindors.com/sarina/web/list.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/websurfing.png"
+              title="Surfing the Web"
+              alt="Surfing the Web"
+          /></a>
+          <a href="https://fan.robotess.net/programming/fans" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/programming.jpeg"
+              title="Programming"
+              alt="Programming"
+          /></a>
+          <a href="https://fans.thislove.nu/css/fl.php?list" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/css.jpg"
+              title="CSS"
+              alt="CSS"
+          /></a>
+          <a
+            href="https://kelsey.altervista.org/dreaming/list.php"
+            target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/dreaming.png"
+              title="Dreaming"
+              alt="Dreaming"
+          /></a>
+          <a href="https://i-heart.net/nostalgia/members.php" target="_blank"
+            ><img
+              width="50"
+              height="50"
+              loading="lazy"
+              src="assets/img/links/fanlistings/nostalgia.png"
+              title="Nostalgia"
+              alt="Nostalgia"
           /></a>
         </div>
-
-        <!-- With Images -->
-        <p>
-          <a href="https://emocowboy.neocities.org/home/cliques/pokemon"
-            >favorite</a
-          >
-          <img
-            src="assets/img/links/cliques/pokeball.png"
-            alt=""
-            aria-hidden="true"
-          />
-          Mew
-        </p>
-        <p>
-          <a href="http://cliqued.wings.nu/"
-            ><font color="#FF0000">r</font><font color="#FF8000">a</font
-            ><font color="#FFFF00">i</font><font color="#008000">n</font
-            ><font color="#0000FF">b</font><font color="#8000FF">o</font
-            ><font color="#800080">w</font></a
-          >
-          &#x1F308; <font color="ed7ed3/webcolour">pink</font>
-        </p>
-        <p style="margin-bottom: 0.25em">
-          <a href="http://cliqued.wings.nu/">rock me</a>
-          <img
-            src="assets/img/links/cliques/rockme.png"
-            style="height: 1em"
-            alt=""
-            aria-hidden="true"
-            alt=""
-          />
-          ninja sex party
-        </p>
-        <p>
-          <a
-            href="https://jubiland.neocities.org/cliques#swiftie"
-            target="_blank"
-            >swiftie</a
-          >
-          // <span style="color: #4f7599">midnights</span>
-        </p>
-        <p style="margin: 0">
-          <a
-            href="https://pkmn.aquarel.nu/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="
-              display: inline-block;
-              border: 0px none;
-              background: transparent;
-            "
-            >I Choose You!</a
-          >
-          ::
-          <img
-            src="assets/img/links/cliques/oddish.png"
-            alt="Pixel sprite of the Pokémon Oddish"
-            style="margin: auto -15px"
-          />
-        </p>
-        <p style="margin: 0">
-          <a href="https://ac.kuchiki.net/" target="new">pixel friends</a> ::
-          <img
-            style="height: 2em"
-            src="assets/img/links/cliques/celeste.gif"
-            alt="Pixel sprite of Celeste,a pink owl from Animal Crossing"
-          />
-        </p>
-        <p>
-          <a href="https://callmemanatee.neocities.org/who_clique"
-            >Companions</a
-          >
-          <img
-            src="assets/img/links/cliques/two_hearts.png"
-            style="height: 1em"
-            alt=""
-            aria-hidden="true"
-            alt=""
-          />
-          petra is a companion of the 10th doctor.
-        </p>
-        <p>
-          <a href="https://ballonlea.net/trickyfox/" aria-hidden="true" alt=""
-            ><img
-              src="assets/img/links/cliques/gravestone.png"
-              alt=""
-              aria-hidden="true"
-              alt="" /></a
-          >&nbsp;I will remember Izzy Hands forever
-        </p>
-
-        <p>
-          Stardew Spouse
-          <a
-            href="https://evilperson.neocities.org/public/cliques"
-            target="_blank"
-            ><img src="assets/img/links/cliques/stardew.png" /></a
-          >&nbsp;Haley
-        </p>
-
-        <!-- Without Images -->
-        <p>
-          My Deadly Sin is
-          <a href="http://daughter-of-anubis.pw/deadlysins" target="_blank"
-            >Lust</a
-          >
-        </p>
-        <p><a href="http://aromatic.wings.nu/">aromatic</a> // new books</p>
-        <p>
-          <a href="https://sanguineroyal.com/com/nobility">Nobility</a> // Queen
-          of her website!
-        </p>
-        <p>
-          <a href="https://fan.sanguineroyal.com/cli/barbieland/">Barbieland</a>
-          // This Barbie has too many hobbies and too little time!
-        </p>
-        <p>
-          <a href="https://lockheart.love/collections/cliques"
-            >Cringe is Dead</a
-          >
-          // Twilight Saga
-        </p>
-
-        <!-- My cliques -->
-        <p><a href="/cliques">youtube</a> // game grumps</p>
-        <p><a href="/cliques">rawr!</a> // quetzalcoatlus</p>
-        <p><a href="/cliques">gore</a> // blood, bruises</p>
-        <p>
-          <a href="/cliques">love tropes</a> // can't live with you, can't live
-          without you
-        </p>
-
-        <!-- List -->
-        <p style="margin-top: 1.25em">
-          <b>Do you love cliques?</b> Check out my
-          <a href="/coding/cliques">list of cliques</a>!
-        </p>
       </div>
-    </div>
-    <!-- -------------------------------------------------------- -->
-    <div class="neighborhood__scroll-box custom-scrollbar">
-      <p><strong>fan listings:</strong></p>
-      <div class="neighborhood__fanlistings">
-        <!-- Fandoms -->
-        <a href="https://go.wings.nu/list.php?country=all" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/goodomens.png"
-            title="Good Omens"
-            alt="Good Omens"
-        /></a>
-        <a
-          href="http://lectersgirl.altervista.org/htv//list.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/hannibal.jpg"
-            title="Hannibal"
-            alt="Hannibal"
-        /></a>
-        <a
-          href="https://tardis.i-heart-you.net/doctorwho/fans.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/doctorwho.gif"
-            title="Doctor Who"
-            alt="Doctor Who"
-        /></a>
-        <a href="http://www.into-a-dream.com.ar/wwstv/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/wwdits.png"
-            title="What We Do In The Shadows"
-            alt="What We Do In The Shadows"
-        /></a>
-        <a href="https://fannish.net/hp/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/harrypotter.png"
-            title="Harry Potter (Trans rights!)"
-            alt="Harry Potter"
-        /></a>
-        <a href="https://lindseyonline.us/slytherin/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/slytherin.png"
-            title="Slytherin"
-            alt="Slytherin"
-        /></a>
-        <a
-          href="http://contradiction.altervista.org/supernatural/list.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/supernatural.png"
-            title="Supernatural"
-            alt="Supernatural"
-        /></a>
-        <a href="http://impala.dead-ish.net/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/impala.jpg"
-            title="The Impala (from Supernatural)"
-            alt="The Impala (from Supernatural)"
-        /></a>
-        <a href="https://movieloverfls.org/21pilots/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/twentyonepilots.png"
-            title="Twenty One Pilots"
-            alt="Twenty One Pilots"
-        /></a>
-        <a href="https://movieloverfls.org/blurryface/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/blurryface.png"
-            title="Blurryface"
-            alt="Blurryface"
-        /></a>
+      <div class="tabs__tab-content" data-tab="awards">
+        <div class="tabs__awards">
+          <!-- Awesome Sauce Directory -->
+          <div>
+            <a
+              href="https://awesome-sauce-directory.neocities.org/directory"
+              target="_blank"
+              ><img
+                src="{{ nesting }}assets/img/links/awesome-sauce-directory.png"
+                alt="This site is awesome."
+                loading="lazy"
+            /></a>
+          </div>
 
-        <a href="https://fan.drinkingsouls.com/ts/fans" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/taylorswift.jpg"
-            title="Taylor Swift"
-            alt="Taylor Swift"
-        /></a>
-        <a href="https://imaginary.nu/scrubs/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/scrubs.png"
-            title="Scrubs"
-            alt="Scrubs"
-        /></a>
-        <a href="https://moudoku.com/tos/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/startrek.png"
-            title="Star Trek: TOS"
-            alt="Star Trek: TOS"
-        /></a>
-        <a href="https://162candles.com/strangerthings/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/strangerthings.png"
-            title="Stranger Things"
-            alt="Stranger Things"
-        /></a>
-        <a href="https://fan.redcrown.net/bride/fan/countries" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/princessbride.png"
-            title="Princess Bride"
-            alt="Princess Bride"
-        /></a>
-        <a href="https://avengers.imora.net/?fans" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/avengers.jpg"
-            title="Avengers"
-            alt="Avengers"
-        /></a>
-        <a href="https://yaten.net/xmenfilms/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/xmen.png"
-            title="X-Men"
-            alt="X-Men"
-        /></a>
-        <a
-          href="https://beatngu.altervista.org/twilight/list.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/twilight.gif"
-            title="Twilight"
-            alt="Twilight"
-        /></a>
-        <a href="https://fan.robotess.net/david-tennant/fans" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/davidtennant.jpeg"
-            title="David Tennant"
-            alt="David Tennant"
-        /></a>
-        <a href="https://fan.yerfej.org/hugh/members.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/hughjackman.png"
-            title="Hugh Jackman"
-            alt="Hugh Jackman"
-        /></a>
-        <a
-          href="https://artistic-shadow.net/FL/Parsons/list.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/jim-parsons.gif"
-            title="Jim Parsons"
-            alt="Jim Parsons"
-        /></a>
-        <a href="https://mikh.net/jeff/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/jeff-goldblum.gif"
-            title="Jeff Goldblum"
-            alt="Jeff Goldblum"
-        /></a>
-        <a href="https://10-31.net/megan/jurassic/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/jurassicpark.png"
-            title="Jurassic Park"
-            alt="Jurassic Park"
-        /></a>
-        <a href="http://nosastra.com/dinos/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/dinos.png"
-            title="Dinosaurs"
-            alt="Dinosaurs"
-        /></a>
-        <a href="https://fl.hrzblt.eu/minecraft/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/minecraft.png"
-            title="Minecraft"
-            alt="Minecraft"
-        /></a>
-        <a
-          href="https://fan.surlybutterfly.net/stardewvalley/#fans"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/stardewvalley.png"
-            title="Stardew Valley"
-            alt="Stardew Valley"
-        /></a>
-        <a
-          href="http://fan.shattered-memories.org/botw/countries.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/botw.png"
-            title="Breath of the Wild"
-            alt="Breath of the Wild"
-        /></a>
-        <a href="https://fan.glast-heim.net/glados/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/glados.png"
-            title="GLaDOS (Portal)"
-            alt="GLaDOS (Portal)"
-        /></a>
-        <a
-          href="http://vca.ravenbeauty.net/flowers/book/list.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/flowersintheattic.gif"
-            title="Flowers in the Attic"
-            alt="Flowers in the Attic"
-        /></a>
-        <!-- Hobbies. -->
-        <a href="https://theatregirl.net/fanfics/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/fanfiction.png"
-            title="Fanfiction"
-            alt="Fanfiction"
-        /></a>
-        <a href="https://10-31.net/chelsea/words/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/words.png"
-            title="Words"
-            alt="Words"
-        /></a>
-        <a href="http://www.into-a-dream.com.ar/wri/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/writing.png"
-            title="Writing"
-            alt="Writing"
-        /></a>
-        <a href="http://in-blue-rain.org/reading//fans.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/reading.png"
-            title="Reading"
-            alt="Reading"
-        /></a>
-        <a href="http://silent.am/pixelart/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/pixelart.gif"
-            title="Pixel Art"
-            alt="Pixel Art"
-        /></a>
-        <!-- Misc. -->
-        <a href="https://beatngu.altervista.org/bi/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/bisexuality.png"
-            title="Bisexuality"
-            alt="Bisexuality"
-        /></a>
-        <a href="https://fans.thislove.nu/mozilla/#list" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/firefox.png"
-            title="Firefox"
-            alt="Firefox"
-        /></a>
-        <a href="https://glitterskies.org/summer/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/summer.gif"
-            title="Summer"
-            alt="Summer"
-        /></a>
-        <a href="https://thunder.fanfreak.net/" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/thunder.png"
-            title="Thunder"
-            alt="Thunder"
-        /></a>
-        <a href="https://10-31.net/halloween/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/halloween.png"
-            title="Halloween"
-            alt="Halloween"
-        /></a>
-        <a href="https://theatregirl.net/newyears/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/newyears.png"
-            title="New Year's"
-            alt="New Year's"
-        /></a>
-        <a href="https://10-31.net/megan/garlic/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/garlicbread.png"
-            title="Garlic Bread"
-            alt="Garlic Bread"
-        /></a>
-        <a href="https://mikh.net/cheese/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/cheese.png"
-            title="Cheese"
-            alt="Cheese"
-        /></a>
-        <a
-          href="http://fanique.altervista.org/tomatoes//list.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/tomatoes.png"
-            title="tomatoes"
-            alt="tomatoes"
-        /></a>
-        <a href="http://silent.am/playlists/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/playlists.png"
-            title="Playlists"
-            alt="Playlists"
-        /></a>
-
-        <a href="https://fans.thislove.nu/telly/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/tv.png"
-            title="Watching TV"
-            alt="Watching TV"
-        /></a>
-        <a href="https://gryffindors.com/sarina/web/list.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/websurfing.png"
-            title="Surfing the Web"
-            alt="Surfing the Web"
-        /></a>
-        <a href="https://fan.robotess.net/programming/fans" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/programming.jpeg"
-            title="Programming"
-            alt="Programming"
-        /></a>
-        <a href="https://fans.thislove.nu/css/fl.php?list" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/css.jpg"
-            title="CSS"
-            alt="CSS"
-        /></a>
-        <a
-          href="https://kelsey.altervista.org/dreaming/list.php"
-          target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/dreaming.png"
-            title="Dreaming"
-            alt="Dreaming"
-        /></a>
-        <a href="https://i-heart.net/nostalgia/members.php" target="_blank"
-          ><img
-            width="50"
-            height="50"
-            loading="lazy"
-            src="assets/img/links/fanlistings/nostalgia.png"
-            title="Nostalgia"
-            alt="Nostalgia"
-        /></a>
+          <!-- Contesting Ballonlea -->
+          <p style="font-size: 1.2em">
+            This site was awarded the
+            <a href="https://ballonlea.net/contesting" target="_blank"
+              >Clever Ribbon</a
+            >!
+            <img src="{{ nesting }}assets/img/links/clever-ribbon.png" alt="" />
+          </p>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <br />
-  <div
-    class="neighborhood__scroll-box custom-scrollbar"
-    id="#neighbors"
-    style="overflow: initial"
-  >
-    <!-- <p style="margin-bottom: 0; text-align: center">Please visit my <a href="/about/neighbors.html">neighbors</a> page for a list of all my mutuals!</p> -->
-    <div class="cool-sites home-neighbors">
-      <p>
-        <strong>my neighbors:</strong>
-      </p>
-      <div>
-        {% for site in sites %} {% if site.title != "TEMPLATE" and not site.hide
-        and site.neighbor or site.friend %}
-        <a
-          href="{{ site.link }}"
-          title="{{ site.title }}"
-          target="_blank"
-          class="activate-preview"
-        >
-          <img
-            src="{{ site.image | prepareImageUrl }}"
-            alt="{{ site.title }}"
+      <div class="tabs__tab-content" data-tab="ads">
+        <iframe
+          width="166"
+          height="166"
+          style="border: none"
+          loading="lazy"
+          src="https://dimden.neocities.org/navlink/"
+          name="neolink"
+          aria-label="Navlink"
+        ></iframe>
+        <iframe
+          width="166"
+          height="166"
+          style="border: none"
+          loading="lazy"
+          src="https://dimden.neocities.org/navlink/"
+          name="neolink"
+          aria-label="Navlink"
+        ></iframe>
+        <iframe
+          width="166"
+          height="166"
+          style="border: none"
+          loading="lazy"
+          src="https://dimden.neocities.org/navlink/"
+          name="neolink"
+          aria-label="Navlink"
+        ></iframe>
+        <iframe
+          width="166"
+          height="166"
+          style="border: none"
+          loading="lazy"
+          src="https://dimden.neocities.org/navlink/"
+          name="neolink"
+          aria-label="Navlink"
+        ></iframe>
+        <div style="display: flex; justify-content: space-evenly">
+          <iframe
             width="88"
             height="31"
+            style="border: none"
             loading="lazy"
-          />
-        </a>
-        {% endif %} {% endfor %}
+            src="https://melonsoda.nekoweb.org/button.html"
+            name="buttonlink"
+          ></iframe>
+          <iframe
+            width="88"
+            height="31"
+            style="border: none"
+            loading="lazy"
+            src="https://melonsoda.nekoweb.org/button.html"
+            name="buttonlink"
+          ></iframe>
+          <iframe
+            width="88"
+            height="31"
+            style="border: none"
+            loading="lazy"
+            src="https://melonsoda.nekoweb.org/button.html"
+            name="buttonlink"
+          ></iframe>
+          <iframe
+            width="88"
+            height="31"
+            style="border: none"
+            loading="lazy"
+            src="https://melonsoda.nekoweb.org/button.html"
+            name="buttonlink"
+          ></iframe>
+          <iframe
+            width="88"
+            height="31"
+            style="border: none"
+            loading="lazy"
+            src="https://melonsoda.nekoweb.org/button.html"
+            name="buttonlink"
+          ></iframe>
+          <iframe
+            width="88"
+            height="31"
+            style="border: none"
+            loading="lazy"
+            src="https://melonsoda.nekoweb.org/button.html"
+            name="buttonlink"
+          ></iframe>
+        </div>
       </div>
-      <p>You can view them all and more <a href="/about/neighbors">here</a>!</p>
     </div>
   </div>
 </section>
@@ -1029,8 +1140,19 @@ freezeframe: true
     You can also post on my
     <a href="https://neocities.org/site/petrapixel" target="_blank"
       >neocities profile</a
-    >. <br />For business/collaboration inquiries, send me an email: {% include
-    'email.njk' %}
+    >. <br />For business/collaboration inquiries, send me an email:
+    <span class="email-svg">
+      <img
+        src="{{ nesting }}assets/img/email.png"
+        alt="my email address"
+        class="only-show-in-light-mode"
+      />
+      <img
+        src="{{ nesting }}assets/img/email-dark.png"
+        alt="my email address"
+        class="only-show-in-dark-mode"
+      />
+    </span>
   </p>
   <hr />
   <a href="#afterguestbook" class="skiplink" aria-hidden="true" alt=""

@@ -449,12 +449,57 @@
 .aside-tamanotchi {
   display: flex;
   justify-content: center;
-  margin-top: 20px !important;
+  margin-top: 50px !important;
+  position: relative;
+
+  > img {
+    width: 100%;
+    image-rendering: pixelated;
+  }
+
+  a {
+    position: absolute;
+    top: 41px;
+    left: 57px;
+
+    img {
+      width: 60px;
+      image-rendering: pixelated;
+      filter: hue-rotate(250deg);
+      transition: transform 0.15s linear;
+    }
+
+    &:hover,
+    &:focus {
+      img {
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+.aside-gif {
+  position: relative;
+  padding: 0;
 
   img {
-    width: calc(72px * 1);
-    image-rendering: pixelated;
-    filter: hue-rotate(250deg);
+    filter: brightness(1.1) contrast(1.1);
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #c891bd;
+    opacity: 0.25;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 }
 
@@ -704,7 +749,7 @@
     top: calc(100% - 17px);
     width: 100%;
     left: 0;
-    background-image: url("https://petrapixel.neocities.org/assets/img/layout/lace.gif");
+    background-image: url("/assets/img/layout/lace.gif");
     background-repeat: repeat-x;
     height: 32px;
     filter: saturate(2);

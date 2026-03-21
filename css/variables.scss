@@ -1,8 +1,8 @@
 $cursorDefault:
-  url("https://petrapixel.neocities.org/assets/img/cursor2.gif") 1 1,
+  url("/assets/img/cursor2.gif") 1 1,
   auto;
 $cursorPointer:
-  url("https://petrapixel.neocities.org/assets/img/cursor1.png") 7 5,
+  url("/assets/img/cursor1.png") 7 5,
   pointer;
 
 $xs: 350px;
@@ -26,9 +26,9 @@ $readableFont: Arial, sans-serif;
 @font-face {
   font-family: "rainyhearts";
   src:
-    url("./fonts/rainyhearts.woff2") format("woff2"),
-    url("./fonts/rainyhearts.woff") format("woff"),
-    url("./fonts/rainyhearts.ttf") format("truetype");
+    url("/assets/css/fonts/rainyhearts.woff2") format("woff2"),
+    url("/assets/css/fonts/rainyhearts.woff") format("woff"),
+    url("/assets/css/fonts/rainyhearts.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -37,9 +37,9 @@ $readableFont: Arial, sans-serif;
 @font-face {
   font-family: "Alagard";
   src:
-    url("./fonts/Alagard.woff2") format("woff2"),
-    url("./fonts/Alagard.woff") format("woff"),
-    url("./fonts/Alagard.ttf") format("truetype");
+    url("/assets/css/fonts/Alagard.woff2") format("woff2"),
+    url("/assets/css/fonts/Alagard.woff") format("woff"),
+    url("/assets/css/fonts/Alagard.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;

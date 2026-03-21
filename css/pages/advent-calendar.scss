@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-image: url("https://petrapixel.neocities.org/assets/img/etc/christmas/adventcalendar-bg.jpg");
+  background-image: url("/assets/img/etc/christmas/adventcalendar-bg.jpg");
   background-repeat: repeat;
 
   @media (max-width: $sm) {
@@ -20,7 +20,8 @@
   margin: 20px;
   background: $pink; // don't use variable: no dark mode
   font-size: 30px;
-  cursor: url(https://cur.cursors-4u.net/holidays/hol-5/hol453.cur), not-allowed;
+  cursor:
+    url(https://cur.cursors-4u.net/holidays/hol-5/hol453.cur), not-allowed;
   transition: 0.3s ease;
 
   @media (max-width: $sm) {
@@ -44,7 +45,7 @@
     left: 0;
     right: 0;
     background: $pink;
-    background-image: url("https://petrapixel.neocities.org/assets/img/etc/christmas/adventcalendar-door.jpg");
+    background-image: url("/assets/img/etc/christmas/adventcalendar-door.jpg");
     background-size: cover;
     transform-origin: left;
     transition: all 0.5s ease-in-out;

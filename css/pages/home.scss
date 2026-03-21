@@ -308,11 +308,21 @@
 
 .neighborhood__cliques {
   position: relative;
-  font-size: 0.8em;
 
   p {
     margin: 0.75em 0;
   }
+
+  .two-columns {
+    padding-right: 110px;
+  }
+}
+
+.neighborhood__cliques-images {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  text-align: right;
 }
 
 .cool-sites {
@@ -376,7 +386,7 @@
   flex-wrap: wrap;
 
   > * {
-    margin: 4px;
+    margin: 8px;
   }
 }
 

@@ -34,7 +34,10 @@ tipType: "resource"
   <h2 id="html">HTML</h2>
 
   <h3>Page Basecode</h3>
-  <label style="display: block; text-align: right"><input type="checkbox" id="explanation-toggle" checked="true" /> Show explanatory comments</label>
+  <label style="display: block; text-align: right"
+    ><input type="checkbox" id="explanation-toggle" checked="true" /> Show
+    explanatory comments</label
+  >
   <pre id="hide-explanation"><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
    &lt;head&gt;
@@ -51,7 +54,10 @@ tipType: "resource"
    &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-  <pre id="show-explanation" style="display: none"><code class="language-html">&lt;!DOCTYPE html&gt;
+  <pre
+    id="show-explanation"
+    style="display: none"
+  ><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
    &lt;head&gt;
       &lt;!-- Page Title (in tab, bookmarks, Google results, ...): --&gt;
@@ -76,7 +82,12 @@ tipType: "resource"
 </code></pre>
 
   <h3>Basic Elements</h3>
-  <p>(This is not a <a href="https://www.w3schools.com/tags/default.asp" target="_blank">complete list</a>.)</p>
+  <p>
+    (This is not a
+    <a href="https://www.w3schools.com/tags/default.asp" target="_blank"
+      >complete list</a
+    >.)
+  </p>
 
   <div class="two-columns">
     <div>
@@ -158,7 +169,12 @@ tipType: "resource"
   </div>
 
   <h3>Commonly Used Attributes</h3>
-  <p>(This is not a <a href="https://www.w3schools.com/tags/ref_attributes.asp" target="_blank">complete list</a>, but has probably 80% of what you will often need.)</p>
+  <p>
+    (This is not a
+    <a href="https://www.w3schools.com/tags/ref_attributes.asp" target="_blank"
+      >complete list</a
+    >, but has probably 80% of what you will often need.)
+  </p>
 
   <pre><code class="language-html">&lt;div class=&quot;my-element&quot;&gt;
 &lt;div id=&quot;my-element&quot;&gt; &lt;!-- must be unique on page --&gt;
@@ -187,7 +203,12 @@ tipType: "resource"
   <h2 id="css">CSS</h2>
 
   <h3>Selectors:</h3>
-  <p>(This is not a <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank">complete list</a>, but has probably 90% of what you will often need.)</p>
+  <p>
+    (This is not a
+    <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank"
+      >complete list</a
+    >, but has probably 90% of what you will often need.)
+  </p>
   <pre><code class="language-css">div {…} /* &lt;div&gt; elements */
 .class {…} /* elements with class name 'class' */
 #id {…} /* elements with id 'id' */
@@ -227,7 +248,12 @@ a[title="Example"] {…} /* every &lt;a&gt; element with the attribute 'title' a
 ...</code></pre>
 
   <h3>Commonly Used Properties:</h3>
-  <p>(This is not a <a href="https://www.w3schools.com/cssref/index.php" target="_blank">complete list</a>, but has probably 75% of what you will often need.)</p>
+  <p>
+    (This is not a
+    <a href="https://www.w3schools.com/cssref/index.php" target="_blank"
+      >complete list</a
+    >, but has probably 75% of what you will often need.)
+  </p>
   <pre><code class="language-scss">/* Positioning */
 display: block; /* block | inline | inline-block | flex | inline-flex | grid | none */
 position: relative; /* static | relative | absolute | fixed */
@@ -284,7 +310,10 @@ user-select: none; /* disables highlighting of text */</code></pre>
   <div class="two-columns">
     <div>
       <h3>Media Queries:</h3>
-      <p>These help you define CSS rules that are only applied on specific screen sizes.</p>
+      <p>
+        These help you define CSS rules that are only applied on specific screen
+        sizes.
+      </p>
       <pre><code class="language-scss">@media (min-width: 700px) {
     .example { ... }
   }
@@ -329,7 +358,11 @@ user-select: none; /* disables highlighting of text */</code></pre>
     left: 10px;
   }</code></pre>
 
-      <p>(For a more detailed explanation on how to position elements and create layouts check out my <a href="/coding/positioning-tutorial">positioning tutorial</a>.)</p>
+      <p>
+        (For a more detailed explanation on how to position elements and create
+        layouts check out my
+        <a href="/coding/positioning-tutorial">positioning tutorial</a>.)
+      </p>
 
       <h3>Grid:</h3>
       <pre><code class="language-scss">.container {
@@ -382,8 +415,10 @@ div {
     <div>
       <h3>Waiting for DOM:</h3>
       <p>
-        If your JavaScript reads from the page content (e.g. <code>.querySelector()</code>) you should <b>always</b> make sure to wait until the page has finished loading before your JavaScript code
-        is executed. Otherwise, you might get 'Element not found' errors.
+        If your JavaScript reads from the page content (e.g.
+        <code>.querySelector()</code>) you should <b>always</b> make sure to
+        wait until the page has finished loading before your JavaScript code is
+        executed. Otherwise, you might get 'Element not found' errors.
       </p>
       <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () =&gt; {
   // code here...
@@ -487,7 +522,10 @@ a {
 
 <section>
   <h2 id="git">Git / GitHub</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/git-tutorial">git tutorial</a>.</blockquote>
+  <blockquote class="tip">
+    For a more detailed explanation check out my
+    <a href="/coding/git-tutorial">git tutorial</a>.
+  </blockquote>
 
   <br />
   <div class="two-columns">
@@ -565,7 +603,10 @@ git remote remove &lt;name&gt; <small>deletes a remote</small></pre>
 
   <div class="two-columns">
     <div>
-      <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/npm-tutorial">npm tutorial</a>.</blockquote>
+      <blockquote class="tip">
+        For a more detailed explanation check out my
+        <a href="/coding/npm-tutorial">npm tutorial</a>.
+      </blockquote>
 
       <h3>Installing Packages:</h3>
       <blockquote class="cheatsheet-blockquote">
@@ -620,7 +661,10 @@ npm view &lt;package&gt; version <small>shows the newest available version of a 
 
 <section>
   <h2 id="webpack">Webpack</h2>
-  <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/webpack-tutorial">webpack tutorial</a>.</blockquote>
+  <blockquote class="tip">
+    For a more detailed explanation check out my
+    <a href="/coding/webpack-tutorial">webpack tutorial</a>.
+  </blockquote>
 
   <br />
   <div class="two-columns">
@@ -643,7 +687,9 @@ npx webpack --config webpack2.config.js <small>runs webpack using a specific con
   </div>
 
   <h3>Example <code>webpack.config.js</code> :</h3>
-  <pre style="white-space: break-spaces"><code class="language-javascript">const path = require("path");
+  <pre
+    style="white-space: break-spaces"
+  ><code class="language-javascript">const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -694,7 +740,10 @@ module.exports = {
 };
 </code></pre>
 
-  <p>(Replace <code>MiniCssExtractPlugin.loader</code> with <code>"style-loader"</code> to inject CSS into DOM.)</p>
+  <p>
+    (Replace <code>MiniCssExtractPlugin.loader</code> with
+    <code>"style-loader"</code> to inject CSS into DOM.)
+  </p>
 
   <br />
   <br />
@@ -706,7 +755,9 @@ module.exports = {
     </div>
     <div>
       <h3>JavaScript:</h3>
-      <pre style="white-space: break-spaces"><code class="language-javascript">import "./main.scss"; 
+      <pre
+        style="white-space: break-spaces"
+      ><code class="language-javascript">import "./main.scss"; 
 import { doExample } from "./js/example.js"; 
 
 document.addEventListener("DOMContentLoaded", () =&gt; {
@@ -730,7 +781,10 @@ document.addEventListener("DOMContentLoaded", () =&gt; {
       <blockquote class="cheatsheet-blockquote">
         <pre>npm install --save-dev @11ty/eleventy <small>installs eleventy</small></pre>
       </blockquote>
-      <blockquote class="tip">For a more detailed explanation check out my <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.</blockquote>
+      <blockquote class="tip">
+        For a more detailed explanation check out my
+        <a href="/coding/eleventy-tutorial">eleventy tutorial</a>.
+      </blockquote>
     </div>
     <div>
       <h3>Running:</h3>
@@ -743,7 +797,9 @@ npx @11ty/eleventy --serve <small>watches your files (and builds them when a cha
   </div>
 
   <h3>Example <code>.eleventy.js</code> :</h3>
-  <pre style="white-space: break-spaces"><code>module.exports = function (eleventyConfig) {
+  <pre
+    style="white-space: break-spaces"
+  ><code>module.exports = function (eleventyConfig) {
   // This makes the eleventy command quieter (with less detail)
   eleventyConfig.setQuietMode(true);
 
@@ -846,4 +902,4 @@ nesting: "../"
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
-{% include 'tip-me.njk' %}
+{% include 'layout/tip-me.njk' %}

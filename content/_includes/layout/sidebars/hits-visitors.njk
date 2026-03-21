@@ -1,0 +1,50 @@
+<div class="aside-stats">
+  <div class="aside-box">
+    <div class="aside-box__heading">
+      <span>hit counter</span
+      ><img
+        src="{{ nesting }}assets/img/layout/icon-stats.png"
+        alt=""
+        aria-hidden="true"
+      />
+    </div>
+    <div class="aside-stats__stat-content">
+      <center style="filter: hue-rotate(15deg) brightness(1.05)">
+        {% if not testingOnLocalhost %}
+
+        <!-- new -->
+        <script
+          type="text/javascript"
+          src="https://counter.websiteout.com/js/30/0/128970/0"
+        ></script>
+
+        <!-- old (broke at 128970 hits)
+                <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a> -->
+
+        {% endif %}
+      </center>
+      <!-- 
+      <small
+        style="
+          font-size: 0.8em;
+          letter-spacing: -0.4px;
+          text-align: center;
+          display: block;
+        "
+        >(this counts hits, not visitors)</small
+      >-->
+    </div>
+    <!--
+    <div id="current-visitors">
+      <a
+        href="http://www.snazzyspace.com/generators/viewer-counter/"
+        target="_blank"
+      >
+        {% if not testingOnLocalhost %}<img
+          src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png"
+        />{% endif %}
+      </a>
+    </div>
+ -->
+  </div>
+</div>

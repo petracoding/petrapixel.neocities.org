@@ -5,87 +5,7 @@ testingOnLocalhost: false
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      {{ title }}{% if title !== "petrapixel" %} | petrapixel{% endif %}
-    </title>
-    {% if not noSEO %}
-    <meta
-      name="description"
-      content="{{ description or 'Welcome to petrapixel! Here you can find many resources for Neocities and the Indie Web, coding help, media recommendations and more in an Old Web aesthetic!' }}"
-    />
-    {% endif %}
-
-    <!-- CSS/JS + CACHEBUSTING  TO DO FIX-->
-    <script src="{{ nesting }}assets/js/main.js{{ nocache }}"></script>
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css{{ nocache }}" />
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="{{ nesting }}assets/img/favicon.ico"
-      rel="icon"
-      type="image/x-icon"
-    />
-
-    {% if codeHighlight %}
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-      hljs.highlightAll();
-    </script>
-    {% endif %} {% if not noSEO and not testingOnLocalhost %}
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-J64TL8KVTJ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-J64TL8KVTJ");
-    </script>
-    {% endif %} {% if freezeframe %}
-    <!-- freezeframe.js -->
-    <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
-    <style>
-      #main .ff-container {
-        display: block;
-      }
-    </style>
-    {% endif %}
-
-    <!-- CSS/JS + CACHEBUSTING 
-    <link rel="stylesheet" href="{{ nesting }}assets/main.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Path to your CSS file (like usual), or empty ("") if you don't have one:
-        const CSS_FILE_PATH = "{{ nesting }}assets/main.css";
-
-        // Path to your JS file (like usual), or empty ("") if you don't have one:
-        const JS_FILE_PATH = "{{ nesting }}assets/js/main.js";
-
-        function loadScript(src) {
-          const script = document.createElement("script");
-          script.src = src + "?nocache=" + new Date().getTime();
-          script.async = true;
-          document.head.appendChild(script);
-        }
-        function loadCSS(href) {
-          const link = document.createElement("link");
-          link.rel = "stylesheet";
-          link.href = href + "?nocache=" + new Date().getTime();
-          document.head.appendChild(link);
-        }
-        if (JS_FILE_PATH) loadScript(JS_FILE_PATH);
-        if (CSS_FILE_PATH) loadCSS(CSS_FILE_PATH);
-      });
-    </script>-->
+    {% include "layout/head.njk" %}
   </head>
   <body
     class="{{ bodyClass }}"
@@ -115,42 +35,7 @@ testingOnLocalhost: false
         <!-- ------------------------------------------------ -->
         <!-- -------------------- BUTTONS ------------------- -->
         <!-- ------------------------------------------------ -->
-
-        <div class="toggle-buttons">
-          <button
-            type="button"
-            title="toggle dark mode"
-            class="toggle-buttons__button toggle-buttons__button--theme"
-            aria-hidden="true"
-          >
-            <img
-              src="{{ nesting }}assets/img/layout/nav/pEic4vl.gif"
-              alt="toggle dark mode"
-            />
-          </button>
-          <button
-            type="button"
-            title="toggle font"
-            class="toggle-buttons__button toggle-buttons__button--font"
-            aria-hidden="true"
-          >
-            <img
-              src="{{ nesting }}assets/img/layout/nav/1D2VdVh.gif"
-              alt="toggle font"
-            />
-          </button>
-          <button
-            type="button"
-            title="toggle sounds"
-            class="toggle-buttons__button toggle-buttons__button--sound"
-            aria-hidden="true"
-          >
-            <img
-              src="{{ nesting }}assets/img/layout/nav/XjYjgGK.gif"
-              alt="toggle sounds"
-            />
-          </button>
-        </div>
+        {% include "layout/setting-buttons.njk" %}
 
         <!-- ------------------------------------------------ -->
         <!-- --------------------- HEADER ------------------- -->
@@ -170,9 +55,9 @@ testingOnLocalhost: false
         <aside class="aside aside--left" data-nosnippet="true">
           <details id="mobile-nav">
             <summary id="mobile-nav-toggle">Open Navigation</summary>
-            {% include "nav.njk" %}
+            {% include "layout/nav.njk" %}
           </details>
-          {% include "nav.njk" %}
+          {% include "layout/nav.njk" %}
 
           <div class="aside-dreamland desktop-only">
             <!-- ----------------------------------------- -->
@@ -195,56 +80,7 @@ testingOnLocalhost: false
 
             <!-- ----------------- SUPPORTERS ----------------- -->
 
-            <div
-              class="aside-box aside-mutuals"
-              data-nesting="{{ nesting }}"
-              aria-hidden="true"
-            >
-              <div class="aside-box__heading">
-                <a href="/about/neighbors"
-                  >Supporters<img
-                    src="{{ nesting }}assets/img/layout/icon-supporter.png"
-                    alt=""
-                    aria-hidden="true"
-                /></a>
-              </div>
-              <a href="#aftersupporters" class="skiplink" aria-hidden="true"
-                >Skip supporters</a
-              >
-              <div id="beforesupporters"></div>
-              <div
-                class="aside-supporters aside-mutuals__buttons"
-                scrollamount="5"
-              >
-                {% for site in sites %} {% if site.title != "TEMPLATE" and
-                site.supporter and not site.hide %}
-                <a
-                  href="{{ site.link }}"
-                  title="{{ site.title }}"
-                  target="_blank"
-                  class="activate-preview"
-                >
-                  <img
-                    src="{{ site.image | prepareImageUrl }}"
-                    alt="{{ site.title }}"
-                    width="88"
-                    height="31"
-                    loading="lazy"
-                  />
-                </a>
-                {% endif %} {% endfor %}
-              </div>
-              <div id="aftersupporters">
-                Click
-                <a href="https://ko-fi.com/petrastipjar/tiers" target="_blank"
-                  >here</a
-                >
-                to become a supporter.
-              </div>
-              <a href="#beforesupporters" class="skiplink" aria-hidden="true"
-                >Skip to before neighbours</a
-              >
-            </div>
+            {% include "layout/sidebars/supporters.njk" %}
 
             <img
               src="{{ nesting }}assets/img/layout/divider6.gif"
@@ -279,35 +115,7 @@ testingOnLocalhost: false
 
             <!-- ----------------- LINK BACK ----------------- -->
 
-            <div class="aside-box aside-link-back">
-              <div class="aside-box__heading">
-                Link back!<img
-                  src="{{ nesting }}assets/img/layout/icon-copy.png"
-                  alt=""
-                  aria-hidden="true"
-                />
-              </div>
-              <p>Hotlinking is a-okay!</p>
-              <a
-                href="https://petrapixel.neocities.org/"
-                target="_blank"
-                tabindex="-1"
-                ><img
-                  src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.webp"
-                  alt="petrapixel"
-                  width="88"
-                  height="31"
-              /></a>
-              <textarea
-                class="code-textarea"
-                name=""
-                id=""
-                rows="10"
-                aria-label="link-back code"
-              >
-<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a></textarea
-              >
-            </div>
+            {% include "layout/sidebars/link-back.njk" %}
 
             <!-- ----------------- CHANGELOG ----------------- -->
 
@@ -347,13 +155,13 @@ testingOnLocalhost: false
 
             <div class="aside-box aside-blinkies" aria-hidden="true">
               <marquee class="marquee aside-blinkies__buttons" scrollamount="5">
-                {% include 'blinkies-blinkies.njk' %}
+                {% include 'layout/sidebars/blinkies-blinkies.njk' %}
               </marquee>
               <marquee
                 class="marquee aside-blinkies__blinkies"
                 scrollamount="4"
               >
-                {% include 'blinkies-buttons.njk' %}
+                {% include 'layout/sidebars/blinkies-buttons.njk' %}
               </marquee>
               <div id="afterneighbours">
                 Click <a href="/about/blinkies">here</a> to view them all.
@@ -384,6 +192,7 @@ testingOnLocalhost: false
                   aria-hidden="true"
                 />
               </div>
+              <!--
               <iframe
                 class="aside-navlinkads"
                 width="170"
@@ -392,16 +201,8 @@ testingOnLocalhost: false
                 src="https://dimden.neocities.org/navlink/"
                 name="neolink"
                 aria-label="Navlink"
-              ></iframe>
-              <center>
-                <p style="line-height: 1">
-                  <small
-                    >These are "ads" to other indie web sites. You should check
-                    them out :)</small
-                  >
-                </p>
-              </center>
-
+                loading="lazy"
+              ></iframe> -->
               <center>
                 <iframe
                   width="88"
@@ -409,9 +210,31 @@ testingOnLocalhost: false
                   style="border: none"
                   src="https://melonsoda.nekoweb.org/button.html"
                   name="buttonlink"
+                  loading="lazy"
                 ></iframe>
               </center>
+              <center style="line-height: 1">
+                <small
+                  >These are "ads" to other indie web sites. You should check
+                  them out :)</small
+                >
+              </center>
             </div>
+
+            <!-- ----------------- GIF ----------------- -->
+            <div class="aside-box aside-gif">
+              <img
+                src="https://i.pinimg.com/originals/3a/c3/6c/3ac36c66ea24d4ec5f0104c982d97822.gif"
+                alt="Mabel from Gravity Falls"
+                title="Mabel from Gravity Falls"
+              />
+            </div>
+            <img
+              src="{{ nesting }}assets/img/layout/divider3.gif"
+              alt=""
+              aria-hidden="true"
+              style="margin-top: -1px"
+            />
           </div>
         </aside>
 
@@ -421,76 +244,10 @@ testingOnLocalhost: false
 
         <aside class="aside aside--right desktop-only" data-nosnippet="true">
           <!-- DINOS -->
-          <div class="aside__dinos">
-            <img src="{{ nesting }}assets/img/layout/nav/YacomnE.gif" alt="" />
-            <img src="{{ nesting }}assets/img/layout/nav/ZugGYNr.gif" alt="" />
-            <img src="{{ nesting }}assets/img/layout/nav/YUmwKM1.gif" alt="" />
-            <img src="{{ nesting }}assets/img/layout/nav/5SsQizU.gif" alt="" />
-          </div>
+          {% include "layout/dinos.njk" %}
 
           <!-- ----------------- FOLLOW, GUESTBOOK, CLAP ----------------- -->
-          <div class="aside-clap-kirby">
-            <a
-              class="aside-box__guestbook"
-              aria-hidden="true"
-              href="/about/guestbook"
-            >
-              <img
-                width="145"
-                height="56"
-                src="{{ nesting }}assets/img/layout/kirby1light.png"
-                alt="sign my guestbook"
-                class="only-show-in-light-mode"
-              />
-              <img
-                width="145"
-                height="56"
-                src="{{ nesting }}assets/img/layout/kirby1.png"
-                alt="sign my guestbook"
-                class="only-show-in-dark-mode"
-              />
-            </a>
-
-            <a
-              class="aside-box__guestbook"
-              aria-label="follow me on neocities"
-              href="https://neocities.org/site/petrapixel"
-              target="_blank"
-            >
-              <img
-                width="145"
-                height="56"
-                src="{{ nesting }}assets/img/layout/kirby2light.png"
-                alt="follow me on neocities"
-                class="only-show-in-light-mode"
-              />
-              <img
-                width="145"
-                height="56"
-                src="{{ nesting }}assets/img/layout/kirby2.png"
-                alt="follow me on neocities"
-                class="only-show-in-dark-mode"
-              />
-            </a>
-            <!-- -->
-            <center style="margin-top: 5px">
-              <small>(thanks for 2000 followers!)</small>
-            </center>
-
-            <a
-              id="clap-for-me"
-              href="//clap.fc2.com/post/petrapixel/?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&title=petrapixel"
-              target="_blank"
-            >
-              <img
-                width="80"
-                height="18"
-                src="//clap.fc2.com/images/button/pink/petrapixel?url=https%3A%2F%2Fpetrapixel.neocities.org%2F&amp;lang=en"
-                alt="clap for me on clap.fc2.com"
-              />
-              <small>click to clap for me!</small>
-            </a>
-          </div>
+          {% include "layout/sidebars/kirby.njk" %}
 
           <img
             src="{{ nesting }}assets/img/layout/divider2.gif"
@@ -501,156 +258,84 @@ testingOnLocalhost: false
 
           <!-- ----------------- STATS / STATUS ----------------- -->
 
-          <div class="aside-stats">
-            <div class="aside-box">
-              <div class="aside-box__heading">
-                <span>hits & visitors</span
-                ><img
-                  src="{{ nesting }}assets/img/layout/icon-stats.png"
+          {% include "layout/sidebars/hits-visitors.njk" %}
+
+          <div class="aside-box">
+            <div class="aside-box__heading">
+              <span>currently</span
+              ><img
+                src="{{ nesting }}assets/img/layout/icon-happy.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="aside-stats__stat-content" id="statuscafe">
+              <div id="statuscafe-username"></div>
+              <div id="statuscafe-content"></div>
+            </div>
+
+            <ul class="aside-currently-list">
+              <li aria-label="listening to:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-music.png"
                   alt=""
+                  title="listening to:"
                   aria-hidden="true"
                 />
-              </div>
-              <div class="aside-stats__stat-content">
-                <center style="filter: hue-rotate(15deg) brightness(1.05)">
-                  {% if not testingOnLocalhost %}
-
-                  <!-- new -->
-                  <script
-                    type="text/javascript"
-                    src="https://counter.websiteout.com/js/30/0/128970/0"
-                  ></script>
-
-                  <!-- old (broke at 128970 hits)
-                <a href="https://www.free-website-hit-counter.com"> <img src="https://www.free-website-hit-counter.com/c.php?d=7&id=166390&s=18" border="0" alt="" /> </a> -->
-
-                  {% endif %}
-                </center>
-                <small
-                  style="
-                    font-size: 0.8em;
-                    letter-spacing: -0.4px;
-                    text-align: center;
-                    display: block;
-                  "
-                  >(this counts hits, not visitors)</small
-                >
-              </div>
-              <div id="current-visitors">
                 <a
-                  href="http://www.snazzyspace.com/generators/viewer-counter/"
+                  href="https://www.last.fm/user/Petra1999"
                   target="_blank"
+                  id="song"
+                  >various</a
                 >
-                  {% if not testingOnLocalhost %}<img
-                    src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png"
-                  />{% endif %}
-                </a>
-              </div>
-            </div>
-
-            <!-- 
-            <div class="aside-box">
-              <div class="aside-box__heading">
-                <span>my time</span
-                ><img
-                  src="{{ nesting }}assets/img/layout/icon-clock.png"
+                <img
+                  src="{{ nesting }}assets/img/layout/equalizer.gif"
                   alt=""
                   aria-hidden="true"
                 />
-              </div>
-              <div class="aside-stats__stat-content">
-                <div style="text-align: center">
-                  <iframe
-                    title="my time"
-                    src="https://free.timeanddate.com/clock/i9bg5thz/n259/fn8/fs13/fc7f244b/tct/pct/ts1/ta1"
-                    frameborder="0"
-                    width="150"
-                    height="17"
-                    allowtransparency="true"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
--->
-
-            <div class="aside-box">
-              <div class="aside-box__heading">
-                <span>currently</span
-                ><img
-                  src="{{ nesting }}assets/img/layout/icon-happy.png"
+              </li>
+              <li aria-label="watching:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-tv.png"
                   alt=""
+                  title="watching:"
                   aria-hidden="true"
                 />
-              </div>
-              <div class="aside-stats__stat-content" id="statuscafe">
-                <div id="statuscafe-username"></div>
-                <div id="statuscafe-content"></div>
-              </div>
-
-              <ul class="aside-currently-list">
-                <li aria-label="listening to:">
-                  <img
-                    src="{{ nesting }}assets/img/layout/icon-music.png"
-                    alt=""
-                    title="listening to:"
-                    aria-hidden="true"
-                  />
-                  <a
-                    href="https://www.last.fm/user/Petra1999"
-                    target="_blank"
-                    id="song"
-                    >various</a
-                  >
-                  <img
-                    src="{{ nesting }}assets/img/layout/equalizer.gif"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                </li>
-                <li aria-label="watching:">
-                  <img
-                    src="{{ nesting }}assets/img/layout/icon-tv.png"
-                    alt=""
-                    title="watching:"
-                    aria-hidden="true"
-                  />
-                  <a href="https://app.tvtime.com/user/33116783" target="_blank"
-                    >Gravity Falls, OFMD
-                    <span style="font-family: sans-serif; font-size: 0.9em"
-                      >↺</span
-                    >, House of the Dragon<!----></a
-                  >
-                </li>
-                <li aria-label="reading:">
-                  <img
-                    src="{{ nesting }}assets/img/layout/icon-book.png"
-                    alt=""
-                    title="reading:"
-                    aria-hidden="true"
-                  />
-                  <a
-                    href="https://www.goodreads.com/user/show/62158941-petra"
-                    target="_blank"
-                    >The Anxious Generation
-                    <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span
+                <a href="https://app.tvtime.com/user/33116783" target="_blank"
+                  >Gravity Falls, OFMD
+                  <span style="font-family: sans-serif; font-size: 0.9em"
+                    >↺</span
+                  >, House of the Dragon<!----></a
+                >
+              </li>
+              <li aria-label="reading:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-book.png"
+                  alt=""
+                  title="reading:"
+                  aria-hidden="true"
+                />
+                <a
+                  href="https://www.goodreads.com/user/show/62158941-petra"
+                  target="_blank"
+                  >The Anxious Generation
+                  <!--<span style="font-family: sans-serif; font-size: 0.9em">↺</span
                 >--></a
-                  >
-                </li>
-                <li aria-label="playing:">
-                  <img
-                    src="{{ nesting }}assets/img/layout/icon-game.png"
-                    alt=""
-                    title="playing:"
-                    aria-hidden="true"
-                  />
-                  <a
-                    href="https://www.backloggd.com/u/Petra1999/"
-                    target="_blank"
-                    >Balatro</a
-                  >
-                </li>
+                >
+              </li>
+              <li aria-label="playing:">
+                <img
+                  src="{{ nesting }}assets/img/layout/icon-game.png"
+                  alt=""
+                  title="playing:"
+                  aria-hidden="true"
+                />
+                <a href="https://www.backloggd.com/u/Petra1999/" target="_blank"
+                  >Balatro</a
+                >
+              </li>
 
-                <!--
+              <!--
             <li aria-label="obsessed with:">
               <img
                 src="{{ nesting }}assets/img/layout/icon-heart.png"
@@ -663,8 +348,7 @@ testingOnLocalhost: false
               >
             </li>
              -->
-              </ul>
-            </div>
+            </ul>
           </div>
 
           <img
@@ -675,34 +359,7 @@ testingOnLocalhost: false
           />
 
           <!-- ----------------- TIP JAR ----------------- -->
-
-          <div class="aside-box aside-support" aria-hidden="true">
-            <div class="aside-box__heading" aria-hidden="true">
-              Support<img
-                src="{{ nesting }}assets/img/layout/icon-piggy-bank.png"
-                alt=""
-                aria-hidden="true"
-              />
-            </div>
-
-            <a
-              class="aside-tip-jar"
-              href="https://ko-fi.com/petrastipjar"
-              target="_blank"
-            >
-              <img
-                src="{{ nesting }}assets/img/layout/coffee.gif"
-                width="50"
-                alt="Coffee Gif"
-              />
-              <div>
-                <b>Tip Jar</b
-                ><small
-                  >Buy me a coffee? I appreciate your support!! &lt;3</small
-                >
-              </div>
-            </a>
-          </div>
+          {% include "layout/sidebars/tip-jar.njk" %}
 
           <img
             src="{{ nesting }}assets/img/layout/divider4.gif"
@@ -811,150 +468,7 @@ testingOnLocalhost: false
               />
             </div>
 
-            <!-- -->
-
-            <form method="post" action="https://poll.pollcode.com/13962324">
-              <div
-                style="
-                  background-color: #eeeeee;
-                  padding: 2px;
-                  width: 175px;
-                  font-family: Arial;
-                  font-size: small;
-                  color: #000000;
-                "
-              >
-                <div style="padding: 2px 0px 4px 2px">
-                  <strong>how old are you?</strong>
-                </div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="1"
-                  id="answer139623241"
-                  style="float: left"
-                /><label for="answer139623241" style="float: left; width: 150px"
-                  >10 or younger</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="2"
-                  id="answer139623242"
-                  style="float: left"
-                /><label for="answer139623242" style="float: left; width: 150px"
-                  >11-12</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="3"
-                  id="answer139623243"
-                  style="float: left"
-                /><label for="answer139623243" style="float: left; width: 150px"
-                  >13-14</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="4"
-                  id="answer139623244"
-                  style="float: left"
-                /><label for="answer139623244" style="float: left; width: 150px"
-                  >15-16</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="5"
-                  id="answer139623245"
-                  style="float: left"
-                /><label for="answer139623245" style="float: left; width: 150px"
-                  >17-18</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="6"
-                  id="answer139623246"
-                  style="float: left"
-                /><label for="answer139623246" style="float: left; width: 150px"
-                  >19-20</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="7"
-                  id="answer139623247"
-                  style="float: left"
-                /><label for="answer139623247" style="float: left; width: 150px"
-                  >21-25</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="8"
-                  id="answer139623248"
-                  style="float: left"
-                /><label for="answer139623248" style="float: left; width: 150px"
-                  >26-29</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="9"
-                  id="answer139623249"
-                  style="float: left"
-                /><label for="answer139623249" style="float: left; width: 150px"
-                  >30-35</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="10"
-                  id="answer1396232410"
-                  style="float: left"
-                /><label
-                  for="answer1396232410"
-                  style="float: left; width: 150px"
-                  >36-39</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <input
-                  type="radio"
-                  name="answer"
-                  value="11"
-                  id="answer1396232411"
-                  style="float: left"
-                /><label
-                  for="answer1396232411"
-                  style="float: left; width: 150px"
-                  >40 or older</label
-                >
-                <div style="clear: both; height: 2px"></div>
-                <div align="center" style="padding: 3px">
-                  <input type="submit" value=" Vote " />&nbsp;<input
-                    type="submit"
-                    name="view"
-                    value=" View "
-                  />
-                </div>
-                <div align="right" style="font-size: 10px">
-                  pollcode.com <a href="https://pollcode.com/">free polls</a>
-                </div>
-              </div>
-            </form>
-
-            <!-- -->
+            {% include "layout/sidebars/poll.njk" %}
 
             <center>
               <small>(all polls <a href="/fun/polls">here</a>)</small>
@@ -964,6 +478,7 @@ testingOnLocalhost: false
           <!-- ----------------- TAMANOTCHI ----------------- -->
 
           <div class="aside-tamanotchi">
+            <img src="{{ nesting }}assets/img/layout/tamagotchi.png" alt="" />
             <a href="https://tamanotchi.world/25005c"
               ><img
                 src="https://tamanotchi.world/i2/25005"
@@ -1006,44 +521,10 @@ testingOnLocalhost: false
         </aside>
 
         <!-- ----------------- BACK TO TOP ----------------- -->
-        <div id="back-to-top-link" aria-hidden="true">
-          <a href="#" tabindex="-1">scroll to top</a>
-        </div>
+        {% include "layout/back-to-top.njk" %}
 
-        <!-- ----------------- CORNER IMAGES ----------------- 
-        <a
-          href="https://ko-fi.com/petrastipjar"
-          target="_blank"
-          class="corner-image"
-          title="please consider supporting me! :)"
-          ><img
-            src="{{ nesting }}assets/img/layout/jar.gif"
-            alt="jar of candies"
-            width="70"
-        /></a>-->
-        <!--
-      <a
-        href="/youtube"
-        class="corner-image corner-image--left"
-        title="check out my youtube channel!"
-        ><img
-          src="{{ nesting }}assets/img/layout/camera.gif"
-          alt="camera"
-          width="86"
-          style="image-rendering: pixelated"
-      /></a>
-      -->
-        <!-- ----------------- PROGRESS BAR ----------------- -->
-        {% if progressBar %}
-        <div class="progress-bar-container">
-          <div>
-            You're <span class="progress-bar-percent">0</span>% done reading!
-          </div>
-          <div class="progress-bar-wrapper">
-            <div class="progress-bar"></div>
-          </div>
-        </div>
-        {% endif %}
+        <!-- ----------------- CORNER IMAGES ----------------- -->
+        {% include "layout/corner-images.njk" %}
 
         <!-- ------------------------------------------------ -->
         <!-- ----------------- MAIN CONTENT ----------------- -->
@@ -1054,76 +535,10 @@ testingOnLocalhost: false
       <!-- ------------------------------------------------ -->
       <!-- ----------------- FOOTER ----------------- -->
       <!-- ------------------------------------------------ -->
-      <footer class="footer">
-        <div class="footer__left">
-          <div class="footer__rss">
-            <a
-              class="footer-rss"
-              href="/rss.xml"
-              target="_blank"
-              aria-label="RSS Feed"
-              title="RSS Feed"
-              ><img
-                src="{{ nesting }}assets/img/layout/rss.png"
-                alt="RSS"
-                width="32"
-                height="32"
-            /></a>
-          </div>
-
-          <div class="footer__links">
-            <a href="https://neocities.org/site/petrapixel" target="_blank"
-              >neocities profile</a
-            >
-            <a href="/sitemap">sitemap</a>
-            <a
-              href="https://github.com/petracoding/petrapixel.neocities.org"
-              target="_blank"
-              >github</a
-            >
-            <a href="https://ko-fi.com/petrastipjar" target="_blank">tip jar</a>
-            <a href="#" tabindex="-1">scroll to top</a>
-          </div>
-        </div>
-        <div class="footer__right">
-          <!-- 
-          <div class="footer__item" title="Hit Counter">
-            <b>Visitors:</b>
-            <script
-              type="text/javascript"
-              src="https://counter.websiteout.com/js/36/0/665298/0"
-            ></script>
-          </div>
-          -->
-          <div class="footer__item" title="Currently Online">
-            <a
-              href="http://www.snazzyspace.com/generators/viewer-counter/"
-              target="_blank"
-            >
-              {% if not testingOnLocalhost %}<img
-                src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1740397249/style=4/counter.png"
-              />{% endif %}
-            </a>
-          </div>
-          <div class="footer__item" title="My time and date">
-            <iframe
-              src="https://free.timeanddate.com/clock/iabr8y8u/n259/fn8/tct/pct/tt0/tw0/tm1/td2/ts1/ta1/tb4"
-              frameborder="0"
-              width="103"
-              height="34"
-              allowtransparency="true"
-            ></iframe>
-          </div>
-        </div>
-      </footer>
+      {% include "layout/footer.njk" %}
     </div>
     <!-- Audios -->
-    <audio id="audio1" style="display: none">
-      <source src="/assets/audio/click1.mp3" type="audio/mpeg" />
-    </audio>
-    <audio id="audio2" style="display: none">
-      <source src="/assets/audio/click2.mp3" type="audio/mpeg" />
-    </audio>
+    {% include "layout/audios.njk" %}
 
     <!-- Scripts -->
     {% if lightbox %}

@@ -21,22 +21,48 @@ tipType: "resource"
     <ul class="list-with-more-spacing">
       {% for g in glossary | sortByTerm %}
       <li id="term-{{ g.term | removeSpaces }}">
-        <b {% if g.meaning %}title="{{ g.meaning }}" {% endif %}>{{ g.term }}: </b>{{ g.text }} {% if g.learnMore %}<br /><i>Learn more: </i
-        ><a href="{{ g.learnMore }}" target="_blank">{{ g.learnMore }}</a>{% endif %} {% if g.seeAlso.length %}<br /><i>See also:</i> {% for s in g.seeAlso %}
-        <a href="#term-{{ s | removeSpaces }}">{{ s }}</a>{% endfor %}{% endif %}
+        <b {% if g.meaning %}title="{{ g.meaning }}" {% endif %}
+          >{{ g.term }}: </b
+        >{{ g.text }} {% if g.learnMore %}<br /><i>Learn more: </i
+        ><a href="{{ g.learnMore }}" target="_blank">{{ g.learnMore }}</a>{%
+        endif %} {% if g.seeAlso.length %}<br /><i>See also:</i> {% for s in
+        g.seeAlso %} <a href="#term-{{ s | removeSpaces }}">{{ s }}</a>{% endfor
+        %}{% endif %}
       </li>
       {% endfor %}
       <li><b>==========</b></li>
-      <li><b>88x31 Button: </b>An image representing a website or an idea, usually 88 by 31 pixels in size.</li>
-      <li><b>Accessability (A11y): </b>Making your website easily usable for everyone, including those with disabilities.</li>
-      <li><b>Array: </b>(In Javascript or other programming languages.) A list of values.</li>
-      <li><b>(HTML) Attribute: </b>Definition</li>
-      <li><b>Backend: </b>The 'back side' of a website, aka the part the user doesn't see which provides necessary functionality. Most personal websites don't have a backend. (See also: Frontend)</li>
       <li>
-        <b><a href="https://getbem.com/" target="_blank">BEM</a> (Block-Element-Modifier): </b>A CSS naming convention.
+        <b>88x31 Button: </b>An image representing a website or an idea, usually
+        88 by 31 pixels in size.
       </li>
-      <li><b>Blinkie: </b>A (often blinking or sparkly) gif with some text. Usually around 150x20 pixels in size.</li>
-      <li><b>Camel Case: </b>A naming convention often used for variable names that looks like this: myVariable (first letter lowercase!)</li>
+      <li>
+        <b>Accessability (A11y): </b>Making your website easily usable for
+        everyone, including those with disabilities.
+      </li>
+      <li>
+        <b>Array: </b>(In Javascript or other programming languages.) A list of
+        values.
+      </li>
+      <li><b>(HTML) Attribute: </b>Definition</li>
+      <li>
+        <b>Backend: </b>The 'back side' of a website, aka the part the user
+        doesn't see which provides necessary functionality. Most personal
+        websites don't have a backend. (See also: Frontend)
+      </li>
+      <li>
+        <b
+          ><a href="https://getbem.com/" target="_blank">BEM</a>
+          (Block-Element-Modifier): </b
+        >A CSS naming convention.
+      </li>
+      <li>
+        <b>Blinkie: </b>A (often blinking or sparkly) gif with some text.
+        Usually around 150x20 pixels in size.
+      </li>
+      <li>
+        <b>Camel Case: </b>A naming convention often used for variable names
+        that looks like this: myVariable (first letter lowercase!)
+      </li>
       <li><b>Class (name): </b>Definition</li>
       <li><b>(Web/Text) Clique: </b>Definition</li>
       <li><b>Console: </b>Definition</li>
@@ -95,4 +121,4 @@ tipType: "resource"
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
-{% include 'tip-me.njk' %}
+{% include 'layout/tip-me.njk' %}

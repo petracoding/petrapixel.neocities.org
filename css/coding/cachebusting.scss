@@ -56,3 +56,49 @@
     }
   }
 }
+
+// ------------------
+
+.boonscrolling-table {
+  border-collapse: collapse;
+  line-height: 1;
+
+  thead th:first-child {
+    font-size: 1.4em;
+    text-decoration: underline;
+  }
+
+  th,
+  td {
+    border: 1px dotted;
+    padding: 0.4em 0.5em;
+
+    small {
+      display: block;
+      margin-top: 0.25em;
+    }
+
+    &:first-child {
+      @media (max-width: $md) {
+        // save space by hiding first column
+        display: none;
+      }
+    }
+  }
+
+  th {
+    background: var(--light);
+
+    &:first-child {
+      max-width: 200px;
+    }
+  }
+
+  thead th {
+    font-size: 1.3em;
+  }
+
+  td {
+    text-align: center;
+  }
+}

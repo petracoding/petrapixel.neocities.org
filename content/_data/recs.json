@@ -220,7 +220,7 @@
     },
     {
       "title": "Stranger Things",
-      "ongoing": true,
+      "ongoing": false,
       "seasons": 5,
       "year": "2016",
       "genres": "Sci-Fi, Drama, Adventure, Horror",
@@ -782,14 +782,14 @@
       "link": "https://www.youtube.com/@Danny-Gonzalez",
       "link2": "https://www.youtube.com/@2Danny2Furious",
       "image": "danny.jpg",
-      "description": "Danny is my favorite commentary youtuber out there. I have watched every single one of his videos 2-3 times. He is consistently entertaining and hilarious. He also makes great comedy music!"
+      "description": "Danny is my favorite commentary youtuber out there. I have watched every single one of his videos 5+ times. He is consistently entertaining and hilarious. He also makes great comedy music!"
     },
     {
       "title": "Drew Gooden",
       "genres": "commentary",
       "link": "https://www.youtube.com/@drewisgooden",
       "image": "drew.jpg",
-      "description": "Drew has a hilarious deadpan humor and covers funny and interesting topics on his commentary channel. He was my introduction to 'commentary youtube' and I love him for it. I've seen all of his videos more than once."
+      "description": "Drew has a hilarious deadpan humor and covers funny and interesting topics on his commentary channel. He was my introduction to 'commentary youtube' and I love him for it. I've seen all of his videos 3+ times."
     },
     {
       "title": "Kurtis Conner",
@@ -891,7 +891,7 @@
      {
       "title": "Dan and Phil",
       "genres": "comedy",
-      "link": "https://www.youtube.com/@DanAndPhilGAMES",
+      "link": "https://www.youtube.com/@DanAndPhil",
       "link2": "https://www.youtube.com/@AmazingPhil",
       "image": "danandphil.jpg",
       "description": "They're absolutely iconic YouTubers, if you haven't heard of them you've really been living under a rock. If, for some reason, you've never seen a video by them, go watch one now!"

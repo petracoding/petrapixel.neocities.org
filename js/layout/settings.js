@@ -53,31 +53,78 @@ function getCookie(cookieName, fallbackValue) {
 }
 
 export function initSounds() {
-  const hoverSounds = document.querySelectorAll("a, button");
-  [...hoverSounds].forEach((el) => {
-    el.addEventListener("mouseover", () => {
-      playSound("audio1");
-    });
-    el.addEventListener("click", () => {
-      playSound("audio1");
-    });
-  });
-  const hoverSounds2 = document.querySelectorAll(
-    ".hello-its-me-facts img, .blinkes img, summary, .coding-navigation-category__title",
+  initSound("tockSound", true, false, "a");
+  initSound(
+    "clickSound",
+    true,
+    false,
+    ".hello-its-me-facts img, .blinkies img, summary, .coding-navigation-category__title, .about-me-page__faves-images img, .about-me-page__flags img",
   );
-  [...hoverSounds2].forEach((el) => {
-    el.addEventListener("mouseover", () => {
-      playSound("audio2");
-    });
-    el.addEventListener("click", () => {
-      playSound("audio2");
-    });
+  initSound(
+    "actualClick",
+    false,
+    true,
+    "summary, button, input[type='submit']",
+  );
+  // initSound("tinySound", true, false, "button, input[type='submit']");
+}
+
+function initSound(soundName, onHover, onClick, selector) {
+  const els = document.querySelectorAll(selector);
+  [...els].forEach((el) => {
+    if (onHover) {
+      el.addEventListener("mouseover", () => {
+        playSound(soundName);
+      });
+    }
+    if (onClick) {
+      el.addEventListener("click", () => {
+        playSound(soundName);
+      });
+    }
   });
 }
 
 function playSound(soundId) {
-  if (getCookie("soundTheme") == "default") {
-    // console.log("Playing sound " + soundId);
-    document.querySelector("#" + soundId).play();
+  if (!getCookie("soundTheme") == "default") return;
+
+  const audio = document.querySelector("#" + soundId);
+  if (!audio) return;
+
+  audio.muted = false;
+  audio.volume = 1;
+  if (soundId == "actualClick") audio.volume = 0.1;
+
+  console.log(
+    "⏵ " +
+      soundId +
+      " (" +
+      (audio.paused ? "paused" : "unpaused") +
+      ") [" +
+      audio.readyState +
+      "] " +
+      audio.duration,
+  );
+
+  if (audio.readyState < 4 || !audio.duration) {
+    audio.load();
+    audio.addEventListener(
+      "canplaythrough",
+      () => {
+        audio
+          .play()
+          .catch((err) =>
+            console.error("Playback of " + soundId + " failed:", err),
+          );
+        // console.log("played " + soundId);
+      },
+      { once: true },
+    );
+  } else {
+    audio
+      .play()
+      .catch((err) =>
+        console.error("Playback of " + soundId + " failed:", err),
+      );
   }
 }

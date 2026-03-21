@@ -1,0 +1,68 @@
+.donate-table {
+  border-collapse: collapse;
+  line-height: 1;
+  font-size: 1.1em;
+
+  th,
+  td {
+    border: 1px dotted;
+    padding: 0.4em 0.5em;
+
+    @media (max-width: $sm) {
+      padding: 0.2em 0.3em;
+    }
+  }
+
+  th {
+    text-align: left;
+    background: var(--light);
+    max-width: 400px;
+
+    small {
+      display: block;
+      font-weight: normal;
+
+      @media (max-width: $sm) {
+        // save space
+        display: none;
+      }
+    }
+  }
+
+  td {
+    text-align: center;
+
+    &:first-child {
+      @media (max-width: $md) {
+        // save space by hiding first column
+        display: none;
+      }
+    }
+
+    &:nth-child(3) {
+      font-size: 1.2em;
+      white-space: nowrap;
+      text-align: right;
+
+      small {
+        font-size: 0.8em;
+      }
+    }
+
+    span {
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 2px 6px;
+      background: pink;
+      border-radius: 5px;
+      font-size: 1.3em;
+      border: 1px solid;
+      white-space: nowrap;
+    }
+  }
+}

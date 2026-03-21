@@ -15,7 +15,9 @@ tipType: "tutorial"
   <p>PAGE WORK IN PROGRESS</p>
   <div id="toc"></div>
 
-  how to test (dev tools, google tool), minify, images smaller+compressed, lazyloading, fewer resources (e.g. jquery, fonts), perceived performance (animations)
+  how to test (dev tools, google tool), minify, images smaller+compressed,
+  lazyloading, fewer resources (e.g. jquery, fonts), perceived performance
+  (animations)
 </section>
 
 <section>
@@ -40,34 +42,60 @@ tipType: "tutorial"
 
 <section>
   <h2 id="minify">Minifying files</h2>
-  <p>If you're using Eleventy (11ty) you can check ouf the section on minifying files in <a href="/coding/eleventy-tutorial.html#minify">my eleventy tutorial</a>.</p>
+  <p>
+    If you're using Eleventy (11ty) you can check ouf the section on minifying
+    files in
+    <a href="/coding/eleventy-tutorial.html#minify">my eleventy tutorial</a>.
+  </p>
 </section>
 
 <section>
   <h2 id="links">Links</h2>
   <p>Here are some links to official documentation & other helpful stuff.</p>
   <ul>
-    <li><a href="https://pagespeed.web.dev/" target="_blank">Google's PageSpeed Insights (tool to test your page speed)</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading" target="_blank">mdn docs: lazy loading</a></li>
     <li>
-      <a href="https://www.w3schools.com/tags/att_img_loading.asp" target="_blank">HTML attribute <code>loading="lazy"</code></a>
+      <a href="https://pagespeed.web.dev/" target="_blank"
+        >Google's PageSpeed Insights (tool to test your page speed)</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading"
+        target="_blank"
+        >mdn docs: lazy loading</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.w3schools.com/tags/att_img_loading.asp"
+        target="_blank"
+        >HTML attribute <code>loading="lazy"</code></a
+      >
       <ul>
         <li>
-          <a href="https://caniuse.com/loading-lazy-attr" target="_blank">Browser support for <code>loading="lazy"</code></a>
+          <a href="https://caniuse.com/loading-lazy-attr" target="_blank"
+            >Browser support for <code>loading="lazy"</code></a
+          >
         </li>
       </ul>
     </li>
   </ul>
 </section>
 
-{% include 'tip-me.njk' %}
+{% include 'layout/tip-me.njk' %}
 
 <section>
   <h2>Comments</h2>
-  <p><b>Leave your questions, problems, suggestions, requests and thanks here!</b></p>
   <p>
-    To share very long code or error messages with me, please upload it to <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar site) and include the link. This is to make sure
-    you don't hit the max character limit on comments.
+    <b
+      >Leave your questions, problems, suggestions, requests and thanks here!</b
+    >
+  </p>
+  <p>
+    To share very long code or error messages with me, please upload it to
+    <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar
+    site) and include the link. This is to make sure you don't hit the max
+    character limit on comments.
   </p>
   <div id="c_widget">Comment Widget could not be loaded!</div>
   <script src="{{ nesting }}assets/js/comment-widget.js"></script>

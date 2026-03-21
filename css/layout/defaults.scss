@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   background: var(--mainBackgroundColor);
-  background-image: url("/assets/img/layout/bg2.png");
+  background-image: url("/assets/img/layout/bg.png");
   background-repeat: repeat;
   color: var(--textColor);
   cursor: $cursorDefault;
@@ -166,6 +166,7 @@ body {
   .aside-blinkies + img[src*="divider"],
   .aside-mutuals + img[src*="divider"],
   .aside-tip-jar,
+  .aside-gif,
   img[src*="layout/new.gif"],
   img[src*="inline/star.gif"],
   img[src*="divider2.gif"],

@@ -16,7 +16,7 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "webpack": "webpack --watch",
+    "webpack": "webpack --mode development --stats verbose --watch --devtool false",
     "eleventy": "npx @11ty/eleventy --serve --port=8080",
     "build": "npx @11ty/eleventy & webpack"
   }

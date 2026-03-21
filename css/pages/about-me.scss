@@ -201,11 +201,20 @@
  */
 
 .about-me-page__lists--favorites {
-  margin-top: 30px;
+  margin-top: 20px;
+  width: 100%;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .about-me-page__lists--favorites .about-me-page__list {
-  flex: 0 0 25%;
+  flex: 0 0 33.333%;
+
+  &:first-child:last-child {
+    flex: 0 0 100%;
+  }
 
   .custom-scrollbar {
     max-height: none;
@@ -238,20 +247,36 @@
     }
   }
 }
+.about-me-page__faves-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  // grid-gap: 10px;
+}
 
 .about-me-page__faves-images {
   display: flex;
   align-items: stretch; // yes, actually stretch the images. it's unnoticable
   margin-bottom: 10px;
+  max-width: calc(50% - 0px);
+  flex-wrap: wrap;
 
   @media (max-width: $lg) {
     flex-wrap: wrap;
   }
 
+  .about-me-page__faves-heading {
+    width: 100%;
+    margin-top: 0.5em;
+
+    img {
+      width: auto;
+    }
+  }
+
   img {
     min-width: 0;
     width: 100%;
-    max-width: 100px;
+    max-width: 60px;
     height: auto;
     margin: 3px;
     image-rendering: pixelated;
@@ -305,7 +330,13 @@
   text-decoration: none;
 
   b {
+    font-size: 1.1em;
     margin-top: -5px;
+    line-height: 1;
+  }
+
+  img[src*=".gif"] {
+    margin-bottom: 10px;
   }
 
   b,
@@ -359,24 +390,30 @@
  */
 
 .about-me-pages__gpoy {
+  margin-left: -40px;
+  margin-right: -40px;
+  max-width: initial !important;
+
   .gpoy {
     width: 100%;
     margin: 5px 0;
 
     @media (min-width: $md) {
-      width: calc(50% - 14px);
-      margin: 7px;
+      // width: calc(50% - 14px);
+      width: calc(33% - 10px);
+      margin: 5px;
     }
   }
 
   img {
+    position: relative;
     transition: 0.3s ease-out;
 
     &:hover {
       z-index: 1;
 
       @media (min-width: $md) {
-        transform: scale(1.1);
+        transform: scale(1.5);
         filter: saturate(1.05);
       }
     }
@@ -458,7 +495,7 @@
     content: "";
     width: 59px;
     height: 15px;
-    background-image: url("https://petrapixel.neocities.org/assets/img/layout/windowbtns.png");
+    background-image: url("/assets/img/layout/windowbtns.png");
     position: absolute;
     bottom: calc(100% + 9px);
     right: 8px;
@@ -487,8 +524,8 @@
 
   a {
     display: inline-block;
-    height: 108px;
-    width: 108px;
+    height: 100px;
+    width: 100px;
     margin: 3px;
     // overflow: hidden;
 
@@ -515,7 +552,7 @@
     transition:
       transform 0.2s linear,
       filter 0.2s linear;
-    filter: brightness(1.1) contrast(0.9) sepia(0.25) hue-rotate(-30deg);
+    filter: brightness(1.1) contrast(0.95) sepia(0.2) hue-rotate(-20deg);
   }
 }
 
