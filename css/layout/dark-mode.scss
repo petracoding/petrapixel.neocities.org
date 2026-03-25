@@ -20,6 +20,10 @@
   	COLORS
    */
 
+  .floatingchat-container-wrap {
+    filter: invert(1) hue-rotate(130deg);
+  }
+
   .code-textarea {
     background: rgba(0, 0, 0, 0.3);
   }
@@ -121,6 +125,10 @@
   .corner-image img {
     opacity: 0.9;
     filter: brightness(0.75);
+  }
+
+  .aside-tamanotchi {
+    filter: brightness(0.9) saturate(1.5);
   }
 
   /* CHRISTMAS STUFF / SNOW */

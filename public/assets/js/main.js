@@ -608,7 +608,7 @@ function initSound(soundName, onHover, onClick, selector) {
 }
 
 function playSound(soundId) {
-  if (!getCookie("soundTheme") == "default") return;
+  if (getCookie("soundTheme") == "muted") return;
 
   const audio = document.querySelector("#" + soundId);
   if (!audio) return;
@@ -617,16 +617,16 @@ function playSound(soundId) {
   audio.volume = 1;
   if (soundId == "actualClick") audio.volume = 0.1;
 
-  console.log(
-    "⏵ " +
-      soundId +
-      " (" +
-      (audio.paused ? "paused" : "unpaused") +
-      ") [" +
-      audio.readyState +
-      "] " +
-      audio.duration,
-  );
+  // console.log(
+  //   "⏵ " +
+  //     soundId +
+  //     " (" +
+  //     (audio.paused ? "paused" : "unpaused") +
+  //     ") [" +
+  //     audio.readyState +
+  //     "] " +
+  //     audio.duration,
+  // );
 
   if (audio.readyState < 4 || !audio.duration) {
     audio.load();

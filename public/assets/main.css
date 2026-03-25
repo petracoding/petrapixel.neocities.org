@@ -18839,6 +18839,9 @@ body.dark-mode .only-show-in-light-mode {
 body.dark-mode .only-show-in-dark-mode {
   display: initial;
 }
+body.dark-mode .floatingchat-container-wrap {
+  filter: invert(1) hue-rotate(130deg);
+}
 body.dark-mode .code-textarea {
   background: rgba(0, 0, 0, 0.3);
 }
@@ -18913,6 +18916,9 @@ body.dark-mode #current-visitors img {
 body.dark-mode .corner-image img {
   opacity: 0.9;
   filter: brightness(0.75);
+}
+body.dark-mode .aside-tamanotchi {
+  filter: brightness(0.9) saturate(1.5);
 }
 body.dark-mode #embedim--snow {
   opacity: 0.5;
