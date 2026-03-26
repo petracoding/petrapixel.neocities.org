@@ -1,5 +1,6 @@
 [
   { "date": "2026-03-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-03-26", "text": "Webringu bugfix", "link": "/coding/webringu" },
   { "date": "2026-03-21", "text": "Small updates", "link": "/donate" },
   { "date": "2026-03-17", "text": "Dream diary page and a few layout updates", "link": "/about/dream-diary" },
   { "date": "2026-03-13", "text": "Supporters and neighbors now have previews when hovered over!", "link": "/about/neighbors" },

@@ -14453,6 +14453,17 @@ img[src*="i.imgur.com"] {
   border: 0;
 }
 
+@media (min-width: 576px) {
+  .multiple-columns-on-desktop {
+    column-count: 2;
+  }
+}
+@media (min-width: 1000px) {
+  .multiple-columns-on-desktop {
+    column-count: 3;
+  }
+}
+
 .website-carbon {
   display: flex;
   flex-direction: column;
