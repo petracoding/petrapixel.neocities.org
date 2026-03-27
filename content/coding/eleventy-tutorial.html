@@ -38,70 +38,7 @@ tipType: "tutorial"
   -->
   <br />
 
-  <div id="toc" data-two-levels="yeh">
-    <b>Table of Contents:</b>
-    <ol>
-      <li>
-        <a href="#requirements">Requirements</a>
-      </li>
-      <li>
-        <a href="#installation">Installation</a>
-      </li>
-      <li>
-        <a href="#configuration">Configuration</a>
-        <ul>
-          <li><a href="#ignore">Ignore Files (Optional)</a></li>
-          <li>
-            <a href="#minify">Minify (Optional)</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#nunjucks">Nunjucks</a>
-      </li>
-      <li><a href="#custom-filters">Custom Filters (Optional)</a></li>
-      <li>
-        <a href="#data">Using Data (Optional)</a>
-      </li>
-      <li>
-        <a href="#cachebusting">Cachebusting (Recommended)</a>
-      </li>
-      <li>
-        <a href="#partials">Partials (Optional)</a>
-      </li>
-      <li>
-        <a href="#templates">Templates</a>
-        <ul>
-          <li><a href="#template">Step 1: The template</a></li>
-          <li><a href="#page">Step 2: The page</a></li>
-          <li><a href="#example">Example</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#extending-files">Extending files</a>
-      </li>
-      <li>
-        <a href="#running-eleventy">Running Eleventy</a>
-        <ul>
-          <li>
-            <a href="#custom-command">Defining a custom command (Optional)</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#done">Done!</a>
-      </li>
-      <li>
-        <a href="#links">Links</a>
-      </li>
-      <li>
-        <a href="#cheatsheet">Cheatsheet</a>
-      </li>
-      <li>
-        <a href="#comments">Comments</a>
-      </li>
-    </ol>
-  </div>
+  <div id="toc" data-two-levels="yeh"></div>
 </section>
 
 <section>
@@ -519,24 +456,6 @@ Log information of a variable (for debugging):
 </section>
 
 <section>
-  <h2 id="partials">Partials (Optional)</h2>
-  <p>
-    You can create <code>.njk</code> files and include them in your pages like
-    so:
-  </p>
-  <pre><code>&lt;header&gt;
-    {% raw %}{% include 'headerImage.njk' %}{% endraw %}
-    {% raw %}{% include 'menu.njk' %}{% endraw %}
-&lt;/header&gt;
-</code></pre>
-  <p>
-    These files <b>must</b> be located in a <code>_includes</code> folder in
-    your input folder. (In my example this would be
-    <code>content/_includes</code>.)
-  </p>
-</section>
-
-<section>
   <h2 id="templates">Templates</h2>
   <h3 id="template" data-step="1">The Template</h3>
   <p>
@@ -676,7 +595,74 @@ nesting: "../"
 </section>
 
 <section>
-  <h2 id="extending-files">Extending files</h2>
+  <h2 id="partials">Partials (Optional, Recommended)</h2>
+  <p>
+    Partials are a great way to keep your code in seperate, organized files.
+    This way you can avoid ultra-long files in which you have to keep searching
+    for specific sections when editing.
+  </p>
+  <p>
+    You can create <code>.njk</code> files and include them in your pages like
+    so:
+  </p>
+  <pre><code  class="language-html">&lt;header&gt;
+    {% raw %}{% include 'headerImage.njk' %} &lt;!-- adds content of _includes/headerImage.njk here --&gt;{% endraw %}
+    {% raw %}{% include 'menu.njk' %} &lt;!-- adds content of _includes/menu.njk here --&gt;{% endraw %}
+&lt;/header&gt;
+</code></pre>
+  <p>
+    These files <b>must</b> be located in a <code>_includes</code> folder in
+    your input folder. (In my example this would be
+    <code>content/_includes</code>.)
+  </p>
+</section>
+
+<section>
+  <h2 id="macros">Macros (Optional)</h2>
+  <p>
+    Macros are similar to Javascript functions: They are re-usable codes that
+    you can vary by defining specific parameter values.
+  </p>
+  <p><b>Example macro:</b></p>
+  <pre><code  class="language-html">{% raw %}{% macro exampleMacro(headingToShow, textToShow='Default paragraph text') %} 
+	{% if headingToShow %}
+		&lt;h1&gt;{{ headingToShow }}&lt;/h1&gt;
+	{% endif %}
+	<p>{{ textToShow }}</p>
+{% endmacro %}{% endraw %}</code></pre>
+  <p>
+    (In this example there are two parameters: <code>headingToShow</code> and
+    <code>textToShow</code>, which has a default value that can be overwritten.)
+  </p>
+
+  <p>
+    You put these macros either in the file you want to use it in, or - if you
+    want to use it in multiple files - create a new file (can be either
+    <code>.njk</code> or <code>.html</code>) for it in the
+    <code>_includes</code> folder (similar to partials, see above). Then you
+    just need to import the macro in the files you want to use it in. For
+    example, for the file <code>_includes/myMacroFile.njk</code> you need to put
+    this in your page file:
+  </p>
+  <pre><code>{% raw %}{% from "myMacroFile.njk" import exampleMacro %}{% endraw %}</code></pre>
+
+  <hr />
+
+  <p><b>Example usage:</b> (in <code>.njk</code> files)</p>
+  <pre><code  class="language-html">{% raw %}{% from "myMacroFile.njk" import exampleMacro %}
+
+{{ exampleMacro('Example 1') }} &lt;!-- will output 'Example 1' and 'Default paragraph text' --&gt;
+{{ exampleMacro('Example 2', textToShow='Other paragraph text') }} &lt;!-- will output 'Example 2' and 'Other paragraph text' --&gt;
+{{ exampleMacro() }} &lt;!-- will output 'Default paragraph text' --&gt;{% endraw %}</code></pre>
+  <blockquote class="warning">
+    To use macros your page files need to be <code>.njk</code> files! If they
+    are currently <code>.html</code> files you can simply change the file
+    extension and everything else stays the same. Super simple!
+  </blockquote>
+</section>
+
+<section>
+  <h2 id="extending-files">Extending files (Optional)</h2>
   <p>
     An alternative to using Eleventy templates with front matter (as described
     in the previous step) is to <b>extend</b> an njk template. This will give
@@ -798,6 +784,21 @@ nesting: "../"
 </section>
 
 <section>
+  <h2 id="common-errors">Common Errors</h2>
+  <p>
+    In general, <b>re-starting Eleventy sometimes resolves issues</b>,
+    especially when you can't see changes you've made.
+  </p>
+  <p>
+    If you use an error along the lines of
+    <code>Tag "macro" not found</code> make sure the file you are editing is a
+    <code>.njk</code> file, not a <code>.html</code> file. If it's currently a
+    <code>.html</code> file you can simply change the file extension and
+    everything else stays the same. Super simple!
+  </p>
+</section>
+
+<section>
   <h2 id="done">Done!</h2>
   <p>Your project structure will look a bit like this:</p>
   <pre><code>content/			&lt;-- your input folder
@@ -910,6 +911,36 @@ public/				&lt;-- your output folder
         target="_blank"
         >Nunjucks Documentation</a
       >
+      <ul>
+        <li>
+          <a
+            href="https://mozilla.github.io/nunjucks/templating.html#variables"
+            target="_blank"
+            >Variables</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://mozilla.github.io/nunjucks/templating.html#if"
+            target="_blank"
+            >If</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://mozilla.github.io/nunjucks/templating.html#macro"
+            target="_blank"
+            >Macros</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://mozilla.github.io/nunjucks/templating.html#import"
+            target="_blank"
+            >Import</a
+          >
+        </li>
+      </ul>
     </li>
     <li>
       <a
