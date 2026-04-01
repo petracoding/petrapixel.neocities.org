@@ -10,6 +10,7 @@ import {
   initChristmas,
   initLinkPreviews,
   initTabs,
+  initAprilFools,
 } from "./layout/layout";
 import { initSidebar } from "./layout/sidebar";
 import { initClipboard } from "./pages/clipboard";
@@ -63,6 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initRoadmap();
 
   /* SPECIAL: */
-  //initAprilFools();
+  initAprilFools();
   initChristmas();
 });

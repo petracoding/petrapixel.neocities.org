@@ -33,14 +33,20 @@ tipType: "resource"
     >
     (which is the Japanese original of 'The Ring').
   </p>
-  <blockquote class="warning">
+
+  <!-- 
+  <blockquote class="info">
     <b>Bugfix added on 2026/03/26.</b> Please re-download the script to get the
     bugfix.<br />(It's now possible to link to pages other than the homepage on
     members' website.)
   </blockquote>
-
+-->
   <h3>What it does (and doesn't)</h3>
-  <ul>
+  <ul
+    style="
+      list-style-image: url(&quot;https://dl.glitter-graphics.com/pub/2822/2822959pm1dkwzyqo.gif&quot;);
+    "
+  >
     <li>
       Webringu is super easy to use. It doesn't require any JavaScript knowledge
       beyond editing a simple members array.
@@ -80,33 +86,61 @@ tipType: "resource"
       >:</b
     >
   </p>
-  <ul>
-    <li>
-      <mark>Onionring</mark> requires members to load 2-3 files on their site,
-      which are about ~5 KB. If that member is also a part of 4 other webrings
-      using the onionring script, that's already ~ 25KB, which can slow down
-      site loading.<br /><mark>Webringu</mark> only requires a few lines of
-      HTML, no files (0 KB). Even if someone has hundreds of webring widgets
-      based on Webringu on their page it would still load 0 KB of files, so the
-      website still loads quickly!
-    </li>
-    <li>
-      <mark>Onionring</mark> loads the members' widget per JavaScript, which
-      means its appearance is fixed.<br /><mark>Webringu</mark> only uses HTML,
-      which means the widget is fully customizable for members.
-    </li>
-    <li>
-      <mark>Onionring</mark>'s widget will not load for users with deactivated
-      JavaScript.<br /><mark>Webringu</mark>'s widget will still be visible and
-      link to the webring, even if a user's JavaScript is disabled.
-    </li>
-    <li>
-      <mark>Onionring</mark> shows a "Not a member yet" message instead of its
-      widget if the member has not been added.<br /><mark>Webringu</mark> does
-      show the widget, but the "previous", "next" and "random" links only
-      linkends on your tas to the webring page.
-    </li>
-  </ul>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Onionring</th>
+        <th>Webringu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>loading times</th>
+        <td>
+          ⚠️ requires members to load 2-3 files on their site, which are about
+          ~5 KB. If that member is also a part of 4 other webrings using the
+          onionring script, that's already ~25KB, which can slow down site
+          loading
+        </td>
+        <td>
+          ✅ only requires a few lines of HTML, no files (0 KB). Even if someone
+          has hundreds of webring widgets based on Webringu on their page it
+          would still load 0 KB of files, so the website still loads quickly!
+        </td>
+      </tr>
+      <tr>
+        <th>deactivated javascript</th>
+        <td>⚠️ widget will not load for users with deactivated JavaScript</td>
+        <td>
+          ✅ widget will still be visible and link to the webring, even if a
+          user's JavaScript is disabled.
+        </td>
+      </tr>
+      <tr>
+        <th>widget appearance</th>
+        <td>
+          ✅ loads the members' widget per JavaScript, which means its
+          appearance is fixed.
+        </td>
+        <td>
+          ✅ only uses HTML, which means the widget is fully customizable for
+          members.
+        </td>
+      </tr>
+      <tr>
+        <th>widgets for non-members</th>
+        <td>
+          ✅ shows a "Not a member yet" message instead of its widget if the
+          member has not been added
+        </td>
+        <td>
+          🆗 does show the widget, but the "previous", "next" and "random" links
+          only link to the webring page.
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <p>
     Onionring is not a bad script. In fact, it partially inspired Webringu. I
     just created Webringu because I wasn't entirely happy with Onionring; I
@@ -470,6 +504,26 @@ tipType: "resource"
     <li>
       <a href="https://bisexual-webring.neocities.org/" target="_blank"
         >Bisexual Webring</a
+      >
+    </li>
+    <li>
+      <a href="https://nogood-angel.nekoweb.org/zatoring/" target="_blank"
+        >Z.A.T.O.ring</a
+      >
+    </li>
+    <li>
+      <a href="https://loominggrey.neocities.org/webring" target="_blank"
+        >Cupid's Worst Nightmare</a
+      >
+    </li>
+    <li>
+      <a href="https://grothqconsulting.com/webring" target="_blank"
+        >Never Fade Away Webring</a
+      >
+    </li>
+    <li>
+      <a href="https://supernw095.nekoweb.org/chuuniring/" target="_blank"
+        >Chuuniring</a
       >
     </li>
     <!-- 

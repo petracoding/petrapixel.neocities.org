@@ -17064,22 +17064,6 @@ section .blinkies {
   margin-bottom: 0.5em;
 }
 
-.neighborhood__scroll-box {
-  border: 3px dotted rgba(233, 151, 188, 0.5);
-  padding: 1em;
-  border-radius: 15px;
-  overflow-y: auto;
-}
-.two-columns .neighborhood__scroll-box {
-  max-height: 246px;
-}
-.neighborhood__scroll-box > *:first-child {
-  margin-top: 0;
-}
-.neighborhood__scroll-box strong {
-  font-size: 1em;
-}
-
 .neighborhood__cliques {
   position: relative;
 }
@@ -17248,9 +17232,6 @@ section .blinkies {
   }
   .hello-its-me-content p:last-child::after {
     content: ":";
-  }
-  .neighborhood__scroll-box {
-    max-height: none !important;
   }
 }
 .media-log__item {
@@ -18448,6 +18429,28 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   </div>
 
   */
+.table {
+  border-collapse: collapse;
+  line-height: 1;
+  font-size: 1.1em;
+}
+.table th,
+.table td {
+  border: 1px dotted;
+  padding: 0.4em 0.5em;
+}
+@media (max-width: 576px) {
+  .table th,
+  .table td {
+    padding: 0.2em 0.3em;
+  }
+}
+.table th {
+  text-align: left;
+  background: var(--light);
+  max-width: 400px;
+}
+
 .cachebusting-comparision {
   border-collapse: collapse;
   line-height: 1;

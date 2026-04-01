@@ -286,26 +286,6 @@
   }
 }
 
-.neighborhood__scroll-box {
-  border: 3px dotted rgba($pink, 0.5);
-  padding: 1em;
-  border-radius: 15px;
-  // max-height: 350px;
-  overflow-y: auto;
-
-  .two-columns & {
-    max-height: 246px;
-  }
-
-  > *:first-child {
-    margin-top: 0;
-  }
-
-  strong {
-    font-size: 1em;
-  }
-}
-
 .neighborhood__cliques {
   position: relative;
 
@@ -511,9 +491,5 @@
         content: ":";
       }
     }
-  }
-
-  .neighborhood__scroll-box {
-    max-height: none !important;
   }
 }

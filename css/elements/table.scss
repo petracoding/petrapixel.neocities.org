@@ -1,0 +1,21 @@
+.table {
+  border-collapse: collapse;
+  line-height: 1;
+  font-size: 1.1em;
+
+  th,
+  td {
+    border: 1px dotted;
+    padding: 0.4em 0.5em;
+
+    @media (max-width: $sm) {
+      padding: 0.2em 0.3em;
+    }
+  }
+
+  th {
+    text-align: left;
+    background: var(--light);
+    max-width: 400px;
+  }
+}

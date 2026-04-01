@@ -170,7 +170,7 @@ tipType: "tutorial"
 </code></pre>
 
   <hr />
-  <h3 id="ignore">Ignore Files (Optional)</h3>
+  <h3 id="ignore">Ignore Files <small>(Optional)</small></h3>
   <p>
     If you want Eleventy to ignore certain files you can create a file with the
     name <code>.eleventyignore</code> in the root of your project with content
@@ -192,7 +192,7 @@ example/**/*.njk</code></pre>
   <pre><code>eleventyConfig.setUseGitIgnore(false);</code></pre>
 
   <hr />
-  <h3 id="minify">Minify (Optional)</h3>
+  <h3 id="minify">Minify <small>(Optional)</small></h3>
   <p>
     If you want, you can tell Eleventy to minify your HTML files, e.g. by
     removing unneeded whitespaces. That means their file size will be smaller,
@@ -331,7 +331,7 @@ Log information of a variable (for debugging):
 </section>
 
 <section>
-  <h2 id="custom-filters">Custom Filters (Optional)</h2>
+  <h2 id="custom-filters">Custom Filters <small>(Optional)</small></h2>
   <p>
     Filters are ways to change or use information in Nunjucks. You can write
     your own custom filters, which opens up a lot of possibilites. This is what
@@ -434,7 +434,7 @@ Log information of a variable (for debugging):
 </section>
 
 <section>
-  <h2 id="cachebusting">Cachebusting (Recommended)</h2>
+  <h2 id="cachebusting">Cachebusting <small>(Recommended)</small></h2>
   <p>
     For <a href="/coding/cachebusting">cachebusting</a>, instead of manually
     updating the <code>?nocache=</code> parameter, you can add the current date
@@ -595,7 +595,7 @@ nesting: "../"
 </section>
 
 <section>
-  <h2 id="partials">Partials (Optional, Recommended)</h2>
+  <h2 id="partials">Partials <small>(Recommended)</small></h2>
   <p>
     Partials are a great way to keep your code in seperate, organized files.
     This way you can avoid ultra-long files in which you have to keep searching
@@ -618,7 +618,7 @@ nesting: "../"
 </section>
 
 <section>
-  <h2 id="macros">Macros (Optional)</h2>
+  <h2 id="macros">Macros <small>(Optional)</small></h2>
   <p>
     Macros are similar to Javascript functions: They are re-usable codes that
     you can vary by defining specific parameter values.
@@ -662,7 +662,7 @@ nesting: "../"
 </section>
 
 <section>
-  <h2 id="extending-files">Extending files (Optional)</h2>
+  <h2 id="extending-files">Extending files <small>(Optional)</small></h2>
   <p>
     An alternative to using Eleventy templates with front matter (as described
     in the previous step) is to <b>extend</b> an njk template. This will give
@@ -748,7 +748,9 @@ nesting: "../"
     open, which can lead to problems.
   </p>
   <hr />
-  <h3 id="custom-command">Defining a custom command (Optional)</h3>
+  <h3 id="custom-command">
+    Defining a custom command <small>(Optional)</small>
+  </h3>
   <p>
     In your <code>package.json</code> file, you can define custom commands. Here
     is an example:
