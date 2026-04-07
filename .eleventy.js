@@ -1,6 +1,9 @@
 const htmlmin = require("html-minifier-terser");
 
 module.exports = function (eleventyConfig) {
+  // Use Nunjucks as template engine for HTML files (not Liquid)
+  // eleventyConfig.setHtmlTemplateEngine("njk"); // TODO
+
   // This makes the Eleventy command quieter (with less detail)
   eleventyConfig.setQuietMode(true);
 
@@ -71,6 +74,8 @@ module.exports = function (eleventyConfig) {
 
   // This defines the input and output directories
   return {
+    // This makes sure HTML files use Nunjucks
+    htmlTemplateEngine: "njk",
     dir: {
       input: "content",
       output: "public",

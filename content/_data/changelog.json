@@ -1,5 +1,6 @@
 [
-  { "date": "2026-03-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-04-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-04-07", "text": "Updates to the Eleventy tutorial", "link": "/coding/eleventy-tutorial" },
   { "date": "2026-03-27", "text": "Additions to the Eleventy tutorial", "link": "/coding/eleventy-tutorial" },
   { "date": "2026-03-26", "text": "Webringu bugfix", "link": "/coding/webringu" },
   { "date": "2026-03-21", "text": "Small updates", "link": "/donate" },

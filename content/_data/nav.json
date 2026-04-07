@@ -61,7 +61,7 @@
   },
   {
     "label": "Webmistress",
-    "new": true,
+    "new": false,
     "items": [
       {
         "link": "/about/about-me",
@@ -101,7 +101,7 @@
         "link": "/about/dream-diary",
         "label": "dream diary",
         "image": "Olwt3AI.gif",
-        "new": true,
+        "new": false,
         "hide": false
       }
     ]
@@ -280,7 +280,7 @@
   },
   {
     "label": "Resources",
-    "new": true,
+    "new": false,
     "items": [
       {
         "link": "/resources/bookmarks",
@@ -340,7 +340,7 @@
         "link": "/creations/coding",
         "label": "my userscripts & tools",
         "image": "bamwARA.gif",
-        "new": true,
+        "new": false,
         "hide": false
       },
       {

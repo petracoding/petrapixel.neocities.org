@@ -498,5 +498,13 @@
     "neighbor": false,
     "inspiration": true,
     "supporter": true
+  },
+    {
+    "link": "https://heidicvlach.neocities.org/",
+    "title": "heidicvlach",
+    "image": "nobutton.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true
   }
 ]

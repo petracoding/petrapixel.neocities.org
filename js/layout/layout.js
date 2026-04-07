@@ -314,32 +314,37 @@ export function initLinkPreviews() {
     previewEl.classList.add("preview-frame");
     previewEl.innerHTML = `<iframe></iframe>`;
 
+    let waitABit;
+
     linkEl.addEventListener("mouseenter", () => {
-      const thisPreviewEl = linkEl.querySelector(".preview-frame");
-      if (!thisPreviewEl) {
-        linkEl.appendChild(previewEl);
-        const iFrameEl = previewEl.querySelector("iframe");
-        iFrameEl.setAttribute("src", linkEl.getAttribute("href"));
-        previewEl.classList.add("preview-frame--visible");
-        previewEl.classList.add("preview-frame--loading");
+      waitABit = setTimeout(() => {
+        const thisPreviewEl = linkEl.querySelector(".preview-frame");
+        if (!thisPreviewEl) {
+          linkEl.appendChild(previewEl);
+          const iFrameEl = previewEl.querySelector("iframe");
+          iFrameEl.setAttribute("src", linkEl.getAttribute("href"));
+          previewEl.classList.add("preview-frame--visible");
+          previewEl.classList.add("preview-frame--loading");
 
-        setTimeout(() => {
-          previewEl.classList.remove("preview-frame--loading");
-        }, 2000);
-        iFrameEl.onload = () => {
-          previewEl.classList.remove("preview-frame--loading");
-        };
+          setTimeout(() => {
+            previewEl.classList.remove("preview-frame--loading");
+          }, 2000);
+          iFrameEl.onload = () => {
+            previewEl.classList.remove("preview-frame--loading");
+          };
 
-        iFrameEl.onerror = () => {
-          iFrameEl.setAttribute("src", "");
-          previewEl.classList.remove("preview-frame--visible");
-        };
-      } else {
-        thisPreviewEl.classList.add("preview-frame--visible");
-      }
+          iFrameEl.onerror = () => {
+            iFrameEl.setAttribute("src", "");
+            previewEl.classList.remove("preview-frame--visible");
+          };
+        } else {
+          thisPreviewEl.classList.add("preview-frame--visible");
+        }
+      }, 500);
     });
 
     linkEl.addEventListener("mouseleave", () => {
+      clearTimeout(waitABit);
       const thisPreviewEl = linkEl.querySelector(".preview-frame");
       if (thisPreviewEl)
         thisPreviewEl.classList.remove("preview-frame--visible");

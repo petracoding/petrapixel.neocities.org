@@ -114,6 +114,8 @@ tipType: "tutorial"
   eleventyConfig.addGlobalData("permalink", "{% raw %}{{ page.filePathStem }}{% endraw %}.html");
 
   return {
+    // This makes sure HTML files use Nunjucks
+    htmlTemplateEngine: "njk",
     dir: {
       input: "content",
       output: "public",
@@ -161,6 +163,8 @@ tipType: "tutorial"
 
   // This defines the input and output directories
   return {
+    // This makes sure HTML files use Nunjucks
+    htmlTemplateEngine: "njk",
     dir: {
       input: "content",
       output: "public",
@@ -251,6 +255,25 @@ eleventyConfig.addTransform("htmlmin", function (content) {
 
 <section>
   <h2 id="nunjucks">Nunjucks</h2>
+  <blockquote class="tip">
+    <p>
+      The default template engine is
+      <a href="https://www.11ty.dev/docs/languages/liquid/" target="_blank"
+        >Liquid</a
+      >
+      instead of
+      <a href="https://www.11ty.dev/docs/languages/nunjucks/" target="_blank"
+        >Nunjucks</a
+      >. If you want to use Nunjucks you'll have to
+      <a
+        href="https://www.11ty.dev/docs/config/#default-template-engine-for-html-files"
+        target="_blank"
+        >set it in your config.</a
+      >
+      The necessary line (<code>htmlTemplateEngine: "njk"</code>) is already
+      included in this tutorial.
+    </p>
+  </blockquote>
   <p>
     In this tutorial I will show you how to use
     <a target="_blank" href="https://www.11ty.dev/docs/languages/nunjucks/"
@@ -295,7 +318,7 @@ If:
 If/Else:
     {% raw %}{% if hungry %}{% endraw %}
       I am hungry
-    {% raw %}{% elsif tired %}{% endraw %}
+    {% raw %}{% elif  tired %}{% endraw %}
       I am tired
     {% raw %}{% else %}{% endraw %}
       I am good!

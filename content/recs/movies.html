@@ -8,28 +8,63 @@ nesting: "../"
 <section>
   <h1>Movie Recs</h1>
   <p>Here are some movies I've enjoyed and would definitely recommend!</p>
-  <p>You can also seem them on <a href="https://letterboxd.com/petra1999/films/rated/4-5/by/rating/" target="_blank">my letterboxd profile</a>!</p>
+  <p>
+    You can also seem them on
+    <a
+      href="https://letterboxd.com/petra1999/films/rated/4-5/by/rating/"
+      target="_blank"
+      >my letterboxd profile</a
+    >!
+  </p>
   <strong class="rec-filters-title">Filter:</strong>
   <div class="rec-filters">
     <div class="rec-filters__group">
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="color">
-        <button class="rec-filters__button is-checked" data-filter="">any genre</button>
-        <button class="rec-filters__button" data-filter=".action">action</button>
-        <button class="rec-filters__button" data-filter=".adventure">adventure</button>
-        <button class="rec-filters__button" data-filter=".animation">animation</button>
-        <button class="rec-filters__button" data-filter=".comedy">comedy</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="color"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          any genre
+        </button>
+        <button class="rec-filters__button" data-filter=".action">
+          action
+        </button>
+        <button class="rec-filters__button" data-filter=".adventure">
+          adventure
+        </button>
+        <button class="rec-filters__button" data-filter=".animation">
+          animation
+        </button>
+        <button class="rec-filters__button" data-filter=".comedy">
+          comedy
+        </button>
         <button class="rec-filters__button" data-filter=".drama">drama</button>
-        <button class="rec-filters__button" data-filter=".family">family</button>
-        <button class="rec-filters__button" data-filter=".horror">horror</button>
+        <button class="rec-filters__button" data-filter=".family">
+          family
+        </button>
+        <button class="rec-filters__button" data-filter=".horror">
+          horror
+        </button>
         <button class="rec-filters__button" data-filter=".queer">queer</button>
-        <button class="rec-filters__button" data-filter=".romance">romance</button>
-        <button class="rec-filters__button" data-filter=".sci-fi">sci-fi</button>
-        <button class="rec-filters__button" data-filter=".thriller">thriller</button>
+        <button class="rec-filters__button" data-filter=".romance">
+          romance
+        </button>
+        <button class="rec-filters__button" data-filter=".sci-fi">
+          sci-fi
+        </button>
+        <button class="rec-filters__button" data-filter=".thriller">
+          thriller
+        </button>
       </div>
     </div>
     <div class="rec-filters__group">
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
-        <button class="rec-filters__button is-checked" data-filter="">any year</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="shape"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          any year
+        </button>
         <!-- <button class="rec-filters__button" data-filter=".1900-49">1900-49</button> -->
         <!-- <button class="rec-filters__button" data-filter=".1950-79">1950-79</button> -->
         <button class="rec-filters__button" data-filter=".80s">80s</button>
@@ -40,37 +75,60 @@ nesting: "../"
       </div>
     </div>
     <div class="rec-filters__group">
-      <div class="rec-filters__buttons js-radio-button-group" data-filter-group="shape">
-        <button class="rec-filters__button is-checked" data-filter="">any rating</button>
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="shape"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          any rating
+        </button>
         <button class="rec-filters__button" data-filter=".r1">★★★★</button>
-        <button class="rec-filters__button" data-filter=".r2">★★★★<small>½</small></button>
+        <button class="rec-filters__button" data-filter=".r2">
+          ★★★★<small>½</small>
+        </button>
         <button class="rec-filters__button" data-filter=".r3">★★★★★</button>
       </div>
     </div>
   </div>
   <div class="isotope-items isotope-items--movies">
     {% for rec in recs['movies'] %} {% if rec.title != "EXAMPLE" %}
-    <div class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.genres | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}">
+    <div
+      class="rec r{{ rec.rating }} {{ rec.year | recTurnToDecade }} {{ rec.genres | recTurnToClasses }} {% if rec.ongoing %}ongoing{% else %}ended{% endif %}"
+    >
       <div class="rec__inner">
         <div class="rec__image"><img src="{{ rec.image }}" /></div>
         <div class="rec__info">
           <div class="rec__title">{{ rec.title }}</div>
           <div class="rec__desc">
-            <p><strong>My rating:</strong> <span class="rec__stars">★★★★{% if rec.rating == "2" %}<small>½</small>{% elsif rec.rating == "3" %}★{% endif %}</span></p>
+            <p>
+              <strong>My rating:</strong>
+              <span class="rec__stars"
+                >★★★★{% if rec.rating == "2" %}<small>½</small>{% elif
+                rec.rating == "3" %}★{% endif %}</span
+              >
+            </p>
             <p><strong>Year:</strong> {{ rec.year }}</p>
             <p><strong>Genres:</strong> {{ rec.genres }}</p>
             {% if rec.cw %}
-            <p><strong>Content Warnings:</strong> <abbr title="{{ rec.cw }}">hover to reveal (spoilers!)</abbr></p>
+            <p>
+              <strong>Content Warnings:</strong>
+              <abbr title="{{ rec.cw }}">hover to reveal (spoilers!)</abbr>
+            </p>
             {% endif %}
           </div>
-          <div class="rec__link"><a href="{{ rec.link }}" target="_blank">Letterboxd</a></div>
+          <div class="rec__link">
+            <a href="{{ rec.link }}" target="_blank">Letterboxd</a>
+          </div>
         </div>
       </div>
       <div class="rec__outer">
         {% if rec.description %}
         <div class="rec__description">{{ rec.description }}</div>
         {% else %}
-        <div class="rec__description">I think this movie is really cool and you should totally watch it if you think you might like it!</div>
+        <div class="rec__description">
+          I think this movie is really cool and you should totally watch it if
+          you think you might like it!
+        </div>
         {% endif %}
       </div>
     </div>
