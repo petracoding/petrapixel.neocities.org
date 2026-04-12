@@ -2,7 +2,10 @@
 
 @font-face {
   font-family: "rainyhearts";
-  src: url("../fonts/rainyhearts.woff2") format("woff2"), url("../fonts/rainyhearts.woff") format("woff"), url("../fonts/rainyhearts.ttf") format("truetype");
+  src:
+    url("/assets/css/fonts/rainyhearts.woff2") format("woff2"),
+    url("/assets/css/fonts/rainyhearts.woff") format("woff"),
+    url("/assets/css/fonts/rainyhearts.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;

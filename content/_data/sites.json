@@ -1,13 +1,5 @@
 [
   {
-    "title": "Tanja's Treehouse",
-    "link": "https://tanjas-treehouse.neocities.org/",
-    "image": "tanjas-treehouse.gif",
-    "neighbor": true,
-    "friend": true,
-    "hide": "wip"
-  },
-  {
     "title": "Florrie's Garden",
     "link": "https://florrie.ichi.city/",
     "image": "florrie.gif",
@@ -502,7 +494,7 @@
     {
     "link": "https://heidicvlach.neocities.org/",
     "title": "heidicvlach",
-    "image": "nobutton.png",
+    "image": "heidicvlach.png",
     "neighbor": false,
     "inspiration": false,
     "supporter": true

@@ -244,8 +244,8 @@ freezeframe: true
             <strong>my neighbors:</strong>
           </p>
           <div>
-            {% for site in sites %} {% if site.title != "TEMPLATE" and not
-            site.hide and site.neighbor or site.friend %}
+            {% for site in sites %} {% if site.title != "TEMPLATE" and
+            site.neighbor or site.friend and not site.hide %}
             <a
               href="{{ site.link }}"
               title="{{ site.title }}"

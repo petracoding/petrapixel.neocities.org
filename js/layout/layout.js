@@ -261,7 +261,9 @@ export function initActiveLinks() {
 
   // Bearblog
   if (isFromHere()) {
-    const bearBlogLinks = document.querySelectorAll("[href='/bearblog']");
+    const bearBlogLinks = document.querySelectorAll(
+      "[href='/bearblog'], [href*='icantbearit']",
+    );
     bearBlogLinks.forEach((link) => {
       link.style.display = "none";
     });

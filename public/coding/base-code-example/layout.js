@@ -1,21 +1,22 @@
 // initLayout() is called once the DOM (the HTML content of your website) has been loaded.
 document.addEventListener("DOMContentLoaded", function () {
   // The layout will be loaded on all pages that do NOT have the "no-layout" class in the <body> element.
-  if (document.body.classList.contains("no-layout")) return;
+  if (!document.body.classList.contains("no-layout")) {
+    // Inserting your header and footer:
+    document.body.insertAdjacentHTML("afterbegin", headerEl);
+    document.body.insertAdjacentHTML("beforeend", footerEl);
 
-  // Inserting your header and footer:
-  document.body.insertAdjacentHTML("afterbegin", headerEl);
-  document.body.insertAdjacentHTML("beforeend", footerEl);
+    // Inserting sidebars:
+    const wrapperElement = document.querySelector("main"); // you might have to change this selector to something like .my-wrapper
+    if (wrapperElement) {
+      wrapperElement.insertAdjacentHTML("afterbegin", sidebarEl1);
+      wrapperElement.insertAdjacentHTML("beforeend", sidebarEl2);
+    }
 
-  // To insert something inside another element:
-  const wrapperElement = document.querySelector(".my-wrapper"); // <- your selector here
-  if (wrapperElement) wrapperElement.insertAdjacentHTML("afterbegin", `<b>Element at beginning of wrapper element.</b>`);
-  if (wrapperElement) wrapperElement.insertAdjacentHTML("beforeend", `<b>Element at the end of wrapper element.</b>`);
+    initActiveLinks();
+  }
 
-  // Other initializations:
-  initActiveLinks();
-
-  // your javascript code here...
+  // add your own javascript code here...
 });
 
 /* ********************************* */
@@ -30,7 +31,10 @@ function initActiveLinks() {
 
   const pathname = window.location.pathname;
   [...document.querySelectorAll("a")].forEach((el) => {
-    const elHref = el.getAttribute("href").replace(".html", "").replace("/public", "");
+    const elHref = el
+      .getAttribute("href")
+      .replace(".html", "")
+      .replace("/public", "");
 
     if (pathname == "/") {
       // homepage
@@ -45,7 +49,10 @@ function initActiveLinks() {
 function getNestingString() {
   // This function prepares the "nesting" variable for your header and footer (see below).
   // Only change this function if you know what you're doing.
-  const currentUrl = window.location.href.replace("http://", "").replace("https://", "").replace("/public/", "/");
+  const currentUrl = window.location.href
+    .replace("http://", "")
+    .replace("https://", "")
+    .replace("/public/", "/");
   const numberOfSlahes = currentUrl.split("/").length - 1;
   if (numberOfSlahes == 1) return ".";
   if (numberOfSlahes == 2) return "..";
@@ -72,7 +79,6 @@ const nesting = getNestingString();
  */
 
 // Insert your header HTML inside these ``. You can use HTML as usual.
-// You don't need to use the <header> element, but I recommend it.
 const headerEl = `
 	<header>
 		Header. Example of how to use the 'active' class to style active links (here: bold):
@@ -86,10 +92,26 @@ const headerEl = `
 `;
 
 // Insert your footer HTML inside these ``. You can use HTML as usual.
-// You don't need to use the <footer> element, but I recommend it.
+// Remove all the content inside the `` if you don't have a footer.
 const footerEl = `
 	<footer>
 		Footer. Example of how to add an image: 
 		<img src="${nesting}/assets/img/layout/divider1.gif" alt="" aria-hidden="true"/>
 	</footer>
+`;
+
+// Insert your sidebar HTML inside these ``. You can use HTML as usual.
+// Remove all the content inside the `` if you don't have a sidebar.
+const sidebarEl1 = `
+	<aside>
+		Sidebar1
+	</aside>
+`;
+
+// Insert your sidebar HTML inside these ``. You can use HTML as usual.
+// Remove all the content inside the `` if you don't have a sidebar.
+const sidebarEl2 = `
+	<aside>
+		Sidebar2
+	</aside>
 `;

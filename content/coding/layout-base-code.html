@@ -84,8 +84,8 @@ tipType: "resource"
 <section>
   <h2>What it will do</h2>
   <p>
-    Your header and footer HTML will be in a single JavaScript file, so you'll
-    only need to update it once.
+    Your layout HTML will be in a single JavaScript file, so you'll only need to
+    update it once.
   </p>
   <hr />
 
@@ -94,21 +94,30 @@ tipType: "resource"
       <p><b>HTML in your .html file:</b></p>
       <pre><code>&lt;body&gt;
   &lt;main&gt;
-    your page here...
+    &lt;p&gt;your page content is here...&lt;/p&gt;
   &lt;/main&gt;
 &lt;/body&gt;</code></pre>
-      <p>(The header and footer code are not in the HTML files.)</p>
+      <p>
+        The header, sidebar and footer code are not in the HTML files, but in
+        the Javascript file instead. Don't worry, it's still written in HTML
+        code.
+      </p>
     </div>
     <div>
       <p><b>HTML rendered in the browser:</b></p>
       <pre><code>&lt;body&gt;
-  &lt;header&gt;example...&lt;/header&gt;
+  &lt;header&gt;example&lt;/header&gt;
   &lt;main&gt;
-    your page here...
+    &lt;aside&gt;sidebar1&lt;/aside&gt;
+    &lt;p&gt;your page content is here...&lt;/p&gt;
+    &lt;aside&gt;sidebar2&lt;/aside&gt;
   &lt;/main&gt;
-  &lt;footer&gt;example...&lt;/footer&gt;
+  &lt;footer&gt;example&lt;/footer&gt;
 &lt;/body&gt;</code></pre>
-      <p>(The script automatically adds the header and footer.)</p>
+      <p>
+        The script automatically adds the header, sidebars and footer. All
+        elements are of course optional.
+      </p>
     </div>
   </div>
 
@@ -119,41 +128,9 @@ tipType: "resource"
   </p>
   <iframe
     src="/coding/base-code-example"
-    style="width: 100%; border: 1px solid currentColor; min-height: 342px"
+    style="width: 100%; border: 1px solid currentColor; min-height: 315px"
     frameborder="0"
   ></iframe>
-
-  <hr />
-
-  <p>
-    You can even add elements inside of your wrapper element which contains your
-    content, e.g. for a sidebar:
-  </p>
-  <div class="two-columns">
-    <div>
-      <p><b>HTML in your .html file:</b></p>
-      <pre><code>&lt;body&gt;
-  &lt;main&gt;
-    &lt;p&gt;your page here...&lt;/p&gt;
-  &lt;/main&gt;
-&lt;/body&gt;</code></pre>
-      <p>
-        (The code for the other elements is in the JavaScript file as well.)
-      </p>
-    </div>
-    <div>
-      <p><b>HTML rendered in the browser:</b></p>
-      <pre><code>&lt;body&gt;
-  &lt;header&gt;example&lt;/header&gt;
-  &lt;main&gt;
-    &lt;div&gt;your sidebar here...&lt;/div&gt;
-    &lt;p&gt;your page here...&lt;/p&gt;
-    &lt;div&gt;your sidebar here...&lt;/div&gt;
-  &lt;/main&gt;
-  &lt;footer&gt;example&lt;/footer&gt;
-&lt;/body&gt;</code></pre>
-    </div>
-  </div>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -174,72 +151,110 @@ tipType: "resource"
   >
 
   <pre id="hide-explanation" style="display: none">
-<code>document.addEventListener("DOMContentLoaded", function () {
-  if (document.body.classList.contains("no-layout")) return;
-  document.body.insertAdjacentHTML("afterbegin", headerEl);
-  document.body.insertAdjacentHTML("beforeend", footerEl);
+<code>document.addEventListener(&quot;DOMContentLoaded&quot;, function () {
+  if (!document.body.classList.contains(&quot;no-layout&quot;)) {
+    document.body.insertAdjacentHTML(&quot;afterbegin&quot;, headerEl);
+    document.body.insertAdjacentHTML(&quot;beforeend&quot;, footerEl);
 
-  const wrapperEl = document.querySelector(".my-wrapper"); 
-  if (wrapperEl) wrapperEl.insertAdjacentHTML("afterbegin", `&lt;b&gt;Element at beginning of wrapper element.&lt;/b&gt;`);
-  if (wrapperEl) wrapperEl.insertAdjacentHTML("beforeend", `&lt;b&gt;Element at the end of wrapper element.&lt;/b&gt;`);
+    const wrapperElement = document.querySelector(&quot;main&quot;);
+    if (wrapperElement) {
+      wrapperElement.insertAdjacentHTML(&quot;afterbegin&quot;, sidebarEl1);
+      wrapperElement.insertAdjacentHTML(&quot;beforeend&quot;, sidebarEl2);
+    }
 
-  initActiveLinks();
+    initActiveLinks();
+  }
+
+  // add your own javascript code here...
 });
 
 function initActiveLinks() {
   const pathname = window.location.pathname;
-  [...document.querySelectorAll("a")].forEach((el) =&gt; {
-    const elHref = el.getAttribute("href").replace(".html", "").replace("/public", "");
+  [...document.querySelectorAll(&quot;a&quot;)].forEach((el) =&gt; {
+    const elHref = el
+      .getAttribute(&quot;href&quot;)
+      .replace(&quot;.html&quot;, &quot;&quot;)
+      .replace(&quot;/public&quot;, &quot;&quot;);
 
-    if (pathname == "/") {
-      if (elHref == "/" || elHref == "/index.html") el.classList.add("active");
+    if (pathname == &quot;/&quot;) {
+      if (elHref == &quot;/&quot; || elHref == &quot;/index.html&quot;) el.classList.add(&quot;active&quot;);
     } else {
-      if (window.location.href.includes(elHref)) el.classList.add("active");
+      if (window.location.href.includes(elHref)) el.classList.add(&quot;active&quot;);
     }
   });
 }
 
 function getNestingString() {
-  const currentUrl = window.location.href.replace("http://", "").replace("https://", "").replace("/public/", "/");
-  const numberOfSlahes = currentUrl.split("/").length - 1;
-  if (numberOfSlahes == 1) return ".";
-  if (numberOfSlahes == 2) return "..";
-  return ".." + "/..".repeat(numberOfSlahes - 2);
+  const currentUrl = window.location.href
+    .replace(&quot;http://&quot;, &quot;&quot;)
+    .replace(&quot;https://&quot;, &quot;&quot;)
+    .replace(&quot;/public/&quot;, &quot;/&quot;);
+  const numberOfSlahes = currentUrl.split(&quot;/&quot;).length - 1;
+  if (numberOfSlahes == 1) return &quot;.&quot;;
+  if (numberOfSlahes == 2) return &quot;..&quot;;
+  return &quot;..&quot; + &quot;/..&quot;.repeat(numberOfSlahes - 2);
 }
 
 const nesting = getNestingString();
 
-// How to use the nesting variable: &lt;img src="${nesting}/images/example.jpg" /&gt;
+/**
+  Use ${nesting} to output a . or .. or ../.. etc according to the current page&#39;s folder depth.
+  Example: &lt;img src=&quot;${nesting}/images/example.jpg&quot; /&gt;
+ */
 
 const headerEl = `
-	&lt;header&gt;Header...&lt;/header&gt;
-	&lt;aside&gt;Sidebar...&lt;/aside&gt;
+	&lt;header&gt;
+		Header. Example of how to use the &#39;active&#39; class to style active links (here: bold):
+		&lt;nav&gt;
+			&lt;a href=&quot;/coding/layout-base-code&quot;&gt;homepage&lt;/a&gt;
+			&lt;a href=&quot;/coding/base-code-example/&quot;&gt;this page&lt;/a&gt;
+			&lt;a href=&quot;/coding/layout-base-code&quot;&gt;other page&lt;/a&gt;
+			&lt;a href=&quot;/coding/layout-base-code&quot;&gt;other page&lt;/a&gt;
+		&lt;/nav&gt;
+	&lt;/header&gt;
 `;
 
 const footerEl = `
-	&lt;footer&gt;Footer...&lt;/footer&gt;
-`;</code></pre>
+	&lt;footer&gt;
+		Footer. Example of how to add an image: 
+		&lt;img src=&quot;${nesting}/assets/img/layout/divider1.gif&quot; alt=&quot;&quot; aria-hidden=&quot;true&quot;/&gt;
+	&lt;/footer&gt;
+`;
+
+const sidebarEl1 = `
+	&lt;aside&gt;
+		Sidebar1
+	&lt;/aside&gt;
+`;
+
+const sidebarEl2 = `
+	&lt;aside&gt;
+		Sidebar2
+	&lt;/aside&gt;
+`;
+</code></pre>
   <!-- ---------------------------------------------- -->
   <!-- ---------------------------------------------- -->
   <pre id="show-explanation">
-<code>// Everything in here is executed once the DOM (the HTML content of your website) has finished loading.
-document.addEventListener("DOMContentLoaded", function () {
-  // The layout will be loaded on all pages that do NOT have the "no-layout" class in the &lt;body&gt; element.
-  if (document.body.classList.contains("no-layout")) return;
+<code>// initLayout() is called once the DOM (the HTML content of your website) has been loaded.
+document.addEventListener(&quot;DOMContentLoaded&quot;, function () {
+  // The layout will be loaded on all pages that do NOT have the &quot;no-layout&quot; class in the &lt;body&gt; element.
+  if (!document.body.classList.contains(&quot;no-layout&quot;)) {
+    // Inserting your header and footer:
+    document.body.insertAdjacentHTML(&quot;afterbegin&quot;, headerEl);
+    document.body.insertAdjacentHTML(&quot;beforeend&quot;, footerEl);
 
-  // Inserting your header and footer:
-  document.body.insertAdjacentHTML("afterbegin", headerEl);
-  document.body.insertAdjacentHTML("beforeend", footerEl);
+    // Inserting sidebars:
+    const wrapperElement = document.querySelector(&quot;main&quot;); // you might have to change this selector to something like .my-wrapper
+    if (wrapperElement) {
+      wrapperElement.insertAdjacentHTML(&quot;afterbegin&quot;, sidebarEl1);
+      wrapperElement.insertAdjacentHTML(&quot;beforeend&quot;, sidebarEl2);
+    }
 
-  // To insert something inside another element, e.g. for sidebars:
-  const wrapperEl = document.querySelector(".my-wrapper"); // &lt;- your selector here
-  if (wrapperEl) wrapperEl.insertAdjacentHTML("afterbegin", `&lt;b&gt;Element at beginning of wrapper element.&lt;/b&gt;`);
-  if (wrapperEl) wrapperEl.insertAdjacentHTML("beforeend", `&lt;b&gt;Element at the end of wrapper element.&lt;/b&gt;`);
+    initActiveLinks();
+  }
 
-  // Give class 'active' to links to the current page:
-  initActiveLinks();
-
-  // add your own JavaScript code here...
+  // add your own javascript code here...
 });
 
 /* ********************************* */
@@ -249,31 +264,37 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 
 function initActiveLinks() {
-  // This function adds the class "active" to any link that links to the current page.
+  // This function adds the class &quot;active&quot; to any link that links to the current page.
   // This is helpful for styling the active menu item.
 
   const pathname = window.location.pathname;
-  [...document.querySelectorAll("a")].forEach((el) =&gt; {
-    const elHref = el.getAttribute("href").replace(".html", "").replace("/public", "");
+  [...document.querySelectorAll(&quot;a&quot;)].forEach((el) =&gt; {
+    const elHref = el
+      .getAttribute(&quot;href&quot;)
+      .replace(&quot;.html&quot;, &quot;&quot;)
+      .replace(&quot;/public&quot;, &quot;&quot;);
 
-    if (pathname == "/") {
+    if (pathname == &quot;/&quot;) {
       // homepage
-      if (elHref == "/" || elHref == "/index.html") el.classList.add("active");
+      if (elHref == &quot;/&quot; || elHref == &quot;/index.html&quot;) el.classList.add(&quot;active&quot;);
     } else {
       // other pages
-      if (window.location.href.includes(elHref)) el.classList.add("active");
+      if (window.location.href.includes(elHref)) el.classList.add(&quot;active&quot;);
     }
   });
 }
 
 function getNestingString() {
-  // This function prepares the "nesting" variable for your header and footer (see below).
-  // Only change this function if you know what you're doing.
-  const currentUrl = window.location.href.replace("http://", "").replace("https://", "").replace("/public/", "/");
-  const numberOfSlahes = currentUrl.split("/").length - 1;
-  if (numberOfSlahes == 1) return ".";
-  if (numberOfSlahes == 2) return "..";
-  return ".." + "/..".repeat(numberOfSlahes - 2);
+  // This function prepares the &quot;nesting&quot; variable for your header and footer (see below).
+  // Only change this function if you know what you&#39;re doing.
+  const currentUrl = window.location.href
+    .replace(&quot;http://&quot;, &quot;&quot;)
+    .replace(&quot;https://&quot;, &quot;&quot;)
+    .replace(&quot;/public/&quot;, &quot;/&quot;);
+  const numberOfSlahes = currentUrl.split(&quot;/&quot;).length - 1;
+  if (numberOfSlahes == 1) return &quot;.&quot;;
+  if (numberOfSlahes == 2) return &quot;..&quot;;
+  return &quot;..&quot; + &quot;/..&quot;.repeat(numberOfSlahes - 2);
 }
 
 /* ********************************* */
@@ -285,28 +306,54 @@ function getNestingString() {
 const nesting = getNestingString();
 
 /**
-  Use ${nesting} to output a . or .. or ../.. etc according to the current page's folder depth.
+  Use ${nesting} to output a . or .. or ../.. etc according to the current page&#39;s folder depth.
   Example:
-    &lt;img src="${nesting}/images/example.jpg" /&gt;
+    &lt;img src=&quot;${nesting}/images/example.jpg&quot; /&gt;
   will output
-    &lt;img src="./images/example.jpg" /&gt; on a page that isn't in any folder.
-    &lt;img src="../images/example.jpg" /&gt; on a page that is in a folder.
-    &lt;img src="../../images/example.jpg" /&gt; on a page that is in a sub-folder.
+  	 &lt;img src=&quot;./images/example.jpg&quot; /&gt; on a page that isn&#39;t in any folder.
+    &lt;img src=&quot;../images/example.jpg&quot; /&gt; on a page that is in a folder.
+    &lt;img src=&quot;../../images/example.jpg&quot; /&gt; on a page that is in a sub-folder.
     etc.
  */
 
-// Insert your header HTML inside these ``. You can use HTML as usual. 
-// You don't need to use the &lt;header&gt; element, but I recommend it.
+// Insert your header HTML inside these ``. You can use HTML as usual.
 const headerEl = `
-	&lt;header&gt;Header...&lt;/header&gt;
-	&lt;aside&gt;Sidebar...&lt;/aside&gt;
+	&lt;header&gt;
+		Header. Example of how to use the &#39;active&#39; class to style active links (here: bold):
+		&lt;nav&gt;
+			&lt;a href=&quot;/coding/layout-base-code&quot;&gt;homepage&lt;/a&gt;
+			&lt;a href=&quot;/coding/base-code-example/&quot;&gt;this page&lt;/a&gt;
+			&lt;a href=&quot;/coding/layout-base-code&quot;&gt;other page&lt;/a&gt;
+			&lt;a href=&quot;/coding/layout-base-code&quot;&gt;other page&lt;/a&gt;
+		&lt;/nav&gt;
+	&lt;/header&gt;
 `;
 
-// Insert your footer HTML inside these ``. You can use HTML as usual. 
-// You don't need to use the &lt;footer&gt; element, but I recommend it.
+// Insert your footer HTML inside these ``. You can use HTML as usual.
+// Remove all the content inside the `` if you don&#39;t have a footer.
 const footerEl = `
-	&lt;footer&gt;Footer...&lt;/footer&gt;
-`;</code></pre>
+	&lt;footer&gt;
+		Footer. Example of how to add an image: 
+		&lt;img src=&quot;${nesting}/assets/img/layout/divider1.gif&quot; alt=&quot;&quot; aria-hidden=&quot;true&quot;/&gt;
+	&lt;/footer&gt;
+`;
+
+// Insert your sidebar HTML inside these ``. You can use HTML as usual.
+// Remove all the content inside the `` if you don&#39;t have a sidebar.
+const sidebarEl1 = `
+	&lt;aside&gt;
+		Sidebar1
+	&lt;/aside&gt;
+`;
+
+// Insert your sidebar HTML inside these ``. You can use HTML as usual.
+// Remove all the content inside the `` if you don&#39;t have a sidebar.
+const sidebarEl2 = `
+	&lt;aside&gt;
+		Sidebar2
+	&lt;/aside&gt;
+`;
+</code></pre>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
 
@@ -344,19 +391,23 @@ const footerEl = `
   <h4>Sidebars</h4>
 
   <p>
-    If you have a <b>sidebar</b>, you have three options. Choose the best
-    depending on how your original layout was structured:
+    If you have a sidebar or any other part of your layout that is in a wrapper
+    with your main content, you have three options. Choose the best depending on
+    how your original layout is structured:
   </p>
   <ul>
-    <li>Include it inside of your header element</li>
+    <li>
+      Use the <i>sidebarEl1</i> and <i>sidebarEl2</i> variables in the code.
+    </li>
+
     <li>
       or: Add it after the header element (but still in the
-      <i>headerEl</i> variable) like shown in the code above.
+      <i>headerEl</i> variable) like so:
+      <code>`&lt;header&gt;&lt;/header&gt; &lt;aside&gt;&lt;/aside&gt;`</code>
     </li>
     <li>
-      or: Use the <i>wrapperEl</i> variable (make sure to adjust the CSS
-      selector!) to get your element in the HTML file and add additional
-      elements inside it.
+      or: Include it inside of your header element like so:
+      <code>`&lt;header&gt; &lt;aside&gt;&lt;/aside&gt; &lt;/header&gt;`</code>
     </li>
   </ul>
 
@@ -388,20 +439,21 @@ const footerEl = `
 
   <h3 data-step="4">Prepare your pages</h3>
   <p>
-    Remove your header and footer from the html files of your pages - They will
-    be added via JavaScript. Make sure all page content is in a wrapper, I
-    suggest using
+    Remove your header, sidebar and footer from the html files of your pages -
+    They will be added via JavaScript. Make sure all page content is in a
+    wrapper, I suggest using
     <code>&lt;main&gt;</code> or <code>&lt;div&gt;</code>:
   </p>
   <pre><code>&lt;body&gt;
   &lt;main&gt;
-    your page here...
+    your page content here...
   &lt;/main&gt;
 &lt;/body&gt;</code></pre>
 
   <p>
     If you have page on which your layout should not be loaded, give the
-    <code>&lt;body&gt;</code> element the "no-layout" class.
+    <code>&lt;body&gt;</code> element the class <code>no-layout</code>:
+    <code>&lt;body class="no-layout"&gt;</code>.
   </p>
 
   <!-- ----------------------------------------------------------------------------------------------------- -->
