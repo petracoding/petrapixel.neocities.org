@@ -1,6 +1,14 @@
 /*!************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./css/main.scss ***!
   \************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap);
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./css/main.scss (1) ***!
+  \****************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap);
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./css/main.scss (2) ***!
+  \****************************************************************************************************************************************/
 @charset "UTF-8";
 /* 
   !IMPORTANT!
@@ -18334,6 +18342,78 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   white-space: nowrap;
 }
 
+.ships {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.ship {
+  position: relative;
+  overflow: hidden;
+}
+.ship.ship--xl {
+  grid-column-end: span 4;
+  grid-row-end: span 4;
+}
+.ship.ship--xl figcaption {
+  font-size: 28px;
+}
+.ship.ship--l {
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+}
+.ship.ship--m {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+}
+.ship.ship--s {
+  grid-column-end: span 1;
+  grid-row-end: span 1;
+}
+.ship.ship--s figcaption {
+  font-size: 18px;
+}
+.ship img {
+  min-height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) saturate(1.1) brightness(1.1);
+}
+.ship img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(90deg);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.ship:hover img:last-child,
+.ship:hover figcaption {
+  transform: none;
+  opacity: 1;
+}
+.ship figcaption {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  line-height: 1;
+  text-align: center;
+  transform: rotateY(90deg);
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: 1;
+  font-size: 24px;
+}
+
 .listography {
   display: flex;
   flex-wrap: wrap;
@@ -18370,7 +18450,9 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
 .listbox .gend-link,
 .listbox .dates,
 .listbox [id*=listbox-status],
-.listbox [id*=list_footer] {
+.listbox [id*=list_footer],
+.listbox .list-title-handle,
+.listbox .show-more {
   display: none;
 }
 
@@ -18449,6 +18531,149 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   text-align: left;
   background: var(--light);
   max-width: 400px;
+}
+
+/* default settings */
+.sanringo {
+  text-align: center;
+  max-width: 250px;
+  max-height: 175px;
+  padding: 10px;
+  border-radius: 12px;
+  background: url("https://sozaino.site/wp-content/uploads/2020/12/hosikumo-2-1536x864.png") bottom center/cover no-repeat padding-box;
+}
+
+.sanringo .title {
+  font-family: "Cherry Bomb One";
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px mediumvioletred;
+  text-decoration: none;
+  line-height: 1em;
+}
+
+.sanringo .info {
+  font-family: "Hi Melody";
+  color: mediumvioletred;
+  font-size: 0.9em;
+}
+
+.sanringo .character {
+  max-width: 100px;
+}
+
+.sanringo .prev img {
+  transform: rotate(-90deg);
+}
+
+.sanringo .next img {
+  transform: rotate(90deg);
+}
+
+.sanringo .next img,
+.sanringo .prev img {
+  max-width: 50px;
+  margin-bottom: 15px;
+}
+
+.sanringo .next,
+.sanringo .prev {
+  text-decoration: none;
+}
+
+/* my melody */
+.sanringo.mymelody {
+  background: url("https://sozaino.site/wp-content/uploads/2022/04/fuwafuwa53-1536x864.png") top center/cover no-repeat padding-box;
+}
+
+/* kuromi */
+.sanringo.kuromi {
+  background: url("https://sozaino.site/wp-content/uploads/2020/11/sora10-1536x864.png") bottom center/cover no-repeat padding-box;
+}
+
+.sanringo.kuromi .prev img,
+.sanringo.kuromi .next img {
+  filter: hue-rotate(-60deg);
+}
+
+.sanringo.kuromi .title {
+  text-shadow: 0 0 10px purple;
+}
+
+.sanringo.kuromi .info {
+  color: purple;
+}
+
+/* kuromi */
+.sanringo.hellokitty {
+  background: url("https://sozaino.site/wp-content/uploads/2022/01/va2022-285-1536x864.png") bottom center/cover no-repeat padding-box;
+}
+
+.sanringo.hellokitty .prev img,
+.sanringo.hellokitty .next img {
+  filter: hue-rotate(-130deg);
+}
+
+.sanringo.hellokitty .title {
+  text-shadow: 0 0 10px royalblue;
+}
+
+.sanringo.hellokitty .info {
+  color: blue;
+}
+
+/* cinnamoroll */
+.sanringo.cinnamoroll {
+  background: url("https://sozaino.site/wp-content/uploads/2022/04/fuwafuwa56-1536x864.png") center/cover no-repeat padding-box;
+}
+
+.sanringo.cinnamoroll .prev img,
+.sanringo.cinnamoroll .next img {
+  filter: hue-rotate(-100deg);
+}
+
+.sanringo.cinnamoroll .title {
+  text-shadow: 0 0 10px royalblue;
+}
+
+.sanringo.cinnamoroll .info {
+  color: blue;
+}
+
+/* pochacco */
+.sanringo.pochacco {
+  background: url("https://sozaino.site/wp-content/uploads/2023/07/guradesora13-1536x864.png") bottom center/cover no-repeat padding-box;
+}
+
+.sanringo.pochacco .prev img,
+.sanringo.pochacco .next img {
+  filter: hue-rotate(180deg);
+}
+
+.sanringo.pochacco .title {
+  text-shadow: 0 0 10px green;
+}
+
+.sanringo.pochacco .info {
+  color: green;
+}
+
+/* pompompurin */
+.sanringo.pompompurin {
+  background: url("https://sozaino.site/wp-content/uploads/2020/11/pas26-1536x864.png") center/cover no-repeat padding-box;
+}
+
+.sanringo.pompompurin .prev img,
+.sanringo.pompompurin .next img {
+  filter: hue-rotate(70deg);
+}
+
+.sanringo.pompompurin .title {
+  text-shadow: 0 0 10px brown;
+}
+
+.sanringo.pompompurin .info {
+  color: brown;
 }
 
 .cachebusting-comparision {

@@ -36,7 +36,9 @@
   .gend-link,
   .dates,
   [id*="listbox-status"],
-  [id*="list_footer"] {
+  [id*="list_footer"],
+  .list-title-handle,
+  .show-more {
     display: none;
   }
 }

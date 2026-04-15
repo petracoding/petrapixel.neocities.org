@@ -1,0 +1,107 @@
+[
+  {
+    "names": "rhaenyra & daemon",
+    "from": "house of the dragon",
+    "size": "l",
+    "img1": "https://i.pinimg.com/1200x/44/77/5c/44775ccbb4e479dfd5cdf9425fad27a9.jpg",
+    "img2": "https://i.pinimg.com/736x/1e/e7/ae/1ee7ae2a67ba0013370153cf5bc71e1b.jpg"
+  },
+  {
+    "names": "hannibal & will",
+    "from": "nbc hannibal",
+    "size": "xl",
+    "img1": "https://i.pinimg.com/736x/70/a5/be/70a5be48323326dc4de9d14b95c47471.jpg",
+    "img2": "https://i.pinimg.com/736x/77/cd/8d/77cd8d3df3cb4609ac872d37d2d30b72.jpg"
+  },
+  {
+    "names": "the doctor & clara",
+    "from": "doctor who",
+    "size": "l",
+    "img1": "https://i.pinimg.com/736x/2f/ec/17/2fec17742a57f03869d9d3dd6138a18e.jpg",
+    "img2": "https://i.pinimg.com/736x/1b/35/c1/1b35c11a4e359346eb501b01db85e12f.jpg"
+  },
+  {
+    "names": "mike & will",
+    "from": "stranger things",
+    "size": "xl",
+    "img1": "https://i.pinimg.com/736x/69/4a/9f/694a9f301266c0a74c8b0ebd64709761.jpg",
+    "img2": "https://i.pinimg.com/736x/19/3d/f2/193df2165f68022dfc1b84ba8ce8fbeb.jpg"
+  },
+  {
+    "names": "aziraphale & crowley",
+    "from": "good omens",
+    "size": "l",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "dean & castiel",
+    "from": "supernatural",
+    "size": "m",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "john & sherlock",
+    "from": "bbc sherlock",
+    "size": "m",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "kirk & spock",
+    "from": "star trek: the original series",
+    "size": "m",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "dumbledore & grindelwald",
+    "from": "fantastic beasts",
+    "size": "m",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "nandor & guillermo",
+    "from": "what we do in the shadows",
+    "size": "l",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "ed & stede",
+    "from": "our flag means death",
+    "size": "l",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "deadpool & wolverine",
+    "from": "marvel",
+    "size": "l",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "charlex & erik",
+    "from": "x-men",
+    "size": "m",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "TODO",
+    "from": "TODO",
+    "size": "l",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  },
+  {
+    "names": "TODO",
+    "from": "TODO",
+    "size": "l",
+    "img1": "IMAGE",
+    "img2": "IMAGE"
+  }
+]

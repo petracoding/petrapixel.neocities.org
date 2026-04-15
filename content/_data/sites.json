@@ -498,5 +498,14 @@
     "neighbor": false,
     "inspiration": false,
     "supporter": true
+  },
+  {
+    "link": "https://mooeena.site/",
+    "title": "mooeena",
+    "image": "mooeena.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "15.05." 
   }
 ]

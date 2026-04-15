@@ -1,0 +1,83 @@
+.ships {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.ship {
+  position: relative;
+  overflow: hidden;
+
+  &.ship--xl {
+    grid-column-end: span 4;
+    grid-row-end: span 4;
+
+    figcaption {
+      font-size: 28px;
+    }
+  }
+
+  &.ship--l {
+    grid-column-end: span 3;
+    grid-row-end: span 3;
+  }
+
+  &.ship--m {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+  }
+
+  &.ship--s {
+    grid-column-end: span 1;
+    grid-row-end: span 1;
+
+    figcaption {
+      font-size: 18px;
+    }
+  }
+
+  img {
+    min-height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) saturate(1.1) brightness(1.1);
+
+    &:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: rotateY(90deg);
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+  }
+
+  &:hover {
+    img:last-child,
+    figcaption {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  figcaption {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 1;
+    text-align: center;
+    transform: rotateY(90deg);
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 1;
+    font-size: 24px;
+  }
+}

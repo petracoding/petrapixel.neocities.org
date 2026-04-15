@@ -1,0 +1,241 @@
+---
+layout: coding.njk
+title: "preview plugin"
+description: "A javascript snippet that enabled previews for URLs with the help of iframes. Neocities."
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+toc: true
+tipType: "plugin"
+---
+
+<style>
+  main .aside-box__heading {
+    display: none;
+  }
+
+  main .pppp-link {
+    margin: 0 10px;
+  }
+
+  main #aftersupporters {
+    text-align: left;
+  }
+</style>
+
+<section>
+  <h1>Petrapixel's Preview Plugin</h1>
+  <p>
+    What it does: It creates an iframe preview when hovering over specific
+    links.
+  </p>
+  <p>Try it out by hovering over my supporters' buttons here:</p>
+  {% include "layout/sidebars/supporters.njk" %}
+</section>
+
+<section>
+  <h2>The Code</h2>
+  <h3 data-step="1">The HTML</h3>
+  <p>
+    Give all the <code>a</code> elements you want to have a preview the class
+    <code>pppp-link</code>, for example:
+  </p>
+  <pre><code class="language-html">&lt;a href="https://petrapixel.neocities.org/" target="_blank" class="pppp-link"&gt;Petrapixel&lt;/a&gt;</code></pre>
+  <p>
+    Of course the links can also contain images like in the example at the
+    beginning of the page.
+  </p>
+
+  <h3 data-step="2">The JavaScript</h3>
+  <p>
+    Add this whereever you have your other javascript code. Make sure the page
+    is loaded before running this code (wrap in DOMContentLoaded event
+    listener).
+  </p>
+  <pre><code class="language-javascript">const mobileBreakpoint = 480; // (px) Plugin is not activated on screens of less than this width
+const delayLoadingByMs = 500; // (recommended!) Delay before loading preview after hovering on link
+
+if (screen.width &gt;= mobileBreakpoint) initPetrapixelPreviewPlugin();
+
+function initPetrapixelPreviewPlugin() {
+  const linkEls = document.querySelectorAll(&quot;a[href].pppp-link&quot;);
+  linkEls.forEach((linkEl) =&gt; {
+    let previewEl = document.createElement(&quot;div&quot;);
+    previewEl.classList.add(&quot;pppp-preview&quot;);
+    previewEl.innerHTML = `&lt;iframe&gt;&lt;/iframe&gt;`;
+    previewEl.setAttribute(&quot;sandbox&quot;, &quot;allow-same-origin&quot;);
+    let waitABit;
+    linkEl.addEventListener(&quot;mouseenter&quot;, () =&gt; {
+      waitABit = setTimeout(() =&gt; {
+        const thisPreviewEl = linkEl.querySelector(&quot;.pppp-preview&quot;);
+        if (!thisPreviewEl) {
+          linkEl.appendChild(previewEl);
+          const iFrameEl = previewEl.querySelector(&quot;iframe&quot;);
+          iFrameEl.setAttribute(&quot;src&quot;, linkEl.getAttribute(&quot;href&quot;));
+          previewEl.classList.add(&quot;pppp-preview--visible&quot;);
+          previewEl.classList.add(&quot;pppp-preview--loading&quot;);
+          iFrameEl.onload = () =&gt; {
+            previewEl.classList.remove(&quot;pppp-preview--loading&quot;);
+          };
+          iFrameEl.onerror = () =&gt; {
+            iFrameEl.setAttribute(&quot;src&quot;, &quot;&quot;);
+            previewEl.classList.remove(&quot;pppp-preview--visible&quot;);
+          };
+        } else {
+          thisPreviewEl.classList.add(&quot;pppp-preview--visible&quot;);
+        }
+      }, delayLoadingByMs);
+    });
+
+    linkEl.addEventListener(&quot;mouseleave&quot;, () =&gt; {
+      clearTimeout(waitABit);
+      const thisPreviewEl = linkEl.querySelector(&quot;.pppp-preview&quot;);
+      if (thisPreviewEl)
+        thisPreviewEl.classList.remove(&quot;pppp-preview--visible&quot;);
+    });
+  });
+}</code></pre>
+
+  <h3 data-step="3">The CSS</h3>
+  <p>
+    This is the basic styling required for the preview. You can adjust it to
+    your liking.
+  </p>
+  <pre><code class="language-css">.pppp-link {
+  position: relative;
+}
+
+.pppp-preview {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0;
+  box-shadow: 0 0 10px rgba(84, 17, 64, 0.25);
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.pppp-preview iframe {
+  width: 1920px;
+  height: 1080px;
+  transform: scale(0.1);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.pppp-preview.pppp-preview--visible {
+  display: block;
+  width: 192px;
+  height: 108px;
+}
+
+.pppp-preview.pppp-preview--loading::before {
+  /* style for loading state here... */
+}</code></pre>
+</section>
+
+<script>
+  const mobileBreakpoint = 480; // (px) Plugin is not activated on screens of less than this width
+  const delayLoadingByMs = 500; // (recommended!) Delay before loading preview after hovering on link
+
+  //if (screen.width >= mobileBreakpoint)
+  initPetrapixelPreviewPlugin();
+
+  function initPetrapixelPreviewPlugin() {
+    const linkEls = document.querySelectorAll("a[href].pppp-link");
+    linkEls.forEach((linkEl) => {
+      let previewEl = document.createElement("div");
+      previewEl.classList.add("pppp-preview");
+      previewEl.innerHTML = `<iframe></iframe>`;
+      previewEl.setAttribute("sandbox", "allow-same-origin");
+      let waitABit;
+      linkEl.addEventListener("mouseenter", () => {
+        waitABit = setTimeout(() => {
+          const thisPreviewEl = linkEl.querySelector(".pppp-preview");
+          if (!thisPreviewEl) {
+            linkEl.appendChild(previewEl);
+            const iFrameEl = previewEl.querySelector("iframe");
+            iFrameEl.setAttribute("src", linkEl.getAttribute("href"));
+            previewEl.classList.add("pppp-preview--visible");
+            previewEl.classList.add("pppp-preview--loading");
+            iFrameEl.onload = () => {
+              previewEl.classList.remove("pppp-preview--loading");
+            };
+            iFrameEl.onerror = () => {
+              iFrameEl.setAttribute("src", "");
+              previewEl.classList.remove("pppp-preview--visible");
+            };
+          } else {
+            thisPreviewEl.classList.add("pppp-preview--visible");
+          }
+        }, delayLoadingByMs);
+      });
+
+      linkEl.addEventListener("mouseleave", () => {
+        clearTimeout(waitABit);
+        const thisPreviewEl = linkEl.querySelector(".pppp-preview");
+        if (thisPreviewEl)
+          thisPreviewEl.classList.remove("pppp-preview--visible");
+      });
+    });
+  }
+</script>
+
+<style>
+  .pppp-link {
+    position: relative;
+  }
+
+  .pppp-preview {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0;
+    box-shadow: 0 0 10px rgba(84, 17, 64, 0.25);
+    z-index: 9999;
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  .pppp-preview iframe {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.1);
+    transform-origin: top left;
+    pointer-events: none;
+  }
+
+  .pppp-preview.pppp-preview--visible {
+    display: block;
+    width: 192px;
+    height: 108px;
+  }
+
+  .pppp-preview.pppp-preview--loading::before {
+    /* style for loading state here... */
+  }
+</style>
+
+{% include 'layout/tip-me.njk' %}
+
+<section>
+  <h2>Comments</h2>
+  <p>
+    <b
+      >Leave your questions, problems, suggestions, requests and thanks here!</b
+    >
+  </p>
+  <p>
+    To share very long code or error messages with me, please upload it to
+    <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar
+    site) and include the link. This is to make sure you don't hit the max
+    character limit on comments.
+  </p>
+  <div id="c_widget">Comment Widget could not be loaded!</div>
+  <script src="{{ nesting }}assets/js/comment-widget.js"></script>
+</section>

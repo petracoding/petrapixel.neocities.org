@@ -143,20 +143,22 @@ function updateSidebarTableOfContentsPosition(el, allSections) {
   // Current section
   [...allSections].forEach((section) => {
     const theId = section.getAttribute("id");
-    const theTocElement = el
-      .querySelector('[href="#' + theId + '"]')
-      .closest("li");
-    const theSection = section.closest("section");
-    const theSectionRect = theSection.getBoundingClientRect();
-    const sectionIsInViewport =
-      theSectionRect.bottom >= minPixelInViewport &&
-      theSectionRect.top + minPixelInViewport <=
-        (window.innerHeight || document.documentElement.clientHeight);
+    const theTocElement = el.querySelector('[href="#' + theId + '"]')
+      ? el.querySelector('[href="#' + theId + '"]').closest("li")
+      : null;
+    if (theTocElement) {
+      const theSection = section.closest("section");
+      const theSectionRect = theSection.getBoundingClientRect();
+      const sectionIsInViewport =
+        theSectionRect.bottom >= minPixelInViewport &&
+        theSectionRect.top + minPixelInViewport <=
+          (window.innerHeight || document.documentElement.clientHeight);
 
-    if (sectionIsInViewport) {
-      theTocElement.classList.add("active");
-    } else {
-      theTocElement.classList.remove("active");
+      if (sectionIsInViewport) {
+        theTocElement.classList.add("active");
+      } else {
+        theTocElement.classList.remove("active");
+      }
     }
   });
 }
@@ -308,13 +310,16 @@ export function initToggleExplanationComments() {
 
 export function initLinkPreviews() {
   if (screen.width < 500) return;
-  const linkEls = document.querySelectorAll("a[href].activate-preview");
+  const linkEls = document.querySelectorAll(
+    "a[href].activate-preview:not(.pppp-link)",
+  );
   linkEls.forEach((linkEl) => {
     // if (!linkEl.style.position || linkEl.style.position == "static")
     //   linkEl.style.position = "relative";
     let previewEl = document.createElement("div");
     previewEl.classList.add("preview-frame");
     previewEl.innerHTML = `<iframe></iframe>`;
+    previewEl.setAttribute("sandbox", "allow-same-origin");
 
     let waitABit;
 

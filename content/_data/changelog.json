@@ -1,5 +1,6 @@
 [
   { "date": "2026-04-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-04-15", "text": "Preview plugin!", "link": "/coding/preview-plugin" },
   { "date": "2026-04-12", "text": "Improvements to layout base code", "link": "/coding/layout-base-code" },
   { "date": "2026-04-07", "text": "Updates to the Eleventy tutorial", "link": "/coding/eleventy-tutorial" },
   { "date": "2026-03-27", "text": "Additions to the Eleventy tutorial", "link": "/coding/eleventy-tutorial" },

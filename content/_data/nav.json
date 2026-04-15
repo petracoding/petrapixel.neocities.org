@@ -103,6 +103,13 @@
         "image": "Olwt3AI.gif",
         "new": false,
         "hide": false
+      },
+      {
+        "link": "/about/ships",
+        "label": "my ships",
+        "image": "NMEZj77.gif",
+        "new": true,
+        "hide": true
       }
     ]
   },
@@ -393,7 +400,7 @@
     "items": [
       {
         "label": "Tools",
-        "new": false,
+        "new": true,
         "items": [
           {
             "link": "/coding/layout-generator",
@@ -459,6 +466,13 @@
             "new": false,
             "hide": false,
             "icon": "user-community-line"
+          },
+          {
+            "link": "/coding/preview-plugin",
+            "label": "Preview Plugin",
+            "new": true,
+            "hide": false,
+            "icon": "eye-line"
           }
         ]
       },

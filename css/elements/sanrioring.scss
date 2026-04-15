@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
+/* default settings */
+
+.sanringo {
+  text-align: center;
+  max-width: 250px;
+  max-height: 175px;
+  padding: 10px;
+  border-radius: 12px;
+  background: url("https://sozaino.site/wp-content/uploads/2020/12/hosikumo-2-1536x864.png")
+    bottom center / cover no-repeat padding-box;
+}
+
+.sanringo .title {
+  font-family: "Cherry Bomb One";
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px mediumvioletred;
+  text-decoration: none;
+  line-height: 1em;
+}
+
+.sanringo .info {
+  font-family: "Hi Melody";
+  color: mediumvioletred;
+  font-size: 0.9em;
+}
+
+.sanringo .character {
+  max-width: 100px;
+}
+
+.sanringo .prev img {
+  transform: rotate(-90deg);
+}
+
+.sanringo .next img {
+  transform: rotate(90deg);
+}
+
+.sanringo .next img,
+.sanringo .prev img {
+  max-width: 50px;
+  margin-bottom: 15px;
+}
+
+.sanringo .next,
+.sanringo .prev {
+  text-decoration: none;
+}
+
+/* my melody */
+.sanringo.mymelody {
+  background: url("https://sozaino.site/wp-content/uploads/2022/04/fuwafuwa53-1536x864.png")
+    top center / cover no-repeat padding-box;
+}
+
+/* kuromi */
+.sanringo.kuromi {
+  background: url("https://sozaino.site/wp-content/uploads/2020/11/sora10-1536x864.png")
+    bottom center / cover no-repeat padding-box;
+}
+
+.sanringo.kuromi .prev img,
+.sanringo.kuromi .next img {
+  filter: hue-rotate(-60deg);
+}
+
+.sanringo.kuromi .title {
+  text-shadow: 0 0 10px purple;
+}
+
+.sanringo.kuromi .info {
+  color: purple;
+}
+
+/* kuromi */
+.sanringo.hellokitty {
+  background: url("https://sozaino.site/wp-content/uploads/2022/01/va2022-285-1536x864.png")
+    bottom center / cover no-repeat padding-box;
+}
+
+.sanringo.hellokitty .prev img,
+.sanringo.hellokitty .next img {
+  filter: hue-rotate(-130deg);
+}
+
+.sanringo.hellokitty .title {
+  text-shadow: 0 0 10px royalblue;
+}
+
+.sanringo.hellokitty .info {
+  color: blue;
+}
+
+/* cinnamoroll */
+.sanringo.cinnamoroll {
+  background: url("https://sozaino.site/wp-content/uploads/2022/04/fuwafuwa56-1536x864.png")
+    center / cover no-repeat padding-box;
+}
+
+.sanringo.cinnamoroll .prev img,
+.sanringo.cinnamoroll .next img {
+  filter: hue-rotate(-100deg);
+}
+
+.sanringo.cinnamoroll .title {
+  text-shadow: 0 0 10px royalblue;
+}
+
+.sanringo.cinnamoroll .info {
+  color: blue;
+}
+
+/* pochacco */
+.sanringo.pochacco {
+  background: url("https://sozaino.site/wp-content/uploads/2023/07/guradesora13-1536x864.png")
+    bottom center / cover no-repeat padding-box;
+}
+
+.sanringo.pochacco .prev img,
+.sanringo.pochacco .next img {
+  filter: hue-rotate(180deg);
+}
+
+.sanringo.pochacco .title {
+  text-shadow: 0 0 10px green;
+}
+
+.sanringo.pochacco .info {
+  color: green;
+}
+
+/* pompompurin */
+.sanringo.pompompurin {
+  background: url("https://sozaino.site/wp-content/uploads/2020/11/pas26-1536x864.png")
+    center / cover no-repeat padding-box;
+}
+
+.sanringo.pompompurin .prev img,
+.sanringo.pompompurin .next img {
+  filter: hue-rotate(70deg);
+}
+
+.sanringo.pompompurin .title {
+  text-shadow: 0 0 10px brown;
+}
+
+.sanringo.pompompurin .info {
+  color: brown;
+}
