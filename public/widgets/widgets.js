@@ -115,10 +115,6 @@ function decodeHtml(html) {
 function initStatuscafe(params) {
   if (!document.getElementById("statuscafe-username")) return;
 
-  if (params.get("marquee")) {
-    if (params.get("marquee") == "1") turnIntoMarquee();
-  }
-
   let username = params.get("username");
   if (!username) {
     document.getElementById("statuscafe-content").innerHTML =
@@ -194,16 +190,9 @@ function initStatuscafe(params) {
             "column-reverse";
         }
       }
-      // if (params.get("marquee")) {
-      //   if (params.get("marquee") == "1") {
-      //     document.querySelector("main").style.width = "100%";
-      //     document.querySelector("marquee").style.display = "flex";
-      //     document.querySelector("marquee").style.alignItems = "end";
-      //     document.querySelector("#statuscafe-username").style.flexShrink = "0";
-      //     document.querySelector("#statuscafe-username").style.marginRight = "1em";
-      //     document.querySelector("#statuscafe-content").style.flexShrink = "0";
-      //   }
-      // }
+      if (params.get("marquee")) {
+        if (params.get("marquee") == "1") turnIntoMarquee();
+      }
     });
 }
 
@@ -212,10 +201,6 @@ function initStatuscafe(params) {
  */
 function initLastFm(params) {
   if (!document.querySelector("#song")) return;
-
-  if (params.get("marquee")) {
-    if (params.get("marquee") == "1") turnIntoMarquee();
-  }
 
   // Styling:
   if (params.get("color"))
@@ -302,6 +287,10 @@ function initLastFm(params) {
         song.innerHTML =
           `<span class="name" > ${songTitle}</span>${delimiter}<span class="artist">${artist}</span>` +
           albumCoverHTML;
+      }
+
+      if (params.get("marquee")) {
+        if (params.get("marquee") == "1") turnIntoMarquee();
       }
     });
 }

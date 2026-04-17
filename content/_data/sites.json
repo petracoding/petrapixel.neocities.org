@@ -507,5 +507,14 @@
     "inspiration": false,
     "supporter": true,
     "supporterUntil": "15.05." 
+  },
+   {
+    "link": "https://frutigeraeroarchive.org/",
+    "title": "frutiger aero archive",
+    "image": "frutigeraeroarchive.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "17.05." 
   }
 ]
