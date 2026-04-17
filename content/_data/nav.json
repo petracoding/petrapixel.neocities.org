@@ -218,7 +218,7 @@
   },
   {
     "label": "Fun Stuff!",
-    "new": false,
+    "new": true,
     "items": [
       {
         "link": "/contest",
@@ -274,6 +274,13 @@
         "label": "are you bored?",
         "image": "o88sX7W.gif",
         "new": false,
+        "hide": false
+      },
+      {
+        "link": "/fun/affirmation-generator",
+        "label": "affirmation generator",
+        "image": "mmuoVfo.gif",
+        "new": true,
         "hide": false
       },
       {
@@ -353,7 +360,7 @@
       {
         "link": "/resources/stop-using-social-media",
         "label": "how to stop using social media & doomscrolling",
-        "image": "Id47pJv.gif",
+        "image": "yroB26i.gif",
         "new": true,
         "hide": true
       }

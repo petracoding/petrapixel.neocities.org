@@ -686,11 +686,4 @@ self.addEventListener("activate", (event) => {
   <div class="roadmap"></div>
 </section>
 
-{% include 'layout/tip-me.njk' %}
-
-<section>
-  <h2>Comments</h2>
-  <p><b>Leave your questions, problems and thanks here!</b></p>
-  <div id="c_widget">Comment Widget could not be loaded!</div>
-  <script src="{{ nesting }}assets/js/comment-widget.js"></script>
-</section>
+{% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}

@@ -1703,14 +1703,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   initRandomGenerator: () => (/* binding */ initRandomGenerator)
 /* harmony export */ });
 function initRandomGenerator() {
-  if (document.querySelector("#gimmerandomfact")) initRandomFactAboutMe();
-  if (document.querySelector("#gimmerandomfavorite")) initRandomFavorite();
+  initRandomFactAboutMe();
+  initRandomFavorite();
 
   const el = document.querySelector(".random-generator");
   if (!el) return;
 
   const type = el.getAttribute("data-generator");
-  const items = type == "bored-button" ? boredButton : listIdeas;
+  const items =
+    type == "bored-button"
+      ? boredButton
+      : type == "affirmations"
+        ? affirmations
+        : listIdeas;
 
   document.querySelector(".random-generator__number").innerHTML = items.length;
 
@@ -1724,8 +1729,14 @@ function initRandomGenerator() {
   });
 }
 
+function initRandomAffirmation() {
+  const btn = document.querySelector("#gimmerandomaffirmation");
+  if (!btn) return;
+}
+
 function initRandomFactAboutMe() {
   const btn = document.querySelector("#gimmerandomfact");
+  if (!btn) return;
   const factEl = document.querySelector("#randomfact");
 
   btn.addEventListener("click", () => {
@@ -1778,13 +1789,14 @@ function initRandomFactAboutMe() {
         "I listen to a ton of comedy music, it always cheers me up!",
         "I always wear socks with sandals!",
       ],
-      currentItem
+      currentItem,
     );
   });
 }
 
 function initRandomFavorite() {
   const btn = document.querySelector("#gimmerandomfavorite");
+  if (!btn) return;
   const factEl = document.querySelector("#randomfavorite");
 
   btn.addEventListener("click", () => {
@@ -1822,7 +1834,7 @@ function initRandomFavorite() {
         ["perfume", "darling by brut parfums / fabergé "],
         ["winx club girl", "tecna"],
       ],
-      currentItem
+      currentItem,
     );
     factEl.innerHTML = `<b>my favorite <u>${rando[0]}:</u></b><br>${rando[1]}`;
   });
@@ -1837,6 +1849,91 @@ function generateRandomItem(items, lastItem) {
   }
   return randomItem;
 }
+
+const affirmations = [
+  "i am beautiful.",
+  "i am brave.",
+  "i am confident.",
+  "i am cool.",
+  "i am cute.",
+  "i am eloquent.",
+  "i am enough.",
+  "i am full of potential.",
+  "i am funny.",
+  "i am hard-working.",
+  "i am interesting.",
+  "i am lucky.",
+  "i am not a monster, just human.",
+  "i am not my flaws.",
+  "i am not my mistakes.",
+  "i am on the right path.",
+  "i am open and outgoing.",
+  "i am perfect just as i am.",
+  "i am smart.",
+  "i am strong.",
+  "i am talented.",
+  "i am valuable.",
+  "i deserve to be happy.",
+  "i love myself.",
+  "my body is perfect.",
+  "my worth does not depend on my appearance.",
+
+  "i accept my flaws.",
+  "i accept my past.",
+  "i accept myself.",
+  "i am blessed.",
+  "i am capable of positive change.",
+  "i am doing everything right.",
+  "i am doing my best.",
+  "my feelings matter.",
+
+  "i believe in myself.",
+  "i can do this.",
+  "i can forgive myself.",
+  "i can forgive those who have hurt me.",
+  "i can handle anything.",
+  "i have gone through worse.",
+  "i will be kind to myself.",
+  "my past is not my future.",
+  "time heals everything.",
+
+  "i am allowed to take up space.",
+  "i am loved.",
+  "i am one of many.",
+  "i am wanted.",
+  "i am well-liked.",
+  "i am worthy of love.",
+  "i am worthy of respect.",
+  "i do not have to prove myself to others.",
+  "i do not owe anyone anything.",
+  "i make the world a better place.",
+  "i matter.",
+  "nobody and nothing has power over me.",
+  "others look up to me.",
+  "what others think of me doesn't matter.",
+
+  "every day is a gift.",
+  "i am at peace.",
+  "i am full of joy.",
+  "i am proud of myself.",
+  "i am right where i'm supposed to be.",
+  "i am surrounded by beauty.",
+  "i am surrounded by wonderful people.",
+  "i experience joy every day.",
+  "i have come so far.",
+  "i have everything i need.",
+  "i have everything i want.",
+  "my life is wonderful exactly how it is now.",
+
+  "i will be successful.",
+  "i will become even happier than i am now.",
+  "i will discover new things &amp; activities that i will love.",
+  "i will experience wonderful &amp; exciting things.",
+  "i will get what i want most.",
+  "i will meet new people i will love.",
+  "i will reach my goals.",
+  "my time will come.",
+];
 
 const boredButton = [
   "do items on your to-do list",

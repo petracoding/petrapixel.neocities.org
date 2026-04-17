@@ -19,12 +19,12 @@ const knownParams = [
   "showAlbumCover",
 ];
 
+/*
+  CACHEBUSTING IN HTML !!!!! 
+  */
+
 document.addEventListener("DOMContentLoaded", function () {
-  console.log(
-    "%cWidget provided by petrapixel. Get yours: https://petrapixel.neocities.org/coding/widgets",
-    "font-size: 14pt;",
-    "font-size: 16pt;",
-  );
+  console.log("%cWidget provided by petrapixel. Get yours: https://petrapixel.neocities.org/coding/widgets", "font-size: 14pt;", "font-size: 16pt;");
 
   const params = getParameters();
   console.log("%cParameters:", "font-size: 13pt;");
@@ -49,8 +49,7 @@ function getParameters() {
 function doCSS(params) {
   // Known:
   if (params.get("center")) {
-    document.body.style.textAlign =
-      params.get("center") == "1" ? "center" : "left";
+    document.body.style.textAlign = params.get("center") == "1" ? "center" : "left";
 
     if (params.get("center") == "0") {
       document.body.querySelector("main").style.margin = "0";
@@ -58,11 +57,8 @@ function doCSS(params) {
   }
 
   // Backwards Compability (now unknown):
-  if (params.get("font"))
-    document.body.style.fontFamily =
-      '"' + params.get("font").replaceAll("%20", " ") + '"';
-  if (params.get("fontSize"))
-    document.body.style.fontSize = params.get("fontSize");
+  if (params.get("font")) document.body.style.fontFamily = '"' + params.get("font").replaceAll("%20", " ") + '"';
+  if (params.get("fontSize")) document.body.style.fontSize = params.get("fontSize");
 
   // Use unknown parameters as CSS:
   const unknownParams = [];
@@ -99,8 +95,7 @@ function turnIntoMarquee() {
   marqueeEl.innerHTML = marqueeHolderEl.innerHTML;
   marqueeHolderEl.parentNode.replaceChild(marqueeEl, marqueeHolderEl);
 
-  if (document.querySelector("main"))
-    document.querySelector("main").style.width = "100%";
+  if (document.querySelector("main")) document.querySelector("main").style.width = "100%";
 }
 
 function decodeHtml(html) {
@@ -117,8 +112,7 @@ function initStatuscafe(params) {
 
   let username = params.get("username");
   if (!username) {
-    document.getElementById("statuscafe-content").innerHTML =
-      "Please enter a username.";
+    document.getElementById("statuscafe-content").innerHTML = "Please enter a username.";
   }
   username = username.toLowerCase().trim();
 
@@ -126,8 +120,7 @@ function initStatuscafe(params) {
     .then((r) => r.json())
     .then((r) => {
       if (!r.content.length) {
-        document.getElementById("statuscafe-content").innerHTML =
-          "No status yet.";
+        document.getElementById("statuscafe-content").innerHTML = "No status yet.";
         return;
       }
       let delimiter = "";
@@ -143,51 +136,29 @@ function initStatuscafe(params) {
       }
 
       document.getElementById("statuscafe-username").innerHTML =
-        '<a href="https://status.cafe/users/' +
-        username +
-        '" target="_blank">' +
-        r.author +
-        "</a> " +
-        emoji +
-        " <span>" +
-        r.timeAgo +
-        delimiter +
-        "</span>";
-      document.getElementById("statuscafe-content").innerHTML =
-        username == "petra1999" ? "this is an example status text!" : r.content;
+        '<a href="https://status.cafe/users/' + username + '" target="_blank">' + r.author + "</a> " + emoji + " <span>" + r.timeAgo + delimiter + "</span>";
+      document.getElementById("statuscafe-content").innerHTML = username == "petra1999" ? "this is an example status text!" : r.content;
 
       // Styling:
       if (params.get("linkColor")) {
         document.querySelector("#statuscafe-username a").style.color =
-          params.get("linkColor") == "black" ||
-          params.get("linkColor") == "white" ||
-          params.get("linkColor").includes("#")
-            ? params.get("linkColor")
-            : "#" + params.get("linkColor");
+          params.get("linkColor") == "black" || params.get("linkColor") == "white" || params.get("linkColor").includes("#") ? params.get("linkColor") : "#" + params.get("linkColor");
       }
 
       if (params.get("timeColor")) {
         document.querySelector("#statuscafe-username span").style.color =
-          params.get("timeColor") == "black" ||
-          params.get("timeColor") == "white" ||
-          params.get("timeColor").includes("#")
-            ? params.get("timeColor")
-            : "#" + params.get("timeColor");
+          params.get("timeColor") == "black" || params.get("timeColor") == "white" || params.get("timeColor").includes("#") ? params.get("timeColor") : "#" + params.get("timeColor");
       }
       if (params.get("hideUsernameAndTime")) {
-        if (params.get("hideUsernameAndTime") == "1")
-          document.querySelector("#statuscafe-username").style.display = "none";
+        if (params.get("hideUsernameAndTime") == "1") document.querySelector("#statuscafe-username").style.display = "none";
       }
       if (params.get("hideUsername")) {
-        if (params.get("hideUsername") == "1")
-          document.querySelector("#statuscafe-username a").style.display =
-            "none";
+        if (params.get("hideUsername") == "1") document.querySelector("#statuscafe-username a").style.display = "none";
       }
       if (params.get("swapPositions")) {
         if (params.get("swapPositions") == "1") {
           document.querySelector("#marquee-holder").style.display = "flex";
-          document.querySelector("#marquee-holder").style.flexDirection =
-            "column-reverse";
+          document.querySelector("#marquee-holder").style.flexDirection = "column-reverse";
         }
       }
       if (params.get("marquee")) {
@@ -203,29 +174,19 @@ function initLastFm(params) {
   if (!document.querySelector("#song")) return;
 
   // Styling:
-  if (params.get("color"))
-    document.querySelector("#song").style.color =
-      params.get("color") == "black" || params.get("color") == "white"
-        ? params.get("color")
-        : "#" + params.get("color");
+  if (params.get("color")) document.querySelector("#song").style.color = params.get("color") == "black" || params.get("color") == "white" ? params.get("color") : "#" + params.get("color");
   if (params.get("linkColor"))
-    document.querySelector("#song").style.color =
-      params.get("linkColor") == "black" || params.get("linkColor") == "white"
-        ? params.get("linkColor")
-        : "#" + params.get("linkColor");
+    document.querySelector("#song").style.color = params.get("linkColor") == "black" || params.get("linkColor") == "white" ? params.get("linkColor") : "#" + params.get("linkColor");
   if (params.get("underline")) {
-    if (params.get("underline") == "0")
-      document.querySelector("#song").style.textDecoration = "none";
+    if (params.get("underline") == "0") document.querySelector("#song").style.textDecoration = "none";
   }
   if (params.get("marquee")) {
-    if (params.get("marquee") == "1")
-      document.querySelector("#song").style.whiteSpace = "nowrap";
+    if (params.get("marquee") == "1") document.querySelector("#song").style.whiteSpace = "nowrap";
   }
 
   let username = params.get("username");
   if (!username) {
-    document.getElementById("statuscafe-content").innerHTML =
-      "Please enter a username.";
+    document.getElementById("statuscafe-content").innerHTML = "Please enter a username.";
   }
   username = username.trim();
 
@@ -244,8 +205,7 @@ function initLastFm(params) {
     if (params.get("swapPositions") == "1") swapPositions = true;
   }
 
-  const url =
-    "https://lastfm-last-played.biancarosa.com.br/" + username + "/latest-song";
+  const url = "https://lastfm-last-played.biancarosa.com.br/" + username + "/latest-song";
   const song = document.querySelector("#song");
   fetch(url)
     .then(function (response) {
@@ -256,37 +216,27 @@ function initLastFm(params) {
 
       let artist = json["track"]["artist"]["#text"];
       let songTitle = json["track"]["name"];
-      let albumCoverUrl = json["track"]["image"]
-        ? json["track"]["image"][2]["#text"]
-        : null; // 0=small, 1=medium, 2=large, 3=extralarge
+      let albumCoverUrl = json["track"]["image"] ? json["track"]["image"][2]["#text"] : null; // 0=small, 1=medium, 2=large, 3=extralarge
 
       if (username == "Petra1999") {
         // Preview data
         artist = "Taylor Swift";
         songTitle = "Love Story";
-        albumCoverUrl =
-          "https://lastfm.freetls.fastly.net/i/u/300x300/acdd1489ea27beb10b07c58ffdb99a83.jpg";
+        albumCoverUrl = "https://lastfm.freetls.fastly.net/i/u/300x300/acdd1489ea27beb10b07c58ffdb99a83.jpg";
       }
 
       let albumCoverHTML = "";
       if (params.get("showAlbumCover") && albumCoverUrl) {
         if (params.get("showAlbumCover") != "0") {
-          const size =
-            params.get("showAlbumCover") < 10
-              ? 10
-              : params.get("showAlbumCover");
+          const size = params.get("showAlbumCover") < 10 ? 10 : params.get("showAlbumCover");
           albumCoverHTML = `<img src="${albumCoverUrl}" height="${size}" width="${size}" />`;
         }
       }
 
       if (swapPositions) {
-        song.innerHTML =
-          `<span class="artist">${artist}</span>${delimiter}<span class="name">${songTitle}</span>` +
-          albumCoverHTML;
+        song.innerHTML = `<span class="artist">${artist}</span>${delimiter}<span class="name">${songTitle}</span>` + albumCoverHTML;
       } else {
-        song.innerHTML =
-          `<span class="name" > ${songTitle}</span>${delimiter}<span class="artist">${artist}</span>` +
-          albumCoverHTML;
+        song.innerHTML = `<span class="name" > ${songTitle}</span>${delimiter}<span class="artist">${artist}</span>` + albumCoverHTML;
       }
 
       if (params.get("marquee")) {
@@ -314,8 +264,7 @@ function initPollcode(params) {
 
   if (params.get("ignorePollcodeStyling")) {
     if (params.get("ignorePollcodeStyling") == "1") {
-      const allStyledPollcodeElements =
-        document.querySelectorAll("#pollcode [style]");
+      const allStyledPollcodeElements = document.querySelectorAll("#pollcode [style]");
       [...allStyledPollcodeElements].forEach((el) => {
         el.setAttribute("style", "");
       });
@@ -328,10 +277,7 @@ function initPollcode(params) {
       if (viewBtn) {
         const parentEl = viewBtn.closest("div");
         viewBtn.remove();
-        const pollId = document
-          .querySelector("#pollcode form")
-          .getAttribute("action")
-          .replace("https://poll.pollcode.com/", "");
+        const pollId = document.querySelector("#pollcode form").getAttribute("action").replace("https://poll.pollcode.com/", "");
         const viewLink = "https://poll.pollcode.com/" + pollId + "_result?v";
         const viewLinkEl = document.createElement("a");
         viewLinkEl.innerHTML = "View";
@@ -344,19 +290,14 @@ function initPollcode(params) {
   }
 
   if (params.get("spacing")) {
-    document.head.insertAdjacentHTML(
-      "beforeend",
-      "<style>form > div > * {margin: " + params.get("spacing") + "}</style>",
-    );
+    document.head.insertAdjacentHTML("beforeend", "<style>form > div > * {margin: " + params.get("spacing") + "}</style>");
   }
 
   // make sure the pollcode "voted" website opens in new tab, not the iframe:
   document.querySelector("#pollcode form").setAttribute("target", "_blank");
 
   // hide "pollcode.com free polls" text:
-  const creditText = document.querySelector(
-    "#pollcode form > div > div:last-child",
-  );
+  const creditText = document.querySelector("#pollcode form > div > div:last-child");
   if (creditText) {
     creditText.remove();
   }

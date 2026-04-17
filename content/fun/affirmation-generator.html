@@ -1,0 +1,23 @@
+---
+layout: petrapixel.njk
+title: "affirmation generator"
+description: "A random generator that gives you affirmations!"
+nesting: "../"
+---
+
+<section>
+  <h1>Affirmation Generator</h1>
+  <p>
+    Press the button for an affirmation! Remember to read the affirmation out
+    loud for the biggest impact.
+  </p>
+  <p>
+    There are currently
+    <span class="random-generator__number">?</span> affirmations.
+  </p>
+  <div class="random-generator" data-generator="affirmations">
+    <button class="random-generator__button">Gimme!</button>
+    <div class="random-generator__label" style="display: none"></div>
+    <div class="random-generator__output"></div>
+  </div>
+</section>

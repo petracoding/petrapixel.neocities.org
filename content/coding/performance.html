@@ -82,21 +82,4 @@ tipType: "tutorial"
   </ul>
 </section>
 
-{% include 'layout/tip-me.njk' %}
-
-<section>
-  <h2>Comments</h2>
-  <p>
-    <b
-      >Leave your questions, problems, suggestions, requests and thanks here!</b
-    >
-  </p>
-  <p>
-    To share very long code or error messages with me, please upload it to
-    <a href="https://pastebin.com/" target="_blank">pastebin</a> (or a similar
-    site) and include the link. This is to make sure you don't hit the max
-    character limit on comments.
-  </p>
-  <div id="c_widget">Comment Widget could not be loaded!</div>
-  <script src="{{ nesting }}assets/js/comment-widget.js"></script>
-</section>
+{% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}
