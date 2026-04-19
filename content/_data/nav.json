@@ -294,7 +294,7 @@
   },
   {
     "label": "Resources",
-    "new": false,
+    "new": true,
     "items": [
       {
         "link": "/resources/bookmarks",
@@ -362,7 +362,7 @@
         "label": "how to stop using social media & doomscrolling",
         "image": "yroB26i.gif",
         "new": true,
-        "hide": true
+        "hide": false
       }
     ]
   },

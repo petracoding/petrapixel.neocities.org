@@ -516,5 +516,14 @@
     "inspiration": false,
     "supporter": true,
     "supporterUntil": "17.05." 
+  },
+   {
+    "link": "https://seedoil.neocities.org/",
+    "title": "SeedOil",
+    "image": "seedoil.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "19.07." 
   }
 ]
