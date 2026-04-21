@@ -429,7 +429,7 @@
             "link": "/coding/widgets",
             "label": "Widgets for free Neocities accounts",
             "sublabel": "",
-            "new": false,
+            "new": true,
             "hide": false,
             "icon": "bard-line"
           },

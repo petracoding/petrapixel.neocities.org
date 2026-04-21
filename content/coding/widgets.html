@@ -82,11 +82,78 @@ tipType: "resource"
 </section>
 
 <section>
-  <h2 id="statuscafe">Status.Cafe Status</h2>
+  <h2 id="comment-widget">Virtual Observer's Comment Widget</h2>
+  <blockquote class="tip">
+    <p>
+      Original Widget Source:
+      <a href="https://virtualobserver.moe/ayano/comment-widget" target="_blank"
+        >Virtual Observer</a
+      >! Trick on how to use it via an iframe by
+      <a href="https://midsummerjay.neocities.org/guestbook" target="_blank"
+        >midsummerjay</a
+      >! Huge thanks to both of these tinkerers - all credit goes to them, I'm
+      just sharing it here!
+    </p>
+    <p>
+      (Please note that the settings described above do not work for this
+      widget.)
+    </p>
+  </blockquote>
   <p>
-    Original Widget Source:
-    <a href="https://status.cafe/current-status" target="_blank">status.cafe</a>
+    Virtual Observer's amazing comment widget (which I also use!) unfortunately
+    doesn't work for those with a free Neocities account - but here's a solution
+    to that!
   </p>
+
+  <p>Steps:</p>
+  <ol>
+    <li>
+      Follow all
+      <a href="https://virtualobserver.moe/ayano/comment-widget" target="_blank"
+        >the original tutorial steps</a
+      >
+      <b>except</b> the last one ("putting comment sections on your site").
+    </li>
+    <li>
+      <b>Tip: </b>Optionally you can activate email notifications for your
+      Google form to get emails for each new comment. (Your Google Form -> Three
+      dots on top right -> Get email notifications for new responses)
+    </li>
+    <li>
+      Wherever you want your comment section to show paste this code: (This
+      replaces the last step of the original tutorial)
+      <pre><code>&lt;iframe srcdoc=&quot;&amp;lt;div id=&#39;c_widget&#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&#39;comment-widget.js&#39;&amp;gt;&amp;lt;/script&amp;gt;&quot; width=&quot;100%&quot; frameborder=&quot;0&quot; style=&quot;min-height:500px;&quot;&gt;&lt;/iframe&gt;</code></pre>
+    </li>
+    <li>
+      In the file <b>comment-widget.js</b> change both instances of
+      <code>window.location</code> to <code>window.parent.location</code>!
+      (Lines 140 and 141)
+    </li>
+    <li>
+      Clear your cache. (<a href="/coding/common-questions#cache">Need help?</a
+      >)
+    </li>
+  </ol>
+
+  <p>Done! Your comment widget should now work!</p>
+  <p>
+    If you like this comment widget consider
+    <a href="https://ko-fi.com/bluemoonfalls" target="_blank"
+      >donating to the original creator</a
+    >!
+  </p>
+</section>
+
+<section>
+  <h2 id="statuscafe">Status.Cafe Status</h2>
+  <blockquote class="tip">
+    <p>
+      Original Widget Source:
+      <a href="https://status.cafe/current-status" target="_blank"
+        >status.cafe</a
+      >
+    </p>
+  </blockquote>
   <p>Settings:</p>
   <ul>
     <li>
@@ -195,12 +262,14 @@ tipType: "resource"
 
 <section id="lastfm">
   <h2>Last.Fm Currently Listening / Last Song</h2>
-  <p>
-    Original Widget Source:
-    <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank"
-      >biancarosa</a
-    >
-  </p>
+  <blockquote class="tip">
+    <p>
+      Original Widget Source:
+      <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank"
+        >biancarosa</a
+      >
+    </p>
+  </blockquote>
   <p>Settings:</p>
   <ul>
     <li>
@@ -307,12 +376,14 @@ tipType: "resource"
 
 <section id="pollcode">
   <h2>Pollcode</h2>
-  <p>
-    Original Widget Source:
-    <a href="https://pollcode.com/" target="_blank">pollcode.com</a>. All
-    styling options from Pollcode itself should work, <i>except</i> the
-    background image and fixed width!
-  </p>
+  <blockquote class="tip">
+    <p>
+      Original Widget Source:
+      <a href="https://pollcode.com/" target="_blank">pollcode.com</a>.
+      <br />All styling options from Pollcode itself should work,
+      <i>except</i> the background image and fixed width!
+    </p>
+  </blockquote>
   <p>
     Make sure to give your iFrame a tall enough height so that all your poll
     options and the submit buttons are visible!
