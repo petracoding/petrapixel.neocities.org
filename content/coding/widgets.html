@@ -105,6 +105,12 @@ tipType: "resource"
     to that!
   </p>
 
+  <p style="color: red; font-size: 1.2em">
+    This method doesn't work for everyone, and I'm currently trying to figure
+    out why. Feel free to try it, but no guarantees that it works! If you have
+    an idea why it might sometimes not work please comment below!
+  </p>
+
   <p>Steps:</p>
   <ol>
     <li>
@@ -114,6 +120,7 @@ tipType: "resource"
       >
       <b>except</b> the last one ("putting comment sections on your site").
     </li>
+
     <li>
       <b>Tip: </b>Optionally you can activate email notifications for your
       Google form to get emails for each new comment. (Your Google Form -> Three
@@ -122,13 +129,26 @@ tipType: "resource"
     <li>
       Wherever you want your comment section to show paste this code: (This
       replaces the last step of the original tutorial)
-      <pre><code>&lt;iframe srcdoc=&quot;&amp;lt;div id=&#39;c_widget&#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&#39;comment-widget.js&#39;&amp;gt;&amp;lt;/script&amp;gt;&quot; width=&quot;100%&quot; frameborder=&quot;0&quot; style=&quot;min-height:500px;&quot;&gt;&lt;/iframe&gt;</code></pre>
+      <pre
+        style="margin-bottom: 0"
+      ><code>&lt;iframe srcdoc=&quot;&amp;lt;div id=&#39;c_widget&#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&#39;comment-widget.js&#39;&amp;gt;&amp;lt;/script&amp;gt;&quot; width=&quot;100%&quot; frameborder=&quot;0&quot; style=&quot;min-height:500px;&quot;&gt;&lt;/iframe&gt;</code></pre>
+      Make sure the path to the <i>comment-widget.js</i> is correct. For
+      example, if your page is in a folder and the <i>commet-widget.js</i> file
+      isn't in a folder, you need to change it to
+      <code>../comment-widget.js</code>.<br />(You can also of course change the
+      min-height to whatever you want.)
     </li>
     <li>
-      In the file <b>comment-widget.js</b> change both instances of
-      <code>window.location</code> to <code>window.parent.location</code>!
-      (Lines 140 and 141)
+      In the file <b>comment-widget.js</b> make these changes:
+      <ul>
+        <li>
+          change both instances of <code>window.location</code> to
+          <code>window.parent.location</code>! (Lines 140 and 141)
+        </li>
+        <li>remove line 490 (<code>link.click();</code>)</li>
+      </ul>
     </li>
+
     <li>
       Clear your cache. (<a href="/coding/common-questions#cache">Need help?</a
       >)

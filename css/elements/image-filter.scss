@@ -1,0 +1,350 @@
+.image-filter-codes {
+  display: flex;
+  flex-wrap: wrap;
+
+  .image-filter {
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+
+      img {
+        filter: none !important;
+        image-rendering: auto !important;
+      }
+
+      &::before,
+      &::after {
+        opacity: 0 !important;
+      }
+    }
+
+    & + pre {
+      margin-top: 10px;
+      min-height: 100px;
+
+      code.hljs {
+        font-size: 12px;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.image-filter-codes__code {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  margin-bottom: 30px;
+  flex: 0 0 calc(25% - 10px);
+
+  center {
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: $lg) {
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  @media (max-width: $md) {
+    flex: 0 0 calc(33.333% - 10px);
+  }
+
+  @media (max-width: $sm) {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+/* */
+
+.image-filter {
+  position: relative;
+}
+
+.image-filter::before,
+.image-filter::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* */
+
+.image-filter--basic {
+  img {
+    filter: brightness(1.05) contrast(1.15);
+  }
+}
+
+.image-filter--color {
+  img {
+    filter: contrast(0.9) brightness(1.1) saturate(0.5);
+  }
+
+  &::after {
+    background: rgb(204, 1, 1); // change color here
+    opacity: 0.3;
+    mix-blend-mode: color;
+  }
+}
+
+.image-filter--pastel {
+  img {
+    filter: brightness(1.2) contrast(0.6) brightness(1.1) saturate(1.4);
+  }
+
+  &::before {
+    background: white;
+    opacity: 0.3;
+    mix-blend-mode: soft-light;
+  }
+
+  &::after {
+    background: rgb(255, 155, 245);
+    opacity: 0.4;
+    mix-blend-mode: color;
+  }
+}
+
+.image-filter--sepia {
+  img {
+    filter: sepia(1) brightness(0.9) contrast(1.1);
+  }
+
+  &::after {
+    background: #d7c144;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+}
+
+.image-filter--gameboy {
+  img {
+    filter: brightness(1.2) saturate(1.2);
+    image-rendering: pixelated;
+  }
+
+  &::after {
+    background: #6eac00;
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+  }
+}
+
+.image-filter--daydream {
+  img {
+    filter: contrast(0.9) brightness(1.3) saturate(0.6) blur(1px);
+  }
+
+  &::after {
+    background: #aeaeae;
+    opacity: 0.3;
+    mix-blend-mode: luminosity;
+  }
+}
+
+.image-filter--nightmare {
+  img {
+    filter: contrast(0.9) brightness(1.2) saturate(0.6) blur(1px);
+  }
+
+  &::after {
+    background: black;
+    opacity: 0.3;
+    mix-blend-mode: luminosity;
+  }
+}
+
+.image-filter--focus {
+  img {
+    filter: contrast(0.95) brightness(1.15) saturate(0.9);
+  }
+
+  &::after {
+    background: radial-gradient(
+      circle,
+      rgb(0, 0, 0) 0%,
+      rgb(48, 157, 94) 50%,
+      rgb(243, 238, 195) 100%
+    );
+    opacity: 0.35;
+    mix-blend-mode: difference;
+  }
+}
+
+.image-filter--icy {
+  img {
+    filter: contrast(0.95) brightness(1.15) saturate(0.9);
+  }
+
+  &::after {
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background: #1f1fff;
+  }
+}
+
+.image-filter--film {
+  img {
+    filter: contrast(0.95) brightness(1.15) saturate(0.9);
+  }
+
+  &::after {
+    background: linear-gradient(
+      45deg,
+      rgb(245, 34, 0) 0%,
+      rgb(4, 90, 255) 100%
+    );
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+  }
+}
+
+.image-filter--hollywood {
+  img {
+    filter: contrast(0.95) brightness(1.15) saturate(0.9);
+  }
+
+  &::after {
+    background: linear-gradient(
+      -45deg,
+      rgb(119, 179, 59) 0%,
+      rgb(195, 40, 77) 100%
+    );
+    opacity: 0.4;
+    mix-blend-mode: color-burn;
+  }
+}
+
+.image-filter--grunge {
+  img {
+    filter: contrast(1.05) brightness(1.15) saturate(0.84);
+  }
+
+  &::after {
+    background: radial-gradient(
+      circle,
+      rgb(76, 76, 70) 40%,
+      rgb(145, 152, 181) 100%
+    );
+    opacity: 0.4;
+    mix-blend-mode: difference;
+  }
+}
+
+.image-filter--dramatic {
+  img {
+    filter: contrast(1.3) grayscale(0.4);
+  }
+
+  &::after {
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    opacity: 0.4;
+  }
+}
+
+.image-filter--vignette {
+  img {
+    filter: contrast(1.05) brightness(1.15) saturate(0.84);
+  }
+
+  &::after {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 1) 120%
+    );
+    opacity: 0.8;
+  }
+}
+
+.image-filter--spotlight {
+  img {
+    filter: contrast(1.05) brightness(1.15) saturate(0.84);
+  }
+
+  &::after {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 1) 50%
+    );
+    opacity: 0.6;
+  }
+}
+
+.image-filter--indie {
+  img {
+    filter: contrast(90%) saturate(298%) brightness(121%);
+  }
+}
+
+.image-filter--sprite {
+  img {
+    filter: invert(0) grayscale(0.1) brightness(1.2) contrast(5);
+  }
+}
+
+.image-filter--bw-sprite {
+  img {
+    filter: invert(0) grayscale(1) brightness(1.2) contrast(5);
+    image-rendering: pixelated;
+  }
+}
+
+.image-filter--ghost {
+  img {
+    filter: invert(1);
+  }
+
+  &::after {
+    background: linear-gradient(
+      140deg,
+      rgba(22, 73, 201, 1) 0%,
+      rgba(255, 34, 0, 1) 50%,
+      rgba(252, 197, 69, 1) 100%
+    );
+    opacity: 0.5;
+    mix-blend-mode: hue;
+  }
+}
+
+.image-filter--jpg {
+  img {
+    filter: url("#filterJpg");
+  }
+}
+
+.image-filter--painting {
+  img {
+    filter: saturate(1.3) brightness(1.1) contrast(1.1) url("#filterPainting");
+  }
+}
+
+.image-filter--paper {
+  img {
+    filter: url("#filterPaper");
+  }
+}
+
+.image-filter--duotone {
+  img {
+    filter: url("#filterDuotone") hue-rotate(70deg) saturate(0.7) contrast(1.5)
+      brightness(0.9); // to change the colors change the degrees in hue-rotate()
+  }
+}

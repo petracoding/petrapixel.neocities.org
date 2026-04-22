@@ -41,6 +41,7 @@
 @import "./elements/tabs";
 @import "./elements/table";
 @import "./elements/sanrioring";
+@import "./elements/image-filter";
 
 @import "./coding/cachebusting";
 @import "./coding/cheatsheet";
@@ -54,5 +55,6 @@
 
 // must be last:
 @import "./layout/dark-mode";
+@import "./layout/reduced-motion";
 @import "./layout/print";
 // @import "./layout/halloween-theme";

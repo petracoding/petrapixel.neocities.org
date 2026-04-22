@@ -536,6 +536,7 @@ __webpack_require__.r(__webpack_exports__);
 function initToggleButtons() {
   const themeBtn = document.querySelector(".toggle-buttons__button--theme");
   const fontBtn = document.querySelector(".toggle-buttons__button--font");
+  const motionBtn = document.querySelector(".toggle-buttons__button--motion");
   const soundBtn = document.querySelector(".toggle-buttons__button--sound");
 
   document.body.classList.add(getCookie("theme", "light-mode"));
@@ -546,6 +547,10 @@ function initToggleButtons() {
 
   if (getCookie("soundTheme") === "muted") {
     document.body.classList.add("sound-muted");
+  }
+
+  if (getCookie("motionTheme") === "reduced") {
+    document.body.classList.add("reduced-motion");
   }
 
   themeBtn.addEventListener("click", () => {
@@ -579,6 +584,16 @@ function initToggleButtons() {
       localStorage.setItem("soundTheme", "muted");
     }
   });
+
+  motionBtn.addEventListener("click", () => {
+    if (getCookie("motionTheme") === "reduced") {
+      document.body.classList.remove("reduced-motion");
+      localStorage.setItem("motionTheme", "default");
+    } else {
+      document.body.classList.add("reduced-motion");
+      localStorage.setItem("motionTheme", "reduced");
+    }
+  });
 }
 
 function getCookie(cookieName, fallbackValue) {
@@ -599,7 +614,7 @@ function initSounds() {
     "actualClick",
     false,
     true,
-    "summary, button, input[type='submit']",
+    "summary, button, input[type='submit'], input[type='checkbox']",
   );
   // initSound("tinySound", true, false, "button, input[type='submit']");
 }

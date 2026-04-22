@@ -1,688 +1,703 @@
 [
-  {
-    "label": "home",
-    "link": "/",
-    "image": "0R4rEUM.gif"
-  },
-  {
-    "label": "Website",
-    "new": false,
-    "items": [
-      {
-        "link": "/about/about-the-site",
-        "label": "about the site",
-        "image": "zcFh0SK.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/manifesto",
-        "label": "site manifesto",
-        "image": "04LvY0B.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/webrings",
-        "label": "webrings",
-        "image": "x9fu47V.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/neighbors",
-        "label": "neighbors",
-        "image": "PxspC1V.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/guestbook",
-        "label": "guestbook",
-        "image": "oEYba29.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/credits",
-        "label": "credits",
-        "image": "11cAPuy.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/faq",
-        "label": "faq",
-        "image": "q4AN64Z.gif",
-        "new": false,
-        "hide": false
-      }
-    ]
-  },
-  {
-    "label": "Webmistress",
-    "new": false,
-    "items": [
-      {
-        "link": "/about/about-me",
-        "label": "about me",
-        "image": "l3MStv2.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/my-online-childhood",
-        "label": "my online childhood",
-        "image": "ut9XPLG.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/blog",
-        "label": "blog",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/about/cats",
-        "label": "cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
-        "image": "US8KWIQ.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/media-log",
-        "label": "media log",
-        "image": "hWQK1oD.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/dream-diary",
-        "label": "dream diary",
-        "image": "Olwt3AI.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/about/ships",
-        "label": "my ships",
-        "image": "NMEZj77.gif",
-        "new": true,
-        "hide": true
-      }
-    ]
-  },
-  {
-    "label": "Creations",
-    "new": false,
-    "items": [
-      {
-        "link": "/creations/art",
-        "label": "my art",
-        "image": "AczziyS.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/creations/playlists",
-        "label": "my playlists",
-        "image": "A7o51F0.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/creations/video-edits",
-        "label": "my video edits",
-        "image": "E3xxLeq.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/creations/writing",
-        "label": "my writing",
-        "image": "WemqKbs.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/creations/picmix",
-        "label": "my picmix",
-        "image": "79P8MMo.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/creations/fractals",
-        "label": "my fractal art",
-        "image": "14DUeFe.gif",
-        "new": false,
-        "hide": false
-      }
-    ]
-  },
-  {
-    "label": "Media Recs",
-    "new": false,
-    "items": [
-      {
-        "link": "/recs/youtube",
-        "label": "youtube recs",
-        "image": "MKw7Ts0.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/recs/tv-shows",
-        "label": "tv show recs",
-        "image": "knXWw43.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/recs/movies",
-        "label": "movie recs",
-        "image": "goA2JSK.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/recs/books",
-        "label": "book recs",
-        "image": "Xq773u8.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/recs/games",
-        "label": "video game recs",
-        "image": "ZKogrD1.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/recs/board-games",
-        "label": "board/card game recs",
-        "image": "f68iHcF.gif",
-        "new": true,
-        "hide": true
-      },
-      {
-        "link": "/recs/music",
-        "label": "song recs",
-        "image": "HAXW8LV.gif",
-        "new": false,
-        "hide": false
-      }
-    ]
-  },
-  {
-    "label": "Fun Stuff!",
-    "new": true,
-    "items": [
-      {
-        "link": "/contest",
-        "label": "Indie Web Contest",
-        "image": "yRDUz1y.gif",
-        "new": false,
-        "hide": false,
-        "icon": "fa-solid fa-trophy"
-      },
-      {
-        "link": "/about/blinkies",
-        "label": "blinkies & more",
-        "image": "RwrqznD.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/shrines/index",
-        "label": "shrines",
-        "image": "XU8WpKV.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/cliques",
-        "label": "cliques",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/fun/polls",
-        "label": "polls",
-        "image": "o9c1kAD.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/fun/quizzes",
-        "label": "personality quizzes",
-        "image": "LsjYhJb.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/fun/list-idea-generator",
-        "label": "list idea generator",
-        "image": "MVyt3ws.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/fun/bored-button",
-        "label": "are you bored?",
-        "image": "o88sX7W.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/fun/affirmation-generator",
-        "label": "affirmation generator",
-        "image": "mmuoVfo.gif",
-        "new": true,
-        "hide": false
-      },
-      {
-        "link": "/fun/advent-calendar-2025",
-        "label": "advent calendar 2025",
-        "image": "O8L14EV.gif",
-        "new": false,
-        "hide": false
-      }
-    ]
-  },
-  {
-    "label": "Resources",
-    "new": true,
-    "items": [
-      {
-        "link": "/resources/bookmarks",
-        "label": "bookmarks",
-        "image": "ALMPpt1.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/software-recs",
-        "label": "software recs",
-        "image": "D0YJB9M.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/clipboard",
-        "label": "clipboard",
-        "image": "goiBexo.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/notion",
-        "label": "notion templates",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/resources/google-spreadsheets-excel",
-        "label": "spreadsheets",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/resources/vocabulary",
-        "label": "vocabulary",
-        "image": "UsTjc3j.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/backup-tutorial",
-        "label": "how to backup files",
-        "image": "J99GcgI.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/compression-tutorial",
-        "label": "how to compress files",
-        "image": "et5llyF.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/creations/coding",
-        "label": "my userscripts & tools",
-        "image": "bamwARA.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/resources/stop-using-social-media",
-        "label": "how to stop using social media & doomscrolling",
-        "image": "yroB26i.gif",
-        "new": true,
-        "hide": false
-      }
-    ]
-  },
-  {
-    "label": "Offsite",
-    "new": false,
-    "items": [
-      {
-        "link": "https://neocities.org/site/petrapixel",
-        "label": "my neocities profile ➚",
-        "image": "mC4Fztt.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "https://ko-fi.com/petrastipjar",
-        "label": "my tipjar (ko-fi) ➚",
-        "image": "phcDjmW.gif",
-        "new": false,
-        "hide": false
-      },
-      {
-        "link": "/youtube",
-        "label": "my youtube channel ➚",
-        "image": "V4mjYKz.gif",
-        "new": false,
-        "hide": true
-      },
-      {
-        "link": "/bearblog",
-        "label": "my bearblog ➚",
-        "image": "i5dgJWB.gif",
-        "new": true,
-        "hide": false
-      }
-    ]
-  },
-  {
-    "label": "Coding & Webmastery",
-    "new": false,
-    "isCodeMenu": true,
-    "items": [
-      {
-        "label": "Tools",
-        "new": true,
-        "items": [
-          {
-            "link": "/coding/layout-generator",
-            "label": "Layout Generator",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "layout-line"
-          },
-          {
-            "link": "/coding/layouts",
-            "label": "F2U Layouts",
-            "sublabel": "",
-            "new": true,
-            "hide": true,
-            "icon": "layout-2-line"
-          },
-          {
-            "link": "/coding/widgets",
-            "label": "Widgets for free Neocities accounts",
-            "sublabel": "",
-            "new": true,
-            "hide": false,
-            "icon": "bard-line"
-          },
-          {
-            "link": "/coding/cheatsheet",
-            "label": "Cheatsheet",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "file-text-line"
-          },
-          {
-            "link": "/coding/bookmarks",
-            "label": "Helpful Sites",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "bookmark-line"
-          },
-          {
-            "link": "/coding/checklist",
-            "label": "Self-study Checklist",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "list-check-3"
-          },
-          {
-            "link": "/coding/quizzes",
-            "label": "Coding Quizzes",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "lightbulb-line"
-          },
-          {
-            "link": "/coding/webringu",
-            "label": "Webringu",
-            "labelInMainMenu": "Webring Script",
-            "sublabel": "Simple Webring Script",
-            "new": false,
-            "hide": false,
-            "icon": "user-community-line"
-          },
-          {
-            "link": "/coding/preview-plugin",
-            "label": "Preview Plugin",
-            "new": true,
-            "hide": false,
-            "icon": "eye-line"
-          }
-        ]
-      },
-      {
-        "label": "First Steps",
-        "new": false,
-        "items": [
-          {
-            "link": "/coding/how-to-make-a-website",
-            "label": "How to create your first website",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "pages-line"
-          },
-          {
-            "link": "/coding/common-questions",
-            "label": "Common Questions",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "questionnaire-line"
-          },
-          {
-            "link": "/coding/common-mistakes",
-            "label": "Common Mistakes",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "error-warning-line"
-          },
-          {
-            "link": "/coding/code-quality",
-            "label": "Code Quality Guide",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "code-ai-line"
-          },
-          {
-            "link": "/coding/need-help",
-            "label": "Troubleshooting Guide",
-            "sublabel": "+ how to find support",
-            "new": false,
-            "hide": false,
-            "icon": "bug-line"
-          }
-        ]
-      },
-      {
-        "label": "Beginner Tutorials",
-        "new": false,
-        "items": [
-          {
-            "link": "/coding/layout-base-code",
-            "label": "How to load the same layout on every page",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "layout-5-line"
-          },
-          {
-            "link": "/coding/positioning-tutorial",
-            "label": "CSS Positioning/Layout Tutorial",
-            "sublabel": "(display, position, flexbox, grid, transform, z-index, ...)",
-            "new": false,
-            "hide": false,
-            "icon": "layout-masonry-line"
-          },
-          {
-            "link": "/coding/custom-font-tutorial",
-            "label": "Custom Font Tutorial",
-            "new": false,
-            "hide": false,
-            "icon": "font-size"
-          },
-          {
-            "link": "/coding/cachebusting",
-            "label": "Cachebusting",
-            "sublabel": "Stop that pesky caching",
-            "new": false,
-            "hide": false,
-            "icon": "delete-bin-6-line"
-          },
-          {
-            "link": "/coding/performance",
-            "label": "How to make pages load faster",
-            "sublabel": "",
-            "new": false,
-            "hide": true,
-            "icon": "speed-up-line"
-          }
-        ]
-      },
-      {
-        "label": "Advanced Tutorials",
-        "new": false,
-        "items": [
-          {
-            "link": "/coding/git-tutorial",
-            "label": "Git Tutorial",
-            "sublabel": "Version Control",
-            "new": false,
-            "hide": false,
-            "icon": "github-line"
-          },
-          {
-            "link": "/coding/npm-tutorial",
-            "label": "node/npm tutorial",
-            "sublabel": "Package Manager",
-            "new": false,
-            "hide": false,
-            "icon": "npmjs-line"
-          },
-          {
-            "link": "/coding/webpack-tutorial",
-            "label": "Webpack Tutorial",
-            "sublabel": "File Bundler",
-            "new": false,
-            "hide": false,
-            "icon": "box-3-line"
-          },
-          {
-            "link": "/coding/eleventy-tutorial",
-            "label": "Eleventy (11ty) Tutorial",
-            "sublabel": "Static Site Generator",
-            "new": false,
-            "hide": false,
-            "icon": "magic-line"
-          },
-          {
-            "link": "/coding/google-sheets-api-tutorial",
-            "label": "Google Sheets API Tutorial",
-            "sublabel": "Read sheets data with JS",
-            "new": false,
-            "hide": false,
-            "icon": "drive-line"
-          }
-        ]
-      },
-      {
-        "label": "Miscellaneous",
-        "new": false,
-        "items": [
-          {
-            "link": "/coding/neocities",
-            "label": "Neocities Tips",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "building-line"
-          },
-          {
-            "link": "/coding/snippets",
-            "label": "Code Snippets",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "code-s-slash-line"
-          },
-          {
-            "link": "/coding/my-setup",
-            "label": "My VSCode Setup",
-            "sublabel": "Settings + Extensions",
-            "new": false,
-            "hide": false,
-            "icon": "tools-line"
-          },
-          {
-            "link": "/coding/now-what",
-            "label": "I know HTML, CSS, and JS. Now what?",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "rocket-line"
-          },
-          {
-            "link": "/coding/game-dev-journey",
-            "label": "my game dev journey",
-            "sublabel": "",
-            "new": false,
-            "hide": true,
-            "icon": "gamepad-line"
-          },
-          {
-            "link": "/coding/cliques",
-            "label": "List of Cliques",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "user-community-line"
-          },
-          {
-            "link": "/webring",
-            "label": "Code Collective Webring",
-            "sublabel": "",
-            "new": false,
-            "hide": false,
-            "icon": "diamond-ring-line",
-            "hideInCodingNav": true
-          }
-        ]
-      }
-    ]
-  }
+   {
+      "label":"home",
+      "link":"/",
+      "image":"0R4rEUM.gif"
+   },
+   {
+      "label":"Website",
+      "new":false,
+      "items":[
+         {
+            "link":"/about/about-the-site",
+            "label":"about the site",
+            "image":"zcFh0SK.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/manifesto",
+            "label":"site manifesto",
+            "image":"04LvY0B.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/webrings",
+            "label":"webrings",
+            "image":"x9fu47V.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/neighbors",
+            "label":"neighbors",
+            "image":"PxspC1V.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/guestbook",
+            "label":"guestbook",
+            "image":"oEYba29.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/credits",
+            "label":"credits",
+            "image":"11cAPuy.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/faq",
+            "label":"faq",
+            "image":"q4AN64Z.gif",
+            "new":false,
+            "hide":false
+         }
+      ]
+   },
+   {
+      "label":"Webmistress",
+      "new":false,
+      "items":[
+         {
+            "link":"/about/about-me",
+            "label":"about me",
+            "image":"l3MStv2.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/my-online-childhood",
+            "label":"my online childhood",
+            "image":"ut9XPLG.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/blog",
+            "label":"blog",
+            "new":false,
+            "hide":true
+         },
+         {
+            "link":"/about/cats",
+            "label":"cats <small>ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</small>",
+            "image":"US8KWIQ.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/media-log",
+            "label":"media log",
+            "image":"hWQK1oD.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/dream-diary",
+            "label":"dream diary",
+            "image":"Olwt3AI.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/about/ships",
+            "label":"my ships",
+            "image":"NMEZj77.gif",
+            "new":true,
+            "hide":true
+         }
+      ]
+   },
+   {
+      "label":"Creations",
+      "new":false,
+      "items":[
+         {
+            "link":"/creations/art",
+            "label":"my art",
+            "image":"AczziyS.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/creations/playlists",
+            "label":"my playlists",
+            "image":"A7o51F0.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/creations/video-edits",
+            "label":"my video edits",
+            "image":"E3xxLeq.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/creations/writing",
+            "label":"my writing",
+            "image":"WemqKbs.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/creations/picmix",
+            "label":"my picmix",
+            "image":"79P8MMo.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/creations/fractals",
+            "label":"my fractal art",
+            "image":"14DUeFe.gif",
+            "new":false,
+            "hide":false
+         }
+      ]
+   },
+   {
+      "label":"Media Recs",
+      "new":false,
+      "items":[
+         {
+            "link":"/recs/youtube",
+            "label":"youtube recs",
+            "image":"MKw7Ts0.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/recs/tv-shows",
+            "label":"tv show recs",
+            "image":"knXWw43.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/recs/movies",
+            "label":"movie recs",
+            "image":"goA2JSK.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/recs/books",
+            "label":"book recs",
+            "image":"Xq773u8.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/recs/games",
+            "label":"video game recs",
+            "image":"ZKogrD1.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/recs/board-games",
+            "label":"board/card game recs",
+            "image":"f68iHcF.gif",
+            "new":true,
+            "hide":true
+         },
+         {
+            "link":"/recs/music",
+            "label":"song recs",
+            "image":"HAXW8LV.gif",
+            "new":false,
+            "hide":false
+         }
+      ]
+   },
+   {
+      "label":"Fun Stuff!",
+      "new":false,
+      "items":[
+         
+         {
+            "link":"/about/blinkies",
+            "label":"blinkies & more",
+            "image":"RwrqznD.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/shrines/index",
+            "label":"shrines",
+            "image":"XU8WpKV.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/cliques",
+            "label":"cliques",
+            "new":false,
+            "hide":true
+         },
+         {
+            "link":"/fun/polls",
+            "label":"polls",
+            "image":"o9c1kAD.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/fun/quizzes",
+            "label":"personality quizzes",
+            "image":"LsjYhJb.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/fun/list-idea-generator",
+            "label":"list idea generator",
+            "image":"MVyt3ws.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/fun/bored-button",
+            "label":"are you bored?",
+            "image":"o88sX7W.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/fun/affirmation-generator",
+            "label":"affirmation generator",
+            "image":"mmuoVfo.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/contest",
+            "label":"Indie Web Contest",
+            "image":"yRDUz1y.gif",
+            "new":false,
+            "hide":false,
+            "icon":"fa-solid fa-trophy"
+         },
+         {
+            "link":"/fun/advent-calendar-2025",
+            "label":"advent calendar 2025",
+            "image":"O8L14EV.gif",
+            "new":false,
+            "hide":false
+         }
+      ]
+   },
+   {
+      "label":"Resources",
+      "new":true,
+      "items":[
+         {
+            "link":"/resources/bookmarks",
+            "label":"bookmarks",
+            "image":"ALMPpt1.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/resources/software-recs",
+            "label":"software recs",
+            "image":"D0YJB9M.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/resources/clipboard",
+            "label":"clipboard",
+            "image":"goiBexo.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/resources/notion",
+            "label":"notion templates",
+            "new":false,
+            "hide":true
+         },
+         {
+            "link":"/resources/google-spreadsheets-excel",
+            "label":"spreadsheets",
+            "new":false,
+            "hide":true
+         },
+         {
+            "link":"/resources/vocabulary",
+            "label":"vocabulary",
+            "image":"UsTjc3j.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/resources/backup-tutorial",
+            "label":"how to backup files",
+            "image":"J99GcgI.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/resources/compression-tutorial",
+            "label":"how to compress files",
+            "image":"et5llyF.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/creations/coding",
+            "label":"my userscripts & tools",
+            "image":"bamwARA.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/resources/stop-using-social-media",
+            "label":"how to stop using social media & doomscrolling",
+            "image":"yroB26i.gif",
+            "new":true,
+            "hide":false
+         }
+      ]
+   },
+   {
+      "label":"Offsite",
+      "new":false,
+      "items":[
+         {
+            "link":"https://neocities.org/site/petrapixel",
+            "label":"my neocities profile ➚",
+            "image":"mC4Fztt.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"https://ko-fi.com/petrastipjar",
+            "label":"my tipjar (ko-fi) ➚",
+            "image":"phcDjmW.gif",
+            "new":false,
+            "hide":false
+         },
+         {
+            "link":"/youtube",
+            "label":"my youtube channel ➚",
+            "image":"V4mjYKz.gif",
+            "new":false,
+            "hide":true
+         },
+         {
+            "link":"/bearblog",
+            "label":"my bearblog ➚",
+            "image":"i5dgJWB.gif",
+            "new":true,
+            "hide":false
+         }
+      ]
+   },
+   {
+      "label":"Coding & Webmastery",
+      "new":false,
+      "isCodeMenu":true,
+      "items":[
+         {
+            "label":"Tools",
+            "new":true,
+            "items":[
+               {
+                  "link":"/coding/layout-generator",
+                  "label":"Layout Generator",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"layout-line"
+               },
+               {
+                  "link":"/coding/layouts",
+                  "label":"F2U Layouts",
+                  "sublabel":"",
+                  "new":true,
+                  "hide":true,
+                  "icon":"layout-2-line"
+               },
+               {
+                  "link":"/coding/widgets",
+                  "label":"Widgets for free Neocities accounts",
+                  "sublabel":"",
+                  "new":true,
+                  "hide":false,
+                  "icon":"bard-line"
+               },
+               {
+                  "link":"/coding/cheatsheet",
+                  "label":"Cheatsheet",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"file-text-line"
+               },
+               {
+                  "link":"/coding/bookmarks",
+                  "label":"Helpful Sites",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"bookmark-line"
+               },
+               {
+                  "link":"/coding/checklist",
+                  "label":"Self-study Checklist",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"list-check-3"
+               },
+               {
+                  "link":"/coding/quizzes",
+                  "label":"Coding Quizzes",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"lightbulb-line"
+               }
+            ]
+         },
+         {
+            "label":"Codes",
+            "new":true,
+            "items":[
+               {
+                  "link":"/coding/layout-base-code",
+                  "label":"loading the same layout on every page",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"layout-5-line"
+               },
+               {
+                  "link":"/coding/preview-plugin",
+                  "label":"Preview Plugin",
+                  "new":true,
+                  "hide":false,
+                  "icon":"eye-line"
+               },
+               {
+                  "link":"/coding/image-filters",
+                  "label":"Image Filters",
+                  "sublabel":"",
+                  "new":true,
+                  "hide":false,
+                  "icon":"image-ai-line"
+               },
+               {
+                  "link":"/coding/webringu",
+                  "label":"Webringu",
+                  "labelInMainMenu":"Webring Script",
+                  "sublabel":"Simple Webring Script",
+                  "new":false,
+                  "hide":false,
+                  "icon":"user-community-line"
+               },
+               {
+                  "link":"/coding/snippets",
+                  "label":"Code Snippets",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"code-s-slash-line"
+               }
+            ]
+         },
+         {
+            "label":"First Steps",
+            "new":false,
+            "items":[
+               {
+                  "link":"/coding/how-to-make-a-website",
+                  "label":"How to create your first website",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"pages-line"
+               },
+               {
+                  "link":"/coding/common-questions",
+                  "label":"Common Questions",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"questionnaire-line"
+               },
+               {
+                  "link":"/coding/common-mistakes",
+                  "label":"Common Mistakes",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"error-warning-line"
+               },
+               {
+                  "link":"/coding/code-quality",
+                  "label":"Code Quality Guide",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"code-ai-line"
+               },
+               {
+                  "link":"/coding/need-help",
+                  "label":"Troubleshooting Guide",
+                  "sublabel":"+ how to find support",
+                  "new":false,
+                  "hide":false,
+                  "icon":"bug-line"
+               }
+            ]
+         },
+         {
+            "label":"Beginner Tutorials",
+            "new":false,
+            "items":[
+               {
+                  "link":"/coding/positioning-tutorial",
+                  "label":"CSS Positioning/Layout Tutorial",
+                  "sublabel":"(display, position, flexbox, grid, transform, z-index, ...)",
+                  "new":false,
+                  "hide":false,
+                  "icon":"layout-masonry-line"
+               },
+               {
+                  "link":"/coding/custom-font-tutorial",
+                  "label":"Custom Font Tutorial",
+                  "new":false,
+                  "hide":false,
+                  "icon":"font-size"
+               },
+               {
+                  "link":"/coding/cachebusting",
+                  "label":"Cachebusting",
+                  "sublabel":"Stop that pesky caching",
+                  "new":false,
+                  "hide":false,
+                  "icon":"delete-bin-6-line"
+               },
+               {
+                  "link":"/coding/performance",
+                  "label":"How to make pages load faster",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":true,
+                  "icon":"speed-up-line"
+               }
+            ]
+         },
+         {
+            "label":"Advanced Tutorials",
+            "new":false,
+            "items":[
+               {
+                  "link":"/coding/git-tutorial",
+                  "label":"Git Tutorial",
+                  "sublabel":"Version Control",
+                  "new":false,
+                  "hide":false,
+                  "icon":"github-line"
+               },
+               {
+                  "link":"/coding/npm-tutorial",
+                  "label":"node/npm tutorial",
+                  "sublabel":"Package Manager",
+                  "new":false,
+                  "hide":false,
+                  "icon":"npmjs-line"
+               },
+               {
+                  "link":"/coding/webpack-tutorial",
+                  "label":"Webpack Tutorial",
+                  "sublabel":"File Bundler",
+                  "new":false,
+                  "hide":false,
+                  "icon":"box-3-line"
+               },
+               {
+                  "link":"/coding/eleventy-tutorial",
+                  "label":"Eleventy (11ty) Tutorial",
+                  "sublabel":"Static Site Generator",
+                  "new":false,
+                  "hide":false,
+                  "icon":"magic-line"
+               },
+               {
+                  "link":"/coding/google-sheets-api-tutorial",
+                  "label":"Google Sheets API Tutorial",
+                  "sublabel":"Read sheets data with JS",
+                  "new":false,
+                  "hide":false,
+                  "icon":"drive-line"
+               }
+            ]
+         },
+         {
+            "label":"Miscellaneous",
+            "new":false,
+            "items":[
+               {
+                  "link":"/coding/neocities",
+                  "label":"Neocities Tips",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"building-line"
+               },
+               {
+                  "link":"/coding/my-setup",
+                  "label":"My VSCode Setup",
+                  "sublabel":"Settings + Extensions",
+                  "new":false,
+                  "hide":false,
+                  "icon":"tools-line"
+               },
+               {
+                  "link":"/coding/now-what",
+                  "label":"I know HTML, CSS, and JS. Now what?",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"rocket-line"
+               },
+               {
+                  "link":"/coding/game-dev-journey",
+                  "label":"my game dev journey",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":true,
+                  "icon":"gamepad-line"
+               },
+               {
+                  "link":"/coding/cliques",
+                  "label":"List of Cliques",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"user-community-line"
+               },
+               {
+                  "link":"/webring",
+                  "label":"Code Collective Webring",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"diamond-ring-line",
+                  "hideInCodingNav":true
+               }
+            ]
+         }
+      ]
+   }
 ]

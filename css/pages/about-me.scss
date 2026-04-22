@@ -241,10 +241,6 @@
   img {
     vertical-align: top;
     animation: floatingImage 1s ease infinite;
-
-    @media (prefers-reduced-motion) {
-      animation: none;
-    }
   }
 }
 .about-me-page__faves-wrapper {

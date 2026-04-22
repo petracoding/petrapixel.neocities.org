@@ -1,5 +1,6 @@
 [
   { "date": "2026-04-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-04-22", "text": "Nobody asked for it but I now have a page for CSS-only image filters!", "link": "/coding/image-filters" },
   { "date": "2026-04-21", "text": "Finally, a guide on how to use Virtual Observer's comment widget with free Neocities accounts.", "link": "/coding/widgets#comment-widget" },
   { "date": "2026-04-20", "text": "New guide: How to reduce your social media usage!", "link": "/resources/stop-using-social-media" },
   { "date": "2026-04-17", "text": "New random generator: Affirmation generator!", "link": "/fun/affirmation-generator" },

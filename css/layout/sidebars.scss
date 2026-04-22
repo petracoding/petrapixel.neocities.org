@@ -144,10 +144,6 @@
     &[src*="happy"] {
       vertical-align: bottom;
     }
-
-    @media (prefers-reduced-motion) {
-      animation: none;
-    }
   }
 }
 
@@ -1003,10 +999,6 @@
         display: inline-block;
         margin-right: 11px;
         animation: floatingImage 1s ease infinite;
-
-        @media (prefers-reduced-motion) {
-          animation: none;
-        }
       }
     }
   }
@@ -1117,7 +1109,6 @@
 
 #menu-mediarecs {
   img {
-    animation: none;
     margin-left: 9px;
     margin-right: 0;
     margin-top: 3px;

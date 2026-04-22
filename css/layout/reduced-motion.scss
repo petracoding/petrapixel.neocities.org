@@ -1,0 +1,76 @@
+@mixin reducedMotion {
+  // animated elements
+  .motion, // <- use this class to hide elements
+  marquee,
+  .marquee,
+  // sidebars
+  .aside-blinkies,
+  .aside-mutuals,
+  .aside-blinkies + img[src*="divider"],
+  .aside-mutuals + img[src*="divider"],
+  .aside-gif,
+  .aside-other-sites,
+  .aside-nav li a img:not([src*="link.png"]), 
+  .aside-nav li summary img:not([src*="link.png"]),
+  // gifs
+  .aside__dinos,
+  img[src*="coffee.gif"],
+  img[src*="layout/new.gif"],
+  img[src*="divider2.gif"],
+  img[src*="divider3.gif"],
+  img[src*="divider5.gif"],
+  img[src*="equalizer.gif"],
+  img[src*="blinkies/emoticons.gif"],
+  img[src*="inline/"][src*=".gif"],
+  // effects
+  #embedim--snow {
+    display: none !important;
+  }
+
+  .aside-box__heading img,
+  .aside-nav li a img:not([src*="link.png"]),
+  .aside-nav li summary img:not([src*="link.png"]),
+  .about-me-page__faves-heading img,
+  .about-me-page__lists--favorites h2 img {
+    animation: none !important;
+  }
+
+  .about-me-page__faves-images img,
+  .about-me-pages__gpoy img,
+  .blinkies > div img,
+  .blinkies > div canvas,
+  .hello-its-me-facts img:hover,
+  .hello-its-me-image img,
+  .cool-sites img,
+  .aside-link-back a img,
+  .aside-tamanotchi a img {
+    transition: none !important;
+  }
+
+  .about-me-page__description .about-me-page__list:nth-child(2) ul {
+    list-style-image: url("https://dl.glitter-graphics.com/pub/2822/2822959pm1dkwzyqo.gif");
+  }
+
+  .aside-nav ul ul li a {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+
+  .aside-tip-jar {
+    padding: 10px;
+  }
+}
+
+/* ********* */
+
+@media (prefers-reduced-motion) {
+  @include reducedMotion;
+
+  .toggle-buttons__button.toggle-buttons__button--motion {
+    display: none !important;
+  }
+}
+
+.reduced-motion {
+  @include reducedMotion;
+}

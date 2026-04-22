@@ -158,27 +158,6 @@ body {
   padding: 0 5px;
 }
 
-@media (prefers-reduced-motion) {
-  marquee,
-  .marquee,
-  .aside-blinkies,
-  .aside-mutuals,
-  .aside-blinkies + img[src*="divider"],
-  .aside-mutuals + img[src*="divider"],
-  .aside-tip-jar,
-  .aside-gif,
-  img[src*="layout/new.gif"],
-  img[src*="inline/star.gif"],
-  img[src*="divider2.gif"],
-  img[src*="divider3.gif"],
-  img[src*="divider5.gif"],
-  img[src*="inline/stars.gif"],
-  img[src*="inline/wave.gif"],
-  #embedim--snow {
-    display: none !important;
-  }
-}
-
 .full-width-image {
   img {
     display: block;

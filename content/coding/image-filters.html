@@ -1,0 +1,582 @@
+---
+layout: coding.njk
+title: "image filters"
+description: "Quick and helpful coding tips and code snippets for Neocities. Easy enough for beginners!"
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+toc: true
+tipType: "code"
+---
+
+<section>
+  <h1>CSS Image Filters</h1>
+  <p>
+    Here are some pure CSS image filters you can use on your website! Hover over
+    the examples to view the original image as comparision.
+  </p>
+  <div class="two-columns">
+    <div>
+      <p><b>How to use:</b></p>
+      <p>
+        Just wrap your <code>&lt;img&gt;</code> element in a wrapper with the
+        base class (<code>image-filter</code>) and the specific filter class
+        (e.g. <code>image-filter--nightmare</code>), for example:
+      </p>
+
+      <pre><code>&lt;div class=&quot;image-filter image-filter--nightmare&quot;&gt;
+  &lt;img src=&quot;image.jpg&quot; /&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div>
+      <br />
+      <p>You also need this basic CSS code for all of the filters to work:</p>
+
+      <pre><code>.image-filter {
+  position: relative;
+}
+
+.image-filter::before,
+.image-filter::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="image-filter-codes">
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>No filter</center>
+      <div class="image-filter">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <p>
+        (The example photo is a pic of my cat, Holly! Isn't she adorable? I love
+        her so much.)
+      </p>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Basic</center>
+      <div class="image-filter image-filter--basic">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--basic img {
+  filter: brightness(1.05) contrast(1.15);
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Color</center>
+      <div class="image-filter image-filter--color">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--color img {
+  filter: contrast(0.9) brightness(1.1) saturate(0.5);
+}
+ .image-filter--color::after {
+  background: #cc0101; /* change color here */
+  opacity: 0.3;
+  mix-blend-mode: color;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Pastel</center>
+      <div class="image-filter image-filter--pastel">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--pastel img {
+  filter: brightness(1.2) contrast(0.6) brightness(1.1) saturate(1.4);
+}
+ .image-filter--pastel::before {
+  background: white;
+  opacity: 0.3;
+  mix-blend-mode: soft-light;
+}
+ .image-filter--pastel::after {
+  background: #ff9bf5; /* change color here */
+  opacity: 0.4;
+  mix-blend-mode: color;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Sepia</center>
+      <div class="image-filter image-filter--sepia">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--sepia img {
+  filter: sepia(1) brightness(0.9) contrast(1.1);
+}
+ .image-filter--sepia::after {
+  background: #d7c144; /* change color here */
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>GameBoy</center>
+      <div class="image-filter image-filter--gameboy">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--gameboy img {
+  filter: brightness(1.2) saturate(1.2);
+  image-rendering: pixelated;
+}
+ .image-filter--gameboy::after {
+  background: #6eac00; /* change color here */
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Daydream</center>
+      <div class="image-filter image-filter--daydream">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--daydream img {
+  filter: contrast(0.9) brightness(1.3) saturate(0.6) blur(1px);
+}
+ .image-filter--daydream::after {
+  background: #aeaeae; /* change color here */
+  opacity: 0.3;
+  mix-blend-mode: luminosity;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Nightmare</center>
+      <div class="image-filter image-filter--nightmare">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--nightmare img {
+  filter: contrast(0.9) brightness(1.2) saturate(0.6) blur(1px);
+}
+ .image-filter--nightmare::after {
+  background: black;
+  opacity: 0.3;
+  mix-blend-mode: luminosity;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Focus</center>
+      <div class="image-filter image-filter--focus">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--focus img {
+  filter: contrast(0.95) brightness(1.15) saturate(0.9);
+}
+ .image-filter--focus::after {
+  background: radial-gradient(circle, #000 0%, #309d5e 50%, #f3eec3 100%);
+  opacity: 0.35;
+  mix-blend-mode: difference;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Icy</center>
+      <div class="image-filter image-filter--icy">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--icy img {
+  filter: contrast(0.95) brightness(1.15) saturate(0.9);
+}
+ .image-filter--icy::after {
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background: #1f1fff; /* change color here */
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Film</center>
+      <div class="image-filter image-filter--film">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--film img {
+  filter: contrast(0.95) brightness(1.15) saturate(0.9);
+}
+ .image-filter--film::after {
+  background: linear-gradient(45deg, #f52200 0%, #045aff 100%);
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Hollywood</center>
+      <div class="image-filter image-filter--hollywood">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--hollywood img {
+  filter: contrast(0.95) brightness(1.15) saturate(0.9);
+}
+ .image-filter--hollywood::after {
+  background: linear-gradient(-45deg, #77b33b 0%, #c3284d 100%);
+  opacity: 0.4;
+  mix-blend-mode: color-burn;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Grunge</center>
+      <div class="image-filter image-filter--grunge">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--grunge img {
+  filter: contrast(1.05) brightness(1.15) saturate(0.84);
+}
+ .image-filter--grunge::after {
+  background: radial-gradient(circle, #4c4c46 40%, #9198b5 100%);
+  opacity: 0.4;
+  mix-blend-mode: difference;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Dramatic</center>
+      <div class="image-filter image-filter--dramatic">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--dramatic img {
+  filter: contrast(1.3) grayscale(0.4);
+}
+ .image-filter--dramatic::after {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%);
+  opacity: 0.4;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Vignette</center>
+      <div class="image-filter image-filter--vignette">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--vignette img {
+  filter: contrast(1.05) brightness(1.15) saturate(0.84);
+}
+ .image-filter--vignette::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 120%);
+  opacity: 0.8;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Spotlight</center>
+      <div class="image-filter image-filter--spotlight">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--spotlight img {
+  filter: contrast(1.05) brightness(1.15) saturate(0.84);
+}
+ .image-filter--spotlight::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 50%);
+  opacity: 0.6;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Indie</center>
+      <div class="image-filter image-filter--indie">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--indie img {
+  filter: contrast(90%) saturate(298%) brightness(121%);
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Sprite</center>
+      <div class="image-filter image-filter--sprite">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--sprite img {
+  filter: invert(0) grayscale(0.1) brightness(1.2) contrast(5);
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>B&W Sprite</center>
+      <div class="image-filter image-filter--bw-sprite">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--bw-sprite img {
+  filter: invert(0) grayscale(1) brightness(1.2) contrast(5);
+  image-rendering: pixelated;
+}</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Ghost</center>
+      <div class="image-filter image-filter--ghost">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--ghost img {
+  filter: invert(1);
+}
+ .image-filter--ghost::after {
+  background: linear-gradient(140deg, rgba(22, 73, 201, 1) 0%, rgba(255, 34, 0, 1) 50%, rgba(252, 197, 69, 1) 100%);
+  opacity: 0.5;
+  mix-blend-mode: hue;
+}</code></pre>
+    </div>
+    <!-- -->
+  </div>
+
+  <h2>SVG Filters</h2>
+  <p>
+    For these you also need to include the given HTML code somewhere on your
+    page for it to work.
+  </p>
+  <div class="image-filter-codes">
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>JPG</center>
+      <div class="image-filter image-filter--jpg">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--jpg img {
+  filter: url("#filterJpg");
+}</code></pre>
+      <pre
+        style="margin-top: 0"
+      ><code class="language-html">&lt;svg style="height: 0; width: 0; overflow: hidden;"&gt;
+&lt;filter id=&quot;filterJpg&quot;&gt;
+  &lt;feConvolveMatrix
+order=&quot;3&quot;
+preserveAlpha=&quot;true&quot;
+kernelMatrix=&quot;
+  -1 -1 -1
+  -1  10 -1
+  -1 -1 -1&quot;
+divisor=&quot;1.0&quot;
+bias=&quot;0.0&quot;
+  /&gt;
+&lt;/filter&gt;
+&lt;/svg&gt;</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Painting</center>
+      <div class="image-filter image-filter--painting">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--painting img {
+  filter: saturate(1.3) brightness(1.1) contrast(1.1) url("#filterPainting");
+}</code></pre>
+      <pre
+        style="margin-top: 0"
+      ><code class="language-html">&lt;svg style="height: 0; width: 0; overflow: hidden;"&gt;
+&lt;filter id=&quot;filterPainting&quot;&gt;
+&lt;feMorphology
+  in=&quot;SourceGraphic&quot;
+  operator=&quot;dilate&quot;
+  radius=&quot;0.5&quot;
+&gt;&lt;/feMorphology&gt;
+&lt;/filter&gt;
+&lt;/svg&gt;
+</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Paper</center>
+      <div class="image-filter image-filter--paper">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--paper img {
+  filter: url("#filterPaper");
+}</code></pre>
+      <pre
+        style="margin-top: 0"
+      ><code class="language-html">&lt;svg style="height: 0; width: 0; overflow: hidden;"&gt;
+&lt;filter id=&quot;filterPaper&quot;&gt;
+&lt;feColorMatrix
+  in=&quot;SourceGraphic&quot;
+  type=&quot;luminanceToAlpha&quot;
+  result=&quot;LUMINANCE&quot;
+&gt;&lt;/feColorMatrix&gt;
+&lt;feDiffuseLighting in=&quot;LUMINANCE&quot; surfaceScale=&quot;10&quot; result=&quot;LIGHTING&quot;&gt;
+  &lt;feDistantLight
+    azimuth=&quot;90&quot;
+    elevation=&quot;28&quot;
+    result=&quot;3352c0f9-ce9b-4476-a9aa-63186788d75f&quot;
+  &gt;&lt;/feDistantLight&gt;
+&lt;/feDiffuseLighting&gt;
+&lt;feComposite
+  in=&quot;LIGHTING&quot;
+  in2=&quot;SourceGraphic&quot;
+  operator=&quot;in&quot;
+  result=&quot;cef2867f-cd0f-433a-9948-2f0bf4a12a75&quot;
+&gt;&lt;/feComposite&gt;
+&lt;/filter&gt;
+&lt;/svg&gt;</code></pre>
+    </div>
+    <!-- -->
+    <div class="image-filter-codes__code">
+      <center>Duotone</center>
+      <div class="image-filter image-filter--duotone">
+        <img
+          alt="Example image of my cat"
+          src="{{ nesting }}assets/img/etc/example.jpg"
+        />
+      </div>
+      <pre><code class="language-css">.image-filter--duotone img {
+  filter: url("#filterDuotone") hue-rotate(70deg) saturate(0.7) contrast(1.5) brightness(0.9); /* to change the colors change the degrees in hue-rotate() */
+}</code></pre>
+      <pre
+        style="margin-top: 0"
+      ><code class="language-html">&lt;svg style="height: 0; width: 0; overflow: hidden;"&gt;
+&lt;filter id=&quot;filterDuotone&quot;&gt;
+&lt;feComponentTransfer&gt;
+  &lt;feFuncR type=&quot;table&quot; tableValues=&quot;1 0&quot; /&gt;
+  &lt;feFuncG type=&quot;table&quot; tableValues=&quot;0 1&quot; /&gt;
+  &lt;feFuncB type=&quot;table&quot; tableValues=&quot;0.5 0&quot; /&gt;
+&lt;/feComponentTransfer&gt;
+&lt;/filter&gt;
+&lt;/svg&gt;</code></pre>
+    </div>
+    <!-- -->
+  </div>
+</section>
+
+<div style="height: 0; width: 0; overflow: hidden">
+  <svg>
+    <filter id="filterJpg">
+      <feConvolveMatrix
+        order="3"
+        preserveAlpha="true"
+        kernelMatrix="
+	   -1 -1 -1
+	   -1  10 -1
+	   -1 -1 -1"
+        divisor="1.0"
+        bias="0.0"
+      />
+    </filter>
+  </svg>
+
+  <svg>
+    <filter id="filterPainting">
+      <feMorphology
+        in="SourceGraphic"
+        operator="dilate"
+        radius="0.5"
+      ></feMorphology>
+    </filter>
+  </svg>
+
+  <svg>
+    <filter id="filterPaper">
+      <feColorMatrix
+        in="SourceGraphic"
+        type="luminanceToAlpha"
+        result="LUMINANCE"
+      ></feColorMatrix>
+      <feDiffuseLighting in="LUMINANCE" surfaceScale="10" result="LIGHTING">
+        <feDistantLight
+          azimuth="90"
+          elevation="28"
+          result="3352c0f9-ce9b-4476-a9aa-63186788d75f"
+        ></feDistantLight>
+      </feDiffuseLighting>
+      <feComposite
+        in="LIGHTING"
+        in2="SourceGraphic"
+        operator="in"
+        result="cef2867f-cd0f-433a-9948-2f0bf4a12a75"
+      ></feComposite>
+    </filter>
+  </svg>
+
+  <svg>
+    <filter id="filterDuotone">
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="1 0" />
+        <feFuncG type="table" tableValues="0 1" />
+        <feFuncB type="table" tableValues="0.5 0" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+</div>
+
+{% include 'layout/tip-me.njk' %}

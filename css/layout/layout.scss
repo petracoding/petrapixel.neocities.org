@@ -36,6 +36,7 @@
   padding: 2px 5px;
   font-size: 15px;
   margin-right: 5px;
+  cursor: pointer; // smaller cursor to see tooltips
 
   &:hover {
     filter: brightness(0.9);
@@ -71,6 +72,12 @@
   }
 
   .sound-muted &.toggle-buttons__button--sound {
+    &::after {
+      display: block;
+    }
+  }
+
+  .reduced-motion &.toggle-buttons__button--motion {
     &::after {
       display: block;
     }
