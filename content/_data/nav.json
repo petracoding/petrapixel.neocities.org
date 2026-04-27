@@ -420,7 +420,7 @@
                },
                {
                   "link":"/coding/layouts",
-                  "label":"F2U Layouts",
+                  "label":"Layouts",
                   "sublabel":"",
                   "new":true,
                   "hide":true,
@@ -645,7 +645,7 @@
          },
          {
             "label":"Miscellaneous",
-            "new":false,
+            "new":true,
             "items":[
                {
                   "link":"/coding/neocities",
@@ -686,6 +686,14 @@
                   "new":false,
                   "hide":false,
                   "icon":"user-community-line"
+               },
+               {
+                  "link":"/coding/webring-list",
+                  "label":"List of Webrings",
+                  "sublabel":"",
+                  "new":true,
+                  "hide":false,
+                  "icon":"global-line"
                },
                {
                   "link":"/webring",

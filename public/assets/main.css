@@ -28,6 +28,20 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Kuchibue";
+  src: url("/assets/css/fonts/Kuchibue.woff2") format("woff2"), url("/assets/css/fonts/Kuchibue.woff") format("woff"), url("/assets/css/fonts/Kuchibue.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pixelated Elegance";
+  src: url("/assets/css/fonts/PixelatedElegance.woff2") format("woff2"), url("/assets/css/fonts/PixelatedElegance.woff") format("woff"), url("/assets/css/fonts/PixelatedElegance.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /*
  @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 */
@@ -13201,7 +13215,7 @@ header {
   display: block;
   line-height: 1.1;
   font-size: 1.3em;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
 }
 .aside-contest > div {
   padding-left: 10px;
@@ -13629,7 +13643,7 @@ header {
   display: block;
   line-height: 1;
   font-size: 1.4em;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Kuchibue", "rainyhearts", monospace, sans-serif;
 }
 .aside-tip-jar img {
   margin-right: 5px;
@@ -14061,7 +14075,7 @@ main h5,
 main h6 {
   margin-bottom: 0;
   line-height: 1.2;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
   font-weight: normal;
   color: var(--headingsColor);
 }
@@ -14091,28 +14105,33 @@ main h6 img[src*="inline/"]:not([class]) {
   margin-bottom: -7px;
 }
 main h1 {
-  font-size: 30px;
+  font-size: 40px;
+  font-family: "Kuchibue", "rainyhearts", monospace, sans-serif;
+}
+main h1 i,
+main h1 em {
+  font-style: normal;
 }
 @media (min-width: 1000px) {
   main h1 {
-    font-size: 36px;
+    font-size: 50px;
   }
 }
 main h2 {
-  font-size: 26px;
+  font-size: 24px;
 }
 @media (min-width: 1000px) {
   main h2 {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 main h3 {
   font-weight: normal;
-  font-size: 22px;
+  font-size: 20px;
 }
 @media (min-width: 1000px) {
   main h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 main h4 {
@@ -15008,9 +15027,9 @@ main.coding-page h3:first-child {
   margin-top: 0;
 }
 main.coding-page h3[data-step] {
-  font-size: 24px;
+  font-size: 20px;
   background: var(--light);
-  padding: 0.4em 0.75em 0.3em;
+  padding: 0.4em 16px 0.3em;
   position: relative;
   margin-top: 2.5em;
 }
@@ -15737,7 +15756,7 @@ body.not-found-page {
 .about-me-page__faves-heading,
 .about-me-page__lists--favorites h2 {
   font-size: 1.03em;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
 }
 .about-me-page__faves-heading img,
 .about-me-page__lists--favorites h2 img {
@@ -15993,7 +16012,7 @@ body.not-found-page {
 }
 .about-me-page__aesthetics .about-me-page__aesthetic-title {
   margin: 3px;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
 }
 .about-me-page__aesthetics a {
   display: inline-block;
@@ -16349,7 +16368,7 @@ body.not-found-page {
 }
 .blog-entry__title:not(h2):not(h1) {
   font-size: 16px;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
   margin-bottom: 0.1em;
 }
 @media (min-width: 1000px) {
@@ -16532,7 +16551,7 @@ h2 + .bookmarks-section h3:first-child {
 .cat__quick-facts strong {
   font-weight: normal;
   font-size: 14px;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
   text-transform: lowercase;
 }
 .cat__quick-facts strong abbr {
@@ -16917,12 +16936,14 @@ section .blinkies {
   display: flex;
 }
 .welcome-to-the-site h2 {
+  font-family: "Kuchibue", "rainyhearts", monospace, sans-serif;
   margin-top: 0;
   margin-bottom: 0.5em;
 }
 @media (min-width: 1200px) {
   .welcome-to-the-site h2 {
-    font-size: 36px;
+    font-size: 46px;
+    line-height: 0.5;
   }
 }
 
@@ -16994,9 +17015,13 @@ section .blinkies {
   content: "←  ";
   font-family: sans-serif;
 }
+.hello-its-me-content h2 {
+  font-family: "Kuchibue", "rainyhearts", monospace, sans-serif;
+  line-height: 0.5;
+}
 @media (min-width: 1200px) {
   .hello-its-me-content h2 {
-    font-size: 34px;
+    font-size: 46px;
     margin-bottom: 0.5em;
   }
 }
@@ -17634,7 +17659,7 @@ iframe[src*="fun/quiz"] {
   padding: 0.25em 0.7em 0.2em;
   color: var(--textColor);
   background: var(--asideBackgroundColor);
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
   border: 1px solid var(--borderColor);
   box-shadow: -3px 3px 0px 0px rgba(194, 120, 167, 0.1);
   transition: 0.2s ease;
@@ -17817,10 +17842,10 @@ iframe[src*="fun/quiz"] {
 }
 
 .rec__title {
-  font-size: 1.7em;
+  font-size: 1.5em;
   line-height: 1.1;
   margin-bottom: 0.5em;
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
 }
 
 .rec__desc strong {
@@ -19038,23 +19063,29 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   pointer-events: none;
 }
 
-#cliquelist {
+#cliquelist,
+#webringlist {
   width: 100%;
   border-collapse: collapse;
 }
-#cliquelist tr.inactive {
+#cliquelist tr.inactive,
+#webringlist tr.inactive {
   opacity: 0.3;
 }
 #cliquelist th,
-#cliquelist td {
+#cliquelist td,
+#webringlist th,
+#webringlist td {
   border: 1px dotted;
   padding: 0.4em 0.5em;
   text-align: left;
 }
-#cliquelist td:first-child {
+#cliquelist td:first-child,
+#webringlist td:first-child {
   font-size: 1.1em;
 }
-#cliquelist th {
+#cliquelist th,
+#webringlist th {
   position: relative;
   background: var(--light);
   font-size: 1.1em;
@@ -19062,17 +19093,20 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   padding-right: 30px;
   user-select: none;
 }
-#cliquelist th:last-child {
+#cliquelist th:last-child,
+#webringlist th:last-child {
   padding-right: 0.5em;
 }
-#cliquelist small {
+#cliquelist small,
+#webringlist small {
   display: block;
   margin-top: 5px;
   text-align: center;
   font-size: 0.9em;
   color: var(--black);
 }
-#cliquelist img {
+#cliquelist img,
+#webringlist img {
   margin: 0 auto;
   display: inline-block;
   max-width: 200px;
@@ -19080,28 +19114,38 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   width: auto;
   height: auto;
 }
-#cliquelist img[src*="reef.kingdra"] {
+#cliquelist img[src*="reef.kingdra"],
+#webringlist img[src*="reef.kingdra"] {
   max-height: 20px;
   image-rendering: pixelated;
 }
 #cliquelist #sorttable_sortfwdind,
-#cliquelist #sorttable_sortrevind {
+#cliquelist #sorttable_sortrevind,
+#webringlist #sorttable_sortfwdind,
+#webringlist #sorttable_sortrevind {
   position: absolute;
   top: 8px;
   right: 10px;
 }
 @media (max-width: 992px) {
   #cliquelist #sorttable_sortfwdind,
-  #cliquelist #sorttable_sortrevind {
+  #cliquelist #sorttable_sortrevind,
+  #webringlist #sorttable_sortfwdind,
+  #webringlist #sorttable_sortrevind {
     position: static;
   }
-  #cliquelist th {
+  #cliquelist th,
+  #webringlist th {
     padding-right: 0.5em;
   }
   #cliquelist th:nth-child(3),
   #cliquelist td:nth-child(3),
   #cliquelist th:nth-child(4),
-  #cliquelist td:nth-child(4) {
+  #cliquelist td:nth-child(4),
+  #webringlist th:nth-child(3),
+  #webringlist td:nth-child(3),
+  #webringlist th:nth-child(4),
+  #webringlist td:nth-child(4) {
     display: none;
   }
 }
@@ -19237,7 +19281,7 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   font-size: 1.5em;
   font-weight: normal;
   color: var(--headingsColor);
-  font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+  font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
 }
 .roadmap__info p:nth-child(2) {
   margin-bottom: 0;

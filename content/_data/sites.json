@@ -228,13 +228,6 @@
     "inspiration": true
   },
   {
-    "link": "https://moonview.neocities.org/",
-    "title": "moonview",
-    "image": "https://moonview.neocities.org/88x31/moonview88x31_NEW.gif",
-    "neighbor": false,
-    "inspiration": true
-  },
-  {
     "link": "https://nyaa.neocities.org/",
     "title": "nyaa",
     "image": "nyaabanner.gif",
@@ -388,7 +381,7 @@
     "title": "confetticake",
     "image": "confetticake.gif",
     "neighbor": true,
-    "inspiration": true
+    "inspiration": false
   },
   {
     "link": "https://claeiy.neocities.org/",
@@ -402,7 +395,7 @@
     "title": "snails",
     "image": "snails.png",
     "neighbor": true,
-    "inspiration": true
+    "inspiration": false
   },
    {
     "link": "https://rainbowcrap.neocities.org/",
@@ -525,5 +518,14 @@
     "inspiration": false,
     "supporter": true,
     "supporterUntil": "19.07." 
+  },
+   {
+    "link": "https://maxcrunch.neocities.org/",
+    "title": "The Monthly Crunch",
+    "image": "maxcrunch.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "27.07." 
   }
 ]

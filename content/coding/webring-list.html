@@ -1,0 +1,114 @@
+---
+layout: coding.njk
+title: "webring list"
+description: "List of indie web webrings that you could join. Add your own! Neocities."
+nesting: "../"
+codeHighlight: false
+progressBar: false
+mainClass: coding-page
+toc: false
+tipType: "resource"
+---
+
+<section>
+  <h1>List of Webrings</h1>
+  <i class="fa-solid fa-list-ul"></i>
+  <p>
+    On this page you can find a list of webrings that you can join if you have a
+    website!
+  </p>
+  <p>
+    <b
+      >If you know a webring that isn't on the list yet, please
+      <a href="https://forms.gle/4EQk6x736pzkYogi9" target="_blank"
+        >submit it here</a
+      >!</b
+    >
+    You can submit any webring, it doesn't have to be your own! Your submission
+    should appear in the list once you refresh this page after submitting.
+  </p>
+  <p>
+    If there is information of a webring already in the list that needs to be
+    changed (e.g. URL of webring changed, webring is now closed, ...) please use
+    <a href="https://forms.gle/ZEKM2FxUDM8CX5MS7" target="_blank">this form</a>.
+    I go through these manually so please only do this when necessary.
+  </p>
+  <p>
+    <small
+      >The table below is
+      <b
+        >automatically generated based on people's
+        <i>unmoderated</i> responses</b
+      >
+      to the submission form. This means there might be incorrect information or
+      spam. I will try my best to keep it clean, but be aware that I am not the
+      author of all the information below and therefore might not agree with it.
+      I will spam-proof and/or moderate responses in the future if it becomes
+      necessary.</small
+    >
+  </p>
+
+  <hr />
+
+  <noscript
+    >Please enable JavaScript to view the table here. Alternatively,
+    <a
+      href="https://docs.google.com/spreadsheets/d/1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc/edit?usp=sharing"
+      target="_blank"
+      >view it on Google Sheets</a
+    >.</noscript
+  >
+  <p>
+    There are a total of <b id="webringlistnumber">?</b> webrings listed! ·
+    Click on column headings to sort them. · Use Ctrl+F to search through this
+    page.
+  </p>
+  <div class="cliquelist-wrapper">
+    <table id="webringlist" class="sortable">
+      <thead>
+        <tr>
+          <th class="sorttable_sorted">
+            Webring <span id="sorttable_sortfwdind">&nbsp;▾</span>
+          </th>
+          <th>Keywords</th>
+          <th>Category</th>
+          <th>Added on</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="cliquelist-loading">
+          <td colspan="4">
+            <img
+              src="{{ nesting }}assets/img/layout/loading.gif"
+              alt="loading..."
+              width="48"
+              height="31"
+              style="margin: 2em auto"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Other Webring Lists</h2>
+  <p>
+    Here are other people's lists of cliques, which I've used in the creation of
+    my own. Huge kudos to them!
+  </p>
+  <ul>
+    <li>
+      <a href="https://brisray.com/web/webring-list.htm" target="_blank"
+        >Brisray's Webring list
+      </a>
+      (lists 629 webrings!)
+    </li>
+  </ul>
+  <p>Also check out my <a href="/coding/cliques">list of cliques</a>!</p>
+</section>
+
+{% include 'layout/tip-me.njk' %}
+
+<script src="/assets/js/sorttable.js"></script>

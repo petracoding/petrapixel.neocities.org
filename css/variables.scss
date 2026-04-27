@@ -15,7 +15,9 @@ $borderRadius: 10px;
 
 $font: "rainyhearts", monospace, sans-serif;
 $font2: $font; // strong, menu links
-$fontHeadings: "Alagard", "basiic", "rainyhearts", monospace, sans-serif;
+$fontHeadingsLarge: "Kuchibue", "rainyhearts", monospace, sans-serif;
+$fontHeadings:
+  "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
 $readableFont: Arial, sans-serif;
 
 /* 
@@ -41,6 +43,28 @@ $readableFont: Arial, sans-serif;
     url("/assets/css/fonts/Alagard.woff") format("woff"),
     url("/assets/css/fonts/Alagard.ttf") format("truetype");
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kuchibue";
+  src:
+    url("/assets/css/fonts/Kuchibue.woff2") format("woff2"),
+    url("/assets/css/fonts/Kuchibue.woff") format("woff"),
+    url("/assets/css/fonts/Kuchibue.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixelated Elegance";
+  src:
+    url("/assets/css/fonts/PixelatedElegance.woff2") format("woff2"),
+    url("/assets/css/fonts/PixelatedElegance.woff") format("woff"),
+    url("/assets/css/fonts/PixelatedElegance.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }

@@ -147,11 +147,13 @@
   display: flex;
 
   h2 {
+    font-family: $fontHeadingsLarge;
     margin-top: 0;
     margin-bottom: 0.5em;
 
     @media (min-width: $xl) {
-      font-size: 36px;
+      font-size: 46px;
+      line-height: 0.5;
     }
   }
 }
@@ -234,9 +236,12 @@
     }
   }
 
-  @media (min-width: $xl) {
-    h2 {
-      font-size: 34px;
+  h2 {
+    font-family: $fontHeadingsLarge;
+    line-height: 0.5;
+
+    @media (min-width: $xl) {
+      font-size: 46px;
       margin-bottom: 0.5em;
     }
   }

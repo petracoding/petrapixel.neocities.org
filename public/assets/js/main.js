@@ -1303,14 +1303,75 @@ function initGoogleSheets() {
   }
 
   const apiKey = "AIzaSyAkeZN8mT_waQBWUMbCy0F68ixe-fRKaOo";
-  const gss = new GoogleSpreadSheet(
+  const gssCliques = new GoogleSpreadSheet(
     "1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc",
     "Form responses 1",
     apiKey,
   );
+  const gssWebrings = new GoogleSpreadSheet(
+    "1rH-vICefKqHWfdC3Ex_Fj56V-oC22Zk_MQklFHK9vko",
+    "Form responses 1",
+    apiKey,
+  );
   if (document.querySelector("#cliquelist")) {
-    fetchGoogleSheetData(gss, buildCliqueTable);
+    fetchGoogleSheetData(gssCliques, buildCliqueTable);
   }
+  if (document.querySelector("#webringlist")) {
+    fetchGoogleSheetData(gssWebrings, buildWebringTable);
+  }
+}
+
+function buildWebringTable(tableHeadings, tableData) {
+  const tableBody = document.querySelector("#webringlist tbody");
+  const webrings = [];
+  const keysAlreadyIn = [];
+
+  tableData
+    // only get first 500 entries, in case of spam
+    .slice(0, 500)
+    .filter((d) => d[1] && d[2])
+    .sort(function (a, b) {
+      // sort by webring name
+      return a[1] && b[1] ? a[1].localeCompare(b[1]) : 0;
+    })
+    .forEach((td) => {
+      // make sure webrings with same name AND link are not added twice
+      const key = (td[1] + "|" + td[2]).toLowerCase();
+      if (!keysAlreadyIn.includes(key) && td[1]) {
+        const dateStr = td[0].split(" ")[0].split("/");
+        const year = dateStr[2];
+        const month = dateStr[1];
+        const day = dateStr[0];
+
+        const webring = {
+          nameAndLink: `<a href="${td[1]}" target="_blank">${escapeHtml(cleanUpInput(td[2]))}</a>`,
+          keywords: escapeHtml(cleanUpInput(td[3])),
+          inactive: td[4] !== "yes",
+          category: td[5].includes(" (e.g.") ? td[5].split(" (e.g.")[0] : td[5],
+          date: year + "/" + month + "/" + day,
+        };
+
+        webrings.push(webring);
+        keysAlreadyIn.push(key);
+      }
+    });
+
+  webrings.forEach((webring) => {
+    const row = document.createElement("tr");
+    if (webring.inactive) row.classList.add("inactive");
+
+    row.innerHTML = `
+	  <td>${webring.nameAndLink || ""}</td>
+	  <td style="font-size:0.8em">${webring.keywords || ""}</td>
+	  <td>${webring.category || ""}</td>
+	  <td>${webring.date || ""}</td>
+	  `;
+
+    tableBody.appendChild(row);
+  });
+
+  document.querySelector("#webringlistnumber").innerHTML = webrings.length;
+  document.querySelector("#cliquelist-loading").style.display = "none";
 }
 
 function buildCliqueTable(tableHeadings, tableData) {
@@ -1319,8 +1380,8 @@ function buildCliqueTable(tableHeadings, tableData) {
   const keysAlreadyIn = [];
 
   tableData
-    // only get first 300 entries, in case of spam
-    .slice(0, 300)
+    // only get first 500 entries, in case of spam
+    .slice(0, 500)
     .filter((d) => d[1] && d[2])
     .sort(function (a, b) {
       // sort by clique name
