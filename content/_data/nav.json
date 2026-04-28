@@ -443,14 +443,6 @@
                   "icon":"file-text-line"
                },
                {
-                  "link":"/coding/bookmarks",
-                  "label":"Helpful Sites",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"bookmark-line"
-               },
-               {
                   "link":"/coding/checklist",
                   "label":"Self-study Checklist",
                   "sublabel":"",
@@ -474,7 +466,7 @@
             "items":[
                {
                   "link":"/coding/layout-base-code",
-                  "label":"loading the same layout on every page",
+                  "label":"Loading the same layout on every page",
                   "sublabel":"",
                   "new":false,
                   "hide":false,
@@ -511,6 +503,46 @@
                   "new":false,
                   "hide":false,
                   "icon":"code-s-slash-line"
+               }
+            ]
+         },
+         {
+            "label":"Bookmarks",
+            "new":true,
+            "items": [
+
+               {
+                  "link":"/coding/bookmarks",
+                  "label":"Helpful Sites",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"bookmark-line"
+               },
+               {
+                  "link":"/coding/cliques",
+                  "label":"List of Cliques",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"user-community-line"
+               },
+               {
+                  "link":"/coding/webring-list",
+                  "label":"List of Webrings",
+                  "sublabel":"",
+                  "new":true,
+                  "hide":false,
+                  "icon":"global-line"
+               },
+               {
+                  "link":"/webring",
+                  "label":"Code Collective Webring",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"diamond-ring-line",
+                  "hideInCodingNav":true
                }
             ]
          },
@@ -645,7 +677,7 @@
          },
          {
             "label":"Miscellaneous",
-            "new":true,
+            "new":false,
             "items":[
                {
                   "link":"/coding/neocities",
@@ -678,31 +710,6 @@
                   "new":false,
                   "hide":true,
                   "icon":"gamepad-line"
-               },
-               {
-                  "link":"/coding/cliques",
-                  "label":"List of Cliques",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"user-community-line"
-               },
-               {
-                  "link":"/coding/webring-list",
-                  "label":"List of Webrings",
-                  "sublabel":"",
-                  "new":true,
-                  "hide":false,
-                  "icon":"global-line"
-               },
-               {
-                  "link":"/webring",
-                  "label":"Code Collective Webring",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"diamond-ring-line",
-                  "hideInCodingNav":true
                }
             ]
          }

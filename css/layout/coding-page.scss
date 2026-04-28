@@ -108,7 +108,7 @@
   justify-content: space-between;
   grid-area: navi;
   margin-top: 1.5em;
-  padding: 0 1em;
+  padding: 0 10px;
 }
 
 .coding-navigation-category {
@@ -116,12 +116,16 @@
   z-index: 1;
   flex-grow: 1;
   background: var(--mainBackgroundColor);
-  margin: 0 5px;
+  margin: 0 2px;
   border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border: var(--mainBorder);
   border-bottom: 0;
+
+  .aside-nav__new {
+    margin-left: 3px;
+  }
 
   &.active {
     background-color: var(--purple);
@@ -237,7 +241,7 @@
   }
 
   @media (min-width: 900px) {
-    flex: 1 1 0;
+    // flex: 1 1 0;
     font-size: 1.1em;
 
     ul {

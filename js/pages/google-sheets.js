@@ -45,7 +45,9 @@ function buildWebringTable(tableHeadings, tableData) {
     .filter((d) => d[1] && d[2])
     .sort(function (a, b) {
       // sort by webring name
-      return a[1] && b[1] ? a[1].localeCompare(b[1]) : 0;
+      return a[2] && b[2]
+        ? a[2].toLowerCase().localeCompare(b[2].toLowerCase())
+        : 0;
     })
     .forEach((td) => {
       // make sure webrings with same name AND link are not added twice
@@ -58,7 +60,9 @@ function buildWebringTable(tableHeadings, tableData) {
 
         const webring = {
           nameAndLink: `<a href="${td[1]}" target="_blank">${escapeHtml(cleanUpInput(td[2]))}</a>`,
-          keywords: escapeHtml(cleanUpInput(td[3])),
+          keywords: escapeHtml(cleanUpInput(td[3]))
+            .replaceAll(",", ", ")
+            .replaceAll(",  ", ", "),
           inactive: td[4] !== "yes",
           category: td[5].includes(" (e.g.") ? td[5].split(" (e.g.")[0] : td[5],
           date: year + "/" + month + "/" + day,
@@ -98,7 +102,9 @@ function buildCliqueTable(tableHeadings, tableData) {
     .filter((d) => d[1] && d[2])
     .sort(function (a, b) {
       // sort by clique name
-      return a[1] && b[1] ? a[1].localeCompare(b[1]) : 0;
+      return a[1] && b[1]
+        ? a[1].toLowerCase().localeCompare(b[1].toLowerCase())
+        : 0;
     })
     .forEach((td) => {
       // make sure cliques with same name AND link are not added twice

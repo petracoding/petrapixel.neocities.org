@@ -486,7 +486,6 @@ export function initAprilFools() {
   const offset = today.getTimezoneOffset();
   const today2 = new Date(today.getTime() - offset * 60 * 1000);
   const day = today2.toISOString().split("T")[0];
-  console.log(day);
   if (day == "2026-04-01") {
     document.body.style.transform = "scaleY(-1)";
     document.title = "APRIL FOOLS !!!";
