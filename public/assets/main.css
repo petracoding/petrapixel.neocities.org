@@ -14810,6 +14810,11 @@ img[src*="i.imgur.com"] {
   border: var(--mainBorder);
   border-bottom: 0;
 }
+@media (min-width: 992px) {
+  .coding-navigation-category {
+    min-width: 170px;
+  }
+}
 .coding-navigation-category .aside-nav__new {
   margin-left: 3px;
 }
@@ -14826,7 +14831,7 @@ img[src*="i.imgur.com"] {
   min-width: 100%;
   margin: 0;
   list-style: none;
-  padding: 0.5em;
+  padding: 5px;
   z-index: 1;
   background: var(--mainBackgroundColor);
   border-radius: 10px;
@@ -14834,6 +14839,7 @@ img[src*="i.imgur.com"] {
   border-top-right-radius: 0;
   border: var(--mainBorder);
   display: none;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
 .coding-navigation-category ul li {
   position: relative;
@@ -14855,7 +14861,9 @@ img[src*="i.imgur.com"] {
   opacity: 0.8;
 }
 .coding-navigation-category ul li a .aside-nav__new {
-  transform: translateY(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .coding-navigation-category ul li a i[class^=ri-] {
   font-size: 1em;
@@ -14909,6 +14917,9 @@ img[src*="i.imgur.com"] {
   color: var(--white);
   background-color: var(--purple);
 }
+.coding-navigation-category ul li a.active .aside-nav__new {
+  display: none;
+}
 .coding-navigation-category ul li a:hover, .coding-navigation-category ul li a:focus {
   color: var(--white);
   background-color: var(--purple);
@@ -14946,11 +14957,26 @@ img[src*="i.imgur.com"] {
 }
 
 .coding-back-to-home {
-  display: flex;
-  justify-content: center;
   font-size: 1.2em;
   margin-top: 0.5em;
   margin-bottom: 1.25em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+@media (min-width: 1500px) {
+  .coding-back-to-home {
+    position: fixed;
+  }
+}
+.coding-back-to-home a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  padding-top: 0;
+  text-decoration: none;
 }
 .coding-back-to-home a:hover, .coding-back-to-home a:focus {
   text-decoration: none;
@@ -14959,14 +14985,14 @@ img[src*="i.imgur.com"] {
 .coding-back-to-home a:hover img, .coding-back-to-home a:focus img {
   transform: scale(1.1);
 }
-.coding-back-to-home span span {
+.coding-back-to-home small {
   font-size: 22px;
 }
 .coding-back-to-home img {
-  margin: -10px auto 0;
+  margin: -15px auto 0;
   display: inline-block;
   width: 32px;
-  padding-left: 5px;
+  padding-left: 8px;
   padding-top: 20px;
   transition: transform 0.1s linear;
 }
@@ -19199,6 +19225,12 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
 @media (max-width: 992px) {
   .layout__button {
     padding: 10px 15px;
+  }
+}
+@media (max-width: 576px) {
+  .layout__button {
+    padding: 5px 7px;
+    font-size: 1em;
   }
 }
 

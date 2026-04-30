@@ -1,5 +1,5 @@
 ---
-testingOnLocalhost: false
+codingPage: true
 ---
 
 <!DOCTYPE html>
@@ -53,6 +53,16 @@ testingOnLocalhost: false
           </div>
         </header>
 
+        <div class="coding-back-to-home">
+          <a href="/"
+            ><small>⇠</small> home
+            <img
+              src="{{ nesting }}assets/img/layout/pc.gif"
+              alt=""
+              aria-hidden="true"
+          /></a>
+        </div>
+
         <!-- ------------------------------------------------- -->
         <!-- ---------------- CODING NAVIGATION --------------- -->
         <!-- -------------------------------------------------- -->
@@ -102,15 +112,7 @@ testingOnLocalhost: false
         <!-- --------------------- SIDEBAR ------------------ -->
         <!-- ------------------------------------------------ -->
         <aside class="aside aside--left" data-nosnippet="true">
-          <div class="coding-back-to-home">
-            <a href="/"
-              ><span><span>⇠</span> home</span>
-              <img
-                src="{{ nesting }}assets/img/layout/pc.gif"
-                alt=""
-                aria-hidden="true"
-            /></a>
-          </div>
+          {% include "layout/sidebars/kirby.njk" %}
 
           <img
             src="{{ nesting }}assets/img/layout/divider4.gif"
@@ -118,38 +120,32 @@ testingOnLocalhost: false
             aria-hidden="true"
           />
 
-          {% include "layout/sidebars/kirby.njk" %} {% include
-          "layout/sidebars/link-back.njk" %} {% include
-          "layout/sidebars/supporters.njk" %}
-
-          <img
-            src="{{ nesting }}assets/img/layout/divider6.gif"
-            alt=""
-            aria-hidden="true"
-            style="margin-top: -5px"
-          />
-
-          {% include "layout/sidebars/hits-visitors.njk" %}
-
-          <img
-            src="{{ nesting }}assets/img/layout/divider6.gif"
-            alt=""
-            aria-hidden="true"
-            style="margin-top: -5px"
-          />
+          {% include "layout/sidebars/link-back.njk" %}
 
           <!-- ----------------- TIP JAR ----------------- -->
 
           {% include "layout/sidebars/tip-jar.njk" %}
 
           <img
-            src="{{ nesting }}assets/img/layout/divider2.gif"
+            src="{{ nesting }}assets/img/layout/divider6.gif"
             alt=""
             aria-hidden="true"
-            style="image-rendering: pixelated; display: block; margin: 40px 0"
+            style="margin-top: -5px"
+          />
+
+          <!-- ----------------- SUPPORTERS ----------------- -->
+
+          {% include "layout/sidebars/supporters.njk" %}
+
+          <img
+            src="{{ nesting }}assets/img/layout/divider6.gif"
+            alt=""
+            aria-hidden="true"
+            style="margin-top: -5px"
           />
 
           <!-- ----------------- TOC ----------------- -->
+
           {% if toc %}
           <img
             src="{{ nesting }}assets/img/layout/divider8.gif"

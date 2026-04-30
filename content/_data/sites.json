@@ -527,5 +527,13 @@
     "inspiration": false,
     "supporter": true,
     "supporterUntil": "27.07." 
+  },
+   {
+    "link": "https://transpiritual.neocities.org/",
+    "title": "Transpiritual",
+    "image": "transpiritual.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true
   }
 ]

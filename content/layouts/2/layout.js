@@ -29,31 +29,55 @@ function headerHTML() {
 
       <header>
 
-        <div class="header-content">
-	        <div class="header-title">Website Title</div>
-	        
-	        <!-- NAVIGATION -->
-	        <nav>
-	          <ul>
-	            <li><a href="/">Home</a></li>
-	            <li><a href="/example">Page 1</a></li>
-	            <li><a href="/example">Page 2</a></li>
-	            <li><a href="/example">Page 3</a></li>
-	            <li>
-	                <strong>Submenu (hover to show)</strong>
-	                <ul>
-	                  <li><a href="/example">Page A</a></li>
-	                  <li><a href="/example">Page B</a></li>
-	                  <li><a href="/example">Page C</a></li>
-	                  <li><a href="/example">Page D</a></li>
-	                  <li><a href="/example">Page E</a></li>
-	                </ul>
-	            </li>
-	          </ul>
-	        </nav>
+        <!-- NAVIGATION IN HEADER -->
+        <nav>
+          <ul>
+            <li><a href="/example">Page 1</a></li>
+            <li><a href="/example">Page 2</a></li>
+            <li><a href="/example">Page 3</a></li>
+          </ul>
+        </nav>
         	
-        </div>
       </header>
+
+      <!-- =============================================== -->
+      <!-- SIDEBAR -->
+      <!-- =============================================== -->
+
+      <div class="sidebar">
+
+        <div class="sidebar-title">Website Title</div>
+        <div class="sidebar-subtitle">A preview of the layout</div>
+
+        <!-- NAVIGATION IN SIDEBAR -->
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/example">Example Page 1</a></li>
+            <li><a href="/example">Example Page 2</a></li>
+            <li><a href="/example">Example Page 3</a></li>
+            <li><a href="/example">Example Page 4</a></li>
+            <li><a href="/example">Example Page 5</a></li>
+          </ul>
+          <div class="navigation-title">Section</div>
+          <ul>
+            <li><a href="/example">Example Page 1</a></li>
+            <li><a href="/example">Example Page 2</a></li>
+            <li><a href="/example">Example Page 3</a></li>
+            <li><a href="/example">Example Page 4</a></li>
+            <li><a href="/example">Example Page 5</a></li>
+          </ul>
+          <div class="navigation-title">Section</div>
+          <ul>
+            <li><a href="/example">Example Page 1</a></li>
+            <li><a href="/example">Example Page 2</a></li>
+            <li><a href="/example">Example Page 3</a></li>
+            <li><a href="/example">Example Page 4</a></li>
+            <li><a href="/example">Example Page 5</a></li>
+          </ul>
+        </nav>
+        	
+      </div>
       `;
 }
 

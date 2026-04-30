@@ -408,7 +408,7 @@
       "items":[
          {
             "label":"Tools",
-            "new":true,
+            "new":false,
             "items":[
                {
                   "link":"/coding/layout-generator",
@@ -419,18 +419,10 @@
                   "icon":"layout-line"
                },
                {
-                  "link":"/coding/layouts",
-                  "label":"Layouts",
-                  "sublabel":"",
-                  "new":true,
-                  "hide":true,
-                  "icon":"layout-2-line"
-               },
-               {
                   "link":"/coding/widgets",
                   "label":"Widgets for free Neocities accounts",
                   "sublabel":"",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"bard-line"
                },
@@ -462,20 +454,21 @@
          },
          {
             "label":"Codes",
-            "new":true,
+            "new":false,
             "items":[
+               
                {
-                  "link":"/coding/layout-base-code",
-                  "label":"Loading the same layout on every page",
+                  "link":"/coding/layouts",
+                  "label":"Layouts",
                   "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"layout-5-line"
+                  "new":true,
+                  "hide":true,
+                  "icon":"layout-masonry-line"
                },
                {
                   "link":"/coding/preview-plugin",
                   "label":"Preview Plugin",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"eye-line"
                },
@@ -483,7 +476,7 @@
                   "link":"/coding/image-filters",
                   "label":"Image Filters",
                   "sublabel":"",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"image-ai-line"
                },
@@ -491,7 +484,7 @@
                   "link":"/coding/webringu",
                   "label":"Webringu",
                   "labelInMainMenu":"Webring Script",
-                  "sublabel":"Simple Webring Script",
+                  "sublabel":"Webring Script",
                   "new":false,
                   "hide":false,
                   "icon":"user-community-line"
@@ -520,20 +513,20 @@
                   "icon":"bookmark-line"
                },
                {
-                  "link":"/coding/cliques",
-                  "label":"List of Cliques",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"user-community-line"
-               },
-               {
                   "link":"/coding/webring-list",
                   "label":"List of Webrings",
                   "sublabel":"",
                   "new":true,
                   "hide":false,
                   "icon":"global-line"
+               },
+               {
+                  "link":"/coding/cliques",
+                  "label":"List of Cliques",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"user-community-line"
                },
                {
                   "link":"/webring",
@@ -589,6 +582,23 @@
                   "new":false,
                   "hide":false,
                   "icon":"bug-line"
+               },
+               {
+                  "link":"/coding/neocities",
+                  "label":"Neocities Tips",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"building-line"
+               },
+               {
+
+                  "link":"/coding/my-setup",
+                  "label":"Using VSCode",
+                  "sublabel":"Settings + Extensions",
+                  "new":false,
+                  "hide":false,
+                  "icon":"tools-line"
                }
             ]
          },
@@ -596,6 +606,15 @@
             "label":"Beginner Tutorials",
             "new":false,
             "items":[
+               
+               {
+                  "link":"/coding/layout-base-code",
+                  "label":"Loading the same layout on every page",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"layout-5-line"
+               },
                {
                   "link":"/coding/positioning-tutorial",
                   "label":"CSS Positioning/Layout Tutorial",
@@ -633,6 +652,14 @@
             "label":"Advanced Tutorials",
             "new":false,
             "items":[
+               {
+                  "link":"/coding/now-what",
+                  "label":"I know HTML, CSS, and JS. Now what?",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"rocket-line"
+               },
                {
                   "link":"/coding/git-tutorial",
                   "label":"Git Tutorial",
@@ -672,44 +699,6 @@
                   "new":false,
                   "hide":false,
                   "icon":"drive-line"
-               }
-            ]
-         },
-         {
-            "label":"Miscellaneous",
-            "new":false,
-            "items":[
-               {
-                  "link":"/coding/neocities",
-                  "label":"Neocities Tips",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"building-line"
-               },
-               {
-                  "link":"/coding/my-setup",
-                  "label":"My VSCode Setup",
-                  "sublabel":"Settings + Extensions",
-                  "new":false,
-                  "hide":false,
-                  "icon":"tools-line"
-               },
-               {
-                  "link":"/coding/now-what",
-                  "label":"I know HTML, CSS, and JS. Now what?",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"rocket-line"
-               },
-               {
-                  "link":"/coding/game-dev-journey",
-                  "label":"my game dev journey",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":true,
-                  "icon":"gamepad-line"
                }
             ]
          }

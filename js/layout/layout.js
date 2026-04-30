@@ -187,53 +187,60 @@ export function initTooltips() {
 }
 
 export function initProgressBar() {
-  const progressBar = document.querySelector(".progress-bar");
-  if (!progressBar) return;
+  // in timeout to make sure comments are loaded before calculation
+  setTimeout(() => {
+    const progressBar = document.querySelector(".progress-bar");
+    if (!progressBar) return;
 
-  progressBar.style.width = 1 + "%";
+    progressBar.style.width = 1 + "%";
 
-  const buyMeCoffeeHeight = document.querySelector(".buy-me-a-coffee")
-    ? document.querySelector(".buy-me-a-coffee").getBoundingClientRect().height
-    : 0;
-  const commentSectionHeight = document.querySelector(
-    ".buy-me-a-coffee + section",
-  )
-    ? document
-        .querySelector(".buy-me-a-coffee + section")
-        .getBoundingClientRect().height
-    : 0;
+    const buyMeCoffeeHeight = document.querySelector(".buy-me-a-coffee")
+      ? document.querySelector(".buy-me-a-coffee").getBoundingClientRect()
+          .height
+      : 0;
+    const commentSectionHeight = document.querySelector(
+      ".buy-me-a-coffee + section",
+    )
+      ? document
+          .querySelector(".buy-me-a-coffee + section")
+          .getBoundingClientRect().height
+      : 0;
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 800) {
-      document.querySelector(".progress-bar-container").classList.add("show");
-    } else {
-      document
-        .querySelector(".progress-bar-container")
-        .classList.remove("show");
-    }
+    console.log("buyMeCoffeeHeight: " + buyMeCoffeeHeight);
+    console.log("commentSectionHeight: " + commentSectionHeight);
 
-    const scroll = document.documentElement.scrollTop;
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight -
-      buyMeCoffeeHeight -
-      commentSectionHeight;
-    let scrolled = (scroll / height) * 100;
-    if (scrolled > 100) scrolled = 100;
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 800) {
+        document.querySelector(".progress-bar-container").classList.add("show");
+      } else {
+        document
+          .querySelector(".progress-bar-container")
+          .classList.remove("show");
+      }
 
-    document.querySelector(".progress-bar-percent").innerHTML =
-      Math.round(scrolled);
+      const scroll = document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight -
+        buyMeCoffeeHeight -
+        commentSectionHeight;
+      let scrolled = (scroll / height) * 100;
+      if (scrolled > 100) scrolled = 100;
 
-    if (scrolled <= 1) {
-      progressBar.style.width = 1 + "%";
-    } else if (scrolled >= 2 && scrolled <= 99.9) {
-      progressBar.style.width = scrolled + "%";
-      progressBar.classList.remove("progress-bar--100");
-    } else if (scrolled === 100) {
-      progressBar.style.width = scrolled + "%";
-      progressBar.classList.add("progress-bar--100");
-    }
-  });
+      document.querySelector(".progress-bar-percent").innerHTML =
+        Math.round(scrolled);
+
+      if (scrolled <= 1) {
+        progressBar.style.width = 1 + "%";
+      } else if (scrolled >= 2 && scrolled <= 99.9) {
+        progressBar.style.width = scrolled + "%";
+        progressBar.classList.remove("progress-bar--100");
+      } else if (scrolled === 100) {
+        progressBar.style.width = scrolled + "%";
+        progressBar.classList.add("progress-bar--100");
+      }
+    });
+  }, 1000);
 }
 
 export function initActiveLinks() {

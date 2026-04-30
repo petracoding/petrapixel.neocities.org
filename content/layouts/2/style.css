@@ -8,7 +8,7 @@
 */
 :root {
   /* Background Colors: */
-  --background-color: #eeeeee;
+  --background-color: #f4f4f4;
   --content-background-color: #ffffff;
   --slight-background: #f9f9f9;
 
@@ -20,6 +20,7 @@
   /* Text: */
   --font: sans-serif;
   --heading-font: sans-serif;
+  --website-title-font: serif;
   --font-size: 12.7px;
 
   /* Other Settings: */
@@ -80,9 +81,16 @@ a:focus {
 .layout {
   width: 1070px;
   max-width: 90vw;
+  display: grid;
+  grid-template:
+    "header header" auto
+    "sidebar main" auto
+    "sidebar footer" auto
+    / auto auto;
 }
 
 main {
+  grid-area: main;
   overflow-y: auto;
   padding: var(--padding);
   background: var(--content-background-color);
@@ -95,61 +103,50 @@ main {
 /* -------------------------------------------------------- */
 
 header {
-  font-size: 1.2em;
-  border: var(--border);
-  border-radius: var(--round-borders);
-  background: var(--content-background-color);
-  margin-bottom: 20px;
-}
-
-.header-content {
-  padding: var(--padding);
-}
-
-.header-title {
-  font-family: var(--heading-font);
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-/* -------------------------------------------------------- */
-/* ASIDE */
-/* -------------------------------------------------------- */
-
-aside {
-  float: right;
-  border: var(--border);
-  border-radius: var(--round-borders);
-  background: var(--content-background-color);
-  padding: 20px;
-  margin-left: var(--padding);
-  margin-bottom: var(--padding);
-}
-
-/* -------------------------------------------------------- */
-/* FOOTER */
-/* -------------------------------------------------------- */
-
-footer {
-  border: var(--border);
-  border-radius: var(--round-borders);
-  overflow: hidden;
-  font-size: 0.9em;
-  padding: 15px;
-  background: var(--content-background-color);
+  grid-area: header;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+/* -------------------------------------------------------- */
+/* SIDEBAR */
+/* -------------------------------------------------------- */
+
+.sidebar {
+  grid-area: sidebar;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+.sidebar-title {
+  font-family: var(--website-title-font);
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 0.2em;
+}
+
+.sidebar-subtitle {
+  font-family: var(--website-title-font);
+  text-align: center;
+  font-size: 15px;
+}
+
+.sidebar nav {
+  margin-top: 30px;
+}
+
+.sidebar nav > ul li > a {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.navigation-title {
   margin-top: 20px;
-}
-
-footer a,
-footer a:visited {
-  color: var(--link-color);
-}
-
-footer a:hover,
-footer a:focus {
-  color: var(--link-color-hover);
+  margin-bottom: 5px;
+  opacity: 0.9;
+  border-bottom: var(--border);
 }
 
 /* -------------------------------------------------------- */
@@ -158,6 +155,10 @@ footer a:focus {
 
 nav {
   margin-bottom: 3em;
+}
+
+nav a {
+  text-decoration: none;
 }
 
 nav ul {
@@ -179,7 +180,7 @@ nav > ul li > strong {
 nav > ul li > a,
 nav > ul li > details summary,
 nav > ul li > strong {
-  padding: 5px 10px;
+  padding: 5px 6px;
 }
 
 nav > ul li > a.active,
@@ -249,6 +250,84 @@ header nav ul ul li a {
   display: block;
   padding-left: 0;
   padding-right: 0;
+}
+
+/* -------------------------------------------------------- */
+/* ASIDE */
+/* -------------------------------------------------------- */
+
+aside {
+  float: right;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  background: var(--content-background-color);
+  padding: 20px;
+  margin-left: var(--padding);
+  margin-bottom: var(--padding);
+  max-width: 350px;
+}
+
+aside > *:first-child {
+  margin-top: 0;
+}
+
+aside > *:last-child {
+  margin-bottom: 0;
+}
+
+aside img {
+  max-width: 100%;
+  height: auto;
+}
+
+.aside-table {
+  margin-top: 5px;
+}
+
+.aside-table tr:not(:last-child) {
+  margin-bottom: 0.75em;
+}
+
+.aside-table th {
+  padding: 0.5em 1em;
+  padding-left: 0;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  border: none;
+}
+
+.aside-table td {
+  padding: 0.5em 1em;
+  padding-right: 0;
+  border: none;
+}
+
+/* -------------------------------------------------------- */
+/* FOOTER */
+/* -------------------------------------------------------- */
+
+footer {
+  grid-area: footer;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  overflow: hidden;
+  font-size: 0.9em;
+  padding: 15px;
+  background: var(--content-background-color);
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+footer a,
+footer a:visited {
+  color: var(--link-color);
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--link-color-hover);
 }
 
 /* -------------------------------------------------------- */
@@ -337,6 +416,7 @@ main pre {
   padding: 10px;
   background: var(--slight-background);
   border: var(--border);
+  overflow-x: scroll;
 }
 
 main code {
@@ -359,6 +439,18 @@ main hr {
   border: 0;
   border-top: var(--border);
   margin: 1.5em 0;
+}
+
+main table {
+  overflow-x: scroll;
+  display: block;
+  border-collapse: collapse;
+}
+
+main th,
+main td {
+  padding: 2px 5px;
+  border: var(--border);
 }
 
 /* HEADINGS: */
@@ -460,6 +552,11 @@ figure {
   margin: 0 0 1em;
 }
 
+figure img {
+  width: 100%;
+  height: auto;
+}
+
 figcaption {
   font-size: 0.88em;
 }
@@ -497,8 +594,6 @@ figcaption {
 
 .related {
   background: var(--slight-background);
-  padding: 5px;
-  border: var(--border);
 }
 
 .related tr:not(:last-child) {
@@ -575,6 +670,11 @@ figcaption {
     padding: 15px;
   }
 
+  aside {
+    float: none;
+    margin-left: 0;
+  }
+
   .images {
     flex-wrap: wrap;
   }
@@ -585,5 +685,27 @@ figcaption {
 
   #skip-to-content-link {
     font-size: 1rem;
+  }
+}
+
+/* CSS Code for devices < 500px */
+@media (max-width: 500px) {
+  .layout {
+    max-width: 95vw;
+    grid-template:
+      "sidebar" auto
+      "header" auto
+      "main" auto
+      "footer" auto / 1fr;
+  }
+
+  .sidebar nav {
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+
+  .sidebar nav > ul li > a {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }

@@ -43,6 +43,11 @@
   @media (max-width: $md) {
     padding: 10px 15px;
   }
+
+  @media (max-width: $sm) {
+    padding: 5px 7px;
+    font-size: 1em;
+  }
 }
 
 @media (min-width: $xl) {

@@ -1,19 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- ------------------------------- -->
     <!-- REMOVE THIS !!!!!!!!!!!!!!!!!!! -->
     <script>
-      document.addEventListener("contextmenu", (event) => {
-        alert("Please do not copy the code here! There is a download for a reason!");
-      });
-      console.log("%cPlease do not copy the code here! There is a download for a reason!", "font-size: 20pt; background: red");
+      // document.addEventListener("contextmenu", (event) => {
+      //   alert(
+      //     "Do not copy the code here!",
+      //   );
+      // });
+      console.log(
+        "%cDo not copy the code here!",
+        "font-size: 20pt; background: red",
+      );
     </script>
     <!-- REMOVE THIS !!!!!!!!!!!!!!!!!!! -->
     <!-- ------------------------------- -->
 
     <!-- Change your site title: (This is shown in the tab) -->
-    <title>TITLE</title>
+    <title>WEBSITE TITLE</title>
 
     <!-- Change your site description: (This is shown in Google results) -->
     <meta content="My personal website!" name="description" />
@@ -22,7 +27,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- FavIcon (small image in tab), change to any image you want: -->
+    <!-- FavIcon (small image in tab/bookmark), change to any image you want: -->
     <!-- You will have to change this to "../favicon.ico" if this HTML file is in a subfolder, to "../../favicon.ico" if this HTML file is in 2 subfolders, etc. -->
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -37,7 +42,10 @@
     <script>
       // Layout by petrapixel.
       // (Please do not remove this credit.)
-      console.log("%cLayout created by petrapixel: https://petrapixel.neocities.org/coding/layouts", "font-size: 14pt; color: #922a45; background: #ffd3ef");
+      console.log(
+        "%cLayout created by petrapixel: https://petrapixel.neocities.org/coding/layouts",
+        "font-size: 14pt; color: #922a45; background: #ffd3ef",
+      );
     </script>
   </head>
   <body>
@@ -50,7 +58,7 @@
       <!-- =============================================== -->
 
       <main id="content">
-        <!-- Do NOT remove the ID here -->
+        <!-- ⇖ Do NOT remove the ID here -->
 
         <!-- Do not remove the following line. -->
         <noscript>Please enable JavaScript to view this website!</noscript>
@@ -63,13 +71,42 @@
           <h1>Page Title (Heading 1)</h1>
 
           <!-- ASIDE -->
-          <aside>Text</aside>
+          <aside>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Inventore explicabo laborum ut non magnam.
+            </p>
+
+            <img alt="" src="https://picsum.photos/id/10/400/300" />
+
+            <table class="aside-table">
+              <tbody>
+                <tr>
+                  <th>Example</th>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing</td>
+                </tr>
+                <tr>
+                  <th>Example</th>
+                  <td>Lorem ipsum dolor sit amet</td>
+                </tr>
+              </tbody>
+            </table>
+          </aside>
 
           <p>
-            This is layout 2 ("Wiki") created by <a href="https://petrapixel.neocities.org/" target="_blank">petrapixel</a>. You can download the code
-            <a href="https://petrapixel.neocities.org/coding/layouts#layout2" target="_blank">on this page</a>.
-            <b>Do not simply copy the code from the preview's source. There is a reason why I offer a download instead.</b> You may move the credit in the footer to a "credits" page or similar, but
-            please do not remove it altogether. Thank you!
+            This is layout 2 ("Wiki") created by
+            <a href="https://petrapixel.neocities.org/" target="_blank"
+              >petrapixel</a
+            >. You can download the code
+            <a
+              href="https://petrapixel.neocities.org/coding/layouts#layout2"
+              target="_blank"
+              >on this page</a
+            >.
+            <b>Do not copy the code from the preview.</b>
+            You may move the credit in the footer to a "credits" page or
+            similar, but please do not remove it altogether. Thank you!
+            <sup><a href="#references">[1]</a></sup>
           </p>
           <p>
             I will now show you how to use the most common HTML text elements:
@@ -80,14 +117,22 @@
             <strike>This is strikethrough text.</strike>
             <u>This is underlined text.</u>
             <a href="https://petrapixel.neocities.org/">This is a link.</a>
-            And <a href="https://petrapixel.neocities.org/" target="_blank">this is a link that will open in a new tab.</a>
+            And
+            <a href="https://petrapixel.neocities.org/" target="_blank"
+              >this is a link that will open in a new tab.</a
+            >
             <code>This is code (displayed in a monospace font).</code>
-            <abbr title="Example.">This is an abbreviation (Try hovering over it).</abbr>
-            This is a line break (The br stands for break.): <br />It's different from a paragraph because it does not add space inbetween the lines of text.
+            <abbr title="Example."
+              >This is an abbreviation (Try hovering over it).</abbr
+            >
+            This is a line break (The br stands for break.): <br />It's
+            different from a paragraph because it does not add space inbetween
+            the lines of text.
           </p>
-          <p>This is a paragraph. As you can see, there's a bit of space between it and the previous paragraph.</p>
-
-          <blockquote>This is a blockquote. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</blockquote>
+          <p>
+            This is a paragraph. As you can see, there's a bit of space between
+            it and the previous paragraph.
+          </p>
 
           <details open="">
             <summary>Table of Contents</summary>
@@ -116,6 +161,11 @@
 
           <p>Lorem ipsum dolor sit amet.</p>
 
+          <blockquote>
+            This is a blockquote. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor.
+          </blockquote>
+
           <ol>
             <li>Sorted list</li>
             <li>Sorted list</li>
@@ -142,21 +192,64 @@ This is preformatted text, which means that     spaces    are preserved:
           <!-- hr = horizontal rule -->
 
           <p>
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-            vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet.
           </p>
+
+          <p>This is a table:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Example</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Example</td>
+                <td>Example</td>
+                <td>Example</td>
+              </tr>
+              <tr>
+                <td>Example</td>
+                <td>Example</td>
+                <td>Example</td>
+              </tr>
+            </tbody>
+          </table>
 
           <h4 id="section3">Heading 4</h4>
 
           <p>Here are two columns:</p>
           <div class="two-columns">
             <div>
-              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr. At vero eos et accusam et justo duo
+                dolores et ea rebum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr. At vero eos et accusam et justo duo
+                dolores et ea rebum.
+              </p>
             </div>
             <div>
-              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr. At vero eos et accusam et justo duo
+                dolores et ea rebum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr. At vero eos et accusam et justo duo
+                dolores et ea rebum.
+              </p>
             </div>
           </div>
 
@@ -172,7 +265,11 @@ This is preformatted text, which means that     spaces    are preserved:
           </figure>
 
           <p>This is a full-width image:</p>
-          <img class="full-width-image" alt="" src="https://picsum.photos/id/10/1000/400" />
+          <img
+            class="full-width-image"
+            alt=""
+            src="https://picsum.photos/id/10/1000/400"
+          />
 
           <p>These are multiple images in a row:</p>
           <div class="images">
@@ -183,16 +280,34 @@ This is preformatted text, which means that     spaces    are preserved:
 
           <h6>Heading 6</h6>
           <p>
-            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
-            velit esse molestie consequat.
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis
+            autem vel eum iriure dolor in hendrerit in vulputate velit esse
+            molestie consequat.
           </p>
 
-          <h2>References</h2>
+          <h2 id="references">References</h2>
           <ol>
-            <li><a href="https://petrapixel.neocities.org/" target="_blank">https://petrapixel.neocities.org/</a></li>
-            <li><a href="https://petrapixel.neocities.org/" target="_blank">https://petrapixel.neocities.org/</a></li>
-            <li><a href="https://petrapixel.neocities.org/" target="_blank">https://petrapixel.neocities.org/</a></li>
-            <li><a href="https://petrapixel.neocities.org/" target="_blank">https://petrapixel.neocities.org/</a></li>
+            <li>
+              <a href="https://petrapixel.neocities.org/" target="_blank"
+                >https://petrapixel.neocities.org/</a
+              >
+            </li>
+            <li>
+              <a href="https://petrapixel.neocities.org/" target="_blank"
+                >https://petrapixel.neocities.org/</a
+              >
+            </li>
+            <li>
+              <a href="https://petrapixel.neocities.org/" target="_blank"
+                >https://petrapixel.neocities.org/</a
+              >
+            </li>
+            <li>
+              <a href="https://petrapixel.neocities.org/" target="_blank"
+                >https://petrapixel.neocities.org/</a
+              >
+            </li>
           </ol>
 
           <h2>Related articles</h2>
@@ -201,18 +316,32 @@ This is preformatted text, which means that     spaces    are preserved:
               <tr>
                 <th>Example</th>
                 <td>
-                  <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
                   <a href="/example">Example</a> •
                   <a href="/example"
-                    >Example • <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> •
-                    <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a></a
+                    >Example • <a href="/example">Example</a> •
+                    <a href="/example">Example</a> •
+                    <a href="/example">Example</a> •
+                    <a href="/example">Example</a> •
+                    <a href="/example">Example</a> •
+                    <a href="/example">Example</a> •
+                    <a href="/example">Example</a> •
+                    <a href="/example">Example</a></a
                   >
                 </td>
               </tr>
               <tr>
                 <th>Other Example</th>
                 <td>
-                  <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> • <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
+                  <a href="/example">Example</a> •
                   <a href="/example">Example</a>
                 </td>
               </tr>
