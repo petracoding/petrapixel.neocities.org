@@ -14143,6 +14143,14 @@ main h4 {
     font-size: 23px;
   }
 }
+main h5,
+main h6 {
+  font-weight: bold;
+}
+main h5 ~ hr,
+main h6 ~ hr {
+  margin: 1em 0 !important;
+}
 main details summary {
   background: var(--green);
   display: inline-flex;
@@ -14788,6 +14796,9 @@ img[src*="i.imgur.com"] {
 .coding-page-layout .aside #toc a code {
   font-size: 0.7em;
   font-weight: bold;
+}
+.coding-page-layout .aside-clap-kirby {
+  margin-bottom: 1em;
 }
 
 .coding-navigation {
@@ -15555,6 +15566,14 @@ footer {
   height: 300px;
   resize: vertical;
   overflow-y: scroll;
+}
+
+[data-secret-message] {
+  content: "This is the CSS code for this element!";
+  width: 50px;
+  height: 50px;
+  background: rgba(233, 151, 188, 0.4);
+  border: white;
 }
 
 body.not-found-page {
@@ -17166,6 +17185,14 @@ section .blinkies {
   padding: 0 !important;
   margin: 0 !important;
 }
+#dsring div {
+  display: flex;
+  align-items: center;
+}
+#dsring .webring-info a {
+  color: #333;
+  margin: 0 5px;
+}
 #dsring .webring-prev,
 #dsring .webring-next {
   font-size: 1.5em;
@@ -18433,46 +18460,78 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   font-size: 24px;
 }
 
-.listography {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  grid-gap: 5px;
+.listography > * {
+  column-count: 2;
+}
+.listography > * > * {
+  margin-bottom: 20px;
 }
 
-.listbox {
-  border: 1px dotted;
-  padding: 1.5em;
+div[id*=listbox-status] {
+  display: none;
 }
-@media (min-width: 992px) {
-  .listbox {
-    width: calc(50% - 10px);
+
+div[id*=listbox-content-slot] {
+  border: 2px #deafb3 dotted;
+  border-radius: 10px;
+  padding: 1em;
+  max-height: 75vh;
+  overflow-y: scroll;
+  scrollbar-color: var(--pink) var(--veryLight);
+  scrollbar-width: thin;
+}
+@media (max-width: 1000px) {
+  div[id*=listbox-content-slot] {
+    padding: 0.5em;
   }
 }
-.listbox .box-title {
+div[id*=listbox-content-slot] div[id*=list-title-box] > * {
+  float: none !important;
+}
+div[id*=listbox-content-slot] .box-title {
+  display: block;
+  border-bottom: 2px #deafb3 dotted;
+  padding-bottom: 13px;
+  margin-bottom: 15px;
+}
+div[id*=listbox-content-slot] .box-subtitle {
+  display: block;
+  padding-left: 1em;
+  font-weight: normal;
+}
+div[id*=listbox-content-slot] div[id*=list-title-box] {
   font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 0.5em;
   display: block;
   line-height: 1;
 }
-.listbox .box-title a {
+div[id*=listbox-content-slot] div[id*=list-title-box] a {
   color: var(--textColor);
   text-decoration: none;
   pointer-events: none;
 }
-.listbox ul {
+div[id*=listbox-content-slot] .text_content ul:first-child:last-child,
+div[id*=listbox-content-slot] .text_content .icon + ul:last-child {
   padding-left: 1em;
-  list-style-image: url(https://i10.glitter-graphics.org/pub/2206/2206590dfsxiz48it.gif);
 }
-.listbox .icon,
-.listbox .gend-link,
-.listbox .dates,
-.listbox [id*=listbox-status],
-.listbox [id*=list_footer],
-.listbox .list-title-handle,
-.listbox .show-more {
+div[id*=listbox-content-slot] .icon,
+div[id*=listbox-content-slot] .gend-link,
+div[id*=listbox-content-slot] .dates,
+div[id*=listbox-content-slot] [id*=listbox-status],
+div[id*=listbox-content-slot] [id*=list_footer],
+div[id*=listbox-content-slot] .list-title-handle,
+div[id*=listbox-content-slot] .show-more,
+div[id*=listbox-content-slot] a[href*="#attachment"] {
   display: none;
+}
+
+div[id*=listbox-content-slot]::-webkit-scrollbar-track-piece {
+  background-color: var(--veryLight);
+}
+
+div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--pink);
 }
 
 .tabs__tabs {
@@ -19299,13 +19358,16 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
 }
 
 .roadmap {
-  display: flex;
   background: rgba(233, 151, 188, 0.2);
   padding: 2em;
   border-radius: 10px;
 }
 .roadmap:empty {
   display: none;
+}
+
+.roadmap__top {
+  display: flex;
 }
 
 .roadmap__info {
@@ -19340,6 +19402,20 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
 .roadmap__current span::after {
   content: " ⬅ you are here";
   font-weight: bold;
+}
+
+.roadmap__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7em;
+  margin-top: 20px;
+}
+.roadmap__pagination > * {
+  margin: 0 10px;
+}
+.roadmap__pagination span {
+  opacity: 0.4;
 }
 
 body.dark-mode {

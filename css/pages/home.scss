@@ -383,6 +383,18 @@
     margin: 0 !important;
   }
 
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  .webring-info {
+    a {
+      color: #333;
+      margin: 0 5px;
+    }
+  }
+
   .webring-prev,
   .webring-next {
     font-size: 1.5em;

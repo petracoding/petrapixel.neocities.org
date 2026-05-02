@@ -207,6 +207,15 @@ main {
     }
   }
 
+  h5,
+  h6 {
+    font-weight: bold;
+
+    ~ hr {
+      margin: 1em 0 !important;
+    }
+  }
+
   details {
     summary {
       background: var(--green);

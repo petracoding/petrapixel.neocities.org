@@ -232,9 +232,6 @@ function initProgressBar() {
           .getBoundingClientRect().height
       : 0;
 
-    console.log("buyMeCoffeeHeight: " + buyMeCoffeeHeight);
-    console.log("commentSectionHeight: " + commentSectionHeight);
-
     window.addEventListener("scroll", function () {
       if (window.scrollY > 800) {
         document.querySelector(".progress-bar-container").classList.add("show");
@@ -609,20 +606,23 @@ function getCookie(cookieName, fallbackValue) {
 }
 
 function initSounds() {
-  initSound("tockSound", true, false, "a");
-  initSound(
-    "clickSound",
-    true,
-    false,
-    ".hello-its-me-facts img, .blinkies img, summary, .coding-navigation-category__title, .about-me-page__faves-images img, .about-me-page__flags img",
-  );
-  initSound(
-    "actualClick",
-    false,
-    true,
-    "summary, button, input[type='submit'], input[type='checkbox']",
-  );
-  // initSound("tinySound", true, false, "button, input[type='submit']");
+  // small timeout so it works with dynamically loaded content too
+  setTimeout(() => {
+    initSound("tockSound", true, false, "a");
+    initSound(
+      "clickSound",
+      true,
+      false,
+      ".hello-its-me-facts img, .blinkies img, summary, .coding-navigation-category__title, .about-me-page__faves-images img, .about-me-page__flags img",
+    );
+    initSound(
+      "actualClick",
+      false,
+      true,
+      "summary, button, input[type='submit'], input[type='checkbox']",
+    );
+    // initSound("tinySound", true, false, "button, input[type='submit']");
+  }, 500);
 }
 
 function initSound(soundName, onHover, onClick, selector) {
@@ -2254,10 +2254,9 @@ const roadmap = [
     link: "/coding/cachebusting",
   },
   {
-    title: "My VSCode Setup",
+    title: "Using VSCode",
     link: "/coding/my-setup",
   },
-
   {
     title: "Self-study Checklist",
     link: "/coding/checklist",
@@ -2273,7 +2272,7 @@ function initRoadmap() {
   if (!el) return;
 
   const currentPage = window.location.pathname.replace("/public", "");
-  let html = `
+  let html = `<div class='roadmap__top'>
 <div class='roadmap__info'>
   <strong>Roadmap</strong>
   <p>This is my little roadmap on how to create your first website. Go through these pages in order to get all the info you need!</p>
@@ -2283,8 +2282,12 @@ function initRoadmap() {
  </div>
   <ol class='roadmap__list'>`;
 
+  let currentIndex;
+  let i = -1;
   roadmap.forEach((item) => {
+    i++;
     if (item.link == currentPage) {
+      currentIndex = i;
       html += `
 			<li class="roadmap__current"><span>${item.title}</span></li>
 		`;
@@ -2295,7 +2298,25 @@ function initRoadmap() {
     }
   });
 
-  html += `</ol>`;
+  html += `</ol></div><div class="roadmap__pagination">`;
+
+  const prevPage = roadmap[currentIndex - 1];
+  const nextPage = roadmap[currentIndex + 1];
+
+  if (prevPage) {
+    html += `<a href="${prevPage.link}">⤺ Previous Page</a>`;
+  } else {
+    html += `<span>⤺ Previous Page</span>`;
+  }
+
+  if (nextPage) {
+    html += `<a href="${nextPage.link}">Next Page ⤻</a>`;
+  } else {
+    html += `<span>Next Page ⤻</span>`;
+  }
+
+  html += `</div>`;
+
   el.innerHTML = html;
 }
 

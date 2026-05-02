@@ -32,10 +32,9 @@ const roadmap = [
     link: "/coding/cachebusting",
   },
   {
-    title: "My VSCode Setup",
+    title: "Using VSCode",
     link: "/coding/my-setup",
   },
-
   {
     title: "Self-study Checklist",
     link: "/coding/checklist",
@@ -51,7 +50,7 @@ export function initRoadmap() {
   if (!el) return;
 
   const currentPage = window.location.pathname.replace("/public", "");
-  let html = `
+  let html = `<div class='roadmap__top'>
 <div class='roadmap__info'>
   <strong>Roadmap</strong>
   <p>This is my little roadmap on how to create your first website. Go through these pages in order to get all the info you need!</p>
@@ -61,8 +60,12 @@ export function initRoadmap() {
  </div>
   <ol class='roadmap__list'>`;
 
+  let currentIndex;
+  let i = -1;
   roadmap.forEach((item) => {
+    i++;
     if (item.link == currentPage) {
+      currentIndex = i;
       html += `
 			<li class="roadmap__current"><span>${item.title}</span></li>
 		`;
@@ -73,6 +76,24 @@ export function initRoadmap() {
     }
   });
 
-  html += `</ol>`;
+  html += `</ol></div><div class="roadmap__pagination">`;
+
+  const prevPage = roadmap[currentIndex - 1];
+  const nextPage = roadmap[currentIndex + 1];
+
+  if (prevPage) {
+    html += `<a href="${prevPage.link}">⤺ Previous Page</a>`;
+  } else {
+    html += `<span>⤺ Previous Page</span>`;
+  }
+
+  if (nextPage) {
+    html += `<a href="${nextPage.link}">Next Page ⤻</a>`;
+  } else {
+    html += `<span>Next Page ⤻</span>`;
+  }
+
+  html += `</div>`;
+
   el.innerHTML = html;
 }

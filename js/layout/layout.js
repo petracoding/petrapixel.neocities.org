@@ -206,9 +206,6 @@ export function initProgressBar() {
           .getBoundingClientRect().height
       : 0;
 
-    console.log("buyMeCoffeeHeight: " + buyMeCoffeeHeight);
-    console.log("commentSectionHeight: " + commentSectionHeight);
-
     window.addEventListener("scroll", function () {
       if (window.scrollY > 800) {
         document.querySelector(".progress-bar-container").classList.add("show");

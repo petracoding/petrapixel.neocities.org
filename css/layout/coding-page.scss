@@ -101,6 +101,10 @@
       }
     }
   }
+
+  .aside-clap-kirby {
+    margin-bottom: 1em;
+  }
 }
 
 .coding-navigation {
@@ -934,4 +938,12 @@ footer {
   height: 300px;
   resize: vertical;
   overflow-y: scroll;
+}
+
+[data-secret-message] {
+  content: "This is the CSS code for this element!";
+  width: 50px;
+  height: 50px;
+  background: rgba($pink, 0.4);
+  border: white;
 }

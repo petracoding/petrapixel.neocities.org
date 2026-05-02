@@ -5,77 +5,68 @@ description: "A tutorial on how to make a website on the indie web / Neocities."
 nesting: "../"
 mainClass: coding-page
 tipType: "tutorial"
+progressBar: true
+codeHighlight: true
+toc: true
 ---
 
-<style>
-  [data-secret-message] {
-    content: "This is the CSS code for this element!";
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.5);
-    border: white;
-  }
-</style>
-
 <section>
-  <h1>How to make a website</h1>
+  <div class="two-columns">
+    <div>
+      <h1>How to make a website</h1>
+      <p>
+        Interested in making a website such as this one, unrestrained by the
+        design choices and addiction-fueling bullcrap from social media apps?
+        Here's a little guide I wrote which will tell you what you will need to
+        learn, in which order, and how. I hope it's helpful to you!
+      </p>
 
-  <i class="fa-solid fa-laptop-code"></i>
-  <p>
-    Interested in making a website? Here's a little guide I wrote! It won't
-    teach you anything per se, but it will tell you want you will need to learn,
-    in which order, and how. I hope it's helpful to you!
-  </p>
-  <blockquote class="tip">
-    <p>
-      (This page is still a bit work-in-progress and will be expanded soon.)
-    </p>
-  </blockquote>
-  <div id="toc" data-two-levels="yea"></div>
+      <p>
+        (A video version of this tutorial is coming to
+        <a href="/youtube">my YouTube channel</a> at some point! Just gotta
+        battle my perfectionism first...)
+      </p>
+    </div>
+    <div id="toc" data-two-levelsX="yea" style="max-width: 200px"></div>
+  </div>
 </section>
 
-<section>
-  <h2>Video Tutorial</h2>
-  <p>
-    A video version of this tutorial is coming to
-    <a href="/youtube">my YouTube channel</a> at some point!
-  </p>
-</section>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <section>
-  <h2>To code or not to code?</h2>
+  <h2>Introduction</h2>
   <p>
     This guide is about how to <b>code</b> a website. Therefore, I am going to
-    assume that you want to learn how to code, and every other step required to
-    host a website. However, maybe you want a website but are not particularly
-    intersted in learning to code? That's of course super valid too, and though
-    I think that coding is a lot of fun and a wonderful skill to have I
-    understand that some people just want a website with as little effort as
-    possible.
+    assume that you want to learn how to code (as well as every other step
+    required to host a website). However, maybe you want a website but are not
+    particularly intersted in learning to code? That's of course super valid
+    too, and though I think that coding is a lot of fun and a wonderful skill to
+    have I understand that some people just want a website with as little effort
+    as possible.
   </p>
   <p>
     So, if your goal is simply to have a website because you need one (e.g. for
-    your business, portfolio, etc) then this guide probably isn't for you. There
-    are ways of creating websites without having to know how to code. Just
-    google "free website builder" and you'll find some. Many of these builders
-    have professional websites in mind, but you can also create fun personal
-    sites with them or other services such as carrd and straw.page.
+    your business, as an art portfolio, etc) and you want to get there as soon
+    as possible with a professional-looking result, then this guide isn't for
+    you. There are ways of creating websites without having to know how to code.
+    Just google "free website builder" and you'll find some. Many of these
+    builders have professional websites in mind, but you can also create fun
+    personal sites with them or other services such as
+    <a href="https://carrd.co/" target="_blank">carrd</a> and
+    <a href="https://straw.page/" target="_blank">straw.page</a>.
   </p>
-  <p>But if your goal is to <b>code</b> a website, this guide is for you!</p>
-  <blockquote class="tip">
-    <p>
-      To clarify: If you want an indie website hosted on Neocities or Nekoweb
-      specifically, you'll have to learn how to code!
-    </p>
-  </blockquote>
-  <!---
- 
-  <div data-comprehension="howtowebsite-0"></div>
-  <div data-comprehension="howtowebsite-1"></div> -->
+  <p>
+    But if your goal is to <b>code</b> a website and host it on popular indie
+    web hosts such as Neocities or Nekoweb, this guide is for you!
+  </p>
 </section>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <section>
-  <h2>Where to start...? (HTML and CSS)</h2>
+  <h2>Learning coding</h2>
+
+  <h3 data-step="1">HTML</h3>
   <p>
     In the most simple terms, the very first step to learning how to code a
     website it to learn <b>HTML</b>.
@@ -89,15 +80,16 @@ tipType: "tutorial"
     That's also markup; a way to add basic formatting to your content by using
     pre-defined symbols. HTML works just like that. For example, bold text looks
     like
-    <code>&lt;b&gt;this&lt;/b&gt;</code> (the b stands for bold). And that's
-    really how simple it is!
+    <code>&lt;b&gt;this&lt;/b&gt;</code> and italic text looks like
+    <code>&lt;i&gt;this&lt;/i&gt;</code> (the b stands for bold, the i for
+    italics). And that's really how simple it is!
   </p>
   <p>
     HTML is very easy to learn, you won't have many problems. There is only a
     very limited number of elements (e.g. bold text, images, links, tables,
     ...), and I believe you could theoretically learn them all in one sitting.
-    There's no need for that though: Just learn the most basic ones and as you
-    continue to learn to code you can learn the rest.
+    There's no need to rush though: Just learn the most basic ones and as you
+    continue to learn to code you'll naturally learn the rest.
   </p>
   <p>
     As to <b>how</b> to learn HTML... That's really up to you, as it depends on
@@ -109,15 +101,19 @@ tipType: "tutorial"
     bit of an overview of what the language looks like and how it works.)
     Whatever you like, just search for it and you will find thousands.
   </p>
-  <p>Some HTML tutorials might at the same time also teach you CSS.</p>
-  <p>You can absolutely learn HTML and CSS at the same time.</p>
-  <hr />
+  <p>
+    Some HTML tutorials might at the same time also teach you CSS. You can
+    absolutely learn HTML and CSS at the same time, but if this confuses you
+    just stick to HTML for now.
+  </p>
+
+  <h3 data-step="2">CSS</h3>
   <p>
     <b>CSS</b> is the second language you need to learn. While HTML is mostly
     about the content of your website, CSS is the styling. For example, in your
     HTML you write your paragraphs and insert your pictures, and in your CSS you
     will right-align your text, make the heading blue and give the picture a
-    frame.
+    border.
   </p>
   <p>
     The basics of CSS are very simple too. For example, to make a text red, you
@@ -131,34 +127,32 @@ tipType: "tutorial"
     learning CSS, or at the very least coding alongside a text/video tutorial.
     You'll need to start feeling comfortable writing code.
   </p>
-  <p>
-    By the way, interactive tutorial <i>should</i> provide you with a way to
-    write code within them. But if this is not the case, or if you're following
-    text/video tutorials and want to start coding by yourself you will need some
-    kind of software to code in. I'm covering this in the next section.
-  </p>
 </section>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <section>
-  <h2>What if something doesn't work...? (Dev Tools)</h2>
+  <h2>Development Tools</h2>
   <p>
     You'll try to do things, and sometimes they won't work. So what now?
-    Troubleshooting.
-  </p>
-  <p>
-    Learning how to find out which mistake you've made is one of the most
-    important skills for coding. Unless you know your mistake, you can't fix it.
+    Troubleshooting. Learning how to find out which mistake you've made is one
+    of the most important skills for coding. Unless you know your mistake, you
+    can't fix it.
   </p>
   <p>
     There's many ways to troubleshoot and debug, but for beginners the most
-    important tool are your browser's development tools ('dev tools'). You can
-    use them with the F12 key or via your browser's menu (usually hidden
-    somewhere in "more tools") or via right-click 'Inspect element'. Your dev
-    tools let you inspect your website's HTML and CSS and read error messages.
-    You can even temporarily change the HTML and CSS to test out changes you
-    want to make. Be aware that all changes made in the dev tools will vanish
-    once you refresh the page!
+    important tool are your <b>browser's development tools ('dev tools')</b>.
+    You can open them with the F12 key or via your browser's menu (usually
+    hidden somewhere in "more tools") or via right-click a page and selecting
+    'Inspect element'. Your dev tools let you inspect your website's HTML and
+    CSS and read error messages. You can even temporarily change the HTML and
+    CSS to test out changes you want to make.
+    <b
+      >Be aware that all changes made in the dev tools will vanish once you
+      refresh the page!</b
+    >
   </p>
+
   <p>Try inspecting the following element for a secret message:</p>
   <div
     data-secret-message="Great job! This is my website's HTML code. You now know how to inspect elements!"
@@ -171,6 +165,12 @@ tipType: "tutorial"
     (The guide also gives some tips on where and how to ask for help when you're
     stuck while coding.)
   </p>
+</section>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<section>
+  <h2>Tips</h2>
   <blockquote class="warning">
     If your website doesn't update after you've made changes, it's probably
     because of <b>cache</b>.
@@ -178,22 +178,40 @@ tipType: "tutorial"
   </blockquote>
 </section>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <section>
-  <h2>With what to code...? (Editors and IDEs)</h2>
-  <p>There are many different ways to write code.</p>
-  <br />
+  <h2>Code Editors (IDEs)</h2>
+  <p>
+    There are many different ways to write code. (All tools/software I mention
+    here are free.)
+  </p>
+  <p>
+    Some things make the process of coding much, much easier. It pains me so
+    much whenever I see beginner coders use an online editor to code whole
+    websites... No wonder they are having such a hard time finding their own
+    mistakes, there is basically no error check! Besides checking for errors,
+    some other features of IDEs that are helpful include: automatic
+    formatting/indenting (<i>very</i> important to keep code easy-to-read and
+    organised!), autocompleting code suggestions (e.g. typing
+    <code>background-c</code> in CSS will suggest <code>background-color</code>,
+    and more! You'll really want these features.
+  </p>
+
+  <h3 data-step="1">Online Services</h3>
   <p>
     <b>Online Services.</b> Some online sites make it possible to code small
     projects without leaving your browser. The most famous ones include
     <a href="https://codepen.io/" target="_blank">codepen</a> and
-    <a href="https://jsfiddle.net/" target="_blank">jsfiddle</a>. If you're
-    using an interactive tutorial for learning how to code the tutorial itself
+    <a href="https://jsfiddle.net/" target="_blank">jsfiddle</a>. Or, if you're
+    using an interactive tutorial for learning how to code, the tutorial itself
     should have a space to write your code into. These services are a great way
-    to try out code really quick, or to share small code snippets with others
+    to try out code really quick or to share small code snippets with others
     (You will often see links to code hosted on codepen in tutorials!), but they
     are extremely limited in features, so I do not recommend using them for
     ongoing projects.
   </p>
+  <h3 data-step="2">Hoster</h3>
   <p>
     <b>Directly in your Hoster.</b> Your website being live on the Internet
     means that the HTML/CSS/other files are uploaded to a server somewhere.
@@ -209,6 +227,7 @@ tipType: "tutorial"
 
   <br />
   <p>Here a two great ways to code locally (= on your device):</p>
+  <h3 data-step="3">Text Editors</h3>
   <p>
     <b>Text Editors</b> installed on your device are the simplest way to work on
     your project locally. Opening your HTML/CSS/other file in a text editor and
@@ -221,6 +240,7 @@ tipType: "tutorial"
     features. For your very first time coding, I think Notepad++ is a good
     choice.
   </p>
+  <h3 data-step="4">IDEs</h3>
   <p>
     <b>IDEs</b>. IDEs are programs that are made to code in. The most popular
     for web development is
@@ -232,24 +252,13 @@ tipType: "tutorial"
     my VSCode setup (e.g. installed addons) <a href="/coding/my-setup">here</a>,
     if you're interested).
   </p>
-  <br />
-  <p>All tools/software I mentioned is free, by the way.</p>
-  <p>
-    If you're wondering what those nebulous "features" are that I kept
-    mentioning there...: Some things make the process of coding much, much
-    easier. It pains me so much whenever I see beginner coders use an online
-    editor to code whole websites... No wonder they are having such a hard time
-    finding their own mistakes, there is basically no error check! Besides
-    checking for errors, some other features that are helpful include: automatic
-    formatting/indenting (<i>very</i> important to keep code easy-to-read!),
-    autocompleting text and code suggestions (e.g. typing
-    <code>background-c</code> in CSS will suggest <code>background-color</code>,
-    and more!)
-  </p>
 </section>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <section>
   <h2>Hosting</h2>
+  <h3 data-step="1">Choosing a hoster</h3>
   <p>
     So, now you have some HTML and CSS files, and now what? How do publish it to
     the internet?
@@ -282,10 +291,29 @@ tipType: "tutorial"
     one. These domains are usually paid monthly or yearly, and the price depends
     on the ending. <i>.com</i> domains are quite expensive.
   </p>
+  <h3 data-step="2">Going live</h3>
+  <p>
+    Once you have an account for a hoster set up you'll need to upload your
+    files to make your website live. For example, your
+    <code>index.html</code> will become your homepage. Files you have to upload
+    include all your HTML, CSS, JavaScript as well as any images you want to
+    host on your own website.
+  </p>
+  <p>
+    Most hosters will give you an option to upload files manually, but there are
+    easier ways to do this: For example, you can automate updating your
+    Neocities website with the help of a git Action - I have a tutorial on that
+    <a href="/coding/neocities#how-to-upload-changes-to-neocities-automatically"
+      >here</a
+    >.
+  </p>
 </section>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <section>
-  <h2>And now...? (JavaScript and Beyond)</h2>
+  <h2>Next Steps</h2>
+  <h3 data-step="1">JavaScript</h3>
   <p>
     <b>JavaScript</b> (JS) is the third most important language to learn if you
     want to make a website. If HTML is content and CSS is styling, then
@@ -317,7 +345,7 @@ tipType: "tutorial"
     As before, I highly recommend learning JavaScript with an interactive
     tutorial.
   </p>
-  <blockquote class="warning">
+  <blockquote class="tip">
     <p>
       By the way, if you ever see a tutorial that wants to teach you
       <b>jQuery</b> (which is a JavaScript library) - run and never look back!
@@ -332,7 +360,8 @@ tipType: "tutorial"
       Java to make a website.
     </p>
   </blockquote>
-  <hr />
+
+  <h3 data-step="2">More</h3>
   <p>
     Once you know HTML, CSS and at least the basics of JavaScript there is still
     a lot to learn! Check out my guide:
@@ -340,11 +369,11 @@ tipType: "tutorial"
   </p>
 </section>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <section>
   <h2>FAQ</h2>
-  <p>
-    <b>Do I have to be good with computers to be able to learn how to code?</b>
-  </p>
+  <h6>Do I have to be good with computers to be able to learn how to code?</h6>
   <p>
     No. First of all, being 'good with computers' is not in your genes or a
     talent, it's a skill, which means you can improve in it. The more time you
@@ -359,8 +388,9 @@ tipType: "tutorial"
     problem solving, and persistence. Knowing how to google and reading
     comprehension (for error messages) also helps.
   </p>
-  <br />
-  <p><b>Do I need a computer to code, or can I do it on a phone?</b></p>
+
+  <hr />
+  <h6>Do I need a computer to code, or can I do it on a phone?</h6>
   <p>
     First and foremost, if you can, code on a computer, not your phone. It will
     make many things much easier. But yes, if you don't have a computer,
@@ -368,51 +398,63 @@ tipType: "tutorial"
     in the ass though. And as I've never done that I can't give you any software
     recommendations, sorry.
   </p>
-  <br />
-  <p><b>How do I build a layout like this...?</b></p>
+
+  <hr />
+  <h6>How do I build a layout like this...?</h6>
   <p><a href="/coding/common-questions#grid">See here.</a></p>
-  <br />
-  <p>
-    <b
-      >What do I do so I don't have to change my layout in all HTML files for
-      every change?</b
-    >
-  </p>
+
+  <hr />
+  <h6>
+    What do I do so I don't have to change my layout in all HTML files for every
+    change?
+  </h6>
   <p><a href="/coding/common-questions#layout">See here.</a></p>
 </section>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <section>
   <h2>Summary</h2>
-  <p>
-    Start by learning HTML and CSS with interactive tutorials. HTML is the
-    content of your website, CSS is the styling. You should feel very
-    comfortable writing HTML code and at least somewhat comfortable with the
-    most basic CSS rules.
-  </p>
-  <p>
-    Don't forget to also learn to use the browser development tools, especially
-    the inspector and console. This is <i>not</i> optional.
-  </p>
-  <p>
-    To code, you can use an editor (such as Notepad++) or – even better – an IDE
-    (such as VSCode). Whatever you use, make sure it checks for errors and
-    formats your code for you; that will help a lot. Avoid online editors (such
-    as Codepen) for projects as they lack features, but you can use them to try
-    out things quickly or share code snippets.
-  </p>
-  <p>
-    Once you have a project (that is: at least one HTML and CSS file) you want
-    to have on the Internet, choose a hoster (such as Neocities or Nekoweb) and
-    upload the files. Your website will now be live on your chosen URL.
-  </p>
-  <p>
-    The third language (and the first <i>real</i> programming language) you
-    should learn is JavaScript with an interactive tutorial. JavaScript is the
-    functionality/interactivity of your site.
-  </p>
-  <p>After that, you're free to learn whatever interests you.</p>
+  <br />
+  <ol class="list-with-more-spacing">
+    <li>
+      Start by learning HTML and CSS with interactive tutorials. HTML is the
+      content of your website, CSS is the styling. You should feel very
+      comfortable writing HTML code and at least somewhat comfortable with the
+      most basic CSS rules.
+    </li>
+    <li>
+      Don't forget to also learn to use the browser development tools,
+      especially the inspector and console. This is <i>not</i> optional.
+    </li>
+    <li>
+      To code, you can use an editor (such as Notepad++) or – even better – an
+      IDE (such as VSCode). Whatever you use, make sure it checks for errors and
+      formats your code for you; that will help a lot. Avoid online editors
+      (such as Codepen) for projects as they lack features, but you can use them
+      to try out things quickly or share code snippets.
+    </li>
+    <li>
+      Once you have a project (that is: at least one HTML and CSS file) you want
+      to have on the Internet, choose a hoster (such as Neocities or Nekoweb)
+      and upload the files. Your website will now be live on your chosen URL.
+    </li>
+    <li>
+      The third language (and the first <i>real</i> programming language) you
+      should learn is JavaScript with an interactive tutorial. JavaScript is the
+      functionality/interactivity of your site.
+    </li>
+    <li>After that, you're free to learn whatever interests you.</li>
+  </ol>
 </section>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<section>
+  <div class="roadmap"></div>
+</section>
+
+<!-- 
 <section>
   <h2>More Guides</h2>
   <p>Here are some other guides I've written that will be helpful to you:</p>
@@ -428,9 +470,6 @@ tipType: "tutorial"
     <li><a href="/coding/checklist">self-study checklist</a></li>
   </ul>
 </section>
+-->
 
-<section>
-  <div class="roadmap"></div>
-</section>
-
-{% include 'layout/tip-me.njk' %}
+{% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}

@@ -4,42 +4,11 @@ title: "lists"
 nesting: "../"
 ---
 
-<div class="listography isotope-items">{% include "listography.njk" %}</div>
+<section>
+  <h1>
+    Lists about me
+    <sub><a href="https://listography.com/petra1999" target="_blank">➚</a></sub>
+  </h1>
+</section>
 
-<!-- Isotope: -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-<script>
-  const options = {
-    itemSelector: ".listbox",
-    percentPosition: true,
-    layoutMode: "fitRows",
-    masonry: {
-      // use element for option
-      columnWidth: ".listbox",
-    },
-  };
-
-  let $isotope = $(".isotope-items").isotope(options);
-  //   let isotopeFilters = {};
-
-  //   $(".rec-filters button").click(function () {
-  //     let $buttonGroup = $(this).parents(".rec-filters__buttons");
-  //     let filterGroup = $buttonGroup.attr("data-filter-group");
-  //     isotopeFilters[filterGroup] = $(this).attr("data-filter");
-  //     let filterValue = concatValues(isotopeFilters);
-  //     $isotope.isotope({ filter: filterValue });
-
-  //     // active state
-  //     $buttonGroup.find(".is-checked").removeClass("is-checked");
-  //     $(this).addClass("is-checked");
-  //   });
-
-  function concatValues(obj) {
-    let value = "";
-    for (let prop in obj) {
-      value += obj[prop];
-    }
-    return value;
-  }
-</script>
+<div class="listography">{% include "listography/about-me.njk" %}</div>

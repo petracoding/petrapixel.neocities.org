@@ -1,19 +1,48 @@
 .listography {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  grid-gap: 5px;
+  > * {
+    column-count: 2;
+
+    > * {
+      margin-bottom: 20px;
+    }
+  }
 }
 
-.listbox {
-  border: 1px dotted;
-  padding: 1.5em;
+div[id*="listbox-status"] {
+  display: none;
+}
 
-  @media (min-width: $md) {
-    width: calc(50% - 10px);
+div[id*="listbox-content-slot"] {
+  border: 2px $borderColor dotted;
+  border-radius: $borderRadius;
+  padding: 1em;
+  max-height: 75vh;
+  overflow-y: scroll;
+  scrollbar-color: var(--pink) var(--veryLight);
+  scrollbar-width: thin;
+
+  @media (max-width: $lg) {
+    padding: 0.5em;
+  }
+
+  div[id*="list-title-box"] > * {
+    float: none !important;
   }
 
   .box-title {
+    display: block;
+    border-bottom: 2px $borderColor dotted;
+    padding-bottom: 13px;
+    margin-bottom: 15px;
+  }
+
+  .box-subtitle {
+    display: block;
+    padding-left: 1em;
+    font-weight: normal;
+  }
+
+  div[id*="list-title-box"] {
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 0.5em;
@@ -27,9 +56,27 @@
     }
   }
 
-  ul {
-    padding-left: 1em;
-    list-style-image: url(https://i10.glitter-graphics.org/pub/2206/2206590dfsxiz48it.gif);
+  // serif font
+  // .listbox-content {
+  //   font-family: serif;
+  //   font-size: 14px;
+  //   line-height: 1.5;
+
+  //   strong {
+  //     font-family: serif !important;
+  //   }
+  // }
+
+  // ul {
+  // list-style-image: url(https://i10.glitter-graphics.org/pub/2206/2206590dfsxiz48it.gif);
+  // }
+
+  .text_content {
+    // just a list
+    ul:first-child:last-child,
+    .icon + ul:last-child {
+      padding-left: 1em;
+    }
   }
 
   .icon,
@@ -38,7 +85,16 @@
   [id*="listbox-status"],
   [id*="list_footer"],
   .list-title-handle,
-  .show-more {
+  .show-more,
+  a[href*="#attachment"] {
     display: none;
   }
+}
+
+div[id*="listbox-content-slot"]::-webkit-scrollbar-track-piece {
+  background-color: var(--veryLight);
+}
+
+div[id*="listbox-content-slot"]::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--pink);
 }

@@ -68,20 +68,23 @@ function getCookie(cookieName, fallbackValue) {
 }
 
 export function initSounds() {
-  initSound("tockSound", true, false, "a");
-  initSound(
-    "clickSound",
-    true,
-    false,
-    ".hello-its-me-facts img, .blinkies img, summary, .coding-navigation-category__title, .about-me-page__faves-images img, .about-me-page__flags img",
-  );
-  initSound(
-    "actualClick",
-    false,
-    true,
-    "summary, button, input[type='submit'], input[type='checkbox']",
-  );
-  // initSound("tinySound", true, false, "button, input[type='submit']");
+  // small timeout so it works with dynamically loaded content too
+  setTimeout(() => {
+    initSound("tockSound", true, false, "a");
+    initSound(
+      "clickSound",
+      true,
+      false,
+      ".hello-its-me-facts img, .blinkies img, summary, .coding-navigation-category__title, .about-me-page__faves-images img, .about-me-page__flags img",
+    );
+    initSound(
+      "actualClick",
+      false,
+      true,
+      "summary, button, input[type='submit'], input[type='checkbox']",
+    );
+    // initSound("tinySound", true, false, "button, input[type='submit']");
+  }, 500);
 }
 
 function initSound(soundName, onHover, onClick, selector) {
