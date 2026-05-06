@@ -1,3 +1,5 @@
+import { isFromHere } from "./layout.js";
+
 export function initSidebar() {
   initMenu();
   initLastFmWidget();
@@ -109,7 +111,13 @@ function initStatusCafeWidget() {
         r.face +
         " " +
         r.timeAgo;
-      document.getElementById("statuscafe-content").innerHTML = r.content;
+
+      if (isFromHere() && r.content.includes("icantbearit.bearblog.dev")) {
+        document.getElementById("statuscafe-content").innerHTML =
+          "No status available.";
+      } else {
+        document.getElementById("statuscafe-content").innerHTML = r.content;
+      }
     });
 }
 

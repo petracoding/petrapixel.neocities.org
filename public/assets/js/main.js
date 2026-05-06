@@ -19,7 +19,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   initTableOfContents: () => (/* binding */ initTableOfContents),
 /* harmony export */   initTabs: () => (/* binding */ initTabs),
 /* harmony export */   initToggleExplanationComments: () => (/* binding */ initToggleExplanationComments),
-/* harmony export */   initTooltips: () => (/* binding */ initTooltips)
+/* harmony export */   initTooltips: () => (/* binding */ initTooltips),
+/* harmony export */   isFromHere: () => (/* binding */ isFromHere)
 /* harmony export */ });
 /* harmony import */ var tippy_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tippy.js */ "./node_modules/tippy.js/dist/tippy.esm.js");
 /* harmony import */ var tippy_js_dist_tippy_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tippy.js/dist/tippy.css */ "./node_modules/tippy.js/dist/tippy.css");
@@ -698,6 +699,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   initSidebar: () => (/* binding */ initSidebar)
 /* harmony export */ });
+/* harmony import */ var _layout_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layout.js */ "./js/layout/layout.js");
+
+
 function initSidebar() {
   initMenu();
   initLastFmWidget();
@@ -809,7 +813,13 @@ function initStatusCafeWidget() {
         r.face +
         " " +
         r.timeAgo;
-      document.getElementById("statuscafe-content").innerHTML = r.content;
+
+      if ((0,_layout_js__WEBPACK_IMPORTED_MODULE_0__.isFromHere)() && r.content.includes("icantbearit.bearblog.dev")) {
+        document.getElementById("statuscafe-content").innerHTML =
+          "No status available.";
+      } else {
+        document.getElementById("statuscafe-content").innerHTML = r.content;
+      }
     });
 }
 

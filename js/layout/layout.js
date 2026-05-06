@@ -291,7 +291,7 @@ export function initActiveLinks() {
   }
 }
 
-function isFromHere() {
+export function isFromHere() {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   return timezone == "Europe/Berlin" || timezone == "Europe/Vienna";
 }
