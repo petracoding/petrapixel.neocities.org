@@ -1,0 +1,17 @@
+.tweeter {
+  margin-top: 20px;
+
+  p {
+    margin-top: 20px;
+    padding: 2em;
+    border-radius: 7px;
+
+    &:nth-child(even) {
+      background: rgba($pink, 0.2);
+    }
+
+    &:nth-child(odd) {
+      border: 1px dotted $pink;
+    }
+  }
+}

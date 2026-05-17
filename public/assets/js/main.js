@@ -292,12 +292,12 @@ function initActiveLinks() {
     }
   });
 
-  // Bearblog
+  // Hide some elements for people who might know me (my timezone)
   if (isFromHere()) {
-    const bearBlogLinks = document.querySelectorAll(
-      "[href='/bearblog'], [href*='icantbearit']",
+    const elsToHide = document.querySelectorAll(
+      ".hide-for-some, [href='/bearblog'], [href*='icantbearit']",
     );
-    bearBlogLinks.forEach((link) => {
+    elsToHide.forEach((link) => {
       link.style.display = "none";
     });
   }

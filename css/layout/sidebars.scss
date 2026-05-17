@@ -474,24 +474,29 @@
   }
 }
 
-.aside-gif {
+.aside-gif,
+.aside-piclog {
   position: relative;
   padding: 0;
 
-  img {
+  a {
+    padding: 10px;
+    display: block;
+  }
+
+  a img {
     filter: brightness(1.1) contrast(1.1);
     width: 100%;
-    border-radius: 10px;
     display: block;
   }
 
   &::after {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: 10px;
     background: #c891bd;
     opacity: 0.25;
     pointer-events: none;
@@ -814,6 +819,12 @@
     > div:last-child {
       display: none;
     }
+  }
+
+  small {
+    display: block;
+    margin-top: 5px;
+    line-height: 1;
   }
 
   small a {

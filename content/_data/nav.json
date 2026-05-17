@@ -114,6 +114,26 @@
       ]
    },
    {
+      "label":"Lists",
+      "new":true,
+      "items":[
+         {
+            "link":"/lists/about-me",
+            "label":"lists about me",
+            "image":"X3RfIR3.gif",
+            "new":true,
+            "hide":false
+         },
+         {
+            "link":"/lists/media",
+            "label":"lists about media",
+            "image":"wTQX5W5.gif",
+            "new":false,
+            "hide":true
+         }
+      ]
+   },
+   {
       "label":"Creations",
       "new":false,
       "items":[
@@ -218,7 +238,7 @@
    },
    {
       "label":"Fun Stuff!",
-      "new":false,
+      "new":true,
       "items":[
          
          {
@@ -246,6 +266,13 @@
             "label":"polls",
             "image":"o9c1kAD.gif",
             "new":false,
+            "hide":false
+         },
+            {
+            "link":"/fun/tweeter",
+            "label":"tweeter",
+            "image":"93nOZIL.gif",
+            "new":true,
             "hide":false
          },
          {
@@ -295,7 +322,7 @@
    },
    {
       "label":"Resources",
-      "new":true,
+      "new":false,
       "items":[
          {
             "link":"/resources/bookmarks",
@@ -362,7 +389,7 @@
             "link":"/resources/stop-using-social-media",
             "label":"how to stop using social media & doomscrolling",
             "image":"yroB26i.gif",
-            "new":true,
+            "new":false,
             "hide":false
          }
       ]

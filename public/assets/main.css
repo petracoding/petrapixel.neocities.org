@@ -13350,23 +13350,30 @@ header {
   transform: scale(1.15);
 }
 
-.aside-gif {
+.aside-gif,
+.aside-piclog {
   position: relative;
   padding: 0;
 }
-.aside-gif img {
-  filter: brightness(1.1) contrast(1.1);
-  width: 100%;
-  border-radius: 10px;
+.aside-gif a,
+.aside-piclog a {
+  padding: 10px;
   display: block;
 }
-.aside-gif::after {
+.aside-gif a img,
+.aside-piclog a img {
+  filter: brightness(1.1) contrast(1.1);
+  width: 100%;
+  display: block;
+}
+.aside-gif::after,
+.aside-piclog::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  top: 10px;
   background: #c891bd;
   opacity: 0.25;
   pointer-events: none;
@@ -13624,6 +13631,11 @@ header {
 }
 .aside-poll form > div > div:last-child {
   display: none;
+}
+.aside-poll small {
+  display: block;
+  margin-top: 5px;
+  line-height: 1;
 }
 .aside-poll small a:hover, .aside-poll small a:focus {
   text-decoration: none;
@@ -18458,6 +18470,21 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   transition: 0.3s ease;
   z-index: 1;
   font-size: 24px;
+}
+
+.tweeter {
+  margin-top: 20px;
+}
+.tweeter p {
+  margin-top: 20px;
+  padding: 2em;
+  border-radius: 7px;
+}
+.tweeter p:nth-child(even) {
+  background: rgba(233, 151, 188, 0.2);
+}
+.tweeter p:nth-child(odd) {
+  border: 1px dotted #e997bc;
 }
 
 .listography > * {

@@ -152,8 +152,8 @@
     },
     {
       "title": "Good Omens",
-      "ongoing": true,
-      "seasons": 2,
+      "ongoing": false,
+      "seasons": 3,
       "year": "2019",
       "genres": "Comedy, Fantasy, Queer",
       "rating": "2",

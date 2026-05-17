@@ -141,6 +141,9 @@ testingOnLocalhost: false
                   {% endif %}
                 </li>
                 {% endif %} {% endfor %}
+                <li class="changelog__entry">
+                  <i>(Entries older than 1 year have been removed.)</i>
+                </li>
               </ul>
             </div>
 
@@ -237,13 +240,28 @@ testingOnLocalhost: false
               </center>
             </div>
 
-            <!-- ----------------- GIF ----------------- -->
+            <!-- ----------------- GIF -----------------
             <div class="aside-box aside-gif">
               <img
                 src="https://i.pinimg.com/originals/3a/c3/6c/3ac36c66ea24d4ec5f0104c982d97822.gif"
                 alt="Mabel from Gravity Falls"
                 title="Mabel from Gravity Falls"
               />
+            </div>
+             -->
+
+            <!-- ----------------- PICLOG ----------------- -->
+            <div class="aside-box aside-piclog">
+              <div class="aside-box__heading" aria-hidden="true">
+                Latest Piclog Pic<img
+                  src="{{ nesting }}assets/img/layout/icon-hearts.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+              <a href="https://piclog.blue/profile.php?id=571" target="_blank"
+                ><img src="https://piclog.blue/latest.php?id=571"
+              /></a>
             </div>
             <img
               src="{{ nesting }}assets/img/layout/divider3.gif"
@@ -414,6 +432,15 @@ testingOnLocalhost: false
 
             <center>
               <small>(all polls <a href="/fun/polls">here</a>)</small>
+            </center>
+            <center>
+              <small>
+                (also fill out
+                <a href="https://forms.gle/1DDgSeCh6UCquQVg8" target="_blank"
+                  >this survey</a
+                >
+                about my resources please!)</small
+              >
             </center>
           </div>
 
