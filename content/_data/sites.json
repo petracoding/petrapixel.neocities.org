@@ -458,7 +458,8 @@
     "image": "aroceu.png",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true
+    "supporter": true,
+    "supporterUntil": "member" 
   },
   {
     "link": "https://icirr.us/",
@@ -466,7 +467,8 @@
     "image": "masterball.png",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true
+    "supporter": true,
+    "supporterUntil": "member (aroceu)" 
   },
     {
     "link": "https://sinproexe.net/",
@@ -474,7 +476,8 @@
     "image": "sinproexe.gif",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true
+    "supporter": false,
+    "supporterUntil": "member" 
   },
     {
     "link": "https://ghostk.id/",
@@ -482,7 +485,8 @@
     "image": "ghostkid.gif",
     "neighbor": false,
     "inspiration": true,
-    "supporter": true
+    "supporter": false,
+    "supporterUntil": "member" 
   },
     {
     "link": "https://heidicvlach.neocities.org/",
@@ -490,7 +494,8 @@
     "image": "heidicvlach.png",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true
+    "supporter": true,
+    "supporterUntil": "member" 
   },
   {
     "link": "https://mooeena.site/",
@@ -498,7 +503,7 @@
     "image": "mooeena.gif",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true,
+    "supporter": false,
     "supporterUntil": "15.05." 
   },
    {
@@ -507,7 +512,7 @@
     "image": "frutigeraeroarchive.png",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true,
+    "supporter": false,
     "supporterUntil": "17.05." 
   },
    {
@@ -534,6 +539,7 @@
     "image": "transpiritual.gif",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true
+    "supporter": true,
+    "supporterUntil": "member" 
   }
 ]

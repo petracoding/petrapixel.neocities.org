@@ -528,7 +528,7 @@
          },
          {
             "label":"Bookmarks",
-            "new":true,
+            "new":false,
             "items": [
 
                {
@@ -543,7 +543,7 @@
                   "link":"/coding/webring-list",
                   "label":"List of Webrings",
                   "sublabel":"",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"global-line"
                },
