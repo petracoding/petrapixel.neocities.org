@@ -18,13 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function doAction(action) {
+  const referrerSplit = document.referrer
+    .replace("http://", "")
+    .replace("https://", "")
+    .split("/");
+  const referrerCleaned = referrerSplit[0];
+
   const index = members.findIndex((member) =>
-    member.url
-      .replace("http://", "https://")
-      .includes(document.referrer.replace("http://", "https://")),
+    member.url.includes(referrerCleaned),
   );
   if (index == -1) {
-    console.error(document.referrer + " not found in webring member list.");
+    console.error(referrerCleaned + " not found in webring member list.");
     return;
   }
 
