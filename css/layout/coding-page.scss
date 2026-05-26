@@ -128,7 +128,31 @@
   border-bottom: 0;
 
   @media (min-width: $md) {
-    min-width: 170px;
+    min-width: 150px;
+
+    &[aria-label="Tools"] ul {
+      min-width: 190px;
+    }
+
+    // &[aria-label="Codes"] ul {
+    //   min-width: 150px;
+    // }
+
+    // &[aria-label="Bookmarks"] ul {
+    //   min-width: 190px;
+    // }
+
+    &[aria-label="First Steps"] ul {
+      min-width: 220px;
+    }
+
+    &[aria-label="Beginner Tutorials"] ul {
+      min-width: 290px;
+    }
+
+    // &[aria-label="Advanced Tutorials"] ul {
+    //   min-width: 190px;
+    // }
   }
 
   .aside-nav__new {
@@ -141,6 +165,13 @@
     .coding-navigation-category__title a {
       color: var(--white);
     }
+  }
+
+  hr {
+    border: 0;
+    border-top: 3px dotted var(--light);
+    margin-top: 5px;
+    margin-bottom: 15px;
   }
 
   ul {
@@ -159,6 +190,9 @@
     border: var(--mainBorder);
     display: none;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+
+    @media (min-width: $md) {
+    }
 
     li {
       position: relative;
@@ -181,11 +215,11 @@
           opacity: 0.8;
         }
 
-        .aside-nav__new {
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
+        // .aside-nav__new {
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        // }
 
         // Remix Icon
         i[class^="ri-"] {
@@ -284,6 +318,12 @@
 .coding-navigation-category__title {
   padding: 5px;
   text-align: center;
+
+  .aside-nav__new {
+    position: absolute;
+    top: 13px;
+    right: 12px;
+  }
 }
 
 .coding-back-to-home {

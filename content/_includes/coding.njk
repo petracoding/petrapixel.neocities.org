@@ -85,24 +85,26 @@ codingPage: true
             </div>
             <ul>
               {% for navItem in mainNavItem.items %}{% if not navItem.hide and
-              not navItem.hideInCodingNav %}
+              not navItem.hideInCodingNav %} {% if navItem.isDivider %}
+              <hr />
+              {% else %}
               <li>
                 <a href="{{ navItem.link }}"
-                  ><i class="ri-{{ navItem.icon }}"></i
-                  ><span
-                    >{{ navItem.label }}{% if navItem.sublabel %}<small
+                  ><i class="ri-{{ navItem.icon }}"></i>
+                  <div>
+                    {{ navItem.label }}{% if navItem.new %}
+                    <small class="aside-nav__new"
+                      ><img
+                        src="{{ nesting }}assets/img/layout/new.gif"
+                        alt=""
+                        aria-hidden="true" /></small
+                    >{% endif %}{% if navItem.sublabel %}<small
                       >{{ navItem.sublabel }}</small
-                    >{% endif %}</span
-                  >{% if navItem.new %}
-                  <small class="aside-nav__new"
-                    ><img
-                      src="{{ nesting }}assets/img/layout/new.gif"
-                      alt=""
-                      aria-hidden="true" /></small
-                  >{% endif %}</a
+                    >{% endif %}
+                  </div></a
                 >
               </li>
-              {% endif %}{% endfor %}
+              {% endif %} {% endif %}{% endfor %}
             </ul>
           </div>
           {% endfor %} {% endif %}{% endfor %}

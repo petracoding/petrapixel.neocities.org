@@ -127,6 +127,7 @@
   font-size: 13px;
   background: var(--white);
   color: var(--black);
+  word-break: break-all;
 
   &:focus {
     outline: none;

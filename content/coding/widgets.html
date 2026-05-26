@@ -19,61 +19,61 @@ toc: true
     This means you won't be able to use most widgets. But iFrames are allowed!
     So I have created this little tool that creates iFrames for the most popular
     widgets.
-  </p>
-  <p>
     <b
       >I'd appreciate you linking back to me on your website if you enjoy these
       widgets!</b
     >
-    However, be aware that I did not write the widgets themselves (I only packed
-    them up nicely), so don't say I did!
   </p>
+
   <hr />
-  <p><strong>How to use:</strong></p>
   <p>
-    Just copy the code and paste it in your HTML file. The iframe will show the
-    widget, you can position and size it just like any other element. The
-    background of the iframe is transparent, so it will look good on any
-    background. Keep in mind that you can't change the styling
-    <i>inside</i> the iframe with your own CSS code, only over the parameters I
-    offer.
+    <strong>How to use:</strong> Just copy the code and paste it in your HTML
+    file. The iframe will show the widget, you can position and size it just
+    like any other element. The background of the iframe is transparent, so it
+    will look good on any background. Keep in mind that you can't change the
+    styling <i>inside</i> the iframe with your own CSS code, only over the
+    settings I offer.
   </p>
-  <p>
-    To set parameters such as usernames and to style the element, just change
-    the parameters in the iframe's 'src' attribute. For example, change
-    <code>center=0</code> to <code>center=1</code> to center the text. Change
-    <code>marquee=0</code> to <code>marquee=1</code> make the text scroll
-    horizontally. There is no parameter for the background color because the
-    widget's background is transparent. To set a background color, wrap the
-    widget in an element and set the background yourself as usual.
-  </p>
-  <p>
-    You can also use any valid CSS parameter. Usage is like normal CSS code,
-    except with a <code>=</code> instead of a <code>:</code>, and seperated by
-    <code>&</code>. For example, you can add this:
-    <code>font-size=12px&line-height=2</code>. For colors you should provide a
-    hex value (e.g. <code>#d92f2f</code>).
-    <a
-      href="https://www.google.com/search?client=firefox-b-d&q=color+picker"
-      target="_blank"
-      >You can use this color picker.</a
-    >
-    For fonts, just type the name of any
-    <a
-      href="https://www.w3schools.com/cssref/css_websafe_fonts.php"
-      target="_blank"
-      >web-safe font</a
-    >
-    with spaces as usual, e.g. <code>font-family=Times New Roman</code>. Other
-    fonts (e.g. Google fonts) won't work.
-  </p>
-  <p>
-    Some parameters are required, e.g. your status.cafe username for the
-    status.cafe widget. Not inputting it will result in the widget not
-    displaying correctly. (Weird symbols in those parameters, e.g. in your
-    status.cafe username, might also break the code, sorry! Comment below if
-    you're experiencing with issues, I'll try to fix it.)
-  </p>
+  <details>
+    <summary>Read expert tips</summary>
+    <p>
+      To set settings such as usernames and to style the element, just change
+      the settings in the iframe's 'src' attribute. For example, change
+      <code>center=0</code> to <code>center=1</code> to center the text. Change
+      <code>marquee=0</code> to <code>marquee=1</code> make the text scroll
+      horizontally. There is no parameter for the background color because the
+      widget's background is transparent. To set a background color, wrap the
+      widget in an element and set the background yourself as usual.
+    </p>
+    <p>
+      You can also use any valid CSS parameter. Usage is like normal CSS code,
+      except with a <code>=</code> instead of a <code>:</code>, and seperated by
+      <code>&</code>. For example, you can add this:
+      <code>font-size=12px&line-height=2</code>. For colors you should provide a
+      hex value (e.g. <code>#d92f2f</code>).
+      <a
+        href="https://www.google.com/search?client=firefox-b-d&q=color+picker"
+        target="_blank"
+        >You can use this color picker.</a
+      >
+      For fonts, just type the name of any
+      <a
+        href="https://www.w3schools.com/cssref/css_websafe_fonts.php"
+        target="_blank"
+        >web-safe font</a
+      >
+      with spaces as usual, e.g. <code>font-family=Times New Roman</code>. Other
+      fonts (e.g. Google fonts) won't work.
+    </p>
+    <p>
+      Some settings are required, e.g. your status.cafe username for the
+      status.cafe widget. Not inputting it will result in the widget not
+      displaying correctly. (Weird symbols in those parameters, e.g. in your
+      status.cafe username, might also break the code, sorry! Comment below if
+      you're experiencing with issues, I'll try to fix it.)
+    </p>
+  </details>
+
   <blockquote class="warning">
     Clear the cache for <b>my</b> website if you are experiencing issues!
     <a href="/coding/cachebusting#howto">Here's how.</a>
@@ -284,6 +284,13 @@ toc: true
       ></iframe>
     </div>
   </div>
+  <hr />
+  <h5>Build your own:</h5>
+  <div
+    class="widget-builder"
+    data-widget="statuscafe"
+    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&username=Petra1999&hideUsername=0&hideEmoji=0&hideUsernameAndTime=0&linkColor=#154399&timeColor=#000000&swapPositions=0&center=0&marquee=0"
+  ></div>
 </section>
 
 <section>
@@ -321,6 +328,7 @@ toc: true
     </li>
   </ul>
 
+  <hr />
   <div class="widget-previews">
     <div class="widget-preview">
       <strong>Example 1</strong>
@@ -403,6 +411,14 @@ toc: true
       ></iframe>
     </div>
   </div>
+
+  <hr />
+  <h5>Build your own:</h5>
+  <div
+    class="widget-builder"
+    data-widget="lastfm"
+    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&username=Petra1999&swapPositions=0&delimiter= by &underline=0&center=0&marquee=0&showAlbumCover=50&albumCoverLeft=1"
+  ></div>
 </section>
 
 <section>
@@ -455,6 +471,7 @@ toc: true
     </li>
   </ul>
 
+  <hr />
   <div class="widget-previews">
     <div class="widget-preview">
       <strong>Example 1</strong>
@@ -497,6 +514,14 @@ toc: true
       ></iframe>
     </div>
   </div>
+
+  <hr />
+  <h5>Build your own:</h5>
+  <div
+    class="widget-builder"
+    data-widget="pollcode"
+    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&ignorePollcodeStyling=0&viewButtonAsLink=1&spacing=10px&pollcode=Paste here."
+  ></div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->

@@ -21,6 +21,7 @@ import { initGoogleSheets } from "./pages/google-sheets";
 import { initWebsiteAgeCounter } from "./pages/about-the-site";
 import { initAdventCalendar } from "./pages/advent-calendar";
 import { initRoadmap } from "./pages/roadmap";
+import { initWidgetBuilders } from "./pages/widgets";
 // import { initWritingChart } from "./pages/writing";
 // import { initComprehensionQuestions } from "./pages/comprehension-questions";
 
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //initComprehensionQuestions();
   initAdventCalendar();
   initRoadmap();
+  initWidgetBuilders();
 
   /* SPECIAL: */
   initAprilFools();

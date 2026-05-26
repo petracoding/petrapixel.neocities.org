@@ -14097,8 +14097,7 @@ main h3 code,
 main h4 code,
 main h5 code,
 main h6 code {
-  font-size: 0.9em;
-  font-weight: normal;
+  font-size: 1.2em;
 }
 main h1:first-child,
 main h2:first-child,
@@ -14835,7 +14834,16 @@ img[src*="i.imgur.com"] {
 }
 @media (min-width: 992px) {
   .coding-navigation-category {
-    min-width: 170px;
+    min-width: 150px;
+  }
+  .coding-navigation-category[aria-label=Tools] ul {
+    min-width: 190px;
+  }
+  .coding-navigation-category[aria-label="First Steps"] ul {
+    min-width: 220px;
+  }
+  .coding-navigation-category[aria-label="Beginner Tutorials"] ul {
+    min-width: 290px;
   }
 }
 .coding-navigation-category .aside-nav__new {
@@ -14846,6 +14854,12 @@ img[src*="i.imgur.com"] {
 }
 .coding-navigation-category.active .coding-navigation-category__title a {
   color: var(--white);
+}
+.coding-navigation-category hr {
+  border: 0;
+  border-top: 3px dotted var(--light);
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 .coding-navigation-category ul {
   position: absolute;
@@ -14882,11 +14896,6 @@ img[src*="i.imgur.com"] {
 .coding-navigation-category ul li a small:not(.aside-nav__new) {
   display: block;
   opacity: 0.8;
-}
-.coding-navigation-category ul li a .aside-nav__new {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 .coding-navigation-category ul li a i[class^=ri-] {
   font-size: 1em;
@@ -14977,6 +14986,11 @@ img[src*="i.imgur.com"] {
 .coding-navigation-category__title {
   padding: 5px;
   text-align: center;
+}
+.coding-navigation-category__title .aside-nav__new {
+  position: absolute;
+  top: 13px;
+  right: 12px;
 }
 
 .coding-back-to-home {
@@ -16978,6 +16992,7 @@ section .blinkies {
   font-size: 13px;
   background: var(--white);
   color: var(--black);
+  word-break: break-all;
 }
 .code-textarea:focus {
   outline: none;
@@ -19382,6 +19397,49 @@ div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
 }
 .widget-preview > iframe[src*=pollcode] {
   height: 200px;
+}
+
+.widget-builder {
+  display: flex;
+  border: 2px dotted #deafb3;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.widget-builder__settings {
+  flex: 1 0 0;
+}
+
+.widget-builder__setting {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.widget-builder__setting b {
+  margin-right: 5px;
+}
+.widget-builder__setting input,
+.widget-builder__setting textarea {
+  cursor: url("/assets/img/cursor1.png") 7 5, pointer;
+}
+.widget-builder__setting input[type=number] {
+  max-width: 70px;
+}
+
+.widget-builder__preview {
+  flex: 1 0 0;
+}
+.widget-builder__preview > b {
+  display: block;
+}
+.widget-builder__preview iframe {
+  border: 1px solid var(--light);
+  width: 100%;
+}
+
+.widget-builder__code {
+  width: 100%;
+  min-height: 65px;
 }
 
 .roadmap {

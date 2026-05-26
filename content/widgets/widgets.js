@@ -27,7 +27,6 @@ const knownParams = [
 document.addEventListener("DOMContentLoaded", function () {
   console.log(
     "%cWidget provided by petrapixel. Get yours: https://petrapixel.neocities.org/coding/widgets",
-    "font-size: 14pt;",
     "font-size: 16pt;",
   );
 

@@ -454,6 +454,9 @@
                   "icon":"bard-line"
                },
                {
+                  "isDivider": "-----------------------------"
+               },
+               {
                   "link":"/coding/cheatsheet",
                   "label":"Cheatsheet",
                   "sublabel":"",
@@ -508,6 +511,14 @@
                   "icon":"image-ai-line"
                },
                {
+                  "link":"/coding/snippets",
+                  "label":"Code Snippets",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"code-s-slash-line"
+               },
+               {
                   "link":"/coding/webringu",
                   "label":"Webringu",
                   "labelInMainMenu":"Webring Script",
@@ -515,14 +526,6 @@
                   "new":false,
                   "hide":false,
                   "icon":"user-community-line"
-               },
-               {
-                  "link":"/coding/snippets",
-                  "label":"Code Snippets",
-                  "sublabel":"",
-                  "new":false,
-                  "hide":false,
-                  "icon":"code-s-slash-line"
                }
             ]
          },
@@ -595,6 +598,18 @@
                   "icon":"error-warning-line"
                },
                {
+                  "isDivider": "-----------------------------"
+               },
+
+               {
+                  "link":"/coding/need-help",
+                  "label":"Troubleshooting Guide",
+                  "sublabel":"+ how to find support",
+                  "new":false,
+                  "hide":false,
+                  "icon":"bug-line"
+               },
+                 {
                   "link":"/coding/code-quality",
                   "label":"Code Quality Guide",
                   "sublabel":"",
@@ -603,12 +618,15 @@
                   "icon":"code-ai-line"
                },
                {
-                  "link":"/coding/need-help",
-                  "label":"Troubleshooting Guide",
-                  "sublabel":"+ how to find support",
-                  "new":false,
-                  "hide":false,
-                  "icon":"bug-line"
+                  "link":"/coding/performance-tutorial",
+                  "label":"Performance Guide",
+                  "sublabel":"How to make pages load faster",
+                  "new":true,
+                  "hide":true,
+                  "icon":"speed-up-line"
+               },
+               {
+                  "isDivider": "-----------------------------"
                },
                {
                   "link":"/coding/neocities",
@@ -631,9 +649,8 @@
          },
          {
             "label":"Beginner Tutorials",
-            "new":false,
+            "new":true,
             "items":[
-               
                {
                   "link":"/coding/layout-base-code",
                   "label":"Loading the same layout on every page",
@@ -651,13 +668,6 @@
                   "icon":"layout-masonry-line"
                },
                {
-                  "link":"/coding/custom-font-tutorial",
-                  "label":"Custom Font Tutorial",
-                  "new":false,
-                  "hide":false,
-                  "icon":"font-size"
-               },
-               {
                   "link":"/coding/cachebusting",
                   "label":"Cachebusting",
                   "sublabel":"Stop that pesky caching",
@@ -666,12 +676,27 @@
                   "icon":"delete-bin-6-line"
                },
                {
-                  "link":"/coding/performance",
-                  "label":"How to make pages load faster",
-                  "sublabel":"",
+                  "link":"/coding/custom-font-tutorial",
+                  "label":"Custom Font Tutorial",
                   "new":false,
                   "hide":true,
-                  "icon":"speed-up-line"
+                  "icon":"font-size"
+               },
+                 {
+                  "link":"/coding/sound-tutorial",
+                  "label":"Sound Effects Tutorial",
+                  "sublabel":"",
+                  "new":true,
+                  "hide":false,
+                  "icon":"volume-up-line"
+               },
+               {
+                  "link":"/coding/javascript-tutorial",
+                  "label":"Javascript Tutorial",
+                  "sublabel": "common usecases",
+                  "new":true,
+                  "hide":true,
+                  "icon":"javascript-line"
                }
             ]
          },
@@ -686,6 +711,9 @@
                   "new":false,
                   "hide":false,
                   "icon":"rocket-line"
+               },
+               {
+                  "isDivider": "-----------------------------"
                },
                {
                   "link":"/coding/git-tutorial",
@@ -718,6 +746,9 @@
                   "new":false,
                   "hide":false,
                   "icon":"magic-line"
+               },
+               {
+                  "isDivider": "-----------------------------"
                },
                {
                   "link":"/coding/google-sheets-api-tutorial",

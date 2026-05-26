@@ -113,17 +113,6 @@ function playSound(soundId) {
   audio.volume = 1;
   if (soundId == "actualClick") audio.volume = 0.1;
 
-  // console.log(
-  //   "⏵ " +
-  //     soundId +
-  //     " (" +
-  //     (audio.paused ? "paused" : "unpaused") +
-  //     ") [" +
-  //     audio.readyState +
-  //     "] " +
-  //     audio.duration,
-  // );
-
   if (audio.readyState < 4 || !audio.duration) {
     audio.load();
     audio.addEventListener(

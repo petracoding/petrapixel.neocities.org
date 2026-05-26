@@ -1,0 +1,174 @@
+---
+layout: coding.njk
+title: "sound effect tutorial"
+description: "How to add sound effects to your Neocities website."
+nesting: "../"
+codeHighlight: true
+mainClass: coding-page
+tipType: "tutorial"
+---
+
+<section>
+  <h1>Sound Effect Tutorial</h1>
+  <blockquote class="warning">
+    <p>
+      <b>It's considered rude to have autoplay sound/music on your website</b>,
+      so make sure to only play sound when your website is interacted with. In
+      fact, browsers sometimes will simply not play autoplay sound/music - and
+      that's good. That means:
+    </p>
+    <p>
+      <b>Sounds will only play if the user has interacted with your page</b>,
+      for example if they have clicked. There's nothing you can (or should) do
+      about that.
+    </p>
+  </blockquote>
+</section>
+
+<section>
+  <h2>Finding sounds</h2>
+
+  <p>
+    You can find sound effects pretty much anywhere on the Internet, or you can
+    make your own. I recommend using YouTube or a site with free sounds like
+    <a href="https://pixabay.com/sound-effects/" target="_blank">pixabay.com</a
+    >. Download the sound, and make sure it's an audio file, not a video file
+    (e.g. mp3, not mp4). If you need to trim your sound file you can do so with
+    free software like
+    <a href="https://www.audacityteam.org/download/" target="_blank">Audacity</a
+    >.
+  </p>
+
+  <hr />
+
+  <h2>Hosting sounds</h2>
+
+  <p>
+    If your host allows you to upload audio files to your website, you can now
+    do so.
+  </p>
+  <p>
+    Free Neocities accounts aren't allowed to upload audio files, so you need to
+    host your file somewhere else. I can recommend
+    <a href="https://catbox.moe/" target="_blank">Catbox</a>: Just upload the
+    file and make sure to copy the URL to it.
+  </p>
+  <p>
+    The direct link to your file should have the file extension at the end, e.g.
+    <code>https://example.neocities.org/mysound.mp3</code> or
+    <code>https://files.catbox.moe/12345.mp3</code>
+  </p>
+
+  <hr />
+
+  <h2>Playing sounds</h2>
+
+  <h3 data-step="1">HTML</h3>
+  <p>
+    On every page that you want the sound effect to work, you need to add this
+    code to your HTML:
+  </p>
+
+  <pre><code>&lt;audio id=&quot;mySound&quot; style=&quot;display: none&quot; preload=&quot;auto&quot;&gt;
+  &lt;source src=&quot;/your-sound-file-path-here.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+&lt;/audio&gt;</code></pre>
+
+  <p>
+    It doesn't matter where you put it, and it won't be visible on your page.
+    But it needs to be there so we can refer to it in our JavaScript code.
+  </p>
+
+  <p>
+    Obviously, make sure the path to your sound is correct. To test it you can
+    temporarily remove the <code>display:none</code> to see the audio player on
+    your site.
+  </p>
+
+  <h3 data-step="2">JavaScript</h3>
+
+  <p>We're going to use JavaScript to play the sounds.</p>
+
+  <p>
+    First, we need to select all elements that should play the sound on
+    click/hover, and add an event listener that plays the sound:
+  </p>
+
+  <pre><code>document.querySelectorAll("a, .example-selector").forEach((el) => {
+    el.addEventListener("click", () => { // or "mouseover" for hover
+      playSound("mySound");
+    });
+});</code></pre>
+
+  <p>
+    The sound name (here "mySound") should match the ID attribute of the HTML
+    element we added earlier.
+  </p>
+
+  <p>
+    You can change "click" to "mouseover" to make the sound play on hover
+    instead.
+  </p>
+  <p>
+    As usual, make sure this javascript code is executed after the DOM has
+    finished loading either by placing it below your other HTML content or using
+    the DOMContentLoaded listener:
+  </p>
+  <pre><code>document.addEventListener("DOMContentLoaded", function () {
+  // code here
+});
+  </code></pre>
+  <hr />
+
+  <p>
+    Now we need to create the <code>playSound</code> function we used in the
+    code above. This is what it looks like:
+  </p>
+
+  <!-- htmlmin:ignore -->
+  <pre><code>function playSound(soundName) {
+  const audio = document.querySelector("#" + soundName);
+  if (!audio) return;
+
+  audio.muted = false;
+  audio.volume = 1; // change volume here, e.g. 0.5
+
+  if (audio.readyState < 4 || !audio.duration) {
+    audio.load();
+    audio.addEventListener(
+      "canplaythrough",
+      () => {
+        audio
+          .play()
+          .catch((err) =>
+            console.error("Playback of " + soundName + " failed:", err),
+          );
+      },
+      { once: true },
+    );
+  } else {
+    audio
+      .play()
+      .catch((err) =>
+        console.error("Playback of " + soundName + " failed:", err),
+      );
+  }
+}</code></pre>
+  <!-- htmlmin:ignore -->
+
+  <p>I'm, uhh, not gonna explain this code in detail, sorry.</p>
+
+  <p>
+    And that's it! Your sound should now work
+    <b>once you've interacted with your page (e.g. clicked)</b>. Before
+    interaction, your browser likely won't play the sound - you can see the
+    error messages in the console (in your browser's developer tools / F12).
+  </p>
+
+  <blockquote class="warning">
+    <p>
+      Please make sure your sounds aren't too loud. We don't wanna scare people.
+    </p>
+  </blockquote>
+</section>
+
+{% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}
