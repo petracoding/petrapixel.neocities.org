@@ -61,7 +61,7 @@
    },
    {
       "label":"Webmistress",
-      "new":false,
+      "new":true,
       "items":[
          {
             "link":"/about/about-me",
@@ -105,6 +105,13 @@
             "hide":false
          },
          {
+            "link":"/about/vinted-haul",
+            "label":"vinted haul",
+            "image":"5pwMMeG.gif",
+            "new":true,
+            "hide":false
+         },
+         {
             "link":"/about/ships",
             "label":"my ships",
             "image":"NMEZj77.gif",
@@ -115,13 +122,13 @@
    },
    {
       "label":"Lists",
-      "new":true,
+      "new":false,
       "items":[
          {
             "link":"/lists/about-me",
             "label":"lists about me",
             "image":"X3RfIR3.gif",
-            "new":true,
+            "new":false,
             "hide":false
          },
          {
@@ -622,7 +629,7 @@
                   "label":"Performance Guide",
                   "sublabel":"How to make pages load faster",
                   "new":true,
-                  "hide":true,
+                  "hide":false,
                   "icon":"speed-up-line"
                },
                {
@@ -662,7 +669,7 @@
                {
                   "link":"/coding/positioning-tutorial",
                   "label":"CSS Positioning/Layout Tutorial",
-                  "sublabel":"(display, position, flexbox, grid, transform, z-index, ...)",
+                  "sublabel":"display, position, flexbox, grid, transform, z-index, and more",
                   "new":false,
                   "hide":false,
                   "icon":"layout-masonry-line"
@@ -682,6 +689,17 @@
                   "hide":true,
                   "icon":"font-size"
                },
+               {
+                  "isDivider": "-----------------------------"
+               },
+               {
+                  "link":"/coding/javascript-tutorial",
+                  "label":"Javascript Tutorial",
+                  "sublabel": "Learn basic syntax and common usecases!",
+                  "new":true,
+                  "hide":true,
+                  "icon":"javascript-line"
+               },
                  {
                   "link":"/coding/sound-tutorial",
                   "label":"Sound Effects Tutorial",
@@ -689,14 +707,6 @@
                   "new":true,
                   "hide":false,
                   "icon":"volume-up-line"
-               },
-               {
-                  "link":"/coding/javascript-tutorial",
-                  "label":"Javascript Tutorial",
-                  "sublabel": "common usecases",
-                  "new":true,
-                  "hide":true,
-                  "icon":"javascript-line"
                }
             ]
          },

@@ -18502,6 +18502,58 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   border: 1px dotted #e997bc;
 }
 
+.vinted-haul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.vinted-haul figure {
+  position: relative;
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+.vinted-haul figure img {
+  max-width: 200px;
+  max-height: 300px;
+  height: auto;
+  width: auto;
+  image-rendering: pixelated;
+  filter: brightness(1.1) contrast(1.1) saturate(1.1);
+}
+@media (max-width: 576px) {
+  .vinted-haul figure img {
+    max-width: 40vw;
+  }
+}
+.vinted-haul figure:hover, .vinted-haul figure:focus {
+  transform: scale(1.2);
+}
+.vinted-haul figure:hover img, .vinted-haul figure:focus img {
+  image-rendering: auto;
+}
+.vinted-haul figure:hover figcaption, .vinted-haul figure:focus figcaption {
+  opacity: 1;
+}
+.vinted-haul figcaption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  text-shadow: 1px 1px 0px var(--white);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  line-height: 1;
+  padding: 0 6px;
+}
+.vinted-haul figcaption span {
+  font-size: 0.6em;
+  font-family: sans-serif;
+}
+
 .listography > * {
   column-count: 2;
 }

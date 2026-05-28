@@ -12,62 +12,127 @@ tipType: "tutorial"
 
 <section>
   <h1>Performance Optimization Tutorial</h1>
+  <p>
+    This is a small guide to help you identify and solve performance issues on
+    your website.
+  </p>
   <div id="toc"></div>
-
-  <!--  how to test (dev tools, google tool), minify, images smaller+compressed,
-  lazyloading, fewer resources (e.g. jquery, fonts), perceived performance
-  (animations)-->
 </section>
 
 <section>
-  <h2 id="howto">How to test your website's speed</h2>
-  <a href="https://pagespeed.web.dev/" target="_blank"
-    >Google's PageSpeed Insights (tool to test your page speed)</a
-  >
-  <blockquote class="tip"><p>Perceived speed.</p></blockquote>
-</section>
-
-<section>
-  <h2 id="basics">Performance Basics</h2>
+  <h2 id="test">Testing Performance</h2>
 
   <p>
-    If you're using Eleventy (11ty) (aka Build Awesome) you can check ouf the
-    section on minifying files in
-    <a href="/coding/eleventy-tutorial.html#minify">my eleventy tutorial</a>.
+    The best way to test your website's speed is to use the development tools of
+    your browser. Here's how:
+  </p>
+
+  <ol>
+    <li>
+      Open the <b>development tools</b> via the browser menu or pressing F12.
+    </li>
+    <li>
+      There, navigate to the <b>"Network" tab</b>. Make sure to check the
+      <b>"Disable Cache"</b> checkbox.
+    </li>
+    <li>
+      With this open, reload your website and the network tab will show you a
+      list of all resources that the browser needs to load for your website.
+      This includes your HTML, CSS, Javascript files, but also media like
+      images, videos and audio, and other stuff like fonts. Make sure the
+      <b>"all"</b>
+      filter is active so you can see, well, all.
+    </li>
+    <li>
+      Now sort the list by file size by clicking the 'Size' column header. You
+      can now see which resources make up the most of your site's loading time.
+      Most likely these will be images and your main CSS and Javascript files,
+      and perhaps a custom font you use.
+    </li>
+  </ol>
+
+  <hr />
+
+  <p>
+    You can also use
+    <a href="https://pagespeed.web.dev/" target="_blank"
+      >Google's PageSpeed Insights</a
+    >
+    to test the speed of your website. The tool gives you a score for several
+    aspects. Beginners can ignore these 'web vitals' (LCP, CLS, etc) and just
+    scroll down to the performance score. Your page is scored out of 100. Scroll
+    even further down to "Insights" to get tips on what you can do to improve
+    your website's loading time.
+  </p>
+
+  <p>
+    Keep in mind that this tool only tests one page of your website, not your
+    entire website. You need to test every page seperately. Also make sure to
+    read the results for both the 'Mobile' and 'Desktop' tabs.
   </p>
 </section>
 
 <section>
-  <h2 id="images">Images</h2>
-  <p></p>
-</section>
+  <h2 id="improve">Improving Performance</h2>
+  <p>
+    Making sure the images on your website have a small file size is THE most
+    important step to making sure your website loads quickly. There are two
+    steps to this. For every image:
+  </p>
+  <ol>
+    <li>
+      <b>Make sure the image is no larger than you ever display it.</b> Example:
+      the photo you show in the size 100x100 pixels does not need to be
+      2000x2000 pixels. You can use any image editor to change the size.
+    </li>
+    <li>
+      <b>Compress the image.</b> This will not change its pixel size or
+      perceived quality, but will heavily reduce file size and therefore improve
+      loading speed. You can use any image compressor tool you want, I have
+      <a href="/resources/compression-tutorial"
+        >a detailed tutorial on how to compress images here</a
+      >
+    </li>
+  </ol>
+  <p>
+    This also has the nice side effect that you will be using less of your
+    hoster's allowed file storage. (For example, Neocities gives you 1 GB of
+    free storage.)
+  </p>
+  <hr />
+  <p>
+    You can add the attribute <code>loading="lazy"</code> to any image (and
+    iframe) in your HTML that you don't need to be loaded at the very beginning
+    of a page load. For exaple, every image that is only visible once a user has
+    scrolled down a bit can have this attribute. This will reduce the time your
+    page needs to finish its first full load. It's super duper simple:
+  </p>
+  <pre><code>&lt;img src=&quot;image.png&quot; loading=&quot;lazy&quot; /&gt;</code></pre>
+  <hr />
 
-<section>
-  <h2 id="lazyloading">Lazy loading</h2>
-  <p></p>
-  <ul>
-    <li>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading"
-        target="_blank"
-        >mdn docs: lazy loading</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://www.w3schools.com/tags/att_img_loading.asp"
-        target="_blank"
-        >HTML attribute <code>loading="lazy"</code></a
-      >
-      <ul>
-        <li>
-          <a href="https://caniuse.com/loading-lazy-attr" target="_blank"
-            >Browser support for <code>loading="lazy"</code></a
-          >
-        </li>
-      </ul>
-    </li>
-  </ul>
+  <p>
+    In general, the more code you have the longer your page takes to load. Keep
+    in mind, though, that this makes a much smaller difference than images and
+    other files. Still, try to delete any code you don't need anymore. Also,
+    only load Javascript files you actually need on that page.
+  </p>
+
+  <p>
+    Minifying your code files can also help improve performance, but this is not
+    all that beginner-friendly. However, if you're using Eleventy (11ty) (aka
+    Build Awesome) you can check ouf the section on minifying files in
+    <a href="/coding/eleventy-tutorial.html#minify">my eleventy tutorial</a>.
+  </p>
+
+  <hr />
+
+  <blockquote class="tip">
+    <p>
+      The perceived speed of your website is its actual speed plus the durations
+      of any animation effects you have. If your website "feels" slow even
+      though it is loaded quickly, try reducing your animations' duration.
+    </p>
+  </blockquote>
 </section>
 
 {% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}

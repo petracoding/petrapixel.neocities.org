@@ -1,0 +1,58 @@
+.vinted-haul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  figure {
+    position: relative;
+    margin: 0;
+    transition: transform 0.2s ease;
+
+    img {
+      max-width: 200px;
+      max-height: 300px;
+      height: auto;
+      width: auto;
+      image-rendering: pixelated;
+      filter: brightness(1.1) contrast(1.1) saturate(1.1);
+
+      @media (max-width: $sm) {
+        max-width: 40vw;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
+
+      img {
+        image-rendering: auto;
+      }
+
+      figcaption {
+        opacity: 1;
+      }
+    }
+  }
+
+  figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    text-shadow: 1px 1px 0px var(--white);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    line-height: 1;
+    padding: 0 6px;
+
+    span {
+      font-size: 0.6em;
+      font-family: sans-serif;
+    }
+  }
+}

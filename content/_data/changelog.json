@@ -1,5 +1,7 @@
 [
   { "date": "2026-05-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-05-28", "text": "New: Performance guide", "link": "/coding/performance-tutorial" },
+  { "date": "2026-05-26", "text": "New: Sound effect tutorial", "link": "/coding/sound-tutorial" },
   { "date": "2026-05-17", "text": "Tweeter page!", "link": "/fun/tweeter" },
   { "date": "2026-04-27", "text": "Webring list is here!", "link": "/coding/webring-list" },
   { "date": "2026-04-22", "text": "Nobody asked for it but I now have a page for CSS-only image filters!", "link": "/coding/image-filters" },

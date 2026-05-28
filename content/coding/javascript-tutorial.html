@@ -1,0 +1,346 @@
+---
+layout: coding.njk
+title: "javascript tutorial"
+description: "A beginner tutorial for Javascript on the indie web. Neocities."
+nesting: "../"
+codeHighlight: true
+progressBar: true
+mainClass: coding-page
+toc: true
+tipType: "tutorial"
+---
+
+<section>
+  <h1>Javascript Tutorial (WIP!)</h1>
+  <p>
+    This is my beginner's JavaScript tutorial! It's intended for anyone who
+    knows (at least the basics of) HTML and CSS and has no experience with any
+    programming language, so it's very basic. I will teach you basic syntax and
+    how to do the things you'll likely want to do. The point of this tutorial is
+    not to teach you everything, but to teach you the most important tools. If
+    you want to learn more, check out my
+    <a href="/coding/checklist#intermediate-js"
+      >intermediate JavaScript checklist</a
+    >
+    and teach yourself!
+  </p>
+  <div id="toc"></div>
+
+  <hr />
+  <p>
+    Here is a
+    <a href="https://codepen.io/petracoding/pen/KwNXBVa" target="_blank"
+      >codepen</a
+    >
+    with all the code from this tutorial. Feel free to play around with it!
+  </p>
+  <p
+    class="codepen"
+    data-height="500"
+    data-pen-title="Javascript Beginner Tutorial"
+    data-default-tab="js,result"
+    data-slug-hash="KwNXBVa"
+    data-editable="true"
+    data-user="petracoding"
+    style="
+      height: 500px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid;
+      margin: 1em 0;
+      padding: 1em;
+    "
+  >
+    <span
+      >See the Pen
+      <a href="https://codepen.io/petracoding/pen/KwNXBVa">
+        Javascript Beginner Tutorial</a
+      >
+      by petra (<a href="https://codepen.io/petracoding">@petracoding</a>) on
+      <a href="https://codepen.io">CodePen</a>.</span
+    >
+  </p>
+  <script async src="https://public.codepenassets.com/embed/index.js"></script>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section>
+  <h2 id="helloworld"><b>Hello World:</b> your first javascript!</h2>
+
+  <p>
+    JavaScript (often shortened to JS) is a programming language, and as such it
+    is quite different from HTML and CSS. But you&#39;ll see, JavaScript is
+    quite easy to learn.
+  </p>
+  <p>
+    Before we start we need to create a JS file. We could also write JS directly
+    in our HTML files by using the
+    <code>&lt;script&gt;&lt;/script&gt;</code> tags, but I don&#39;t recommend
+    this for these reasons: 1. The JS code will only be executed on this page.
+    If you want it to be executed on another page too you would have to
+    copy-paste it. 2. Keeping JS in its own file will keep things organized.
+    Remember that keeping your code clean and organized is the best way to
+    prevent annoying bugs!
+  </p>
+  <p>
+    So, let&#39;s create a simple <code>script.js</code> file in the same folder
+    as our page. Then we need to connect the HTML file to the JS file by adding
+    this line somewhere in our <code>&lt;head&gt;&lt;/head&gt;</code>:
+  </p>
+  <p><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></p>
+  <p>
+    The path to the file needs to be correct obviously. If it&#39;s in a folder
+    you might have to change it to something like
+    <code>myFolder/script.js</code> and if the HTML file is in a folder deeper
+    than the script you&#39;ll have to put <code>../script.js</code> etc, in the
+    same exact way you refer to any other files like images and CSS files in
+    HTML like you&#39;re used to.
+  </p>
+  <p>
+    At this point you can also prepare cachebusting, which will stop your
+    browser for loading an old (cached) version of your JS file. I have a
+    tutorial about this <a href="/coding/cachebusting">here</a>.
+  </p>
+  <p>For now, let&#39;s add just a single line into our JS file:</p>
+  <pre><code>console.log(&quot;Hello World&quot;);</code></pre>
+  <p>
+    Once saved you can refresh your page, and in your browser&#39;s console (the
+    &#39;console&#39; tab of the browser&#39;s
+    <a href="/coding/need-help#how-to-troubleshoot">development tools</a>) you
+    will see the output &quot;Hello World&quot;. Neat! Your first JS code works!
+  </p>
+  <p>
+    (If you don&#39;t see the output, check these things: 1. Is the path to the
+    JS file correct? 2. Have you saved all your changes? 3. Have you
+    hard-refreshed your page or
+    <a href="/coding/common-questions#cache">cleared your cookies</a>? 4. Do you
+    have any console filters active that would hide the output?)
+  </p>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section>
+  <h2 id="basics"><b>The Basics:</b> variables, functions & co.</h2>
+  <p>Now, let&#39;s start learning the basic syntax of JS.</p>
+  <h3>Comments</h3>
+  <p>This is what code comments look like in JS:</p>
+  <pre><code class="language-javascript"><span>// This is a short comment.</span>
+
+<span>/* 
+ This is a multi-line comment.
+        Isn't it neat?
+*/</span>
+</code></pre>
+  <p>
+    These don&#39;t do anything and are just here for you to take notes in your
+    code. Comments are a great way of keeping code understandable - for example
+    for yourself in two months when you&#39;ve forgotten what you were trying to
+    do.
+  </p>
+
+  <hr />
+
+  <h3 id="variables">Variables</h3>
+  <p>
+    Now, let&#39;s create some variables. Variables are just little names you
+    give a value to. We create variables with this syntax:
+    <code>let variableName = variableValue;</code>. You can remember the keyword
+    <code>let</code> with the phrase &quot;Let this variable have that
+    value!&quot; Also notice how each JS line ends with a <code>;</code>!
+  </p>
+  <p>
+    Variable values can have different types. Here are the most important ones:
+  </p>
+  <pre><code class="language-javascript"><span>let</span> myName = <span>"Petra"</span>; // <span>string</span> (= text)
+<span>let</span> myAge = <span>26</span>; // number
+<span>let</span> myEyesAreBrown = <span>true</span>; // boolean (= <span>true</span> <span>or</span> <span>false</span>)
+<span>let</span> myHairColors = [<span>"brown"</span>, <span>"blonde"</span>]; // <span>array</span> (= list <span>of</span> variables, <span>in</span> this <span>case</span> strings)
+</code></pre>
+  <p>
+    Notice the difference in syntax. To define a text (aka a string), we need to
+    wrap it in <code>&quot;&quot;</code>. Numbers and booleans (true/false)
+    don&#39;t need these. And arrays are wrapped in <code>[]</code> and their
+    values are seperated by comma. You can have arrays of any kind of variable
+    by the way - in this example it&#39;s strings.
+  </p>
+  <p>Remember these words:</p>
+  <ul>
+    <li><strong>String</strong> = text (a &quot;string&quot; of characters)</li>
+    <li>
+      <strong>Boolean</strong> = a value that can either be true or false (e.g.
+      Is the light on?) - Sometimes shortened to &quot;bool&quot;
+    </li>
+  </ul>
+  <p>We can output our variables in the console like so:</p>
+  <pre><code class="language-javascript">console.<span>log</span>(myName);
+console.<span>log</span>(<span>"Hello "</span> + myName);
+</code></pre>
+  <p>
+    Try it now! You should see the outputs &quot;Petra&quot; and &quot;Hello
+    Petra&quot;.
+  </p>
+  <p>
+    If you want to change the value of a variable after creating it you just do
+    the same thing again but without the <code>let</code>:
+  </p>
+  <pre><code class="language-javascript"><span>myAge</span> = <span>27</span><span>; // giving a variable a new value</span>
+</code></pre>
+  <p>
+    Btw, when first creating a variable, instead of the keyword
+    <code>let</code> you can also use <code>const</code> (short for 'constant')
+    - but in that case the value of the variable can not be changed afterwards:
+  </p>
+  <pre><code class="language-javascript"><span>const myBirthyear</span> = 1999;
+</code></pre>
+
+  <hr />
+
+  <h3 id="logic">Logic</h3>
+  <p>
+    Now I&#39;m going to teach you how to use so-called
+    <code>If</code>-statements. They work like this: If this condition is true,
+    do this, otherwise do that. The condition can be anything you want.
+    Let&#39;s look at some examples:
+  </p>
+  <pre><code class="language-javascript">// <span>If</span> conditions: <span>If</span> this <span>do</span> this.
+<span>if</span> (myName == <span>"Petra"</span>) {
+    // == means equal <span>to</span>
+    console.<span>log</span>(<span>"Your name is Petra."</span>)<span>;</span>
+}
+
+<span>if</span> (myAge &gt;= <span>18</span>) {
+    // &gt;= means equal <span>to</span> <span>or</span> greater
+    console.<span>log</span>(<span>"You are an adult."</span>)<span>;</span>
+} <span>else</span> {
+    console.<span>log</span>(<span>"You are a child."</span>)<span>;</span>
+}
+
+<span>if</span> (!myEyesAreBrown) {
+    // ! means <span>not</span> (<span>in</span> this <span>case</span>: <span>not</span> <span>true</span>)
+    console.<span>log</span>(<span>"Your eyes are NOT brown."</span>)<span>;</span>
+}
+</code></pre>
+  <p>Remember this:</p>
+  <ul>
+    <li>
+      To compare two values, use <code>==</code> (equals) and
+      <code>!=</code> (does not equal), <code>&lt;</code>, <code>&gt;</code>,
+      <code>&lt;=</code>, <code>&gt;=</code>
+    </li>
+    <li>
+      To negate/reverse a condition you can use <code>!</code> in front of it.
+    </li>
+    <li>
+      When working with booleans (true/false values) you can shorten
+      <code>if(myBoolean == true)</code> to simply <code>if(myBoolean)</code>
+    </li>
+  </ul>
+  <br />
+  <p>
+    You can even combine multiple conditions with <code>&amp;&amp;</code> (=
+    and) and <code>||</code> (= or). (These funny things are called &#39;logical
+    operators&#39; by the way.)
+  </p>
+  <pre><code class="language-javascript">// &amp;&amp; = AND (<span>both</span> conditions bust be true)
+if ((<span>myName</span> == <span>"Petra"</span>) <span>&amp;&amp;</span> (<span>myAge</span> &gt;= <span>18</span>) {
+    console.log(<span>"You're Petra, an adult."</span>)<span>;</span>
+}
+
+// || = OR (<span>at</span> least one condition must be true)
+if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <span>18</span>) {
+    console.log(<span>"You are either Petra or some other adult."</span>)<span>;</span>
+}
+</code></pre>
+
+  <hr />
+
+  <h3 id="functions">Functions</h3>
+  <p>
+    Functions are sections of code with a name. When we &#39;call&#39; a
+    function we execute it. Like this, we can execute the same code multiple
+    times without copy-pasting anything.
+  </p>
+  <p>We define a function like this:</p>
+  <pre><code class="language-javascript"><span><span>function</span> <span>sayHello</span>(<span></span>) </span>{
+    <span>console</span>.log(<span>"Hello!"</span>);
+}
+</code></pre>
+  <p>and call (execute) it like this:</p>
+  <pre><code class="language-javascript">sayHello()<span>;</span>
+</code></pre>
+  <p>
+    Notice the <code>()</code> at the end - they are a clear sign that
+    <em>sayHello</em> is a function. Without the <code>()</code> the function
+    will not be executed.
+  </p>
+  <br />
+  <p>
+    Functions can also take so-called parameters. Those are just variables that
+    you fill in when you call a function.
+  </p>
+  <p>
+    For example, this function takes two parameters, which can be used as
+    variables inside the function (they can have any name you want):
+  </p>
+  <pre><code class="language-javascript"><span>function</span> <span>introduceMyself</span>(name, age) {
+    console.log("Hello! My name <span>is</span> <span>" + name + "</span> <span>and</span> I am <span>" + age + "</span> years old.<span>");
+}</span>
+</code></pre>
+  <p>You&#39;d call it like this:</p>
+  <pre><code class="language-javascript"><span>introduceMyself</span>(<span>"Petra"</span>, <span>26</span>);
+</code></pre>
+  <p>or like this, using our variables from before:</p>
+  <pre><code class="language-javascript">introduceMyself(<span>myName</span>, myAge)<span>;</span>
+</code></pre>
+  <p>You can see here that the order of variables is important.</p>
+  <br />
+  <p>
+    Functions can do one more cool thing: They can return values. For example,
+    you could have an <code>add(number1, number2)</code> function that returns
+    the sum of two numbers.
+  </p>
+  <p>Here is an example using a string as a return value:</p>
+  <pre><code class="language-javascript"><span><span>function</span> <span>getIntroduction</span>(<span>name, age</span>) </span>{
+    <span>let</span> introduction =
+        <span>"Hello! My name is "</span> + name + <span>" and I am "</span> + age + <span>" years old."</span>;
+    <span>return</span> introduction;
+}
+</code></pre>
+  <p>
+    When calling this function you could then save its return value in a newly
+    created variable like so:
+  </p>
+  <pre><code class="language-javascript"><span>let</span> myIntroduction = getIntroduction(myName, myAge);
+console.<span>log</span>(myIntroduction);
+</code></pre>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section id="events">
+  <h2>Event Listeners: making things happen on click</h2>
+</section>
+
+<section id="dom">
+  <h2>Manipulating the DOM: changing your page content</h2>
+</section>
+
+<section id="cookies">
+  <h2>LocalStorage: how to make the browser 'remember' things</h2>
+</section>
+
+<section id="random">
+  <h2>Random: how to randomize stuff</h2>
+</section>
+
+{% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}
