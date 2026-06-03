@@ -11,20 +11,21 @@ tipType: "tutorial"
 ---
 
 <section>
-  <h1>Javascript Tutorial (WIP!)</h1>
+  <h1>Javascript Tutorial</h1>
   <p>
     This is my beginner's JavaScript tutorial! It's intended for anyone who
     knows (at least the basics of) HTML and CSS and has no experience with any
     programming language, so it's very basic. I will teach you basic syntax and
     how to do the things you'll likely want to do. The point of this tutorial is
-    not to teach you everything, but to teach you the most important tools. If
+    not to teach you everything, but to teach you the most important things. If
     you want to learn more, check out my
     <a href="/coding/checklist#intermediate-js"
       >intermediate JavaScript checklist</a
     >
     and teach yourself!
   </p>
-  <div id="toc"></div>
+  <hr />
+  <div id="toc" data-two-levels="yea"></div>
 
   <hr />
   <p>
@@ -73,10 +74,16 @@ tipType: "tutorial"
   <h2 id="helloworld"><b>Hello World:</b> your first javascript!</h2>
 
   <p>
-    JavaScript (often shortened to JS) is a programming language, and as such it
-    is quite different from HTML and CSS. But you&#39;ll see, JavaScript is
-    quite easy to learn.
+    <b>JavaScript</b> (often shortened to <b>JS</b>) is a programming language,
+    and as such it is quite different from HTML and CSS. But you&#39;ll see,
+    JavaScript is quite easy to learn.
   </p>
+  <blockquote class="warning">
+    <p>
+      Javascript has nothing to do with Java! They are two seperate programming
+      languages!
+    </p>
+  </blockquote>
   <p>
     Before we start we need to create a JS file. We could also write JS directly
     in our HTML files by using the
@@ -92,9 +99,9 @@ tipType: "tutorial"
     as our page. Then we need to connect the HTML file to the JS file by adding
     this line somewhere in our <code>&lt;head&gt;&lt;/head&gt;</code>:
   </p>
-  <p><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></p>
+  <pre><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></pre>
   <p>
-    The path to the file needs to be correct obviously. If it&#39;s in a folder
+    Obviously, the path to the file needs to be correct. If it&#39;s in a folder
     you might have to change it to something like
     <code>myFolder/script.js</code> and if the HTML file is in a folder deeper
     than the script you&#39;ll have to put <code>../script.js</code> etc, in the
@@ -106,7 +113,10 @@ tipType: "tutorial"
     browser for loading an old (cached) version of your JS file. I have a
     tutorial about this <a href="/coding/cachebusting">here</a>.
   </p>
-  <p>For now, let&#39;s add just a single line into our JS file:</p>
+  <p>
+    For now, let&#39;s add just a single line into our JS file
+    <code>script.js</code>:
+  </p>
   <pre><code>console.log(&quot;Hello World&quot;);</code></pre>
   <p>
     Once saved you can refresh your page, and in your browser&#39;s console (the
@@ -176,7 +186,7 @@ tipType: "tutorial"
     <li><strong>String</strong> = text (a &quot;string&quot; of characters)</li>
     <li>
       <strong>Boolean</strong> = a value that can either be true or false (e.g.
-      Is the light on?) - Sometimes shortened to &quot;bool&quot;
+      Is the light on?)
     </li>
   </ul>
   <p>We can output our variables in the console like so:</p>
@@ -184,8 +194,8 @@ tipType: "tutorial"
 console.<span>log</span>(<span>"Hello "</span> + myName);
 </code></pre>
   <p>
-    Try it now! You should see the outputs &quot;Petra&quot; and &quot;Hello
-    Petra&quot;.
+    As you can see, you can combine two texts with a <code>+</code>. Try it now!
+    You should see the outputs &quot;Petra&quot; and &quot;Hello Petra&quot;.
   </p>
   <p>
     If you want to change the value of a variable after creating it you just do
@@ -211,20 +221,17 @@ console.<span>log</span>(<span>"Hello "</span> + myName);
     Let&#39;s look at some examples:
   </p>
   <pre><code class="language-javascript">// <span>If</span> conditions: <span>If</span> this <span>do</span> this.
-<span>if</span> (myName == <span>"Petra"</span>) {
-    // == means equal <span>to</span>
+<span>if</span> (myName == <span>"Petra"</span>) { // == means equal <span>to</span>
     console.<span>log</span>(<span>"Your name is Petra."</span>)<span>;</span>
 }
 
-<span>if</span> (myAge &gt;= <span>18</span>) {
-    // &gt;= means equal <span>to</span> <span>or</span> greater
+<span>if</span> (myAge &gt;= <span>18</span>) { // &gt;= means equal <span>to</span> <span>or</span> greater
     console.<span>log</span>(<span>"You are an adult."</span>)<span>;</span>
 } <span>else</span> {
     console.<span>log</span>(<span>"You are a child."</span>)<span>;</span>
 }
 
-<span>if</span> (!myEyesAreBrown) {
-    // ! means <span>not</span> (<span>in</span> this <span>case</span>: <span>not</span> <span>true</span>)
+<span>if</span> (!myEyesAreBrown) { // ! means <span>not</span> (<span>in</span> this <span>case</span>: <span>not</span> <span>true</span>)
     console.<span>log</span>(<span>"Your eyes are NOT brown."</span>)<span>;</span>
 }
 </code></pre>
@@ -250,12 +257,12 @@ console.<span>log</span>(<span>"Hello "</span> + myName);
     operators&#39; by the way.)
   </p>
   <pre><code class="language-javascript">// &amp;&amp; = AND (<span>both</span> conditions bust be true)
-if ((<span>myName</span> == <span>"Petra"</span>) <span>&amp;&amp;</span> (<span>myAge</span> &gt;= <span>18</span>) {
+if ((<span>myName</span> == <span>"Petra"</span>) <span>&amp;&amp;</span> (<span>myAge</span> &gt;= <span>18</span>)) {
     console.log(<span>"You're Petra, an adult."</span>)<span>;</span>
 }
 
 // || = OR (<span>at</span> least one condition must be true)
-if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <span>18</span>) {
+if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <span>18</span>)) {
     console.log(<span>"You are either Petra or some other adult."</span>)<span>;</span>
 }
 </code></pre>
@@ -303,14 +310,14 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
   <p>You can see here that the order of variables is important.</p>
   <br />
   <p>
-    Functions can do one more cool thing: They can return values. For example,
-    you could have an <code>add(number1, number2)</code> function that returns
-    the sum of two numbers.
+    Functions can do one more cool thing: They can return values. The keyword
+    for this is <code>return</code>. For example, you could have an
+    <code>add(number1, number2)</code> function that returns the sum of two
+    numbers.
   </p>
   <p>Here is an example using a string as a return value:</p>
   <pre><code class="language-javascript"><span><span>function</span> <span>getIntroduction</span>(<span>name, age</span>) </span>{
-    <span>let</span> introduction =
-        <span>"Hello! My name is "</span> + name + <span>" and I am "</span> + age + <span>" years old."</span>;
+    <span>let</span> introduction = <span>"Hello! My name is "</span> + name + <span>" and I am "</span> + age + <span>" years old."</span>;
     <span>return</span> introduction;
 }
 </code></pre>
@@ -327,20 +334,46 @@ console.<span>log</span>(myIntroduction);
 <!-- --------------------------------------------------------------- -->
 <!-- --------------------------------------------------------------- -->
 
-<section id="events">
-  <h2>Event Listeners: making things happen on click</h2>
+<section>
+  <h2 id="events">Event Listeners: making things happen on click</h2>
+  <p>Coming soon!</p>
 </section>
 
-<section id="dom">
-  <h2>Manipulating the DOM: changing your page content</h2>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section>
+  <h2 id="dom">Manipulating the DOM: changing your page content</h2>
+  <p>Coming soon!</p>
 </section>
 
-<section id="cookies">
-  <h2>LocalStorage: how to make the browser 'remember' things</h2>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section>
+  <h2 id="cookies">LocalStorage: how to make the browser 'remember' things</h2>
+  <p>Coming soon!</p>
 </section>
 
-<section id="random">
-  <h2>Random: how to randomize stuff</h2>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section>
+  <h2 id="random">Random: how to randomize stuff</h2>
+  <p>Coming soon!</p>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section>
+  <h2>Quiz</h2>
+  <br />
+  <iframe src="/coding/quizzes/javascript.html"></iframe>
 </section>
 
 {% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}
