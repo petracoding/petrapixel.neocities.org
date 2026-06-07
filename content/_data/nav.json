@@ -61,7 +61,7 @@
    },
    {
       "label":"Webmistress",
-      "new":true,
+      "new":false,
       "items":[
          {
             "link":"/about/about-me",
@@ -108,7 +108,7 @@
             "link":"/about/vinted-haul",
             "label":"vinted haul",
             "image":"5pwMMeG.gif",
-            "new":true,
+            "new":false,
             "hide":false
          },
          {
@@ -245,7 +245,7 @@
    },
    {
       "label":"Fun Stuff!",
-      "new":true,
+      "new":false,
       "items":[
          
          {
@@ -279,7 +279,7 @@
             "link":"/fun/tweeter",
             "label":"tweeter",
             "image":"93nOZIL.gif",
-            "new":true,
+            "new":false,
             "hide":false
          },
          {
@@ -430,7 +430,7 @@
             "link":"/bearblog",
             "label":"my bearblog ➚",
             "image":"i5dgJWB.gif",
-            "new":true,
+            "new":false,
             "hide":false
          }
       ]
@@ -628,7 +628,7 @@
                   "link":"/coding/performance-tutorial",
                   "label":"Performance Guide",
                   "sublabel":"How to make pages load faster",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"speed-up-line"
                },
@@ -656,7 +656,7 @@
          },
          {
             "label":"Beginner Tutorials",
-            "new":true,
+            "new":false,
             "items":[
                {
                   "link":"/coding/layout-base-code",
@@ -704,7 +704,7 @@
                   "link":"/coding/sound-tutorial",
                   "label":"Sound Effects Tutorial",
                   "sublabel":"",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"volume-up-line"
                }
