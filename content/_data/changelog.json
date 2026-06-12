@@ -1,5 +1,6 @@
 [
-  { "date": "2026-05-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-06-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-06-09", "text": "Added my fave ships to my about-me page", "link": "/about/about-me" },
   { "date": "2026-05-28", "text": "New: Performance guide", "link": "/coding/performance-tutorial" },
   { "date": "2026-05-26", "text": "New: Sound effect tutorial", "link": "/coding/sound-tutorial" },
   { "date": "2026-05-17", "text": "Tweeter page!", "link": "/fun/tweeter" },

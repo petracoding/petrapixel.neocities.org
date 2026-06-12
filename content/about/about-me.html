@@ -541,6 +541,7 @@ nesting: "../"
   <div class="tabs">
     <div class="tabs__tabs">
       <button class="tabs__tab active-tab" data-tab="media">Media</button>
+      <button class="tabs__tab" data-tab="ships">Ships</button>
       <button class="tabs__tab" data-tab="aesthetics">Aesthetics</button>
       <button class="tabs__tab" data-tab="pokemon">Pokémon/Villagers</button>
       <button class="tabs__tab" data-tab="random">Random</button>
@@ -933,6 +934,26 @@ nesting: "../"
         </div>
       </div>
 
+      <div class="tabs__tab-content" data-tab="ships">
+        <div class="ships">
+          {% for ship in ships %} {% if ship.names != "TODO" %}
+          <div class="ship ship--{{ship.size}}">
+            <figcaption>
+              <b>{{ ship.names }}</b> <small>{{ ship.from }}</small>
+            </figcaption>
+            <img
+              src="{{ ship.img1 }}"
+              alt="{{ ship.names }} ({{ ship.from }})"
+            />
+            <img
+              src="{{ ship.img2 }}"
+              alt="{{ ship.names }} ({{ ship.from }})"
+            />
+          </div>
+          {% endif %} {% endfor %}
+        </div>
+      </div>
+
       <div class="tabs__tab-content" data-tab="pokemon">
         <div class="about-me-page__pokemon-heading">
           <img
@@ -1145,6 +1166,7 @@ nesting: "../"
           >
         </center>
       </div>
+
       <div class="tabs__tab-content" data-tab="aesthetics">
         <h2>Aesthetics</h2>
         <p>
@@ -1886,6 +1908,12 @@ nesting: "../"
       <img
         src="../assets/img/me/gpoy/bi.png"
         alt="being bisexual means being into women and men and everyone else"
+      />
+    </div>
+    <div class="gpoy">
+      <img
+        src="../assets/img/me/gpoy/june.jpg"
+        alt="i could survive horrific circumstances if i had a crush on someone there"
       />
     </div>
   </div>

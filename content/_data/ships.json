@@ -1,107 +1,153 @@
 [
-  {
-    "names": "rhaenyra & daemon",
-    "from": "house of the dragon",
-    "size": "l",
-    "img1": "https://i.pinimg.com/1200x/44/77/5c/44775ccbb4e479dfd5cdf9425fad27a9.jpg",
-    "img2": "https://i.pinimg.com/736x/1e/e7/ae/1ee7ae2a67ba0013370153cf5bc71e1b.jpg"
-  },
-  {
+    {
     "names": "hannibal & will",
     "from": "nbc hannibal",
-    "size": "xl",
-    "img1": "https://i.pinimg.com/736x/70/a5/be/70a5be48323326dc4de9d14b95c47471.jpg",
-    "img2": "https://i.pinimg.com/736x/77/cd/8d/77cd8d3df3cb4609ac872d37d2d30b72.jpg"
+    "size": "l",
+    "img2": "https://i.pinimg.com/736x/77/cd/8d/77cd8d3df3cb4609ac872d37d2d30b72.jpg",
+    "img1": "https://i.pinimg.com/736x/70/a5/be/70a5be48323326dc4de9d14b95c47471.jpg"
   },
   {
     "names": "the doctor & clara",
     "from": "doctor who",
     "size": "l",
-    "img1": "https://i.pinimg.com/736x/2f/ec/17/2fec17742a57f03869d9d3dd6138a18e.jpg",
-    "img2": "https://i.pinimg.com/736x/1b/35/c1/1b35c11a4e359346eb501b01db85e12f.jpg"
+    "img2": "https://i.pinimg.com/736x/2f/ec/17/2fec17742a57f03869d9d3dd6138a18e.jpg",
+    "img1": "https://i.pinimg.com/736x/1b/35/c1/1b35c11a4e359346eb501b01db85e12f.jpg"
+  },
+
+
+  
+  {
+    "names": "rhaenyra & daemon",
+    "from": "house of the dragon",
+    "size": "m",
+    "img1": "https://i.pinimg.com/1200x/44/77/5c/44775ccbb4e479dfd5cdf9425fad27a9.jpg",
+    "img2": "https://i.pinimg.com/736x/1e/e7/ae/1ee7ae2a67ba0013370153cf5bc71e1b.jpg"
   },
   {
     "names": "mike & will",
     "from": "stranger things",
-    "size": "xl",
+    "size": "m",
     "img1": "https://i.pinimg.com/736x/69/4a/9f/694a9f301266c0a74c8b0ebd64709761.jpg",
     "img2": "https://i.pinimg.com/736x/19/3d/f2/193df2165f68022dfc1b84ba8ce8fbeb.jpg"
   },
   {
+    "names": "deadpool & wolverine",
+    "from": "marvel",
+    "size": "m",
+    "img1": "https://i.pinimg.com/736x/43/51/d6/4351d665328a801cc5be00844007b213.jpg",
+    "img2": "https://i.pinimg.com/736x/cb/23/b4/cb23b4c4a81dec221584fba1a0ea8dd3.jpg"
+  },
+
+  
+    
+
+  
+  {
     "names": "aziraphale & crowley",
     "from": "good omens",
-    "size": "l",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
-  },
-  {
-    "names": "dean & castiel",
-    "from": "supernatural",
     "size": "m",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
-  },
-  {
-    "names": "john & sherlock",
-    "from": "bbc sherlock",
-    "size": "m",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
-  },
-  {
-    "names": "kirk & spock",
-    "from": "star trek: the original series",
-    "size": "m",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
-  },
-  {
-    "names": "dumbledore & grindelwald",
-    "from": "fantastic beasts",
-    "size": "m",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
-  },
-  {
-    "names": "nandor & guillermo",
-    "from": "what we do in the shadows",
-    "size": "l",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
+    "img1": "https://i.pinimg.com/736x/eb/ea/0a/ebea0abb16bee20c4d65706d45336514.jpg",
+    "img2": "https://i.pinimg.com/736x/ef/7d/30/ef7d30cd62f1df9e949e6acff584b3fc.jpg"
   },
   {
     "names": "ed & stede",
     "from": "our flag means death",
-    "size": "l",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
-  },
-  {
-    "names": "deadpool & wolverine",
-    "from": "marvel",
-    "size": "l",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
-  },
-  {
-    "names": "charlex & erik",
-    "from": "x-men",
     "size": "m",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
+    "img1": "https://i.pinimg.com/736x/17/7c/b8/177cb894518f924ea1044a7f70caf5a2.jpg",
+    "img2": "https://i.pinimg.com/1200x/39/55/3f/39553fef1e2ba9d601aff7e7d8031e1c.jpg"
   },
   {
-    "names": "TODO",
-    "from": "TODO",
-    "size": "l",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
+    "names": "nandor & guillermo",
+    "from": "what we do in the shadows",
+    "size": "m",
+    "img2": "https://i.pinimg.com/736x/ae/15/4a/ae154af1bbd75e87166b12c572d49e6c.jpg",
+    "img1": "https://i.pinimg.com/1200x/7d/bf/fa/7dbffa29f10a54a11e3a4c23b218bcfa.jpg"
+  },
+
+
+
+  {
+    "names": "kirk & spock",
+    "from": "star trek: the original series",
+    "size": "s",
+    "img1": "https://i.pinimg.com/736x/00/9a/68/009a68c8d90440ca4b3f4cc08fac9d03.jpg",
+    "img2": "https://i.pinimg.com/736x/26/25/ce/2625cefd3ba4cb09bca8b93b1c299fdb.jpg"
   },
   {
-    "names": "TODO",
-    "from": "TODO",
-    "size": "l",
-    "img1": "IMAGE",
-    "img2": "IMAGE"
+    "names": "dean & castiel",
+    "from": "supernatural",
+    "size": "s",
+    "img1": "https://i.pinimg.com/1200x/45/ba/76/45ba76fa8a1db322b92cee5075ba9fc9.jpg",
+    "img2": "https://i.pinimg.com/736x/94/fa/f1/94faf11bc21308d8a81cd754b165dac6.jpg"
+  },
+  {
+    "names": "john & sherlock",
+    "from": "bbc sherlock",
+    "size": "s",
+    "img1": "https://i.pinimg.com/736x/37/e2/0b/37e20b70e2a1763c1cede58c22cebe1e.jpg",
+    "img2": "https://i.pinimg.com/736x/f5/24/c3/f524c3891d5d824e53b78c51fc0671a6.jpg"
+  },
+  {
+    "names": "dumbledore & grindelwald",
+    "from": "fantastic beasts",
+    "size": "s",
+    "img1": "https://i.pinimg.com/736x/4b/82/56/4b825681d250ef43ee71fdefee4c7953.jpg",
+    "img2": "https://i.pinimg.com/1200x/f9/d1/35/f9d1351e9b314899668de8c8af1773ff.jpg"
+  },
+
+
+
+  
+  {
+    "names": "vampire polycule",
+    "from": "what we do in the shadows",
+    "size": "s",
+    "img1": "https://i.pinimg.com/736x/9d/28/b0/9d28b0dd46aa9fceccc20407faa74770.jpg",
+    "img2": "IMhttps://i.pinimg.com/736x/b6/27/47/b6274789b55fba386563f7c735be22e2.jpgAGE"
+  },
+  {
+    "names": "steddyhands",
+    "from": "our flag means death",
+    "size": "s",
+    "img1": "https://i.pinimg.com/736x/dd/bc/38/ddbc38de1708c7f26554a740a67f7170.jpg",
+    "img2": "https://i.pinimg.com/736x/62/eb/26/62eb26285f6a9de2c4b9adcd75e5d8cb.jpg"
+  },
+  {
+    "names": "doctor & rose",
+    "from": "doctor who",
+    "size": "s",
+    "img1": "https://i.pinimg.com/736x/69/ba/8e/69ba8e461bbd9f0fe31c4d8685bd023d.jpg",
+    "img2": "https://i.pinimg.com/1200x/24/57/6a/24576a1af90bca5c49bb382e0016aa50.jpg"
+  },
+  {
+    "names": "charles & erik",
+    "from": "x-men",
+    "size": "s",
+    "img1": "https://i.pinimg.com/1200x/e7/f9/26/e7f926a0d222ab09535caf1120b9d23f.jpg",
+    "img2": "https://i.pinimg.com/736x/a8/c1/30/a8c130eb6ff1ff5b87938bbb14ac3234.jpg"
+  },
+
+
+
+  {
+    "names": "dan & phil",
+    "from": "youtube",
+    "size": "m",
+    "img1": "https://i.pinimg.com/736x/62/3f/3c/623f3c21e2e9ec815ca376c14969929c.jpg",
+    "img2": "https://i.pinimg.com/1200x/36/43/76/36437601754533738ed04880c75a77f1.jpg"
+  },
+  {
+    "names": "dan & arin",
+    "from": "game grumps",
+    "size": "m",
+    "img1": "https://i.pinimg.com/736x/7e/e5/82/7ee582755ee3f31d7641439bb65aa1ab.jpg",
+    "img2": "https://i.pinimg.com/736x/6f/31/3e/6f313eba1f325c2ead55f32107fe4c5b.jpg"
+  },
+  {
+    "names": "rhett & link",
+    "from": "good mythical morning",
+    "size": "m",
+    "img1": "https://i.pinimg.com/736x/8e/07/94/8e079402d5745a49e7540cd442f17adf.jpg",
+    "img2": "https://i.pinimg.com/736x/1f/b8/c5/1fb8c51395503f8855c0c5e203b814c1.jpg"
   }
 ]

@@ -1,38 +1,34 @@
 .ships {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ship {
   position: relative;
   overflow: hidden;
 
-  &.ship--xl {
-    grid-column-end: span 4;
-    grid-row-end: span 4;
-
-    figcaption {
-      font-size: 28px;
-    }
+  &--l {
+    // half
+    width: 50%;
+    height: auto;
+    // width: 352px;
+    // height: 352px;
   }
 
-  &.ship--l {
-    grid-column-end: span 3;
-    grid-row-end: span 3;
+  &--m {
+    // third
+    width: 33.333%;
+    height: auto;
+    // width: 234px;
+    // height: 234px;
   }
 
-  &.ship--m {
-    grid-column-end: span 2;
-    grid-row-end: span 2;
-  }
-
-  &.ship--s {
-    grid-column-end: span 1;
-    grid-row-end: span 1;
-
-    figcaption {
-      font-size: 18px;
-    }
+  &--s {
+    // quarter
+    width: 25%;
+    height: auto;
+    // width: 176px;
+    // height: 176px;
   }
 
   img {
@@ -49,14 +45,6 @@
       transform: rotateY(90deg);
       opacity: 0;
       transition: 0.3s ease;
-    }
-  }
-
-  &:hover {
-    img:last-child,
-    figcaption {
-      transform: none;
-      opacity: 1;
     }
   }
 
@@ -79,5 +67,14 @@
     transition: 0.3s ease;
     z-index: 1;
     font-size: 24px;
+    text-shadow: 1px 0px 2px black;
+  }
+
+  &:hover {
+    img:last-child,
+    figcaption {
+      transform: none;
+      opacity: 1;
+    }
   }
 }

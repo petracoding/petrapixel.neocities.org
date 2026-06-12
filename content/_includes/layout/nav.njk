@@ -42,7 +42,10 @@
           >{% endif %}
         </summary>
         <ul>
-          {% for navItem in codingCategory.items %} {% if not navItem.hide %}
+          {% for navItem in codingCategory.items %} {% if not navItem.hide %} {%
+          if navItem.isDivider %}
+          <hr />
+          {% else %}
 
           <!-- CODING MENU ITEMS -->
           <li {% if navItem.mobileOnly %}class="mobile-only" {% endif %}>
@@ -61,8 +64,7 @@
               ></a
             >
           </li>
-
-          {% endif %} {% endfor %}
+          {% endif %} {% endif %} {% endfor %}
         </ul>
       </details>
     </li>

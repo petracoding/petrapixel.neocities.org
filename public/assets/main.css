@@ -13792,6 +13792,10 @@ header {
 .aside-nav ul ul {
   /* Subheadings */
 }
+.aside-nav ul ul hr {
+  margin: 5px 0;
+  border: none;
+}
 .aside-nav ul ul li a {
   padding-left: 0;
   font-size: 18px;
@@ -15828,7 +15832,7 @@ body.not-found-page {
 
 .about-me-page__faves-heading,
 .about-me-page__lists--favorites h2 {
-  font-size: 1.03em;
+  font-size: 0.9em;
   font-family: "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
 }
 .about-me-page__faves-heading img,
@@ -18416,35 +18420,25 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
 }
 
 .ships {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ship {
   position: relative;
   overflow: hidden;
 }
-.ship.ship--xl {
-  grid-column-end: span 4;
-  grid-row-end: span 4;
+.ship--l {
+  width: 50%;
+  height: auto;
 }
-.ship.ship--xl figcaption {
-  font-size: 28px;
+.ship--m {
+  width: 33.333%;
+  height: auto;
 }
-.ship.ship--l {
-  grid-column-end: span 3;
-  grid-row-end: span 3;
-}
-.ship.ship--m {
-  grid-column-end: span 2;
-  grid-row-end: span 2;
-}
-.ship.ship--s {
-  grid-column-end: span 1;
-  grid-row-end: span 1;
-}
-.ship.ship--s figcaption {
-  font-size: 18px;
+.ship--s {
+  width: 25%;
+  height: auto;
 }
 .ship img {
   min-height: 100%;
@@ -18460,11 +18454,6 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   transform: rotateY(90deg);
   opacity: 0;
   transition: 0.3s ease;
-}
-.ship:hover img:last-child,
-.ship:hover figcaption {
-  transform: none;
-  opacity: 1;
 }
 .ship figcaption {
   position: absolute;
@@ -18485,6 +18474,12 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   transition: 0.3s ease;
   z-index: 1;
   font-size: 24px;
+  text-shadow: 1px 0px 2px black;
+}
+.ship:hover img:last-child,
+.ship:hover figcaption {
+  transform: none;
+  opacity: 1;
 }
 
 .tweeter {
