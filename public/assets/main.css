@@ -14151,11 +14151,11 @@ main h3 {
 }
 main h4 {
   font-weight: normal;
-  font-size: 20px;
+  font-size: 16px;
 }
 @media (min-width: 1000px) {
   main h4 {
-    font-size: 23px;
+    font-size: 18px;
   }
 }
 main h5,

@@ -24,46 +24,15 @@ tipType: "tutorial"
     >
     and teach yourself!
   </p>
+  <blockquote class="warning">
+    <p>
+      This is the first version of this tutorial. Please give me feedback in the
+      comments - especially parts you didn't understand or were stuck on. I will
+      then try to improve the tutorial accordingly!
+    </p>
+  </blockquote>
   <hr />
   <div id="toc" data-two-levels="yea"></div>
-
-  <hr />
-  <p>
-    Here is a
-    <a href="https://codepen.io/petracoding/pen/KwNXBVa" target="_blank"
-      >codepen</a
-    >
-    with all the code from this tutorial. Feel free to play around with it!
-  </p>
-  <p
-    class="codepen"
-    data-height="500"
-    data-pen-title="Javascript Beginner Tutorial"
-    data-default-tab="js,result"
-    data-slug-hash="KwNXBVa"
-    data-editable="true"
-    data-user="petracoding"
-    style="
-      height: 500px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid;
-      margin: 1em 0;
-      padding: 1em;
-    "
-  >
-    <span
-      >See the Pen
-      <a href="https://codepen.io/petracoding/pen/KwNXBVa">
-        Javascript Beginner Tutorial</a
-      >
-      by petra (<a href="https://codepen.io/petracoding">@petracoding</a>) on
-      <a href="https://codepen.io">CodePen</a>.</span
-    >
-  </p>
-  <script async src="https://public.codepenassets.com/embed/index.js"></script>
 </section>
 
 <!-- --------------------------------------------------------------- -->
@@ -84,6 +53,8 @@ tipType: "tutorial"
       languages!
     </p>
   </blockquote>
+  <hr />
+  <h3>Creating the file</h3>
   <p>
     Before we start we need to create a JS file. We could also write JS directly
     in our HTML files by using the
@@ -113,11 +84,13 @@ tipType: "tutorial"
     browser for loading an old (cached) version of your JS file. I have a
     tutorial about this <a href="/coding/cachebusting">here</a>.
   </p>
+  <hr />
+  <h3>Your first JavaScript</h3>
   <p>
     For now, let&#39;s add just a single line into our JS file
     <code>script.js</code>:
   </p>
-  <pre><code>console.log(&quot;Hello World&quot;);</code></pre>
+  <pre><code class="language-javascript">console.log(&quot;Hello World&quot;);</code></pre>
   <p>
     Once saved you can refresh your page, and in your browser&#39;s console (the
     &#39;console&#39; tab of the browser&#39;s
@@ -131,6 +104,23 @@ tipType: "tutorial"
     <a href="/coding/common-questions#cache">cleared your cookies</a>? 4. Do you
     have any console filters active that would hide the output?)
   </p>
+  <p>
+    One more thing: It's always best to wrap all our JavaScript code inside of
+    this:
+  </p>
+  <pre><code class="language-javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+    // code here
+});</code></pre>
+  <p>
+    This makes sure that the HTML is fully loaded before the JavaScript code is
+    executed. This is necessary for later when we change our page content with
+    JavaScript.
+  </p>
+  <p>So, this should now be the content of our file:</p>
+  <pre><code class="language-javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+   console.log(&quot;Hello World&quot;);
+   // add more code here
+});</code></pre>
 </section>
 
 <!-- --------------------------------------------------------------- -->
@@ -140,7 +130,7 @@ tipType: "tutorial"
 <section>
   <h2 id="basics"><b>The Basics:</b> variables, functions & co.</h2>
   <p>Now, let&#39;s start learning the basic syntax of JS.</p>
-  <h3>Comments</h3>
+  <h3 id="js-comments">Comments</h3>
   <p>This is what code comments look like in JS:</p>
   <pre><code class="language-javascript"><span>// This is a short comment.</span>
 
@@ -210,6 +200,12 @@ console.<span>log</span>(<span>"Hello "</span> + myName);
   </p>
   <pre><code class="language-javascript"><span>const myBirthyear</span> = 1999;
 </code></pre>
+  <p>
+    Also, sometimes you might see people using the keyword <code>var</code> to
+    create variables. You can do this too, but it's considered old-fashioned:
+  </p>
+  <pre><code class="language-javascript"><span>var myVariable</span> = 123;
+</code></pre>
 
   <hr />
 
@@ -222,17 +218,17 @@ console.<span>log</span>(<span>"Hello "</span> + myName);
   </p>
   <pre><code class="language-javascript">// <span>If</span> conditions: <span>If</span> this <span>do</span> this.
 <span>if</span> (myName == <span>"Petra"</span>) { // == means equal <span>to</span>
-    console.<span>log</span>(<span>"Your name is Petra."</span>)<span>;</span>
+    console.<span>log</span>(<span>"My name is Petra."</span>)<span>;</span>
 }
 
 <span>if</span> (myAge &gt;= <span>18</span>) { // &gt;= means equal <span>to</span> <span>or</span> greater
-    console.<span>log</span>(<span>"You are an adult."</span>)<span>;</span>
+    console.<span>log</span>(<span>"I am an adult."</span>)<span>;</span>
 } <span>else</span> {
-    console.<span>log</span>(<span>"You are a child."</span>)<span>;</span>
+    console.<span>log</span>(<span>"I am a child."</span>)<span>;</span>
 }
 
 <span>if</span> (!myEyesAreBrown) { // ! means <span>not</span> (<span>in</span> this <span>case</span>: <span>not</span> <span>true</span>)
-    console.<span>log</span>(<span>"Your eyes are NOT brown."</span>)<span>;</span>
+    console.<span>log</span>(<span>"My eyes are NOT brown."</span>)<span>;</span>
 }
 </code></pre>
   <p>Remember this:</p>
@@ -258,12 +254,12 @@ console.<span>log</span>(<span>"Hello "</span> + myName);
   </p>
   <pre><code class="language-javascript">// &amp;&amp; = AND (<span>both</span> conditions bust be true)
 if ((<span>myName</span> == <span>"Petra"</span>) <span>&amp;&amp;</span> (<span>myAge</span> &gt;= <span>18</span>)) {
-    console.log(<span>"You're Petra, an adult."</span>)<span>;</span>
+    console.log(<span>"I'm Petra, an adult."</span>)<span>;</span>
 }
 
 // || = OR (<span>at</span> least one condition must be true)
 if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <span>18</span>)) {
-    console.log(<span>"You are either Petra or some other adult."</span>)<span>;</span>
+    console.log(<span>"I am either Petra or some other adult."</span>)<span>;</span>
 }
 </code></pre>
 
@@ -277,6 +273,7 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
   </p>
   <p>We define a function like this:</p>
   <pre><code class="language-javascript"><span><span>function</span> <span>sayHello</span>(<span></span>) </span>{
+    // add function code here...
     <span>console</span>.log(<span>"Hello!"</span>);
 }
 </code></pre>
@@ -289,6 +286,7 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
     will not be executed.
   </p>
   <br />
+  <h4>Parameters</h4>
   <p>
     Functions can also take so-called parameters. Those are just variables that
     you fill in when you call a function.
@@ -307,26 +305,41 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
   <p>or like this, using our variables from before:</p>
   <pre><code class="language-javascript">introduceMyself(<span>myName</span>, myAge)<span>;</span>
 </code></pre>
+  <p>or any combination:</p>
+  <pre><code class="language-javascript">introduceMyself(<span>"Petra"</span>, myAge)<span>;</span>
+</code></pre>
   <p>You can see here that the order of variables is important.</p>
   <br />
+  <h4>Return</h4>
   <p>
-    Functions can do one more cool thing: They can return values. The keyword
-    for this is <code>return</code>. For example, you could have an
-    <code>add(number1, number2)</code> function that returns the sum of two
-    numbers.
+    Functions can do one more cool thing: They can return values, for example
+    the result of a calculation. The keyword for this is <code>return</code>.
+    For example, you could have a function that returns the sum of two numbers:
   </p>
-  <p>Here is an example using a string as a return value:</p>
+  <pre><code class="language-javascript"><span><span>function</span> <span>addNumbers</span>(<span>number1, number2</span>) </span>{
+    <span>return</span> number1 + number2;
+}
+</code></pre>
+  <p>
+    Here is an example using a string as a return value (also notice how I use
+    <code>+</code> to combine strings):
+  </p>
   <pre><code class="language-javascript"><span><span>function</span> <span>getIntroduction</span>(<span>name, age</span>) </span>{
     <span>let</span> introduction = <span>"Hello! My name is "</span> + name + <span>" and I am "</span> + age + <span>" years old."</span>;
     <span>return</span> introduction;
 }
 </code></pre>
   <p>
-    When calling this function you could then save its return value in a newly
-    created variable like so:
+    When calling a function with a return value you could then save its return
+    value in a newly created variable like so:
   </p>
   <pre><code class="language-javascript"><span>let</span> myIntroduction = getIntroduction(myName, myAge);
 console.<span>log</span>(myIntroduction);
+</code></pre>
+  <p>
+    ...alternatively, you can use it directly without saving it into a variable:
+  </p>
+  <pre><code class="language-javascript">console.<span>log</span>(getIntroduction(myName, myAge));
 </code></pre>
 </section>
 
@@ -335,8 +348,141 @@ console.<span>log</span>(myIntroduction);
 <!-- --------------------------------------------------------------- -->
 
 <section>
-  <h2 id="events">Event Listeners: making things happen on click</h2>
-  <p>Coming soon!</p>
+  <h2 id="dom"><b>Manipulating the DOM:</b> changing your page content</h2>
+  <p>
+    The <b>DOM</b> (Document Object Model) is basically the content of your
+    page. You can access it in your JS code to read and change it.
+  </p>
+  <p>
+    The first step is always to find the element(s) you want to access. We can
+    do this with the same queries as in CSS! This is what it looks like:
+    <code>document.querySelector(cssSelector);</code>. Here is an example -
+    notice how we save the found element into a variable so we can do stuff with
+    it later:
+  </p>
+  <pre><code class="language-javascript">let myElement = document.querySelector(&quot;.output-area&quot;); // finds the element with the class 'output-area'</code></pre>
+  <p>
+    (Btw, if you want the <code>&lt;body&gt;</code> element you just have to use
+    <code>document.body</code> instead of
+    <code>document.querySelector...</code>!)
+  </p>
+  <p>
+    Keep in mind that it can always be that the element is not found (for
+    example if you have a typo, or forgot to an the element to a page, or if the
+    element only exists on some but not all pages, ...). That's why we should
+    always check whether the element exists before trying to use it. Otherwise
+    we might get the error <code>myElement is not defined</code>. We can check
+    whether an element exists by putting it into an <code>if</code> statement:
+  </p>
+  <pre><code class="language-javascript">if(myElement) {
+  // element exists
+} else {
+  // element does not exist
+}</code></pre>
+  <p>
+    Once we've done that we can do fun stuff with our element, like changing its
+    content. Here is a full example of finding an element and changing its HTML
+    content:
+  </p>
+  <pre><code class="language-javascript">let myElement = document.querySelector(&quot;.output-area&quot;);
+if (myElement) {
+  myElement.innerHTML = `
+    &lt;p&gt;Changing the content of this element.&lt;/p&gt;
+    &lt;p&gt;My name is &lt;b&gt;${myName}&lt;/b&gt;&lt;/p&gt;
+  `;
+}</code></pre>
+  <p>
+    Notice how I used <code>``</code> characters instead of <code>""</code> to
+    wrap the HTML. This makes it easier to write multiple lines of HTML in JS
+    code. We can also then use the syntax <code>${variableName}</code> to output
+    the value of variables (in this example <i>myName</i>, so <i>Petra</i>). The
+    same could also be written like this:
+  </p>
+  <pre><code>let myElement = document.querySelector(&quot;.output-area&quot;);
+if (myElement) {
+  myElement.innerHTML = &quot;&lt;p&gt;Changing the content of this element.&lt;/p&gt;&lt;p&gt;My name is &quot; + myName + &quot;&lt;/p&gt;&quot;;
+}</code></pre>
+
+  <hr />
+
+  <h3>Multiple Elements</h3>
+
+  <p>
+    Sometimes you might want to do something with a bunch of elements, for
+    example all buttons with a certain class. Essentially, we're doing the same
+    thing, but now we have to use <code>querySelectorAll</code> instead of just
+    <code>querySelector</code>. Our variable is now an array (reminder: that is
+    a list of multiple values) that contains all found elements.
+  </p>
+  <pre><code class="language-javascript">let myElements = document.querySelectorAll(&quot;.pink-button&quot;);</code></pre>
+
+  <p>
+    We haven't talked about arrays much yet, so I'm now going to show you how to
+    work with them. Most of the time, you want to do something to each of the
+    elements in the list. For this, we use the <code>forEach</code> syntax:
+  </p>
+  <pre><code class="language-javascript">myElements.forEach((myEl) =&gt; {
+  // do something with myEl
+});</code></pre>
+
+  <p>
+    Here, <code>myElements</code> is the array containing <b>all</b> elements,
+    and <code>myEl</code> is <b>one</b> of those elements (the name of this
+    temporary variable does not matter btw). The code inside the forEach will be
+    executed for each of the elements.
+  </p>
+
+  <p>
+    So like this, we can, for example, output each element into the console:
+  </p>
+  <pre><code class="language-javascript">myElements.forEach((myEl) =&gt; {
+  console.log(myEl);
+});</code></pre>
+
+  <p>
+    Or, we can change our elements again. This time I will show you how to
+    change the inline CSS of an element. The syntax for this is
+    <code>elementVariable.style.cssPropertyName = value;</code>. For example, to
+    change the CSS property <i>color</i> for each element:
+  </p>
+  <pre><code class="language-javascript">let myElements = document.querySelectorAll(&quot;.pink-button&quot;);
+myElements.forEach((myEl) =&gt; {
+  myEl.style.color = &quot;purple&quot;;
+});</code></pre>
+  <p>
+    Or you can simply add a class to the element and do the rest in your CSS:
+  </p>
+  <pre><code class="language-javascript">let myElements = document.querySelectorAll(&quot;.pink-button&quot;);
+myElements.forEach((myEl) =&gt; {
+  myEl.classList.add("purple-text");
+});</code></pre>
+  <p>And that's the basics on how to manipulate HTML content!</p>
+
+  <hr />
+
+  <h3 id="events">Event Listeners</h3>
+  <p>
+    One very common use case for JS is making things happen when the user clicks
+    on a specific element, e.g. a button. In JS, a click is an <b>event</b> that
+    we need to wait for. For this, we use a so-called <b>event listener</b>. The
+    event listener will wait until the element is clicked and then execute the
+    code you define for it. This is the syntax:
+  </p>
+  <pre><code  class="language-javascript">myElement.addEventListener(&quot;click&quot;, () =&gt; {
+  // myElement was clicked
+});</code></pre>
+  <p>
+    For this, of course, we also need to find our element first, like I showed
+    you in the last section. Also don't forget to include the check whether the
+    element exists. (Here, I use the keyword <code>return</code> to stop all the
+    rest of the code from executing if <i>myButton</i> doesn't exist.)
+  </p>
+  <pre><code class="language-javascript">let myButton = document.querySelector(&quot;#clickMeButton&quot;); // look for element with ID 'clickMeButton'
+if (!myButton) return; // if myButton doesn&#39;t exist, stop all code.
+
+myButton.addEventListener(&quot;click&quot;, () =&gt; {
+  console.log("Button was clicked!");
+});</code></pre>
 </section>
 
 <!-- --------------------------------------------------------------- -->
@@ -344,8 +490,223 @@ console.<span>log</span>(myIntroduction);
 <!-- --------------------------------------------------------------- -->
 
 <section>
-  <h2 id="dom">Manipulating the DOM: changing your page content</h2>
-  <p>Coming soon!</p>
+  <h2 id="cookies">
+    <b>LocalStorage:</b> how to make the browser 'remember' things
+  </h2>
+  <p>
+    To make the user's browser 'remember' things, such as the whether light mode
+    or dark mode is activated, we need to use cookies. More specifically,
+    <b>local storage</b>. You'd think that working with cookies is difficult,
+    but it's not. Like, at all. Here's the only two lines we need:
+  </p>
+  <pre><code class="language-javascript">const darkModeSetting = localStorage.getItem(&quot;darkMode&quot;); // read cookie with name &quot;darkMode&quot;
+localStorage.setItem(&quot;darkMode&quot;, &quot;off&quot;); // set value of cookie with name &quot;darkMode&quot;</code></pre>
+  <p>
+    ...and that's all we need to know. (The name of the cookie, here "darkMode",
+    does not matter. Choose one that makes sense.)
+  </p>
+  <blockquote class="tip">
+    <p>
+      You can check your browser's current localStorage items in your
+      development tools → "Storage" tab → Local Storage → your URL. You can see
+      your cookies (here <i>darkModeSetting</i>) and their value in there. You
+      can also change or delete them here, which is sometimes usual for testing
+      code.
+    </p>
+  </blockquote>
+  <hr />
+  <p>
+    Now, if we wanted to write a script for a button that toggles dark mode, we
+    have to do this:
+  </p>
+  <ol>
+    <li>
+      On page load, check whether a cookie for dark mode already exists.
+      <ul>
+        <li>
+          If it does, we need to save the value into a variable and activate
+          whichever mode the value says.
+        </li>
+        <li>If it doesn't, we'll use our default value (off).</li>
+      </ul>
+    </li>
+    <li>
+      We need to find our button element that should toggle dark mode and add an
+      event listener to it so we can do stuff on click.
+    </li>
+    <li>
+      When the button is clicked we want to check what the current setting is.
+      (We need to do this again because it could have changed since the page was
+      loaded.)
+      <ul>
+        <li>
+          If dark mode is currently off we want to turn it on (and save the
+          cookie).
+        </li>
+        <li>
+          If dark mode is currently on we want to turn it off (and save the
+          cookie).
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <p>
+    Btw, we will simply be adding/removing the class "dark-mode" from our
+    <code>&lt;body&gt;</code> element. The rest is just CSS (e.g.
+    <code>.dark-mode { background: black; color: white; }</code>).
+  </p>
+
+  <p>Here is a full JS dark mode toggle example:</p>
+  <pre><code class="language-javascript">const darkModeSetting = localStorage.getItem(&quot;darkMode&quot;) || &quot;off&quot;; // read cookie, if cookie doesn&#39;t exist use &quot;off&quot;
+if (darkModeSetting == &quot;on&quot;) {
+  document.body.classList.add(&quot;dark-mode&quot;);
+}
+
+let darkModeButton = document.querySelector(&quot;#darkModeButton&quot;);
+darkModeButton.addEventListener(&quot;click&quot;, () =&gt; {
+  const darkModeSetting = localStorage.getItem(&quot;darkMode&quot;) || &quot;off&quot;;
+  if (darkModeSetting == &quot;on&quot;) {
+    document.body.classList.remove(&quot;dark-mode&quot;);
+    localStorage.setItem(&quot;darkMode&quot;, &quot;off&quot;);
+  } else {
+    document.body.classList.add(&quot;dark-mode&quot;);
+    localStorage.setItem(&quot;darkMode&quot;, &quot;on&quot;);
+  }
+});</code></pre>
+  <p>
+    By now, you should understand what most of this code does. I do, however,
+    have one new syntax in there which I will quickly explain:
+  </p>
+
+  <pre><code class="language-javascript">const darkModeSetting = localStorage.getItem(&quot;darkMode&quot;) || &quot;off&quot;;</code></pre>
+
+  <p>or, let's simplify it to:</p>
+  <pre><code class="language-javascript">const myVariable = value1 || value2;</code></pre>
+  <p>
+    This means: If value1 exists, make myVariable value1. Otherwise, make
+    myVariable value2. This effectively makes value2 the 'fallback' value.
+  </p>
+  <p>You could write the same code like so:</p>
+  <pre><code class="language-javascript">let myVariable = defaultValue;
+if(otherValue) {
+  myVariable = otherValue;
+}</code></pre>
+</section>
+
+<!-- <pre><code class="language-javascript"></code></pre> -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<section>
+  <h2 id="more"><b>More</b></h2>
+  <h3>Learning by yourself</h3>
+  <p>
+    Learning how to do things with code is a never-ending process that requires
+    a ton of googling. To practise this, here is a task for you:
+  </p>
+  <p>
+    <b
+      >Try to find out how to create a simple random generator (e.g. generating
+      a random number between 1 and 100) with JS.</b
+    >
+  </p>
+  <p>
+    (Tip: You could start by googling something like
+    <i>javascript how to generate random number</i>. Results from the websites
+    <i>W3Schools</i> <i>StackOverflow</i> are always a good start!)
+  </p>
+  <p>
+    Of course I could just show you how to do it, but this skill of figuring it
+    out yourself will be more helpful to you in the long run!
+  </p>
+  <hr />
+  <h3>Error messages</h3>
+  <p>
+    I also highly recommend learning about common JavaScript errors. Errors are
+    good, btw! They're friends! They tell you what's wrong with your code. So
+    always read them. Okay, having said that:
+    <a
+      href="https://certificates.dev/blog/the-8-javascript-errors-every-developer-should-understand"
+      target="_blank"
+      >Here is a short guide on the most common errors</a
+    >. Happy troubleshooting and bugfixing!
+  </p>
+  <hr />
+  <h3>What to learn next</h3>
+  <p>
+    I have a <a href="/coding/checklist">checklist</a> of stuff you should
+    learn. Here's the most important stuff, ordered by difficulty:
+  </p>
+  <ul class="checklist">
+    <li>
+      <input type="checkbox" /><a
+        href="/coding/common-mistakes.html#jquery"
+        target="_blank"
+        >Don't use jQuery</a
+      >
+      <small
+        >(if you are already using jQuery, visit
+        <a href="https://youmightnotneedjquery.com/" target="_blank"
+          >youmightnotneedjquery.com</a
+        ></small
+      >)
+    </li>
+    <li>
+      <input type="checkbox" /><a
+        href="https://www.w3schools.com/js/js_scope.asp"
+        target="_blank"
+        >Variable scope</a
+      >
+    </li>
+    <li>
+      <input type="checkbox" /><a
+        href="https://stackoverflow.com/questions/1133770/how-to-convert-a-string-to-an-integer-in-javascript"
+        target="_blank"
+        >Converting strings to numbers</a
+      >
+    </li>
+    <li>
+      <input type="checkbox" /><a
+        href="https://www.w3schools.com/js/js_window_location.asp"
+        target="_blank"
+        ><code>window.location</code> object</a
+      >
+      <span>(Working with the current URL)</span>
+    </li>
+    <li>
+      <input type="checkbox" /><a
+        href="https://www.w3schools.com/jsref/met_win_settimeout.asp"
+        target="_blank"
+        ><code>setTimeout()</code></a
+      >
+      <span>(Waiting before doing something)</span>
+    </li>
+    <li>
+      <input type="checkbox" /><a
+        href="https://www.w3schools.com/js/js_arrow_function.asp"
+        target="_blank"
+        >Arrow functions</a
+      >
+      <span><code>(a, b) => a + b</code></span>
+    </li>
+    <li>
+      <input type="checkbox" /><a
+        href="https://www.w3schools.com/js/js_regexp.asp"
+        target="_blank"
+        >RegEx (Regular Expressions)</a
+      >
+      <span
+        >Also check out
+        <a href="https://regexr.com/" target="_blank">regexr.com</a>!</span
+      >
+    </li>
+    <li>
+      <input type="checkbox" /><a href="/coding/webpack-tutorial">Webpack</a>
+      <i>(My own tutorial!)</i>
+    </li>
+  </ul>
 </section>
 
 <!-- --------------------------------------------------------------- -->
@@ -353,25 +714,51 @@ console.<span>log</span>(myIntroduction);
 <!-- --------------------------------------------------------------- -->
 
 <section>
-  <h2 id="cookies">LocalStorage: how to make the browser 'remember' things</h2>
-  <p>Coming soon!</p>
+  <h2 id="codepen">Tutorial Code</h2>
+  <p>
+    Here is a
+    <a href="https://codepen.io/petracoding/pen/KwNXBVa" target="_blank"
+      >codepen</a
+    >
+    with all the code from this tutorial. Feel free to play around with it!
+  </p>
+  <p
+    class="codepen"
+    data-height="500"
+    data-pen-title="Javascript Beginner Tutorial"
+    data-default-tab="js,result"
+    data-slug-hash="KwNXBVa"
+    data-editable="true"
+    data-user="petracoding"
+    style="
+      height: 500px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid;
+      margin: 1em 0;
+      padding: 1em;
+    "
+  >
+    <span
+      >See the Pen
+      <a href="https://codepen.io/petracoding/pen/KwNXBVa">
+        Javascript Beginner Tutorial</a
+      >
+      by petra (<a href="https://codepen.io/petracoding">@petracoding</a>) on
+      <a href="https://codepen.io">CodePen</a>.</span
+    >
+  </p>
+  <script async src="https://public.codepenassets.com/embed/index.js"></script>
 </section>
-
-<!-- --------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------- -->
-
-<section>
-  <h2 id="random">Random: how to randomize stuff</h2>
-  <p>Coming soon!</p>
-</section>
-
-<!-- --------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------- -->
 
 <section>
   <h2>Quiz</h2>
+  <p>
+    Here's a little quiz I made. It's based on this tutorial, but it's not super
+    easy!
+  </p>
   <br />
   <iframe src="/coding/quizzes/javascript.html"></iframe>
 </section>

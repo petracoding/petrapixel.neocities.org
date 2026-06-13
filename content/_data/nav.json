@@ -656,7 +656,7 @@
          },
          {
             "label":"Beginner Tutorials",
-            "new":false,
+            "new":true,
             "items":[
                {
                   "link":"/coding/layout-base-code",
@@ -697,7 +697,7 @@
                   "label":"Javascript Tutorial",
                   "sublabel": "Learn basic syntax and common usecases!",
                   "new":true,
-                  "hide":true,
+                  "hide":false,
                   "icon":"javascript-line"
                },
                  {
