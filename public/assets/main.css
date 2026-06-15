@@ -19451,6 +19451,7 @@ div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
   border: 2px dotted #deafb3;
   padding: 20px;
   margin-top: 10px;
+  min-height: 350px;
 }
 
 .widget-builder__settings {

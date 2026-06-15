@@ -6,7 +6,7 @@ export function initWidgetBuilders() {
 
 function initWidgetBuilder(wrapperEl) {
   const widgetName = wrapperEl.getAttribute("data-widget");
-  const settingsStr = wrapperEl.getAttribute("data-settings");
+  let settingsStr = wrapperEl.getAttribute("data-settings");
   let outputHtml = "";
   const settings = [];
 
@@ -25,7 +25,7 @@ function initWidgetBuilder(wrapperEl) {
   <div class='widget-builder__preview'>
     <b>Preview:</b>
     <iframe src="/widgets/${widgetName}?${settingsStr}" frameborder="0" title="Widget Preview"></iframe>
-    <b style="margin-top:10px">Code:</b>
+    <b style="margin-top:10px">Widget Code:</b>
     <textarea class='widget-builder__code code-textarea' rows="10"><iframe src="https://petracoding.github.io/neocities/widgets/${widgetName}?${settingsStr}" frameborder="0" title="Widget"></iframe>
     </textarea>
     <button type="button" class="widget-builder__copy">Copy to Clipboard</button>
@@ -83,7 +83,7 @@ function copyToClipboard(text) {
 
 function settingHasChanged(wrapperEl, inputEl, settings, widgetName) {
   const settingName = inputEl.getAttribute("name");
-  const newValue =
+  let newValue =
     inputEl.getAttribute("type") == "checkbox"
       ? inputEl.checked
         ? "1"
@@ -91,6 +91,11 @@ function settingHasChanged(wrapperEl, inputEl, settings, widgetName) {
       : inputEl.getAttribute("type") == "number"
         ? inputEl.value + "px"
         : inputEl.value;
+
+  if (inputEl.getAttribute("code")) {
+    newValue = inputEl.value;
+    console.log(inputEl.value);
+  }
 
   settings.forEach((setting) => {
     if (setting[0] == settingName) {
@@ -104,11 +109,9 @@ function settingHasChanged(wrapperEl, inputEl, settings, widgetName) {
     if (!isFirst) {
       newSettingsStr += "&";
     }
-    newSettingsStr += s[0] + "=" + s[1];
+    newSettingsStr += s[0] + "=" + fixExternalWidgetCode(s[1]);
     isFirst = false;
   });
-
-  console.log(newSettingsStr);
 
   const srcString = "/widgets/" + widgetName + "?" + newSettingsStr;
 
@@ -124,13 +127,33 @@ function settingHasChanged(wrapperEl, inputEl, settings, widgetName) {
   wrapperEl.querySelector(".widget-builder__code").value = code;
 }
 
+function fixExternalWidgetCode(str) {
+  return (
+    str
+      // special characters
+      .replaceAll("&nbsp;", " ")
+      .replaceAll("&#39;", "'")
+      .replaceAll('"', "'")
+      .replaceAll("&", "%26")
+      // .replaceAll("&", "&amp;")
+      // line breaks
+      .replace(/(\r\n|\n|\r)/gm, "")
+      .replace(/[\n\r\t]/gm, "")
+      // whitespace
+      .replace(/\s{2,}/gm, " ")
+  );
+}
+
 function getSettingHtml(setting) {
   const settingName = setting[0];
   const value = setting[1];
   const type = getSettingType(settingName, value);
 
   const label = type == "number" ? settingName + " (px)" : settingName;
-  const isRequired = settingName == "username" || settingName == "pollcode";
+  const isRequired =
+    settingName == "username" ||
+    settingName == "pollcode" ||
+    settingName == "code";
   const defaultValue = type == "number" ? value.replace("px", "") : value;
 
   let inputHtml = `<input type="${type}" name="${settingName}" value="${defaultValue}" ${isRequired ? "required" : ""} ${type == "checkbox" && value == "1" ? "checked" : ""} />`;
@@ -181,7 +204,7 @@ function getSettingType(settingName, value) {
     return "checkbox";
   } else if (value.length == 7 && value.split("")[0] == "#") {
     return "color";
-  } else if (settingName == "pollcode") {
+  } else if (settingName == "pollcode" || settingName == "code") {
     return "textarea";
   } else {
     return "text";

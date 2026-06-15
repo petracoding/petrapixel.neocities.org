@@ -79,7 +79,17 @@ toc: true
     <a href="/coding/cachebusting#howto">Here's how.</a>
   </blockquote>
   <hr />
-  <div id="toc"></div>
+  <div id="toc">
+    <b>Table of Contents:</b>
+    <ul>
+      <li><a href="#comment-widget">Virtual Observer's Comment Widget</a></li>
+      <li><a href="#statuscafe">Status.Cafe Status</a></li>
+      <li><a href="#lastfm">Last.Fm Currently Listening / Last Song</a></li>
+      <li><a href="#pollcode">Pollcode</a></li>
+      <li><a href="#widget">Everything-Widget (e.g. Goodreads)</a></li>
+      <li><a href="#comments">Comments</a></li>
+    </ul>
+  </div>
 </section>
 
 <section>
@@ -326,6 +336,10 @@ toc: true
       <code>albumCoverLeft</code>: set to 1 to position the album cover on the
       left (only if <code>showAlbumCover</code> is active)
     </li>
+    <li>
+      <code>onlyShowAlbumCover</code>: set to 1 to hide everything but the album
+      cover
+    </li>
   </ul>
 
   <hr />
@@ -417,7 +431,7 @@ toc: true
   <div
     class="widget-builder"
     data-widget="lastfm"
-    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&username=Petra1999&swapPositions=0&delimiter= by &underline=0&center=0&marquee=0&showAlbumCover=50&albumCoverLeft=1"
+    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&username=Petra1999&swapPositions=0&delimiter= by &underline=0&center=0&marquee=0&showAlbumCover=50&albumCoverLeft=1&onlyShowAlbumCover=0"
   ></div>
 </section>
 
@@ -520,8 +534,63 @@ toc: true
   <div
     class="widget-builder"
     data-widget="pollcode"
-    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&ignorePollcodeStyling=0&viewButtonAsLink=1&spacing=10px&pollcode=Paste here."
+    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&ignorePollcodeStyling=0&viewButtonAsLink=1&spacing=0px&pollcode=Paste here."
   ></div>
+</section>
+
+<section>
+  <h2 id="widget">Everything-Widget (e.g. Goodreads)</h2>
+
+  <p>
+    Got some HTML code for a widget somewhere but can't use it because it uses
+    an external script? Use this widget to work around the issue.
+  </p>
+  <p>
+    You can get a Goodreads widget code
+    <a
+      href="https://www.goodreads.com/user/edit?ref=nav_profile_settings"
+      target="_blank"
+      >in the "Widgets" tab in your account settings</a
+    >.
+  </p>
+  <p>Settings:</p>
+  <ul>
+    <li>
+      any valid CSS e.g. <code>color</code>, <code>font-family</code>,
+      <code>font-size</code>, <code>line-height</code>,
+      <code>max-width</code> etc.
+    </li>
+    <li><code>code</code>: your widget code</li>
+  </ul>
+
+  <hr />
+  <h5>Build your own:</h5>
+  <div
+    class="widget-builder"
+    data-widget="everything"
+    data-settings="color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&code=Paste your widget code here."
+  ></div>
+
+  <h5>Example:</h5>
+  <p>
+    Here are some example with Goodreads widgets. Keep in mind that this widget
+    is not restricted to Goodreads though!
+  </p>
+
+  <div class="two-columns">
+    <iframe
+      style="width: 330px; height: 410px"
+      src="https://petracoding.github.io/neocities/widgets/everything?color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&code= <!-- Show static HTML/CSS as a placeholder in case js is not enabled - javascript include will override this if things work --> <style type='text/css' media='screen'> .gr_custom_container_1781544973 { /* customize your Goodreads widget container here*/ border: 1px solid gray; border-radius:10px; padding: 10px 5px 10px 5px; background-color: #FFFFFF; color: #000000; width: 300px } .gr_custom_header_1781544973 { /* customize your Goodreads header here*/ border-bottom: 1px solid gray; width: 100%; margin-bottom: 5px; text-align: center; font-size: 120% } .gr_custom_each_container_1781544973 { /* customize each individual book container here */ width: 100%; clear: both; margin-bottom: 10px; overflow: auto; padding-bottom: 4px; border-bottom: 1px solid #aaa; } .gr_custom_book_container_1781544973 { /* customize your book covers here */ overflow: hidden; height: 60px; float: left; margin-right: 4px; width: 39px; } .gr_custom_author_1781544973 { /* customize your author names here */ font-size: 10px; } .gr_custom_tags_1781544973 { /* customize your tags here */ font-size: 10px; color: gray; } .gr_custom_rating_1781544973 { /* customize your rating stars here */ float: right; }</style> <div id='gr_custom_widget_1781544973'> <div class='gr_custom_container_1781544973'> <h2 class='gr_custom_header_1781544973'> <a style='text-decoration: none;' rel='nofollow' href='https://www.goodreads.com/review/list/62158941-petra?shelf=favorites%26amp;utm_medium=api%26amp;utm_source=custom_widget'>petra's bookshelf: favorites</a> </h2> <div class='gr_custom_each_container_1781544973'> <div class='gr_custom_book_container_1781544973'> <a title='Watership Down (Watership Down, #1)' rel='nofollow' href='https://www.goodreads.com/review/show/5704247182?utm_medium=api%26amp;utm_source=custom_widget'><img alt='Watership Down' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405136931l/76620._SY75_.jpg' /></a> </div> <div class='gr_custom_rating_1781544973'> <span class=' staticStars notranslate' title='really liked it'><img alt='really liked it' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_inactive.png' /></span> </div> <div class='gr_custom_title_1781544973'> <a rel='nofollow' href='https://www.goodreads.com/review/show/5704247182?utm_medium=api%26amp;utm_source=custom_widget'>Watership Down</a> </div> <div class='gr_custom_author_1781544973'> by <a rel='nofollow' href='https://www.goodreads.com/author/show/7717.Richard_Adams'>Richard Adams</a> </div> <div class='gr_custom_review_1781544973'> Almost perfect, and an absolutely delightful experience. I'm speechless. </div> <div class='gr_custom_tags_1781544973'> tagged: 2023, favorites, 2025, and recs-for-matti </div> </div> <div class='gr_custom_each_container_1781544973'> <div class='gr_custom_book_container_1781544973'> <a title='The Secret History' rel='nofollow' href='https://www.goodreads.com/review/show/5433051345?utm_medium=api%26amp;utm_source=custom_widget'><img alt='The Secret History' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751820530l/29044._SY75_.jpg' /></a> </div> <div class='gr_custom_rating_1781544973'> <span class=' staticStars notranslate' title='it was amazing'><img alt='it was amazing' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /></span> </div> <div class='gr_custom_title_1781544973'> <a rel='nofollow' href='https://www.goodreads.com/review/show/5433051345?utm_medium=api%26amp;utm_source=custom_widget'>The Secret History</a> </div> <div class='gr_custom_author_1781544973'> by <a rel='nofollow' href='https://www.goodreads.com/author/show/8719.Donna_Tartt'>Donna Tartt</a> </div> <div class='gr_custom_tags_1781544973'> tagged: 2024, favorites, and insp </div> </div> <div class='gr_custom_each_container_1781544973'> <div class='gr_custom_book_container_1781544973'> <a title='The Martian' rel='nofollow' href='https://www.goodreads.com/review/show/3588895110?utm_medium=api%26amp;utm_source=custom_widget'><img alt='The Martian' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413706054l/18007564._SY75_.jpg' /></a> </div> <div class='gr_custom_rating_1781544973'> <span class=' staticStars notranslate' title='it was amazing'><img alt='it was amazing' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /><img alt='' src='https://s.gr-assets.com/images/layout/gr_red_star_active.png' /></span> </div> <div class='gr_custom_title_1781544973'> <a rel='nofollow' href='https://www.goodreads.com/review/show/3588895110?utm_medium=api%26amp;utm_source=custom_widget'>The Martian</a> </div> <div class='gr_custom_author_1781544973'> by <a rel='nofollow' href='https://www.goodreads.com/author/show/6540057.Andy_Weir'>Andy Weir</a> </div> <div class='gr_custom_tags_1781544973'> tagged: audiobook, favorites, 2020, insp, and recs-for-matti </div> </div> <br style='clear: both'/> <center> <a rel='nofollow' href='https://www.goodreads.com/'><img alt='goodreads.com' style='border:0' src='https://s.gr-assets.com/images/widget/widget_logo.gif' /></a> </center> <noscript> Share <a rel='nofollow' href='https://www.goodreads.com/'>book reviews</a> and ratings with petra, and even join a <a rel='nofollow' href='https://www.goodreads.com/group'>book club</a> on Goodreads. </noscript> </div> </div> <script src='https://www.goodreads.com/review/custom_widget/62158941.petra's%20bookshelf:%20favorites?cover_position=left%26cover_size=small%26num_books=3%26order=d%26shelf=favorites%26show_author=1%26show_cover=1%26show_rating=1%26show_review=1%26show_tags=1%26show_title=1%26sort=date_added%26widget_bg_color=FFFFFF%26widget_bg_transparent=%26widget_border_width=1%26widget_id=1781544973%26widget_text_color=000000%26widget_title_size=medium%26widget_width=medium' type='text/javascript' charset='utf-8'></script>"
+      frameborder="0"
+      title="Widget"
+    ></iframe>
+    <iframe
+      style="width: 330px; height: 410px"
+      src="https://petracoding.github.io/neocities/widgets/everything?color=#2a2a2a&font-family=Times New Roman&font-size=15px&line-height=1.5&max-width=500px&code= <style type='text/css' media='screen'> .gr_grid_container { /* customize grid container div here. eg: width: 500px; */ } .gr_grid_book_container { /* customize book cover container div here */ float: left; width: 39px; height: 60px; padding: 0px 0px; overflow: hidden; } </style> <div id='gr_grid_widget_1781544973'> <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work --> <h2> <a style='text-decoration: none;' rel='nofollow' href='https://www.goodreads.com/review/list/62158941-petra?shelf=read%26utm_medium=api%26utm_source=grid_widget'>petra's books</a> </h2> <div class='gr_grid_container'> <div class='gr_grid_book_container'><a title='The Handmaid's Tale (Handmaid's Tale, #1)' rel='nofollow' href='https://www.goodreads.com/book/show/50885244-the-handmaid-s-tale'><img alt='The Handmaid's Tale' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1651677426l/50885244._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='The Anxious Generation: How the Great Rewiring of Childhood Caused an Epidemic of Mental Illness' rel='nofollow' href='https://www.goodreads.com/book/show/171681821-the-anxious-generation'><img alt='The Anxious Generation: How the Great Rewiring of Childhood Caused an Epidemic of Mental Illness' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1711573377l/171681821._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Shady Characters: Ampersands, Interrobangs and other Typographical Curiosities' rel='nofollow' href='https://www.goodreads.com/book/show/24815160-shady-characters'><img alt='Shady Characters: Ampersands, Interrobangs and other Typographical Curiosities' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1422991990l/24815160._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Feeling Is the Secret' rel='nofollow' href='https://www.goodreads.com/book/show/11485130-feeling-is-the-secret'><img alt='Feeling Is the Secret' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347264753l/11485130._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Main Street Vegan: Everything You Need to Know to Eat Healthfully and Live Compassionately in the Real World' rel='nofollow' href='https://www.goodreads.com/book/show/13262935-main-street-vegan'><img alt='Main Street Vegan: Everything You Need to Know to Eat Healthfully and Live Compassionately in the Real World' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349003310l/13262935._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Englisch - keine Hexerei, m. 2 Audio-CDs. Eine Wörterlern-Geschichte für Kinder. Für Vor- und Grundschulalter' rel='nofollow' href='https://www.goodreads.com/book/show/2210844.Englisch_keine_Hexerei_m_2_Audio_CDs_Eine_W_rterlern_Geschichte_f_r_Kinder_F_r_Vor_und_Grundschulalter'><img alt='Englisch - keine Hexerei, m. 2 Audio-CDs. Eine Wörterlern-Geschichte für Kinder. Für Vor- und Grundschulalter' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1266638461l/2210844._SX50_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='How Fascism Works: The Politics of Us and Them' rel='nofollow' href='https://www.goodreads.com/book/show/38255329-how-fascism-works'><img alt='How Fascism Works: The Politics of Us and Them' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774287529l/38255329._SX50_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Everything Is Tuberculosis: The History and Persistence of Our Deadliest Infection' rel='nofollow' href='https://www.goodreads.com/book/show/220341389-everything-is-tuberculosis'><img alt='Everything Is Tuberculosis: The History and Persistence of Our Deadliest Infection' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729825992l/220341389._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='How We Got to Now: Six Innovations That Made the Modern World' rel='nofollow' href='https://www.goodreads.com/book/show/20893477-how-we-got-to-now'><img alt='How We Got to Now: Six Innovations That Made the Modern World' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630557289l/20893477._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='A Curious History of Sex' rel='nofollow' href='https://www.goodreads.com/book/show/50773748-a-curious-history-of-sex'><img alt='A Curious History of Sex' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563281638l/50773748._SX50_SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Polysecure: Attachment, Trauma and Consensual Nonmonogamy' rel='nofollow' href='https://www.goodreads.com/book/show/52569124-polysecure'><img alt='Polysecure: Attachment, Trauma and Consensual Nonmonogamy' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1598102750l/52569124._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='My Secret Garden: Women's Sexual Fantasies' rel='nofollow' href='https://www.goodreads.com/book/show/2997.My_Secret_Garden'><img alt='My Secret Garden: Women's Sexual Fantasies' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387708704l/2997._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Want' rel='nofollow' href='https://www.goodreads.com/book/show/207006355-want'><img alt='Want' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718802861l/207006355._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Eclipse (Crepúsculo, #3)' rel='nofollow' href='https://www.goodreads.com/book/show/428263.Eclipse'><img alt='Eclipse' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361038355l/428263._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='New Moon (Twilight Saga, #2)' rel='nofollow' href='https://www.goodreads.com/book/show/49041.New_Moon'><img alt='New Moon' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630592760l/49041._SX50_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Die vollständige Maus' rel='nofollow' href='https://www.goodreads.com/book/show/3127569-die-vollst-ndige-maus'><img alt='Die vollständige Maus' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337378184l/3127569._SX50_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Deadpool: Badder Blood' rel='nofollow' href='https://www.goodreads.com/book/show/150065184-deadpool'><img alt='Deadpool: Badder Blood' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774267677l/150065184._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Wolverine/Deadpool: The Decoy #1' rel='nofollow' href='https://www.goodreads.com/book/show/25758045-wolverine-deadpool'><img alt='Wolverine/Deadpool: The Decoy #1' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549397345l/25758045._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='X-Men: Deadly Genesis' rel='nofollow' href='https://www.goodreads.com/book/show/106060.X_Men'><img alt='X-Men: Deadly Genesis' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528358551l/106060._SY75_.jpg' /></a></div> <div class='gr_grid_book_container'><a title='Nightcrawler, Volume 1: Homecoming' rel='nofollow' href='https://www.goodreads.com/book/show/20980819-nightcrawler-volume-1'><img alt='Nightcrawler, Volume 1: Homecoming' border='0' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1417278399l/20980819._SY75_.jpg' /></a></div> <br style='clear: both'/><br/><a class='gr_grid_branding' style='font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both' rel='nofollow' href='https://www.goodreads.com/user/show/62158941-petra'>petra's favorite books »</a> <noscript><br/>Share <a rel='nofollow' href='/'>book reviews</a> and ratings with petra, and even join a <a rel='nofollow' href='/group'>book club</a> on Goodreads.</noscript> </div> </div> <script src='https://www.goodreads.com/review/grid_widget/62158941?cover_size=%26hide_link=%26hide_title=%26num_books=20%26order=%26shelf=%26sort=%26widget_id=1781544973' type='text/javascript' charset='utf-8'></script>"
+      frameborder="0"
+      title="Widget"
+    ></iframe>
+  </div>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
