@@ -18427,17 +18427,19 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
 .ship {
   position: relative;
   overflow: hidden;
+  margin: 5px;
+  border-radius: 40px;
 }
 .ship--l {
-  width: 50%;
+  width: calc(50% - 10px);
   height: auto;
 }
 .ship--m {
-  width: 33.333%;
+  width: calc(33.333% - 10px);
   height: auto;
 }
 .ship--s {
-  width: 25%;
+  width: calc(25% - 10px);
   height: auto;
 }
 .ship img {
@@ -18475,6 +18477,7 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   z-index: 1;
   font-size: 24px;
   text-shadow: 1px 0px 2px black;
+  padding: 5px;
 }
 .ship:hover img:last-child,
 .ship:hover figcaption {

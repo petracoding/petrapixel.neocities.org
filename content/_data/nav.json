@@ -686,10 +686,11 @@
                   "link":"/coding/custom-font-tutorial",
                   "label":"Custom Font Tutorial",
                   "new":false,
-                  "hide":true,
+                  "hide":false,
                   "icon":"font-size"
                },
                {
+                  
                   "isDivider": "-----------------------------"
                },
                {
