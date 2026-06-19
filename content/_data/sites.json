@@ -541,5 +541,14 @@
     "inspiration": false,
     "supporter": true,
     "supporterUntil": "member" 
+  },
+  {
+    "link": "https://crota-gurdy.neocities.org/",
+    "title": "crota-gurdy",
+    "image": "https://crota-gurdy.neocities.org/hurdygames_button_smol.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "19.7." 
   }
 ]
