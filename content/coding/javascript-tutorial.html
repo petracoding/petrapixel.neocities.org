@@ -273,23 +273,38 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
   </p>
   <p>We define a function like this:</p>
   <pre><code class="language-javascript"><span><span>function</span> <span>sayHello</span>(<span></span>) </span>{
-    // add function code here...
     <span>console</span>.log(<span>"Hello!"</span>);
 }
 </code></pre>
-  <p>and call (execute) it like this:</p>
+  <p>
+    In this case, the function <code>sayHello</code> only has one line of code
+    (the console.log statement). Anything between the the <code>{</code> and
+    <code>}</code> is the function code.
+  </p>
+  <p>
+    Now we can call (execute) the function by typing out its name and adding
+    <code>()</code>:
+  </p>
   <pre><code class="language-javascript">sayHello()<span>;</span>
 </code></pre>
   <p>
-    Notice the <code>()</code> at the end - they are a clear sign that
-    <em>sayHello</em> is a function. Without the <code>()</code> the function
-    will not be executed.
+    The <code>()</code> at the end are a clear sign that <em>sayHello</em> is a
+    function. Without the <code>()</code> the function will not be executed.
+  </p>
+  <p>
+    So now, wherever we type <code>sayHello();</code>, the code of our function
+    (in this case the output "Hello!") will be executed.
+  </p>
+  <p>
+    (Btw, you can also call the function inside of itself - but that will create
+    an infinite loop and crash your browser. So, uh, don't do that.)
   </p>
   <br />
   <h4>Parameters</h4>
   <p>
     Functions can also take so-called parameters. Those are just variables that
-    you fill in when you call a function.
+    you fill in when you call a function. This way you can make your function do
+    different things depending on which parameters you use while executing it.
   </p>
   <p>
     For example, this function takes two parameters, which can be used as
@@ -298,17 +313,27 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
   <pre><code class="language-javascript"><span>function</span> <span>introduceMyself</span>(name, age) {
     console.log("Hello! My name <span>is</span> <span>" + name + "</span> <span>and</span> I am <span>" + age + "</span> years old.<span>");
 }</span>
+<p>Now you can use this function to output the introduction, no matter which name and age is given.</p>
 </code></pre>
   <p>You&#39;d call it like this:</p>
   <pre><code class="language-javascript"><span>introduceMyself</span>(<span>"Petra"</span>, <span>26</span>);
 </code></pre>
+
   <p>or like this, using our variables from before:</p>
   <pre><code class="language-javascript">introduceMyself(<span>myName</span>, myAge)<span>;</span>
 </code></pre>
   <p>or any combination:</p>
   <pre><code class="language-javascript">introduceMyself(<span>"Petra"</span>, myAge)<span>;</span>
 </code></pre>
-  <p>You can see here that the order of variables is important.</p>
+  <p>
+    You can see here that the order of variables is important, because the
+    values you use while executing the function should match the order of
+    variable names you defined when creating the function. (In this case,
+    "Petra" becomes the value of the variable <code>name</code> because it is
+    the first parameter, and 26 will be the value of <code>age</code> because it
+    is the second parameter.)
+  </p>
+
   <br />
   <h4>Return</h4>
   <p>
@@ -320,10 +345,7 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
     <span>return</span> number1 + number2;
 }
 </code></pre>
-  <p>
-    Here is an example using a string as a return value (also notice how I use
-    <code>+</code> to combine strings):
-  </p>
+  <p>Here is an example using a string as a return value:</p>
   <pre><code class="language-javascript"><span><span>function</span> <span>getIntroduction</span>(<span>name, age</span>) </span>{
     <span>let</span> introduction = <span>"Hello! My name is "</span> + name + <span>" and I am "</span> + age + <span>" years old."</span>;
     <span>return</span> introduction;
@@ -331,7 +353,7 @@ if ((<span>myName</span> == <span>"Petra"</span>) || (<span>myAge</span> &gt;= <
 </code></pre>
   <p>
     When calling a function with a return value you could then save its return
-    value in a newly created variable like so:
+    value in a newly created variable and then use that variable:
   </p>
   <pre><code class="language-javascript"><span>let</span> myIntroduction = getIntroduction(myName, myAge);
 console.<span>log</span>(myIntroduction);
@@ -341,6 +363,44 @@ console.<span>log</span>(myIntroduction);
   </p>
   <pre><code class="language-javascript">console.<span>log</span>(getIntroduction(myName, myAge));
 </code></pre>
+
+  <br />
+  <h4>Existing functions</h4>
+  <p>
+    By now you might have noticed that the <code>console.log();</code> statement
+    we use to output text in the console is also a function! To be exact,
+    <code>log</code> is a function of the object <code>console</code>. (We know
+    that <code>log</code> is a function and not a variable because it has the
+    <code>()</code> at the end and it can take parameters - in this case the
+    text to output.)
+  </p>
+  <p>
+    <code>console.log()</code> is just one of many pre-existing functions in
+    JavaScript that are useful. Here are some examples of functions you can use
+    to modify text. The syntax for these is
+    <code>variableName.functionName()</code>:
+  </p>
+  <pre><code class="language-javascript">let myTextVariable = "Text";
+myTextVariable.toUpperCase(); // turns "Text" into "TEXT"
+myTextVariable.toLowerCase(); // turns "Text" into "text"
+myTextVariable.split(); // turns "Text" into ["T", "e", "x", "t"]
+myTextVariable.includes("Tex"); // return true because "Text" includes "Tex"
+myTextVariable.startsWith("T"); // return true because "Text" starts with "T"</code></pre>
+  <p>
+    Keep in mind that all of these are case sensitive. This means it's
+    <code>toUpperCase()</code> <b>not</b> <code>toUppercase()</code>. This also
+    means that <code>myTextVariable.startsWith("t")</code> would return false
+    because "Text" does not include a lowercase t.
+  </p>
+  <p>
+    Btw, to use the results of these function you'd need to save the value into
+    a variable, because the functions do not modify your variable value. That
+    means: After calling <code>myTextVariable.toUpperCase()</code>,
+    <code>myTextVariable</code> is still "Text", <b>not</b> "TEXT". To save it
+    we could do something like this:
+  </p>
+  <pre><code class="language-javascript">let myTextVariable = "Text";
+let myTextVariableUppercase = myTextVariable.toUpperCase();</code></pre>
 </section>
 
 <!-- --------------------------------------------------------------- -->
