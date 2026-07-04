@@ -1,5 +1,6 @@
 [
-  { "date": "2026-06-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-07-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-07-04", "text": "Indie Web DB!", "link": "/indiewebdb" },
   { "date": "2026-06-15", "text": "New widget!", "link": "/coding/widgets#widget" },
   { "date": "2026-06-13", "text": "Javascript Beginner Tutorial is here!!!", "link": "/coding/javascript-tutorial" },
   { "date": "2026-06-09", "text": "Added my fave ships to my about-me page", "link": "/about/about-me" },

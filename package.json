@@ -3,6 +3,8 @@
   "private": true,
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "css-loader": "^7.1.2",
     "file-saver": "^2.0.5",
@@ -13,6 +15,7 @@
     "sass-loader": "^16.0.1",
     "style-loader": "^4.0.0",
     "tippy.js": "^6.3.7",
+    "typescript": "^6.0.3",
     "vite": "^8.0.16",
     "webpack": "^5.94.x",
     "webpack-cli": "^5.1.4"
@@ -21,6 +24,7 @@
     "webpack": "webpack --mode development --stats verbose --watch --devtool false",
     "eleventy": "npx @11ty/eleventy --serve --port=8080",
     "react": "vite build --watch --config react/vite.config.js",
+    "typecheck": "tsc --noEmit",
     "build-react": "vite build --config react/vite.config.js"
   },
   "dependencies": {

@@ -13,7 +13,6 @@ module.exports = {
   entry: {
     main: "./js/main.js",
     layoutGenerator: "./js/layout-generator/main.js",
-    indieWebDB: "./js/indiewebdb/main.js",
   },
   output: {
     path: path.resolve(__dirname, "public/assets"),

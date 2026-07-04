@@ -10,7 +10,7 @@ testingOnLocalhost: false
     </title>
     <meta
       name="description"
-      content="{{ description or 'A database of indie websites, made by Petrapixel.' }}"
+      content="{{ description or 'A database of indie websites, made by Petrapixel. Neocities.' }}"
     />
     <script src="../assets/js/indieWebDB.js{{ nocache }}"></script>
     <link rel="stylesheet" href="../assets/indieWebDB.css{{ nocache }}" />
@@ -19,6 +19,7 @@ testingOnLocalhost: false
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../assets/img/favicon.ico" rel="icon" type="image/x-icon" />
 
+    <!-- React -->
     <script type="module" src="../assets/react/app.js{{ nocache }}"></script>
     <link
       rel="stylesheet"
@@ -35,20 +36,16 @@ testingOnLocalhost: false
       function gtag() {
         dataLayer.push(arguments);
       }
+
       gtag("js", new Date());
       gtag("config", "G-J64TL8KVTJ");
     </script>
 	 --></head>
-  <body class="{{ bodyClass }} indie-web-db">
+  <body class="{{ bodyClass }} indie-web-db" data-page="{{ pageName }}">
     <noscript id="no-js-warning"
       >Please enable JavaScript to be able to use all functions of this
       website!</noscript
     >
-
-    <!-- ------------------------------------------------ -->
-    <!-- --------------------- REACT ------------------- -->
-    <!-- ------------------------------------------------ -->
-    <div id="react-root"></div>
 
     <!-- ------------------------------------------------ -->
     <!-- --------------------- HEADER ------------------- -->
@@ -57,7 +54,7 @@ testingOnLocalhost: false
 
     <header>
       <div class="page-title">
-        Indie Web Database<small
+        <a href="/indiewebdb">Indie Web Database</a><small
           >by
           <a href="https://petrapixel.neocities.org/" target="_blank"
             >petrapixel</a
@@ -66,11 +63,10 @@ testingOnLocalhost: false
       </div>
       <nav class="navigation">
         <ul>
-          <li><a href="/indiewebdb" class="active">Home</a></li>
-          <li><a href="/indiewebdb/websites">Websites</a></li>
-          <li><a href="/indiewebdb/webrings">Webrings</a></li>
-          <li><a href="/indiewebdb/cliques">Cliques</a></li>
-          <li><a href="/indiewebdb/random">Random</a></li>
+          <li><a href="/indiewebdb/websites" class="{% if pageName == "websites" %}active{% endif %}">Websites</a></li>
+          <li><a href="/indiewebdb/webrings" class="{% if pageName == "webrings" %}active{% endif %}">Webrings</a></li>
+          <li><a href="/indiewebdb/cliques" class="{% if pageName == "cliques" %}active{% endif %}">Cliques</a></li>
+         <!--  <li><a href="/indiewebdb/random">Random</a></li>-->
         </ul>
       </nav>
     </header>
@@ -79,7 +75,10 @@ testingOnLocalhost: false
     <!-- ----------------- MAIN CONTENT ----------------- -->
     <!-- ------------------------------------------------ -->
 
-    <main id="main" class="{{ mainClass }}">{{ content | safe }}</main>
+    <main id="main" class="{{ mainClass }}">
+      {{ content | safe }}
+      <div id="react-root"></div>
+    </main>
 
     <!-- ------------------------------------------------ -->
     <!-- ----------------- FOOTER ----------------- -->
@@ -87,12 +86,12 @@ testingOnLocalhost: false
 
     <footer>
       <blockquote class="footer-fact">
-        <b>Did you know?</b>
+      
         <span
-          >This site's cursors are
-          <a href="https://www.cursors-4u.com/cursor/ubuntu-set" target="_blank"
-            >Ubuntu cursors</a
-          >!</span
+          >© 2026
+          <a href="https://petrapixel.neocities.org/" target="_blank"
+            >petrapixel</a
+          ></span
         >
       </blockquote>
       <ul>

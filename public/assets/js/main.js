@@ -1303,9 +1303,9 @@ class GoogleSpreadSheet {
 }
 
 function initGoogleSheets() {
-  if (document.querySelector("#commentWidget")) {
-    initCommentWidget();
-  }
+  // if (document.querySelector("#commentWidget")) {
+  //   initCommentWidget();
+  // }
 
   const apiKey = "AIzaSyAkeZN8mT_waQBWUMbCy0F68ixe-fRKaOo";
   const gssCliques = new GoogleSpreadSheet(

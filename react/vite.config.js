@@ -23,10 +23,21 @@ export default defineConfig({
 /*
 Installation:
 	npm install --save-dev vite @vitejs/plugin-react
+    (= installs vite)
 	npm install react react-dom
+    (= installs react)
+  npm install --save-dev typescript @types/react @types/react-dom
+    (= installs Typescript - .jsx files now need to be .tsx files)
+  npx tsc --init
+    (= creates Typescript Config)
 
 Then:
 	npx vite ????
   vite build --watch --config react/vite.config.js ????
     (= npm run react)
+
+  Change all .jsx files to .tsx, and reload VSCode.
+  Create vite-env.d.ts file with content so that Typescript can import SCSS.
+
+ 
 */
