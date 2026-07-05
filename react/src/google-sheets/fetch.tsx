@@ -1,6 +1,7 @@
 import { WebringProps } from "../components/WebringTable";
 import { CliqueProps } from "../components/CliqueTable";
 import { TagProps, TagType, WebsiteProps } from "../components/Website";
+import { FilterTag } from "../contexts/FilterContext";
 
 export default async function fetchGoogleSheetData(
   spreadsheetID: string,
@@ -9,6 +10,7 @@ export default async function fetchGoogleSheetData(
   setWebrings?: React.Dispatch<React.SetStateAction<WebringProps[]>>,
   setCliques?: React.Dispatch<React.SetStateAction<CliqueProps[]>>,
   setWebsites?: React.Dispatch<React.SetStateAction<WebsiteProps[]>>,
+  setFilterTags?: React.Dispatch<React.SetStateAction<FilterTag[]>>,
 ) {
   try {
     const apiKey = "AIzaSyAkeZN8mT_waQBWUMbCy0F68ixe-fRKaOo";
@@ -20,13 +22,17 @@ export default async function fetchGoogleSheetData(
 
     if (setWebsites) {
       const websites: WebsiteProps[] = [];
+      const filterTags: FilterTag[] = [];
       tableRows.forEach((row: string[]) => {
+        const tags = generateTags(row);
         const newWebsite: WebsiteProps = {
           date: fixDateString(row[0]),
           link: row[1],
+          linkForSort: cleanUpStringForSorting(row[1]),
           buttonUrl: row[2],
-          buttonColorOrder: turnIntoOrderString(row[2] ? row[3] : "white"),
+          buttonColorOrder: turnIntoOrderString(row[2] ? row[3] : "NO BUTTON"),
           title: row[4],
+          titleForSort: cleanUpStringForSorting(row[4]),
           name: row[5],
           pronouns: row[6],
           continent: row[7],
@@ -38,10 +44,35 @@ export default async function fetchGoogleSheetData(
           isAccessible: row[14] == "yes",
           creationYear: row[15],
           codeLink: row[17],
-          tags: generateTags(row),
+          tags: tags,
         };
         websites.push(newWebsite);
+
+        if (setFilterTags) {
+          // Count tags:
+          tags.forEach((tag) => {
+            let i = 0;
+            let foundTag = false;
+
+            filterTags.forEach((ft) => {
+              if (ft.tag.label == tag.label) {
+                filterTags[i].number++;
+                foundTag = true;
+              }
+              i++;
+            });
+
+            if (!foundTag) {
+              const newTag: FilterTag = {
+                tag: tag,
+                number: 1,
+              };
+              filterTags.push(newTag);
+            }
+          });
+        }
       });
+      if (setFilterTags) setFilterTags(filterTags);
       setWebsites(websites.filter((website) => website.link));
     } else if (setWebrings) {
       const webrings: WebringProps[] = [];
@@ -60,7 +91,15 @@ export default async function fetchGoogleSheetData(
         };
         webrings.push(newWebring);
       });
-      setWebrings(webrings.filter((webring) => webring.label && webring.link));
+      setWebrings(
+        webrings
+          .filter((webring) => webring.label && webring.link)
+          .filter(
+            (webring) =>
+              // fuck the TERFs
+              webring.link !== "https://womenoftheinternet.neocities.org/",
+          ),
+      );
     } else if (setCliques) {
       const cliques: CliqueProps[] = [];
       tableRows.forEach((row: string[]) => {
@@ -89,23 +128,53 @@ export default async function fetchGoogleSheetData(
   }
 }
 
+function cleanUpStringForSorting(title: string) {
+  const cleanedTitle = title
+    .replaceAll("http://", "https://")
+    .replaceAll("https://www.", "https://")
+    .replaceAll("https://", "")
+    .replaceAll("₱", "P")
+    // todo - add more special characters here
+    .replace(/[^a-zA-Z ]/g, "")
+    .trim();
+  if (cleanedTitle) return cleanedTitle;
+  return title;
+}
+
 function turnIntoOrderString(buttonColor: string) {
   switch (buttonColor) {
+    case "red":
+      return "01";
+    case "orange":
+      return "02";
+    case "yellow":
+      return "03";
+    case "green":
+      return "04";
+    case "blue":
+      return "05";
+    case "purple":
+      return "06";
     case "pink":
-      return "1";
+      return "07";
     case "white":
-      return "2";
+      return "08";
+    case "gray":
+      return "09";
+    case "black":
+      return "10";
   }
-  return "0";
+  return "999";
 }
 
 function fixDateString(str: string) {
-  // turn 17/07/1999 into 1999/07/17
+  // turn DD/MM/YYYY hh:mm into YYYY/MM/DD hh:mm
   if (!str) return "";
   const day = str.substring(0, 2);
   const month = str.substring(3, 5);
   const year = str.substring(6, 10);
-  return year + "/" + month + "/" + day;
+  const time = str.substring(10);
+  return year + "/" + month + "/" + day + time;
 }
 
 function generateTags(row: string[]) {
@@ -119,6 +188,7 @@ function generateTags(row: string[]) {
       .concat(addTagType(row[22], "default"))
       .concat(addTagType(row[16], "default"))
       .concat(addTagType(row[23], "default"))
+      .concat(addTagType(row[18], "default"))
       // just for filtering:
       .concat(addTagType(row[7], "invisble"))
       .concat(addTagType(row[8], "invisble"))
@@ -139,9 +209,9 @@ function addTagType(tagsStr: string, type: TagType) {
   const tagsStrArray = tagsStr.split(", ");
   const tags: TagProps[] = tagsStrArray.map((str) => {
     return {
-      label: str.split(" (")[0],
+      label: str.split(" (")[0].trim(),
       type: type,
     };
   });
-  return tags;
+  return tags.filter((tag) => tag.label);
 }

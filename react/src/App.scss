@@ -319,6 +319,10 @@ h1 {
   h1 + & {
     margin-top: 0;
   }
+
+  #react-root &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .wip-message {
@@ -367,6 +371,27 @@ h1 {
         font-size: 22px;
       }
     }
+  }
+}
+
+.link-back-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.code-textarea {
+  display: block;
+  height: 60px;
+  // border: 1px $yellow solid;
+  font-family: $font;
+  font-size: 13px;
+  background: white;
+  color: black;
+  word-break: break-all;
+  width: 250px;
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -710,8 +735,9 @@ h1 {
 
   hr {
     margin: 0;
+    margin-top: 1em;
     border: 0;
-    border-bottom: 2px solid;
+    border-bottom: 1px solid;
   }
 
   @media (max-width: $md) {
@@ -731,6 +757,12 @@ h1 {
   line-height: 1;
   text-align: left;
   white-space: nowrap;
+
+  small {
+    font-size: 10px;
+    margin-left: 5px;
+    opacity: 0.8;
+  }
 
   &:last-child {
     border-bottom: 0;
@@ -754,8 +786,7 @@ h1 {
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     background: rgba(0, 0, 0, 0.1);
 
     &:not(.filter__item--selected)::before {
@@ -767,8 +798,7 @@ h1 {
 
 .filter:not(.filter--exactly-one-selected)
   .filter__item.filter__item--selected {
-  &:hover,
-  &:focus {
+  &:hover {
     &::before {
       background: $red;
       border-color: $red;
@@ -913,7 +943,7 @@ h1 {
       width: 88px;
       height: 31px;
       padding: 0;
-      margin: 10px;
+      margin: 5px;
       border: none;
 
       @media (max-width: $md) {
@@ -941,6 +971,12 @@ h1 {
       display: block;
     }
   }
+
+  &.websites--big {
+    .website:hover {
+      box-shadow: 0px 0px 4px #a3a3a3;
+    }
+  }
 }
 
 .website {
@@ -952,7 +988,13 @@ h1 {
   margin: 10px;
   padding: 20px;
   display: flex;
+  background: white;
   flex-direction: column;
+  transition: 0.2s ease;
+
+  &:hover {
+    z-index: 1;
+  }
 
   @media (max-width: $lg) {
     width: calc(33.333% - 10px - 10px);
@@ -992,6 +1034,7 @@ h1 {
   margin-left: 15px;
   margin-top: -7px;
   float: right;
+  background: #c7c7c7;
 
   @media (max-width: $md) {
     margin-top: 0px;
@@ -999,6 +1042,7 @@ h1 {
 
   img {
     transition: transform 0.3s ease;
+    display: block;
 
     &:hover {
       transform: scale(1.2);
@@ -1057,30 +1101,38 @@ h1 {
   }
 
   abbr {
-    position: relative;
     margin-right: 0px;
     transition: transform 0.2s ease;
 
-    span {
-      display: none;
-      background: white;
-      border: 1px solid $gray;
-      border-radius: 5px;
-      padding: 2px 5px;
-      line-height: 1;
-    }
-
     &:hover {
       transform: scale(1.05);
-
-      span {
-        display: block;
-        position: absolute;
-        top: calc(100% + 5px);
-        left: 0;
-      }
     }
   }
+}
+
+.tooltip-wrapper {
+  position: relative;
+
+  &:hover {
+    .tooltip {
+      display: block;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+    }
+  }
+}
+
+.tooltip {
+  display: none;
+  background: white;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  padding: 2px 5px;
+  line-height: 1;
+  z-index: 1;
+  min-width: 5em;
+  text-align: center;
 }
 
 .website__button--none {
@@ -1092,28 +1144,11 @@ h1 {
   margin-left: -2px;
 
   > * {
-    position: relative;
     margin-right: 0px;
     transition: transform 0.2s ease;
 
-    span {
-      display: none;
-      background: white;
-      border: 1px solid $gray;
-      border-radius: 5px;
-      padding: 2px 5px;
-      line-height: 1;
-    }
-
     &:hover {
       transform: scale(1.05);
-
-      span {
-        display: block;
-        position: absolute;
-        top: calc(100% + 5px);
-        right: 0;
-      }
     }
   }
 
@@ -1173,8 +1208,6 @@ h1 {
   border: 1px solid $gray;
   border-radius: 50%;
   background: pink;
-  margin-right: 5px;
-  margin-bottom: -1px;
 
   [data-tag="white"] & {
     background: white;
@@ -1219,7 +1252,7 @@ h1 {
 
 .nothing-found {
   text-align: center;
-  margin: 30px 0;
+  margin-bottom: 50px;
   font-size: 1.2em;
   color: $red;
   width: 100%;

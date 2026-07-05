@@ -53,15 +53,19 @@ export default function Filter({
                   if (onlyOneSelectable) {
                     // set as selection
                     setCurrentSelection([itemLabel]);
+                    // is Sorting
                     switch (itemLabel) {
                       case "recently added":
                         setSortColumn("date");
                         break;
                       case "button color":
-                        setSortColumn("title");
+                        setSortColumn("buttonColorOrder");
                         break;
-                      case "alphabetically":
-                        setSortColumn("title");
+                      case "website title":
+                        setSortColumn("titleForSort");
+                        break;
+                      case "website url":
+                        setSortColumn("linkForSort");
                         break;
                     }
                   } else {
@@ -96,12 +100,17 @@ interface FilterItemProps {
 }
 
 function FilterItem({ label, isSelected, onClick }: FilterItemProps) {
+  const { filterTags } = useContext(FilterContext)!;
+  const thisFilterTag = filterTags.filter((f) => f.tag.label == label)[0];
+  const count = thisFilterTag ? thisFilterTag.number : 0;
+
   return (
     <button
       className={"filter__item " + (isSelected ? "filter__item--selected" : "")}
       onClick={onClick}
     >
       {label}
+      {count > 0 && <small> ({count})</small>}
     </button>
   );
 }

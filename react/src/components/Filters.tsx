@@ -12,7 +12,12 @@ export default function Filters() {
       <div className="filters__row">
         <Filter
           label="Sort by "
-          options={["recently added", "button color", "alphabetically"]}
+          options={[
+            "recently added",
+            "button color",
+            "website title",
+            "website url",
+          ]}
           selectedOptions={["recently added"]}
           onlyOneSelectable={true}
         />
@@ -121,8 +126,19 @@ export default function Filters() {
             "Africa",
             "Oceania",
             "-",
-            "United States",
+            "Australia",
+            "Austria",
+            "Brazil",
+            "Canada",
+            "China",
+            "Dominican Republic",
+            "France",
+            "Germany",
+            "Italy",
+            "Mexico",
+            "Poland",
             "United Kingdom",
+            "United States",
           ]}
         />
 
@@ -171,15 +187,16 @@ export default function Filters() {
           options={[
             "English",
             "Chinese",
-            "Dutch",
+            // "Dutch",
             "French",
             "German",
             "Italian",
-            "Japanese",
-            "Korean",
+            // "Japanese",
+            // "Korean",
+            "Polish",
             "Portuguese",
-            "Russian",
-            "Spanish",
+            // "Russian",
+            // "Spanish",
           ]}
         />
 
@@ -202,7 +219,7 @@ export default function Filters() {
 
         <Filter
           label="Resources"
-          options={["tutorials", "layouts", "graphics", "widgets", "support"]}
+          options={["tutorials", "layouts", "graphics", "widgets"]}
         />
 
         <div className="filters__divider"></div>
@@ -212,7 +229,7 @@ export default function Filters() {
           options={[
             "Neocities",
             "Nekoweb",
-            "Netlify",
+            // "Netlify",
             "Github Pages",
             "Self-hosted",
           ]}

@@ -45,11 +45,11 @@ export default function Stats({}) {
       <p>
         <b>The Indie Web DB currently lists...</b>
         <br />
-        {websites.length} websites
+        {websites.length > 0 ? websites.length : "?"} websites
         <br />
-        {webrings.length} webrings
+        {webrings.length > 0 ? webrings.length : "?"} webrings
         <br />
-        {cliques.length} cliques
+        {cliques.length > 0 ? cliques.length : "?"} cliques
       </p>
       <p>Thanks to all contributors!</p>
     </div>

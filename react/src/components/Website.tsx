@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { FilterContext } from "../contexts/FilterContext";
+
 export interface WebsiteProps {
   date: string;
   title: string;
+  titleForSort: string;
   link: string;
+  linkForSort: string;
   buttonUrl?: string;
   buttonColorOrder: string;
   name?: string;
@@ -19,11 +24,9 @@ export interface WebsiteProps {
 }
 
 export default function Website({
-  date,
   title,
   link,
   buttonUrl,
-  buttonColorOrder,
   name,
   pronouns,
   tags,
@@ -37,13 +40,22 @@ export default function Website({
   codeLink,
   creationYear,
 }: WebsiteProps) {
+  const { layout } = useContext(FilterContext)!;
+
   const noButtonUrl = "/assets/img/links/nobutton.gif";
-  const linkCleanedUp = link
+  let linkCleanedUp = link
     .replace("http://www.", "")
     .replace("http://", "")
     .replace("https://www.", "")
-    .replace("https://", "")
-    .slice(0, -1);
+    .replace("https://", "");
+  if (linkCleanedUp.endsWith("/")) {
+    linkCleanedUp = linkCleanedUp.slice(0, -1);
+  }
+
+  let buttonUrlCleanedUp = buttonUrl?.replaceAll("http://", "https://");
+  if (buttonUrl && !buttonUrlCleanedUp?.startsWith("https://")) {
+    buttonUrlCleanedUp = "https://" + buttonUrl;
+  }
 
   let location;
 
@@ -61,8 +73,17 @@ export default function Website({
             "website__button " + (buttonUrl ? "" : "website__button--none")
           }
         >
-          <a href={link} target="_blank">
-            <img src={buttonUrl || noButtonUrl} width="88" height="31" />
+          <a href={link} target="_blank" className="tooltip-wrapper">
+            <img
+              src={buttonUrlCleanedUp || noButtonUrl}
+              width="88"
+              height="31"
+            />
+            {layout == "small" && (
+              <span className="tooltip">
+                {title} ({linkCleanedUp})
+              </span>
+            )}
           </a>
         </div>
         <div className="website__title">{title}</div>
@@ -75,9 +96,9 @@ export default function Website({
           {name ? (
             <div className="website__credit">
               © {creationYear ? creationYear + " " : ""}
-              <abbr title="">
+              <abbr title="" className="tooltip-wrapper">
                 {name}
-                <span>
+                <span className="tooltip">
                   {pronouns +
                     (pronouns ? " " : "") +
                     (isAdult ? "(adult)" : "(minor)")}
@@ -85,37 +106,39 @@ export default function Website({
               </abbr>
             </div>
           ) : (
-            <div className="website__credit"></div>
+            <div className="website__credit">
+              © {creationYear ? creationYear + " " : ""}
+            </div>
           )}
           <div className="website__icons">
             {location && (
-              <span>
-                🗺️<span>{location}</span>
+              <span className="tooltip-wrapper">
+                🗺️<span className="tooltip">{location}</span>
               </span>
             )}
             {language && (
-              <span>
-                💬<span>{language}</span>
+              <span className="tooltip-wrapper">
+                💬<span className="tooltip">{language}</span>
               </span>
             )}
             {isWIP && (
-              <span>
-                🚧<span>Work in Progress</span>
+              <span className="tooltip-wrapper">
+                🚧<span className="tooltip">Work in Progress</span>
               </span>
             )}
             {isResponsive && (
-              <span>
-                📱<span>Mobile Responsive</span>
+              <span className="tooltip-wrapper">
+                📱<span className="tooltip">Mobile Responsive</span>
               </span>
             )}
             {isAccessible && (
-              <span>
-                ♿<span>Accessible</span>
+              <span className="tooltip-wrapper">
+                ♿<span className="tooltip">Accessible</span>
               </span>
             )}
             {codeLink && (
-              <a href={codeLink} target="_blank">
-                💻<span>Open-Source</span>
+              <a href={codeLink} target="_blank" className="tooltip-wrapper">
+                💻<span className="tooltip">Open-Source</span>
               </a>
             )}
           </div>
@@ -142,9 +165,13 @@ export interface TagProps {
 
 function Tag({ label, type }: TagProps) {
   return (
-    <div className={"tag tag--" + type} data-tag={label}>
+    <div
+      className={"tag tag--" + type}
+      data-tag={label}
+      title={type == "color" ? label : ""}
+    >
       {type == "color" && <div className="tag__color"></div>}
-      {label}
+      {type !== "color" && label}
     </div>
   );
 }

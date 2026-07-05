@@ -7,20 +7,14 @@ import { SortContext } from "../contexts/SortContext";
 import { FilterContext } from "../contexts/FilterContext";
 
 export default function Websites() {
-  const { selectedFilters, setSelectedFilters } = useContext(FilterContext)!;
   const [websites, setWebsites] = useState<WebsiteProps[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const { currentPage } = useContext(PaginationContext)!;
-  const { setTotalPages } = useContext(PaginationContext)!;
+  const { currentPage, totalPages, setTotalPages } =
+    useContext(PaginationContext)!;
   const { sortColumn } = useContext(SortContext)!;
-  const { layout } = useContext(FilterContext)!;
-  const { orAnd } = useContext(FilterContext)!;
-  const { searchQuery } = useContext(FilterContext)!;
-
-  const websitesPerPage = layout == "small" ? 100 : 5;
-  setTotalPages(Math.floor(websites.length / websitesPerPage));
-  const startIndex = (currentPage - 1) * websitesPerPage;
+  const { selectedFilters, layout, orAnd, searchQuery, setFilterTags } =
+    useContext(FilterContext)!;
 
   useEffect(() => {
     fetchGoogleSheetData(
@@ -30,24 +24,25 @@ export default function Websites() {
       undefined,
       undefined,
       setWebsites,
+      setFilterTags,
     );
   }, []);
 
-  return (
-    <center className="wip-message">
-      This page is still under construction, but you can already{" "}
-      <a href="https://forms.gle/WqjqAjETNsUnXycV9" target="_blank">
-        add your website
-      </a>
-      !
-    </center>
-  );
+  // return (
+  //   <center className="wip-message">
+  //     This page is still under construction, but you can already{" "}
+  //     <a href="https://forms.gle/WqjqAjETNsUnXycV9" target="_blank">
+  //       add your website
+  //     </a>
+  //     !
+  //   </center>
+  // );
 
   if (loading) {
     return <div className="indiedb-loading">Loading...</div>;
   }
 
-  const websitesToShow = websites
+  const filteredWebsites = websites
     .sort((a, b) => {
       const aAny = (a as any)[sortColumn];
       const bAny = (b as any)[sortColumn];
@@ -117,8 +112,17 @@ export default function Websites() {
       }
       if (orAnd == "or") return allIncludedByStandard;
       if (orAnd == "and") return matchesAllFilters;
-    })
-    .slice(startIndex, startIndex + websitesPerPage);
+    });
+
+  const websitesPerPage = layout == "small" ? 100 : 40;
+  setTotalPages(Math.ceil(filteredWebsites.length / websitesPerPage));
+  const startIndex = (currentPage - 1) * websitesPerPage;
+  const isLastPage = totalPages == currentPage || totalPages == 0;
+
+  const websitesToShow = filteredWebsites.slice(
+    startIndex,
+    startIndex + websitesPerPage,
+  );
 
   return (
     <>
@@ -126,6 +130,9 @@ export default function Websites() {
         <div className="filters__selected">
           <b>Active filters: </b>
           {selectedFilters.join(", ")}
+          <br />
+          <b>Number of websites found: </b>
+          {websitesToShow.length}
           <br />(<a href="/indiewebdb/websites">Reset Filters</a>)
         </div>
       )}
@@ -139,22 +146,25 @@ export default function Websites() {
             No websites match your filters. Try removing some filters!
           </div>
         )}
-        <div className="website website--add-your-website">
-          <div className="website__basics">
-            <div className="website__button website__button--none"></div>
-            <div className="website__title">... and you?</div>
-            <div className="website__info">
-              <div className="website__credit">
-                <a href="/indiewebdb/contribute">
-                  Click here to add your website!
-                </a>
+        {isLastPage && (
+          <div className="website website--add-your-website">
+            <div className="website__basics">
+              <div className="website__button website__button--none"></div>
+              <div className="website__title">
+                {websitesToShow.length ? "... and you?" : "Add your website"}
               </div>
-              <div className="website__icons"></div>
+              <div className="website__info">
+                <div className="website__credit">
+                  <a href="/indiewebdb/contribute">
+                    Click here to add your website!
+                  </a>
+                </div>
+                <div className="website__icons"></div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
-      <Pagination />
     </>
   );
 }

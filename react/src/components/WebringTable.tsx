@@ -26,7 +26,7 @@ export default function WebringTable() {
   const startIndex = (currentPage - 1) * webringsPerPage;
 
   useEffect(() => {
-    setTotalPages(Math.floor(webrings.length / webringsPerPage));
+    setTotalPages(Math.ceil(webrings.length / webringsPerPage));
   }, [webrings.length]);
 
   const countEl = document.querySelector("#count");

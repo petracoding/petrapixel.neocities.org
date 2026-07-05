@@ -7,7 +7,9 @@ export type SortColumn =
   | "date"
   | "description"
   | "example"
-  | "title";
+  | "titleForSort"
+  | "buttonColorOrder"
+  | "linkForSort";
 type SortDirection = "asc" | "desc";
 
 type SortContextType = {
