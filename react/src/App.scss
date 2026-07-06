@@ -377,6 +377,8 @@ h1 {
 .link-back-buttons {
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .code-textarea {
@@ -1034,7 +1036,6 @@ h1 {
   margin-left: 15px;
   margin-top: -7px;
   float: right;
-  background: #c7c7c7;
 
   @media (max-width: $md) {
     margin-top: 0px;

@@ -169,6 +169,7 @@ function turnIntoOrderString(buttonColor: string) {
 
 function fixDateString(str: string) {
   // turn DD/MM/YYYY hh:mm into YYYY/MM/DD hh:mm
+  // (importent for sorting)
   if (!str) return "";
   const day = str.substring(0, 2);
   const month = str.substring(3, 5);

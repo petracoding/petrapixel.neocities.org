@@ -128,7 +128,7 @@ function Webring({
       </td>
       <td>{keywords}</td>
       <td>{category}</td>
-      <td title="YYYY/MM/DD">{date}</td>
+      <td title="YYYY/MM/DD">{date.substring(0, 10)}</td>
     </tr>
   );
 }
