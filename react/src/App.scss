@@ -941,6 +941,10 @@ h1 {
   margin-top: 50px;
 
   &.websites--small {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+
     .website {
       width: 88px;
       height: 31px;

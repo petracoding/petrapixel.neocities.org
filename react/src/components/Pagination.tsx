@@ -28,7 +28,12 @@ function PaginationButton({ i }: PaginationButtongProps) {
         "pagination__button " +
         (currentPage == i ? "pagination__button--active" : "")
       }
-      onClick={() => setCurrentPage(i)}
+      onClick={() => {
+        if (currentPage != i) {
+          setCurrentPage(i);
+          window.scrollTo(0, 0);
+        }
+      }}
     >
       {i}
     </button>

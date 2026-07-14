@@ -68,11 +68,11 @@
         <section>
           <h1>Page Title (Heading 1)</h1>
           <p>
-            This is layout 1 ("Basic") created by
+            This is a layout preview. This layout was created by
             <a href="https://petrapixel.neocities.org/" target="_blank"
               >petrapixel</a
-            >. You can download the code
-            <a href="https://petrapixel.neocities.org/coding/layouts#layout1"
+            >. You can buy it
+            <a href="https://petrapixel.neocities.org/coding/layouts"
               >on this page</a
             >.
             <b
@@ -85,9 +85,9 @@
           <p>
             I will now show you how to use the most common HTML text elements:
             <b>This is bold text.</b>
-            <strong>This is also bold text.</strong>
+            <strong>This is strong text.</strong>
             <i>This is italic text.</i>
-            <em>This is also italic text.</em>
+            <em>This is emphasized text.</em>
             <strike>This is strikethrough text.</strike>
             <u>This is underlined text.</u>
             <a href="https://petrapixel.neocities.org/">This is a link.</a>
@@ -97,11 +97,12 @@
             <code>This is code (displayed in a monospace font).</code>
             <abbr title="Example."
               >This is an abbreviation (Try hovering over it).</abbr
-            >
-            <mark>This is highlighted text.</mark>
-            This is a line break (The br stands for break.): <br />It's
-            different from a paragraph because it does not add space inbetween
-            the lines of text.
+            ><small>This is small text.</small>
+            <mark>This is highlighted text</mark>.
+            <sup>This is super text</sup> and <sub>this is sub text.</sub> This
+            is a line break (The br stands for break.): <br />It's different
+            from a paragraph because it does not add space inbetween the lines
+            of text.
           </p>
           <p>
             This is a paragraph. As you can see, there's a bit of space between
@@ -158,7 +159,7 @@ This is preformatted text, which means that     spaces    are preserved:
           <h4>Heading 4</h4>
 
           <p>Here are two columns:</p>
-          <div class="two-columns">
+          <div class="columns">
             <div>
               <p>
                 Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
@@ -175,23 +176,84 @@ This is preformatted text, which means that     spaces    are preserved:
             </div>
           </div>
 
+          <p>Here are three columns:</p>
+          <div class="columns">
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr.
+              </p>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr.
+              </p>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr.
+              </p>
+            </div>
+          </div>
+
           <h5>Heading 5</h5>
 
           <p>This is an image:</p>
-          <img class="image" alt="" src="https://picsum.photos/id/10/200/100" />
+          <img class="image" alt="" src="https://picsum.photos/id/21/200/100" />
 
+          <br />
+          <p>This is an image with a caption:</p>
+          <figure class="image-with-caption">
+            <img src="https://picsum.photos/id/21/200/100" alt="" />
+            <figcaption>Image Caption</figcaption>
+          </figure>
+
+          <br />
+          <p>This is an image on the right side:</p>
+          <div class="text-and-image">
+            <img alt="" src="https://picsum.photos/id/21/200/100" />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam atque quo nulla id possimus asperiores debitis voluptas
+              labore soluta facilis eveniet aliquam totam nihil commodi tenetur
+              alias repudiandae, dicta dolorum.
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam atque quo nulla id possimus asperiores debitis voluptas
+              labore soluta facilis eveniet aliquam totam nihil commodi tenetur
+              alias repudiandae, dicta dolorum.
+            </p>
+          </div>
+
+          <br />
+          <p>This is an image on the left side:</p>
+          <div class="image-and-text">
+            <img alt="" src="https://picsum.photos/id/21/200/100" />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam atque quo nulla id possimus asperiores debitis voluptas
+              labore soluta facilis eveniet aliquam totam nihil commodi tenetur
+              alias repudiandae, dicta dolorum.
+            </p>
+          </div>
+
+          <br />
           <p>This is a full-width image:</p>
           <img
             class="full-width-image"
             alt=""
-            src="https://picsum.photos/id/10/1000/400"
+            src="https://picsum.photos/id/21/1000/400"
           />
 
+          <br />
           <p>These are multiple images in a row:</p>
           <div class="images">
-            <img alt="" src="https://picsum.photos/id/10/1000/400" />
-            <img alt="" src="https://picsum.photos/id/10/1000/400" />
-            <img alt="" src="https://picsum.photos/id/10/1000/400" />
+            <img alt="" src="https://picsum.photos/id/21/1000/400" />
+            <img alt="" src="https://picsum.photos/id/21/1000/400" />
+            <img alt="" src="https://picsum.photos/id/21/1000/400" />
           </div>
 
           <h6>Heading 6</h6>

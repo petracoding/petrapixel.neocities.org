@@ -122,7 +122,7 @@
    },
    {
       "label":"Lists",
-      "new":false,
+      "new":true,
       "items":[
          {
             "link":"/lists/about-me",
@@ -135,8 +135,8 @@
             "link":"/lists/media",
             "label":"lists about media",
             "image":"wTQX5W5.gif",
-            "new":false,
-            "hide":true
+            "new":true,
+            "hide":false
          }
       ]
    },
@@ -538,7 +538,7 @@
          },
          {
             "label":"Bookmarks",
-            "new":false,
+            "new":true,
             "items": [
 
                {
@@ -548,6 +548,14 @@
                   "new":false,
                   "hide":false,
                   "icon":"bookmark-line"
+               },
+               {
+                  "link":"/indiewebdb",
+                  "label":"Indie Web Database",
+                  "sublabel":"",
+                  "new":true,
+                  "hide":false,
+                  "icon":"database-line"
                },
                {
                   "link":"/coding/webring-list",

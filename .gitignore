@@ -1,6 +1,5 @@
 # WIP pages:
-/public/layouts
-/public/test.html
+/public/coding/layouts
 /public/coding/layouts.html
 /public/shrines/ggnsp.html
 /public/shrines/ggnsp.css
@@ -15,6 +14,8 @@
 *.mp3
 
 # Always ignore:
+/public/test.html
+/public/coding/layouts/0-template
 /public/layout-generator/test
 notes.txt
 img-Verknüpfung.lnk

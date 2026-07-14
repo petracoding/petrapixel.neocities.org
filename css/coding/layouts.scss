@@ -1,5 +1,14 @@
 .layout {
   position: relative;
+
+  .image {
+    border: 1px dotted !important;
+    padding: 0;
+
+    &:nth-child(2) {
+      border-left: none !important;
+    }
+  }
 }
 
 .layout__description {
@@ -16,14 +25,14 @@
   display: block;
   background: var(--asideBackgroundColor);
   border: 2px solid var(--borderColor);
-  border-radius: 30px;
+  border-radius: 12px;
   box-shadow: var(--borderColor) 4px 4px 0 0;
   color: var(--textColor) !important;
   font-style: normal !important;
   display: inline-block;
   font-weight: 600;
   font-size: 18px;
-  padding: 13px 18px;
+  padding: 8px 18px;
   line-height: 1;
   text-align: center;
   text-decoration: none;
@@ -38,6 +47,7 @@
   &:focus {
     box-shadow: var(--borderColor) 2px 2px 0 0;
     transform: translate(2px, 2px);
+    filter: contrast(1.1);
   }
 
   @media (max-width: $md) {

@@ -57,23 +57,18 @@ function headerHTML() {
             <li><a href="/example">Example Page 2</a></li>
             <li><a href="/example">Example Page 3</a></li>
             <li><a href="/example">Example Page 4</a></li>
-            <li><a href="/example">Example Page 5</a></li>
           </ul>
           <div class="navigation-title">Section</div>
           <ul>
             <li><a href="/example">Example Page 1</a></li>
             <li><a href="/example">Example Page 2</a></li>
             <li><a href="/example">Example Page 3</a></li>
-            <li><a href="/example">Example Page 4</a></li>
-            <li><a href="/example">Example Page 5</a></li>
           </ul>
           <div class="navigation-title">Section</div>
           <ul>
             <li><a href="/example">Example Page 1</a></li>
             <li><a href="/example">Example Page 2</a></li>
             <li><a href="/example">Example Page 3</a></li>
-            <li><a href="/example">Example Page 4</a></li>
-            <li><a href="/example">Example Page 5</a></li>
           </ul>
         </nav>
         	

@@ -140,9 +140,12 @@ export default function Filters() {
             "Italy",
             "Japan",
             "Mexico",
+            "Nigeria",
             "Norway",
             "Philippines",
             "Poland",
+            "Portugal",
+            "Sweden",
             "United Kingdom",
             "United States",
           ]}

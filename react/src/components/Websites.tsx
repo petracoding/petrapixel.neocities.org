@@ -114,7 +114,7 @@ export default function Websites() {
       if (orAnd == "and") return matchesAllFilters;
     });
 
-  const websitesPerPage = layout == "small" ? 100 : 40;
+  const websitesPerPage = layout == "small" ? 200 : 48;
   setTotalPages(Math.ceil(filteredWebsites.length / websitesPerPage));
   const startIndex = (currentPage - 1) * websitesPerPage;
   const isLastPage = totalPages == currentPage || totalPages == 0;
