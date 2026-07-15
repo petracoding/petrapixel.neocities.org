@@ -70,7 +70,7 @@ export default function CliqueTable() {
       </thead>
       <tbody>
         {cliquesToShow.map((clique) => (
-          <Clique key={clique.link + clique.label} {...clique} />
+          <Clique key={clique.link + clique.label + clique.date} {...clique} />
         ))}
       </tbody>
     </table>

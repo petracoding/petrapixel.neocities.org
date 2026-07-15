@@ -132,7 +132,7 @@ export default function Websites() {
           {selectedFilters.join(", ")}
           <br />
           <b>Number of websites found: </b>
-          {websitesToShow.length}
+          {filteredWebsites.length}
           <br />(<a href="/indiewebdb/websites">Reset Filters</a>)
         </div>
       )}

@@ -58,7 +58,10 @@ export default function WebringTable() {
       </thead>
       <tbody>
         {webringsToShow.map((webring) => (
-          <Webring key={webring.link + webring.label} {...webring} />
+          <Webring
+            key={webring.link + webring.label + webring.date}
+            {...webring}
+          />
         ))}
       </tbody>
     </table>

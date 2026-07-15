@@ -1,11 +1,13 @@
 import Filter from "./Filter";
 import { useContext } from "react";
 import { FilterContext } from "../contexts/FilterContext";
+import { PaginationContext } from "../contexts/PaginationContext";
 
 export default function Filters() {
   const { orAnd, setOrAnd } = useContext(FilterContext)!;
   const { layout, setLayout } = useContext(FilterContext)!;
   const { searchQuery, setSearchQuery } = useContext(FilterContext)!;
+  const { setCurrentPage } = useContext(PaginationContext)!;
 
   return (
     <div className="filters">
@@ -73,6 +75,7 @@ export default function Filters() {
             aria-label="big grid layout"
             onClick={() => {
               setLayout("big");
+              setCurrentPage(1);
             }}
           >
             <i></i>
@@ -85,6 +88,7 @@ export default function Filters() {
             aria-label="small grid layout"
             onClick={() => {
               setLayout("small");
+              setCurrentPage(1);
             }}
           >
             <i></i>
