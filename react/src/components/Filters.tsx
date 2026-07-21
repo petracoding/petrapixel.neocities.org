@@ -136,7 +136,9 @@ export default function Filters() {
             "Brazil",
             "Canada",
             "China",
+            "Colombia",
             "Dominican Republic",
+            "Finland",
             "France",
             "Germany",
             "Indonesia",
@@ -152,6 +154,7 @@ export default function Filters() {
             "Sweden",
             "United Kingdom",
             "United States",
+            "Venezuela",
           ]}
         />
 
@@ -201,12 +204,13 @@ export default function Filters() {
             "English",
             "Chinese",
             // "Dutch",
+            "Finnish",
             "French",
             "German",
             "Indonesian",
             "Italian",
             "Japanese",
-            // "Korean",
+            "Korean",
             "Polish",
             "Portuguese",
             // "Russian",
