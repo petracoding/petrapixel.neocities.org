@@ -13793,10 +13793,11 @@ header {
   border-top: 1px dashed;
 }
 .aside-nav ul ul {
+  margin-top: 10px;
   /* Subheadings */
 }
 .aside-nav ul ul hr {
-  margin: 5px 0;
+  margin: 7px 0;
   border: none;
 }
 .aside-nav ul ul li a {
@@ -13813,6 +13814,10 @@ header {
   opacity: 0.8;
   font-size: 18px;
   text-decoration: none !important;
+  filter: brightness(0.4);
+}
+.aside-nav ul ul li a:hover, .aside-nav ul ul li a:focus {
+  text-decoration: none;
 }
 .aside-nav ul ul b {
   display: block;
@@ -18495,6 +18500,7 @@ a.video-edit:hover .video-edit__info span, a.video-edit:focus .video-edit__info 
   margin-top: 20px;
   padding: 2em;
   border-radius: 7px;
+  font-size: 1.1em;
 }
 .tweeter p:nth-child(even) {
   background: rgba(233, 151, 188, 0.2);

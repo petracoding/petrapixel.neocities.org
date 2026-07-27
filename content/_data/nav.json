@@ -2,7 +2,8 @@
    {
       "label":"home",
       "link":"/",
-      "image":"0R4rEUM.gif"
+      "image":"0R4rEUM.gif",
+      "hide": true
    },
    {
       "label":"Website",
@@ -98,13 +99,6 @@
             "hide":false
          },
          {
-            "link":"/about/dream-diary",
-            "label":"dream diary",
-            "image":"Olwt3AI.gif",
-            "new":false,
-            "hide":false
-         },
-         {
             "link":"/about/vinted-haul",
             "label":"vinted haul",
             "image":"5pwMMeG.gif",
@@ -117,12 +111,19 @@
             "image":"NMEZj77.gif",
             "new":true,
             "hide":true
+         },
+         {
+            "link":"/about/dream-diary",
+            "label":"dream diary",
+            "image":"Olwt3AI.gif",
+            "new":false,
+            "hide":false
          }
       ]
    },
    {
       "label":"Lists",
-      "new":true,
+      "new":false,
       "items":[
          {
             "link":"/lists/about-me",
@@ -135,7 +136,7 @@
             "link":"/lists/media",
             "label":"lists about media",
             "image":"wTQX5W5.gif",
-            "new":true,
+            "new":false,
             "hide":false
          }
       ]
@@ -578,7 +579,7 @@
                   "label":"Code Collective Webring",
                   "sublabel":"",
                   "new":false,
-                  "hide":false,
+                  "hide":true,
                   "icon":"diamond-ring-line",
                   "hideInCodingNav":true
                }
@@ -664,7 +665,7 @@
          },
          {
             "label":"Beginner Tutorials",
-            "new":true,
+            "new":false,
             "items":[
                {
                   "link":"/coding/layout-base-code",
@@ -705,7 +706,7 @@
                   "link":"/coding/javascript-tutorial",
                   "label":"Javascript Tutorial",
                   "sublabel": "Learn basic syntax and common usecases!",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"javascript-line"
                },

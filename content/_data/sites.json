@@ -514,7 +514,7 @@
     "image": "seedoil.gif",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true,
+    "supporter": false,
     "supporterUntil": "19.07." 
   },
    {
@@ -523,7 +523,7 @@
     "image": "maxcrunch.png",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true,
+    "supporter": false,
     "supporterUntil": "27.07." 
   },
    {
@@ -541,7 +541,16 @@
     "image": "https://crota-gurdy.neocities.org/hurdygames_button_smol.png",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true,
+    "supporter": false,
     "supporterUntil": "19.7." 
+  },
+  {
+    "link": "https://www.sludge.town/",
+    "title": "sludge town",
+    "image": "sludgetown.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "27.8." 
   }
 ]

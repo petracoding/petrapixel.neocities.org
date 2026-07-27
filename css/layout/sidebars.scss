@@ -1027,8 +1027,10 @@
 
   // level 2
   ul ul {
+    margin-top: 10px;
+
     hr {
-      margin: 5px 0;
+      margin: 7px 0;
       border: none;
     }
 
@@ -1041,14 +1043,6 @@
         display: flex;
         align-items: center;
 
-        // &::before {
-        //   content: "*";
-        //   position: absolute;
-        //   top: 7px;
-        //   left: 5px;
-        //   font-size: 0.8em;
-        // }
-
         [class^="ri-"],
         [class*=" ri-"] {
           display: inline-block;
@@ -1056,6 +1050,12 @@
           opacity: 0.8;
           font-size: 18px;
           text-decoration: none !important;
+          filter: brightness(0.4);
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
         }
       }
     }

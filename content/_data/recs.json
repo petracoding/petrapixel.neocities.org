@@ -17,7 +17,7 @@
       "rating": "2",
       "link": "https://letterboxd.com/film/little-miss-sunshine/",
       "image": "https://a.ltrbxd.com/resized/sm/upload/h6/xm/om/q7/dOeM4R55TsAFBXCPNIDDMiJkePr-0-500-0-750-crop.jpg?v=09383296c6",
-      "description": "This is jsut all-around a great, feel-good movie! There's not a single reason not to watch it, so do it!"
+      "description": "This is just all-around a great, feel-good movie! There's not a single reason not to watch it, so do it!"
     },
     {
       "title": "The Avengers",
@@ -445,14 +445,24 @@
   ],
   "games": [
      {
+      "title": "Hades",
+      "platform": "pc, switch, other",
+      "gameType": "singleplayer",
+      "rating": "1",
+      "price": "€€",
+      "link": "https://backloggd.com/games/hades--1/",
+      "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob9kr.jpg",
+      "description": "A fun rogue-like game with gorgeous character art and sound design. It's lots of fun! Only negative: Since it's a rogue-like, it's kind of repetitive."
+    },
+    {
       "title": "Balatro",
       "platform": "pc, switch, mobile",
       "gameType": "singleplayer",
-      "rating": "3",
+      "rating": "2",
       "price": "€",
       "link": "https://backloggd.com/games/balatro/",
       "image": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9f4g.jpg",
-      "description": "Balatro is an incredibly addicting, well-made and gorgeous poker-like roguelike. Don't worry though, it's really nothing like poker. It just costs a few bucks, but you'll get at least 50 hours of playtime out of it. (I'm at 100 hours.)"
+      "description": "Balatro is an incredibly addicting, well-made and gorgeous poker-like roguelike. Don't worry though, it's really nothing like poker. It just costs a few bucks, and you'll get hundreds of hours of playtime out of it."
     },
     {
       "title": "Portal 2",
@@ -790,6 +800,14 @@
       "link": "https://www.youtube.com/@drewisgooden",
       "image": "drew.jpg",
       "description": "Drew has a hilarious deadpan humor and covers funny and interesting topics on his commentary channel. He was my introduction to 'commentary youtube' and I love him for it. I've seen all of his videos 3+ times."
+    },    
+    {
+      "title": "Jarvis Johnson",
+      "genres": "commentary",
+      "link": "https://www.youtube.com/@jarvis",
+      "link2": "https://www.youtube.com/@JarvisJohnsonGOLD",
+      "image": "jarvis.jpg",
+      "description": "Jarvis is another great commentary youtuber. I especially like his more relaxed second-channel videos. He's great."
     },
     {
       "title": "Chad Chad",
@@ -800,12 +818,11 @@
       "description": "Chad Chad is yet another funny commentary youtuber! If you like Danny, Drew and Kurtis you will like her!"
     },
     {
-      "title": "Jarvis Johnson",
+      "title": "Brooke Sharks",
       "genres": "commentary",
-      "link": "https://www.youtube.com/@jarvis",
-      "link2": "https://www.youtube.com/@JarvisJohnsonGOLD",
-      "image": "jarvis.jpg",
-      "description": "Jarvis is another great commentary youtuber. I especially like his more relaxed second-channel videos. He's great."
+      "link": "https://www.youtube.com/@brookesharks",
+      "image": "brookesharks.jpg",
+      "description": "Brooke makes great commentary videos about dumb/ragebaity people on the internet. Her tone is slightly more serious than my other commentary recs."
     },
     {
       "title": "Jenny Nicholson",
