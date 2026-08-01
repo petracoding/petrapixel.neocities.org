@@ -2261,6 +2261,10 @@ const roadmap = [
     link: "/coding/checklist",
   },
   {
+    title: "JavaScript Tutorial",
+    link: "/coding/javascript-tutorial",
+  },
+  {
     title: "I know HTML, CSS, and JS. Now what?",
     link: "/coding/now-what",
   },
@@ -2317,6 +2321,65 @@ function initRoadmap() {
   html += `</div>`;
 
   el.innerHTML = html;
+}
+
+
+/***/ }),
+
+/***/ "./js/pages/support-tool.js":
+/*!**********************************!*\
+  !*** ./js/pages/support-tool.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initSupportTool: () => (/* binding */ initSupportTool)
+/* harmony export */ });
+const items = [
+  {
+    id: 1,
+    text: "Text.",
+    question: "First question?",
+    answers: [
+      {
+        text: "Answer 1",
+        to: 2,
+      },
+      {
+        text: "Answer 2",
+        to: 3,
+      },
+    ],
+  },
+  {
+    id: 2,
+    text: "twext",
+  },
+];
+
+function initSupportTool() {
+  const el = document.querySelector("#support-tool");
+  if (!el) return;
+  loadItem(1);
+}
+
+function loadItem(id) {
+  const el = document.querySelector("#support-tool");
+  const item = getItem(id);
+  if (!item) {
+    el.innerHTML = "Could not find item " + id;
+    return;
+  }
+  el.innerHTML = `<p>${item.text}</p><p>${item.question}</p>`;
+}
+
+function getItem(id) {
+  let item;
+  items.forEach((i) => {
+    if (i.id == id) item = i;
+  });
+  return item;
 }
 
 
@@ -8059,6 +8122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_advent_calendar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/advent-calendar */ "./js/pages/advent-calendar.js");
 /* harmony import */ var _pages_roadmap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/roadmap */ "./js/pages/roadmap.js");
 /* harmony import */ var _pages_widgets__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/widgets */ "./js/pages/widgets.js");
+/* harmony import */ var _pages_support_tool__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/support-tool */ "./js/pages/support-tool.js");
+
 
 
 
@@ -8114,6 +8179,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_pages_advent_calendar__WEBPACK_IMPORTED_MODULE_10__.initAdventCalendar)();
   (0,_pages_roadmap__WEBPACK_IMPORTED_MODULE_11__.initRoadmap)();
   (0,_pages_widgets__WEBPACK_IMPORTED_MODULE_12__.initWidgetBuilders)();
+  (0,_pages_support_tool__WEBPACK_IMPORTED_MODULE_13__.initSupportTool)();
 
   /* SPECIAL: */
   (0,_layout_layout__WEBPACK_IMPORTED_MODULE_2__.initAprilFools)();

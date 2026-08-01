@@ -40,6 +40,10 @@ const roadmap = [
     link: "/coding/checklist",
   },
   {
+    title: "JavaScript Tutorial",
+    link: "/coding/javascript-tutorial",
+  },
+  {
     title: "I know HTML, CSS, and JS. Now what?",
     link: "/coding/now-what",
   },

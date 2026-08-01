@@ -19581,6 +19581,10 @@ div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
   opacity: 0.4;
 }
 
+#support-tool {
+  text-align: center;
+}
+
 body.dark-mode {
   /*
   	BASICS
