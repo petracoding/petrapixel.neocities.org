@@ -207,7 +207,7 @@ function generateTags(row: string[]) {
 
 function addTagType(tagsStr: string, type: TagType) {
   if (!tagsStr) return [];
-  const tagsStrArray = tagsStr.split(", ");
+  const tagsStrArray = tagsStr.split(",");
   const tags: TagProps[] = tagsStrArray.map((str) => {
     return {
       label: str.split(" (")[0].trim(),

@@ -1,5 +1,12 @@
 [
   {
+    "title": "julian's webpage",
+    "link": "https://julians-art.neocities.org/",
+    "image": "julians-art.gif",
+    "neighbor": true,
+    "friend": true
+  },
+  {
     "title": "Florrie's Garden",
     "link": "https://florrie.ichi.city/",
     "image": "florrie.gif",
