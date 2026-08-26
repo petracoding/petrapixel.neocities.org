@@ -1,0 +1,479 @@
+---
+layout: coding.njk
+title: "Responsive CSS tutorial"
+description: "A tutorial on how to create responsive layouts in CSS, making your website work on mobile phones. Neocities."
+nesting: "../"
+codeHighlight: true
+progressBar: true
+mainClass: coding-page
+toc: true
+tipType: "tutorial"
+---
+
+<style>
+  main {
+    overflow-x: auto;
+  }
+
+  .example {
+    border: 2px dotted currentColor;
+    margin-bottom: 1.1em;
+    padding: 1em;
+  }
+
+  @media (max-width: 900px) {
+    .example {
+      padding: 0.5em;
+    }
+  }
+
+  p + .example {
+    margin-top: -0.5em;
+  }
+</style>
+
+<section>
+  <h1>Responsive CSS Tutorial</h1>
+  <p>
+    Making your website responsive means making it function and look good on
+    devices of all sizes, including mobile phones and tablets. And it's easier
+    than you think!
+  </p>
+  <p>
+    Making your website responsive also increases the accessibility of your
+    website, because some people don't have a computer! Also, most people use
+    their phones to browse the web. (Yes, most!) Even if you don't care about
+    modern web design or mobile browsers, you should still make your website
+    responsive. Saying "it's too hard" or "i'm lazy" is not an excuse.
+    Especially since just a small changes will cover 90% of the work! This
+    tutorial will show you how.
+  </p>
+  <blockquote class="tip">
+    <p>
+      <b>Keep in mind:</b> A small screen does not always mean a mobile device.
+      For example, users can resize their browser window to be really small.
+      It's also possible to view the desktop version of your website on phones
+      because mobile browsers often have a "show desktop site" function.
+    </p>
+  </blockquote>
+
+  <blockquote class="warning mobile-only">
+    <p>
+      <b>Hello mobile user!</b> I highly recommend viewing this tutorial on a
+      desktop device, because otherwise you can't easily see the difference
+      between the desktop and mobile examples!
+    </p>
+  </blockquote>
+
+  <div id="toc" data-two-levels="true"></div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2>Basics</h2>
+  <h3>HTML</h3>
+  <p>
+    To start off, you need this line in your HTML head (anywhere between
+    &lt;head&gt; and &lt;/head&gt;):
+  </p>
+  <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</code></pre>
+  <p>This will make sure your website resizes depending on screen size.</p>
+  <p>
+    Now let's see how we can make this smaller version of our website look good!
+  </p>
+
+  <hr />
+
+  <h3>Units</h3>
+  <p>
+    A good habit to get into is to use responsive units of measurement in your
+    CSS code. That way, the sizing and positioning of your elements will
+    automatically look good on different screen sizes.
+  </p>
+  <p>
+    For example, use <code>%</code> instead of <code>px</code> for the sizing of
+    an element or the positioning of an absolute element.
+  </p>
+  <p>Check out this example, try resizing your browser window:</p>
+
+  <style>
+    .example0 {
+      border: 2px solid currentColor;
+      margin: 10px;
+      padding: 10px;
+      width: 50%;
+      height: 100px;
+    }
+  </style>
+  <div class="example">
+    <div class="example0"><code>width: 50%;</code><br /></div>
+  </div>
+
+  <br />
+
+  <p>You might also want to use these cool units:</p>
+  <ul>
+    <li><code>vw</code>: 1% of the browser width</li>
+    <li><code>vh</code>: 1% of the browser height</li>
+  </ul>
+  <p>
+    For example, giving an element <code>width: 50vw;</code> will make it half
+    as wide as the browser. Try resizing your browser window:
+  </p>
+  <style>
+    .example1 {
+      border: 2px solid currentColor;
+      margin: 10px;
+      padding: 10px;
+      width: 50vw;
+      height: 100px;
+    }
+  </style>
+  <div class="example">
+    <div class="example1"><code>width: 50vw;</code><br /></div>
+  </div>
+
+  <hr />
+
+  <h3>Max-width</h3>
+  <p>
+    Another thing you should absolutely do is work with <code>max-width</code>,
+    <code>min-width</code>, <code>max-height</code>, and
+    <code>min-height</code>.
+  </p>
+  <p>
+    For example, instead of giving your main content a fixed width with
+    something like <code>width: 800px;</code>, use
+    <code>width: 100%; max-width: 800px;</code> so it does not extend the screen
+    width on small screens but does scale to 800px width on large-enough
+    screens.
+  </p>
+  <p>
+    These two look the same on a large screen, but try making your browser
+    smaller and see the difference:
+  </p>
+  <style>
+    .example2 {
+      border: 2px solid currentColor;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 800px;
+      height: 100px;
+    }
+    .example3 {
+      border: 2px solid currentColor;
+      padding: 10px;
+      width: 100%;
+      max-width: 800px;
+      height: 100px;
+    }
+  </style>
+  <div class="example">
+    <div class="example2"><code>width: 800px;</code><br /></div>
+    <div class="example3">
+      <code>width: 100%;<br />max-width: 800px;</code><br />
+    </div>
+  </div>
+  <p>
+    This is by far the easiest way to make your website more responsive, so
+    remember it!
+  </p>
+
+  <hr />
+
+  <h3>Flexbox wrapping</h3>
+  <p>
+    When you use
+    <a href="/coding/positioning-tutorial#flexbox">Flexbox</a> (<code
+      >display: flex</code
+    >), you can use the <code>flex-wrap: wrap</code> property to make items wrap
+    into the next line if there isn't enough space:
+  </p>
+  <style>
+    .example6 {
+      border: 2px solid currentColor;
+      margin: 10px;
+      padding: 10px;
+      height: 100px;
+    }
+  </style>
+  <div class="example" style="display: flex; flex-wrap: wrap">
+    <div class="example6">Lorem Ipsum</div>
+    <div class="example6">Lorem Ipsum</div>
+    <div class="example6">Lorem Ipsum</div>
+    <div class="example6">Lorem Ipsum</div>
+    <div class="example6">Lorem Ipsum</div>
+    <div class="example6">Lorem Ipsum</div>
+    <div class="example6">Lorem Ipsum</div>
+    <div class="example6">Lorem Ipsum</div>
+  </div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2>CSS Media Queries</h2>
+
+  <h3>Basic Usage</h3>
+  <p>
+    Of course there is another way to make your website more responsive:
+    <a
+      href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"
+      target="_blank"
+      >CSS Media Queries</a
+    >. I swear they're super easy.
+  </p>
+  <p>This is what media queries can look like:</p>
+  <pre><code>.example {
+  color: red; /* Text will be red by default */
+}
+
+@media (max-width: 500px) {
+  .example {
+    color: blue; /* Text will be blue on screens smaller than 500px */
+  }
+}
+
+@media (min-width: 1200px) {
+  .example {
+    color: green; /* Text will be green on screens larger than 1200px */
+  }
+}</code></pre>
+
+  <p>
+    These are the most basic media queries, but you can do more with them, like
+    checking whether a screen is taller than it's wide (<code
+      >(orientation: portrait)</code
+    >), or checking for both a width and a height (<code
+      >(min-width: 300px) and (max-width: 500px)</code
+    >), but you probably won't need those often.
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using"
+      target="_blank"
+      >Here</a
+    >
+    is the official documentation on media queries if you want to learn more
+    about them.
+  </p>
+
+  <p>
+    <a href="/coding/positioning-tutorial#grid-mobile"
+      >Learn more about creating responsive grids</a
+    >.
+  </p>
+
+  <hr />
+
+  <h3>Example 1: Font size</h3>
+
+  <p>
+    Here is a small example on how to control font size depending on screen
+    size. Here I make use of the <code>em</code> unit to define the heading's
+    font size as <code>1.5em</code>. Here's how it works: <code>1em</code> is
+    the base font size that is defined in a parent element. Setting it to
+    <code>1.5em</code> will make it 1.5 times larger, <code>2em</code> will make
+    it twice as large, and so on - no matter what the base font size is! This
+    way, we only need to adjust the base font size per screen size, not all font
+    sizes.
+  </p>
+
+  <style>
+    .example7 {
+      border: 2px solid currentColor;
+      margin: 10px;
+      padding: 10px;
+      font-size: 18px;
+      font-family: sans-serif;
+    }
+    .example7 h4 {
+      font-family: sans-serif;
+    }
+    @media (max-width: 800px) {
+      .example7 {
+        font-size: 15px;
+      }
+    }
+    @media (max-width: 600px) {
+      .example7 {
+        font-size: 12px;
+      }
+    }
+  </style>
+  <div class="example">
+    <div class="example7">
+      <h4 style="font-size: 1.5em">Headline Example (<code>1.5em</code>)</h4>
+      <p style="font-size: 1em">Paragraph Example (<code>1em</code>)</p>
+    </div>
+  </div>
+  <pre><code>.example {
+  font-size: 18px; /* text is 18px by default  */
+}
+
+.example h1 {
+  font-size: 1.5em; /* headline is always 1.5 times larger than the normal text */
+}
+
+@media (max-width: 800px) {
+  .example {
+    font-size: 15px; /* text is 16px on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .example {
+    font-size: 12px; /* text is 14px on even smaller screens */
+  }
+}</code></pre>
+
+  <hr />
+
+  <h3>Example 2: Navigation</h3>
+  <p>
+    We're going to build a navigation that changes from a siderbar (vertical) to
+    a topbar (horizontal) on mobile. This is what it looks like: (Try resizing
+    your browser to less tan 600px width.)
+  </p>
+  <style>
+    .example45 {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      grid-gap: 10px;
+    }
+    .example4 {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid currentColor;
+      padding: 10px;
+    }
+    .example4 a {
+      margin: 5px 0;
+    }
+    .example5 {
+      border: 2px solid currentColor;
+      padding: 10px;
+    }
+    @media (max-width: 600px) {
+      .example45 {
+        grid-template-columns: 1fr;
+      }
+      .example4 {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .example4 a {
+        margin: 0 5px;
+      }
+    }
+  </style>
+  <div class="example">
+    <div class="example45">
+      <div class="example4">
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+        <a href="#">Link4</a>
+        <a href="#">Link5</a>
+      </div>
+      <div class="example5">
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    This only requires a bit of knowledge about <b>flex</b> and
+    <b>grid</b> layouts. (I explain both of them in my other CSS tutorial:
+    <a href="/coding/positioning-tutorial#flexbox">Flexbox</a> and
+    <a href="/coding/positioning-tutorial#grid">Grid</a>.) All we need is some
+    simple layout code and a single media query:
+  </p>
+
+  <pre><code>.wrapper {
+  display: grid;
+  grid-template-columns: 100px 1fr; /* 2 columns */
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column; /* vertical flexbox */
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr; /* change to 1 column layout */
+  }
+
+  .navigation {
+    flex-direction: row; /* change to horizontal flexbox */
+    flex-wrap: wrap; /* allow wrapping text into next line */
+  }
+}</code></pre>
+
+  <p>
+    Add a little bit of styling for color, paddings, margins, borders etc. and
+    boom - you're done!
+  </p>
+
+  <hr />
+
+  <h3>Example 3: Grid Layout</h3>
+
+  <p>
+    Check my <a href="/coding/positioning-tutorial#grid">grid tutorial</a> for
+    an example of using it to create distinct desktop and mobile layouts!
+  </p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2>Testing</h2>
+  <p>
+    I've already told you that you can simply resize your browser window to view
+    what your website would look like on smaller screens. But there's an even
+    better way of testing! In your browser's development tools (<a
+      href="/coding/common-mistakes#troubleshooting"
+      >which you should already be using!</a
+    >) there is a button that enabled a preview mode where you can easily change
+    the apparent screen size (you can even select phone model presets on the
+    top!) without resizing your entire browser window. You do this by dragging
+    the bottom right edge of the preview.
+  </p>
+  <p>This is what it looks like in Firefox:</p>
+  <img
+    src="../assets/img/coding/responsive-tutorial/firefox.png"
+    alt=""
+    style="max-width: 100%; border: 1px dotted"
+  />
+  <p>And in Chrome:</p>
+  <img
+    src="../assets/img/coding/responsive-tutorial/chrome.png"
+    alt=""
+    style="max-width: 100%; border: 1px dotted"
+  />
+  <br />
+  <p>
+    Of course it's always recommended to test your website on a real phone /
+    tablet too!
+  </p>
+  <hr />
+  <p>
+    And that's pretty much the most important info about making your website
+    responsive! Now go forth and make me proud!
+  </p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <div class="roadmap"></div>
+</section>
+
+{% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}

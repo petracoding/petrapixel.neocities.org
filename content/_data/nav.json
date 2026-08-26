@@ -665,7 +665,7 @@
          },
          {
             "label":"Beginner Tutorials",
-            "new":false,
+            "new":true,
             "items":[
                {
                   "link":"/coding/layout-base-code",
@@ -682,6 +682,14 @@
                   "new":false,
                   "hide":false,
                   "icon":"layout-masonry-line"
+               },
+               {
+                  "link":"/coding/responsive-tutorial",
+                  "label":"Responsive CSS Tutorial",
+                  "sublabel":"making your website work on mobile",
+                  "new":true,
+                  "hide":false,
+                  "icon":"tablet-line"
                },
                {
                   "link":"/coding/cachebusting",

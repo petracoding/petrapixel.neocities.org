@@ -14045,6 +14045,11 @@ main pre {
   margin: 1em 0 1.5em;
   max-width: 80vw;
 }
+@media (max-width: 1000px) {
+  main pre {
+    max-width: 100%;
+  }
+}
 main pre code:not(.hljs),
 main pre code.hljs {
   display: block;
@@ -15217,11 +15222,6 @@ main.coding-page .hljs-comment {
 .buy-me-a-coffee p small {
   line-height: 1.3;
 }
-.buy-me-a-coffee img[alt=coffee] {
-  position: absolute;
-  bottom: 10px;
-  right: 25px;
-}
 @media (prefers-reduced-motion) {
   .buy-me-a-coffee img[src*=gif] {
     display: none;
@@ -15236,6 +15236,7 @@ main.coding-page .hljs-comment {
   }
   .buy-me-a-coffee p {
     line-height: 1.3;
+    padding: 0 3em;
   }
   .buy-me-a-coffee div:last-child {
     margin-left: 2em;

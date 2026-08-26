@@ -28,6 +28,10 @@ const roadmap = [
     link: "/coding/positioning-tutorial",
   },
   {
+    title: "Responsive CSS Tutorial",
+    link: "/coding/responsive-tutorial",
+  },
+  {
     title: "Cachebusting",
     link: "/coding/cachebusting",
   },

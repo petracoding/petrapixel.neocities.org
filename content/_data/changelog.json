@@ -1,5 +1,6 @@
 [
   { "date": "2026-08-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-08-26", "text": "New tutorial: How to make your website responsive!", "link": "/coding/responsive-tutorial" },
   { "date": "2026-07-31", "text": "Added more photos to the cats page", "link": "/about/cats" },
   { "date": "2026-07-21", "text": "Closed comments temporarily.", "link": "/" },
   { "date": "2026-07-17", "text": "Updated my age. Happy birthday to me!", "link": "/" },
@@ -45,20 +46,5 @@
   { "date": "2025-11-18", "text": "Updated my polyamory blog post for polyamory day (nov. 23)!", "link": "/blog/polyamory-thoughts" },
   { "date": "2025-11-17", "text": "I replaced all imgur links and self-hosted images instead!", "link": "" },
   { "date": "2025-11-10", "text": "Indie Web Contest voting has started!", "link": "/contest" },
-  { "date": "2025-09-07", "text": "Indie Web Contest participation form is open!", "link": "/contest" },
-  { "date": "2025-08-21", "text": "New free widget: Pollcode", "link": "/coding/widgets" },
-  { "date": "2025-08-07", "text": "More styling options for my widgets!", "link": "/coding/widgets" },
-  { "date": "2025-08-02", "text": "I made a page about my online childhood!", "link": "/about/my-online-childhood" },
-  { "date": "2025-07-29", "text": "Improved the git tutorial a bit", "link": "/coding/git-tutorial" },
-  { "date": "2025-07-28", "text": "New personality quiz: Rate my 'Hear me out's!", "link": "/fun/quizzes" },
-  { "date": "2025-07-24", "text": "Improved my credits page", "link": "/about/credits" },
-  { "date": "2025-07-23", "text": "New tutorial: Using the Google Sheets API", "link": "/coding/google-sheets-api-tutorial" },
-  { "date": "2025-07-22", "text": "I now have a list of text cliques! Submit cliques now!", "link": "/coding/cliques" },
-  { "date": "2025-07-18", "text": "The layout generator now has a download function", "link": "/coding/layout-generator" },
-  { "date": "2025-07-17", "text": "Updated my age. Happy birthday to me!", "link": "" },
-  { "date": "2025-07-09", "text": "Thanks for 1000 followers! As a celebration, I have (finally) created a webring!", "link": "/webring" },
-  { "date": "2025-06-20", "text": "More personality quizzes and a HTML/CSS quiz!", "link": "/coding/quizzes" },
-  { "date": "2025-06-11", "text": "Personality quizzes are here!", "link": "/fun/quizzes" },
-  { "date": "2025-06-09", "text": "Small updates", "link": "" },
-  { "date": "2025-05-18", "text": "Cat(s) page is back!", "link": "/about/cats" }
+  { "date": "2025-09-07", "text": "Indie Web Contest participation form is open!", "link": "/contest" }
 ]
