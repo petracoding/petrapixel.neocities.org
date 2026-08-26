@@ -550,14 +550,5 @@
     "inspiration": false,
     "supporter": false,
     "supporterUntil": "19.7." 
-  },
-  {
-    "link": "https://www.sludge.town/",
-    "title": "sludge town",
-    "image": "sludgetown.png",
-    "neighbor": false,
-    "inspiration": false,
-    "supporter": true,
-    "supporterUntil": "27.8." 
   }
 ]
