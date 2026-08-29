@@ -1,7 +1,9 @@
 import { WebringProps } from "../components/WebringTable";
 import { CliqueProps } from "../components/CliqueTable";
-import { TagProps, TagType, WebsiteProps } from "../components/Website";
+import { WebsiteProps } from "../components/Website";
 import { FilterTag } from "../contexts/FilterContext";
+import { WidgetProps } from "../components/Widget";
+import { TagProps, TagType } from "../components/Tag";
 
 export default async function fetchGoogleSheetData(
   spreadsheetID: string,
@@ -11,6 +13,7 @@ export default async function fetchGoogleSheetData(
   setCliques?: React.Dispatch<React.SetStateAction<CliqueProps[]>>,
   setWebsites?: React.Dispatch<React.SetStateAction<WebsiteProps[]>>,
   setFilterTags?: React.Dispatch<React.SetStateAction<FilterTag[]>>,
+  setWidgets?: React.Dispatch<React.SetStateAction<WidgetProps[]>>,
 ) {
   try {
     const apiKey = "AIzaSyAkeZN8mT_waQBWUMbCy0F68ixe-fRKaOo";
@@ -120,6 +123,32 @@ export default async function fetchGoogleSheetData(
           (clique) => clique.label && clique.link && clique.isActive,
         ),
       );
+    } else if (setWidgets) {
+      const widgets: WidgetProps[] = [];
+      tableRows.forEach((row: string[]) => {
+        const usesExternalScripts = row[5];
+        const newWidget: WidgetProps = {
+          date: fixDateString(row[0]),
+          title: row[1],
+          creator: row[2],
+          description: row[3],
+          link: row[4],
+          usesExternalScripts: row[5],
+          screenshotUrl: row[6],
+          tags: addTagType(row[7], "default").concat(
+            addTagType(
+              usesExternalScripts == "yes"
+                ? "uses external scripts"
+                : usesExternalScripts == "no"
+                  ? "doesn't use external scripts"
+                  : "",
+              usesExternalScripts == "yes" ? "warning" : "default",
+            ),
+          ),
+        };
+        widgets.push(newWidget);
+      });
+      setWidgets(widgets.filter((widget) => widget.title && widget.link));
     }
 
     setLoading(false);

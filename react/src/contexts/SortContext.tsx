@@ -9,7 +9,9 @@ export type SortColumn =
   | "example"
   | "titleForSort"
   | "buttonColorOrder"
-  | "linkForSort";
+  | "linkForSort"
+  | "creator"
+  | "title";
 type SortDirection = "asc" | "desc";
 
 type SortContextType = {

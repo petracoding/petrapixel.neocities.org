@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { FilterContext } from "../contexts/FilterContext";
 import { PaginationContext } from "../contexts/PaginationContext";
 
-export default function Filters() {
+export default function WebsiteFilters() {
   const { orAnd, setOrAnd } = useContext(FilterContext)!;
   const { layout, setLayout } = useContext(FilterContext)!;
   const { searchQuery, setSearchQuery } = useContext(FilterContext)!;
@@ -256,8 +256,13 @@ export default function Filters() {
           options={[
             "Neocities",
             "Nekoweb",
-            // "Netlify",
+            "Blogger",
+            "Cloudflare",
+            "Dreamhost",
             "Github Pages",
+            "leprd.space",
+            "NearlyFreeSpeech",
+            "Netlify",
             "Self-hosted",
           ]}
         />

@@ -68,3 +68,28 @@
     opacity: 0.4;
   }
 }
+
+@media (max-width: $md) {
+  .roadmap {
+    padding: 1.5em 1em;
+  }
+
+  .roadmap__top {
+    flex-direction: column;
+  }
+
+  .roadmap__list {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: $sm) {
+  .roadmap__pagination {
+    font-size: 1.1em;
+    line-height: 1;
+
+    > * {
+      margin: 0 5px;
+    }
+  }
+}

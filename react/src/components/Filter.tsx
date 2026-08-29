@@ -22,6 +22,7 @@ export default function Filter({
   );
 
   const { setSortColumn } = useContext(SortContext)!;
+  const isSortingColumn = label.includes("Sort by");
 
   const selectedCount = currentSelection.length;
   const filterIsActive = selectedCount > 0 && !onlyOneSelectable;
@@ -31,13 +32,13 @@ export default function Filter({
       <div
         className={
           "filter " +
-          (onlyOneSelectable ? "filter--exactly-one-selected " : "") +
+          (isSortingColumn ? "filter--exactly-one-selected " : "") +
           (filterIsActive ? "filter--active " : "")
         }
       >
         <div className="filter__label">
           {label}
-          {onlyOneSelectable ? currentSelection[0] : ""}
+          {isSortingColumn ? currentSelection[0] : ""}
           {filterIsActive ? " (" + selectedCount + ")" : ""}
         </div>
         <div className="filter__list">
@@ -50,14 +51,13 @@ export default function Filter({
                 label={itemLabel}
                 isSelected={currentSelection.includes(itemLabel)}
                 onClick={() => {
-                  if (onlyOneSelectable) {
-                    // set as selection
+                  if (isSortingColumn) {
                     setCurrentSelection([itemLabel]);
-                    // is Sorting
                     switch (itemLabel) {
                       case "recently added":
                         setSortColumn("date");
                         break;
+                      // Websites
                       case "button color":
                         setSortColumn("buttonColorOrder");
                         break;
@@ -67,6 +67,29 @@ export default function Filter({
                       case "website url":
                         setSortColumn("linkForSort");
                         break;
+                      // Widgets
+                      case "widget name":
+                        setSortColumn("title");
+                        break;
+                      case "creator":
+                        setSortColumn("creator");
+                        break;
+                    }
+                  } else if (onlyOneSelectable) {
+                    // set as selection
+
+                    if (currentSelection?.includes(itemLabel)) {
+                      // remove from selection
+                      setCurrentSelection(
+                        currentSelection.filter((a) => a !== itemLabel),
+                      );
+                      setSelectedFilters(
+                        selectedFilters.filter((a) => a !== itemLabel),
+                      );
+                    } else {
+                      // is new selection
+                      setCurrentSelection([itemLabel]);
+                      setSelectedFilters([itemLabel]);
                     }
                   } else {
                     if (currentSelection?.includes(itemLabel)) {

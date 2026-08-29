@@ -19582,6 +19582,26 @@ div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
   opacity: 0.4;
 }
 
+@media (max-width: 992px) {
+  .roadmap {
+    padding: 1.5em 1em;
+  }
+  .roadmap__top {
+    flex-direction: column;
+  }
+  .roadmap__list {
+    margin-left: 0;
+  }
+}
+@media (max-width: 576px) {
+  .roadmap__pagination {
+    font-size: 1.1em;
+    line-height: 1;
+  }
+  .roadmap__pagination > * {
+    margin: 0 5px;
+  }
+}
 #support-tool {
   text-align: center;
 }

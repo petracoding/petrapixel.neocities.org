@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import Website, { WebsiteProps } from "./Website";
-import Pagination from "./Pagination";
 import { PaginationContext } from "../contexts/PaginationContext";
 import fetchGoogleSheetData from "../google-sheets/fetch";
 import { SortContext } from "../contexts/SortContext";

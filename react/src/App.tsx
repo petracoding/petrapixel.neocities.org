@@ -1,11 +1,13 @@
 import "./App.scss";
 
 import Websites from "./components/Websites";
-import Filters from "./components/Filters";
+import WebsiteFilters from "./components/WebsiteFilters";
+import WidgetFilters from "./components/WidgetFilters";
 import WebringTable from "./components/WebringTable";
 import CliqueTable from "./components/CliqueTable";
 import Pagination from "./components/Pagination";
 import Stats from "./components/Stats";
+import Widgets from "./components/Widgets";
 
 import { FilterContextProvider } from "./contexts/FilterContext";
 import { SortContextProvider } from "./contexts/SortContext";
@@ -20,8 +22,10 @@ export default function App() {
       <PaginationContextProvider>
         <SortContextProvider>
           <FilterContextProvider>
-            {page == "websites" && <Filters />}
+            {page == "websites" && <WebsiteFilters />}
             {page == "websites" && <Websites />}
+            {page == "widgets" && <WidgetFilters />}
+            {page == "widgets" && <Widgets />}
           </FilterContextProvider>
           {page == "webrings" && <WebringTable />}
           {page == "cliques" && <CliqueTable />}

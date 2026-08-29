@@ -3,11 +3,13 @@ import { CliqueProps } from "./CliqueTable";
 import fetchGoogleSheetData from "../google-sheets/fetch";
 import { WebringProps } from "./WebringTable";
 import { WebsiteProps } from "./Website";
+import { WidgetProps } from "./Widget";
 
 export default function Stats({}) {
   const [websites, setWebsites] = useState<WebsiteProps[]>([]);
   const [webrings, setWebrings] = useState<WebringProps[]>([]);
   const [cliques, setCliques] = useState<CliqueProps[]>([]);
+  const [widgets, setWidgets] = useState<WidgetProps[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,6 +36,17 @@ export default function Stats({}) {
       undefined,
       setCliques,
     );
+
+    fetchGoogleSheetData(
+      "14dhqAaG6qaSZ2O8xYnsZ1sRl_rpQOcD52zyn6nJBbHg",
+      "Form responses 1",
+      setLoading,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      setWidgets,
+    );
   }, []);
 
   if (loading) {
@@ -50,6 +63,8 @@ export default function Stats({}) {
         {webrings.length > 0 ? webrings.length : "?"} webrings
         <br />
         {cliques.length > 0 ? cliques.length : "?"} cliques
+        <br />
+        {widgets.length > 0 ? widgets.length : "?"} widgets
       </p>
       <p>Thanks to all contributors!</p>
     </div>

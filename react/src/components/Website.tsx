@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FilterContext } from "../contexts/FilterContext";
+import { Tag, TagProps } from "./Tag";
 
 export interface WebsiteProps {
   date: string;
@@ -152,26 +153,6 @@ export default function Website({
             <Tag key={tag.label} {...tag} />
           ))}
       </div>
-    </div>
-  );
-}
-
-export type TagType = "default" | "color" | "warning" | "invisble";
-
-export interface TagProps {
-  label: string;
-  type?: TagType;
-}
-
-function Tag({ label, type }: TagProps) {
-  return (
-    <div
-      className={"tag tag--" + type}
-      data-tag={label}
-      title={type == "color" ? label : ""}
-    >
-      {type == "color" && <div className="tag__color"></div>}
-      {type !== "color" && label}
     </div>
   );
 }
