@@ -28,7 +28,7 @@ export default function Widget({
         <a href={link} target="_blank" className="widget__title">
           {title}
         </a>
-        <div className="widget__creator">by {creator}</div>
+        {creator && <div className="widget__creator">by {creator}</div>}
         <div className="widget__description">{description}</div>
       </div>
       {screenshotUrl && (

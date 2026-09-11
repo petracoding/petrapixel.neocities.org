@@ -1,7 +1,7 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-import fetchGoogleSheetData from "../google-sheets/fetch";
 import { SortColumn, SortContext } from "../contexts/SortContext";
 import { PaginationContext } from "../contexts/PaginationContext";
+import { getWebrings } from "../google-sheets/Webrings";
 
 export default function WebringTable() {
   const [webrings, setWebrings] = useState<WebringProps[]>([]);
@@ -14,12 +14,7 @@ export default function WebringTable() {
   const { setTotalPages } = useContext(PaginationContext)!;
 
   useEffect(() => {
-    fetchGoogleSheetData(
-      "1rH-vICefKqHWfdC3Ex_Fj56V-oC22Zk_MQklFHK9vko",
-      "Form responses 1",
-      setLoading,
-      setWebrings,
-    );
+    getWebrings(setWebrings, setLoading);
   }, []);
 
   const webringsPerPage = 500;

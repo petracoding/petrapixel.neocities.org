@@ -1,52 +1,26 @@
 import { useEffect, useState } from "react";
 import { CliqueProps } from "./CliqueTable";
-import fetchGoogleSheetData from "../google-sheets/fetch";
 import { WebringProps } from "./WebringTable";
 import { WebsiteProps } from "./Website";
 import { WidgetProps } from "./Widget";
+import { getWidgets } from "../google-sheets/Widgets";
+import { getWebsites } from "../google-sheets/Websites";
+import { getCliques } from "../google-sheets/Cliques";
+import { getWebrings } from "../google-sheets/Webrings";
 
 export default function Stats({}) {
   const [websites, setWebsites] = useState<WebsiteProps[]>([]);
   const [webrings, setWebrings] = useState<WebringProps[]>([]);
   const [cliques, setCliques] = useState<CliqueProps[]>([]);
   const [widgets, setWidgets] = useState<WidgetProps[]>([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchGoogleSheetData(
-      "1pq9XhoO9yGPHXPTSKmU6SzH0Et85_6sQ579ZbNtCAKo",
-      "Form responses 1",
-      setLoading,
-      undefined,
-      undefined,
-      setWebsites,
-    );
-
-    fetchGoogleSheetData(
-      "1rH-vICefKqHWfdC3Ex_Fj56V-oC22Zk_MQklFHK9vko",
-      "Form responses 1",
-      setLoading,
-      setWebrings,
-    );
-
-    fetchGoogleSheetData(
-      "1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc",
-      "Form responses 1",
-      setLoading,
-      undefined,
-      setCliques,
-    );
-
-    fetchGoogleSheetData(
-      "14dhqAaG6qaSZ2O8xYnsZ1sRl_rpQOcD52zyn6nJBbHg",
-      "Form responses 1",
-      setLoading,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      setWidgets,
-    );
+    getWebsites(setWebsites, setLoading);
+    getWebrings(setWebrings, setLoading);
+    getCliques(setCliques, setLoading);
+    getWidgets(setWidgets, setLoading);
   }, []);
 
   if (loading) {

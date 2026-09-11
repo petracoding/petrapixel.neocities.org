@@ -47,6 +47,7 @@ export default function WidgetFilters() {
           onlyOneSelectable={true}
           options={[
             "counter",
+            "fun",
             "guestbook",
             "interactive",
             "linking",

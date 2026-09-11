@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import Website, { WebsiteProps } from "./Website";
 import { PaginationContext } from "../contexts/PaginationContext";
-import fetchGoogleSheetData from "../google-sheets/fetch";
 import { SortContext } from "../contexts/SortContext";
 import { FilterContext } from "../contexts/FilterContext";
+import { getWebsites } from "../google-sheets/Websites";
 
 export default function Websites() {
   const [websites, setWebsites] = useState<WebsiteProps[]>([]);
@@ -16,26 +16,8 @@ export default function Websites() {
     useContext(FilterContext)!;
 
   useEffect(() => {
-    fetchGoogleSheetData(
-      "1pq9XhoO9yGPHXPTSKmU6SzH0Et85_6sQ579ZbNtCAKo",
-      "Form responses 1",
-      setLoading,
-      undefined,
-      undefined,
-      setWebsites,
-      setFilterTags,
-    );
+    getWebsites(setWebsites, setLoading, setFilterTags);
   }, []);
-
-  // return (
-  //   <center className="wip-message">
-  //     This page is still under construction, but you can already{" "}
-  //     <a href="https://forms.gle/WqjqAjETNsUnXycV9" target="_blank">
-  //       add your website
-  //     </a>
-  //     !
-  //   </center>
-  // );
 
   if (loading) {
     return <div className="indiedb-loading">Loading...</div>;
@@ -100,7 +82,8 @@ export default function Websites() {
 
           if (
             website.tags.some(
-              (tag) => tag.label.toLowerCase() == filter.toLowerCase(),
+              (tag) =>
+                tag.label.trim().toLowerCase() == filter.trim().toLowerCase(),
             )
           ) {
             if (orAnd == "or") return true;
@@ -125,15 +108,19 @@ export default function Websites() {
 
   return (
     <>
-      {selectedFilters.length > 0 && (
+      {selectedFilters.length > 0 || searchQuery ? (
         <div className="filters__selected">
           <b>Active filters: </b>
+          {searchQuery && searchQuery}
+          {searchQuery && selectedFilters.length > 0 ? ", " : ""}
           {selectedFilters.join(", ")}
           <br />
           <b>Number of websites found: </b>
           {filteredWebsites.length}
           <br />(<a href="/indiewebdb/websites">Reset Filters</a>)
         </div>
+      ) : (
+        ""
       )}
       <div className={"websites websites--" + layout}>
         {websitesToShow.length ? (

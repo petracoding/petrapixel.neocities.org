@@ -1,7 +1,7 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-import fetchGoogleSheetData from "../google-sheets/fetch";
 import { SortColumn, SortContext } from "../contexts/SortContext";
 import { PaginationContext } from "../contexts/PaginationContext";
+import { getCliques } from "../google-sheets/Cliques";
 
 export default function CliqueTable() {
   const [cliques, setCliques] = useState<CliqueProps[]>([]);
@@ -14,13 +14,7 @@ export default function CliqueTable() {
   const { setTotalPages } = useContext(PaginationContext)!;
 
   useEffect(() => {
-    fetchGoogleSheetData(
-      "1MhbWY2j-D2IMuUh2y8jP8wPL4oik9b-riaWOTxJD7Oc",
-      "Form responses 1",
-      setLoading,
-      undefined,
-      setCliques,
-    );
+    getCliques(setCliques, setLoading);
   }, []);
 
   const cliquesPerPage = 500;

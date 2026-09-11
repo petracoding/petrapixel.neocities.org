@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { PaginationContext } from "../contexts/PaginationContext";
-import fetchGoogleSheetData from "../google-sheets/fetch";
 import { SortContext } from "../contexts/SortContext";
 import { FilterContext } from "../contexts/FilterContext";
 import Widget, { WidgetProps } from "./Widget";
+import { getWidgets } from "../google-sheets/Widgets";
 
 export default function Widgets() {
   const [widgets, setWidgets] = useState<WidgetProps[]>([]);
@@ -15,16 +15,7 @@ export default function Widgets() {
   const { selectedFilters, searchQuery } = useContext(FilterContext)!;
 
   useEffect(() => {
-    fetchGoogleSheetData(
-      "14dhqAaG6qaSZ2O8xYnsZ1sRl_rpQOcD52zyn6nJBbHg",
-      "Form responses 1",
-      setLoading,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      setWidgets,
-    );
+    getWidgets(setWidgets, setLoading);
   }, []);
 
   if (loading) {
