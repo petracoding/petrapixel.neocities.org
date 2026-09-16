@@ -18,6 +18,7 @@ $font2: $font; // strong, menu links
 $fontHeadingsLarge: "Kuchibue", "rainyhearts", monospace, sans-serif;
 $fontHeadings:
   "Pixelated Elegance", "Kuchibue", "rainyhearts", monospace, sans-serif;
+$emojiFont: "EmojiFont";
 $readableFont: Arial, sans-serif;
 
 /* 
@@ -64,6 +65,17 @@ $readableFont: Arial, sans-serif;
     url("/assets/css/fonts/PixelatedElegance.woff2") format("woff2"),
     url("/assets/css/fonts/PixelatedElegance.woff") format("woff"),
     url("/assets/css/fonts/PixelatedElegance.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EmojiFont";
+  src:
+    url("/assets/css/fonts/EmojiFont.woff2") format("woff2"),
+    url("/assets/css/fonts/EmojiFont.woff") format("woff"),
+    url("/assets/css/fonts/EmojiFont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

@@ -550,5 +550,14 @@
     "inspiration": false,
     "supporter": false,
     "supporterUntil": "19.7." 
+  },
+  {
+    "link": "https://syrospeaks.neocities.org/",
+    "title": "syrospeaks",
+    "image": "https://petrapixel.neocities.org/assets/img/links/nobutton.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "17.10." 
   }
 ]

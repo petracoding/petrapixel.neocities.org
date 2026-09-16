@@ -381,6 +381,24 @@
 
 /**
  *
+ * 100 QUESTIONS
+ *
+ */
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 1em;
+
+  @media (max-width: $md) {
+    margin-left: 0;
+  }
+}
+
+/**
+ *
  * GPOY
  *
  */

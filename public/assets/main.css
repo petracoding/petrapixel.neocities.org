@@ -42,6 +42,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "EmojiFont";
+  src: url("/assets/css/fonts/EmojiFont.woff2") format("woff2"), url("/assets/css/fonts/EmojiFont.woff") format("woff"), url("/assets/css/fonts/EmojiFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /*
  @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 */
@@ -14525,6 +14532,47 @@ img[src*="i.imgur.com"] {
   margin-bottom: 0;
 }
 
+[class*=emoji-] {
+  font-family: "EmojiFont";
+}
+
+.emoji-heart::before {
+  content: "B";
+}
+
+.emoji-sparkle::before {
+  content: "D";
+}
+
+.emoji-star::before {
+  content: "F";
+}
+
+.emoji-stars::before {
+  content: "Q";
+}
+
+.emoji-moon::before {
+  content: "Y";
+}
+
+.emoji-hearts::before {
+  content: "i";
+}
+
+.emoji-smile::before {
+  content: "j";
+}
+
+.emoji-music::before {
+  content: "s";
+  font-size: 0.8em;
+}
+
+.emoji-end::before {
+  content: "z";
+}
+
 /*
     Below you will be able to freely customize every aspect of the comment widget.
     Most aspects of the widget are 100% able to be customized in CSS, but for strong structural changes,
@@ -15967,6 +16015,24 @@ body.not-found-page {
 @media (max-width: 992px) {
   .about-me-pages__home-gallery img {
     max-width: 100%;
+  }
+}
+
+/**
+ *
+ * 100 QUESTIONS
+ *
+ */
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 1em;
+}
+@media (max-width: 992px) {
+  dd {
+    margin-left: 0;
   }
 }
 

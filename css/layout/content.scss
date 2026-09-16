@@ -639,3 +639,45 @@ img[src*="i.imgur.com"] {
     margin-bottom: 0;
   }
 }
+
+[class*="emoji-"] {
+  font-family: $emojiFont;
+  // https://www.dafont.com/de/emoji.font
+}
+
+.emoji-heart::before {
+  content: "B";
+}
+
+.emoji-sparkle::before {
+  content: "D";
+}
+
+.emoji-star::before {
+  content: "F";
+}
+
+.emoji-stars::before {
+  content: "Q";
+}
+
+.emoji-moon::before {
+  content: "Y";
+}
+
+.emoji-hearts::before {
+  content: "i";
+}
+
+.emoji-smile::before {
+  content: "j";
+}
+
+.emoji-music::before {
+  content: "s";
+  font-size: 0.8em;
+}
+
+.emoji-end::before {
+  content: "z";
+}
