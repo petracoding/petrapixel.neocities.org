@@ -3,8 +3,8 @@
     "title": "julian's webpage",
     "link": "https://julians-art.neocities.org/",
     "image": "julians-art.gif",
-    "neighbor": true,
-    "friend": true
+    "neighbor": false,
+    "friend": false
   },
   {
     "title": "Florrie's Garden",
