@@ -293,6 +293,96 @@
 }
 
 /**
+  *
+  * SHIPS
+  *
+  */
+
+.ships {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ship {
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+  border-radius: 20px;
+
+  &--l {
+    // half
+    width: calc(50% - 10px);
+    height: auto;
+    // width: 352px;
+    // height: 352px;
+  }
+
+  &--m {
+    // third
+    width: calc(33.333% - 10px);
+    height: auto;
+    // width: 234px;
+    // height: 234px;
+  }
+
+  &--s {
+    // quarter
+    width: calc(25% - 10px);
+    height: auto;
+    // width: 176px;
+    // height: 176px;
+  }
+
+  img {
+    min-height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) saturate(1.1) brightness(1.1);
+
+    &:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: rotateY(90deg);
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+  }
+
+  figcaption {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 1;
+    text-align: center;
+    transform: rotateY(90deg);
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 1;
+    font-size: 24px;
+    text-shadow: 1px 0px 2px black;
+    padding: 5px;
+  }
+
+  &:hover {
+    img:last-child,
+    figcaption {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}
+
+/**
  *
  * POKEMON
  *
@@ -566,7 +656,8 @@ dd {
     transition:
       transform 0.2s linear,
       filter 0.2s linear;
-    filter: brightness(1.1) contrast(0.95) sepia(0.2) hue-rotate(-20deg);
+    filter: brightness(1.1) contrast(0.95) sepia(0.2) hue-rotate(-20deg)
+      saturate(1.5);
   }
 }
 

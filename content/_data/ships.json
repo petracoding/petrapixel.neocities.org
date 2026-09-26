@@ -2,18 +2,24 @@
     {
     "names": "hannibal & will",
     "from": "nbc hannibal",
-    "size": "l",
-    "img2": "https://i.pinimg.com/736x/77/cd/8d/77cd8d3df3cb4609ac872d37d2d30b72.jpg",
-    "img1": "https://i.pinimg.com/736x/70/a5/be/70a5be48323326dc4de9d14b95c47471.jpg"
+    "size": "m",
+    "img1": "https://i.pinimg.com/736x/70/a5/be/70a5be48323326dc4de9d14b95c47471.jpg",
+    "img2": "https://i.pinimg.com/736x/77/cd/8d/77cd8d3df3cb4609ac872d37d2d30b72.jpg"
   },
   {
     "names": "the doctor & clara",
     "from": "doctor who",
-    "size": "l",
-    "img2": "https://i.pinimg.com/736x/2f/ec/17/2fec17742a57f03869d9d3dd6138a18e.jpg",
-    "img1": "https://i.pinimg.com/736x/1b/35/c1/1b35c11a4e359346eb501b01db85e12f.jpg"
+    "size": "m",
+    "img1": "https://i.pinimg.com/736x/1b/35/c1/1b35c11a4e359346eb501b01db85e12f.jpg",
+    "img2": "https://i.pinimg.com/736x/2f/ec/17/2fec17742a57f03869d9d3dd6138a18e.jpg"
   },
-
+  {
+    "names": "shane & ilya",
+    "from": "heated rivalry",
+    "size": "m",
+    "img1": "https://i.pinimg.com/736x/b8/fc/8f/b8fc8f126f1ddba506115de7d1ffa426.jpg",
+    "img2": "https://i.pinimg.com/1200x/34/bc/9b/34bc9bdbc3ce24b72807289ed1c87732.jpg"
+  },
 
   
   {

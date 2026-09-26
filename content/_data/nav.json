@@ -451,7 +451,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"layout-line"
+                  "icon":"layout-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/widgets",
@@ -459,7 +460,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"bard-line"
+                  "icon":"bard-line",
+                  "level": "beginners"
                },
                {
                   "isDivider": "-----------------------------"
@@ -470,7 +472,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"file-text-line"
+                  "icon":"file-text-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/checklist",
@@ -478,7 +481,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"list-check-3"
+                  "icon":"list-check-3",
+                  "level": "intermediate"
                },
                {
                   "link":"/coding/quizzes",
@@ -486,7 +490,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"lightbulb-line"
+                  "icon":"lightbulb-line",
+                  "level": "beginners"
                }
             ]
          },
@@ -501,14 +506,16 @@
                   "sublabel":"",
                   "new":true,
                   "hide":true,
-                  "icon":"layout-masonry-line"
+                  "icon":"layout-masonry-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/preview-plugin",
                   "label":"Preview Plugin",
                   "new":false,
                   "hide":false,
-                  "icon":"eye-line"
+                  "icon":"eye-line",
+                  "level": "intermediate"
                },
                {
                   "link":"/coding/image-filters",
@@ -516,7 +523,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"image-ai-line"
+                  "icon":"image-ai-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/snippets",
@@ -524,7 +532,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"code-s-slash-line"
+                  "icon":"code-s-slash-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/webringu",
@@ -533,13 +542,14 @@
                   "sublabel":"Webring Script",
                   "new":false,
                   "hide":false,
-                  "icon":"user-community-line"
+                  "icon":"user-community-line",
+                  "level": "beginners"
                }
             ]
          },
          {
             "label":"Bookmarks",
-            "new":true,
+            "new":false,
             "items": [
 
                {
@@ -554,7 +564,7 @@
                   "link":"/indiewebdb",
                   "label":"Indie Web Database",
                   "sublabel":"",
-                  "new":true,
+                  "new":false,
                   "hide":false,
                   "icon":"database-line"
                },
@@ -595,7 +605,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"pages-line"
+                  "icon":"pages-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/common-questions",
@@ -603,7 +614,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"questionnaire-line"
+                  "icon":"questionnaire-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/common-mistakes",
@@ -611,7 +623,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"error-warning-line"
+                  "icon":"error-warning-line",
+                  "level": "beginners"
                },
                {
                   "isDivider": "-----------------------------"
@@ -623,7 +636,8 @@
                   "sublabel":"+ how to find support",
                   "new":false,
                   "hide":false,
-                  "icon":"bug-line"
+                  "icon":"bug-line",
+                  "level": "beginners"
                },
                  {
                   "link":"/coding/code-quality",
@@ -631,7 +645,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"code-ai-line"
+                  "icon":"code-ai-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/performance-tutorial",
@@ -639,7 +654,8 @@
                   "sublabel":"How to make pages load faster",
                   "new":false,
                   "hide":false,
-                  "icon":"speed-up-line"
+                  "icon":"speed-up-line",
+                  "level": "beginners"
                },
                {
                   "isDivider": "-----------------------------"
@@ -650,7 +666,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"building-line"
+                  "icon":"building-line",
+                  "level": "beginners"
                },
                {
 
@@ -659,13 +676,14 @@
                   "sublabel":"Settings + Extensions",
                   "new":false,
                   "hide":false,
-                  "icon":"tools-line"
+                  "icon":"tools-line",
+                  "level": "intermediate"
                }
             ]
          },
          {
             "label":"Beginner Tutorials",
-            "new":true,
+            "new":false,
             "items":[
                {
                   "link":"/coding/layout-base-code",
@@ -673,7 +691,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"layout-5-line"
+                  "icon":"layout-5-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/positioning-tutorial",
@@ -681,15 +700,17 @@
                   "sublabel":"display, position, flexbox, grid, transform, z-index, and more",
                   "new":false,
                   "hide":false,
-                  "icon":"layout-masonry-line"
+                  "icon":"layout-masonry-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/responsive-tutorial",
                   "label":"Responsive CSS Tutorial",
                   "sublabel":"making your website work on mobile",
-                  "new":true,
+                  "new":false,
                   "hide":false,
-                  "icon":"tablet-line"
+                  "icon":"tablet-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/cachebusting",
@@ -697,14 +718,16 @@
                   "sublabel":"Stop that pesky caching",
                   "new":false,
                   "hide":false,
-                  "icon":"delete-bin-6-line"
+                  "icon":"delete-bin-6-line",
+                  "level": "beginners"
                },
                {
                   "link":"/coding/custom-font-tutorial",
                   "label":"Custom Font Tutorial",
                   "new":false,
                   "hide":false,
-                  "icon":"font-size"
+                  "icon":"font-size",
+                  "level": "beginners"
                },
                {
                   
@@ -716,7 +739,8 @@
                   "sublabel": "Learn basic syntax and common usecases!",
                   "new":false,
                   "hide":false,
-                  "icon":"javascript-line"
+                  "icon":"javascript-line",
+                  "level": "intermediate"
                },
                  {
                   "link":"/coding/sound-tutorial",
@@ -724,7 +748,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"volume-up-line"
+                  "icon":"volume-up-line",
+                  "level": "intermediate"
                }
             ]
          },
@@ -738,7 +763,8 @@
                   "sublabel":"",
                   "new":false,
                   "hide":false,
-                  "icon":"rocket-line"
+                  "icon":"rocket-line",
+                  "level": "advanced"
                },
                {
                   "isDivider": "-----------------------------"
@@ -749,7 +775,8 @@
                   "sublabel":"Version Control",
                   "new":false,
                   "hide":false,
-                  "icon":"github-line"
+                  "icon":"github-line",
+                  "level": "advanced"
                },
                {
                   "link":"/coding/npm-tutorial",
@@ -757,7 +784,8 @@
                   "sublabel":"Package Manager",
                   "new":false,
                   "hide":false,
-                  "icon":"npmjs-line"
+                  "icon":"npmjs-line",
+                  "level": "advanced"
                },
                {
                   "link":"/coding/webpack-tutorial",
@@ -765,7 +793,8 @@
                   "sublabel":"File Bundler",
                   "new":false,
                   "hide":false,
-                  "icon":"box-3-line"
+                  "icon":"box-3-line",
+                  "level": "advanced"
                },
                {
                   "link":"/coding/eleventy-tutorial",
@@ -773,7 +802,8 @@
                   "sublabel":"Static Site Generator",
                   "new":false,
                   "hide":false,
-                  "icon":"magic-line"
+                  "icon":"magic-line",
+                  "level": "advanced"
                },
                {
                   "isDivider": "-----------------------------"
@@ -784,7 +814,8 @@
                   "sublabel":"Read sheets data with JS",
                   "new":false,
                   "hide":false,
-                  "icon":"drive-line"
+                  "icon":"drive-line",
+                  "level": "advanced"
                }
             ]
          }

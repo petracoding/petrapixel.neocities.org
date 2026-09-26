@@ -12,6 +12,122 @@ mainClass: coding-page git-tutorial
     Beginner and advanced coding tutorials, guides and resources for the indie
     web and Neocities.
   </p>
+
+  <strong class="rec-filters-title">Filter:</strong>
+  <div class="rec-filters">
+    <div class="rec-filters__group">
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="type"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          any type
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".resource-box--category-Tools"
+        >
+          Tools
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".resource-box--category-Codes"
+        >
+          Codes
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".resource-box--category-Bookmarks"
+        >
+          Bookmarks
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".resource-box--category-tutorial"
+        >
+          Tutorials
+        </button>
+      </div>
+    </div>
+    <div class="rec-filters__group">
+      <div
+        class="rec-filters__buttons js-radio-button-group"
+        data-filter-group="level"
+      >
+        <button class="rec-filters__button is-checked" data-filter="">
+          any level
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".resource-box--level-beginners"
+        >
+          Geginners
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".resource-box--level-intermediate"
+        >
+          Intermediate
+        </button>
+        <button
+          class="rec-filters__button"
+          data-filter=".resource-box--level-advanced"
+        >
+          Advanced
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource-boxes">
+    {% for allNavItem in nav %} {% if allNavItem.isCodeMenu %} {% for
+    mainNavItem in allNavItem.items %} {% for navItem in mainNavItem.items %}{%
+    if not navItem.hide and not navItem.hideInCodingNav %} {% if not
+    navItem.isDivider %} {% include 'resource-box.njk' %} {% endif %} {% endif
+    %}{% endfor %} {% endfor %} {% endif %}{% endfor %}
+  </div>
 </section>
 
 {% include 'layout/tip-me.njk' %}
+
+<!-- Isotope: -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script>
+  const options = {
+    itemSelector: ".resource-box",
+    percentPosition: true,
+    // layoutMode: "fitRows",
+    masonry: {
+      // use element for option
+      columnWidth: ".resource-box",
+    },
+  };
+
+  let $isotope = $(".resource-boxes").isotope(options);
+  $isotope.imagesLoaded().progress(function () {
+    $isotope.isotope(options);
+  });
+  let isotopeFilters = {};
+
+  $(".rec-filters button").click(function () {
+    let $buttonGroup = $(this).parents(".rec-filters__buttons");
+    let filterGroup = $buttonGroup.attr("data-filter-group");
+    isotopeFilters[filterGroup] = $(this).attr("data-filter");
+    let filterValue = concatValues(isotopeFilters);
+    $isotope.isotope({ filter: filterValue });
+
+    // active state
+    $buttonGroup.find(".is-checked").removeClass("is-checked");
+    $(this).addClass("is-checked");
+  });
+
+  function concatValues(obj) {
+    let value = "";
+    for (let prop in obj) {
+      value += obj[prop];
+    }
+    return value;
+  }
+</script>

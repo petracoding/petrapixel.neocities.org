@@ -1,0 +1,21 @@
+<div
+  class="resource-box resource-box--level-{{ navItem.level }} {% if mainNavItem.label == 'First Steps' or mainNavItem.label == 'Beginner Tutorials' or mainNavItem.label == 'Advanced Tutorials' %}resource-box--category-tutorial{% else %}resource-box--category-{{ mainNavItem.label }}{% endif %}"
+>
+  <div class="resource-box__info">
+    <i class="resource-box__icon ri-{{ navItem.icon }}"></i>
+
+    {% if navItem.level %}
+    <div class="resource-box__level resource-box__level--{{ navItem.level }}">
+      <i></i><i></i><i></i>
+      <div>{{ navItem.level }}</div>
+    </div>
+    {% endif %}
+  </div>
+
+  <a href="{{ navItem.link }}" class="resource-box__link">
+    <div class="resource-box__label">{{ navItem.label }}</div>
+    {% if navItem.sublabel %}
+    <div class="resource-box__sublabel">{{ navItem.sublabel }}</div>
+    {% endif %}
+  </a>
+</div>
