@@ -550,7 +550,23 @@
     "image": "https://petrapixel.neocities.org/assets/img/links/nobutton.gif",
     "neighbor": false,
     "inspiration": false,
-    "supporter": true,
+    "supporter": false,
     "supporterUntil": "17.10." 
+  },
+  {
+    "link": "https://dorianbay.neocities.org/",
+    "title": "dorianbay",
+    "image": "dorianbay.gif",
+    "neighbor": true,
+    "inspiration": false
+  },
+   {
+    "link": "https://dogrise.net/",
+    "title": "DogRise",
+    "image": "dogrise.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "member" 
   }
 ]
