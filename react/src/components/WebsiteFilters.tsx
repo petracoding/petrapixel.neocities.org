@@ -181,6 +181,7 @@ export default function WebsiteFilters() {
             "blue",
             "purple",
             "pink",
+            "brown",
           ]}
         />
 

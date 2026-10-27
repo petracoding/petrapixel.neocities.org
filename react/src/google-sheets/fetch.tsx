@@ -31,6 +31,8 @@ export function cleanUpStringForSorting(title: string) {
 
 export function turnIntoOrderString(buttonColor: string) {
   switch (buttonColor) {
+    case "brown":
+      return "00";
     case "red":
       return "01";
     case "orange":

@@ -1381,6 +1381,10 @@ h1 {
   [data-tag="pink"] & {
     background: pink;
   }
+
+  [data-tag="brown"] & {
+    background: rgb(110, 62, 44);
+  }
 }
 
 .nothing-found {
