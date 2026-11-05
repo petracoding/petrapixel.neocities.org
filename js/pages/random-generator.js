@@ -229,6 +229,8 @@ const affirmations = [
   "i will meet new people i will love.",
   "i will reach my goals.",
   "my time will come.",
+
+  "what is meant for me is already looking for me too",
 ];
 
 const boredButton = [
@@ -307,6 +309,7 @@ const boredButton = [
   "learn how to read/write runes",
   "draw your houseplants",
   "scan in all physical documents you have",
+  "volunteer with your local community to gain skills and discover what you love",
 ];
 
 const listIdeas = [

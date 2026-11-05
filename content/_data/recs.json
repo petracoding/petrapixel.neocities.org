@@ -362,6 +362,17 @@
       "description": "The perfect book for if you're in a reading slump, because it's hilarious from literally the first sentence on, and it never gets boring. I highly recommend the audio book too!"
     },
     {
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "year": "2021",
+      "genres": "Sci-Fi, Adventure",
+      "ageRange": "adult",
+      "rating": "3",
+      "link": "https://www.goodreads.com/book/show/54493401-project-hail-mary",
+      "image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1764703833i/54493401.jpg",
+      "description": "A great sci-fi book about an astronaut who meets a loveable alien, and together they save their worlds! So well written, never stops being interesting. I devoured this."
+    },
+    {
       "title": "Watership Down",
       "author": "Richard Adams",
       "year": "1972",

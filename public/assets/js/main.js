@@ -939,7 +939,7 @@ __webpack_require__.r(__webpack_exports__);
 
 */
 
-const doors = [
+const doors2025 = [
   // Week 1
   {
     day: 1,
@@ -1091,6 +1091,14 @@ const doors = [
   },
 ];
 
+const doors2026 = [
+  {
+    day: 1,
+    title: "Time for a repaint",
+    text: "Let's start easy: Time for a new lockscreen and wallpaper for all of your devices. Maybe even something seasonal?",
+  },
+];
+
 function initAdventCalendar() {
   const calEl = document.querySelector("#advent-calendar");
   if (!calEl) return;
@@ -1108,6 +1116,9 @@ function initAdventCalendar() {
   let html = "";
   const isDecember = month == 12 || TESTING;
 
+  const calendarYear = calEl.getAttribute("data-calendar");
+  const doors = calendarYear === "2026" ? doors2026 : doors2025;
+
   if (!TESTING) shuffleArray(doors);
 
   doors.forEach((door) => {
@@ -1117,12 +1128,13 @@ function initAdventCalendar() {
 
     html += `
       <div class='${doorIsOpen ? "advent-calendar__door advent-calendar__door--open" : doorIsOpenable ? "advent-calendar__door advent-calendar__door--openable" : "advent-calendar__door"}' data-day="${
-      door.day
-    }" role="button"><strong>${door.day}</strong></div>
+        door.day
+      }" role="button"><strong>${door.day}</strong></div>
     `;
 
     if (addContentToHtml) {
-      html += `
+      if (calendarYear === "2025") {
+        html += `
       <div class="advent-calendar__content-wrapper">
         <div class="advent-calendar__content">
           <strong>${door.day}</strong>
@@ -1137,6 +1149,18 @@ function initAdventCalendar() {
         </div>
       </div>
     `;
+      } else {
+        html += `
+      <div class="advent-calendar__content-wrapper">
+        <div class="advent-calendar__content">
+          <strong>${door.day}</strong>
+          <hr>
+          <h3>${door.title}</h3>
+          <p>${door.text}</p>
+        </div>
+      </div>
+    `;
+      }
     }
   });
 
@@ -1144,12 +1168,20 @@ function initAdventCalendar() {
 
   // initiate event listeners:
 
-  [...document.querySelectorAll(".advent-calendar__door--openable, .advent-calendar__door--open")].forEach((door) => {
+  [
+    ...document.querySelectorAll(
+      ".advent-calendar__door--openable, .advent-calendar__door--open",
+    ),
+  ].forEach((door) => {
     door.addEventListener("click", () => {
-      const alreadyClicked = door.classList.contains("advent-calendar__door--clicked");
+      const alreadyClicked = door.classList.contains(
+        "advent-calendar__door--clicked",
+      );
       if (!alreadyClicked) {
         const doorNumber = door.getAttribute("data-day");
-        const alreadyOpen = door.classList.contains("advent-calendar__door--open");
+        const alreadyOpen = door.classList.contains(
+          "advent-calendar__door--open",
+        );
 
         // open this door
         door.classList.add("advent-calendar__door--open");
@@ -1159,26 +1191,36 @@ function initAdventCalendar() {
             door.classList.add("advent-calendar__door--clicked");
 
             // hide content of others
-            [...document.querySelectorAll(".advent-calendar__door--clicked")].forEach((d) => {
+            [
+              ...document.querySelectorAll(".advent-calendar__door--clicked"),
+            ].forEach((d) => {
               if (d.getAttribute("data-day") !== doorNumber) {
                 d.classList.remove("advent-calendar__door--clicked");
               }
             });
           },
-          doorNumber == day && !alreadyOpen ? 500 : 0
+          doorNumber == day && !alreadyOpen ? 500 : 0,
         );
       }
     });
   });
 
-  [...document.querySelectorAll(".advent-calendar__content-wrapper")].forEach((wrapper) => {
-    wrapper.addEventListener("click", (ev) => {
-      if (ev.target.getAttribute("class") != "advent-calendar__content-wrapper") return;
+  [...document.querySelectorAll(".advent-calendar__content-wrapper")].forEach(
+    (wrapper) => {
+      wrapper.addEventListener("click", (ev) => {
+        if (
+          ev.target.getAttribute("class") != "advent-calendar__content-wrapper"
+        )
+          return;
 
-      const doorToClose = document.querySelector(".advent-calendar__door--clicked");
-      if (doorToClose) doorToClose.classList.remove("advent-calendar__door--clicked");
-    });
-  });
+        const doorToClose = document.querySelector(
+          ".advent-calendar__door--clicked",
+        );
+        if (doorToClose)
+          doorToClose.classList.remove("advent-calendar__door--clicked");
+      });
+    },
+  );
 }
 
 function shuffleArray(array) {
@@ -1186,7 +1228,10 @@ function shuffleArray(array) {
   while (currentIndex != 0) {
     let randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 }
 
@@ -2020,6 +2065,8 @@ const affirmations = [
   "i will meet new people i will love.",
   "i will reach my goals.",
   "my time will come.",
+
+  "what is meant for me is already looking for me too",
 ];
 
 const boredButton = [
@@ -2098,6 +2145,7 @@ const boredButton = [
   "learn how to read/write runes",
   "draw your houseplants",
   "scan in all physical documents you have",
+  "volunteer with your local community to gain skills and discover what you love",
 ];
 
 const listIdeas = [

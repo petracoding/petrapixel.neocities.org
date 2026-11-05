@@ -16319,6 +16319,9 @@ dd {
     padding: 15px;
   }
 }
+.advent-calendar[data-calendar="2026"] {
+  background-image: url("https://i.pinimg.com/736x/5a/d9/52/5ad952b00b62695b46106fdf6df36899.jpg");
+}
 
 .advent-calendar__door {
   position: relative;
