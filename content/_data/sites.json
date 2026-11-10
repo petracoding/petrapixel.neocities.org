@@ -568,5 +568,14 @@
     "inspiration": false,
     "supporter": true,
     "supporterUntil": "member" 
+  },
+  {
+    "link": "https://shastalilybarkman.com/",
+    "title": "Shasta Lily Barkman",
+    "image": "https://petrapixel.neocities.org/assets/img/links/nobutton.gif",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "10.02." 
   }
 ]

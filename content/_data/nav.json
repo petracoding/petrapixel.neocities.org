@@ -325,6 +325,13 @@
             "image":"O8L14EV.gif",
             "new":false,
             "hide":false
+         },
+         {
+            "link":"/fun/advent-calendar-2026",
+            "label":"advent calendar 2026",
+            "image":"O8L14EV.gif",
+            "new":false,
+            "hide":false
          }
       ]
    },
@@ -458,8 +465,8 @@
                   "link":"/coding/widgets",
                   "label":"Widgets for free Neocities accounts",
                   "sublabel":"",
-                  "new":false,
-                  "hide":false,
+                  "new":true,
+                  "hide":true,
                   "icon":"bard-line",
                   "level": "beginners"
                },

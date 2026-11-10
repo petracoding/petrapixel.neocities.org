@@ -160,8 +160,124 @@ const doors2025 = [
 const doors2026 = [
   {
     day: 1,
-    title: "Time for a repaint",
-    text: "Let's start easy: Time for a new lockscreen and wallpaper for all of your devices. Maybe even something seasonal?",
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 2,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 3,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 4,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 5,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 6,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 7,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 8,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 9,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 10,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 11,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 12,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 13,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 14,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 15,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 16,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 17,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 18,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 19,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 20,
+    title: "TODO",
+    text: "TODO",
+  },
+
+  {
+    day: 21,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 22,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 23,
+    title: "TODO",
+    text: "TODO",
+  },
+  {
+    day: 24,
+    title: "TODO",
+    text: "TODO",
   },
 ];
 
