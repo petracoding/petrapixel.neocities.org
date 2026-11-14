@@ -1,5 +1,6 @@
 [
   { "date": "2026-11-XX", "text": "TEMPLATE", "link": "/" },
+  { "date": "2026-11-14", "text": "This year's advent calendar is here!", "link": "/fun/advent-calendar-2026" },
   { "date": "2026-11-05", "text": "It seems like free Neocities sites are allowed to use external scripts again", "link": "/coding/common-questions#external-script" },
   { "date": "2026-10-03", "text": "First info about the next indie web contest is here!", "link": "/contest" },
   { "date": "2026-09-11", "text": "The Indie Web Database now has widgets!", "link": "/indiewebdb/widgets" },
