@@ -5,18 +5,117 @@ description: "An upvote/reaction widget for indie websites by Petrapixel. Neocit
 nesting: "../"
 codeHighlight: true
 mainClass: coding-page
+tipType: "resource"
 ---
 
 <section>
   <h1>Upvote Widget</h1>
+  <p>
+    This is a little widget that lets visitors upvote/like content on your
+    website. Each button can have its own unique number, or you can add multiple
+    buttons for the same counter. It can be styled however you like. This widget
+    uses cookies to remember who has already upvoted, so multiple upvotes are
+    not possible.
+  </p>
+  <p>
+    This widget is free but I would highly appreciate you
+    <a href="/donate" target="_blank">buying me a coffee</a>!
+  </p>
   <noscript>
-    You need to activate JavaScript to use the upvote widget!
+    <b>You need to activate JavaScript to use the upvote widget!</b>
   </noscript>
 </section>
 
 <section>
   <h2>Previews</h2>
-  <div class="upvote-widget-preview" data-upvote-widget="preview1">
-    <span>0</span>
+  <p>
+    Here are three examples of how the widget can look. You can style the widget
+    however you like.
+  </p>
+  <div class="upvote-widget-previews">
+    <div
+      class="upvote-widget-preview upvote-widget-preview1"
+      data-upvote-widget="preview1"
+    >
+      <span>0 Upvotes</span>
+      <button type="button">Upvote</button>
+    </div>
+    <div
+      class="upvote-widget-preview upvote-widget-preview2"
+      data-upvote-widget="preview2"
+    >
+      <button type="button"><b>♥</b> <span>0</span></button>
+    </div>
+    <div
+      class="upvote-widget-preview upvote-widget-preview3"
+      data-upvote-widget="preview3"
+    >
+      <button type="button"><span>0</span> Likes</button>
+    </div>
   </div>
+  <p>(Delete your cookies to see the un-clicked versions again.)</p>
 </section>
+
+<script src="/assets/js/upvote-widget.js?nocache=1"></script>
+
+<section>
+  <h2>How to use</h2>
+  <p>To use the upvote widget, simply include the following script:</p>
+
+  <pre><code class="language-html">&lt;script src=&quot;https://petrapixel.neocities.org/assets/js/upvote-widget.js?nocache=1&quot;&gt;&lt;/script&gt;</code></pre>
+
+  <p>and create the widget like so:</p>
+
+  <pre><code class="language-html">&lt;div class=&quot;upvote-widget&quot; data-upvote-widget=&quot;ADD-UNIQUE-ID-HERE&quot;&gt;
+  &lt;button type=&quot;button&quot;&gt;Upvote&lt;/button&gt;
+  &lt;span&gt;0&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+  <p>
+    Make sure to replace <code>ADD-UNIQUE-ID-HERE</code> with a unique
+    identifier for each widget that you want to have a unique upvote count. Two
+    widgets with the same ID on the same website will have the same upvote
+    count.
+  </p>
+
+  <p>
+    You can then style the widget however you want. The button will be disabled
+    if a visitor has already upvoted. The number of upvotes will be displayed in
+    the <code>span</code> element, which you can also move into the button if
+    you want.
+  </p>
+
+  <p>
+    The widget will get the attribute <code>data-upvoted</code> after a user has
+    upvoted it.
+  </p>
+
+  <p>
+    Here is some simple example styling you can adjust for your preferences:
+  </p>
+
+  <pre><code class="language-css">.upvote-widget button {
+  background: rgb(255, 165, 165);
+  border: 1px solid rgb(146, 17, 17);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.upvote-widget button:not(:disabled):hover {
+  filter: brightness(0.9);
+}
+
+/* after upvote: */
+.upvote-widget[data-upvoted] button {
+  color: rgb(102, 0, 0);
+  background: rgb(244, 154, 154);
+}
+</code></pre>
+
+  <p><b>Please credit me somewhere</b> if you use this widget. Thanks!</p>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+{% include 'layout/tip-me.njk' %} {% include 'layout/comment-section.njk' %}

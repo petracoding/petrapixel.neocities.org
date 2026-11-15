@@ -1,0 +1,88 @@
+.upvote-widget-previews {
+  margin-top: 1em;
+
+  @media (min-width: $md) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.upvote-widget-preview {
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* EXAMPLE 1 */
+
+.upvote-widget-preview1 {
+  button {
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    background: white;
+    margin-left: 0.5em;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      background: rgb(255, 241, 161);
+    }
+  }
+
+  span {
+    color: black;
+  }
+
+  &[data-upvoted] {
+    span {
+      font-weight: bold;
+    }
+
+    button {
+      opacity: 0.6;
+    }
+  }
+}
+
+.upvote-widget-preview2 {
+  button {
+    background: rgb(255, 165, 165);
+    border: 1px solid rgb(146, 17, 17);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      filter: brightness(0.9);
+    }
+  }
+
+  &[data-upvoted] button {
+    color: rgb(102, 0, 0);
+    background: rgb(244, 154, 154);
+  }
+}
+
+// .upvote-widget button {
+//   background: rgb(255, 165, 165);
+//   border: 1px solid rgb(146, 17, 17);
+//   padding: 4px 10px;
+//   border-radius: 4px;
+//   font-size: 20px;
+// }
+
+// .upvote-widget button:not(:disabled):hover,
+// .upvote-widget button:not(:disabled):focus {
+//   filter: brightness(0.9);
+// }
+
+// .upvote-widget[data-upvoted] button {
+//   color: rgb(102, 0, 0);
+//   background: rgb(244, 154, 154);
+// }

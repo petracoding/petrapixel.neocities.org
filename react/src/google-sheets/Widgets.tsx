@@ -14,7 +14,7 @@ export async function getWidgets(
   }
   const widgets: WidgetProps[] = [];
   tableRows.forEach((row: string[]) => {
-    const usesExternalScripts = row[5];
+    // const usesExternalScripts = row[5];
     const newWidget: WidgetProps = {
       date: fixDateString(row[0]),
       title: row[1],
@@ -23,16 +23,17 @@ export async function getWidgets(
       link: row[4],
       usesExternalScripts: row[5],
       screenshotUrl: row[6],
-      tags: addTagType(row[7], "default").concat(
-        addTagType(
-          usesExternalScripts == "yes"
-            ? "uses external scripts"
-            : usesExternalScripts == "no"
-              ? "doesn't use external scripts"
-              : "",
-          usesExternalScripts == "yes" ? "warning" : "default",
-        ),
-      ),
+      tags: addTagType(row[7], "default")
+        .concat
+        // addTagType(
+        //   usesExternalScripts == "yes"
+        //     ? "uses external scripts"
+        //     : usesExternalScripts == "no"
+        //       ? "doesn't use external scripts"
+        //       : "",
+        //   usesExternalScripts == "yes" ? "warning" : "default",
+        // ),
+        (),
     };
     widgets.push(newWidget);
   });

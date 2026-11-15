@@ -20,10 +20,9 @@ title: "sitemap"
       <ul>
         {% for navItem in mainNavItem.items %} {% if not navItem.hide %} {% if
         navItem.link %}
-
         <li {% if navItem.mobileOnly %}class="mobile-only" {% endif %}>
           <a href="{{ navItem.link }}"
-            >{{ navItem.label }}{% if navItem.new %}<small
+            >{{ navItem.label | safe }}{% if navItem.new %}<small
               class="aside-nav__new"
               ><img
                 src="{{ nesting }}assets/img/layout/new.gif"
@@ -32,7 +31,6 @@ title: "sitemap"
             >{% endif %}</a
           >
         </li>
-
         {% else %}
 
         <li>
@@ -40,9 +38,10 @@ title: "sitemap"
 
           <ul>
             {% for subNavItem in navItem.items %} {% if not subNavItem.hide %}
+            {% if not subNavItem.isDivider %}
             <li {% if subNavItem.mobileOnly %}class="mobile-only" {% endif %}>
               <a href="{{ subNavItem.link }}"
-                >{{ subNavItem.label }}{% if subNavItem.new %}<small
+                >{{ subNavItem.label | safe }}{% if subNavItem.new %}<small
                   class="aside-nav__new"
                   ><img
                     src="{{ nesting }}assets/img/layout/new.gif"
@@ -51,8 +50,7 @@ title: "sitemap"
                 >{% endif %}</a
               >
             </li>
-
-            {% endif %} {% endfor %}
+            {% endif %} {% endif %}{% endfor %}
           </ul>
         </li>
         {% endif %} {% endif %} {% endfor %}

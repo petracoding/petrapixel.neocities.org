@@ -484,6 +484,30 @@ header {
   }
 }
 
+.upvote-widget {
+  button {
+    background: $light;
+    border: 2px dotted $borderColor;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    color: $textColor;
+    cursor: $cursorPointer;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      background: $pink;
+    }
+  }
+
+  &[data-upvoted] button {
+    cursor: $cursorDefault;
+    color: $textColor;
+    background: $pink;
+    filter: grayscale(0.5) brightness(1.2);
+  }
+}
+
 /**
  *
  * TABLET

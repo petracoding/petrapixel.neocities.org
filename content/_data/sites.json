@@ -577,5 +577,14 @@
     "inspiration": false,
     "supporter": true,
     "supporterUntil": "10.02." 
+  },
+  {
+    "link": "https://indecisive-hub.neocities.org/",
+    "title": "indecisive hub",
+    "image": "indecisive-hub.png",
+    "neighbor": false,
+    "inspiration": false,
+    "supporter": true,
+    "supporterUntil": "15.02." 
   }
 ]

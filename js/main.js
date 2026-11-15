@@ -23,7 +23,6 @@ import { initAdventCalendar } from "./pages/advent-calendar";
 import { initRoadmap } from "./pages/roadmap";
 import { initWidgetBuilders } from "./pages/widgets";
 import { initSupportTool } from "./pages/support-tool";
-import { initUpvoteWidget } from "./widgets/upvote-widget";
 // import { initWritingChart } from "./pages/writing";
 // import { initComprehensionQuestions } from "./pages/comprehension-questions";
 
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initRoadmap();
   initWidgetBuilders();
   initSupportTool();
-  initUpvoteWidget();
 
   /* SPECIAL: */
   initAprilFools();

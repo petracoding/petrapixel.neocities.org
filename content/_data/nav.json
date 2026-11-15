@@ -576,7 +576,7 @@
                   "icon":"database-line"
                },
                {
-                  "link":"/coding/webring-list",
+                  "link":"/indiewebdb/webrings",
                   "label":"List of Webrings",
                   "sublabel":"",
                   "new":false,
@@ -584,12 +584,20 @@
                   "icon":"global-line"
                },
                {
-                  "link":"/coding/cliques",
+                  "link":"/indiewebdb/cliques",
                   "label":"List of Cliques",
                   "sublabel":"",
                   "new":false,
                   "hide":false,
                   "icon":"user-community-line"
+               },
+               {
+                  "link":"/indiewebdb/widgets",
+                  "label":"List of Widgets",
+                  "sublabel":"",
+                  "new":false,
+                  "hide":false,
+                  "icon":"puzzle-line"
                },
                {
                   "link":"/webring",

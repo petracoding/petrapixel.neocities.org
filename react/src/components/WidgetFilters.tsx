@@ -12,14 +12,14 @@ export default function WidgetFilters() {
   return (
     <div className="filters">
       <div className="filters__row">
-        <Filter
+        {/* <Filter
           label="Sort by "
           options={["recently added", "widget name", "creator"]}
           selectedOptions={["recently added"]}
           onlyOneSelectable={true}
         />
 
-        <div className="filters__divider"></div>
+        <div className="filters__divider"></div> */}
 
         <div className="search-bar">
           <input
@@ -36,11 +36,12 @@ export default function WidgetFilters() {
 
         <div className="filters__divider"></div>
 
+        {/*         
         <Filter
           label="External Scripts"
           options={["doesn't use external scripts", "uses external scripts"]}
           onlyOneSelectable={true}
-        />
+        /> */}
 
         <Filter
           label="Type"

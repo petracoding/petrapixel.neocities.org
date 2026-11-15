@@ -12928,6 +12928,25 @@ header {
   right: 8px;
 }
 
+.upvote-widget button {
+  background: #ffd3ec;
+  border: 2px dotted #deafb3;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 20px;
+  color: #922a45;
+  cursor: url("/assets/img/cursor1.png") 7 5, pointer;
+}
+.upvote-widget button:not(:disabled):hover, .upvote-widget button:not(:disabled):focus {
+  background: #e997bc;
+}
+.upvote-widget[data-upvoted] button {
+  cursor: url("/assets/img/cursor2.gif") 1 1, auto;
+  color: #922a45;
+  background: #e997bc;
+  filter: grayscale(0.5) brightness(1.2);
+}
+
 /**
  *
  * TABLET
@@ -19778,6 +19797,60 @@ div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
 }
 #support-tool {
   text-align: center;
+}
+
+.upvote-widget-previews {
+  margin-top: 1em;
+}
+@media (min-width: 992px) {
+  .upvote-widget-previews {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.upvote-widget-preview button {
+  cursor: pointer;
+}
+.upvote-widget-preview button:disabled {
+  cursor: not-allowed;
+}
+
+/* EXAMPLE 1 */
+.upvote-widget-preview1 button {
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  background: white;
+  margin-left: 0.5em;
+}
+.upvote-widget-preview1 button:not(:disabled):hover, .upvote-widget-preview1 button:not(:disabled):focus {
+  background: rgb(255, 241, 161);
+}
+.upvote-widget-preview1 span {
+  color: black;
+}
+.upvote-widget-preview1[data-upvoted] span {
+  font-weight: bold;
+}
+.upvote-widget-preview1[data-upvoted] button {
+  opacity: 0.6;
+}
+
+.upvote-widget-preview2 button {
+  background: rgb(255, 165, 165);
+  border: 1px solid rgb(146, 17, 17);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+.upvote-widget-preview2 button:not(:disabled):hover, .upvote-widget-preview2 button:not(:disabled):focus {
+  filter: brightness(0.9);
+}
+.upvote-widget-preview2[data-upvoted] button {
+  color: rgb(102, 0, 0);
+  background: rgb(244, 154, 154);
 }
 
 body.dark-mode {
