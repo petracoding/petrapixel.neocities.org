@@ -15,7 +15,7 @@ tipType: "resource"
     website. Each button can have its own unique number, or you can add multiple
     buttons for the same counter. It can be styled however you like. This widget
     uses cookies to remember who has already upvoted, so multiple upvotes are
-    not possible.
+    not possible. It is also possible to unlike.
   </p>
   <p>
     This widget is free but I would highly appreciate you
@@ -53,7 +53,6 @@ tipType: "resource"
       <button type="button"><span>0</span> Likes</button>
     </div>
   </div>
-  <p>(Delete your cookies to see the un-clicked versions again.)</p>
 </section>
 
 <script src="/assets/js/upvote-widget.js?nocache=1"></script>
@@ -113,7 +112,24 @@ tipType: "resource"
 }
 </code></pre>
 
-  <p><b>Please credit me somewhere</b> if you use this widget. Thanks!</p>
+  <p>If you want to disable unliking, you can add this:</p>
+
+  <pre><code class="language-css">.upvote-widget[data-upvoted] button {
+  pointer-events: none;
+}</code></pre>
+
+  <p>
+    If you want to change "Like" to "Liked" or "Upvote" to "Upvoted" for if a
+    user already clicked it, you can do this:
+  </p>
+
+  <pre><code class="language-css">.upvote-widget[data-upvoted] button::after {
+  content: "d";
+}</code></pre>
+
+  <p>
+    That's it! <b>Please credit me somewhere</b> if you use this widget. Thanks!
+  </p>
 </section>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->

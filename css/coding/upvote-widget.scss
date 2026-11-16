@@ -45,6 +45,10 @@
 
     button {
       opacity: 0.6;
+
+      &::after {
+        content: "d";
+      }
     }
   }
 }
@@ -69,6 +73,12 @@
   }
 }
 
+.upvote-widget-preview3 {
+  &[data-upvoted] button {
+    font-weight: bold;
+  }
+}
+
 // .upvote-widget button {
 //   background: rgb(255, 165, 165);
 //   border: 1px solid rgb(146, 17, 17);
@@ -85,4 +95,12 @@
 // .upvote-widget[data-upvoted] button {
 //   color: rgb(102, 0, 0);
 //   background: rgb(244, 154, 154);
+// }
+
+// .upvote-widget[data-upvoted] button {
+//   pointer-events: none;
+// }
+
+// .upvote-widget[data-upvoted] button::after {
+//   content: "d";
 // }

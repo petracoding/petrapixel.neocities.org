@@ -485,6 +485,8 @@ header {
 }
 
 .upvote-widget {
+  margin-bottom: 1em;
+
   button {
     background: $light;
     border: 2px dotted $borderColor;
@@ -505,6 +507,7 @@ header {
     color: $textColor;
     background: $pink;
     filter: grayscale(0.5) brightness(1.2);
+    pointer-events: none;
   }
 }
 

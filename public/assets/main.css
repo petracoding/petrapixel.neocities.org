@@ -12928,6 +12928,9 @@ header {
   right: 8px;
 }
 
+.upvote-widget {
+  margin-bottom: 1em;
+}
 .upvote-widget button {
   background: #ffd3ec;
   border: 2px dotted #deafb3;
@@ -12945,6 +12948,7 @@ header {
   color: #922a45;
   background: #e997bc;
   filter: grayscale(0.5) brightness(1.2);
+  pointer-events: none;
 }
 
 /**
@@ -19837,6 +19841,9 @@ div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
 .upvote-widget-preview1[data-upvoted] button {
   opacity: 0.6;
 }
+.upvote-widget-preview1[data-upvoted] button::after {
+  content: "d";
+}
 
 .upvote-widget-preview2 button {
   background: rgb(255, 165, 165);
@@ -19851,6 +19858,10 @@ div[id*=listbox-content-slot]::-webkit-scrollbar-thumb:vertical {
 .upvote-widget-preview2[data-upvoted] button {
   color: rgb(102, 0, 0);
   background: rgb(244, 154, 154);
+}
+
+.upvote-widget-preview3[data-upvoted] button {
+  font-weight: bold;
 }
 
 body.dark-mode {

@@ -504,7 +504,7 @@
          },
          {
             "label":"Codes",
-            "new":false,
+            "new":true,
             "items":[
                
                {
@@ -514,6 +514,14 @@
                   "new":true,
                   "hide":true,
                   "icon":"layout-masonry-line",
+                  "level": "beginners"
+               },
+               {
+                  "link":"/coding/upvote-widget",
+                  "label":"Upvote Widget",
+                  "new":true,
+                  "hide":false,
+                  "icon":"thumb-up-line",
                   "level": "beginners"
                },
                {
