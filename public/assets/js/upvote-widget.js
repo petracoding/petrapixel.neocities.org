@@ -1,11 +1,10 @@
 /* Upvote Widget by Petrapixel (https://petrapixel.neocities.org) */
-/* v1.1.0 */
+/* v1.1.1 */
 
 const API_URL = "https://pjmgstqqbgghdhbbrans.supabase.co/rest/v1/votes";
 const API_KEY = "sb_publishable__KjN0_d_NpEDWsoGHHaEfA_aIpIjBrC";
 
 let url = window.location.host;
-if (url == "localhost:8080") url = "petrapixel.neocities.org"; // TESTING
 
 document.addEventListener("DOMContentLoaded", function () {
   const widgets = document.querySelectorAll("[data-upvote-widget]");

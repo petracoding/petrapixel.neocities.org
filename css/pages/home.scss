@@ -155,6 +155,7 @@
     @media (min-width: $xl) {
       font-size: 46px;
       line-height: 0.5;
+      margin-top: -15px !important;
     }
   }
 }
@@ -185,65 +186,51 @@
 }
 
 .hello-its-me-image {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-shrink: 0;
+  margin: -2em;
 
   img {
-    width: 110px;
+    width: 300px;
     height: auto;
-    image-rendering: pixelated;
-    // filter: brightness(1.1) contrast(1.3); // old
-    filter: brightness(1.3) contrast(1.2) hue-rotate(-5deg);
     transition: transform 0.3s ease;
+    border-radius: 10px;
+    image-rendering: pixelated;
 
     &:hover {
       image-rendering: auto;
-    }
-
-    @media (min-width: $xl) {
-      transform: scale(1.3);
-      image-rendering: smooth;
-
-      &:hover {
-        transform: scale(1.35);
-      }
     }
   }
 }
 
 .hello-its-me-content {
-  padding-left: 1.5em;
-
   p:nth-child(2) {
-    padding-left: 0.5em;
+    padding-left: 150px;
+  }
+
+  p:nth-child(3) {
+    padding-left: 180px;
   }
 
   p:nth-child(4) {
-    padding-left: 0.75em;
+    padding-left: 280px;
   }
 
   p:nth-child(5) {
-    padding-left: 1em;
-  }
-
-  p:last-child {
-    padding-left: 0.5em;
-
-    &::before {
-      content: "←  ";
-      font-family: sans-serif;
-    }
+    padding-left: 280px;
   }
 
   h2 {
     font-family: $fontHeadingsLarge;
     line-height: 0.5;
+    font-size: 35px;
 
-    @media (min-width: $xl) {
-      font-size: 46px;
-      margin-bottom: 0.5em;
+    img {
+      margin-left: -5px;
     }
   }
 }
@@ -252,7 +239,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-left: 2em;
+  margin-left: 1em;
   flex-shrink: 0;
 
   img {
@@ -483,31 +470,16 @@
     flex-direction: column-reverse;
   }
 
+  .hello-its-me-image {
+    position: static;
+    margin-bottom: -1em;
+  }
+
   .hello-its-me-content {
     padding-left: 0;
 
-    p:nth-child(2) {
-      padding-left: 0;
-    }
-
-    p:nth-child(4) {
-      padding-left: 0;
-    }
-
-    p:nth-child(5) {
-      padding-left: 0;
-    }
-
-    p:last-child {
-      padding-left: 0;
-
-      &::before {
-        display: none;
-      }
-
-      &::after {
-        content: ":";
-      }
+    p {
+      padding-left: 0 !important;
     }
   }
 }

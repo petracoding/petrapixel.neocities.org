@@ -893,6 +893,30 @@
   }
 }
 
+/*----------  Blog  ----------*/
+
+.aside-blog {
+  margin: 30px 0;
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+}
+
 // --------------------------------------------------------------------
 // --------------------------------------------------------------------
 // --------------------------------------------------------------------
@@ -1208,6 +1232,12 @@
   .aside-navlinkads {
     width: 97px;
     height: 97px;
+  }
+
+  .aside-tamanotchi a {
+    top: 6px;
+    left: 23px;
+    transform: scale(0.6);
   }
 }
 
